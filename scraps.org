@@ -2,6 +2,16 @@
 #+OPTIONS: num:nil ^:nil
 
 * tests and examples
+** sh with sessions
+
+#+begin_src sh :session eric
+    cd ~/Sites
+    uptime
+#+end_src
+
+#+results:
+| "12:24  up 8 days" | "22:20" | "1 user" | "load averages: 0.27 0.29 0.26" |
+
 ** testing srcname aliases
 
 #+source: two
