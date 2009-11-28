@@ -2,15 +2,36 @@
 #+OPTIONS: num:nil ^:nil
 
 * tests and examples
+** whitespace/newline results issues
+
+#+begin_src sh
+  echo output
+#+end_src
+
+This
+#+begin_src sh
+  echo output
+#+end_src
+text here
+
+results in
+
+t#+results:
+: output
+ext here
+
+#+begin_src emacs-lisp
+  (+ 1 1)
+#+end_src
+
+#+results:
+: 2
 ** sh with sessions
 
 #+begin_src sh :session eric
     cd ~/Sites
     uptime
 #+end_src
-
-#+results:
-| "12:24  up 8 days" | "22:20" | "1 user" | "load averages: 0.27 0.29 0.26" |
 
 ** testing srcname aliases
 
