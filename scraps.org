@@ -2,6 +2,49 @@
 #+OPTIONS: num:nil ^:nil
 
 * tests and examples
+** debug hints
+from mailing list
+
+- edebug-defun: (in emacs-lisp mode, C-u C-M-x) will mark the function
+  so that when it is called, the interpreter stops and you can then
+  single-step through it with <SPACE>. At each point, you can press
+  "e" and evaluate variables (actually arbitrary expressions).
+- Insert a strategically placed (debug) call and then call the
+  function.  If/when the debug call is executed, you are dropped into
+  the debugger and you can then evaluate arbitrary expressions.
+
+** sql exports to latex
+example from email list
+*** ECM
+
+   - faire un script Bash (et =isql=) envoyant un /listing/ de stagiaires;
+
+#+srcname: envoi-stg
+   #+begin_src sql
+       DECLARE @dateFmtStyleIn int; SET @dateFmtStyleIn = 120 -- ODBC canonical
+       DECLARE @dateFmtStyleOut int; SET @dateFmtStyleOut = 103 -- French dd/mm/yyyy
+
+       DECLARE @firstDayOfThisMonth smalldatetime
+       SET @firstDayOfThisMonth = CONVERT(smalldatetime,
+                                          CAST(YEAR(GETDATE()) AS char(4)) + '-'
+                                          + CAST(MONTH(GETDATE()) AS char(2)) + '-'
+                                          + '01' + ' 00:00:00',
+                                          @dateFmtStyleIn)
+
+       DECLARE @now smalldatetime
+       SET @now = CONVERT(smalldatetime,
+                          CAST(YEAR(GETDATE()) AS char(4)) + '-'
+                          + CAST(MONTH(GETDATE()) AS char(2)) + '-'
+                          + CAST(DAY(GETDATE()) AS char(2)) + ' '
+                          + CAST(DATEPART(hh, GETDATE()) AS char(2)) + ':'
+                          + CAST(DATEPART(mi, GETDATE()) AS char(2)) + ':'
+                          + '00',
+                          @dateFmtStyleIn)
+
+       SELECT pfiID
+       FROM dossier
+#+end_src
+
 ** whitespace/newline results issues
 
 #+begin_src sh
@@ -29,8 +72,12 @@ ext here
 ** sh with sessions
 
 #+begin_src sh :session eric
-    cd ~/Sites
-    uptime
+  cd ~/Desktop
+#+end_src
+
+#+begin_src bash :session eric
+  cd ~/Desktop
+  date
 #+end_src
 
 ** testing srcname aliases
