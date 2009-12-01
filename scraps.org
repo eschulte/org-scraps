@@ -2,6 +2,17 @@
 #+OPTIONS: num:nil ^:nil
 
 * tests and examples
+** gnuplot variable expansion
+
+#+source: simple-function
+#+begin_src emacs-lisp
+  "sin(x)"
+#+end_src
+
+#+begin_src gnuplot :var fun=simple-function
+  plot $fun
+#+end_src
+
 ** debug hints
 from mailing list
 
