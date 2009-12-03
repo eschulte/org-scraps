@@ -86,10 +86,13 @@ ext here
   cd ~/Desktop
 #+end_src
 
-#+begin_src bash :session eric
-  cd ~/Desktop
-  date
+#+begin_src sh :session eric
+  cd ~/Desktop/clj/
+  ls *.clj
 #+end_src
+
+#+results:
+| "ants.clj" | "" | "concurrent.clj" | "" | "hello.clj" | "" | "spell-checker.clj" |
 
 ** testing srcname aliases
 
