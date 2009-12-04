@@ -2,6 +2,30 @@
 #+OPTIONS: num:nil ^:nil
 
 * tests and examples
+** quoted session name
+
+#+begin_src sh :session "eric"
+  echo 'name-me'
+#+end_src
+
+#+results:
+: name-me
+
+** eval-buffer
+#+begin_src emacs-lisp
+  (+ 1 2)
+#+end_src
+
+#+results:
+: 3
+
+#+begin_src emacs-lisp
+  (+ 3 4)
+#+end_src
+
+#+results:
+: 7
+
 ** gnuplot variable expansion
 
 #+source: simple-function
