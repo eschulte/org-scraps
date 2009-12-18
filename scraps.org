@@ -2,6 +2,33 @@
 #+OPTIONS: num:nil ^:nil
 
 * tests and examples
+** no noweb by default
+
+#+srcname: sample
+#+begin_src emacs-lisp 
+  (message "sample")
+#+end_src
+
+#+begin_src emacs-lisp :noweb no
+  <<sample>>
+#+end_src
+
+#+results:
+: sample
+
+** looking at double quotes
+
+#+tblname: double-quote-test-input
+| test | this | 8 | 9 |
+
+#+srcname: double-quote-test-output
+#+begin_src python :var data=double-quote-test-input
+  return data
+#+end_src
+
+#+results: double-quote-test-output
+| test | this | 8 | 9 |
+
 ** quoted session name
 
 #+begin_src sh :session "eric"
