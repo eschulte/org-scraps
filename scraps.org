@@ -318,21 +318,21 @@ plot data using 1:2 with lines
 | 7 | 8 |
 
 ** cached results
-#+begin_src emacs-lisp :cache
+#+begin_src emacs-lisp :cache yes
    (setq org-babel-default-header-args '((:session . "none")
                                          (:results . "replace")
                                          (:exports . "code")(:cache)))
 #+end_src
 
-#+results[2dc6f8147625b58f30ca752965148c5b0de9e6c6]:
-| (:session . "none") | (:results . "replace") | (:exports . "code") | (:cache) |
+#+results[937269632ae5b5eee5c93f9eb50e0bc55e34520d]:
+| (:session . none) | (:results . replace) | (:exports . code) | (:cache) |
 
 #+srcname: eric-schulte
-#+begin_src emacs-lisp
+#+begin_src emacs-lisp :cache yes
    (+ 5 7 1)
 #+end_src
 
-#+results[af8af290d7e81f5b91272e524fd0f52464dcfcc2]: eric-schulte
+#+results[005b04829608b3d22b61686e90309af3a9a6fe7c]: eric-schulte
 : 13
 
 #+begin_src ditaa :file caching-example.png
