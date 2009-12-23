@@ -2,6 +2,18 @@
 #+OPTIONS: num:nil ^:nil
 
 * tests and examples
+** exporting org-source
+
+#+begin_src org
+  ,lets see how this org-mode code exports to html
+  
+  ,is this [[link]] blue?
+  
+  ,#+begin_src emacs-lisp
+  ,  (+ 1 2)
+  ,#+end_src
+#+end_src
+
 ** exporting and caching
 #+begin_src ditaa :file data/example.png :exports none
     +------------------+
