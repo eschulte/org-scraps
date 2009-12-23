@@ -2,6 +2,18 @@
 #+OPTIONS: num:nil ^:nil
 
 * tests and examples
+** exporting and caching
+#+begin_src ditaa :file data/example.png :exports none
+    +------------------+
+    |  ditaa example   |
+    |                  |
+    |                  |
+    +------------------+
+#+end_src
+
+#+results:
+[[file:data/example.png]]
+
 ** no noweb by default
 
 #+srcname: sample
