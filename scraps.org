@@ -2,6 +2,13 @@
 #+OPTIONS: num:nil ^:nil
 
 * tests and examples
+** fancier export
+
+#+source: square
+#+begin_src emacs-lisp :var input=1
+  (* input input)
+#+end_src
+
 ** exporting org-source
 
 #+begin_src org
