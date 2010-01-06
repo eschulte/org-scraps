@@ -2,6 +2,16 @@
 #+OPTIONS: num:nil ^:nil
 
 * tests and examples
+** links
+
+can LaTeX link itself to the middle of a paragraph with a simple
+inline link like <<keystone>> if not then we would probably need to
+wrap source-code blocks in figures to make them referable.
+
+how about a link back to [[keystone]]
+
+The above appears to work in LaTeX, but not in HTML.
+
 ** fancier export
 
 #+source: square
