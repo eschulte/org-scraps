@@ -1,6 +1,10 @@
-
 ## automatically generated files
 .Rhistory
 blue.png
 *.html
 *.pdf
+data/
+
+## ignore jekyll files
+_posts
+_site
