@@ -2,6 +2,10 @@
 .Rhistory
 blue.png
 *.html
+*.aux
+*.log
+*.out
+*.tex
 *.pdf
 data/
 
