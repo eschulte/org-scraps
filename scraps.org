@@ -2,6 +2,35 @@
 #+OPTIONS: num:nil ^:nil
 
 * tests and examples
+** load to session
+#+begin_src clojure :session asm-gp
+  (in-ns 'asm-gp)
+#+end_src
+
+#+begin_src ruby :session
+  puts :eric
+#+end_src
+
+#+begin_src python :session
+  5 + 1 
+#+end_src
+
+#+begin_src R :session
+  6 + 1
+#+end_src
+
+#+begin_src sh :session
+  date
+#+end_src
+
+#+begin_src ocaml :session
+  eric
+#+end_src
+
+#+begin_src gnuplot :session
+  plot sin(x)
+#+end_src
+
 ** links
 
 can LaTeX link itself to the middle of a paragraph with a simple
