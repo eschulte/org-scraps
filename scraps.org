@@ -2,6 +2,19 @@
 #+OPTIONS: num:nil ^:nil
 
 * tests and examples
+** babel block overwrite
+
+The first block overwrites
+#+begin_src clojure
+  (def overwriter "I'll show up everywhere")
+#+end_src
+
+this second block
+#+begin_src diff
+  3719d3718
+  <       movl    $1024, 8(%esp)
+#+end_src
+
 ** load to session
 #+begin_src clojure :session asm-gp
   (in-ns 'asm-gp)
