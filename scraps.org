@@ -2,6 +2,30 @@
 #+OPTIONS: num:nil ^:nil
 
 * tests and examples
+** exporting to a file
+   :PROPERTIES:
+   :EXPORT_FILE_NAME: simple
+   :EXPORT_TITLE: testing file export
+   :END:
+
+this is the contents
+
+and a block
+#+begin_src clojure
+  (println "is a nice lisp")
+#+end_src
+
+ah, it works!
+
+** ditaa blocks
+
+#+begin_src ditaa :file communication.png :cache yes
+  -------------
+#+end_src
+
+#+results[4fbfc78b37abd8a788958d28a7335445e6042c96]:
+[[file:communication.png]]
+
 ** babel block overwrite
 
 The first block overwrites
