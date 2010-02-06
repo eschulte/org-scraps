@@ -2,6 +2,26 @@
 #+OPTIONS: num:nil ^:nil
 
 * tests and examples
+** tangling w/o comments and shebang
+   :PROPERTIES:
+   :tangle:   yes
+   :END:
+
+#+begin_src emacs-lisp :comments no :shebang (identity my-shebang)
+  (message "I should have no comments")
+#+end_src
+
+#+begin_src emacs-lisp :comments no
+  (setq my-shebang "poop")
+#+end_src
+
+#+results:
+: poop
+
+#+begin_src ruby :shebang #!/usr/bin/ruby
+  puts :nonstandard_shebang
+#+end_src
+
 ** exporting to a file
    :PROPERTIES:
    :EXPORT_FILE_NAME: simple
