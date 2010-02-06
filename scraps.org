@@ -2,6 +2,34 @@
 #+OPTIONS: num:nil ^:nil
 
 * tests and examples
+** tables to shell scripts ideas
+
+#+tblname: sec
+| Hello | World |
+
+
+1) allowing the user to specify a separator with a header argument as
+   follows
+   #+begin_src sh :var table=sec :separator ,
+     cat <<EOF
+     $table
+     EOF
+   #+end_src
+   
+   which would result in something like
+
+   : "Hello, World"
+
+2) writing the table to a tab or comma separated file and then
+   replacing =$table= in the source block body with the path to the
+   file name, s.t. something like
+   
+   #+begin_src sh :var table=data
+     wc $table
+   #+end_src
+
+   would return reasonable results
+
 ** tangling w/o comments and shebang
    :PROPERTIES:
    :tangle:   yes
