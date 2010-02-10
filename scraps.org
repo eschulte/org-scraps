@@ -1,7 +1,29 @@
 #+TITLE: org-babel examples and tests
 #+OPTIONS: num:nil ^:nil
+#+STYLE: <link rel="stylesheet"href="data/stylesheet.css"type="text/css">
 
 * tests and examples
+** looking at source name exports
+
+#+source: fibonacci
+#+begin_src emacs-lisp :var input=0
+  (defun fib (n)
+    (if (> n 1)
+        (+ (fib (- n 1)) (fib (- n 2)))
+        1))
+  (fib input)
+#+end_src
+
+#+results: fibonacci
+: 1
+
+now applying our Fibonacci function
+
+#+call: fibonacci(input=5)
+
+#+results: fibonacci(input=5)
+: 8
+
 ** short shell test
 
 #+begin_src sh
