@@ -1,7 +1,72 @@
 #+TITLE: org-babel examples and tests
 #+OPTIONS: num:nil ^:nil
+#+STYLE: <link rel="stylesheet"href="data/stylesheet.css"type="text/css">
 
 * tests and examples
+** looking at source name exports
+
+#+source: fibonacci
+#+begin_src emacs-lisp :var input=0
+  (defun fib (n)
+    (if (> n 1)
+        (+ (fib (- n 1)) (fib (- n 2)))
+        1))
+  (fib input)
+#+end_src
+
+#+results: fibonacci
+: 1
+
+now applying our Fibonacci function
+
+#+call: fibonacci(input=5)
+
+#+results: fibonacci(input=5)
+: 8
+
+** short shell test
+
+#+begin_src sh
+  date
+#+end_src
+
+#+results:
+: Sun Feb  7 10:17:44 MST 2010
+
+#+tblname: fibs
+| 1 | 1 |
+| 2 | 1 |
+| 3 | 2 |
+| 4 | 3 |
+| 5 | 5 |
+| 6 | 8 |
+
+#+begin_src sh :var table=fibs
+  echo "$table" |wc
+#+end_src
+
+#+results:
+: 6      12      24
+
+#+begin_src sh :var table=fibs
+  echo "$table"
+#+end_src
+
+#+results:
+| 1 | 1 |
+| 2 | 1 |
+| 3 | 2 |
+| 4 | 3 |
+| 5 | 5 |
+| 6 | 8 |
+
+#+begin_src sh :var table=fibs :separator --
+  echo "$table" | head -1
+#+end_src
+
+#+results:
+: 1--1
+
 ** tables to shell scripts ideas
 
 #+tblname: sec
