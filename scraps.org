@@ -3,6 +3,28 @@
 #+STYLE: <link rel="stylesheet"href="data/stylesheet.css"type="text/css">
 
 * tests and examples
+** list index w/function style name
+
+#+results: function-style-index
+| 0 |
+| 1 |
+| 2 |
+| 3 |
+| 4 |
+| 5 |
+| 6 |
+| 7 |
+| 8 |
+| 9 |
+
+#+srcname: function-style-indexing(data=function-style-index[1:4,0])
+#+begin_src emacs-lisp
+  (message "%S" data)
+#+end_src
+
+#+results: function-style-indexing
+: ((1) (2) (3) (4))
+
 ** looking at source name exports
 
 #+source: fibonacci
