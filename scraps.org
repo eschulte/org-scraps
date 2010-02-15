@@ -3,6 +3,38 @@
 #+STYLE: <link rel="stylesheet"href="data/stylesheet.css"type="text/css">
 
 * tests and examples
+** results lines for function calls
+
+#+call: fibonacci(input=5) :resname eric
+
+#+results:
+: 8
+
+#+begin_src emacs-lisp :var fib=fibonacci(input=5)
+  (message "fib(5)=%d" fib)
+#+end_src
+
+#+results:
+: fib(5)=8
+
+** haskell variables
+
+playing with Haskell
+
+#+results: haskell-stuff
+: 9
+
+#+begin_src haskell :var num=haskell-stuff
+  num + 1
+#+end_src
+
+#+begin_src ruby :var num=haskell-stuff
+  num + 1
+#+end_src
+
+#+results:
+: 10
+
 ** list index w/function style name
 
 #+results: function-style-index
@@ -42,9 +74,6 @@
 now applying our Fibonacci function
 
 #+call: fibonacci(input=5)
-
-#+results: fibonacci(input=5)
-: 8
 
 ** short shell test
 
