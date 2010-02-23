@@ -3,6 +3,38 @@
 #+STYLE: <link rel="stylesheet"href="data/stylesheet.css"type="text/css">
 
 * tests and examples
+** variables into shell scripts
+#+results: into-shell-scripts
+| username | guest   |
+| password | nothing |
+
+#+begin_src sh :var username=into-shell-scripts[0,0] :var password=into-shell-scripts[1,1] :results output
+  echo "$username -p $password"
+#+end_src
+
+#+results:
+: username -p nothing
+
+#+results: number-into-shell
+: 9
+
+#+begin_src sh :var num=number-into-shell
+  for i in `seq $num`; do
+      echo $i
+  done
+#+end_src
+
+#+results:
+| 1 |
+| 2 |
+| 3 |
+| 4 |
+| 5 |
+| 6 |
+| 7 |
+| 8 |
+| 9 |
+
 ** results lines for function calls
 
 #+call: fibonacci(input=5) :resname eric
