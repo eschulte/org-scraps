@@ -3,6 +3,28 @@
 #+STYLE: <link rel="stylesheet"href="data/stylesheet.css"type="text/css">
 
 * tests and examples
+** access to variables set in property drawers
+   :PROPERTIES:
+   :special:  89
+   :text: schulte
+   :END:
+
+: "(org-entry-get nil "special" t)"
+
+#+begin_src emacs-lisp :var special=(string-to-number (org-entry-get nil "special" t))
+  (+ special 1)
+#+end_src
+
+#+results:
+: 90
+
+#+begin_src emacs-lisp :var special=(org-entry-get nil "text" t)
+  special  
+#+end_src
+
+#+results:
+: schulte
+
 ** variables into shell scripts
 #+results: into-shell-scripts
 | username | guest   |
