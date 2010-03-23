@@ -3,6 +3,23 @@
 #+STYLE: <link rel="stylesheet"href="data/stylesheet.css"type="text/css">
 
 * tests and examples
+** latex attributes
+
+#+ATTR_LaTeX: width=0.38\textwidth wrap placement={r}{0.4\textwidth}
+#+begin_src ditaa :file=scrap.png
+  +---------------------------+
+  |                           |
+  |       latex               |
+  |                           |
+  |      +------------+       |
+  |      |            |       |
+  |      |            |       |
+  |      |       cBLU |       |
+  |      +------------+       |
+  |                      cPNK |
+  +---------------------------+
+#+end_src
+
 ** access to variables set in property drawers
    :PROPERTIES:
    :special:  89
