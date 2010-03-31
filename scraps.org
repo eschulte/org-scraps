@@ -3,6 +3,20 @@
 #+STYLE: <link rel="stylesheet"href="data/stylesheet.css"type="text/css">
 
 * tests and examples
+** tangling and variable resolution
+  :PROPERTIES:
+  :ID:       18b4f1be-bb1d-49bc-a651-c97406a35bdd
+  :tangle:   yes
+  :END:
+
+#+source: A
+#+begin_src emacs-lisp :eval no :expand yes :var id=(org-entry-get nil "ID" t)
+  (concat "This is the entry ID: " id)
+#+end_src
+
+#+results: A
+: This is the entry ID: 18b4f1be-bb1d-49bc-a651-c97406a35bdd
+
 ** latex attributes
 
 #+ATTR_LaTeX: width=0.38\textwidth wrap placement={r}{0.4\textwidth}
