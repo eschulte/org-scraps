@@ -3,6 +3,15 @@
 #+STYLE: <link rel="stylesheet"href="data/stylesheet.css"type="text/css">
 
 * tests and examples
+** evaluate references
+
+#+begin_src emacs-lisp :var var=`(+ 9 ,(- 19 7))
+  (message "var is %S" var)
+#+end_src
+
+#+results:
+: var is (+ 9 12)
+
 ** tangling and variable resolution
   :PROPERTIES:
   :ID:       18b4f1be-bb1d-49bc-a651-c97406a35bdd
