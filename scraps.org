@@ -3,6 +3,87 @@
 #+STYLE: <link rel="stylesheet"href="data/stylesheet.css"type="text/css">
 
 * tests and examples
+** hline processing
+#+tblname: many-cols
+| a | b | c |
+|---+---+---|
+| d | e | f |
+|---+---+---|
+| g | h | i |
+
+#+tblname: less-cols
+| 1 |
+|---|
+| 2 |
+| 3 |
+
+#+tblname: less-cols2
+| 1 | 2 | 3 |
+
+#+begin_src emacs-lisp :var tab=many-cols
+  (remove 'hline tab)
+  ;; (flet ((rem-hline (el)
+  ;;                   (if (listp el)
+  ;;                       (remove nil (mapcar #'rem-hline el))
+  ;;                     (if (equal 'hline el) nil el))))
+  ;;   (rem-hline tab))
+#+end_src
+
+#+results:
+| a | b | c |
+| d | e | f |
+| g | h | i |
+
+#+begin_src emacs-lisp :var tab=row-and-col-names
+   (message "%S" tab)
+#+end_src
+
+#+results:
+: (("" "c1" "c2" "c3") hline ("r1" 1 4 7) ("r2" 2 5 8) ("r3" 3 6 9))
+
+#+tblname: row-and-col-names
+|    | c1 | c2 | c3 |
+|----+----+----+----|
+| r1 |  1 |  4 |  7 |
+| r2 |  2 |  5 |  8 |
+| r3 |  3 |  6 |  9 |
+
+functions
+#+begin_src emacs-lisp
+  (defun org-babel-del-hlines (table)
+    "Remove all 'hlines from TABLE."
+    (remove 'hline table))
+  
+  (defun org-babel-get-colnames (table)
+    "Return a cons cell, the `car' of which contains the TABLE
+        less colnames, and the `cdr' of which contains a list of the
+        column names"
+    (if (equal 'hline (second table))
+        (cons (cddr table) (car table))
+      table))
+    
+  (defun org-babel-get-rownames (table)
+    "Return a cons cell, the `car' of which contains the TABLE less
+     colnames, and the `cdr' of which contains a list of the column
+     names.  Note: this function removes any hlines in TABLE"
+    (flet ((trans (table) (apply #'mapcar* #'list table)))
+      (let ((table (trans (remove 'hline table))))
+        (cons (cdr table) (car table)))))
+  
+  (defun org-babel-put-colnames (table colnames)
+    "Add COLNAMES to TABLE if they exist."
+    (if colnames (apply 'list colnames 'hline table) table))
+  
+  (defun org-babel-put-rownames (table rownames)
+    "Add ROWNAMES to TABLE if they exist."
+    (if rownames
+        (mapcar (lambda (row)
+                  (if (listp row)
+                      (cons (or (pop rownames) "") row)
+                    row)) table)
+      table))
+#+end_src
+
 ** evaluate references
 
 #+begin_src emacs-lisp :var var=`(+ 9 ,(- 19 7))
