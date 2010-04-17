@@ -21,7 +21,8 @@
 | 1 | 2 | 3 |
 
 #+begin_src emacs-lisp :var tab=many-cols
-  (remove 'hline tab)
+  (message "%S" tab)
+  ;; (remove 'hline tab)
   ;; (flet ((rem-hline (el)
   ;;                   (if (listp el)
   ;;                       (remove nil (mapcar #'rem-hline el))
@@ -29,10 +30,24 @@
   ;;   (rem-hline tab))
 #+end_src
 
+#+begin_src ruby :var tab=less-cols
+  tab
+#+end_src
+
 #+results:
-| a | b | c |
-| d | e | f |
-| g | h | i |
+| 1 |
+|---|
+| 2 |
+| 3 |
+
+#+begin_src ruby :var tab=less-cols :colnames no
+  tab
+#+end_src
+
+#+results:
+| 1 |
+| 2 |
+| 3 |
 
 #+begin_src emacs-lisp :var tab=row-and-col-names
    (message "%S" tab)
@@ -84,14 +99,27 @@ functions
       table))
 #+end_src
 
+** test gnuplot
+
+#+begin_src gnuplot
+  plot sin(x), x+5
+#+end_src
+
 ** evaluate references
 
-#+begin_src emacs-lisp :var var=`(+ 9 ,(- 19 7))
+#+begin_src emacs-lisp :var var=`(+ 9 ,(- 19 7)) :tangle yes
   (message "var is %S" var)
 #+end_src
 
 #+results:
 : var is (+ 9 12)
+
+#+begin_src emacs-lisp
+  (+ 1 2)
+#+end_src
+
+#+results:
+: 3
 
 ** tangling and variable resolution
   :PROPERTIES:
@@ -100,7 +128,7 @@ functions
   :END:
 
 #+source: A
-#+begin_src emacs-lisp :eval no :expand yes :var id=(org-entry-get nil "ID" t)
+#+begin_src emacs-lisp :eval no :expand yes :var id=(org-entry-get nil "ID" t) :var two=2
   (concat "This is the entry ID: " id)
 #+end_src
 
