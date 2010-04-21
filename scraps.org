@@ -40,6 +40,23 @@
 | 2 |
 | 3 |
 
+#+begin_src ruby :var one=2
+  1 + 2
+#+end_src
+
+#+results:
+: 3
+
+#+begin_src python :var tab=less-cols
+  return tab
+#+end_src
+
+#+results:
+| 1 |
+|---|
+| 2 |
+| 3 |
+
 #+begin_src ruby :var tab=less-cols :colnames no
   tab
 #+end_src
@@ -111,15 +128,19 @@ functions
   (message "var is %S" var)
 #+end_src
 
-#+results:
-: var is (+ 9 12)
-
 #+begin_src emacs-lisp
   (+ 1 2)
 #+end_src
 
 #+results:
 : 3
+
+#+begin_src ruby
+  + 1 2
+#+end_src
+
+#+results:
+: nil
 
 ** tangling and variable resolution
   :PROPERTIES:
