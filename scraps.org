@@ -28,6 +28,13 @@
 |---+---|
 | 1 | 2 |
 
+#+begin_src python :var tab=mismatch-colnames :colnames yes
+  return [1,2]
+#+end_src
+
+#+results:
+| 1 | 2 |
+
 ** variable indexing
 #+TBLNAME: MyTable
  |   X |  Y |
