@@ -3,6 +3,42 @@
 #+STYLE: <link rel="stylesheet"href="data/stylesheet.css"type="text/css">
 
 * tests and examples
+** variable indexing
+#+TBLNAME: MyTable
+ |   X |  Y |
+ |-----+----|
+ |   0 |  0 |
+ |   1 |  1 |
+ |   2 |  4 |
+ |   3 |  9 |
+ |   4 | 16 |
+ |   5 | 25 |
+ |-----+----|
+ | Sum | 55 |
+ #+TBLFM: $2=$1*$1::@8$2=vsum(@2..@-1)
+
+#+begin_src python :var sum=MyTable[2:7,1] :exports none
+   return sum
+#+end_src
+
+#+results:
+| 0 | 1 | 4 | 9 | 16 | 25 |
+
+#+begin_src python :var sum=MyTable[9,1] :exports none
+   return sum
+#+end_src
+
+#+results:
+: 55
+
+#+begin_src gnuplot :var data=MyTable[1:-2] :var sum=MyTable[7,1]
+:results silent :exports none
+  reset
+  set label "Sum: %.0f",sum at graph 0.03, graph 0.93
+  plot data with linespoints
+#+end_src
+
+
 ** hline processing
 #+tblname: many-cols
 | a | b | c |
