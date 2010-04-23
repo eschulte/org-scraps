@@ -3,6 +3,31 @@
 #+STYLE: <link rel="stylesheet"href="data/stylesheet.css"type="text/css">
 
 * tests and examples
+** colnames mismatched sizes
+#+tblname: mismatch-colnames
+| a |  b |
+|---+----|
+| 1 |  8 |
+| 2 |  9 |
+| 3 | 10 |
+| 4 | 11 |
+
+#+begin_src python :var tab=mismatch-colnames
+  return [[1, 2, 3]]
+#+end_src
+
+#+results:
+| 1 | 2 | 3 |
+
+#+begin_src python :var tab=mismatch-colnames
+  return [[1, 2]]
+#+end_src
+
+#+results:
+| a | b |
+|---+---|
+| 1 | 2 |
+
 ** variable indexing
 #+TBLNAME: MyTable
  |   X |  Y |
@@ -37,7 +62,6 @@
   set label "Sum: %.0f",sum at graph 0.03, graph 0.93
   plot data with linespoints
 #+end_src
-
 
 ** hline processing
 #+tblname: many-cols
