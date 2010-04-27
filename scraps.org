@@ -3,6 +3,25 @@
 #+STYLE: <link rel="stylesheet"href="data/stylesheet.css"type="text/css">
 
 * tests and examples
+** tangling org
+
+#+begin_src org :tangle ~/Desktop/test.org
+  ,* first
+  ,| eric   | me     |
+  ,| patton | my dog |
+  
+  ,* second
+  
+  ,some more stuff...
+  
+  ,#+HTML: <b>I bet this is quoted</b>
+#+end_src
+
+#+begin_src ruby :tangle ~/Desktop/test.rb
+  # this is a comment
+  eric.map{|l| puts l}
+#+end_src
+
 ** colnames mismatched sizes
 #+tblname: mismatch-colnames
 | a |  b |
