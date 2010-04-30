@@ -3,6 +3,26 @@
 #+STYLE: <link rel="stylesheet"href="data/stylesheet.css"type="text/css">
 
 * tests and examples
+** ben's problem
+** lisps not fully eval'd
+
+#+begin_src emacs-lisp
+  (message "one")
+  (message "two")
+#+end_src
+
+#+results:
+: two
+
+#+begin_src clojure :session :default
+  (println "one")
+  (println "two")
+  (+ 1 2)
+#+end_src
+
+#+results:
+: 3
+
 ** tangling org
 
 #+begin_src org :tangle ~/Desktop/test.org
