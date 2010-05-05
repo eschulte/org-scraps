@@ -3,7 +3,38 @@
 #+STYLE: <link rel="stylesheet"href="data/stylesheet.css"type="text/css">
 
 * tests and examples
-** ben's problem
+** colnames
+
+#+tblname: A
+| a | b | c |
+| d | e | f |
+| g | h | i |
+
+#+begin_src python :var tab=A :colnames yes
+return [[val + '*' for val in row] for row in tab]
+#+end_src
+
+#+results:
+| a  | b  | c  |
+|----+----+----|
+| d* | e* | f* |
+| g* | h* | i* |
+
+#+tblname: A
+| a | b | c |
+| d | e | f |
+| g | h | i |
+
+#+begin_src ruby :var tab=A :colnames yes
+tab.map{|r| r.map{|e| e+"*"} }
+#+end_src
+
+#+results:
+| a  | b  | c  |
+|----+----+----|
+| d* | e* | f* |
+| g* | h* | i* |
+
 ** lisps not fully eval'd
 
 #+begin_src emacs-lisp
