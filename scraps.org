@@ -3,6 +3,22 @@
 #+STYLE: <link rel="stylesheet"href="data/stylesheet.css"type="text/css">
 
 * tests and examples
+** empty code blocks -- and latex vs. LaTeX
+eric
+#+begin_src latex
+  
+#+end_src
+
+michael
+#+begin_src LaTeX
+  
+#+end_src
+
+schulte
+#+begin_src emacs-lisp
+  (message "error")
+#+end_src
+
 ** colnames
 
 #+tblname: A
