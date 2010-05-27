@@ -3,6 +3,39 @@
 #+STYLE: <link rel="stylesheet"href="data/stylesheet.css"type="text/css">
 
 * tests and examples
+** visibility affecting execution
+
+*** folding
+lets test folding
+
+**** folded
+#+begin_src emacs-lisp
+  (message "folded1")
+#+end_src
+
+#+results:
+: folded1
+
+#+begin_src emacs-lisp
+  (message "folded2")
+#+end_src
+
+#+results:
+: folded2
+**** unfolded
+#+begin_src emacs-lisp
+  (message "unfolded1")
+#+end_src
+
+#+results:
+: unfolded1
+#+begin_src emacs-lisp
+  (message "unfolded2")
+#+end_src
+
+#+results:
+: unfolded2
+
 ** empty code blocks -- and latex vs. LaTeX
 eric
 #+begin_src latex
