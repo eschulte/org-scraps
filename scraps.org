@@ -3,6 +3,24 @@
 #+STYLE: <link rel="stylesheet"href="data/stylesheet.css"type="text/css">
 
 * tests and examples
+** appending tangle
+   :PROPERTIES:
+   :tangle:   appended.el
+   :END:
+append all these block
+
+#+begin_src emacs-lisp
+  (message "block %d" 1)
+#+end_src
+
+#+begin_src emacs-lisp
+  (message "block %d" 2)
+#+end_src
+
+#+begin_src emacs-lisp
+  (message "block %d" 3)
+#+end_src
+
 ** visibility affecting execution
 
 *** folding
