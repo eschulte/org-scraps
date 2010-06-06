@@ -3,6 +3,17 @@
 #+STYLE: <link rel="stylesheet"href="data/stylesheet.css"type="text/css">
 
 * tests and examples
+** inline expressions
+   :PROPERTIES:
+   :session:  default
+   :END:
+
+#+begin_src R :exports code :results silent
+  x<-8
+#+end_src
+
+the sum of 1 and 4 is equal to src_R{x}
+
 ** adding file names to literal values on export
 
 #+results: three
