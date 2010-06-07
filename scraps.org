@@ -3,6 +3,32 @@
 #+STYLE: <link rel="stylesheet"href="data/stylesheet.css"type="text/css">
 
 * tests and examples
+** commas on tangling test
+test comma protection on tangling
+
+#+begin_src emacs-lisp :results silent
+  (org-babel-add-interpreter "org")
+  (add-to-list 'org-babel-tangle-langs '("org" "org"))
+#+end_src
+
+#+begin_src org :tangle commas.org
+  ,* org-mode
+  ,  :PROPERTIES:
+  ,  :CUSTOM_ID: comma-protect
+  ,  :END:
+  
+  ,#+begin_src emacs-lisp
+  ,  protected?
+  ,#+end_src
+#+end_src
+
+#+begin_example 
+  ,* this should be
+  # commented out
+  
+  and maybe not this...
+#+end_example
+
 ** simple table
 #+begin_src emacs-lisp
   '((1 2 3) (4 5 6) (7 8 900))
