@@ -3,6 +3,12 @@
 #+STYLE: <link rel="stylesheet"href="data/stylesheet.css"type="text/css">
 
 * tests and examples
+** executing emacs-lisp on export
+
+#+begin_src emacs-lisp
+  (error "eric")
+#+end_src
+
 ** stripping existing results
 #+results: trickily-located-somehwere-else
 : I shouldn't be exported
