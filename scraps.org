@@ -3,6 +3,16 @@
 #+STYLE: <link rel="stylesheet"href="data/stylesheet.css"type="text/css">
 
 * tests and examples
+** simple table
+#+begin_src emacs-lisp
+  '((1 2 3) (4 5 6) (7 8 900))
+#+end_src
+
+#+results:
+| 1 | 2 |   3 |
+| 4 | 5 |   6 |
+| 7 | 8 | 900 |
+
 ** inline expressions
    :PROPERTIES:
    :session:  'default
