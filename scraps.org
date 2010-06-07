@@ -3,6 +3,31 @@
 #+STYLE: <link rel="stylesheet"href="data/stylesheet.css"type="text/css">
 
 * tests and examples
+** export with existing results
+
+#+begin_src emacs-lisp :exports none :results silent
+  '((1 2) (3 4))
+#+end_src
+
+#+results:
+| 1 | 2 |
+| 3 | 4 |
+
+#+begin_src ditaa :file /tmp/eric.png :exports none :results silent
+    +---------------+
+    |               |
+    |               |
+    |               |     +-----------------+
+    |    Eric       |     |                 |
+    |               |     |    Schulte      |
+    |               |     |                 |
+    |               |     +-----------------+
+    +---------------+
+#+end_src
+
+#+results:
+[[file:/tmp/eric.png]]
+
 ** non-empty comint prompt
 
 #+begin_src ruby :session eric
