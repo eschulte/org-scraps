@@ -3,6 +3,15 @@
 #+STYLE: <link rel="stylesheet"href="data/stylesheet.css"type="text/css">
 
 * tests and examples
+** unwind-protect with narrowing
+
+I'm not in the subtree
+
+*** I'm in the subtree
+#+begin_src emacs-lisp
+  (+ 6 "I'm not a number!!")
+#+end_src
+
 ** commas on tangling test
 test comma protection on tangling
 
