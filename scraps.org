@@ -3,6 +3,32 @@
 #+STYLE: <link rel="stylesheet"href="data/stylesheet.css"type="text/css">
 
 * tests and examples
+** updating results "in-situ"
+
+#+results: in-situ
+: update me in place please -- Mon Jun  7 16:44:44 2010
+: update me in place please -- Mon Jun  7 16:44:43 2010
+: update me in place please -- Mon Jun  7 16:44:42 2010
+: update me in place please -- Mon Jun  7 16:44:37 2010
+: update me in place please -- Mon Jun  7 16:42:14 2010
+: update me in place please (at the bottom) -- Mon Jun  7 16:44:59 2010
+: update me in place please (at the bottom) -- Mon Jun  7 16:45:00 2010
+: update me in place please (at the bottom) -- Mon Jun  7 16:45:02 2010
+
+the results should be *above* the block
+
+#+srcname: in-situ
+#+begin_src emacs-lisp :results prepend
+  (format "update me in place please -- %s"
+          (current-time-string))
+#+end_src
+
+#+srcname: in-situ
+#+begin_src emacs-lisp :results append
+  (format "update me in place please (at the bottom) -- %s"
+          (current-time-string))
+#+end_src
+
 ** inhibiting evaluation on export
    :PROPERTIES:
    :noeval:   don't do it
