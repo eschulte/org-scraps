@@ -5,14 +5,16 @@
 * tests and examples
 ** inline expressions
    :PROPERTIES:
-   :session:  default
+   :session:  'default
    :END:
 
 #+begin_src R :exports code :results silent
-  x<-8
+  x<-4
 #+end_src
 
-the sum of 1 and 4 is equal to src_R{x}
+the sum of 1 and x is equal to src_R{x+1}, now I'll sneakily reset
+this value in a hidden inline block src_R[:exports none]{x<-2}, so
+it's value is now src_R{x}.
 
 ** adding file names to literal values on export
 
