@@ -3,6 +3,12 @@
 #+STYLE: <link rel="stylesheet"href="data/stylesheet.css"type="text/css">
 
 * tests and examples
+** non-empty comint prompt
+
+#+begin_src ruby :session eric
+  8 + 9
+#+end_src
+
 ** unwind-protect with narrowing
 
 I'm not in the subtree
