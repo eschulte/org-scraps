@@ -3,6 +3,26 @@
 #+STYLE: <link rel="stylesheet"href="data/stylesheet.css"type="text/css">
 
 * tests and examples
+** stripping existing results
+#+results: trickily-located-somehwere-else
+: I shouldn't be exported
+
+Neither of the result strings for the following two code blocks should
+be included in the export.  And only one of the bodies should be
+included...
+
+#+begin_src emacs-lisp :exports code
+  (+ 1 1 1 1)
+#+end_src
+
+#+results:
+: don't include me in the export!!!!!!!
+
+#+srcname: trickily-located-somehwere-else
+#+begin_src emacs-lisp :exports none
+  (message "I shouldn't be exported")
+#+end_src
+
 ** export with existing results
 
 #+begin_src emacs-lisp :exports none :results silent
