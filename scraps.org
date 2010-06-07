@@ -3,6 +3,16 @@
 #+STYLE: <link rel="stylesheet"href="data/stylesheet.css"type="text/css">
 
 * tests and examples
+** inhibiting evaluation on export
+   :PROPERTIES:
+   :noeval:   don't do it
+   :END:
+
+#+begin_src clojure :session eric :exports none
+  (+ 1 1 1 1)
+  (error)
+#+end_src
+
 ** executing emacs-lisp on export
 
 #+begin_src emacs-lisp
