@@ -3,6 +3,20 @@
 #+STYLE: <link rel="stylesheet"href="data/stylesheet.css"type="text/css">
 
 * tests and examples
+** not expand inlines in examples
+
+: src_emacs-lisp{(+ 1 2 3)}
+
+#+begin_example 
+  src_emacs-lisp{(+ 1 2 3)}
+#+end_example
+
+src_emacs-lisp{(+ 1 2 3)}
+
+#+begin_example 
+  src_emacs-lisp{(+ 1 2 3)}
+#+end_example
+
 ** indented source names
 
    #+srcname: i-am-indented
