@@ -3,6 +3,26 @@
 #+STYLE: <link rel="stylesheet"href="data/stylesheet.css"type="text/css">
 
 * tests and examples
+** indented source names
+
+   #+srcname: i-am-indented
+   #+begin_src emacs-lisp 
+     (message "i am indented")
+   #+end_src
+
+#+results: i-am-indented
+: i am indented
+
+#+begin_src emacs-lisp :var output=i-am-indented
+  (length output)
+#+end_src
+
+#+results:
+: 13
+
+  #+results:
+  : eric
+
 ** updating results "in-situ"
 
 #+results: in-situ
