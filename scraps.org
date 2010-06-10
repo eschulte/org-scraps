@@ -3,6 +3,39 @@
 #+STYLE: <link rel="stylesheet"href="data/stylesheet.css"type="text/css">
 
 * tests and examples
+** indented source-code blocks and indented results
+
+    #+source: time
+    #+begin_src emacs-lisp :results append
+      ;; (list (list (current-time-string)))
+      (current-time-string)
+    #+end_src
+
+    #+results: time
+    | 1 | 2 | 3 |
+
+
+        #+call: time() :results prepend
+
+        #+results: time()
+        | 1 | 2 | 3 |
+        : Thu Jun 10 14:13:21 2010
+        : Thu Jun 10 14:13:21 2010
+        : : Thu Jun 10 14:13:21 2010
+        : : Thu Jun 10 14:13:21 2010
+        : : Thu Jun 10 14:13:21 2010
+        : nil
+        : nil
+        : Thu Jun 10 14:11:22 2010
+        : Thu Jun 10 14:11:20 2010
+        : nil
+        : nil
+        : Thu Jun 10 14:06:04 2010
+        : Thu Jun 10 14:06:03 2010
+        : Thu Jun 10 14:05:51 2010
+        : Thu Jun 10 14:05:57 2010
+        : Thu Jun 10 14:06:00 2010
+
 ** not expand inlines in examples
 
 : src_emacs-lisp{(+ 1 2 3)}
