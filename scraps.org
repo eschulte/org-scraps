@@ -3,6 +3,35 @@
 #+STYLE: <link rel="stylesheet"href="data/stylesheet.css"type="text/css">
 
 * tests and examples
+** can't open indented results
+
+   #+begin_src latex :packages '(("" "tikz") ("active,tightpage" "preview")) :file recursion.pdf
+     \begin{preview}
+     \ovalbox{
+     \begin{tikzpicture}
+     \node{$n$}
+       child {
+         node{$\left(\frac{n}{2}\right)^2$}
+           child{
+             node{$\left(\frac{n}{4}\right)^2$}
+             node{$\left(\frac{n}{4}\right)^2$}
+           }
+         }
+       child{
+         node{$\left(\frac{n}{2}\right)^2$}
+         child{
+           node{$\left(\frac{n}{4}\right)^2$}
+           node{$\left(\frac{n}{4}\right)^2$}
+         }
+       };
+     \end{tikzpicture}
+     }
+     \end{preview}
+   #+end_src
+
+   #+results:
+   [[file:recursion.pdf]]
+
 ** indented source-code blocks and indented results
 
     #+source: time
