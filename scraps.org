@@ -3,6 +3,27 @@
 #+STYLE: <link rel="stylesheet"href="data/stylesheet.css"type="text/css">
 
 * tests and examples
+** don't eat me!
+1) a source block inside of an =enumerate=
+   #+begin_src emacs-lisp :exports results
+     (list (list "I'm hungry" "I'm hungry")
+           (list "I'm hungry" "I'm hungry")
+           (list "I'm hungry" "I'm hungry"))
+   #+end_src
+
+   #+results:
+   | I'm hungry | I'm hungry |
+   | I'm hungry | I'm hungry |
+   | I'm hungry | I'm hungry |
+
+   #+begin_src emacs-lisp
+     (message "don't eat me")
+   #+end_src
+
+   can cause problems
+
+2) source blocks should be able to be on adjacent lines
+
 ** simple reference
 #+tblname: table-the-first
 | 1 | 2 | 3 |
