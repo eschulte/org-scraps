@@ -3,6 +3,16 @@
 #+STYLE: <link rel="stylesheet"href="data/stylesheet.css"type="text/css">
 
 * tests and examples
+** cache on export
+do we export cached blocks
+
+#+begin_src sh :cache yes :exports results
+  date
+#+end_src
+
+#+results[06ed73c6d8d022cf9c323d92af885952865add17]:
+: Thu Jun 17 07:35:19 PDT 2010
+
 ** foo org
    :PROPERTIES:
    :session:  *R*
