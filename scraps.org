@@ -3,6 +3,24 @@
 #+STYLE: <link rel="stylesheet"href="data/stylesheet.css"type="text/css">
 
 * tests and examples
+** tangling
+
+#+begin_src sh :shebang #!/bin/sh :tangle yes
+  date
+#+end_src
+
+#+begin_src sh :shebang #!/bin/bash :tangle whoisme :exports both
+  echo $USER
+#+end_src
+
+#+begin_src emacs-lisp :tangle yes :comments yes
+  (message "BAM")
+#+end_src
+
+#+begin_src fortran :exports both
+  1+8
+#+end_src
+
 ** cache on export
 do we export cached blocks
 
