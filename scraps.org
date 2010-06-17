@@ -3,6 +3,42 @@
 #+STYLE: <link rel="stylesheet"href="data/stylesheet.css"type="text/css">
 
 * tests and examples
+** foo org
+   :PROPERTIES:
+   :session:  *R*
+   :END:
+Figure \ref{fig:one} (p. \pageref{fig:one}) is produced by the following code
+#+BEGIN_SRC R 
+plot(x, y)
+abline(out1)
+#+END_SRC
+Note that =x=, =y=, and =out1= are remembered from the preceding code
+chunk.  We don't have to regenerate them.  All code chunks are part of
+one R "session".
+and more stuff here and then the results
+#+attr_latex: width=0.8\textwidth,placement=[p]
+#+label: fig:one
+#+caption: Scatter Plot with Regression Line
+[[file:fig1.pdf]]
+
+** comments not commented
+
+# $some stuff
+# some more stuff$ -- I should be a comment line
+
+1) a source block inside of an =enumerate=
+   #+source: plotxy
+   #+begin_src emacs-lisp :exports results
+     (message "I think so")
+   #+end_src
+   #+begin_src emacs-lisp
+     (message "don't eat me")
+   #+end_src
+   
+
+   can cause problems
+
+2) how about this one...
 ** don't eat me!
 1) a source block inside of an =enumerate=
    #+begin_src emacs-lisp :exports results
