@@ -3,6 +3,14 @@
 #+STYLE: <link rel="stylesheet"href="data/stylesheet.css"type="text/css">
 
 * tests and examples
+** null values
+#+begin_src emacs-lisp :var notme='()
+  (when (null notme) (message "it's NULL"))
+#+end_src
+
+#+results:
+: it's NULL
+
 ** tangling
 
 #+begin_src sh :shebang #!/bin/sh :tangle yes
@@ -2072,3 +2080,4 @@ while (<>) {
       source(pipe(paste("org-babel-tangle.pl R", file)))
 #+end_src
       
+
