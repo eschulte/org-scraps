@@ -3,6 +3,8 @@
 *.png
 *.html
 *.aux
+*.bbl
+*.blg
 *.log
 *.out
 *.tex
