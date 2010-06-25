@@ -3,6 +3,27 @@
 #+STYLE: <link rel="stylesheet"href="data/stylesheet.css"type="text/css">
 
 * tests and examples
+** multiple evals for refs
+#+begin_src emacs-lisp
+  (setq counter 0)
+#+end_src
+
+#+results:
+: 0
+
+#+source: counter
+#+begin_src emacs-lisp
+  (setq counter (+ 1 counter))
+  counter
+#+end_src
+
+#+begin_src emacs-lisp :var counter_val=counter
+  counter_val
+#+end_src
+
+#+results:
+: 3
+
 ** tangling
 
 #+begin_src sh :shebang #!/bin/sh :tangle yes
