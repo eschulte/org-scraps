@@ -3,6 +3,32 @@
 #+STYLE: <link rel="stylesheet"href="data/stylesheet.css"type="text/css">
 
 * tests and examples
+** protecting block bodies
+neither of these work as expected
+
+#+begin_src org
+  ,#+TITLE: stuff
+  
+  ,#+begin_src emacs-lisp
+  ,  (message "something")
+  ,#+end_src
+  
+  ,more stuffs
+  
+  ,#+resname: something
+  ,: value
+  
+  ,# and a comment
+#+end_src
+
+#+begin_html 
+<pre>
+#comment
+#+end_src
+</pre>
+#+end_html
+final
+
 ** multiple evals for refs
 #+begin_src emacs-lisp
   (setq counter 0)
