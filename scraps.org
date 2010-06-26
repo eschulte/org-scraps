@@ -34,9 +34,16 @@
 | g | h | i |
 
 #+source: echo-table
-#+begin_src python :var tab=many-cols
+#+begin_src python :var tab=many-cols :hlines yes
   return tab
 #+end_src
+
+#+results: echo-table
+| a | b | c |
+|---+---+---|
+| d | e | f |
+|---+---+---|
+| g | h | i |
 
 #+begin_src emacs-lisp :var table=echo-table
   (butlast (apply #'append (mapcar (lambda (el) (list el 'hline)) table)))
