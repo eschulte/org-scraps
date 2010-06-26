@@ -3,6 +3,52 @@
 #+STYLE: <link rel="stylesheet"href="data/stylesheet.css"type="text/css">
 
 * tests and examples
+** possible prefixes
+
+| prefix   | remaining characters |
+|----------+----------------------|
+| ob-      |                    5 |
+| org-b-   |                    2 |
+| orgb-    |                    3 |
+| org-bbl- |                    0 |
+| bbl-     |                    4 |
+| babel-   |                    2 |
+#+TBLFM: $2='(sbe leftover (prefix $$1))
+
+#+source: leftover
+#+begin_src emacs-lisp :var prefix=""
+  (-
+   ;; length w/o .el
+   (- 13 (length ".el"))
+   ;; length of prefix
+   (length prefix))
+#+end_src
+
+** hlines in python
+
+#+tblname: many-cols
+| a | b | c |
+|---+---+---|
+| d | e | f |
+|---+---+---|
+| g | h | i |
+
+#+source: echo-table
+#+begin_src python :var tab=many-cols
+  return tab
+#+end_src
+
+#+begin_src emacs-lisp :var table=echo-table
+  (butlast (apply #'append (mapcar (lambda (el) (list el 'hline)) table)))
+#+end_src
+
+#+results:
+| a | b | c |
+|---+---+---|
+| d | e | f |
+|---+---+---|
+| g | h | i |
+
 ** protecting block bodies
 neither of these work as expected
 
@@ -507,6 +553,7 @@ schulte
 
 #+tblname: A
 | a | b | c |
+|---+---+---|
 | d | e | f |
 | g | h | i |
 
