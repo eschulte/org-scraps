@@ -3,6 +3,12 @@
 #+STYLE: <link rel="stylesheet"href="data/stylesheet.css"type="text/css">
 
 * tests and examples
+** table-label
+#+label: bam
+| 1 |
+| 2 |
+| 3 |
+
 ** haskell issues
 
 #+begin_src haskell
@@ -80,6 +86,16 @@
 | d | e | f |
 |---+---+---|
 | g | h | i |
+
+
+#+begin_src python
+  return [['foo', 'bar', 'baz'], ["a", "b", "None of the above"], ['1', 2, 3]]
+#+end_src
+
+#+results:
+| foo | bar | baz               |
+| a   | b   | None of the above |
+| 1   | 2   | 3                 |
 
 ** protecting block bodies
 neither of these work as expected
