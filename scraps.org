@@ -3,6 +3,31 @@
 #+STYLE: <link rel="stylesheet"href="data/stylesheet.css"type="text/css">
 
 * tests and examples
+** haskell issues
+
+#+begin_src haskell
+  length [1, 2]
+#+end_src
+
+#+results:
+: 2
+
+#+tblname: example-4-haskell
+| 1 |
+| 2 |
+| 3 |
+| 4 |
+| 5 |
+| 6 |
+| 7 |
+
+#+begin_src haskell :var this=example-4-haskell
+  length this
+#+end_src
+
+#+results:
+: 7
+
 ** possible prefixes
 
 | prefix   | remaining characters |
@@ -73,6 +98,23 @@ neither of these work as expected
   
   ,# and a comment
 #+end_src
+
+#+begin_src org
+  ,* example org
+  
+  ,# this is a comment
+  ,this is not a comment
+#+end_src
+
+
+#+begin_src org
+  ,* escaped org-mode markup
+  
+  ,this should be exported as is
+  ,#+results: escaping-example
+  ,: 24
+#+end_src
+
 
 #+begin_html 
 <pre>
