@@ -3,6 +3,23 @@
 #+STYLE: <link rel="stylesheet"href="data/stylesheet.css"type="text/css">
 
 * tests and examples
+** captions
+
+#+caption: I'm not removed from export
+#+label: also-not-removed
+| A | B |
+| 1 | 2 |
+
+** booktabs
+#+tblname: months
+| num | Abbrev. |
+|-----+---------|
+|   1 | Jan.    |
+|   2 | Feb.    |
+|   3 | Mar.    |
+
+#+call: booktabs(table=months, align="r|l") :results latex :exports results
+
 ** complex
 #+source: raw-data
 #+begin_src sh :results scalar
