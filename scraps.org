@@ -3,6 +3,28 @@
 #+STYLE: <link rel="stylesheet"href="data/stylesheet.css"type="text/css">
 
 * tests and examples
+** table comment issue
+#+BEGIN_changemargin {-4.2cm}{0cm}
+  #+TBLNAME: AutresFPNVE
+  #+ATTR_LaTeX: align=lrrrrr
+  |   |                                          | Montant total (\EUR) | Taux amort (\%) | Part pro. (\%) | Déduc (\%) | NVE (\EUR) |
+  |---+------------------------------------------+----------------------+-----------------+----------------+------------+------------|
+  |   | Documentation et formation               |                51.05 |                 |                |            |       0.00 |
+  |   | Communications GSM                       |               831.16 |             100 |             25 |        100 |     207.79 |
+  |   | Internet (Dommel)                        |               167.88 |             100 |             33 |        100 |      55.40 |
+  |   | Fournitures à amortir (ordinateur + GSM) |               762.51 |              33 |             80 |        100 |     201.30 |
+  |   | Restaurant                               |               304.70 |             100 |            100 |         69 |     210.24 |
+  |---+------------------------------------------+----------------------+-----------------+----------------+------------+------------|
+  |   | Total                                    |                      |                 |                |            |    1062.02 |
+  | ^ |                                          |                      |                 |                |            |      Total |
+  #+TBLFM: $7=$3*$4*$5*$6/1000000;%.2f::@2$3=51.05::@3$3=9.00+184.88+51.22+201.82+45.67+69.03+62.93+54.16+38.87+39.77+36.35+37.46::@4$3=12*13.99::@6$3=146.50+158.20;%.2f::@7$7=vsum(@-I..@-II);%.2f
+#+END_changemargin
+
+** latex literals in export
+
+  #+ATTR_LaTeX: width=\textwidth
+  [[./composite-pattern.png]]
+
 ** captions
 
 #+caption: I'm not removed from export
