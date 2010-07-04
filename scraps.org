@@ -3,6 +3,98 @@
 #+STYLE: <link rel="stylesheet"href="data/stylesheet.css"type="text/css">
 
 * tests and examples
+** python errors
+#+begin_src ruby :session :results value
+  [1, [2], 3, 4]
+#+end_src
+
+#+results:
+| 1 | (2) | 3 | 4 |
+
+#+begin_src ruby :results output :session
+  [1, 2, 3, 4, 6].map{|n| puts n}
+#+end_src
+
+#+results:
+: 1
+: 2
+: 3
+: 4
+: 6
+
+#+begin_src python :session :results output
+  print 9
+#+end_src
+
+#+results: R-with-colnames
+| one |
+|-----|
+| 1   |
+
+#+begin_src R :results output
+  "something"
+#+end_src
+
+#+results:
+: [1] "something"
+
+#+begin_src R :session *R* :results output
+  1
+  2
+  3
+  4
+#+end_src
+
+#+results:
+: [1] 1
+: [1] 2
+: [1] 3
+: [1] 4
+
+#+begin_src perl :results output
+  print "8\n";
+  print "9\n";
+#+end_src
+
+#+results:
+: 8
+: 9
+
+#+begin_src clojure
+  (+ 8 7)
+#+end_src
+
+#+results:
+: 15
+
+#+begin_src clojure :session *clj*
+  (println "eric")
+#+end_src
+
+#+results:
+: nil
+
+#+begin_src perl :results value
+  8
+#+end_src
+
+#+results:
+: 8
+
+#+begin_src c++ :includes '(<stdio.h> <math.h> <cstdlib> <time.h>)
+  printf("eric schulte\n");
+#+end_src
+
+#+results:
+: eric schulte
+
+#+begin_src sh
+  echo 78
+#+end_src
+
+#+results:
+: 78
+
 ** tangle R w/comments
    :PROPERTIES:
    :tangle:   with-comments.r
@@ -186,8 +278,6 @@ save me!
 #+begin_src emacs-lisp :exports results
   (message "Exist")
 #+end_src
-
-
 
 ** protecting block bodies
 neither of these work as expected
