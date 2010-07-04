@@ -3,6 +3,20 @@
 #+STYLE: <link rel="stylesheet"href="data/stylesheet.css"type="text/css">
 
 * tests and examples
+** tangle R w/comments
+   :PROPERTIES:
+   :tangle:   with-comments.r
+   :END:
+
+#+begin_src R
+  x <- 8
+#+end_src
+
+#+begin_src emacs-lisp
+  (setq org-babel-tangle-w-comments t)
+  (message "poopies")
+#+end_src
+
 ** table comment issue
 #+BEGIN_changemargin {-4.2cm}{0cm}
   #+TBLNAME: AutresFPNVE
@@ -17,8 +31,31 @@
   |---+------------------------------------------+----------------------+-----------------+----------------+------------+------------|
   |   | Total                                    |                      |                 |                |            |    1062.02 |
   | ^ |                                          |                      |                 |                |            |      Total |
-  #+TBLFM: $7=$3*$4*$5*$6/1000000;%.2f::@2$3=51.05::@3$3=9.00+184.88+51.22+201.82+45.67+69.03+62.93+54.16+38.87+39.77+36.35+37.46::@4$3=12*13.99::@6$3=146.50+158.20;%.2f::@7$7=vsum(@-I..@-II);%.2f
+  #+tblfm: $7=$3*$4*$5*$6/1000000;%.2f::@2$3=51.05::@3$3=9.00+184.88+51.22+201.82+45.67+69.03+62.93+54.16+38.87+39.77+36.35+37.46::@4$3=12*13.99::@6$3=146.50+158.20;%.2f::@7$7=vsum(@-I..@-II);%.2f
 #+END_changemargin
+
+save me!
+
+#+begin_src org
+  ,  #+TBLNAME: AutresFPNVE
+  ,  #+ATTR_LaTeX: align=lrrrrr
+  ,  |   |                                          | Montant total (\EUR) | Taux amort (\%) | Part pro. (\%) | Déduc (\%) | NVE (\EUR) |
+  ,  |---+------------------------------------------+----------------------+-----------------+----------------+------------+------------|
+  ,  |   | Documentation et formation               |                51.05 |                 |                |            |       0.00 |
+  ,  |   | Communications GSM                       |               831.16 |             100 |             25 |        100 |     207.79 |
+  ,  |   | Internet (Dommel)                        |               167.88 |             100 |             33 |        100 |      55.40 |
+  ,  |   | Fournitures à amortir (ordinateur + GSM) |               762.51 |              33 |             80 |        100 |     201.30 |
+  ,  |   | Restaurant                               |               304.70 |             100 |            100 |         69 |     210.24 |
+  ,  |---+------------------------------------------+----------------------+-----------------+----------------+------------+------------|
+  ,  |   | Total                                    |                      |                 |                |            |    1062.02 |
+  ,  | ^ |                                          |                      |                 |                |            |      Total |
+  ,  #+TBLFM: $7=$3*$4*$5*$6/1000000;%.2f::@2$3=51.05::@3$3=9.00+184.88+51.22+201.82+45.67+69.03+62.93+54.16+38.87+39.77+36.35+37.46::@4$3=12*13.99::@6$3=146.50+158.20;%.2f::@7$7=vsum(@-I..@-II);%.2f
+#+end_src
+
+#+begin_example 
+#+tblname: example
+| 1 | 2 |
+#+end_example
 
 ** latex literals in export
 
@@ -132,37 +169,25 @@
 | g | h | i |
 
 #+source: echo-table
-#+begin_src python :var tab=many-cols :hlines yes
+#+begin_src python :var tab=many-cols :hlines yes :exports both :session
   return tab
 #+end_src
 
-#+results: echo-table
-| a | b | c |
-|---+---+---|
-| d | e | f |
-|---+---+---|
-| g | h | i |
-
-#+begin_src emacs-lisp :var table=echo-table
+#+begin_src emacs-lisp :var table=echo-table :exports none
   (butlast (apply #'append (mapcar (lambda (el) (list el 'hline)) table)))
 #+end_src
 
-#+results:
-| a | b | c |
-|---+---+---|
-| d | e | f |
-|---+---+---|
-| g | h | i |
+#+call: echo-table(tab=many-cols)
 
-
-#+begin_src python
+#+begin_src python :exports results
   return [['foo', 'bar', 'baz'], ["a", "b", "None of the above"], ['1', 2, 3]]
 #+end_src
 
-#+results:
-| foo | bar | baz               |
-| a   | b   | None of the above |
-| 1   | 2   | 3                 |
+#+begin_src emacs-lisp :exports results
+  (message "Exist")
+#+end_src
+
+
 
 ** protecting block bodies
 neither of these work as expected
