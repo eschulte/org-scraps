@@ -3,6 +3,27 @@
 #+STYLE: <link rel="stylesheet"href="data/stylesheet.css"type="text/css">
 
 * tests and examples
+** dot
+#+begin_src dot :file models.png :cmdline -Tpng
+  digraph data_relationships {
+    "data_requirement" [shape=Mrecord, label="{DataRequirement|description\lformat\l}"]
+    "data_product" [shape=Mrecord, label="{DataProduct|name\lversion\lpoc\lformat\l}"]
+    "data_requirement" -> "data_product"
+  }
+#+end_src
+
+#+results:
+[[file:models.png]]
+
+** Tom found a bug
+
+#+begin_src emacs-lisp
+  (list 1 (+ 2 3))
+#+end_src
+
+#+results:
+| 1 | 5 |
+
 ** python errors
 #+begin_src ruby :session :results value
   [1, [2], 3, 4]
@@ -100,11 +121,11 @@
    :tangle:   with-comments.r
    :END:
 
-#+begin_src R
+#+begin_src R :comments yes
   x <- 8
 #+end_src
 
-#+begin_src emacs-lisp
+#+begin_src emacs-lisp :tangle no
   (setq org-babel-tangle-w-comments t)
   (message "poopies")
 #+end_src
