@@ -39,7 +39,7 @@ looking at paths
 | 1 | 5 |
 
 ** python errors
-#+begin_src ruby :session :results value
+#+begin_src python :session :results value
   [1, [2], 3, 4]
 #+end_src
 
