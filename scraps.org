@@ -12,6 +12,11 @@
 
 and now for src_emacs-lisp{87} an inline block
 
+looking at paths
+#+begin_src emacs-lisp
+  (buffer-file-name)
+#+end_src
+
 ** dot
 #+begin_src dot :file models.png :cmdline -Tpng
   digraph data_relationships {
@@ -125,10 +130,9 @@ and now for src_emacs-lisp{87} an inline block
 #+results:
 : 78
 
-** tangle R w/comments
+** tangle R and load
    :PROPERTIES:
-   :tangle:   with-comments.r
-   :session:  *R*
+   :tangle:   to-load.r
    :END:
 
 #+begin_src R :comments yes
@@ -137,11 +141,6 @@ and now for src_emacs-lisp{87} an inline block
 
 #+begin_src R
   y <- 9
-#+end_src
-
-#+begin_src emacs-lisp :tangle no
-  (setq org-babel-tangle-w-comments t)
-  (message "poopies")
 #+end_src
 
 ** table comment issue
@@ -1346,11 +1345,11 @@ now applying our Fibonacci function
 #+end_src
 
 #+begin_src emacs-lisp :comments no
-  (setq my-shebang "poop")
+  (setq my-shebang "foo")
 #+end_src
 
 #+results:
-: poop
+: foo
 
 #+begin_src ruby :shebang #!/usr/bin/ruby
   puts :nonstandard_shebang
