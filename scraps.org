@@ -3,6 +3,30 @@
 #+STYLE: <link rel="stylesheet"href="data/stylesheet.css"type="text/css">
 
 * tests and examples
+** export blocks w/o languages
+should raise an error
+
+source
+#+begin_src emacs-lisp
+  ;; this is a comment
+  (+ 1 1 1)
+#+end_src
+
+broken source
+#+begin_src
+  (+ 2 2 2)
+#+end_src
+
+example
+#+begin_example 
+  this is exampled
+#+end_example
+
+#+begin_src ruby
+  # this is the first
+  [1, 2, 3, 4, 5].map{|r| r+1}
+#+end_src
+
 ** scratch
 
 #+begin_src emacs-lisp :exports results
