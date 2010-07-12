@@ -3,6 +3,34 @@
 #+STYLE: <link rel="stylesheet"href="data/stylesheet.css"type="text/css">
 
 * tests and examples
+** example w/o source name
+
+delete emacs-lisp below for errors
+#+begin_src emacs-lisp
+  (* (+ 1 1 1) (+ 1 1 1) (+ 1 1 1) (+ 1 1 1) (+ 1 1 1) (+ 1 1 1) (+ 1 1 1))
+#+end_src
+
+** limited precision
+
+#+results: anova-example
+| Effect | DFn | DFd |             SSn |              SSd |                F |                    p | p<.05 |              pes |
+|--------+-----+-----+-----------------+------------------+------------------+----------------------+-------+------------------|
+| Days   |   9 | 153 | 166235.12250176 | 151101.038615303 | 18.7026979326383 | 8.99534541600196e-21 | *     | 0.52384550792003 |
+
+#+begin_src emacs-lisp :var tab=anova-example :colnames yes :cache yes
+  (mapcar
+   (lambda (row)
+     (mapcar
+      (lambda (cell) (if (numberp cell) (format "%.4f" cell) cell))
+      row))
+   tab)
+#+end_src
+
+#+results[16ac354f1e7a65594bb59e252ab221e6a4b10f80]:
+| Effect |    DFn |      DFd |         SSn |         SSd |       F |                    p | p<.05 |    pes |
+|--------+--------+----------+-------------+-------------+---------+----------------------+-------+--------|
+| Days   | 9.0000 | 153.0000 | 166235.1225 | 151101.0386 | 18.7027 | 8.99534541600196e-21 | *     | 0.5238 |
+
 ** export blocks w/o languages
 should raise an error
 
@@ -13,7 +41,7 @@ source
 #+end_src
 
 broken source
-#+begin_src
+#+begin_src 
   (+ 2 2 2)
 #+end_src
 
