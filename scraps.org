@@ -3,6 +3,63 @@
 #+STYLE: <link rel="stylesheet"href="data/stylesheet.css"type="text/css">
 
 * tests and examples
+** fixing result insertion
+needs to replace the results when there is a new hash
+
+*** normal results
+#+begin_src sh
+  date
+#+end_src
+
+#+results:
+: Mon Jul 12 22:18:16 PDT 2010
+
+*** unnamed source block results
+#+begin_src emacs-lisp :cache yes
+  (+ 1 2 3 4)
+#+end_src
+
+#+results[16a776d6d139e1d39e99d736536a546df115c2dc]:
+: 10
+
+#+begin_src emacs-lisp :cache yes
+  (list '(1 2 3) '(4 5 6))
+#+end_src
+
+#+results[53f489ed6977857b9945d79d06e575b2cbbebf11]:
+| 1 | 2 | 3 |
+| 4 | 5 | 6 |
+
+*** named source block results
+
+#+srcname: something-w-table
+#+begin_src emacs-lisp
+  (sleep-for 2)
+  (list '(1 2 3) '(4 5 8))
+#+end_src
+
+#+source: something
+#+begin_src emacs-lisp :cache yes
+  (+ 1 2 3 4 8)
+#+end_src
+
+Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enimad
+minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+aliquip ex ea commodo consequat. Duis aute irure dolor in
+reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
+culpa qui officia deserunt mollit anim id est laborum.
+
+# something else
+#+results[d053f6643d9dc52a0e804c15f2a762da73a00a07]: something
+: 18
+
+#+attr_latex: width=0.4\textwidth
+#+results[5fac69648ab749ef9ee88ea65b3d49d93f3f6cc8]: something-w-table
+| 1 | 2 | 3 |
+| 4 | 5 | 8 |
+
 ** example w/o source name
 
 delete emacs-lisp below for errors
@@ -184,15 +241,25 @@ looking at paths
 
 ** tangle R and load
    :PROPERTIES:
-   :tangle:   to-load.r
+   :tangle:   with-comments.r
+   :comments: yes
    :END:
 
-#+begin_src R :comments yes
+#+begin_src R :tangle no
+  z <- 0
+#+end_src
+
+#+begin_src R
   x <- 8
 #+end_src
 
 #+begin_src R
   y <- 9
+#+end_src
+
+#+srcname: i-have-a-name
+#+begin_src R 
+  x+y+z
 #+end_src
 
 ** table comment issue
