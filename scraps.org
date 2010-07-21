@@ -3,13 +3,530 @@
 #+STYLE: <link rel="stylesheet"href="data/stylesheet.css"type="text/css">
 
 * tests and examples
-** null values
-#+begin_src emacs-lisp :var notme='()
-  (when (null notme) (message "it's NULL"))
+** input from an example block
+#+results: lorem
+#+begin_example 
+  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+  eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+  enimad minim veniam, quis nostrud exercitation ullamco laboris nisi
+  ut aliquip ex ea commodo consequat. Duis aute irure dolor in
+  reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+  pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
+  culpa qui officia deserunt mollit anim id est laborum.
+#+end_example
+
+#+begin_src emacs-lisp :var lorem=lorem
+  (message "%d words in Lorem" (length (split-string lorem)))
 #+end_src
 
 #+results:
-: it's NULL
+: 68 words in Lorem
+
+#+results: 1D
+| 1 |
+| 2 |
+| 3 |
+| 4 |
+
+#+begin_src emacs-lisp :var lst=1D[:,0]
+  lst
+#+end_src
+
+#+results:
+: 1
+
+** fixing result insertion
+needs to replace the results when there is a new hash
+
+*** normal results
+#+begin_src sh
+  date
+#+end_src
+
+#+results:
+: Mon Jul 12 22:18:16 PDT 2010
+
+*** unnamed source block results
+#+begin_src emacs-lisp :cache yes
+  (+ 1 2 3 4)
+#+end_src
+
+#+results[16a776d6d139e1d39e99d736536a546df115c2dc]:
+: 10
+
+#+begin_src emacs-lisp :cache yes
+  (list '(1 2 3) '(4 5 6))
+#+end_src
+
+#+results[53f489ed6977857b9945d79d06e575b2cbbebf11]:
+| 1 | 2 | 3 |
+| 4 | 5 | 6 |
+
+*** named source block results
+
+#+srcname: something-w-table
+#+begin_src emacs-lisp
+  (sleep-for 2)
+  (list '(1 2 3) '(4 5 8))
+#+end_src
+
+#+source: something
+#+begin_src emacs-lisp :cache yes
+  (+ 1 2 3 4 8)
+#+end_src
+
+Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enimad
+minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+aliquip ex ea commodo consequat. Duis aute irure dolor in
+reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
+culpa qui officia deserunt mollit anim id est laborum.
+
+# something else
+#+results[d053f6643d9dc52a0e804c15f2a762da73a00a07]: something
+: 18
+
+#+attr_latex: width=0.4\textwidth
+#+results[5fac69648ab749ef9ee88ea65b3d49d93f3f6cc8]: something-w-table
+| 1 | 2 | 3 |
+| 4 | 5 | 8 |
+
+** example w/o source name
+
+delete emacs-lisp below for errors
+#+begin_src emacs-lisp
+  (* (+ 1 1 1) (+ 1 1 1) (+ 1 1 1) (+ 1 1 1) (+ 1 1 1) (+ 1 1 1) (+ 1 1 1))
+#+end_src
+
+** limited precision
+
+#+results: anova-example
+| Effect | DFn | DFd |             SSn |              SSd |                F |                    p | p<.05 |              pes |
+|--------+-----+-----+-----------------+------------------+------------------+----------------------+-------+------------------|
+| Days   |   9 | 153 | 166235.12250176 | 151101.038615303 | 18.7026979326383 | 8.99534541600196e-21 | *     | 0.52384550792003 |
+
+#+begin_src emacs-lisp :var tab=anova-example :colnames yes :cache yes
+  (mapcar
+   (lambda (row)
+     (mapcar
+      (lambda (cell) (if (numberp cell) (format "%.4f" cell) cell))
+      row))
+   tab)
+#+end_src
+
+#+results[16ac354f1e7a65594bb59e252ab221e6a4b10f80]:
+| Effect |    DFn |      DFd |         SSn |         SSd |       F |                    p | p<.05 |    pes |
+|--------+--------+----------+-------------+-------------+---------+----------------------+-------+--------|
+| Days   | 9.0000 | 153.0000 | 166235.1225 | 151101.0386 | 18.7027 | 8.99534541600196e-21 | *     | 0.5238 |
+
+** export blocks w/o languages
+should raise an error
+
+source
+#+begin_src emacs-lisp
+  ;; this is a comment
+  (+ 1 1 1)
+#+end_src
+
+broken source
+#+begin_src 
+  (+ 2 2 2)
+#+end_src
+
+example
+#+begin_example 
+  this is exampled
+#+end_example
+
+#+begin_src ruby
+  # this is the first
+  [1, 2, 3, 4, 5].map{|r| r+1}
+#+end_src
+
+** scratch
+
+#+begin_src emacs-lisp :exports results
+  (+ 1 1 1 1)
+  (setq org-export-babel-evaluate t)
+#+end_src
+
+and now for src_emacs-lisp{87} an inline block
+
+looking at paths
+#+begin_src emacs-lisp
+  (buffer-file-name)
+#+end_src
+
+** dot
+#+begin_src dot :file models.png :cmdline -Tpng
+  digraph data_relationships {
+    "data_requirement" [shape=Mrecord, label="{DataRequirement|description\lformat\l}"]
+    "data_product" [shape=Mrecord, label="{DataProduct|name\lversion\lpoc\lformat\l}"]
+    "data_requirement" -> "data_product"
+  }
+#+end_src
+
+#+results:
+[[file:models.png]]
+
+** Tom found a bug
+
+#+begin_src emacs-lisp :tangle something.el
+  (list 1 (+ 2 3))
+#+end_src
+
+#+results:
+| 1 | 5 |
+
+** python errors
+#+begin_src python :session :results value
+  [1, [2], 3, 4]
+#+end_src
+
+#+results:
+| 1 | (2) | 3 | 4 |
+
+#+begin_src ruby :results output :session
+  [1, 2, 3, 4, 6].map{|n| puts n}
+#+end_src
+
+#+results:
+: 1
+: 2
+: 3
+: 4
+: 6
+
+#+begin_src python :session :results output
+  print 9
+#+end_src
+
+#+results: R-with-colnames
+| one |
+|-----|
+| 1   |
+
+#+begin_src R :results output
+  "something"
+#+end_src
+
+#+results:
+: [1] "something"
+
+#+begin_src R :session *R* :results output
+  1
+  2
+  3
+  4
+#+end_src
+
+#+results:
+: [1] 1
+: [1] 2
+: [1] 3
+: [1] 4
+
+#+begin_src perl :results output
+  print "8\n";
+  print "9\n";
+#+end_src
+
+#+results:
+: 8
+: 9
+
+#+begin_src clojure
+  (+ 8 7)
+#+end_src
+
+#+results:
+: 15
+
+#+begin_src clojure :session *clj*
+  (println "eric")
+#+end_src
+
+#+results:
+: nil
+
+#+begin_src perl :results value
+  8
+#+end_src
+
+#+results:
+: 8
+
+#+begin_src c++ :includes '(<stdio.h> <math.h> <cstdlib> <time.h>)
+  printf("eric schulte\n");
+#+end_src
+
+#+results:
+: eric schulte
+
+#+begin_src sh
+  echo 78
+#+end_src
+
+#+results:
+: 78
+
+** tangle R and load
+   :PROPERTIES:
+   :tangle:   with-comments.r
+   :comments: yes
+   :END:
+
+#+begin_src R :tangle no
+  z <- 0
+#+end_src
+
+#+begin_src R
+  x <- 8
+#+end_src
+
+#+begin_src R
+  y <- 9
+#+end_src
+
+#+srcname: i-have-a-name
+#+begin_src R 
+  x+y+z
+#+end_src
+
+** table comment issue
+#+BEGIN_changemargin {-4.2cm}{0cm}
+  #+TBLNAME: AutresFPNVE
+  #+ATTR_LaTeX: align=lrrrrr
+  |   |                                          | Montant total (\EUR) | Taux amort (\%) | Part pro. (\%) | Déduc (\%) | NVE (\EUR) |
+  |---+------------------------------------------+----------------------+-----------------+----------------+------------+------------|
+  |   | Documentation et formation               |                51.05 |                 |                |            |       0.00 |
+  |   | Communications GSM                       |               831.16 |             100 |             25 |        100 |     207.79 |
+  |   | Internet (Dommel)                        |               167.88 |             100 |             33 |        100 |      55.40 |
+  |   | Fournitures à amortir (ordinateur + GSM) |               762.51 |              33 |             80 |        100 |     201.30 |
+  |   | Restaurant                               |               304.70 |             100 |            100 |         69 |     210.24 |
+  |---+------------------------------------------+----------------------+-----------------+----------------+------------+------------|
+  |   | Total                                    |                      |                 |                |            |    1062.02 |
+  | ^ |                                          |                      |                 |                |            |      Total |
+  #+tblfm: $7=$3*$4*$5*$6/1000000;%.2f::@2$3=51.05::@3$3=9.00+184.88+51.22+201.82+45.67+69.03+62.93+54.16+38.87+39.77+36.35+37.46::@4$3=12*13.99::@6$3=146.50+158.20;%.2f::@7$7=vsum(@-I..@-II);%.2f
+#+END_changemargin
+
+save me!
+
+#+begin_src org
+  ,  #+TBLNAME: AutresFPNVE
+  ,  #+ATTR_LaTeX: align=lrrrrr
+  ,  |   |                                          | Montant total (\EUR) | Taux amort (\%) | Part pro. (\%) | Déduc (\%) | NVE (\EUR) |
+  ,  |---+------------------------------------------+----------------------+-----------------+----------------+------------+------------|
+  ,  |   | Documentation et formation               |                51.05 |                 |                |            |       0.00 |
+  ,  |   | Communications GSM                       |               831.16 |             100 |             25 |        100 |     207.79 |
+  ,  |   | Internet (Dommel)                        |               167.88 |             100 |             33 |        100 |      55.40 |
+  ,  |   | Fournitures à amortir (ordinateur + GSM) |               762.51 |              33 |             80 |        100 |     201.30 |
+  ,  |   | Restaurant                               |               304.70 |             100 |            100 |         69 |     210.24 |
+  ,  |---+------------------------------------------+----------------------+-----------------+----------------+------------+------------|
+  ,  |   | Total                                    |                      |                 |                |            |    1062.02 |
+  ,  | ^ |                                          |                      |                 |                |            |      Total |
+  ,  #+TBLFM: $7=$3*$4*$5*$6/1000000;%.2f::@2$3=51.05::@3$3=9.00+184.88+51.22+201.82+45.67+69.03+62.93+54.16+38.87+39.77+36.35+37.46::@4$3=12*13.99::@6$3=146.50+158.20;%.2f::@7$7=vsum(@-I..@-II);%.2f
+#+end_src
+
+#+begin_example 
+#+tblname: example
+| 1 | 2 |
+#+end_example
+
+** latex literals in export
+
+  #+ATTR_LaTeX: width=\textwidth
+  [[./composite-pattern.png]]
+
+** captions
+
+#+caption: I'm not removed from export
+#+label: also-not-removed
+| A | B |
+| 1 | 2 |
+
+** booktabs
+#+tblname: months
+| num | Abbrev. |
+|-----+---------|
+|   1 | Jan.    |
+|   2 | Feb.    |
+|   3 | Mar.    |
+
+#+call: booktabs(table=months, align="r|l") :results latex :exports results
+
+** complex
+#+source: raw-data
+#+begin_src sh :results scalar
+  wget --quiet -qO- "http://ogdi.cloudapp.net/v1/dc/RecreationParks?format=json"
+#+end_src
+
+#+source: dc-parks
+#+begin_src emacs-lisp :var keys='(ward area) :var data=raw-data
+  (mapcar
+    (lambda (lis) (mapcar (lambda (key) (cdr (assoc key lis))) keys))
+    (cdr (car (with-temp-buffer
+                (insert data) (goto-char (point-min))
+                (json-read)))))
+#+end_src
+
+#+source: dc-parks-metric
+#+begin_src ruby :var data=dc-parks
+  data.map{|f| [f[0], 2.59 * f[1]]}
+#+end_src
+
+#+begin_src R :var parkData=dc-parks-metric :file parks.png :session *R*
+  plot(parkData)
+  title(main="Park size by Ward")
+#+end_src
+
+#+results:
+[[file:parks.png]]
+
+** table-label
+#+label: bam
+| 1 |
+| 2 |
+| 3 |
+
+** haskell issues
+
+#+begin_src haskell
+  length [1, 2]
+#+end_src
+
+#+results:
+: 2
+
+#+tblname: example-4-haskell
+| 1 |
+| 2 |
+| 3 |
+| 4 |
+| 5 |
+| 6 |
+| 7 |
+
+#+begin_src haskell :var this=example-4-haskell
+  length this
+#+end_src
+
+#+results:
+: 7
+
+** possible prefixes
+
+| prefix   | remaining characters |
+|----------+----------------------|
+| ob-      |                    5 |
+| org-b-   |                    2 |
+| orgb-    |                    3 |
+| org-bbl- |                    0 |
+| bbl-     |                    4 |
+| babel-   |                    2 |
+#+TBLFM: $2='(sbe leftover (prefix $$1))
+
+#+source: leftover
+#+begin_src emacs-lisp :var prefix=""
+  (-
+   ;; length w/o .el
+   (- 13 (length ".el"))
+   ;; length of prefix
+   (length prefix))
+#+end_src
+
+** hlines in python
+
+#+tblname: many-cols
+| a | b | c |
+|---+---+---|
+| d | e | f |
+|---+---+---|
+| g | h | i |
+
+#+source: echo-table
+#+begin_src python :var tab=many-cols :hlines yes :exports both :session
+  return tab
+#+end_src
+
+#+begin_src emacs-lisp :var table=echo-table :exports none
+  (butlast (apply #'append (mapcar (lambda (el) (list el 'hline)) table)))
+#+end_src
+
+#+call: echo-table(tab=many-cols)
+
+#+begin_src python :exports results
+  return [['foo', 'bar', 'baz'], ["a", "b", "None of the above"], ['1', 2, 3]]
+#+end_src
+
+#+begin_src emacs-lisp :exports results
+  (message "Exist")
+#+end_src
+
+** protecting block bodies
+neither of these work as expected
+
+#+begin_src org
+  ,#+TITLE: stuff
+  
+  ,#+begin_src emacs-lisp
+  ,  (message "something")
+  ,#+end_src
+  
+  ,more stuffs
+  
+  ,#+resname: something
+  ,: value
+  
+  ,# and a comment
+#+end_src
+
+#+begin_src org
+  ,* example org
+  
+  ,# this is a comment
+  ,this is not a comment
+#+end_src
+
+
+#+begin_src org
+  ,* escaped org-mode markup
+  
+  ,this should be exported as is
+  ,#+results: escaping-example
+  ,: 24
+#+end_src
+
+
+#+begin_html 
+<pre>
+#comment
+#+end_src
+</pre>
+#+end_html
+final
+
+** multiple evals for refs
+#+begin_src emacs-lisp
+  (setq counter 0)
+#+end_src
+
+#+results:
+: 0
+
+#+source: counter
+#+begin_src emacs-lisp
+  (setq counter (+ 1 counter))
+  counter
+#+end_src
+
+#+begin_src emacs-lisp :var counter_val=counter
+  counter_val
+#+end_src
+
+#+results:
+: 3
 
 ** tangling
 
@@ -468,6 +985,7 @@ schulte
 
 #+tblname: A
 | a | b | c |
+|---+---+---|
 | d | e | f |
 | g | h | i |
 
@@ -978,11 +1496,11 @@ now applying our Fibonacci function
 #+end_src
 
 #+begin_src emacs-lisp :comments no
-  (setq my-shebang "poop")
+  (setq my-shebang "foo")
 #+end_src
 
 #+results:
-: poop
+: foo
 
 #+begin_src ruby :shebang #!/usr/bin/ruby
   puts :nonstandard_shebang
@@ -2080,4 +2598,3 @@ while (<>) {
       source(pipe(paste("org-babel-tangle.pl R", file)))
 #+end_src
       
-
