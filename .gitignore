@@ -1,6 +1,7 @@
 ## automatically generated files
 .Rhistory
 *.png
+*.eps
 *.html
 *.aux
 *.bbl
