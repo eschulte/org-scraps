@@ -3,6 +3,14 @@
 #+STYLE: <link rel="stylesheet"href="data/stylesheet.css"type="text/css">
 
 * tests and examples
+** caption on code block
+
+#+caption: Examples of variable declaration.
+#+label: sql-block
+#+begin_src sql
+SELECT 6*9;
+#+end_src
+
 ** palendromic primes
 Note that because Haskell is funny about what can be typed into the
 interpreter, the following should be loaded with
