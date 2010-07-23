@@ -3,6 +3,28 @@
 #+STYLE: <link rel="stylesheet"href="data/stylesheet.css"type="text/css">
 
 * tests and examples
+** colnames to specific variables
+
+#+tblname: spec-colnames
+| one | two | thee |
+|-----+-----+------|
+| 1   | 2   | 3    |
+
+#+tblname: nospec-colnames
+| three | two | one |
+|-------+-----+-----|
+|     3 |   2 |   1 |
+
+#+begin_src python :var nospec=nospec-colnames :var spec=spec-colnames :colnames '(spec)
+  return nospec
+#+end_src
+
+#+results:
+| one   | two | thee |
+|-------+-----+------|
+| three | two | one  |
+| 3     | 2   | 1    |
+
 ** caption on code block
 
 #+caption: Examples of variable declaration.
