@@ -2631,39 +2631,5 @@ plot cosx
 #+end_src
 
 
-* Babel-related code
-*** Tangling without org-babel
-    Not nice, but if libraries of code are going to be kept in org
-    files, then one will sometimes need to load the code without using
-    org-babel.
-***** Perl script to tangle org-babel input
-      This is a first pass; e.g. doesn't deal with :tangle header arg, etc.
-#+begin_src perl 
-#!/usr/bin/perl
-
-$lang = shift ;
-$lang or die "usage: $0 lang < file.org > file.lang\n" ;
-$true = 1 ;
-$false = 0 ;
-$inblock = $false ;
-
-while (<>) {
-    if( $inblock ) {
-	if( /^[ \t]*#\+end_src/ ) {
-	    $inblock = $false ;
-	    next ;
-	}
-	print ;
-    }
-    else {
-	$inblock = /^[ \t]*#\+begin_src[ \t]+$lang/ ;
-    }
-}
-#+end_src
-***** R function to load org-babel R code
-      This could also be done in pure R, without using an external script.
-#+begin_src R 
-  source.babel <- function(file)
-      source(pipe(paste("org-babel-tangle.pl R", file)))
 #+end_src
       
