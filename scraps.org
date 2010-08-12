@@ -3,6 +3,104 @@
 #+STYLE: <link rel="stylesheet"href="data/stylesheet.css"type="text/css">
 
 * tests and examples
+** importing the output of ledger
+#+results: ledger-output
+#+begin_example 
+  09-Aug-21 CHEQUE : 9953055                    Expenses:Unknown                                    166.70 EUR            166.70 EUR
+  09-Sep-17 CHEQUE : 7691785                    Expenses:Unknown                                    100.00 EUR            266.70 EUR
+  09-Oct-16 REMISE CHEQUE N 8686318 001 105     Expenses:Unknown                                   -525.00 EUR           -258.30 EUR
+#+end_example
+
+#+begin_src emacs-lisp :var ledger=ledger-output
+  (with-temp-buffer
+    (insert ledger)
+    (message ledger)
+    (org-table-convert-region (point-min) (point-max) 2)
+    (org-table-to-lisp))
+#+end_src
+
+#+results:
+| 09-Aug-21 CHEQUE : 9953055                | Expenses:Unknown | 166.70 EUR  | 166.70 EUR  |
+| 09-Sep-17 CHEQUE : 7691785                | Expenses:Unknown | 100.00 EUR  | 266.70 EUR  |
+| 09-Oct-16 REMISE CHEQUE N 8686318 001 105 | Expenses:Unknown | -525.00 EUR | -258.30 EUR |
+
+** lob -- writing results out to files
+#+source: table
+#+begin_src emacs-lisp
+  (mapcar
+   (lambda (el) (number-sequence el (+ el 3)))
+   (number-sequence 0 4))
+#+end_src
+
+writes the results out as csv file
+#+call: write(data=table, file="~/Desktop/example.csv") :results silent
+
+writes the results out as tab separated file
+#+call: write(data=table, file="~/Desktop/example.tsv") :results silent
+
+write the results out as a normal org-mode file
+#+call: write(data=table, file="~/Desktop/example.org") :results silent
+
+** lisp
+
+#+begin_src lisp :var n=5
+  (mapcar (lambda (el) (* el el)) (append '(1 7 3 4) (list n)))
+#+end_src
+
+#+results:
+| 1 | 49 | 9 | 16 | 25 |
+
+#+results: short-list
+| 1 |
+| 2 |
+| 3 |
+
+#+begin_src lisp :var lst=short-list :session t
+  (+ 1 (length lst))
+#+end_src
+
+#+results:
+: 4
+
+** comments in R blocks
+
+#+begin_src R :session *R* :results output
+  # this is a comment
+  x <- rnorm(1)
+  # this is another comment
+  x
+#+end_src
+
+#+results:
+: 
+: [1] 1.320853
+
+** tangle R and load
+  :PROPERTIES:
+  :tangle:   to-load.r
+  :END:
+
+evaluate this
+#+begin_src emacs-lisp :results silent :tangle no
+  (setq org-babel-post-tangle-hook nil)
+  (add-hook 'org-babel-post-tangle-hook
+            (lambda () (ess-load-file (buffer-file-name))))
+#+end_src
+
+then tangle
+
+#+begin_src R :comments yes
+x <- 10
+#+end_src
+
+#+begin_src R
+ y <- 9
+#+end_src
+
+#+begin_src R :tangle file2.R
+ y <- 9
+#+end_src
+
 ** colnames to specific variables
 
 #+tblname: spec-colnames
