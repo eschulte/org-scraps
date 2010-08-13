@@ -3,6 +3,18 @@
 #+STYLE: <link rel="stylesheet"href="data/stylesheet.css"type="text/css">
 
 * tests and examples
+** ledger example output text
+#+results: ledger-stuff
+#+begin_example
+09-Aug-21 CHEQUE : 9953055                    Expenses:Unknown                                    166.70 EUR            166.70 EUR
+09-Sep-17 CHEQUE : 7691785                    Expenses:Unknown                                    100.00 EUR            266.70 EUR
+09-Oct-16 REMISE CHEQUE N 8686318 001 105     Expenses:Unknown                                   -525.00 EUR           -258.30 EUR
+#+end_example
+
+#+begin_src sh :var stuff=ledger-stuff
+  echo "$stuff"
+#+end_src
+
 ** importing the output of ledger
 #+results: ledger-output
 #+begin_example 
