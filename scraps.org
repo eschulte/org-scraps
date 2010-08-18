@@ -3,6 +3,43 @@
 #+STYLE: <link rel="stylesheet"href="data/stylesheet.css"type="text/css">
 
 * tests and examples
+** org results and replace
+
+#+begin_src emacs-lisp :results org
+  "| 1 | 2 |
+| 2 | 3 |"
+#+end_src
+
+#+results:
+| 1 | 2 |
+| 2 | 3 |
+
+#+begin_src R
+  rnorm(1)
+#+end_src
+
+#+begin_src R
+  numbers <- matrix(c(51,43,22,92,28,21,68,22,9),ncol=3,byrow=TRUE)
+  numbers
+#+end_src
+
+#+results:
+| 51 | 43 | 22 |
+| 92 | 28 | 21 |
+| 68 | 22 |  9 |
+
+#+begin_src R :colnames yes
+  numbers <- matrix(c(51,43,22,92,28,21,68,22,9),ncol=3,byrow=TRUE)
+  numbers
+#+end_src
+
+#+results:
+| V1 | V2 | V3 |
+|----+----+----|
+| 51 | 43 | 22 |
+| 92 | 28 | 21 |
+| 68 | 22 |  9 |
+
 ** ledger example output text
 #+results: ledger-stuff
 #+begin_example
