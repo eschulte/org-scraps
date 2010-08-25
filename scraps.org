@@ -3,6 +3,51 @@
 #+STYLE: <link rel="stylesheet"href="data/stylesheet.css"type="text/css">
 
 * tests and examples
+** not caching
+   :PROPERTIES:
+   :session:  *R*
+   :results:  output
+   :exports:  both
+   :cache:    yes
+   :END:
+
+#+begin_src R 
+  cat("random result:", runif(1), "\n")
+  Sys.sleep(2)
+  alarm()
+#+end_src 
+
+#+results[b2549fac8a1ec2923ae289d47ce55fb2853dd1de]:
+: random result: 0.2799064
+
+#+begin_src R 
+  cat("random result:", runif(1), "\n")
+  Sys.sleep(2)
+  alarm()
+#+end_src 
+
+#+results[b2549fac8a1ec2923ae289d47ce55fb2853dd1de]:
+: random result: 0.1625634
+
+*** cache on export
+do we export cached blocks
+
+#+begin_src emacs-lisp :cache yes :exports results
+  (random)
+#+end_src
+
+#+results[46632b4fe2e3a23e847953c95adcba58c270b381]:
+: 490528137
+
+*** looks like this is a problem with info collection
+#+begin_src emacs-lisp :results scalar
+  (format "%S" info)
+#+end_src
+
+#+results[855d90e6e7aa9cf461dbb7a0a830689c738c8238]:
+: ("emacs-lisp" "(format \"%S\" info)
+: " ((:cache . "yes") (:colnames . "no") (:comments . "") (:exports . "both") (:hlines . "yes") (:noweb . "no") (:results . "output replace scalar") (:session . "*R*") (:shebang . "") (:tangle . "no")) "" nil nil 0)
+
 ** noeval
 #+begin_src sh :noeval :exports both
   date
