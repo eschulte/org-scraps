@@ -3,6 +3,14 @@
 #+STYLE: <link rel="stylesheet"href="data/stylesheet.css"type="text/css">
 
 * tests and examples
+** noeval
+#+begin_src sh :noeval :exports both
+  date
+#+end_src
+
+#+results:
+: Wed Aug 25 11:30:52 MDT 2010
+
 ** issues with shell evaluation
 #+begin_src sh :results silent
   cd ~/src/org/
