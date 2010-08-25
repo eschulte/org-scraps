@@ -3,6 +3,12 @@
 #+STYLE: <link rel="stylesheet"href="data/stylesheet.css"type="text/css">
 
 * tests and examples
+** issues with shell evaluation
+#+begin_src sh :results silent
+  cd ~/src/org/
+  make
+#+end_src
+
 ** org results and replace
 
 #+begin_src emacs-lisp :results org
