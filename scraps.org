@@ -3,6 +3,17 @@
 #+STYLE: <link rel="stylesheet"href="data/stylesheet.css"type="text/css">
 
 * tests and examples
+** eval for side effect on export
+- one plus one
+  #+source: one-plus-one
+  #+begin_src emacs-lisp :exports none :results silent
+    (+ 1 1)
+  #+end_src
+- plus one is
+  #+begin_src emacs-lisp :var two=one-plus-one :exports both
+    (+ 1 two)
+  #+end_src
+
 ** trying out plantuml
 setup
 #+begin_src emacs-lisp
