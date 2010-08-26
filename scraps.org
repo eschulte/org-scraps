@@ -3,6 +3,21 @@
 #+STYLE: <link rel="stylesheet"href="data/stylesheet.css"type="text/css">
 
 * tests and examples
+** wrapping up raw/org results
+#+begin_src emacs-lisp :results org :exports results
+  "- first
+  - second
+  - third
+  "
+#+end_src
+
+#+results:
+#+BEGIN_SRC org
+- first
+- second
+- third
+#+END_SRC
+
 ** not caching
    :PROPERTIES:
    :session:  *R*
