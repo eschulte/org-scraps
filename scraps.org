@@ -78,13 +78,27 @@ do we export cached blocks
 : ("emacs-lisp" "(format \"%S\" info)
 : " ((:cache . "yes") (:colnames . "no") (:comments . "") (:exports . "both") (:hlines . "yes") (:noweb . "no") (:results . "output replace scalar") (:session . "*R*") (:shebang . "") (:tangle . "no")) "" nil nil 0)
 
-** noeval
-#+begin_src sh :noeval :exports both
+** eval and noeval
+date, should export both, and should query for evaluation
+#+begin_src sh :noeval :exports both :eval query
   date
 #+end_src
 
-#+results:
-: Wed Aug 25 11:30:52 MDT 2010
+should export code, so no need to do anything
+#+begin_src sh
+  date
+#+end_src
+
+should export nothing, and should not query
+#+source: this-is-ls
+#+begin_src sh :eval query :exports none
+  date
+#+end_src
+
+should export results, and should trigger query above
+#+begin_src emacs-lisp :var ls=this-is-ls :exports results
+  ls
+#+end_src
 
 ** issues with shell evaluation
 #+begin_src sh :results silent
