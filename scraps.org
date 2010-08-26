@@ -3,6 +3,21 @@
 #+STYLE: <link rel="stylesheet"href="data/stylesheet.css"type="text/css">
 
 * tests and examples
+** duplicate results on execute subtree
+#+begin_src emacs-lisp :results org :exports results
+  "- first
+- second
+- third
+"
+#+end_src
+
+#+results:
+#+BEGIN_SRC org
+- first
+- second
+- third
+#+END_SRC
+
 ** eval for side effect on export
 - one plus one
   #+source: one-plus-one
