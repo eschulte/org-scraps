@@ -79,8 +79,9 @@ do we export cached blocks
 : " ((:cache . "yes") (:colnames . "no") (:comments . "") (:exports . "both") (:hlines . "yes") (:noweb . "no") (:results . "output replace scalar") (:session . "*R*") (:shebang . "") (:tangle . "no")) "" nil nil 0)
 
 ** eval and noeval
-date, should export both, and should query for evaluation
-#+begin_src sh :noeval :exports both :eval query
+date, should export both, but won't output results because of presence
+of the =:noeval= header argument.
+#+begin_src sh :noeval :exports both
   date
 #+end_src
 
