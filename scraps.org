@@ -3,6 +3,22 @@
 #+STYLE: <link rel="stylesheet"href="data/stylesheet.css"type="text/css">
 
 * tests and examples
+** initial scheme support
+#+source: numbers
+#+begin_src scheme
+  (map (lambda (el) (+ el 1)) '(1 2 3))
+#+end_src
+
+#+results:
+| 2 | 3 | 4 |
+
+#+begin_src scheme :var numbers=numbers
+  (map (lambda (el) (- el 1)) numbers)
+#+end_src
+
+#+results:
+| 1 | 2 | 3 |
+
 ** initial javascript support
 using node.js
 
