@@ -3,6 +3,41 @@
 #+STYLE: <link rel="stylesheet"href="data/stylesheet.css"type="text/css">
 
 * tests and examples
+** initial javascript support
+using node.js
+
+#+begin_src js
+  var n = 0;
+  n = n+1;
+  return n
+#+end_src
+
+#+results:
+: 1
+
+#+source: cars
+#+begin_src js
+  var cars = ["Saab","Volvo","BMW"];
+  return cars;
+#+end_src
+
+#+results: cars
+| Saab | Volvo | BMW |
+
+#+begin_src js :var cars=cars
+  return cars[0][0];
+#+end_src
+
+#+results:
+: Saab
+
+#+begin_src js :var cars=cars
+  return cars[0].length;
+#+end_src
+
+#+results:
+: 3
+
 ** duplicate results on execute subtree
 #+begin_src emacs-lisp :results org :exports results
   "- first
@@ -118,7 +153,7 @@ should export code, so no need to do anything
 
 should export nothing, and should not query
 #+source: this-is-ls
-#+begin_src sh :eval query :exports none
+#+begin_src sh :eval query :exports code
   date
 #+end_src
 
