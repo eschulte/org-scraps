@@ -3,6 +3,83 @@
 #+STYLE: <link rel="stylesheet"href="data/stylesheet.css"type="text/css">
 
 * tests and examples
+** initial scheme support
+#+source: numbers
+#+begin_src scheme
+  (map (lambda (el) (+ el 1)) '(1 2 3))
+#+end_src
+
+#+results:
+| 2 | 3 | 4 |
+
+#+begin_src scheme :var numbers=numbers
+  (map (lambda (el) (- el 1)) numbers)
+#+end_src
+
+#+results:
+| 1 | 2 | 3 |
+
+** initial javascript support
+using node.js
+
+#+begin_src js
+  var n = 0;
+  n = n+1;
+  return n
+#+end_src
+
+#+results:
+: 1
+
+#+source: cars
+#+begin_src js
+  var cars = ["Saab","Volvo","BMW"];
+  return cars;
+#+end_src
+
+#+results: cars
+| Saab | Volvo | BMW |
+
+#+begin_src js :var cars=cars
+  return cars[0][0];
+#+end_src
+
+#+results:
+: Saab
+
+#+begin_src js :var cars=cars
+  return cars[0].length;
+#+end_src
+
+#+results:
+: 3
+
+** duplicate results on execute subtree
+#+begin_src emacs-lisp :results org :exports results
+  "- first
+- second
+- third
+"
+#+end_src
+
+#+results:
+#+BEGIN_SRC org
+- first
+- second
+- third
+#+END_SRC
+
+** eval for side effect on export
+- one plus one
+  #+source: one-plus-one
+  #+begin_src emacs-lisp :exports none :results silent
+    (+ 1 1)
+  #+end_src
+- plus one is
+  #+begin_src emacs-lisp :var two=one-plus-one :exports both
+    (+ 1 two)
+  #+end_src
+
 ** trying out plantuml
 setup
 #+begin_src emacs-lisp
@@ -78,13 +155,28 @@ do we export cached blocks
 : ("emacs-lisp" "(format \"%S\" info)
 : " ((:cache . "yes") (:colnames . "no") (:comments . "") (:exports . "both") (:hlines . "yes") (:noweb . "no") (:results . "output replace scalar") (:session . "*R*") (:shebang . "") (:tangle . "no")) "" nil nil 0)
 
-** noeval
+** eval and noeval
+date, should export both, but won't output results because of presence
+of the =:noeval= header argument.
 #+begin_src sh :noeval :exports both
   date
 #+end_src
 
-#+results:
-: Wed Aug 25 11:30:52 MDT 2010
+should export code, so no need to do anything
+#+begin_src sh
+  date
+#+end_src
+
+should export nothing, and should not query
+#+source: this-is-ls
+#+begin_src sh :eval query :exports code
+  date
+#+end_src
+
+should export results, and should trigger query above
+#+begin_src emacs-lisp :var ls=this-is-ls :exports results
+  ls
+#+end_src
 
 ** issues with shell evaluation
 #+begin_src sh :results silent
