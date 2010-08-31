@@ -3,6 +3,15 @@
 #+STYLE: <link rel="stylesheet"href="data/stylesheet.css"type="text/css">
 
 * tests and examples
+** pulling information from tags                                       :blue:
+
+#+begin_src R :var color=(car (org-get-tags-at (point))) :tangle example.R
+  color
+#+end_src
+
+#+results:
+: blue
+
 ** initial scheme support
 #+source: numbers
 #+begin_src scheme
