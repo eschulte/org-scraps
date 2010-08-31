@@ -3,6 +3,21 @@
 #+STYLE: <link rel="stylesheet"href="data/stylesheet.css"type="text/css">
 
 * tests and examples
+** conditional tangling
+#+begin_src emacs-lisp :results silent
+  (setq tangle-tag "right")
+#+end_src
+
+*** first subheading                                                   :left:
+#+begin_src R :tangle (and (equal (car (org-get-tags-at (point))) tangle-tag) "yes")
+  "first"
+#+end_src
+
+*** second subheading                                                 :right:
+#+begin_src R :tangle (and (equal (car (org-get-tags-at (point))) tangle-tag) "yes")
+  "second"
+#+end_src
+
 ** scheme sessions
 #+begin_src scheme :var number=9 :session *scheme* :scheme guile
   (+ number 0)
