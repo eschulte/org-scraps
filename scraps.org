@@ -3,6 +3,17 @@
 #+STYLE: <link rel="stylesheet"href="data/stylesheet.css"type="text/css">
 
 * tests and examples
+** ditaa with tilda in path
+#+begin_src ditaa :file example.png
+    +--------------+
+    |              |
+    |              |
+    |              |
+    |              |
+    |              |
+    +--------------+
+#+end_src
+
 ** conditional tangling
 #+begin_src emacs-lisp :results silent
   (setq tangle-tag "right")
