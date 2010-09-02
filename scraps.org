@@ -3,6 +3,20 @@
 #+STYLE: <link rel="stylesheet"href="data/stylesheet.css"type="text/css">
 
 * tests and examples
+** :session evaluation on export
+This first block is evaluated but /doesn't/ appear in export.
+
+/:session *R* :exports none/
+#+begin_src R :session *R* :exports none
+  x <- 8
+#+end_src
+
+This second block /does/ appear in export.
+
+#+begin_src R :session *R* :exports results
+  x
+#+end_src
+
 ** ditaa with tilda in path
 #+begin_src ditaa :file example.png
     +--------------+
