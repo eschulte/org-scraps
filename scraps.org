@@ -7,7 +7,13 @@
 during export (buffer-file-name) will return nil because the temporary
 export buffer is not visiting any file.
 
-#+begin_src sh :var file=(vc-working-revision "~/src/babel-dev/scraps.org") :exports results
+/file=(vc-working-revision (buffer-file-name))/
+#+begin_src sh :var file=(vc-working-revision (or (buffer-file-name) "")) :exports results
+  echo $file Revision
+#+end_src
+
+/file=(vc-working-revision (or (buffer-file-name) org-current-export-file))/
+#+begin_src sh :var file=(vc-working-revision (or (buffer-file-name) org-current-export-file)) :exports results
   echo $file Revision
 #+end_src
 
