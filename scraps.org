@@ -3,6 +3,14 @@
 #+STYLE: <link rel="stylesheet"href="data/stylesheet.css"type="text/css">
 
 * tests and examples
+** :var (buffer-file-name)
+during export (buffer-file-name) will return nil because the temporary
+export buffer is not visiting any file.
+
+#+begin_src sh :var file=(vc-working-revision "~/src/babel-dev/scraps.org") :exports results
+  echo $file Revision
+#+end_src
+
 ** :session evaluation on export
 This first block is evaluated but /doesn't/ appear in export.
 
