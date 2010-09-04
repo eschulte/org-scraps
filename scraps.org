@@ -3,6 +3,39 @@
 #+STYLE: <link rel="stylesheet"href="data/stylesheet.css"type="text/css">
 
 * tests and examples
+** tangling with full comments
+   :PROPERTIES:
+   :comments: org
+   :tangle:   full-comments.el
+   :END:
+
+#+begin_src emacs-lisp
+  (message "first block")
+#+end_src
+
+here's some text which won't be tangled
+
+*** subheading
+here's another block
+#+source: tangle-el-the-second
+#+begin_src emacs-lisp
+  (message "second block")
+#+end_src
+
+and a third, right here
+| 1 | first  |
+| 2 | second |
+| 3 | third  |
+#+begin_src emacs-lisp
+  (message "third")
+#+end_src
+
+and finally a block with a =:noweb= header argument
+#+begin_src emacs-lisp :noweb yes
+  (progn
+    <<tangle-el-the-second>>)
+#+end_src
+
 ** quoting header args (e.g. :cmdline)
 #+begin_src C :cmdline 1 2 3 4 5 :includes <stdio.h>
   int main(int argc, char **argv){
