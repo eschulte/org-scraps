@@ -8,7 +8,7 @@
    :comments: org
    :tangle:   full-comments.el
    :END:
-
+The top block
 #+begin_src emacs-lisp
   (message "first block")
 #+end_src
@@ -16,18 +16,11 @@
 here's some text which won't be tangled
 
 *** subheading
-here's another block
-#+source: tangle-el-the-second
-#+begin_src emacs-lisp
-  (message "second block")
-#+end_src
-
-and a third, right here
+another block
 | 1 | first  |
 | 2 | second |
-| 3 | third  |
 #+begin_src emacs-lisp
-  (message "third")
+  (message "second")
 #+end_src
 
 and finally a block with a =:noweb= header argument
