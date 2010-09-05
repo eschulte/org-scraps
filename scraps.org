@@ -3,6 +3,121 @@
 #+STYLE: <link rel="stylesheet"href="data/stylesheet.css"type="text/css">
 
 * tests and examples
+** tangling with full comments
+   :PROPERTIES:
+   :comments: org
+   :tangle:   full-comments.el
+   :END:
+The top block
+#+begin_src emacs-lisp
+  (message "first block")
+#+end_src
+
+here's some text which won't be tangled
+
+*** subheading
+another block
+| 1 | first  |
+| 2 | second |
+#+begin_src emacs-lisp
+  (message "second")
+#+end_src
+
+and finally a block with a =:noweb= header argument
+#+begin_src emacs-lisp :noweb yes
+  (progn
+    <<tangle-el-the-second>>)
+#+end_src
+
+** quoting header args (e.g. :cmdline)
+#+begin_src C :cmdline 1 2 3 4 5 :includes <stdio.h>
+  int main(int argc, char **argv){
+    printf("argv[1] %s\n", argv[1]);
+    return 0;
+  }
+#+end_src
+
+#+results:
+: argv[1] 1
+
+** :var (buffer-file-name)
+during export (buffer-file-name) will return nil because the temporary
+export buffer is not visiting any file.
+
+/file=(vc-working-revision (buffer-file-name))/
+#+begin_src sh :var file=(vc-working-revision (or (buffer-file-name) "")) :exports results
+  echo $file Revision
+#+end_src
+
+/file=(vc-working-revision (or (buffer-file-name) org-current-export-file))/
+#+begin_src sh :var file=(vc-working-revision (or (buffer-file-name) org-current-export-file)) :exports results
+  echo $file Revision
+#+end_src
+
+** :session evaluation on export
+This first block is evaluated but /doesn't/ appear in export.
+
+/:session *R* :exports none/
+#+begin_src R :session *R* :exports none
+  x <- 8
+#+end_src
+
+This second block /does/ appear in export.
+
+#+begin_src R :session *R* :exports results
+  x
+#+end_src
+
+** ditaa with tilda in path
+#+begin_src ditaa :file example.png
+    +--------------+
+    |              |
+    |              |
+    |              |
+    |              |
+    |              |
+    +--------------+
+#+end_src
+
+** conditional tangling
+#+begin_src emacs-lisp :results silent
+  (setq tangle-tag "right")
+#+end_src
+
+*** first subheading                                                   :left:
+#+begin_src R :tangle (and (equal (car (org-get-tags-at (point))) tangle-tag) "yes")
+  "first"
+#+end_src
+
+*** second subheading                                                 :right:
+#+begin_src R :tangle (and (equal (car (org-get-tags-at (point))) tangle-tag) "yes")
+  "second"
+#+end_src
+
+** scheme sessions
+#+begin_src scheme :var number=9 :session *scheme* :scheme guile
+  (+ number 0)
+#+end_src
+
+#+results:
+: 9
+
+#+begin_src scheme :var number=9 :session *scheme* :scheme racket
+  (+ number 1)
+#+end_src
+
+#+results:
+: 10
+
+** pulling information from tags                                       :blue:
+
+#+begin_src R :var color=(car (org-get-tags-at (point))) :tangle example.R
+  color
+#+end_src
+
+#+results:
+: blue
+
 ** initial scheme support
 #+source: numbers
 #+begin_src scheme
