@@ -3,6 +3,29 @@
 #+STYLE: <link rel="stylesheet"href="data/stylesheet.css"type="text/css">
 
 * tests and examples
+** customizable comment formats
+   :PROPERTIES:
+   :tangle:   yes
+   :comments: yes
+   :END:
+
+#+begin_src emacs-lisp :results silent
+  (setq org-babel-tangle-comment-format-beg "{-# LINE %start-line \"%file\" #-}"
+        org-babel-tangle-comment-format-end ""
+        org-babel-tangle-pad-newline)
+#+end_src
+
+#+begin_src haskell :tangle Main.hs
+  test = length
+  main = print $ test [1,2,3]
+#+end_src
+
+I would like the following output in the tangled file Main.hs:
+
+: {-# LINE 4 "Haskell.org" #-}
+: test = length
+: main = print $ test [1,2,3]
+
 ** tangling with full comments
    :PROPERTIES:
    :comments: org
