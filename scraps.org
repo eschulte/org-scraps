@@ -3,6 +3,39 @@
 #+STYLE: <link rel="stylesheet"href="data/stylesheet.css"type="text/css">
 
 * tests and examples
+** remove results when nil is returned
+#+begin_src emacs-lisp
+  (progn (+ 1 1) nil)
+#+end_src
+
+#+results:
+
+** comparative speed of python evaluation
+#+begin_src python :session test
+  2+2
+#+end_src
+
+#+results:
+: 4
+
+#+begin_src python
+  return 2+2
+#+end_src
+
+#+results:
+: 4
+
+#+begin_src python :session test
+def add(a,b):
+   return a+b
+def sub(a,b):
+   return a-b
+add(sub(10,1),sub(10,2))
+#+end_src
+
+#+results:
+: org_babel_python_eoe
+
 ** customizable comment formats
    :PROPERTIES:
    :tangle:   yes
