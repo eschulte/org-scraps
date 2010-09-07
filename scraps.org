@@ -3,6 +3,20 @@
 #+STYLE: <link rel="stylesheet"href="data/stylesheet.css"type="text/css">
 
 * tests and examples
+** tangle org-mode block
+#+source: org-list
+#+begin_src org :results latex
+  - one
+  - two
+  - three
+#+end_src
+
+#+begin_src emacs-lisp :tangle yes :noweb yes
+  "
+  <<org-list()>>
+  "
+#+end_src
+
 ** remove results when nil is returned
 #+begin_src emacs-lisp
   (progn (+ 1 1) nil)
