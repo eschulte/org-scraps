@@ -3,6 +3,13 @@
 #+STYLE: <link rel="stylesheet"href="data/stylesheet.css"type="text/css">
 
 * tests and examples
+** empty-string results
+#+begin_src emacs-lisp
+  ""
+#+end_src
+
+#+results:
+
 ** tangle org-mode block
 #+source: org-list
 #+begin_src org :results latex
