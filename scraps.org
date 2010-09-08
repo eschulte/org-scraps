@@ -267,8 +267,9 @@ using node.js
 
 ** trying out plantuml
 setup
-#+begin_src emacs-lisp
-  (setq org-plantuml-jar-path "~/Downloads/plantuml.jar")
+#+begin_src emacs-lisp :results silent
+  (require 'ob-plantuml)
+  (setq org-plantuml-jar-path "~/src/org/contrib/scripts/plantuml.jar")
 #+end_src
 
 usage -- sequence diagram
