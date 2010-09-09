@@ -3,6 +3,17 @@
 #+STYLE: <link rel="stylesheet"href="data/stylesheet.css"type="text/css">
 
 * tests and examples
+** header arguments on call line
+#+source: eight
+#+begin_src R
+  8
+#+end_src
+
+#+call: eight() :results vector :session *R*
+
+#+results: eight()
+| 8 |
+
 ** empty-string results
 #+begin_src emacs-lisp
   ""
