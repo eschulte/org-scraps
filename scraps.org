@@ -9,10 +9,14 @@
   8
 #+end_src
 
-#+call: eight() :results vector :session *R*
+#+call: eight() :results vector
 
 #+results: eight()
 | 8 |
+
+maybe the following with the new proposed header arguments
+
+#+call: eight[:session *R*]() :results vector
 
 ** empty-string results
 #+begin_src emacs-lisp
