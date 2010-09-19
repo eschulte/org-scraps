@@ -346,23 +346,17 @@ usage -- sequence diagram
    :cache:    yes
    :END:
 
-#+begin_src R 
+#+begin_src R :noeval
   cat("random result:", runif(1), "\n")
   Sys.sleep(2)
   alarm()
 #+end_src 
 
-#+results[b2549fac8a1ec2923ae289d47ce55fb2853dd1de]:
-: random result: 0.2799064
-
-#+begin_src R 
+#+begin_src R :noeval
   cat("random result:", runif(1), "\n")
   Sys.sleep(2)
   alarm()
 #+end_src 
-
-#+results[b2549fac8a1ec2923ae289d47ce55fb2853dd1de]:
-: random result: 0.1625634
 
 *** cache on export
 do we export cached blocks
@@ -375,13 +369,34 @@ do we export cached blocks
 : 490528137
 
 *** looks like this is a problem with info collection
-#+begin_src emacs-lisp :results scalar
+#+begin_src emacs-lisp
   (format "%S" info)
 #+end_src
 
-#+results[855d90e6e7aa9cf461dbb7a0a830689c738c8238]:
-: ("emacs-lisp" "(format \"%S\" info)
-: " ((:cache . "yes") (:colnames . "no") (:comments . "") (:exports . "both") (:hlines . "yes") (:noweb . "no") (:results . "output replace scalar") (:session . "*R*") (:shebang . "") (:tangle . "no")) "" nil nil 0)
+#+begin_src emacs-lisp :results scalar :exports results :tangle yes :comments yes
+  (mapcar (lambda (el) (list (car el) (cdr el))) (nth 2 info))
+#+end_src
+
+#+results[4184710f118ac768ea0d90632508792d695efd7a]:
+| :cache    | yes                   |
+| :colnames | no                    |
+| :comments | yes                   |
+| :exports  | results               |
+| :hlines   | yes                   |
+| :noweb    | no                    |
+| :results  | output replace scalar |
+| :session  | *R*                   |
+| :shebang  |                       |
+| :tangle   | yes                   |
+
+#+begin_src emacs-lisp :exports results
+  (message "calculating info")
+  (org-babel-sha1-hash info)
+#+end_src
+
+#+results[0427db66afdc95462d1c8514b662829987d71ff5]:
+: 0427db66afdc95462d1c8514b662829987d71ff5
+
 
 ** eval and noeval
 date, should export both, but won't output results because of presence
