@@ -3,6 +3,37 @@
 #+STYLE: <link rel="stylesheet"href="data/stylesheet.css"type="text/css">
 
 * tests and examples
+** splitting code blocks
+- with indentation
+  #+begin_src emacs-lisp
+    ;;;###autoload
+    (defun org-babel-previous-src-block (&optional arg)
+      "Jump to the previous source block.
+    With optional prefix argument ARG, jump backward ARG many source blocks."
+      (interactive "P")
+      (condition-case nil
+          (re-search-backward org-babel-src-block-regexp nil nil (or arg 1))
+        (error (error "No previous code blocks")))
+      (goto-char (match-beginning 0)) (org-show-context))
+    
+    ;;;###autoload
+    (defun org-babel-split-block-maybe (&optional arg)
+      "Split the current source code block on the cursor."
+      (interactive "p")
+      ((lambda (info)
+         (if info
+             (let ((lang (nth 0 info))
+                   (indent (nth 6 info))
+                   (stars (make-string (org-current-level) ?*)))
+               (insert (concat (if (looking-at "^") "" "\n")
+                               (make-string indent ? ) "#+end_src\n"
+                               (if arg stars (make-string indent ? )) "\n"
+                               (make-string indent ? ) "#+begin_src " lang
+                               (if (looking-at "[\n\r]") "" "\n  "))))
+           (message "Not in src block.")))
+       (org-babel-get-src-block-info)))
+  #+end_src
+
 ** header arguments on call line
 #+source: eight
 #+begin_src R
@@ -396,7 +427,6 @@ do we export cached blocks
 
 #+results[0427db66afdc95462d1c8514b662829987d71ff5]:
 : 0427db66afdc95462d1c8514b662829987d71ff5
-
 
 ** eval and noeval
 date, should export both, but won't output results because of presence
