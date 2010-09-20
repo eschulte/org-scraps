@@ -15,7 +15,9 @@
           (re-search-backward org-babel-src-block-regexp nil nil (or arg 1))
         (error (error "No previous code blocks")))
       (goto-char (match-beginning 0)) (org-show-context))
-    
+  #+end_src
+  
+  #+begin_src emacs-lisp
     ;;;###autoload
     (defun org-babel-split-block-maybe (&optional arg)
       "Split the current source code block on the cursor."
@@ -32,6 +34,8 @@
                                (if (looking-at "[\n\r]") "" "\n  "))))
            (message "Not in src block.")))
        (org-babel-get-src-block-info)))
+    
+    ;; other stuff
   #+end_src
 
 ** header arguments on call line
