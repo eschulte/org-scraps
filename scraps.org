@@ -3,6 +3,42 @@
 #+STYLE: <link rel="stylesheet"href="data/stylesheet.css"type="text/css">
 
 * tests and examples
+** Letter
+
+#+source: body
+#+begin_src org :results latex
+My body includes a list:
+
+- one
+- two
+
+and a small table:
+
+| first | second |
+| other | last   |
+
+Not more.
+#+end_src
+
+#+begin_src latex :noweb yes :tangle yes
+\documentclass[11pt]{isodoc}
+\usepackage[utf8x]{inputenc}
+\usepackage[T1]{fontenc}
+
+\setupdocument{
+    to = {Eric},
+    subject = {Tough to understand what to do...},
+    opening = {Hi},
+    closing = {Best}
+}
+
+\begin{document}
+\letter{%
+<<body()>>
+}
+\end{document}
+#+end_src
+
 ** splitting code blocks
 - with indentation
   #+begin_src emacs-lisp
