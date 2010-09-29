@@ -3,21 +3,32 @@
 #+STYLE: <link rel="stylesheet"href="data/stylesheet.css"type="text/css">
 
 * tests and examples
+** cycle -- the input is the output
+#+results: cycle
+| one   |
+| two   |
+| three |
+
+#+source: cycle
+#+begin_src emacs-lisp :var table=cycle
+  (append (last table) (butlast table))
+#+end_src
+
 ** Letter
 
 #+source: body
 #+begin_src org :results latex
-My body includes a list:
-
-- one
-- two
-
-and a small table:
-
-| first | second |
-| other | last   |
-
-Not more.
+  ,My body includes a list:
+  
+  ,- one
+  ,- two
+  
+  ,and a small table:
+  
+  ,| first | second |
+  ,| other | last   |
+  
+  ,Not more.
 #+end_src
 
 #+begin_src latex :noweb yes :tangle yes
