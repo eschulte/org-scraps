@@ -3,7 +3,73 @@
 #+STYLE: <link rel="stylesheet"href="data/stylesheet.css"type="text/css">
 
 * tests and examples
+** preceding blank lines on tangle
+#+begin_src emacs-lisp :results silent
+  (setq org-babel-tangle-pad-newline nil)
+#+end_src
+
+#+begin_src sh :tangle something.reg
+  # something
+  echo "else"
+#+end_src
+
+** very very large numbers
+#+tblname: numbers
+|                           1 |
+|                           2 |
+|                          12 |
+|                          45 |
+|                         166 |
+|                    12567890 |
+| 231231282371983279389999999 |
+
+#+begin_src emacs-lisp :var numbers=numbers
+  (mapcar
+   (lambda (line)
+       (let ((number (car line)))
+         (list number (type-of number))))
+     numbers)
+#+end_src
+
+#+results:
+|                      1 | integer |
+|                      2 | integer |
+|                     12 | integer |
+|                     45 | integer |
+|                    166 | integer |
+|               12567890 | integer |
+| 2.3123128237198328e+26 | float   |
+
+** weaving with noweb links
+   :PROPERTIES:
+   :tangle:   yes
+   :END:
+
+#+source: name
+#+begin_src emacs-lisp
+  (message "eric")
+#+end_src
+
+#+begin_src emacs-lisp :noweb tangle
+  ;; name
+  <<name>>
+#+end_src
+
+** index into a scalar
+#+tblname: short-list
+| a |
+| b |
+
+#+begin_src emacs-lisp :var scalar=short-list[0,0]
+  scalar
+#+end_src
+
+#+results:
+: a
+
 ** cycle -- the input is the output
+and the rhythm is the base and the base is the treble
+
 #+results: cycle
 | one   |
 | two   |
@@ -12,6 +78,10 @@
 #+source: cycle
 #+begin_src emacs-lisp :var table=cycle
   (append (last table) (butlast table))
+#+end_src
+
+#+begin_src emacs-lisp :exports results
+  (+ 1 1 1)
 #+end_src
 
 ** Letter
