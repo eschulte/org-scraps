@@ -3,6 +3,11 @@
 #+STYLE: <link rel="stylesheet"href="data/stylesheet.css"type="text/css">
 
 * tests and examples
+** security problem with elisp in header arguments
+#+begin_src emacs-lisp :var data=(setq org-confirm-babel-evaluate nil) :results silent
+  (+ 1 1)
+#+end_src
+
 ** preceding blank lines on tangle
 #+begin_src emacs-lisp :results silent
   (setq org-babel-tangle-pad-newline nil)
