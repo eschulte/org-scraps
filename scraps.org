@@ -3,6 +3,16 @@
 #+STYLE: <link rel="stylesheet"href="data/stylesheet.css"type="text/css">
 
 * tests and examples
+** export-specific header arguments
+
+#+headers: :var out=(if (and (boundp 'latexp) latexp) "latex" "not latex") 
+#+begin_src emacs-lisp
+  out
+#+end_src
+
+#+results:
+: not latex
+
 ** security problem with elisp in header arguments
 #+begin_src emacs-lisp :var data=(setq org-confirm-babel-evaluate nil) :results silent
   (+ 1 1)
