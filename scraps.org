@@ -3,6 +3,71 @@
 #+STYLE: <link rel="stylesheet"href="data/stylesheet.css"type="text/css">
 
 * tests and examples
+** simple gnuplot tests
+#+results: some-more-gnuplot
+| 1 |  1 |
+| 2 |  4 |
+| 3 |  9 |
+| 4 | 16 |
+| 5 | 25 |
+| 6 | 36 |
+| 7 | 49 |
+| 8 | 64 |
+   #+TBLFM: $2=$1*$1
+
+#+begin_src gnuplot :var data=some-more-gnuplot
+  plot "$data"
+#+end_src
+
+Plotting data points from a table could look like this:
+#+tblname: basic-plot
+|   x |         y1 |         y2 |
+|-----+------------+------------|
+| 0.1 |      0.425 |      0.375 |
+| 0.2 |     0.3125 |     0.3375 |
+| 0.3 | 0.24999993 | 0.28333338 |
+| 0.4 |      0.275 |    0.28125 |
+| 0.5 |       0.26 |       0.27 |
+| 0.6 | 0.25833338 | 0.24999993 |
+| 0.7 | 0.24642845 | 0.23928553 |
+| 0.8 |    0.23125 |     0.2375 |
+| 0.9 | 0.23333323 |  0.2333332 |
+|   1 |     0.2225 |       0.22 |
+
+#+begin_src gnuplot :var data=basic-plot :exports code :file basic-plot.png
+set title "Putting it All Together"
+
+set xlabel "X"
+set xrange [0:1]
+set xtics 0,0.1,1
+
+set ylabel "Y"
+set yrange [0.2:0.5]
+set ytics 0.2,0.05,0.5
+
+plot data u 1:2 w p lw 2 title 'x vs. y1', \
+     data u 1:3 w lp lw 1 title 'x vx. y2'
+#+end_src
+
+#+results:
+[[file:basic-plot.png]]
+
+** latex headers in latex code blocks
+
+#+begin_src latex :headers \usepackage{lmodern} :file name1.pdf
+  Eric Schulte
+#+end_src
+
+#+results:
+[[file:name1.pdf]]
+
+#+begin_src latex :headers '("\\usepackage{mathpazo}" "\\usepackage{fullpage}") :file name2.pdf
+  Eric Schulte
+#+end_src
+
+#+results:
+[[file:name2.pdf]]
+
 ** export-specific header arguments
 
 #+headers: :var out=(if (and (boundp 'latexp) latexp) "latex" "not latex") 
