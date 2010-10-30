@@ -3,6 +3,21 @@
 #+STYLE: <link rel="stylesheet"href="data/stylesheet.css"type="text/css">
 
 * tests and examples
+** passing arguments through call lines
+
+#+source: test
+#+begin_src R :session :file test.pdf :var myarg="bla"
+  plot(1:10, main=myarg)
+#+end_src
+
+#+results: test
+[[file:test.pdf]]
+
+#+call: test(myarg="hiho")
+
+#+results: test(myarg="hiho")
+: test.pdf
+
 ** simple gnuplot tests
 #+results: some-more-gnuplot
 | 1 |  1 |
