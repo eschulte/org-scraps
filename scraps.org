@@ -26,6 +26,20 @@
 #+results:
 : 32
 
+#+begin_src calc
+  2*e
+#+end_src
+
+#+results:
+: 5.43656365692
+
+#+begin_src calc :var something=9
+  2*something
+#+end_src
+
+#+results:
+: 18
+
 ** shell blocks returning a file name
 #+begin_src sh :file quick.txt :results output
   date
