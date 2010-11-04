@@ -3,6 +3,37 @@
 #+STYLE: <link rel="stylesheet"href="data/stylesheet.css"type="text/css">
 
 * tests and examples
+** playing with calc support
+#+begin_src emacs-lisp
+  (require 'ob-calc)
+#+end_src
+
+#+begin_src calc :var some=8
+  some
+  some
+  '*
+  8+8
+  '+
+#+end_src
+
+#+results:
+: 80
+
+#+begin_src calc
+  2*(8+8)
+#+end_src
+
+#+results:
+: 32
+
+** shell blocks returning a file name
+#+begin_src sh :file quick.txt :results output
+  date
+#+end_src
+
+#+results:
+[[file:quick.txt]]
+
 ** passing arguments through call lines
 
 #+source: test
