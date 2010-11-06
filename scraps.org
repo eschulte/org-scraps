@@ -3,6 +3,33 @@
 #+STYLE: <link rel="stylesheet"href="data/stylesheet.css"type="text/css">
 
 * tests and examples
+** clojure code blocks and the lazies
+#+begin_src emacs-lisp :results silent
+  (defun org-babel-execute:clojure (body params)
+    (with-temp-buffer
+      (insert body)
+      (read
+       (slime-eval
+        `(swank:interactive-eval-region 
+          ,(buffer-substring-no-properties (point-min) (point-max)))))))
+#+end_src
+
+#+begin_src clojure
+  (map (fn [el] (list el (* el el)))(range 10))
+#+end_src
+
+#+results:
+| 0 |  0 |
+| 1 |  1 |
+| 2 |  4 |
+| 3 |  9 |
+| 4 | 16 |
+| 5 | 25 |
+| 6 | 36 |
+| 7 | 49 |
+| 8 | 64 |
+| 9 | 81 |
+
 ** playing with calc support
 #+begin_src emacs-lisp
   (require 'ob-calc)
