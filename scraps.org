@@ -3,6 +3,39 @@
 #+STYLE: <link rel="stylesheet"href="data/stylesheet.css"type="text/css">
 
 * tests and examples
+** lob calls with header argument pass through
+
+#+source: lob-header
+#+begin_src emacs-lisp :var n=20
+  n
+#+end_src
+
+#+call: lob-header[:results vector](n=15)
+
+#+results: lob-header[:results vector](n=15)
+| 15 |
+
+#+call: lob-header(n=10) :results vector
+
+#+results: lob-header(n=10)
+| 10 |
+
+need ob-ref.el to pass through the header arguments in "[]"s
+#+begin_src emacs-lisp :var n=lob-header[:results vector](n=8)
+  n
+#+end_src
+
+#+results:
+| 8 |
+
+#+begin_src emacs-lisp :var n=lob-header[:results vector](n=8)[0,0]
+  n
+#+end_src
+
+#+results:
+: 8
+
+
 ** clojure code blocks and the lazies
 #+begin_src emacs-lisp :results silent
   (defun org-babel-execute:clojure (body params)
