@@ -3,6 +3,28 @@
 #+STYLE: <link rel="stylesheet"href="data/stylesheet.css"type="text/css">
 
 * tests and examples
+** safe lists for Haskell
+
+#+tblname: mixed-table
+| 1 | first  |
+| 2 | second |
+| 3 | third  |
+| 4 | fourth | 
+
+#+source: rec-string-wrap
+#+begin_src emacs-lisp :var data=mixed-table
+  (defun rec-string-wrap (in)
+    (if (listp in) (mapcar #'rec-string-wrap in) (format "%S" in)))
+  (rec-string-wrap data)
+#+end_src
+
+#+begin_src haskell :var tbl=rec-string-wrap(data=mixed-table)
+  map head tbl
+#+end_src
+
+#+results:
+| 1 | 2 | 3 | 4 |
+
 ** add column to table with awk
    :PROPERTIES:
    :question_author: Sébastien Vauban
