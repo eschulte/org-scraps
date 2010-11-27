@@ -3,6 +3,17 @@
 #+STYLE: <link rel="stylesheet"href="data/stylesheet.css"type="text/css">
 
 * tests and examples
+** python with return header argument
+
+#+begin_src python :return y
+  x = 8
+  y = 98
+  2
+#+end_src
+
+#+results:
+: 98
+
 ** safe lists for Haskell
 
 #+tblname: mixed-table
