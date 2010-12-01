@@ -3,6 +3,19 @@
 #+STYLE: <link rel="stylesheet"href="data/stylesheet.css"type="text/css">
 
 * tests and examples
+** empty lines in R session output
+#+begin_src R :results output :session
+  x <- 1;
+  x
+  x + 1
+  x + 4
+#+end_src R
+
+#+results:
+: [1] 1
+: [1] 2
+: [1] 5
+
 ** =:eval query= shows the name
 #+source: i-have-a-name
 #+begin_src sh :eval query
