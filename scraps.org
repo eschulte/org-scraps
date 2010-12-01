@@ -3,6 +3,15 @@
 #+STYLE: <link rel="stylesheet"href="data/stylesheet.css"type="text/css">
 
 * tests and examples
+** =:eval query= shows the name
+#+source: i-have-a-name
+#+begin_src sh :eval query
+  date
+#+end_src
+
+#+results: i-have-a-name
+: Tue Nov 30 22:03:25 MST 2010
+
 ** sql variables
 #+results: sql-param
 | table       | valueTable0       |
