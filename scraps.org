@@ -3,6 +3,28 @@
 #+STYLE: <link rel="stylesheet"href="data/stylesheet.css"type="text/css">
 
 * tests and examples
+** sql variables
+#+results: sql-param
+| table       | valueTable0       |
+| column      | valueColumn0      |
+| type        | valueType0        |
+| nullability | valueNullability0 |
+
+I want to apply the values onto the following chunk of code:
+
+#+srcname: add-column-in-table-0
+#+begin_src sql :var table=sql-param[0,1] :var column=sql-param[1,1] :var type=sql-param[2,1] :var nullability=sql-param[3,1]
+-- add column `@column' (if column does not exist yet)
+IF NOT EXISTS (SELECT *
+               FROM INFORMATION_SCHEMA.COLUMNS
+               WHERE TABLE_NAME = '@table'
+               AND COLUMN_NAME = '@column')
+BEGIN
+    ALTER TABLE $table
+    ADD $column $type @nullability
+END
+#+end_src
+
 ** python with return header argument
 
 #+begin_src python :return y
