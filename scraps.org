@@ -3,6 +3,22 @@
 #+STYLE: <link rel="stylesheet"href="data/stylesheet.css"type="text/css">
 
 * tests and examples
+** Python requires a utf-8 coding prefix
+#+begin_src python :prefix # -*- coding: utf-8 -*- :return s
+s = "é"
+#+end_src
+
+#+results:
+: é
+
+#+begin_src python :prefix # -*- coding: utf-8 -*- :results output
+s = "é"
+print(s)
+#+end_src
+
+#+results:
+: é
+
 ** empty lines in R session output
 #+begin_src R :results output :session
   x <- 1;
