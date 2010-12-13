@@ -3,6 +3,18 @@
 #+STYLE: <link rel="stylesheet"href="data/stylesheet.css"type="text/css">
 
 * tests and examples
+** utf8 and latin-1 encodings
+#+tblname: toto
+| é |
+
+#+begin_src python :var t=toto :preamble # -*- coding: latin1 -*- :return [len(babel), len(local)]
+  babel = unicode (t[0][0],"latin1")
+  local = unicode ("é","latin1")
+#+end_src
+
+#+results:
+| 2 | 2 |
+
 ** Python requires a utf-8 coding prefix
 #+begin_src python :prefix # -*- coding: utf-8 -*- :return s
 s = "é"
