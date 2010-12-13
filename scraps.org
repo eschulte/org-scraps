@@ -3,6 +3,39 @@
 #+STYLE: <link rel="stylesheet"href="data/stylesheet.css"type="text/css">
 
 * tests and examples
+** tangle templates
+#+source: template-heading
+#+begin_src emacs-lisp
+  some stuff here
+#+end_src
+
+#+source: template-footing
+#+begin_src emacs-lisp
+  some other stuff here
+#+end_src
+
+#+source: template
+#+begin_src sh :results output :noweb yes :var body="body stuff"
+heading=$(cat<<EOF
+<<template-heading>>
+EOF
+)
+footing=$(cat<<EOF
+<<template-footing>>
+EOF
+)
+echo $heading
+echo "$body"
+echo $footing
+#+end_src
+
+#+call: template[:noweb yes](body="something new")
+
+#+results: template[:noweb yes](body="something new")
+: some stuff here
+: something new
+: some other stuff here
+
 ** missing lines on tangle
    :PROPERTIES:
    :ID:       83eb62fd-4147-405b-bdc2-567b2d5cbd70
