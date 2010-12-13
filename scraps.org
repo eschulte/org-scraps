@@ -3,6 +3,29 @@
 #+STYLE: <link rel="stylesheet"href="data/stylesheet.css"type="text/css">
 
 * tests and examples
+** missing lines on tangle
+   :PROPERTIES:
+   :ID:       83eb62fd-4147-405b-bdc2-567b2d5cbd70
+   :END:
+#+begin_src org :results latex :tangle latex-err.tex
+  ,one
+  ,two
+  ,three
+#+end_src
+
+#+begin_src org :results latex :results replace
+  ,- eric
+  ,- schulte
+#+end_src
+
+#+results:
+#+BEGIN_LaTeX
+\begin{itemize}
+\item eric
+\item schulte
+\end{itemize}
+#+END_LaTeX
+
 ** utf8 and latin-1 encodings
 #+tblname: toto
 | é |
