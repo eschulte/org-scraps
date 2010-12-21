@@ -3,6 +3,26 @@
 #+STYLE: <link rel="stylesheet"href="data/stylesheet.css"type="text/css">
 
 * tests and examples
+** eval query
+#+begin_src emacs-lisp
+  (setq org-confirm-babel-evaluate
+        (lambda (lang body) (not (equal "ditaa" lang))))
+#+end_src
+
+#+results:
+| lambda | (lang body) | (not (equal ditaa lang)) |
+
+#+begin_src emacs-lisp :eval query
+  (message "eval'd")
+#+end_src
+
+#+results:
+: eval'd
+
+#+begin_src ditaa
+  ---
+#+end_src
+
 ** new file handling
 
 #+begin_src sh :sep , :file dirlisting
