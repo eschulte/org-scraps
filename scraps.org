@@ -3,6 +3,16 @@
 #+STYLE: <link rel="stylesheet"href="data/stylesheet.css"type="text/css">
 
 * tests and examples
+** language name abbreviations
+
+#+begin_src emacs-lisp
+  (add-to-list 'org-src-lang-modes '("clj" . clojure))
+#+end_src
+
+#+begin_src clj
+  (map (partial + 1) (range 20))
+#+end_src
+
 ** eval query
 #+begin_src emacs-lisp
   (setq org-confirm-babel-evaluate
