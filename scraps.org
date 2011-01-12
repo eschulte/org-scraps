@@ -3,6 +3,22 @@
 #+STYLE: <link rel="stylesheet"href="data/stylesheet.css"type="text/css">
 
 * tests and examples
+** call lines
+#+source: doubler
+#+begin_src emacs-lisp :var n=2
+  (* n 2)
+#+end_src
+
+#+call: doubler(n=3)
+
+#+results: doubler(n=3)
+: 6
+
+#+call: doubler[:var n=3]()
+
+#+results: doubler[:var n=3]()
+: 6
+
 ** language name abbreviations
 
 #+begin_src emacs-lisp
