@@ -3,6 +3,15 @@
 #+STYLE: <link rel="stylesheet"href="data/stylesheet.css"type="text/css">
 
 * tests and examples
+** empty strings as arguments
+
+#+begin_src emacs-lisp :results output :var foo=""
+  (concat foo "bar")
+#+end_src
+
+#+results:
+: bar
+
 ** call lines
 #+source: doubler
 #+begin_src emacs-lisp :var n=2
