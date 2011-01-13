@@ -3,6 +3,20 @@
 #+STYLE: <link rel="stylesheet"href="data/stylesheet.css"type="text/css">
 
 * tests and examples
+** replace inline code block
+This is src_emacs-lisp{(+ 1 2 3)} an inline block.
+
+#+begin_src emacs-lisp
+  (defun replace-inline-block ()
+    (interactive)
+    (if (save-excursion (re-search-backward "[ \f\t\n\r\v]" nil t)
+                        (looking-at org-babel-inline-src-block-regexp))
+        (replace-match
+         ((lambda (el) (if (stringp el) el (format "%S" el)))
+          (org-babel-execute-src-block)) nil nil nil 1)
+      (error "not inside of an inline source block.")))
+#+end_src
+
 ** noweb then variables
 #+source: replaced-first
 #+begin_src latex
