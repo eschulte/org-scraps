@@ -3,6 +3,22 @@
 #+STYLE: <link rel="stylesheet"href="data/stylesheet.css"type="text/css">
 
 * tests and examples
+** noweb then variables
+#+source: replaced-first
+#+begin_src latex
+  \begin{itemize}
+  \item first
+  \item data
+  \item third
+  \end{itemize}
+#+end_src
+
+#+begin_src latex :var data="second" :noweb yes
+  \section{ordinals}
+  \label{sec:ordinals}
+  <<replaced-first>>
+#+end_src
+
 ** empty strings as arguments
 
 #+begin_src emacs-lisp :results output :var foo=""
