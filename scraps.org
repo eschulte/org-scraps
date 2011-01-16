@@ -3,6 +3,19 @@
 #+STYLE: <link rel="stylesheet"href="data/stylesheet.css"type="text/css">
 
 * tests and examples
+** wrap noweb references in comments
+#+source: wrappable
+#+begin_src emacs-lisp
+  (setq x (+ 4 x))
+#+end_src
+
+#+begin_src emacs-lisp :comments noweb :noweb yes :tangle yes
+  (let ((x 1))
+    (message "x=%s" x)
+    <<wrappable>>
+    (message "x=%s" x))
+#+end_src
+
 ** replace inline code block
 This is src_emacs-lisp{(+ 1 2 3)} an inline block.
 
@@ -855,7 +868,7 @@ More test
   - three
 #+end_src
 
-#+begin_src emacs-lisp :tangle yes :noweb yes
+#+begin_src emacs-lisp :tangle example.tangled :noweb yes
   "
   <<org-list()>>
   "
