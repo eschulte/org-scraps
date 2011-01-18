@@ -3,6 +3,29 @@
 #+STYLE: <link rel="stylesheet"href="data/stylesheet.css"type="text/css">
 
 * tests and examples
+** passing arguments to the shell
+#+results: something
+: eric
+:   schulte
+:     yes
+: more
+
+#+results: something-list
+| 1 |
+| 2 |
+| 3 |
+
+#+begin_src sh :var data=something-list
+  echo "$data"|wc -l
+#+end_src
+
+#+results:
+: 3
+
+#+begin_src emacs-lisp :results silent
+  (setq org-babel-sh-var-quote-fmt "`cat <<'BABEL_TABLE'\n%s\nBABEL_TABLE\n`")
+#+end_src
+
 ** wrap noweb references in comments
 #+source: wrappable
 #+begin_src emacs-lisp
