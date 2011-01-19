@@ -8,6 +8,18 @@
   (ns something)
 #+end_src
 
+a helper function for the above
+#+begin_src emacs-lisp
+  (defun mkdir-p (file &optional dir)
+    "Create any parent directories of FILE if missing and return FILE."
+    (make-directory (file-name-directory file) (or dir ".")) file)
+#+end_src
+
+allows the following
+#+begin_src clojure :tangle (mkdir-p "src/foo.clj")
+  (ns something)
+#+end_src
+
 ** passing arguments to the shell
 #+results: something
 : eric
