@@ -3,6 +3,11 @@
 #+STYLE: <link rel="stylesheet"href="data/stylesheet.css"type="text/css">
 
 * tests and examples
+** creating a directory when needed for tangling
+#+begin_src clojure :tangle (prog1 "src/example.clj" (unless (file-exists-p "src") (make-directory "src")))
+  (ns something)
+#+end_src
+
 ** passing arguments to the shell
 #+results: something
 : eric
