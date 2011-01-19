@@ -4,7 +4,7 @@
 
 * tests and examples
 ** creating a directory when needed for tangling
-#+begin_src clojure :tangle (prog1 "src/example.clj" (unless (file-exists-p "src") (make-directory "src")))
+#+begin_src clojure :tangle (prog1 "src/foo.clj" (make-directory "src" "."))
   (ns something)
 #+end_src
 
