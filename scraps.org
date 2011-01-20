@@ -20,6 +20,11 @@ allows the following
   (ns something)
 #+end_src
 
+There is now a new header argument controlling this behavior
+#+begin_src emacs-lisp :mkdirp yes :tangle novel/nested/directories/finally.clj
+  (message "contents")
+#+end_src
+
 ** passing arguments to the shell
 #+results: something
 : eric
