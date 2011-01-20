@@ -3,6 +3,21 @@
 #+STYLE: <link rel="stylesheet"href="data/stylesheet.css"type="text/css">
 
 * tests and examples
+** inserting wrappers eats following characters
+*** Test
+  
+  #+begin_src emacs-lisp :results latex
+    "\\begin{equation}\\frac{1}{2}\n\\end{equation}"
+  #+end_src
+
+  #+results:
+  #+BEGIN_LaTeX
+  \begin{equation}\frac{1}{2}
+  \end{equation}
+  #+END_LaTeX
+  
+*** Watch me die :-(
+
 ** creating a directory when needed for tangling
 #+begin_src clojure :tangle (prog1 "src/foo.clj" (make-directory "src" "."))
   (ns something)
