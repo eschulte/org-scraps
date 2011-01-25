@@ -3,6 +3,29 @@
 #+STYLE: <link rel="stylesheet"href="data/stylesheet.css"type="text/css">
 
 * tests and examples
+** results replace not always working
+#+begin_src sh :results output org replace
+  for i in `seq 4`;do
+      echo "- place $i in the list"
+  done
+#+end_src
+
+#+results:
+#+BEGIN_ORG
+- place 1 in the list
+- place 2 in the list
+- place 3 in the list
+- place 4 in the list
+#+END_ORG
+
+** simple calc example
+#+begin_src calc 
+2*3
+#+end_src
+
+#+results:
+: 6
+
 ** inserting wrappers eats following characters
 *** Test
   
