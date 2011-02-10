@@ -3,6 +3,46 @@
 #+STYLE: <link rel="stylesheet"href="data/stylesheet.css"type="text/css">
 
 * tests and examples
+** two vars in a properties block -- not possible
+   :PROPERTIES:
+   :var:      test1=7
+   :var:      test2=8
+   :END:
+
+#+begin_src emacs-lisp
+  (message "test1=%S test2=%S" test1 test2)
+#+end_src
+
+results in Error
+: let: Symbol's value as variable is void: test2
+
+*** an alternative
+    :PROPERTIES:
+    :var:      tests=all-tests
+    :END:
+
+#+tblname: all-tests
+- 7
+- 8
+
+#+begin_src emacs-lisp :var eric=89
+  (message "test1=%S test2=%S" (first tests) (second tests))
+#+end_src
+
+#+results:
+: test1=7 test2=8
+
+** how to set no-expand in properties
+   :PROPERTIES:
+   :no-expand: yes
+   :END:
+
+#+begin_src emacs-lisp :var something="other thing" :tangle no-expand.el
+  :test
+#+end_src
+
+tangles to
+
 ** non-inlined inline code block
 The Date is src_sh[:results replace]{date} at the time of =this= export.
 
