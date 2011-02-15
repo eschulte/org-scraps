@@ -3,6 +3,90 @@
 #+STYLE: <link rel="stylesheet"href="data/stylesheet.css"type="text/css">
 
 * tests and examples
+** recutils
+#+begin_src sh :file book.rec
+  cat <<EOF > book.rec
+  # -*- mode: rec -*-
+  %rec: Book
+  %mandatory: Title
+  %type: Location enum loaned home unknown
+  %doc:
+  + A book in my personal collection.
+  
+  Title: GNU Emacs Manual
+  Author: Richard M. Stallman
+  Publisher: FSF
+  Location: home
+  
+  Title: The Colour of Magic
+  Author: Terry Pratchett
+  Location: loaned
+  
+  Title: Mio Cid
+  Author: Anonymous
+  Location: home
+  
+  Title: chapters.gnu.org administration guide
+  Author: Nacho Gonzalez
+  Author: Jose E. Marchesi
+  Location: unknown
+  
+  Title: Yeelong User Manual
+  Location: home
+  
+  # End of books.rec
+  EOF
+#+end_src
+
+#+results:
+[[file:book.rec]]
+
+#+begin_src rec :data book.rec :fields Title,Author
+  Location = 'loaned'
+#+end_src
+
+#+results:
+| Title               | Author          |
+| The Colour of Magic | Terry Pratchett |
+
+#+begin_src rec :data book.rec :fields Title,Author
+  
+#+end_src
+
+#+results:
+| Title                                 | Author              | Author_2         |
+| GNU Emacs Manual                      | Richard M. Stallman |                  |
+| The Colour of Magic                   | Terry Pratchett     |                  |
+| Mio Cid                               | Anonymous           |                  |
+| chapters.gnu.org administration guide | Nacho Gonzalez      | Jose E. Marchesi |
+| Yeelong User Manual                   |                     |                  |
+
+
+** SQL --- example reading org-mode table into sql
+#+tblname: example-table-for-sql
+| a |  b |
+|---+----|
+| 1 | 10 |
+| 2 | 11 |
+| 3 | 12 |
+| 4 | 13 |
+| 5 | 14 |
+| 6 | 15 |
+
+#+headers: :var table=example-table-for-sql
+#+begin_src sql :engine mysql
+load data infile "$table" into mytable;
+#+end_src
+
+** passing keywords inside header arguments
+
+#+begin_src emacs-lisp :var lst='(:no-expand :other)
+  lst
+#+end_src
+
+#+results:
+| :no-expand | other |
+
 ** two vars in a properties block -- not possible
    :PROPERTIES:
    :var:      test1=7
