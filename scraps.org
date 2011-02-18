@@ -3,6 +3,10 @@
 #+STYLE: <link rel="stylesheet"href="data/stylesheet.css"type="text/css">
 
 * tests and examples
+** inline code block
+
+here is an inline block src_R{1+1}
+
 ** recutils
 #+begin_src sh :file book.rec
   cat <<EOF > book.rec
@@ -60,7 +64,6 @@
 | Mio Cid                               | Anonymous           |                  |
 | chapters.gnu.org administration guide | Nacho Gonzalez      | Jose E. Marchesi |
 | Yeelong User Manual                   |                     |                  |
-
 
 ** SQL --- example reading org-mode table into sql
 #+tblname: example-table-for-sql
@@ -663,15 +666,26 @@ now indented
 ** lists as data types
 
 #+results: a-list
-- babel
-- and
 - org-mode
-
+- and
+- babel
 
 #+source: a-list
 #+begin_src emacs-lisp :var lst=a-list :results list
   (reverse lst)
 #+end_src
+
+also for a block inside of a list
+1. First element
+2. Second element -- has a block
+   #+begin_src emacs-lisp
+     (+ 1 1 1 1)
+   #+end_src
+
+   #+results:
+   : 4
+
+3. third element
 
 ** sqlite
 #+begin_src sqlite :db paper/climate.sqlite
