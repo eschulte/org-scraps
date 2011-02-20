@@ -3,6 +3,62 @@
 #+STYLE: <link rel="stylesheet"href="data/stylesheet.css"type="text/css">
 
 * tests and examples
+** mentions of file names in file contents
+directory to search
+#+results: graph-dir
+: graph-dir
+
+list all files in dir
+#+source: graph-files
+#+begin_src sh :results vector :var dir=graph-dir
+  find $dir -type f -exec basename {} \;
+#+end_src
+
+#+results: graph-files
+| other |
+| dan   |
+| eric  |
+| seb   |
+
+association of files with mentions
+#+source: graph-associations
+#+begin_src sh :var dir=graph-dir :var files=graph-files
+  for i in $files; do
+      for j in `grep -l -r $i $dir`;do
+          echo $i, `basename $j`
+      done
+  done
+#+end_src
+
+#+results: graph-associations
+| other | eric |
+| other | seb  |
+| dan   | eric |
+| eric  | seb  |
+| seb   | dan  |
+
+graphing with dot
+#+source: to-dot
+#+begin_src sh :var associations=graph-associations :results scalar
+  echo "$associations"|awk '{print $1, "->", $2}'
+#+end_src
+
+#+results: to-dot
+: other -> eric
+: other -> seb
+: dan -> eric
+: eric -> seb
+: seb -> dan
+
+#+begin_src dot :var data=to-dot :file files.png
+  digraph G{
+    $data
+  }
+#+end_src
+
+#+results:
+[[file:files.png]]
+
 ** inline code block
 
 here is an inline block src_R{1+1}

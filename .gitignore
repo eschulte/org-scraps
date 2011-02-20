@@ -16,3 +16,6 @@ data/
 ## ignore jekyll files
 _posts
 _site
+
+## ignore some data for the scraps file
+graph-dir
