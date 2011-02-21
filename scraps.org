@@ -3,6 +3,23 @@
 #+STYLE: <link rel="stylesheet"href="data/stylesheet.css"type="text/css">
 
 * tests and examples
+** new lists
+#+results: simple-list
+- 1
+- two
+- 3
+- four
+
+#+begin_src emacs-lisp :var lst=simple-list :results list
+  lst
+#+end_src
+
+#+results:
+- 1
+- two
+- 3
+- four
+
 ** catch the file name during export
 
 #+begin_src emacs-lisp :var file-name=(buffer-file-name) :exports both
