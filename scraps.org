@@ -3,6 +3,12 @@
 #+STYLE: <link rel="stylesheet"href="data/stylesheet.css"type="text/css">
 
 * tests and examples
+** catch the file name during export
+
+#+begin_src emacs-lisp :var file-name=(buffer-file-name) :exports both
+  file-name
+#+end_src
+
 ** export of inline code blocks which are silent
 #+begin_src emacs-lisp :results silent
   (setf org-babel-default-inline-header-args
