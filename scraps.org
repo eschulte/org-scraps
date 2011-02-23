@@ -4,21 +4,30 @@
 
 * tests and examples
 ** new lists
+*** results embedded inside of a list
+1. this has results
+   #+results: something-in-a-list
+   : foo
+2. and this doesn't work
+   #+begin_src emacs-lisp :var data=something-in-a-list
+     data
+   #+end_src
+
+   #+results:
+   : foo
+
+*** reading and writing
 #+results: simple-list
 - 1
 - two
 - 3
 - four
 
-#+begin_src emacs-lisp :var lst=simple-list :results list
-  lst
-#+end_src
 
-#+results:
-- 1
-- two
-- 3
-- four
+#+source: simple-list
+#+begin_src emacs-lisp :var lst=simple-list :results list
+  (reverse lst)
+#+end_src
 
 ** catch the file name during export
 
