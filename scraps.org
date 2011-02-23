@@ -3,6 +3,21 @@
 #+STYLE: <link rel="stylesheet"href="data/stylesheet.css"type="text/css">
 
 * tests and examples
+** calc variables inside of parenthesis
+#+BEGIN_SRC calc :var testvar=9000
+testvar - 200
+#+END_SRC
+
+#+results:
+: 8800
+
+#+BEGIN_SRC calc :var testvar=9000
+(testvar - 200) 800
+#+END_SRC
+
+#+results:
+: 7040000
+
 ** new lists
 *** results embedded inside of a list
 1. this has results
