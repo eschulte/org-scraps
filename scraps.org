@@ -3,6 +3,43 @@
 #+STYLE: <link rel="stylesheet"href="data/stylesheet.css"type="text/css">
 
 * tests and examples
+** source block names in current buffer
+#+begin_src emacs-lisp :results list
+ (org-babel-src-block-names)
+#+end_src
+
+** simple python block
+#+begin_src python :return foo
+  foo = 8
+  foo += 1
+#+end_src
+
+#+results:
+: 9
+
+** sh return a list of elements with spaces
+#+begin_src sh :results list
+  echo "eric schulte"
+  echo "dan davison"
+  echo "seb vauban"
+#+end_src
+
+#+results:
+- ("eric" "schulte")
+- ("dan" "davison")
+- ("seb" "vauban")
+
+#+begin_src sh :results scalar
+  echo "eric schulte"
+  echo "dan davison"
+  echo "seb vauban"
+#+end_src
+
+#+results:
+: eric schulte
+: dan davison
+: seb vauban
+
 ** calc variables inside of parenthesis
 #+BEGIN_SRC calc :var testvar=9000
 testvar - 200
