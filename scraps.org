@@ -3,6 +3,38 @@
 #+STYLE: <link rel="stylesheet"href="data/stylesheet.css"type="text/css">
 
 * tests and examples
+** passing elisp-looking variables to code blocks
+#+begin_src perl :var it="(+ 1 1)" :results output
+  printf "passed in %s", $it
+#+end_src
+
+#+results:
+: passed in (+ 1 1)
+
+** exporting cache and noweb
+#+srcname: test_sleep
+#+begin_src R :session :exports code
+  Sys.sleep(time=5)
+  1:10
+#+end_src
+
+#+srcname: test_sleep
+#+begin_src R :session :exports results :noweb yes :cache yes
+  <<test_sleep>>
+#+end_src
+
+#+results[e2c9e6c2f84563b590a765502057d92463e50182]: test_sleep
+|  1 |
+|  2 |
+|  3 |
+|  4 |
+|  5 |
+|  6 |
+|  7 |
+|  8 |
+|  9 |
+| 10 |
+
 ** source block names in current buffer
 #+begin_src emacs-lisp :results list
  (org-babel-src-block-names)
