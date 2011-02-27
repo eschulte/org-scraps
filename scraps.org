@@ -3,6 +3,14 @@
 #+STYLE: <link rel="stylesheet"href="data/stylesheet.css"type="text/css">
 
 * tests and examples
+** don't interpret tuples as elisp code
+#+begin_src python :results value
+  return (1,2)
+#+end_src
+
+#+results:
+: (1, 2)
+
 ** passing elisp-looking variables to code blocks
 #+begin_src perl :var it="(+ 1 1)" :results output
   printf "passed in %s", $it
