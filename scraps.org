@@ -3,6 +3,14 @@
 #+STYLE: <link rel="stylesheet"href="data/stylesheet.css"type="text/css">
 
 * tests and examples
+** pass a vector to calc
+#+begin_src calc :var y=[1 2 3]
+  3 y
+#+end_src
+
+#+results:
+: (3, 6)
+
 ** don't interpret tuples as elisp code
 #+begin_src python :results value
   return (1,2)
