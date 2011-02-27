@@ -3,6 +3,43 @@
 #+STYLE: <link rel="stylesheet"href="data/stylesheet.css"type="text/css">
 
 * tests and examples
+** new block regexp tests
+*** Block 1 (Exports OK)
+
+#+BEGIN_SRC sh :tangle test-out
+Block 1
+#+END_SRC
+
+*** Block 2 (Exports OK - double blank line no white-space in Block)
+
+#+BEGIN_SRC sh :tangle test-out
+
+
+#+END_SRC
+
+*** Block 3 (Fails - single blank line no white-space in Block)
+
+#+BEGIN_SRC sh :tangle test-out
+
+#+END_SRC
+
+*** Block 4 (Gets consumed by previous Block)
+
+#+BEGIN_SRC sh :tangle test-out
+Block 4
+#+END_SRC
+
+*** Block 5 (Fails - no lines in Block)
+
+#+BEGIN_SRC sh :tangle test-out
+#+END_SRC
+
+*** Block 6 (Gets consumed by previous Block
+
+#+BEGIN_SRC sh :tangle test-out
+Block 6
+#+END_SRC
+
 ** pass a vector to calc
 #+begin_src calc :var y=[1 2 3]
   3 y
