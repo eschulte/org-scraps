@@ -3,6 +3,16 @@
 #+STYLE: <link rel="stylesheet"href="data/stylesheet.css"type="text/css">
 
 * tests and examples
+** literal reference in a table with sbe
+
+| "eric schulte" | 12 |
+#+TBLFM: @1$2='(sbe length (in $1))
+
+#+source: length
+#+begin_src emacs-lisp :var in="foo"
+  (length in)
+#+end_src
+
 ** reference to a commented out subtree
 *** COMMENT I don't export
 #+results: hidden-parameters
