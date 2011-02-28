@@ -3,6 +3,19 @@
 #+STYLE: <link rel="stylesheet"href="data/stylesheet.css"type="text/css">
 
 * tests and examples
+** reference to a commented out subtree
+*** COMMENT I don't export
+#+results: hidden-parameters
+| 1 |
+| 2 |
+| 3 |
+| 4 |
+
+*** I do export
+#+begin_src emacs-lisp :var params=hidden-parameters :exports both
+  params
+#+end_src
+
 ** strip hline before processing a variables indices
 #+results: table-w-hline
 | 1 | a |
