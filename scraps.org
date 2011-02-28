@@ -104,6 +104,18 @@ Block 6
 #+results:
 : passed in (+ 1 1)
 
+#+results: elisp-looking-table
+| 1 | (+ 1 1) |
+| 2 | (+ 2 2) |
+| 3 | (+ 3 3) |
+
+#+begin_src sh :var data=elisp-looking-table[1,1]
+  echo $data
+#+end_src
+
+#+results:
+: (+ 2 2)
+
 ** exporting cache and noweb
 #+srcname: test_sleep
 #+begin_src R :session :exports code
