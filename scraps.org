@@ -3,6 +3,33 @@
 #+STYLE: <link rel="stylesheet"href="data/stylesheet.css"type="text/css">
 
 * tests and examples
+** strip hline before processing a variables indices
+#+results: table-w-hline
+| 1 | a |
+|---+---|
+| 2 | b |
+| 3 | c |
+| 4 | d |
+
+#+begin_src emacs-lisp :var table=table-w-hline[1,1] :hlines no
+  table
+#+end_src
+
+#+results:
+: hline
+
+#+tblname: perl-table-w-hline
+| colA | colB |
+|------+------|
+| a1   | b1   |
+| a2   | b2   |
+
+#+headers: :var b=perl-table-w-hline[2..,1]
+#+headers: :var a=perl-table-w-hline[2..,0]
+#+begin_src perl :tangle yes
+  $a; $b;
+#+end_src 
+
 ** new block regexp tests
 *** Block 1 (Exports OK)
 
