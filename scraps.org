@@ -3,6 +3,63 @@
 #+STYLE: <link rel="stylesheet"href="data/stylesheet.css"type="text/css">
 
 * tests and examples
+** leading/trailing spaces
+#+results: spaces-wrapped-string
+- " pass through with space "
+
+
+#+begin_src emacs-lisp :var res=spaces-wrapped-string[0]
+  res
+#+end_src
+
+#+results:
+:  pass through with space 
+
+** results org raw wrap
+#+begin_src sh :results output org :exports none
+  cat <<EOF
+  - first
+  - second
+  EOF
+#+end_src
+
+#+results:
+#+BEGIN_ORG
+- first
+- second
+#+END_ORG
+
+*** Version 1
+This version only prints the org code for the table, but does not interprets it.
+#+begin_src R :exports both :results output raw
+  cat(
+      "|--|--|\n",
+      "|name|[[./pdf1.pdf]]|\n",
+      "|--|--|\n"
+      )
+#+end_src
+
+*** Version 2
+This version prints the table including the graph as expected, but
+:results is used twice as a header argument.
+#+begin_src R :results output :exports both :results raw
+  cat(
+      "|--|--|\n",
+      "|name|[[./pdf1.pdf]]|\n",
+      "|--|--|\n"
+      )
+#+end_src
+
+*** Version 3
+Finally this version does only export the R code
+#+begin_src R :exports both :results raw
+  cat(
+      "|--|--|\n",
+      "|name|[[./pdf1.pdf]]|\n",
+      "|--|--|\n"
+      )
+#+end_src
+
 ** literal reference in a table with sbe
 
 | "eric schulte" | 12 |
