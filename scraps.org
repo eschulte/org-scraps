@@ -3,6 +3,26 @@
 #+STYLE: <link rel="stylesheet"href="data/stylesheet.css"type="text/css">
 
 * tests and examples
+** export of inline R code
+Here I test inline code evaluation in R.
+
+#+begin_src R :session *R*
+x <- 100
+#+end_src
+
+#+results:
+: 100
+
+Now I want to export the value of x, which should be
+src_R[:session *R*]{x} .
+
+Did the number 100 show up at the end of the previous sentence on export?
+
+** simple mysql
+#+begin_src sql :engine mysql
+  show tables;
+#+end_src
+
 ** leading/trailing spaces
 #+results: spaces-wrapped-string
 - " pass through with space "
