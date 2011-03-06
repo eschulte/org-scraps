@@ -3,6 +3,35 @@
 #+STYLE: <link rel="stylesheet"href="data/stylesheet.css"type="text/css">
 
 * tests and examples
+** eval results as a list
+#+begin_src python :results value
+  return "(mapcar (lambda (el) (+ 1 el)) '(1 2))"
+#+end_src
+
+#+results:
+| 2 | 3 |
+
+#+begin_src python :results value
+  return "[1, 2]"
+#+end_src
+
+#+results:
+| 1 | 2 |
+
+#+begin_src python :results value
+  return [1, 2]
+#+end_src
+
+#+results:
+| 1 | 2 |
+
+#+begin_src python :results value
+  return "%r" % "[1 2]"
+#+end_src
+
+#+results:
+: [1 2]
+
 ** export of inline R code
 Here I test inline code evaluation in R.
 
