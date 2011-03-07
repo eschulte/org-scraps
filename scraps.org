@@ -3,6 +3,29 @@
 #+STYLE: <link rel="stylesheet"href="data/stylesheet.css"type="text/css">
 
 * tests and examples
+** looks like a pipe in a table
+#+source: clean
+#+begin_src emacs-lisp :var in=""
+  (flet ((clean (in)
+                (if (listp in)
+                    (mapcar #'clean in)
+                  (if (stringp in)
+                      (replace-regexp-in-string "¦" "|" in)
+                    in))))
+    (clean in))
+#+end_src
+
+#+results: regexps
+| first  | (a¦b) |
+| second | (1¦2) |
+
+#+begin_src perl :var a=clean(in=regexps)[0,1] :var b=clean(in=regexps)[1,1]
+  $a; $b;
+#+end_src
+
+#+results:
+: (1|2)
+
 ** eval results as a list
 #+begin_src python :results value
   return "(mapcar (lambda (el) (+ 1 el)) '(1 2))"
