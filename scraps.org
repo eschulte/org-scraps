@@ -8,20 +8,25 @@
    :ID:       d2ff9d6f-b413-4072-91a9-3ae8aa32032c
    :END:
 
+First, add macro expansion to the new `org-babel-tangle-body-hook'.
+
 #+begin_src emacs-lisp :results silent
   (add-hook 'org-babel-tangle-body-hook
             (lambda () (org-export-preprocess-apply-macros)))
 #+end_src
 
+Then define the macro.  Note: you may need to export the buffer before
+tangling so that the macro definition is noticed and processed by
+Org-mode.
+
 #+MACRO: CONFIG_PARAM01 45
 
-(org-export-preprocess-apply-macros)
+Then on both export and tangling the macro in the following code block
+will be replaced.
 
 #+begin_src sh :tangle yes
   echo org-mode set CONFIG_PARAMETER to: {{{CONFIG_PARAM01}}}
 #+end_src
-
-CONFIG_PARAMETER to: {{{CONFIG_PARAM01}}}
 
 ** looks like a pipe in a table
 #+source: clean
