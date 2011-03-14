@@ -3,6 +3,26 @@
 #+STYLE: <link rel="stylesheet"href="data/stylesheet.css"type="text/css">
 
 * tests and examples
+** macros during tangling
+   :PROPERTIES:
+   :ID:       d2ff9d6f-b413-4072-91a9-3ae8aa32032c
+   :END:
+
+#+begin_src emacs-lisp :results silent
+  (add-hook 'org-babel-tangle-body-hook
+            (lambda () (org-export-preprocess-apply-macros)))
+#+end_src
+
+#+MACRO: CONFIG_PARAM01 45
+
+(org-export-preprocess-apply-macros)
+
+#+begin_src sh :tangle yes
+  echo org-mode set CONFIG_PARAMETER to: {{{CONFIG_PARAM01}}}
+#+end_src
+
+CONFIG_PARAMETER to: {{{CONFIG_PARAM01}}}
+
 ** looks like a pipe in a table
 #+source: clean
 #+begin_src emacs-lisp :var in=""
