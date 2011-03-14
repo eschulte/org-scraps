@@ -3,6 +3,20 @@
 #+STYLE: <link rel="stylesheet"href="data/stylesheet.css"type="text/css">
 
 * tests and examples
+** conflicting header arguments
+
+code block
+#+source: conflict-block
+#+begin_src sh :exports results :results silent
+  echo eric
+#+end_src
+
+call line
+#+call: conflict-block() :exports results
+
+#+results: conflict-block()
+: eric
+
 ** macros during tangling
    :PROPERTIES:
    :ID:       d2ff9d6f-b413-4072-91a9-3ae8aa32032c
