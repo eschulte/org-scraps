@@ -3,6 +3,80 @@
 #+STYLE: <link rel="stylesheet"href="data/stylesheet.css"type="text/css">
 
 * tests and examples
+** detangling example
+   :PROPERTIES:
+   :tangle:   yes
+   :comments: yes
+   :shebang:  #!/bin/sh
+   :ID:       7a22cf71-6be3-4fca-a700-4c8be8237303
+   :END:
+
+#+source: sh-for-tangling
+#+begin_src sh
+  echo "this is the `sh-for-tangling' code block"
+  num=`expr 1 + 1`
+  echo "the value of num is $num"
+#+end_src
+
+#+begin_src sh
+  echo "this is an unnamed code block"
+#+end_src
+
+** vc-log
+
+A version control log of this file.  The =vc-log= code block lives in
+the library of babel.
+#+call: vc-log() :exports results
+
+** CL example
+#+begin_src lisp
+  (defun range (n &optional m)
+    "Return the numbers in range."
+    (loop for num from (if m n 0) to (if m m (- n 1)) collect num))
+  
+  (mapcar #'list (mapcar #'1+ (range 10)))
+#+end_src
+
+#+results:
+|  1 |
+|  2 |
+|  3 |
+|  4 |
+|  5 |
+|  6 |
+|  7 |
+|  8 |
+|  9 |
+| 10 |
+
+** tangling out vc information
+
+#+headers: :var STATE=(vc-state (or (buffer-file-name) org-current-export-file))
+#+headers: :var REV=(vc-working-revision (or (buffer-file-name) org-current-export-file))
+#+begin_src sh :tangle yes
+  rm -rf ./R
+  rm -f ./spreadSim.sub
+  REVISION=$REV.$STATE
+  tar -xf nsa.$REVISION.tar.gz
+  $HOME/R/R/R-2.12.0/bin/Rscript --vanilla -e
+"source('./R/generateLatinHypercubeScenarios.R'); doIt()"
+  for SCENARIO in ./R/scenarios/*.R; do
+    export SCENARIO=${SCENARIO#./R/scenarios/}
+    qsub nsa.sub
+  done
+#+end_src
+
+** grabbing the current buffer during export
+Eric
+
+#+begin_src emacs-lisp :var buf=(buffer-file-name (current-buffer)) :exports both
+  (message "buffer %S!" buf)
+#+end_src
+
+#+begin_src sh :exports results :results output
+  git log -1
+#+end_src
+
 ** colnames with call lines
 #+TBLNAME: data
 | x | parameter | value |

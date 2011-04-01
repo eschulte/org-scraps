@@ -11,6 +11,7 @@
 *.tex
 *.pdf
 *.rec
+scraps.sh
 data/
 
 ## ignore jekyll files
