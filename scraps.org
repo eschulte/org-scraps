@@ -3,6 +3,16 @@
 #+STYLE: <link rel="stylesheet"href="data/stylesheet.css"type="text/css">
 
 * tests and examples
+** session associated with R block
+#+begin_src R :session *chris*
+  x <- 1
+  y <- 2
+  y-x
+#+end_src
+
+#+results:
+: 1
+
 ** detangling example
    :PROPERTIES:
    :tangle:   yes
