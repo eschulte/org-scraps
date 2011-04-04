@@ -3,6 +3,30 @@
 #+STYLE: <link rel="stylesheet"href="data/stylesheet.css"type="text/css">
 
 * tests and examples
+** headers in R tables during export
+#+TBLNAME: Chuah07
+| condition | Mean.offer |
+|-----------+------------|
+| 1.MMM     |      48.49 |
+| 2.MMU     |      42.59 |
+| 3.MUM     |      44.87 |
+| 4.UMU     |      46.43 |
+| 5.UUM     |      44.15 |
+| 6.UUU     |      43.80 |
+| MAL       |      46.28 |
+| UK        |       44.1 |
+| All       |      45.29 |
+
+#+headers: :var data=Chuah07
+#+begin_src R :results output :exports both :cache yes
+  str(data)
+#+end_src
+
+#+results[135a7f73839b69d118780ca29a64c3840601f7b9]:
+: 'data.frame':	9 obs. of  2 variables:
+:  $ condition : chr  "1.MMM" "2.MMU" "3.MUM" "4.UMU" ... 
+:  $ Mean.offer: num  48.5 42.6 44.9 46.4 44.1 ... eric
+
 ** session associated with R block
 #+begin_src R :session *chris*
   x <- 1
