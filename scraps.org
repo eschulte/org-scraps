@@ -3,6 +3,37 @@
 #+STYLE: <link rel="stylesheet"href="data/stylesheet.css"type="text/css">
 
 * tests and examples
+** emacs-lisp printing with output to string
+
+#+begin_src emacs-lisp :results output
+  (let ((dog (sqrt 2))
+        (cat 7))
+    (print (format "%s %f" "Dog: " (eval dog)))
+    (print (format "%s %d" "Cat: " (eval cat)) nil)
+    (print "Fish."))
+#+end_src
+
+#+results:
+: 
+: "Dog:  1.414214"
+: 
+: "Cat:  7"
+: 
+: "Fish."
+
+#+begin_src emacs-lisp
+  (let ((dog (sqrt 2))
+        (cat 7))
+    `((dog ,dog)
+      (cat ,cat)
+      (fish)))
+#+end_src
+
+#+results:
+| dog  | 1.4142135623730951 |
+| cat  |                  7 |
+| fish |                    |
+
 ** headers in R tables during export
 #+TBLNAME: Chuah07
 | condition | Mean.offer |
