@@ -22,11 +22,6 @@
 | text                                  |
 #+TBLFM: @8$1='(sbe parameter-variation (nums @1$1..@7$1))
 
-#+source: quote(it='())
-#+begin_src emacs-lisp
-  (length it)
-#+end_src
-
 | '(1 2 3 4) |
 |------------|
 |          4 |
@@ -36,6 +31,17 @@
 |-----------|
 | #ERROR    |
 #+TBLFM: @2$1='(sbe quote (it @1$1))
+
+*** using vectors to represent complex number is lisp
+| [1 2]            |
+|------------------|
+| real:1 complex:2 |
+#+TBLFM: @2$1='(sbe real (it @1$1))
+
+#+source: real(it='())
+#+begin_src emacs-lisp
+  (format "real:%d complex:%d" (aref it 0) (aref it 1))
+#+end_src
 
 *** reference the table in a table formula
 #+results: complex-data
