@@ -3,6 +3,11 @@
 #+STYLE: <link rel="stylesheet"href="data/stylesheet.css"type="text/css">
 
 * tests and examples
+** simple Oz example
+#+begin_src oz :results output
+  {Browse 'Hello'}
+#+end_src
+
 ** complex numbers in tables and python, reference in table formula
 
 #+source: parameter-variation(data=0)
