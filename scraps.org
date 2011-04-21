@@ -3,6 +3,16 @@
 #+STYLE: <link rel="stylesheet"href="data/stylesheet.css"type="text/css">
 
 * tests and examples
+** units in R plot
+#+begin_src R  :results graphics :file test.png :width 8 :height 8 :res 200 :units cm
+  x <- -10:10
+  y <- x^2
+  plot(x, y, type="l", col="red", lty=1)
+#+end_src
+
+#+results:
+[[file:test.png]]
+
 ** Ocaml appending blocks
 #+begin_src ocaml
   [|1;2;3|];;
