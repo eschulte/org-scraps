@@ -3,6 +3,21 @@
 #+STYLE: <link rel="stylesheet"href="data/stylesheet.css"type="text/css">
 
 * tests and examples
+** automatic org-mode formatting
+
+#+source: raw-results
+#+begin_src sh :results output tabular
+  echo "| 1 |"
+  echo "| 2 |"
+#+end_src
+
+#+begin_src emacs-lisp :var in=raw-results
+  (stringp in)
+#+end_src
+
+#+results:
+: t
+
 ** units in R plot
 #+begin_src R  :results graphics :file test.png :width 8 :height 8 :res 200 :units cm
   x <- -10:10
