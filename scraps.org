@@ -3,6 +3,17 @@
 #+STYLE: <link rel="stylesheet"href="data/stylesheet.css"type="text/css">
 
 * tests and examples
+** simple latex verbatim wrap example
+#+begin_src emacs-lisp :results silent
+  (setq org-export-latex-verbatim-wrap
+        '("{\\scriptsize\n\\begin{verbatim}\n" . "\\end{verbatim}\n}\n"))
+#+end_src
+
+#+begin_src sh
+  echo eric schulte
+  echo another
+#+end_src
+
 ** inserting complicated results
 #+begin_src emacs-lisp
   ((lambda (result) (condition-case nil (read result) (error result)))
