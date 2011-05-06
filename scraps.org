@@ -3,6 +3,43 @@
 #+STYLE: <link rel="stylesheet"href="data/stylesheet.css"type="text/css">
 
 * tests and examples
+** new names for results
+
+#+results: simple
+: 1
+
+#+begin_src emacs-lisp :var data=simple
+  data
+#+end_src
+
+#+results:
+: 1
+
+changing the variable used to label data
+#+begin_src emacs-lisp :results silent
+  (setq org-babel-result-fmt
+        "^[ \t]*#\\+\\(TBLNAME\\|RESNAME\\|RESULTS\\|DATA\\):[ \t]*%s[ \t]*$")
+#+end_src
+
+#+data: not-so-simple
+: 2
+
+#+begin_src emacs-lisp :var data=not-so-simple
+  data
+#+end_src
+
+#+results:
+: 2
+
+** ocaml
+
+#+begin_src ocaml
+  [3;2;3] @ [3;2;3;4;5];;
+#+end_src
+
+#+results:
+| 3 | 2 | 3 | 3 | 2 | 3 | 4 | 5 |
+
 ** simple latex verbatim wrap example
 #+begin_src emacs-lisp :results silent
   (setq org-export-latex-verbatim-wrap
@@ -15,7 +52,7 @@
 #+end_src
 
 ** inserting complicated results
-#+begin_src emacs-lisp
+#+begin_src emacs-lisp :results scalar
   ((lambda (result) (condition-case nil (read result) (error result)))
    "(:return
    (:ok \"{:model #<MINLP f(x,y)={(x[0]-5)^2+(x[1]-3)^2-y*sqrt($x),2}>, :v #<Variables x={ 4.0, 4.0 } y={ 0 }>, :z nil}\")
@@ -4384,7 +4421,7 @@ plot data using 1:2 with lines
 
 ** indexing into results
 
-#+tblname: indexable-table
+#+data: indexable-table
 | eric    |
 | michael |
 | schulte |
@@ -4397,9 +4434,9 @@ plot data using 1:2 with lines
 #+end_src
 
 #+results:
-| "schulte" |
-| "is"      |
-| "my"      |
+| schulte |
+| is      |
+| my      |
 
 #+tblname: multidimensional-indexing
 | 1 |  2 |
