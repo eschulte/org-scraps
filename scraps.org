@@ -3,6 +3,16 @@
 #+STYLE: <link rel="stylesheet"href="data/stylesheet.css"type="text/css">
 
 * tests and examples
+** don't match end_src inside of a block
+
+#+srcname: the_issue
+#+begin_src sh :results output
+  echo '#+end_src'
+#+end_src
+
+#+results: the_issue
+: #+end_src block
+
 ** append tables
 #+data: table-names
 - first-table
