@@ -3,6 +3,26 @@
 #+STYLE: <link rel="stylesheet"href="data/stylesheet.css"type="text/css">
 
 * tests and examples
+** passing values through to STDIN of shell code blocks
+#+results: square-table
+| 1 | 2 | 3 |
+| 4 | 5 | 6 |
+| 7 | 8 | 9 |
+
+#+source: first-col
+#+begin_src sh :stdin square-table
+  awk '{print $1}'
+#+end_src
+
+#+begin_src sh :stdin first-col
+  sed 's/4/middle/g'
+#+end_src
+
+#+results:
+|      1 |
+| middle |
+|      7 |
+
 ** don't match end_src inside of a block
 
 #+srcname: the_issue
