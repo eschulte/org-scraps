@@ -3,6 +3,34 @@
 #+STYLE: <link rel="stylesheet"href="data/stylesheet.css"type="text/css">
 
 * tests and examples
+** example =#+call= line expansion
+this code block peeks inside of the `params' variable which is used by
+babel during code block evaluation
+#+source: callee
+#+begin_src emacs-lisp
+  ;; this is cheating and shouldn't be done in user code :)
+  (or (cdr (assoc :foo params)) 'unset)
+#+end_src
+
+this code block evaluates to the following,
+#+results: callee
+: unset
+
+this call line,
+#+call: callee[:foo bar]() :results org
+
+expands into the following which is evaluated as a normal code block
+by Babel.
+#+begin_src emacs-lisp :var results=callee[:foo bar]() :results org
+  results
+#+end_src
+
+this code block evaluates to the following,
+#+results:
+#+BEGIN_ORG
+nothing
+#+END_ORG
+
 ** awk example
 
 #+results: simple-table
