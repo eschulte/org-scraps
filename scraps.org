@@ -3,6 +3,16 @@
 #+STYLE: <link rel="stylesheet"href="data/stylesheet.css"type="text/css">
 
 * tests and examples
+** lisp body with multiple forms
+
+#+begin_src lisp :results value
+  (format t "~&eric")
+  (+ 1 2)
+#+end_src
+
+#+results:
+: 3
+
 ** example =#+call= line expansion
 this code block peeks inside of the `params' variable which is used by
 babel during code block evaluation
