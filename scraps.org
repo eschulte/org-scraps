@@ -3,6 +3,20 @@
 #+STYLE: <link rel="stylesheet"href="data/stylesheet.css"type="text/css">
 
 * tests and examples
+** default directory examples in lisp
+
+#+begin_src lisp
+  *default-pathname-defaults*
+#+end_src
+
+#+begin_src sh
+  pwd
+#+end_src
+
+#+begin_src lisp :dir /tmp/
+  *default-pathname-defaults*
+#+end_src
+
 ** lisp body with multiple forms
 
 #+begin_src lisp :results value
