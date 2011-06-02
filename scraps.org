@@ -3,6 +3,24 @@
 #+STYLE: <link rel="stylesheet"href="data/stylesheet.css"type="text/css">
 
 * tests and examples
+** testing new data names
+
+#+data: simple-123
+: 123
+
+#+begin_src emacs-lisp :var simple=simple-123 :exports both
+  (* simple 2)
+#+end_src
+
+results
+
+data
+
+my data is results
+
+#+results:
+: 246
+
 ** default directory examples in lisp
 
 #+begin_src lisp
@@ -13,9 +31,12 @@
   pwd
 #+end_src
 
-#+begin_src lisp :dir /tmp/
+#+begin_src lisp :dir
   *default-pathname-defaults*
 #+end_src
+
+#+results:
+: #P""
 
 ** lisp body with multiple forms
 
