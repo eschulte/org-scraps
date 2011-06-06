@@ -3,6 +3,21 @@
 #+STYLE: <link rel="stylesheet"href="data/stylesheet.css"type="text/css">
 
 * tests and examples
+** quick testing new session code
+#+begin_src sh :session test :results output
+  echo foo
+#+end_src
+
+#+results:
+: foo
+
+#+begin_src ruby :results output :session simple
+  puts "foo"
+#+end_src
+
+#+results:
+: foo
+
 ** =:file= and python
 #+begin_src python :file /tmp/test.png
   return 1
