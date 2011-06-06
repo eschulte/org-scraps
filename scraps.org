@@ -3,6 +3,31 @@
 #+STYLE: <link rel="stylesheet"href="data/stylesheet.css"type="text/css">
 
 * tests and examples
+** simple shell
+#+begin_src sh
+  sleep 10 && ls
+#+end_src
+
+#+results:
+| _config.yml     |
+| data            |
+| development.org |
+| elsevier        |
+| index.org       |
+| paper           |
+| publish.org     |
+| scraps          |
+| scraps.html     |
+| scraps.org      |
+| scraps.tex      |
+
+#+begin_src ruby :session eric
+  puts [1..4]
+#+end_src
+
+#+results:
+: nil
+
 ** testing new data names
 
 #+data: simple-123
