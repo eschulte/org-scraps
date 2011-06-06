@@ -3,6 +3,14 @@
 #+STYLE: <link rel="stylesheet"href="data/stylesheet.css"type="text/css">
 
 * tests and examples
+** =:file= and python
+#+begin_src python :file /tmp/test.png
+  return 1
+#+end_src
+
+#+results:
+[[file:/tmp/test.png]]
+
 ** simple shell
 #+begin_src sh
   sleep 10 && ls
