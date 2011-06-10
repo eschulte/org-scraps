@@ -3,6 +3,41 @@
 #+STYLE: <link rel="stylesheet"href="data/stylesheet.css"type="text/css">
 
 * tests and examples
+** continued code blocks
+   :PROPERTIES:
+   :tangle:   yes
+   :comments: yes
+   :END:
+#+source: foo
+#+begin_src emacs-lisp
+  (message "foo:%S" 1)
+#+end_src
+
+#+begin_src emacs-lisp
+  (message "un-named")
+#+end_src
+
+#+source: bar
+#+begin_src emacs-lisp
+  (message "bar:%S" 1)
+#+end_src
+
+#+source: foo
+#+begin_src emacs-lisp
+  (message "foo:%S" 2)
+#+end_src
+
+#+source: bar
+#+begin_src emacs-lisp
+  (message "bar:%S" 2)
+#+end_src
+
+#+begin_src emacs-lisp :tangle no :results silent
+  (with-temp-buffer
+    (insert-file-contents "scraps.el")
+    (eval-buffer))
+#+end_src
+
 ** ruby with xmpfilter
 #+begin_src ruby :results xmp code
   2 + 2 # =>
