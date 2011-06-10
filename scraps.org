@@ -3,6 +3,12 @@
 #+STYLE: <link rel="stylesheet"href="data/stylesheet.css"type="text/css">
 
 * tests and examples
+** tangle test
+#+begin_src R :tangle test.R :shebang #!/bin/cat :padline no
+This is
+a test
+#+end_src
+
 ** quick testing new session code
 #+begin_src sh :session test :results output
   echo foo
