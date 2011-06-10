@@ -3,6 +3,21 @@
 #+STYLE: <link rel="stylesheet"href="data/stylesheet.css"type="text/css">
 
 * tests and examples
+** ruby with xmpfilter
+#+begin_src ruby :results xmp code
+  2 + 2 # =>
+  3.times{ puts :hello }
+#+end_src
+
+#+results:
+#+BEGIN_SRC ruby
+2 + 2 # => 4
+3.times{ puts :hello }
+# >> hello
+# >> hello
+# >> hello
+#+END_SRC
+
 ** tangle test
 #+begin_src R :tangle test.R :shebang #!/bin/cat :padline no
 This is
