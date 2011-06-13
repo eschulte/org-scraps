@@ -3,6 +3,13 @@
 #+STYLE: <link rel="stylesheet"href="data/stylesheet.css"type="text/css">
 
 * tests and examples
+** named code block export
+This has a name which is not exported.
+
+#+source: rand(n)
+#+begin_src R
+  runif(n)
+#+end_src
 ** continued code blocks
    :PROPERTIES:
    :tangle:   yes
