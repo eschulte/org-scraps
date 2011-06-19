@@ -3,6 +3,15 @@
 #+STYLE: <link rel="stylesheet"href="data/stylesheet.css"type="text/css">
 
 * tests and examples
+** python session
+#+begin_src python :results output :session mypy 
+x = 1
+for i in range(1,5):
+  x = x + i
+  print x
+print "I throw an error"
+#+end_src
+
 ** scalar emacs lisp results
 #+begin_src emacs-lisp :results scalar
   '(1 2 3)
