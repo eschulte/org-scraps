@@ -3,6 +3,14 @@
 #+STYLE: <link rel="stylesheet"href="data/stylesheet.css"type="text/css">
 
 * tests and examples
+** scalar emacs lisp results
+#+begin_src emacs-lisp :results scalar
+  '(1 2 3)
+#+end_src
+
+#+results:
+: (1 2 3)
+
 ** named code block export
 This has a name which is not exported.
 
