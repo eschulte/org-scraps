@@ -18,8 +18,17 @@ x = 1
 for i in range(1,5):
   x = x + i
   print x
+
 print "I throw an error"
 #+end_src
+
+#+results:
+: 
+: ... ... ... 2
+: 4
+: 7
+: 11
+: I throw an error
 
 ** scalar emacs lisp results
 #+begin_src emacs-lisp :results scalar
