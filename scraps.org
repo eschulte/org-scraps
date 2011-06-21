@@ -3,6 +3,11 @@
 #+STYLE: <link rel="stylesheet"href="data/stylesheet.css"type="text/css">
 
 * tests and examples
+** clojure =:results scalar=
+#+begin_src clojure :results scalar
+  '(1 2 3)
+#+end_src
+
 ** expand variable during tangling
    :PROPERTIES:
    :tangle:   yes
