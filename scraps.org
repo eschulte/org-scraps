@@ -1270,6 +1270,20 @@ results in Error
 #+results:
 : test1=7 test2=8
 
+*** another alternative
+    :PROPERTIES:
+    :var:      vars=variables
+    :END:
+
+#+tblname: variables
+| var1 | 1 |
+| var2 | 2 |
+
+#+begin_src python
+  print vars[0][1]
+  print vars[1][1]
+#+end_src
+
 ** how to set no-expand in properties
    :PROPERTIES:
    :no-expand: yes
