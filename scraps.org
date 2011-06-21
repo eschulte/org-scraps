@@ -30,6 +30,15 @@ print "I throw an error"
 : 11
 : I throw an error
 
+#+begin_src python :results output :session
+  print y
+#+end_src
+
+#+results:
+: Traceback (most recent call last):
+:   File "<stdin>", line 1, in <module>
+: NameError: name 'y' is not defined
+
 ** scalar emacs lisp results
 #+begin_src emacs-lisp :results scalar
   '(1 2 3)
