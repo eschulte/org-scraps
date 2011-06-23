@@ -3,6 +3,15 @@
 #+STYLE: <link rel="stylesheet"href="data/stylesheet.css"type="text/css">
 
 * tests and examples
+** large code in inline blocks
+
+#+source: big-block
+#+begin_src emacs-lisp :exports none
+  "something complex"
+#+end_src
+
+Here is some text with src_emacs-lisp[:var it=big-block]{it} in the middle.
+
 ** clojure =:results scalar=
 #+begin_src clojure :results scalar
   '(1 2 3)
