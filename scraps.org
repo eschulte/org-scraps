@@ -3,6 +3,16 @@
 #+STYLE: <link rel="stylesheet"href="data/stylesheet.css"type="text/css">
 
 * tests and examples
+** text and graphics from R
+
+#+begin_src R :results output :session
+print(seq(1,10))
+#+end_src
+
+#+begin_src R :file example.png :session
+plot(seq(1,10))
+#+end_src
+
 ** large code in inline blocks
 
 #+source: big-block
