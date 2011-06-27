@@ -3,6 +3,49 @@
 #+STYLE: <link rel="stylesheet"href="data/stylesheet.css"type="text/css">
 
 * tests and examples
+** un-named variables
+
+#+source: square
+#+begin_src emacs-lisp :var it=0
+  (* it it)
+#+end_src
+
+#+call: square(8)
+
+first we can name the argument with call_square(it=4) =16=
+
+then we can pass the argument unnamed with call_square(4) =16=
+
+#+source: minus
+#+begin_src emacs-lisp :var a=0 :var b=0
+  (- a b)
+#+end_src
+
+To ensure that these arguments are passed in the correct order we can
+use the following call_minus(8, 4) =-4=
+
+** inline call line
+
+#+source: double
+#+begin_src emacs-lisp :var it=0
+  (* 2 it)
+#+end_src
+
+This is the number src_sh[:var it=double(it=1)]{echo $it} in the middle
+
+The following exports as a normal call line
+#+call: double(it=1)
+
+Now here is an inline call call_double(it=1) stuck in the middle of
+some prose.
+
+This one should not be exported =call_double(it=2)= because it is
+quoted.
+
+Finally this next one should export, even though it starts a line
+call_double(it=3) because sometimes inline blocks fold with a
+paragraph.
+
 ** text and graphics from R
 
 #+begin_src R :results output :session
