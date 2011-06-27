@@ -46,6 +46,9 @@ Finally this next one should export, even though it starts a line
 call_double(it=3) because sometimes inline blocks fold with a
 paragraph.
 
+And, a call with raw results call_double(4)[:results raw] should not
+have quoted results.
+
 ** text and graphics from R
 
 #+begin_src R :results output :session
