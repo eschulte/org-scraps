@@ -3,6 +3,29 @@
 #+STYLE: <link rel="stylesheet"href="data/stylesheet.css"type="text/css">
 
 * tests and examples
+** longtable label and attr lines on code block results
+
+#+source: faz
+#+begin_src emacs-lisp :exports results
+  '((foo foo)
+    (bar baz))
+#+end_src
+
+#+LABEL: Foo
+#+results: faz
+| foo | foo |
+| bar | baz |
+
+** another test
+#+source: square
+#+begin_src emacs-lisp :var it=0
+  (* it it)
+#+end_src
+
+Here is a call_square(it=4), stuck in the middle of some prose.
+
+Here is another 25^2=call_square(it=25).
+
 ** multiple variables
 
 Should work call_concat(1, 2, 3) =123= in order.
