@@ -3,6 +3,22 @@
 #+STYLE: <link rel="stylesheet"href="data/stylesheet.css"type="text/css">
 
 * tests and examples
+** define a block with a name for noweb expansion
+   :PROPERTIES:
+   :tangle:   yes
+   :noweb:    yes
+   :END:
+
+#+source: simple(something="something")
+#+begin_src emacs-lisp
+  something
+#+end_src
+
+another block including the first block
+#+begin_src emacs-lisp
+  <<simple(something="something else")>>
+#+end_src
+
 ** find a resource by global id
 
 #+begin_src emacs-lisp :var it=990f3218-6fce-44fb-bd0c-5f6076c0dadc
