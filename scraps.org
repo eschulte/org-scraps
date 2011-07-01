@@ -3,6 +3,23 @@
 #+STYLE: <link rel="stylesheet"href="data/stylesheet.css"type="text/css">
 
 * tests and examples
+** find a resource by global id
+
+#+begin_src emacs-lisp :var it=990f3218-6fce-44fb-bd0c-5f6076c0dadc
+  it
+#+end_src
+
+#+results:
+: 
+: here it is
+
+*** I'm the resource
+    :PROPERTIES:
+    :ID:       990f3218-6fce-44fb-bd0c-5f6076c0dadc
+    :END:
+
+here it is
+
 ** longtable label and attr lines on code block results
 
 #+source: faz
