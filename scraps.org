@@ -3,6 +3,17 @@
 #+STYLE: <link rel="stylesheet"href="data/stylesheet.css"type="text/css">
 
 * tests and examples
+** data alias for resname
+#+data: blah
+: blahcontent
+
+#+begin_src emacs-lisp :var it=blah
+  it
+#+end_src
+
+#+results:
+: blahcontent
+
 ** define a block with a name for noweb expansion
    :PROPERTIES:
    :tangle:   yes
