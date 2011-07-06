@@ -3,6 +3,29 @@
 #+STYLE: <link rel="stylesheet"href="data/stylesheet.css"type="text/css">
 
 * tests and examples
+** indexing into a list variable
+
+#+begin_src emacs-lisp :var lst='(0 1 2)
+  (first lst)
+#+end_src
+
+#+results:
+: 0
+
+or as a noweb reference
+
+#+data: external-list
+- 0
+- 1
+- 2
+
+#+begin_src sh :noweb yes
+  echo <<external-list()[0]>>
+#+end_src
+
+#+results:
+: 0
+
 ** data alias for resname
 #+data: blah
 : blahcontent
