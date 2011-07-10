@@ -3,6 +3,15 @@
 #+STYLE: <link rel="stylesheet"href="data/stylesheet.css"type="text/css">
 
 * tests and examples
+** eval never
+
+#+begin_src emacs-lisp :eval (if org-export-current-backend "never" "yes") :exports results
+  (message "launch missles")
+#+end_src
+
+#+results:
+: launch missles
+
 ** indexing into a list variable
 
 #+begin_src emacs-lisp :var lst='(0 1 2)
