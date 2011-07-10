@@ -3,6 +3,23 @@
 #+STYLE: <link rel="stylesheet"href="data/stylesheet.css"type="text/css">
 
 * tests and examples
+** simple sbe example
+
+|   1 |
+|   2 |
+|   3 |
+|   4 |
+|   5 |
+|   6 |
+| 3.5 |
+#+TBLFM: @7$1='(sbe mean (lst @1..@6))
+
+#+source: mean
+#+begin_src emacs-lisp :var lst=()
+  (let ((num (car lst)) (nums (cdr lst)))
+    (/ (float (+ num (apply #'+ nums))) (1+ (length nums))))
+#+end_src
+
 ** eval never
 
 #+begin_src emacs-lisp :eval (if org-export-current-backend "never" "yes") :exports results
