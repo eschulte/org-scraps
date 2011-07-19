@@ -3,6 +3,34 @@
 #+STYLE: <link rel="stylesheet"href="data/stylesheet.css"type="text/css">
 
 * tests and examples
+** exporting a ditaa example
+
+#+begin_src ditaa :file blue.png :cmdline -r
+/---------------\
+|    test       |
+|        {cBLU} |
+\---------------/
+#+end_src
+
+#+results:
+[[file:blue.png]]
+
+** including noweb refs w/o last newline
+#+begin_src sh :noweb yes
+  <<my-name>> |\
+  <<capitalize-name>>
+#+end_src
+
+#+source: my-name
+#+begin_src sh
+  echo "eric schulte"
+#+end_src
+
+#+source: capitalize-name
+#+begin_src sh
+  sed 's/^e/E/;s/ s/ S/'
+#+end_src
+
 ** simple sbe example
 
 |   1 |
