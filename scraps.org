@@ -1,8 +1,21 @@
 #+TITLE: org-babel examples and tests
 #+OPTIONS: num:nil ^:nil
 #+STYLE: <link rel="stylesheet"href="data/stylesheet.css"type="text/css">
-
 * tests and examples
+** java code block
+#+begin_src java :classname myfirstjavaprog
+  class myfirstjavaprog
+  {  
+      public static void main(String args[])
+      {
+          System.out.println("Hello World!");
+      }
+  }
+#+end_src
+
+#+results:
+: Hello World!
+
 ** exporting a ditaa example
 
 #+begin_src ditaa :file blue.png :cmdline -r
