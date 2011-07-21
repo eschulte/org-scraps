@@ -1,7 +1,25 @@
 #+TITLE: org-babel examples and tests
 #+OPTIONS: num:nil ^:nil
 #+STYLE: <link rel="stylesheet"href="data/stylesheet.css"type="text/css">
+
 * tests and examples
+** returning file names -- interpreted as lists
+#+begin_src sh :results scalar
+  echo "[[file:./cv.cls]]"
+#+end_src
+
+#+results:
+: [[file:./cv.cls]]
+
+#+begin_src sh :results org
+   echo "[[file:./cv.cls]]"
+#+end_src
+
+#+results:
+#+BEGIN_ORG
+[[file:\./cv\.cls]]
+#+END_ORG
+
 ** java code block
 #+begin_src java :classname myfirstjavaprog
   class myfirstjavaprog
