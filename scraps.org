@@ -3,6 +3,17 @@
 #+STYLE: <link rel="stylesheet"href="data/stylesheet.css"type="text/css">
 
 * tests and examples
+** expand noweb refs
+#+source: def-something
+#+begin_src sh
+  SOMETHING=nothing
+#+end_src
+
+#+begin_src sh
+  <<def-something>>
+  echo $SOMETHING
+#+end_src
+
 ** returning file names -- interpreted as lists
 #+begin_src sh :results scalar
   echo "[[file:./cv.cls]]"
@@ -241,9 +252,12 @@ have quoted results.
 print(seq(1,10))
 #+end_src
 
-#+begin_src R :file example.png :session
+#+begin_src R :file example.png :results graphics :session
 plot(seq(1,10))
 #+end_src
+
+#+results:
+[[file:example.png]]
 
 ** large code in inline blocks
 
