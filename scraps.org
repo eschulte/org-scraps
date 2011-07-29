@@ -3,6 +3,15 @@
 #+STYLE: <link rel="stylesheet"href="data/stylesheet.css"type="text/css">
 
 * tests and examples
+** premature truncation of emacs-lisp results
+
+#+begin_src emacs-lisp
+  '(nil nil nil nil)
+#+end_src
+
+#+results:
+: (nil nil nil nil)
+
 ** non-defined code blocks can still tangle
 
 #+begin_src text :tangle somewhere.txt
