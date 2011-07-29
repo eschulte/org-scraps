@@ -3,6 +3,13 @@
 #+STYLE: <link rel="stylesheet"href="data/stylesheet.css"type="text/css">
 
 * tests and examples
+** non-defined code blocks can still tangle
+
+#+begin_src text :tangle somewhere.txt
+  This will still tangle out to a file, and it opens in text mode, which
+  may be nice.  
+#+end_src
+
 ** expand noweb refs
 #+source: def-something
 #+begin_src sh
