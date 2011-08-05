@@ -3,6 +3,19 @@
 #+STYLE: <link rel="stylesheet"href="data/stylesheet.css"type="text/css">
 
 * tests and examples
+** tangle before evaluating a code block
+
+#+begin_src sh :var TANGLED=(org-babel-tangle) :tangle no
+  wc $TANGLED
+#+end_src
+
+#+results:
+: 2  2 11 it.sh
+
+#+begin_src sh :tangle it.sh
+  echo TEST
+#+end_src
+
 ** plot results with org-plot
 #+source: disk-usage
 #+begin_src sh :exports both
