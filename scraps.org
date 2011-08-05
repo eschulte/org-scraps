@@ -3,6 +3,11 @@
 #+STYLE: <link rel="stylesheet"href="data/stylesheet.css"type="text/css">
 
 * tests and examples
+** bug with undefined function copy-seq
+#+begin_src R :session :exports both
+  1:10
+#+end_src
+
 ** tangle before evaluating a code block
 
 #+begin_src sh :var TANGLED=(org-babel-tangle) :tangle no
