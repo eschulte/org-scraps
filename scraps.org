@@ -3,6 +3,23 @@
 #+STYLE: <link rel="stylesheet"href="data/stylesheet.css"type="text/css">
 
 * tests and examples
+** space around exported code blocks
+try evaluating the following blocks, then removing their results with
+M-x `org-babel-remove-result'
+
+Verbiage to begin the paragraph
+#+begin_src sh
+  echo eric
+#+end_src
+and verbiage to end the same paragraph.
+
+#+begin_src sh
+  echo 1
+  echo 2
+#+end_src
+
+and verbiage to end the same paragraph.
+
 ** simple ditaa block
 #+begin_src ditaa :file work-flow.png
     +-------+             +--------+
