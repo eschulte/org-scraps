@@ -3,6 +3,14 @@
 #+STYLE: <link rel="stylesheet"href="data/stylesheet.css"type="text/css">
 
 * tests and examples
+** ruby code block
+#+begin_src ruby
+  1+2
+#+end_src
+
+#+results:
+: 3
+
 ** bug with undefined function copy-seq
 #+begin_src R :session :exports both
   1:10
