@@ -3,6 +3,18 @@
 #+STYLE: <link rel="stylesheet"href="data/stylesheet.css"type="text/css">
 
 * tests and examples
+** simple ditaa block
+#+begin_src ditaa :file work-flow.png
+    +-------+             +--------+
+    |       |             |        |
+    | Org   |------------>| Tex    |
+    |       |             |        |
+    +-------+             +--------+
+#+end_src
+
+#+results:
+[[file:work-flow.png]]
+
 ** replacing a table
 #+results: this-is-the-table
 | 1 | 4 | 7 |
