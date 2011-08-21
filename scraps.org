@@ -3,6 +3,38 @@
 #+STYLE: <link rel="stylesheet"href="data/stylesheet.css"type="text/css">
 
 * tests and examples
+** shell script output not in table
+#+begin_src sh :results scalar
+  echo 1
+  echo 2
+  echo 3
+#+end_src
+
+#+results:
+: 1
+: 2
+: 3
+
+** inline code block and downstream src blocks
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+something src_sh{echo eric}
+CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+#+begin_src sh
+  echo schulte
+#+end_src
+EEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE
+
+*** with R
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+blah blah src_R[:results output]{cat(rnorm(2))}
+CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+#+begin_src R :eval never :exports none
+  1+2
+  a <- b + c
+  xyz
+#+end_src
+DDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDD
+
 ** updating a table
 #+results: this-is-another-table
 | 0 | 0 | 0 |
