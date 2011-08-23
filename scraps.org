@@ -3,6 +3,19 @@
 #+STYLE: <link rel="stylesheet"href="data/stylesheet.css"type="text/css">
 
 * tests and examples
+** a table with tags
+
+#+TBLNAME: sandbox           :noexport:
+| 1 |         2 | 3 |
+| 4 | org-babel | 6 |
+
+#+begin_src emacs-lisp :var table=sandbox
+  (message "%S" table)
+#+end_src
+
+#+results:
+: ((1 2 3) (4 "org-babel" 6))
+
 ** shell script output not in table
 #+begin_src sh :results scalar
   echo 1
