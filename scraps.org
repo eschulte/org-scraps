@@ -3,6 +3,28 @@
 #+STYLE: <link rel="stylesheet"href="data/stylesheet.css"type="text/css">
 
 * tests and examples
+** inheriting the file property
+   :PROPERTIES:
+   :FILE: something.png
+   :END:
+
+#+begin_src ditaa
+   +-----------------------------+
+   |                             |
+   |    +-----+                  |
+   |    |     |   +---------+    |
+   |    |     |   |         |    |
+   |    +-----+   |         |    |
+   |              |         |    |
+   |   file       |         |    |
+   | inheritance  +---------+    |
+   |                             |
+   +-----------------------------+
+#+end_src
+
+#+results:
+[[file:something.png]]
+
 ** a table with tags
 
 #+TBLNAME: sandbox           :noexport:
