@@ -3,6 +3,25 @@
 #+STYLE: <link rel="stylesheet"href="data/stylesheet.css"type="text/css">
 
 * tests and examples
+** two blocks and a table
+
+#+source: stuff
+#+begin_src sh
+  echo 1
+  echo 2
+  echo 3
+#+end_src
+
+#+source: last-of-stuff
+#+begin_src sh :var input=stuff
+  echo "$input" |tail -1
+#+end_src
+
+| one |
+| two |
+| 3   |
+#+TBLFM: @3$1='(sbe last-of-stuff)
+
 ** inheriting the file property
    :PROPERTIES:
    :FILE: something.png
