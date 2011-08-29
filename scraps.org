@@ -3,6 +3,17 @@
 #+STYLE: <link rel="stylesheet"href="data/stylesheet.css"type="text/css">
 
 * tests and examples
+** simple short R block
+#+BEGIN_SRC R
+c(1,23,54,5)
+#+END_SRC
+
+#+results:
+|  1 |
+| 23 |
+| 54 |
+|  5 |
+
 ** two blocks and a table
 
 #+source: stuff
