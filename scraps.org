@@ -3,6 +3,40 @@
 #+STYLE: <link rel="stylesheet"href="data/stylesheet.css"type="text/css">
 
 * tests and examples
+** convert results to all string
+#+source: hetero-table
+#+begin_src emacs-lisp
+  '((1 2 3 4)
+    ("a" "b" "c" "d"))
+#+end_src
+
+#+source: all-to-string
+#+begin_src emacs-lisp :var tbl='()
+  (defun all-to-string (tbl)
+    (if (listp tbl)
+        (mapcar #'all-to-string tbl)
+      (if (stringp tbl)
+          tbl
+        (format "%s" tbl))))
+  (all-to-string tbl)
+#+end_src
+
+#+begin_src emacs-lisp :var tbl=hetero-table
+  (mapcar (lambda (row) (mapcar (lambda (cell) (stringp cell)) row)) tbl)
+#+end_src
+
+#+results:
+| nil | nil | nil | nil |
+| t   | t   | t   | t   |
+
+#+begin_src emacs-lisp :var tbl=all-to-string(hetero-table)
+  (mapcar (lambda (row) (mapcar (lambda (cell) (stringp cell)) row)) tbl)
+#+end_src
+
+#+results:
+| t | t | t | t |
+| t | t | t | t |
+
 ** simple short R block
 #+BEGIN_SRC R
 c(1,23,54,5)
