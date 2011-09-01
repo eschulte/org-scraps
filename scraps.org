@@ -3,6 +3,45 @@
 #+STYLE: <link rel="stylesheet"href="data/stylesheet.css"type="text/css">
 
 * tests and examples
+** simple gnuplot plotting of Org-mode tables
+#+tblname: gnuplot-testing
+| x |  y |
+|---+----|
+| 1 |  2 |
+| 2 |  4 |
+| 3 |  6 |
+| 4 |  8 |
+| 5 | 10 |
+| 6 | 12 |
+| 7 | 14 |
+| 8 | 16 |
+
+#+begin_src gnuplot :var data=gnuplot-testing :file output.eps :exports both
+set term postscript
+set title "test"
+set auto x
+set style data histogram
+set style fill solid border -1
+set boxwidth 0.9
+plot data using 2:xtic(1)
+#+end_src
+
+#+results:
+[[file:output.eps]]
+
+** simple indexing
+#+data: list-o-numbers
+| 1 | 2 | 3 |
+| 4 | 5 | 6 |
+| 7 | 8 | 9 |
+
+#+begin_src sh :var column=list-o-numbers[,0]
+  echo $column
+#+end_src
+
+#+results:
+: 1 4 7
+
 ** convert results to all string
 #+source: hetero-table
 #+begin_src emacs-lisp
