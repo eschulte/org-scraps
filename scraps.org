@@ -2,7 +2,10 @@
 #+OPTIONS: num:nil ^:nil
 #+STYLE: <link rel="stylesheet"href="data/stylesheet.css"type="text/css">
 
-* tests and examples
+* scraps
+  :PROPERTIES:
+  :ID:       96eaa17f-f1b6-4958-acb1-e271045fdfa2
+  :END:
 ** simple gnuplot plotting of Org-mode tables
 #+tblname: gnuplot-testing
 | x |  y |
@@ -25,9 +28,6 @@ set style fill solid border -1
 set boxwidth 0.9
 plot data using 2:xtic(1)
 #+end_src
-
-#+results:
-[[file:output.eps]]
 
 ** simple indexing
 #+data: list-o-numbers
@@ -5958,3 +5958,30 @@ plot cosx
 
 #+end_src
       
+
+* publishing
+Map over all subheadings of scraps and export each to a separate file.
+#+begin_src emacs-lisp
+  (defun dump-subtree-to-file ()
+    (let* ((replacements '((" "   . "-")
+                           ("w/o" . "without")
+                           ("w/"  . "with")
+                           ("/"   . "-")))
+           (title ((lambda (title)
+                     (dolist (rep replacements)
+                       (setq title (replace-regexp-in-string
+                                    (car rep) (cdr rep) title)))
+                     (downcase title))
+                   (nth 4 (org-heading-components))))
+           (path (expand-file-name (concat (downcase title) ".html") "scraps"))
+           buf)
+      (unless (file-exists-p path)
+        (org-copy-subtree)
+        (with-temp-buffer
+          (yank) (setq buf (htmlize-buffer)))
+        (set-buffer buf)
+        (write-file path))))
+  
+  (org-id-goto "96eaa17f-f1b6-4958-acb1-e271045fdfa2")
+  (org-map-entries #'dump-subtree-to-file nil 'tree)
+#+end_src
