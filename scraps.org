@@ -7,6 +7,26 @@
   :ID:       96eaa17f-f1b6-4958-acb1-e271045fdfa2
   :DATE:     2011-09-03
   :END:
+** returning file type to inline call line
+   :PROPERTIES:
+   :DATE:     2011-09-04
+   :END:
+Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec
+hendrerit tempor tellus. Donec pretium posuere tellus. Proin quam
+nisl, tincidunt et, mattis eget, convallis nec, purus. Cum sociis
+natoque penatibus et magnis dis parturient montes, nascetur ridiculus
+mus. Nulla posuere. Donec vitae dolor. Nullam tristique diam non
+turpis. call_nothing_to_something()[:results file] [[file:something.txt]] Cras placerat
+accumsan nulla. Nullam rutrum. Nam vestibulum accumsan nisl.
+
+#+source: nothing_to_something
+#+begin_src sh :file something.txt
+  echo nothing
+#+end_src
+
+#+results:
+[[file:something.txt]]
+
 ** simple gnuplot plotting of Org-mode tables
    :PROPERTIES:
    :DATE:     2011-09-01
