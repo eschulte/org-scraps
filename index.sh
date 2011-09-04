@@ -61,7 +61,7 @@ code blocks.
 
 EOF
 
-for i in $(ls -t scraps); do
+for i in $(ls -r scraps); do
     echo "- <span class=\"org-link\"><a href=\"scraps/$i\">$(echo $i|cut -c12-)</a></span>"
 done
 
