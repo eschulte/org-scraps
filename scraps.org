@@ -23,7 +23,7 @@
 | 7 | 14 |
 | 8 | 16 |
 
-#+begin_src gnuplot :var data=gnuplot-testing :file output.eps :exports both
+#+begin_src gnuplot :var data=gnuplot-testing :file output.eps
 set term postscript
 set title "test"
 set auto x
@@ -34,9 +34,7 @@ plot data using 2:xtic(1)
 #+end_src
 
 #+results:
-| t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | nil | nil | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t |
-
-
+| t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t |
 
 ** simple indexing
    :PROPERTIES:
@@ -6945,13 +6943,12 @@ plot cosx
       
 
 * tools
-** publishing
 Map over all scraps and export each to a separate file.
 #+begin_src emacs-lisp
   (defun dump-subtree-to-file ()
     (let* ((replacements '((" "   . "-")
                            ("w/o" . "without")
-                           ("w/"  . "with")
+                           ("w/"  . "with-")
                            ("/"   . "-")
                            ("\""  . "")
                            ("="   . "")
@@ -6976,10 +6973,9 @@ Map over all scraps and export each to a separate file.
         (kill-buffer))))
   
   (org-id-goto "96eaa17f-f1b6-4958-acb1-e271045fdfa2")
-  (org-map-entries #'dump-subtree-to-file nil 'tree)
+  (org-map-entries #'dump-subtree-to-file "+LEVEL=2")
 #+end_src
 
-** add dates
 add date properties to all subheadings using the git log
 #+begin_src emacs-lisp
   (defun set-date-from-git-log ()

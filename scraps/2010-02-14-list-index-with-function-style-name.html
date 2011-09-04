@@ -24,7 +24,31 @@
   </head>
   <body>
     <pre>
-** list index w/function style name...
+** list index w/function style name
+   :PROPERTIES:
+   :DATE:     2010-02-14
+   :END:
+
+#+results: function-style-index
+| 0 |
+| 1 |
+| 2 |
+| 3 |
+| 4 |
+| 5 |
+| 6 |
+| 7 |
+| 8 |
+| 9 |
+
+#+srcname: function-style-indexing(data=function-style-index[1:4,0])
+#+begin_src emacs-lisp
+  (message "%S" data)
+#+end_src
+
+#+results: function-style-indexing
+: ((1) (2) (3) (4))
+
 </pre>
   </body>
 </html>
