@@ -8,9 +8,7 @@
   :DATE:     2011-09-03
   :END:
 ** simple gnuplot plotting of Org-mode tables
-   :PROPERTIES:
-   :DATE:     2011-09-01
-   :END:
+
 #+tblname: gnuplot-testing
 | x |  y |
 |---+----|
@@ -33,13 +31,8 @@ set boxwidth 0.9
 plot data using 2:xtic(1)
 #+end_src
 
-#+results:
-| t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t |
-
 ** simple indexing
-   :PROPERTIES:
-   :DATE:     2011-09-01
-   :END:
+
 #+data: list-o-numbers
 | 1 | 2 | 3 |
 | 4 | 5 | 6 |
@@ -53,9 +46,7 @@ plot data using 2:xtic(1)
 : 1 4 7
 
 ** convert results to all string
-   :PROPERTIES:
-   :DATE:     2011-08-29
-   :END:
+
 #+source: hetero-table
 #+begin_src emacs-lisp
   '((1 2 3 4)
@@ -90,9 +81,7 @@ plot data using 2:xtic(1)
 | t | t | t | t |
 
 ** simple short R block
-   :PROPERTIES:
-   :DATE:     2011-08-29
-   :END:
+
 #+BEGIN_SRC R
 c(1,23,54,5)
 #+END_SRC
@@ -104,9 +93,7 @@ c(1,23,54,5)
 |  5 |
 
 ** two blocks and a table
-   :PROPERTIES:
-   :DATE:     2011-08-28
-   :END:
+
 
 #+source: stuff
 #+begin_src sh
@@ -149,9 +136,7 @@ c(1,23,54,5)
 [[file:something.png]]
 
 ** a table with tags
-   :PROPERTIES:
-   :DATE:     2011-08-23
-   :END:
+
 
 #+TBLNAME: sandbox           :noexport:
 | 1 |         2 | 3 |
@@ -165,9 +150,7 @@ c(1,23,54,5)
 : ((1 2 3) (4 "org-babel" 6))
 
 ** shell script output not in table
-   :PROPERTIES:
-   :DATE:     2011-08-21
-   :END:
+
 #+begin_src sh :results scalar
   echo 1
   echo 2
@@ -180,9 +163,7 @@ c(1,23,54,5)
 : 3
 
 ** inline code block and downstream src blocks
-   :PROPERTIES:
-   :DATE:     2011-08-21
-   :END:
+
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 something src_sh{echo eric}
 CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
@@ -206,9 +187,7 @@ CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
 DDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDD
 
 ** updating a table
-   :PROPERTIES:
-   :DATE:     2011-08-19
-   :END:
+
 #+results: this-is-another-table
 | 0 | 0 | 0 |
 | 0 | 0 | 0 |
@@ -221,9 +200,7 @@ DDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDD
 #+end_src
 
 ** space around exported code blocks
-   :PROPERTIES:
-   :DATE:     2011-08-19
-   :END:
+
 try evaluating the following blocks, then removing their results with
 M-x `org-babel-remove-result'
 
@@ -241,9 +218,7 @@ and verbiage to end the same paragraph.
 and verbiage to end the same paragraph.
 
 ** simple ditaa block
-   :PROPERTIES:
-   :DATE:     2011-08-19
-   :END:
+
 #+begin_src ditaa :file work-flow.png
     +-------+             +--------+
     |       |             |        |
@@ -256,9 +231,7 @@ and verbiage to end the same paragraph.
 [[file:work-flow.png]]
 
 ** replacing a table
-   :PROPERTIES:
-   :DATE:     2011-08-19
-   :END:
+
 #+results: this-is-the-table
 | 1 | 4 | 7 |
 | 2 | 5 | 8 |
@@ -270,9 +243,7 @@ and verbiage to end the same paragraph.
 #+end_src
 
 ** ruby code block
-   :PROPERTIES:
-   :DATE:     2011-08-19
-   :END:
+
 #+begin_src ruby
   1+2
 #+end_src
@@ -281,17 +252,13 @@ and verbiage to end the same paragraph.
 : 3
 
 ** bug with undefined function copy-seq
-   :PROPERTIES:
-   :DATE:     2011-08-05
-   :END:
+
 #+begin_src R :session :exports both
   1:10
 #+end_src
 
 ** tangle before evaluating a code block
-   :PROPERTIES:
-   :DATE:     2011-08-05
-   :END:
+
 
 #+begin_src sh :var TANGLED=(org-babel-tangle) :tangle no
   wc $TANGLED
@@ -305,9 +272,7 @@ and verbiage to end the same paragraph.
 #+end_src
 
 ** plot results with org-plot
-   :PROPERTIES:
-   :DATE:     2011-08-02
-   :END:
+
 #+source: disk-usage
 #+begin_src sh :exports both
   df
@@ -324,9 +289,7 @@ and verbiage to end the same paragraph.
 | /dev/sda7  | 144176824 | 72225604 |  64627420 |  53% | /home     |    |
 
 ** premature truncation of emacs-lisp results
-   :PROPERTIES:
-   :DATE:     2011-07-28
-   :END:
+
 
 #+begin_src emacs-lisp
   '(nil nil nil nil)
@@ -336,9 +299,7 @@ and verbiage to end the same paragraph.
 : (nil nil nil nil)
 
 ** non-defined code blocks can still tangle
-   :PROPERTIES:
-   :DATE:     2011-07-28
-   :END:
+
 
 #+begin_src text :tangle somewhere.txt
   This will still tangle out to a file, and it opens in text mode, which
@@ -346,9 +307,7 @@ and verbiage to end the same paragraph.
 #+end_src
 
 ** expand noweb refs
-   :PROPERTIES:
-   :DATE:     2011-07-25
-   :END:
+
 #+source: def-something
 #+begin_src sh
   SOMETHING=nothing
@@ -360,9 +319,7 @@ and verbiage to end the same paragraph.
 #+end_src
 
 ** returning file names -- interpreted as lists
-   :PROPERTIES:
-   :DATE:     2011-07-21
-   :END:
+
 #+begin_src sh :results scalar
   echo "[[file:./cv.cls]]"
 #+end_src
@@ -380,9 +337,7 @@ and verbiage to end the same paragraph.
 #+END_ORG
 
 ** java code block
-   :PROPERTIES:
-   :DATE:     2011-07-19
-   :END:
+
 #+begin_src java :classname myfirstjavaprog
   class myfirstjavaprog
   {  
@@ -397,9 +352,7 @@ and verbiage to end the same paragraph.
 : Hello World!
 
 ** exporting a ditaa example
-   :PROPERTIES:
-   :DATE:     2011-07-19
-   :END:
+
 
 #+begin_src ditaa :file blue.png :cmdline -r
 /---------------\
@@ -412,9 +365,7 @@ and verbiage to end the same paragraph.
 [[file:blue.png]]
 
 ** including noweb refs w/o last newline
-   :PROPERTIES:
-   :DATE:     2011-07-19
-   :END:
+
 #+begin_src sh :noweb yes
   <<my-name>> |\
   <<capitalize-name>>
@@ -431,9 +382,7 @@ and verbiage to end the same paragraph.
 #+end_src
 
 ** simple sbe example
-   :PROPERTIES:
-   :DATE:     2011-07-10
-   :END:
+
 
 |   1 |
 |   2 |
@@ -451,9 +400,7 @@ and verbiage to end the same paragraph.
 #+end_src
 
 ** eval never
-   :PROPERTIES:
-   :DATE:     2011-07-10
-   :END:
+
 
 #+begin_src emacs-lisp :eval (if org-export-current-backend "never" "yes") :exports results
   (message "launch missles")
@@ -463,9 +410,7 @@ and verbiage to end the same paragraph.
 : launch missles
 
 ** indexing into a list variable
-   :PROPERTIES:
-   :DATE:     2011-07-06
-   :END:
+
 
 #+begin_src emacs-lisp :var lst='(0 1 2)
   (first lst)
@@ -489,9 +434,7 @@ or as a noweb reference
 : 0
 
 ** data alias for resname
-   :PROPERTIES:
-   :DATE:     2011-07-05
-   :END:
+
 #+data: blah
 : blahcontent
 
@@ -520,9 +463,7 @@ another block including the first block
 #+end_src
 
 ** find a resource by global id
-   :PROPERTIES:
-   :DATE:     2011-07-01
-   :END:
+
 
 #+begin_src emacs-lisp :var it=990f3218-6fce-44fb-bd0c-5f6076c0dadc
   it
@@ -541,9 +482,7 @@ another block including the first block
 here it is
 
 ** longtable label and attr lines on code block results
-   :PROPERTIES:
-   :DATE:     2011-06-29
-   :END:
+
 
 #+source: faz
 #+begin_src emacs-lisp :exports results
@@ -557,9 +496,7 @@ here it is
 | bar | baz |
 
 ** another test
-   :PROPERTIES:
-   :DATE:     2011-06-29
-   :END:
+
 #+source: square
 #+begin_src emacs-lisp :var it=0
   (* it it)
@@ -570,9 +507,7 @@ Here is a call_square(it=4), stuck in the middle of some prose.
 Here is another 25^2=call_square(it=25).
 
 ** multiple variables
-   :PROPERTIES:
-   :DATE:     2011-06-27
-   :END:
+
 
 Should work call_concat(1, 2, 3) =123= in order.
 
@@ -584,9 +519,7 @@ Should work call_concat(1, 2, 3) =123= in order.
 Should be positive call_lob-minus(4, 3) =1= by order.
 
 ** un-named variables
-   :PROPERTIES:
-   :DATE:     2011-06-27
-   :END:
+
 
 #+source: square
 #+begin_src emacs-lisp :var it=0
@@ -608,9 +541,7 @@ To ensure that these arguments are passed in the correct order we can
 use the following call_minus(8, 4) =-4=
 
 ** inline call line
-   :PROPERTIES:
-   :DATE:     2011-06-27
-   :END:
+
 
 #+source: double
 #+begin_src emacs-lisp :var it=0
@@ -636,9 +567,7 @@ And, a call with raw results call_double(4)[:results raw] should not
 have quoted results.
 
 ** text and graphics from R
-   :PROPERTIES:
-   :DATE:     2011-06-24
-   :END:
+
 
 #+begin_src R :results output :session
 print(seq(1,10))
@@ -652,9 +581,7 @@ plot(seq(1,10))
 [[file:example.png]]
 
 ** large code in inline blocks
-   :PROPERTIES:
-   :DATE:     2011-06-22
-   :END:
+
 
 #+source: big-block
 #+begin_src emacs-lisp :exports none
@@ -664,9 +591,7 @@ plot(seq(1,10))
 Here is some text with src_emacs-lisp[:var it=big-block]{it} in the middle.
 
 ** clojure =:results scalar=
-   :PROPERTIES:
-   :DATE:     2011-06-21
-   :END:
+
 #+begin_src clojure :results scalar
   '(1 2 3)
 #+end_src
@@ -682,9 +607,7 @@ Here is some text with src_emacs-lisp[:var it=big-block]{it} in the middle.
 #+end_src
 
 ** python session
-   :PROPERTIES:
-   :DATE:     2011-06-19
-   :END:
+
 #+begin_src python :results output :session mypy 
 x = 1
 for i in range(1,5):
@@ -712,9 +635,7 @@ print "I throw an error"
 : NameError: name 'y' is not defined
 
 ** scalar emacs lisp results
-   :PROPERTIES:
-   :DATE:     2011-06-19
-   :END:
+
 #+begin_src emacs-lisp :results scalar
   '(1 2 3)
 #+end_src
@@ -723,9 +644,7 @@ print "I throw an error"
 : (1 2 3)
 
 ** named code block export
-   :PROPERTIES:
-   :DATE:     2011-06-13
-   :END:
+
 This has a name which is not exported.
 
 #+source: rand(n)
@@ -769,9 +688,7 @@ This has a name which is not exported.
 #+end_src
 
 ** ruby with xmpfilter
-   :PROPERTIES:
-   :DATE:     2011-06-10
-   :END:
+
 #+begin_src ruby :results xmp code
   2 + 2 # =>
   3.times{ puts :hello }
@@ -787,18 +704,14 @@ This has a name which is not exported.
 #+END_SRC
 
 ** tangle test
-   :PROPERTIES:
-   :DATE:     2011-06-10
-   :END:
+
 #+begin_src R :tangle test.R :shebang #!/bin/cat :padline no
 This is
 a test
 #+end_src
 
 ** quick testing new session code
-   :PROPERTIES:
-   :DATE:     2011-06-06
-   :END:
+
 #+begin_src sh :session test :results output
   echo foo
 #+end_src
@@ -814,9 +727,7 @@ a test
 : foo
 
 ** =:file= and python
-   :PROPERTIES:
-   :DATE:     2011-06-06
-   :END:
+
 #+begin_src python :file /tmp/test.png
   return 1
 #+end_src
@@ -825,9 +736,7 @@ a test
 [[file:/tmp/test.png]]
 
 ** simple shell
-   :PROPERTIES:
-   :DATE:     2011-06-06
-   :END:
+
 #+begin_src sh
   sleep 10 && ls
 #+end_src
@@ -853,9 +762,7 @@ a test
 : nil
 
 ** testing new data names
-   :PROPERTIES:
-   :DATE:     2011-06-02
-   :END:
+
 
 #+data: simple-123
 : 123
@@ -874,9 +781,7 @@ my data is results
 : 246
 
 ** default directory examples in lisp
-   :PROPERTIES:
-   :DATE:     2011-06-01
-   :END:
+
 
 #+begin_src lisp
   *default-pathname-defaults*
@@ -894,9 +799,7 @@ my data is results
 : #P""
 
 ** lisp body with multiple forms
-   :PROPERTIES:
-   :DATE:     2011-05-31
-   :END:
+
 
 #+begin_src lisp :results value
   (format t "~&eric")
@@ -907,9 +810,7 @@ my data is results
 : 3
 
 ** example =#+call= line expansion
-   :PROPERTIES:
-   :DATE:     2011-05-27
-   :END:
+
 this code block peeks inside of the `params' variable which is used by
 babel during code block evaluation
 #+source: callee
@@ -938,9 +839,7 @@ nothing
 #+END_ORG
 
 ** awk example
-   :PROPERTIES:
-   :DATE:     2011-05-26
-   :END:
+
 
 #+results: simple-table
 | 1 | 2 | 3 |
@@ -957,9 +856,7 @@ nothing
 | 7 |
 
 ** passing values through to STDIN of shell code blocks
-   :PROPERTIES:
-   :DATE:     2011-05-26
-   :END:
+
 #+results: square-table
 | 1 | 2 | 3 |
 | 4 | 5 | 6 |
@@ -980,9 +877,7 @@ nothing
 |      7 |
 
 ** don't match end_src inside of a block
-   :PROPERTIES:
-   :DATE:     2011-05-14
-   :END:
+
 
 #+srcname: the_issue
 #+begin_src sh :results output
@@ -993,9 +888,7 @@ nothing
 : #+end_src block
 
 ** append tables
-   :PROPERTIES:
-   :DATE:     2011-05-14
-   :END:
+
 #+data: table-names
 - first-table
 - second-table
@@ -1023,9 +916,7 @@ nothing
 | (e 5) | (f 6) |
 
 ** new names for results
-   :PROPERTIES:
-   :DATE:     2011-05-06
-   :END:
+
 
 #+results: simple
 : 1
@@ -1054,9 +945,7 @@ changing the variable used to label data
 : 2
 
 ** ocaml
-   :PROPERTIES:
-   :DATE:     2011-05-06
-   :END:
+
 
 #+begin_src ocaml
   [3;2;3] @ [3;2;3;4;5];;
@@ -1066,9 +955,7 @@ changing the variable used to label data
 | 3 | 2 | 3 | 3 | 2 | 3 | 4 | 5 |
 
 ** simple latex verbatim wrap example
-   :PROPERTIES:
-   :DATE:     2011-05-05
-   :END:
+
 #+begin_src emacs-lisp :results silent
   (setq org-export-latex-verbatim-wrap
         '("{\\scriptsize\n\\begin{verbatim}\n" . "\\end{verbatim}\n}\n"))
@@ -1080,9 +967,7 @@ changing the variable used to label data
 #+end_src
 
 ** inserting complicated results
-   :PROPERTIES:
-   :DATE:     2011-05-05
-   :END:
+
 #+begin_src emacs-lisp :results scalar
   ((lambda (result) (condition-case nil (read result) (error result)))
    "(:return
@@ -1094,9 +979,7 @@ changing the variable used to label data
 | :return | (:ok {:model #<MINLP f(x,y)={(x[0]-5)^2+(x[1]-3)^2-y*sqrt($x),2}>, :v #<Variables x={ 4.0, 4.0 } y={ 0 }>, :z nil}) | 13 |
 
 ** automatic org-mode formatting
-   :PROPERTIES:
-   :DATE:     2011-04-27
-   :END:
+
 
 #+source: raw-results
 #+begin_src sh :results output tabular
@@ -1112,9 +995,7 @@ changing the variable used to label data
 : t
 
 ** units in R plot
-   :PROPERTIES:
-   :DATE:     2011-04-21
-   :END:
+
 #+begin_src R  :results graphics :file test.png :width 8 :height 8 :res 200 :units cm
   x <- -10:10
   y <- x^2
@@ -1125,9 +1006,7 @@ changing the variable used to label data
 [[file:test.png]]
 
 ** Ocaml appending blocks
-   :PROPERTIES:
-   :DATE:     2011-04-19
-   :END:
+
 block
 
 #+begin_src ocaml
@@ -1138,17 +1017,13 @@ block
 | 1 | 2 | 3 |
 
 ** simple Oz example
-   :PROPERTIES:
-   :DATE:     2011-04-19
-   :END:
+
 #+begin_src oz :results output
   {Browse 'Hello'}
 #+end_src
 
 ** complex numbers in tables and python, reference in table formula
-   :PROPERTIES:
-   :DATE:     2011-04-13
-   :END:
+
 
 #+source: parameter-variation(data=0)
 #+begin_src python :result values
@@ -1231,9 +1106,7 @@ block
 | (0.0357806926897,0.000575051685084) |
 
 ** emacs-lisp printing with output to string
-   :PROPERTIES:
-   :DATE:     2011-04-10
-   :END:
+
 
 #+begin_src emacs-lisp :results output
   (let ((dog (sqrt 2))
@@ -1265,9 +1138,7 @@ block
 | fish |                    |
 
 ** headers in R tables during export
-   :PROPERTIES:
-   :DATE:     2011-04-04
-   :END:
+
 #+TBLNAME: Chuah07
 | condition | Mean.offer |
 |-----------+------------|
@@ -1292,9 +1163,7 @@ block
 :  $ Mean.offer: num  48.5 42.6 44.9 46.4 44.1 ... eric
 
 ** session associated with R block
-   :PROPERTIES:
-   :DATE:     2011-04-02
-   :END:
+
 #+begin_src R :session *chris*
   x <- 1
   y <- 2
@@ -1325,18 +1194,14 @@ block
 #+end_src
 
 ** vc-log
-   :PROPERTIES:
-   :DATE:     2011-04-01
-   :END:
+
 
 A version control log of this file.  The =vc-log= code block lives in
 the library of babel.
 #+call: vc-log() :exports results
 
 ** CL example
-   :PROPERTIES:
-   :DATE:     2011-04-01
-   :END:
+
 #+begin_src lisp
   (defun range (n &optional m)
     "Return the numbers in range."
@@ -1358,9 +1223,7 @@ the library of babel.
 | 10 |
 
 ** tangling out vc information
-   :PROPERTIES:
-   :DATE:     2011-04-01
-   :END:
+
 
 #+headers: :var STATE=(vc-state (or (buffer-file-name) org-current-export-file))
 #+headers: :var REV=(vc-working-revision (or (buffer-file-name) org-current-export-file))
@@ -1378,9 +1241,7 @@ the library of babel.
 #+end_src
 
 ** grabbing the current buffer during export
-   :PROPERTIES:
-   :DATE:     2011-04-01
-   :END:
+
 Eric
 
 #+begin_src emacs-lisp :var buf=(buffer-file-name (current-buffer)) :exports both
@@ -1392,9 +1253,7 @@ Eric
 #+end_src
 
 ** colnames with call lines
-   :PROPERTIES:
-   :DATE:     2011-03-29
-   :END:
+
 #+TBLNAME: data
 | x | parameter | value |
 |---+-----------+-------|
@@ -1423,9 +1282,7 @@ Eric
 | value     |
 
 ** caching on export
-   :PROPERTIES:
-   :DATE:     2011-03-23
-   :END:
+
 #+source: testcache
 #+begin_src R :cache yes :exports results
   dat <-  matrix(runif(12), 3, 4)
@@ -1438,9 +1295,7 @@ Eric
 |  0.60190233332105 | 0.122638279106468 | 0.437959408387542 | 0.015639441087842 |
 
 ** conflicting header arguments
-   :PROPERTIES:
-   :DATE:     2011-03-14
-   :END:
+
 
 code block
 #+source: conflict-block
@@ -1481,9 +1336,7 @@ will be replaced.
 #+end_src
 
 ** looks like a pipe in a table
-   :PROPERTIES:
-   :DATE:     2011-03-07
-   :END:
+
 #+source: clean
 #+begin_src emacs-lisp :var in=""
   (flet ((clean (in)
@@ -1507,9 +1360,7 @@ will be replaced.
 : (1|2)
 
 ** eval results as a list
-   :PROPERTIES:
-   :DATE:     2011-03-06
-   :END:
+
 #+begin_src python :results value
   return "(mapcar (lambda (el) (+ 1 el)) '(1 2))"
 #+end_src
@@ -1539,9 +1390,7 @@ will be replaced.
 : [1 2]
 
 ** export of inline R code
-   :PROPERTIES:
-   :DATE:     2011-03-03
-   :END:
+
 Here I test inline code evaluation in R.
 
 #+begin_src R :session *R*
@@ -1557,17 +1406,13 @@ src_R[:session *R*]{x} .
 Did the number 100 show up at the end of the previous sentence on export?
 
 ** simple mysql
-   :PROPERTIES:
-   :DATE:     2011-03-03
-   :END:
+
 #+begin_src sql :engine mysql
   show tables;
 #+end_src
 
 ** leading/trailing spaces
-   :PROPERTIES:
-   :DATE:     2011-03-02
-   :END:
+
 #+results: spaces-wrapped-string
 - " pass through with space "
 
@@ -1580,9 +1425,7 @@ Did the number 100 show up at the end of the previous sentence on export?
 :  pass through with space 
 
 ** results org raw wrap
-   :PROPERTIES:
-   :DATE:     2011-03-02
-   :END:
+
 #+begin_src sh :results output org :exports none
   cat <<EOF
   - first
@@ -1637,9 +1480,7 @@ Finally this version does only export the R code
 #+end_src
 
 ** literal reference in a table with sbe
-   :PROPERTIES:
-   :DATE:     2011-02-28
-   :END:
+
 
 | "eric schulte" | 12 |
 #+TBLFM: @1$2='(sbe length (in $1))
@@ -1650,9 +1491,7 @@ Finally this version does only export the R code
 #+end_src
 
 ** reference to a commented out subtree
-   :PROPERTIES:
-   :DATE:     2011-02-28
-   :END:
+
 *** COMMENT I don't export
     :PROPERTIES:
     :DATE:     2011-02-28
@@ -1672,9 +1511,7 @@ Finally this version does only export the R code
 #+end_src
 
 ** strip hline before processing a variables indices
-   :PROPERTIES:
-   :DATE:     2011-02-27
-   :END:
+
 #+results: table-w-hline
 | 1 | a |
 |---+---|
@@ -1702,9 +1539,7 @@ Finally this version does only export the R code
 #+end_src 
 
 ** new block regexp tests
-   :PROPERTIES:
-   :DATE:     2011-02-27
-   :END:
+
 *** Block 1 (Exports OK)
     :PROPERTIES:
     :DATE:     2011-02-27
@@ -1760,9 +1595,7 @@ Block 6
 #+END_SRC
 
 ** pass a vector to calc
-   :PROPERTIES:
-   :DATE:     2011-02-27
-   :END:
+
 
 #+begin_src calc :var y=[1 2 3]
   y
@@ -1793,9 +1626,7 @@ Block 6
 : 8
 
 ** don't interpret tuples as elisp code
-   :PROPERTIES:
-   :DATE:     2011-02-27
-   :END:
+
 #+begin_src python :results value
   return (1,2)
 #+end_src
@@ -1804,9 +1635,7 @@ Block 6
 : (1, 2)
 
 ** passing elisp-looking variables to code blocks
-   :PROPERTIES:
-   :DATE:     2011-02-27
-   :END:
+
 #+begin_src perl :var it="(+ 1 1)" :results output
   printf "passed in %s", $it
 #+end_src
@@ -1834,9 +1663,7 @@ Block 6
 : (a b c)
 
 ** exporting cache and noweb
-   :PROPERTIES:
-   :DATE:     2011-02-27
-   :END:
+
 #+srcname: test_sleep
 #+begin_src R :session :exports code
   Sys.sleep(time=5)
@@ -1861,17 +1688,13 @@ Block 6
 | 10 |
 
 ** source block names in current buffer
-   :PROPERTIES:
-   :DATE:     2011-02-26
-   :END:
+
 #+begin_src emacs-lisp :results list
  (org-babel-src-block-names)
 #+end_src
 
 ** simple python block
-   :PROPERTIES:
-   :DATE:     2011-02-26
-   :END:
+
 #+begin_src python :return foo
   foo = 8
   foo += 1
@@ -1881,9 +1704,7 @@ Block 6
 : 9
 
 ** sh return a list of elements with spaces
-   :PROPERTIES:
-   :DATE:     2011-02-26
-   :END:
+
 #+begin_src sh :results list
   echo "eric schulte"
   echo "dan davison"
@@ -1907,9 +1728,7 @@ Block 6
 : seb vauban
 
 ** calc variables inside of parenthesis
-   :PROPERTIES:
-   :DATE:     2011-02-22
-   :END:
+
 #+BEGIN_SRC calc :var testvar=9000
 testvar - 200
 #+END_SRC
@@ -1925,9 +1744,7 @@ testvar - 200
 : 7040000
 
 ** new lists
-   :PROPERTIES:
-   :DATE:     2011-02-21
-   :END:
+
 *** results embedded inside of a list
     :PROPERTIES:
     :DATE:     2011-02-22
@@ -1960,18 +1777,14 @@ testvar - 200
 #+end_src
 
 ** catch the file name during export
-   :PROPERTIES:
-   :DATE:     2011-02-21
-   :END:
+
 
 #+begin_src emacs-lisp :var file-name=(buffer-file-name) :exports both
   file-name
 #+end_src
 
 ** export of inline code blocks which are silent
-   :PROPERTIES:
-   :DATE:     2011-02-20
-   :END:
+
 #+begin_src emacs-lisp :results silent
   (setf org-babel-default-inline-header-args
         '((:session . "none")
@@ -1982,9 +1795,7 @@ testvar - 200
 Here is an inline code block src_sh{echo 8} <- there
 
 ** mentions of file names in file contents
-   :PROPERTIES:
-   :DATE:     2011-02-20
-   :END:
+
 directory to search
 #+results: graph-dir
 : graph-dir
@@ -2041,16 +1852,12 @@ graphing with dot
 [[file:files.png]]
 
 ** inline code block
-   :PROPERTIES:
-   :DATE:     2011-02-18
-   :END:
+
 
 here is an inline block src_R{1+1}
 
 ** recutils
-   :PROPERTIES:
-   :DATE:     2011-02-15
-   :END:
+
 #+begin_src sh :file book.rec
   cat <<EOF > book.rec
   # -*- mode: rec -*-
@@ -2109,9 +1916,7 @@ here is an inline block src_R{1+1}
 | Yeelong User Manual                   |                     |                  |
 
 ** SQL --- example reading org-mode table into sql
-   :PROPERTIES:
-   :DATE:     2011-02-15
-   :END:
+
 #+tblname: example-table-for-sql
 | a |  b |
 |---+----|
@@ -2128,9 +1933,7 @@ load data infile "$table" into mytable;
 #+end_src
 
 ** passing keywords inside header arguments
-   :PROPERTIES:
-   :DATE:     2011-02-15
-   :END:
+
 
 #+begin_src emacs-lisp :var lst='(:no-expand :other)
   lst
@@ -2198,17 +2001,13 @@ results in Error
 tangles to
 
 ** non-inlined inline code block
-   :PROPERTIES:
-   :DATE:     2011-01-27
-   :END:
+
 The Date is src_sh[:results replace]{date} at the time of =this= export.
 
 src_sh[:results replace]{ls}
 
 ** results replace not always working
-   :PROPERTIES:
-   :DATE:     2011-01-25
-   :END:
+
 #+begin_src sh :results output org replace :exports code
   for i in `seq 4`;do
       echo "- place $i in the list"
@@ -2226,9 +2025,7 @@ src_sh[:results replace]{ls}
 inline block src_emacs-lisp[:exports code :results replace]{(+ 1 1 1)} here is was
 
 ** simple calc example
-   :PROPERTIES:
-   :DATE:     2011-01-25
-   :END:
+
 #+begin_src calc 
 2*3
 #+end_src
@@ -2237,9 +2034,7 @@ inline block src_emacs-lisp[:exports code :results replace]{(+ 1 1 1)} here is w
 : 6
 
 ** inserting wrappers eats following characters
-   :PROPERTIES:
-   :DATE:     2011-01-20
-   :END:
+
 *** Test
     :PROPERTIES:
     :DATE:     2011-01-20
@@ -2261,9 +2056,7 @@ inline block src_emacs-lisp[:exports code :results replace]{(+ 1 1 1)} here is w
     :END:
 
 ** creating a directory when needed for tangling
-   :PROPERTIES:
-   :DATE:     2011-01-19
-   :END:
+
 #+begin_src clojure :tangle (prog1 "src/foo.clj" (make-directory "src" "."))
   (ns something)
 #+end_src
@@ -2286,9 +2079,7 @@ There is now a new header argument controlling this behavior
 #+end_src
 
 ** passing arguments to the shell
-   :PROPERTIES:
-   :DATE:     2011-01-18
-   :END:
+
 #+results: something
 : eric
 :   schulte
@@ -2312,9 +2103,7 @@ There is now a new header argument controlling this behavior
 #+end_src
 
 ** wrap noweb references in comments
-   :PROPERTIES:
-   :DATE:     2011-01-16
-   :END:
+
 #+source: wrappable
 #+begin_src emacs-lisp
   (setq x (+ 4 x))
@@ -2328,9 +2117,7 @@ There is now a new header argument controlling this behavior
 #+end_src
 
 ** replace inline code block
-   :PROPERTIES:
-   :DATE:     2011-01-13
-   :END:
+
 This is src_emacs-lisp{(+ 1 2 3)} an inline block.
 
 #+begin_src emacs-lisp
@@ -2345,9 +2132,7 @@ This is src_emacs-lisp{(+ 1 2 3)} an inline block.
 #+end_src
 
 ** noweb then variables
-   :PROPERTIES:
-   :DATE:     2011-01-13
-   :END:
+
 #+source: replaced-first
 #+begin_src latex
   \begin{itemize}
@@ -2364,9 +2149,7 @@ This is src_emacs-lisp{(+ 1 2 3)} an inline block.
 #+end_src
 
 ** empty strings as arguments
-   :PROPERTIES:
-   :DATE:     2011-01-11
-   :END:
+
 
 #+begin_src emacs-lisp :results output :var foo=""
   (concat foo "bar")
@@ -2376,9 +2159,7 @@ This is src_emacs-lisp{(+ 1 2 3)} an inline block.
 : bar
 
 ** call lines
-   :PROPERTIES:
-   :DATE:     2011-01-11
-   :END:
+
 #+source: doubler
 #+begin_src emacs-lisp :var n=2
   (* n 2)
@@ -2395,9 +2176,7 @@ This is src_emacs-lisp{(+ 1 2 3)} an inline block.
 : 6
 
 ** language name abbreviations
-   :PROPERTIES:
-   :DATE:     2011-01-07
-   :END:
+
 
 #+begin_src emacs-lisp
   (add-to-list 'org-src-lang-modes '("clj" . clojure))
@@ -2408,9 +2187,7 @@ This is src_emacs-lisp{(+ 1 2 3)} an inline block.
 #+end_src
 
 ** eval query
-   :PROPERTIES:
-   :DATE:     2010-12-21
-   :END:
+
 #+begin_src emacs-lisp
   (setq org-confirm-babel-evaluate
         (lambda (lang body) (not (equal "ditaa" lang))))
@@ -2431,9 +2208,7 @@ This is src_emacs-lisp{(+ 1 2 3)} an inline block.
 #+end_src
 
 ** new file handling
-   :PROPERTIES:
-   :DATE:     2010-12-20
-   :END:
+
 
 #+begin_src sh :sep , :file dirlisting
   ls -l
@@ -2488,9 +2263,7 @@ from http://www.graphviz.org/Gallery/directed/fsm.gv.txt
 #+results:
 [[file:fsa.png]]
 ** tangle templates
-   :PROPERTIES:
-   :DATE:     2010-12-13
-   :END:
+
 #+source: template-heading
 #+begin_src emacs-lisp
   some stuff here
@@ -2548,9 +2321,7 @@ echo $footing
 #+END_LaTeX
 
 ** utf8 and latin-1 encodings
-   :PROPERTIES:
-   :DATE:     2010-12-13
-   :END:
+
 #+tblname: toto
 | é |
 
@@ -2563,9 +2334,7 @@ echo $footing
 | 2 | 2 |
 
 ** Python requires a utf-8 coding prefix
-   :PROPERTIES:
-   :DATE:     2010-12-02
-   :END:
+
 #+begin_src python :prefix # -*- coding: utf-8 -*- :return s
 s = "é"
 #+end_src
@@ -2582,9 +2351,7 @@ print(s)
 : é
 
 ** empty lines in R session output
-   :PROPERTIES:
-   :DATE:     2010-12-01
-   :END:
+
 #+begin_src R :results output :session
   x <- 1;
   x
@@ -2598,9 +2365,7 @@ print(s)
 : [1] 5
 
 ** =:eval query= shows the name
-   :PROPERTIES:
-   :DATE:     2010-11-30
-   :END:
+
 #+source: i-have-a-name
 #+begin_src sh :eval query
   date
@@ -2610,9 +2375,7 @@ print(s)
 : Tue Nov 30 22:03:25 MST 2010
 
 ** sql variables
-   :PROPERTIES:
-   :DATE:     2010-11-30
-   :END:
+
 #+results: sql-param
 | table       | valueTable0       |
 | column      | valueColumn0      |
@@ -2635,9 +2398,7 @@ END
 #+end_src
 
 ** python with return header argument
-   :PROPERTIES:
-   :DATE:     2010-11-27
-   :END:
+
 
 #+begin_src python :return y
   x = 8
@@ -2649,9 +2410,7 @@ END
 : 98
 
 ** safe lists for Haskell
-   :PROPERTIES:
-   :DATE:     2010-11-23
-   :END:
+
 
 #+tblname: mixed-table
 | 1 | first  |
@@ -2720,9 +2479,7 @@ echo "$data" | awk '// {print "| New col | " $0 " |";}'
 | New col | This is the last line of the message. |
 
 ** reading from single-quote-delim languages
-   :PROPERTIES:
-   :DATE:     2010-11-23
-   :END:
+
 #+BEGIN_SRC python
 return [['607', 'Show license short, name on the deed'],
         ['255', "'(message (concat 'hello ' 'world))"]]
@@ -2750,9 +2507,7 @@ return [['607', 'Show license short, name on the deed'],
 | "double quotes" | d |
 
 ** un-named R code blocks
-   :PROPERTIES:
-   :DATE:     2010-11-23
-   :END:
+
 #+begin_src R
   8
 #+end_src
@@ -2779,9 +2534,7 @@ return [['607', 'Show license short, name on the deed'],
 : [1] 9
 
 ** introducing =wrap= header argument
-   :PROPERTIES:
-   :DATE:     2010-11-19
-   :END:
+
 #+begin_src emacs-lisp :results wrap :exports both
   (mapcar (lambda (el) (list el (+ 1 (* el el)))) (number-sequence 0 10))
 #+end_src
@@ -2814,9 +2567,7 @@ now indented
   #+END_RESULT
 
 ** lists as data types
-   :PROPERTIES:
-   :DATE:     2010-11-19
-   :END:
+
 
 #+results: a-list
 - org-mode
@@ -2841,9 +2592,7 @@ also for a block inside of a list
 3. third element
 
 ** sqlite
-   :PROPERTIES:
-   :DATE:     2010-11-10
-   :END:
+
 #+begin_src sqlite :db paper/climate.sqlite
   select count(*) from temps;
 #+end_src
@@ -2852,9 +2601,7 @@ also for a block inside of a list
 : 422689
 
 ** lob calls with header argument pass through
-   :PROPERTIES:
-   :DATE:     2010-11-08
-   :END:
+
 
 #+source: lob-header
 #+begin_src emacs-lisp :var n=20
@@ -2887,9 +2634,7 @@ need ob-ref.el to pass through the header arguments in "[]"s
 : 8
 
 ** clojure code blocks and the lazies
-   :PROPERTIES:
-   :DATE:     2010-11-06
-   :END:
+
 #+begin_src emacs-lisp :results silent
   (defun org-babel-execute:clojure (body params)
     (with-temp-buffer
@@ -2917,9 +2662,7 @@ need ob-ref.el to pass through the header arguments in "[]"s
 | 9 | 81 |
 
 ** playing with calc support
-   :PROPERTIES:
-   :DATE:     2010-11-03
-   :END:
+
 #+begin_src emacs-lisp
   (require 'ob-calc)
 #+end_src
@@ -2957,9 +2700,7 @@ need ob-ref.el to pass through the header arguments in "[]"s
 : 18
 
 ** shell blocks returning a file name
-   :PROPERTIES:
-   :DATE:     2010-11-03
-   :END:
+
 #+begin_src sh :file quick.txt :results output
   date
 #+end_src
@@ -2968,9 +2709,7 @@ need ob-ref.el to pass through the header arguments in "[]"s
 [[file:quick.txt]]
 
 ** passing arguments through call lines
-   :PROPERTIES:
-   :DATE:     2010-10-29
-   :END:
+
 
 #+source: test
 #+begin_src R :session :file test.pdf :var myarg="bla"
@@ -2986,9 +2725,7 @@ need ob-ref.el to pass through the header arguments in "[]"s
 : test.pdf
 
 ** simple gnuplot tests
-   :PROPERTIES:
-   :DATE:     2010-10-26
-   :END:
+
 #+results: some-more-gnuplot
 | 1 |  1 |
 | 2 |  4 |
@@ -3040,9 +2777,7 @@ plot data u 1:2 w p lw 2 title 'x vs. y1', \
 [[file:basic-plot.png]]
 
 ** latex headers in latex code blocks
-   :PROPERTIES:
-   :DATE:     2010-10-26
-   :END:
+
 
 #+begin_src latex :headers \usepackage{lmodern} :file name1.pdf
   Eric Schulte
@@ -3059,9 +2794,7 @@ plot data u 1:2 w p lw 2 title 'x vs. y1', \
 [[file:name2.pdf]]
 
 ** export-specific header arguments
-   :PROPERTIES:
-   :DATE:     2010-10-26
-   :END:
+
 
 #+headers: :var out=(if (and (boundp 'latexp) latexp) "latex" "not latex") 
 #+begin_src emacs-lisp
@@ -3072,17 +2805,13 @@ plot data u 1:2 w p lw 2 title 'x vs. y1', \
 : not latex
 
 ** security problem with elisp in header arguments
-   :PROPERTIES:
-   :DATE:     2010-10-14
-   :END:
+
 #+begin_src emacs-lisp :var data=(setq org-confirm-babel-evaluate nil) :results silent
   (+ 1 1)
 #+end_src
 
 ** preceding blank lines on tangle
-   :PROPERTIES:
-   :DATE:     2010-10-13
-   :END:
+
 #+begin_src emacs-lisp :results silent
   (setq org-babel-tangle-pad-newline nil)
 #+end_src
@@ -3093,9 +2822,7 @@ plot data u 1:2 w p lw 2 title 'x vs. y1', \
 #+end_src
 
 ** very very large numbers
-   :PROPERTIES:
-   :DATE:     2010-10-13
-   :END:
+
 #+tblname: numbers
 |                           1 |
 |                           2 |
@@ -3139,9 +2866,7 @@ plot data u 1:2 w p lw 2 title 'x vs. y1', \
 #+end_src
 
 ** index into a scalar
-   :PROPERTIES:
-   :DATE:     2010-10-13
-   :END:
+
 #+tblname: short-list
 | a |
 | b |
@@ -3154,9 +2879,7 @@ plot data u 1:2 w p lw 2 title 'x vs. y1', \
 : a
 
 ** cycle -- the input is the output
-   :PROPERTIES:
-   :DATE:     2010-09-29
-   :END:
+
 and the rhythm is the base and the base is the treble
 
 #+results: cycle
@@ -3174,9 +2897,7 @@ and the rhythm is the base and the base is the treble
 #+end_src
 
 ** Letter
-   :PROPERTIES:
-   :DATE:     2010-09-21
-   :END:
+
 
 #+source: body
 #+begin_src org :results latex
@@ -3213,9 +2934,7 @@ and the rhythm is the base and the base is the treble
 #+end_src
 
 ** splitting code blocks
-   :PROPERTIES:
-   :DATE:     2010-09-19
-   :END:
+
 - with indentation
   #+begin_src emacs-lisp
     ;;;###autoload
@@ -3251,9 +2970,7 @@ and the rhythm is the base and the base is the treble
   #+end_src
 
 ** header arguments on call line
-   :PROPERTIES:
-   :DATE:     2010-09-09
-   :END:
+
 #+source: eight
 #+begin_src R
   8
@@ -3269,9 +2986,7 @@ maybe the following with the new proposed header arguments
 #+call: eight[:session *R*]() :results vector
 
 ** empty-string results
-   :PROPERTIES:
-   :DATE:     2010-09-08
-   :END:
+
 test me one two 3
 
 #+begin_src emacs-lisp
@@ -3299,9 +3014,7 @@ More test
 | :tangle   | no      |
 
 ** tangle org-mode block
-   :PROPERTIES:
-   :DATE:     2010-09-07
-   :END:
+
 #+source: org-list
 #+begin_src org :results latex
   - one
@@ -3316,9 +3029,7 @@ More test
 #+end_src
 
 ** remove results when nil is returned
-   :PROPERTIES:
-   :DATE:     2010-09-07
-   :END:
+
 #+begin_src emacs-lisp
   (progn (+ 1 1) nil)
 #+end_src
@@ -3326,9 +3037,7 @@ More test
 #+results:
 
 ** comparative speed of python evaluation
-   :PROPERTIES:
-   :DATE:     2010-09-07
-   :END:
+
 #+begin_src python :session test
   2+2
 #+end_src
@@ -3409,9 +3118,7 @@ and finally a block with a =:noweb= header argument
 #+end_src
 
 ** quoting header args (e.g. :cmdline)
-   :PROPERTIES:
-   :DATE:     2010-09-03
-   :END:
+
 #+begin_src C :cmdline 1 2 3 4 5 :includes <stdio.h>
   int main(int argc, char **argv){
     printf("argv[1] %s\n", argv[1]);
@@ -3423,9 +3130,7 @@ and finally a block with a =:noweb= header argument
 : argv[1] 1
 
 ** :var (buffer-file-name)
-   :PROPERTIES:
-   :DATE:     2010-09-03
-   :END:
+
 during export (buffer-file-name) will return nil because the temporary
 export buffer is not visiting any file.
 
@@ -3440,9 +3145,7 @@ export buffer is not visiting any file.
 #+end_src
 
 ** :session evaluation on export
-   :PROPERTIES:
-   :DATE:     2010-09-01
-   :END:
+
 This first block is evaluated but /doesn't/ appear in export.
 
 /:session *R* :exports none/
@@ -3457,9 +3160,7 @@ This second block /does/ appear in export.
 #+end_src
 
 ** ditaa with tilda in path
-   :PROPERTIES:
-   :DATE:     2010-09-01
-   :END:
+
 #+begin_src ditaa :file example.png
     +--------------+
     |              |
@@ -3471,9 +3172,7 @@ This second block /does/ appear in export.
 #+end_src
 
 ** conditional tangling
-   :PROPERTIES:
-   :DATE:     2010-08-31
-   :END:
+
 #+begin_src emacs-lisp :results silent
   (setq tangle-tag "right")
 #+end_src
@@ -3495,9 +3194,7 @@ This second block /does/ appear in export.
 #+end_src
 
 ** scheme sessions
-   :PROPERTIES:
-   :DATE:     2010-08-31
-   :END:
+
 #+begin_src scheme :var number=9 :session *scheme* :scheme guile
   (+ number 0)
 #+end_src
@@ -3513,9 +3210,7 @@ This second block /does/ appear in export.
 : 10
 
 ** pulling information from tags                                       :blue:
-   :PROPERTIES:
-   :DATE:     2010-08-30
-   :END:
+
 
 #+begin_src R :var color=(car (org-get-tags-at (point))) :tangle example.R
   color
@@ -3525,9 +3220,7 @@ This second block /does/ appear in export.
 : blue
 
 ** initial scheme support
-   :PROPERTIES:
-   :DATE:     2010-08-27
-   :END:
+
 #+source: numbers
 #+begin_src scheme
   (map (lambda (el) (+ el 1)) '(1 2 3))
@@ -3544,9 +3237,7 @@ This second block /does/ appear in export.
 | 1 | 2 | 3 |
 
 ** initial javascript support
-   :PROPERTIES:
-   :DATE:     2010-08-27
-   :END:
+
 using node.js
 
 #+begin_src js
@@ -3582,9 +3273,7 @@ using node.js
 : 3
 
 ** duplicate results on execute subtree
-   :PROPERTIES:
-   :DATE:     2010-08-26
-   :END:
+
 #+begin_src emacs-lisp :results org :exports results
   "- first
 - second
@@ -3600,9 +3289,7 @@ using node.js
 #+END_SRC
 
 ** eval for side effect on export
-   :PROPERTIES:
-   :DATE:     2010-08-26
-   :END:
+
 - one plus one
   #+source: one-plus-one
   #+begin_src emacs-lisp :exports none :results silent
@@ -3614,9 +3301,7 @@ using node.js
   #+end_src
 
 ** trying out plantuml
-   :PROPERTIES:
-   :DATE:     2010-08-26
-   :END:
+
 setup
 #+begin_src emacs-lisp :results silent
   (require 'ob-plantuml)
@@ -3633,9 +3318,7 @@ usage -- sequence diagram
 [[file:tryout.png]]
 
 ** wrapping up raw/org results
-   :PROPERTIES:
-   :DATE:     2010-08-26
-   :END:
+
 #+begin_src emacs-lisp :results org :exports results
   "- first
   - second
@@ -3717,9 +3400,7 @@ do we export cached blocks
 : 0427db66afdc95462d1c8514b662829987d71ff5
 
 ** eval and noeval
-   :PROPERTIES:
-   :DATE:     2010-08-26
-   :END:
+
 date, should export both, but won't output results because of presence
 of the =:noeval= header argument.
 #+begin_src sh :noeval :exports both
@@ -3743,18 +3424,14 @@ should export results, and should trigger query above
 #+end_src
 
 ** issues with shell evaluation
-   :PROPERTIES:
-   :DATE:     2010-08-25
-   :END:
+
 #+begin_src sh :results silent
   cd ~/src/org/
   make
 #+end_src
 
 ** org results and replace
-   :PROPERTIES:
-   :DATE:     2010-08-18
-   :END:
+
 
 #+begin_src emacs-lisp :results org
   "| 1 | 2 |
@@ -3792,9 +3469,7 @@ should export results, and should trigger query above
 | 68 | 22 |  9 |
 
 ** ledger example output text
-   :PROPERTIES:
-   :DATE:     2010-08-13
-   :END:
+
 #+results: ledger-stuff
 #+begin_example
 09-Aug-21 CHEQUE : 9953055                    Expenses:Unknown                                    166.70 EUR            166.70 EUR
@@ -3807,9 +3482,7 @@ should export results, and should trigger query above
 #+end_src
 
 ** importing the output of ledger
-   :PROPERTIES:
-   :DATE:     2010-08-12
-   :END:
+
 #+results: ledger-output
 #+begin_example 
   09-Aug-21 CHEQUE : 9953055                    Expenses:Unknown                                    166.70 EUR            166.70 EUR
@@ -3831,9 +3504,7 @@ should export results, and should trigger query above
 | 09-Oct-16 REMISE CHEQUE N 8686318 001 105 | Expenses:Unknown | -525.00 EUR | -258.30 EUR |
 
 ** lob -- writing results out to files
-   :PROPERTIES:
-   :DATE:     2010-08-12
-   :END:
+
 #+source: table
 #+begin_src emacs-lisp
   (mapcar
@@ -3851,9 +3522,7 @@ write the results out as a normal org-mode file
 #+call: write(data=table, file="~/Desktop/example.org") :results silent
 
 ** lisp
-   :PROPERTIES:
-   :DATE:     2010-08-12
-   :END:
+
 
 #+begin_src lisp :var n=5
   (mapcar (lambda (el) (* el el)) (append '(1 7 3 4) (list n)))
@@ -3875,9 +3544,7 @@ write the results out as a normal org-mode file
 : 4
 
 ** comments in R blocks
-   :PROPERTIES:
-   :DATE:     2010-08-12
-   :END:
+
 
 #+begin_src R :session *R* :results output
   # this is a comment
@@ -3918,9 +3585,7 @@ x <- 10
 #+end_src
 
 ** colnames to specific variables
-   :PROPERTIES:
-   :DATE:     2010-07-22
-   :END:
+
 
 #+tblname: spec-colnames
 | one | two | thee |
@@ -3943,9 +3608,7 @@ x <- 10
 | 3     | 2   | 1    |
 
 ** caption on code block
-   :PROPERTIES:
-   :DATE:     2010-07-22
-   :END:
+
 
 #+caption: Examples of variable declaration.
 #+label: sql-block
@@ -3954,9 +3617,7 @@ SELECT 6*9;
 #+end_src
 
 ** palendromic primes
-   :PROPERTIES:
-   :DATE:     2010-07-20
-   :END:
+
 Note that because Haskell is funny about what can be typed into the
 interpreter, the following should be loaded with
 =org-babel-load-in-session=.
@@ -3996,9 +3657,7 @@ The =convert= command is part of the [[http://www.imagemagick.org/script/index.p
 #+end_src
 
 ** input from an example block
-   :PROPERTIES:
-   :DATE:     2010-07-13
-   :END:
+
 #+results: lorem
 #+begin_example 
   Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
@@ -4031,9 +3690,7 @@ The =convert= command is part of the [[http://www.imagemagick.org/script/index.p
 : 1
 
 ** fixing result insertion
-   :PROPERTIES:
-   :DATE:     2010-07-12
-   :END:
+
 needs to replace the results when there is a new hash
 
 *** normal results
@@ -4100,9 +3757,7 @@ culpa qui officia deserunt mollit anim id est laborum.
 | 4 | 5 | 8 |
 
 ** example w/o source name
-   :PROPERTIES:
-   :DATE:     2010-07-12
-   :END:
+
 
 delete emacs-lisp below for errors
 #+begin_src emacs-lisp
@@ -4110,9 +3765,7 @@ delete emacs-lisp below for errors
 #+end_src
 
 ** limited precision
-   :PROPERTIES:
-   :DATE:     2010-07-12
-   :END:
+
 
 #+results: anova-example
 | Effect | DFn | DFd |             SSn |              SSd |                F |                    p | p<.05 |              pes |
@@ -4134,9 +3787,7 @@ delete emacs-lisp below for errors
 | Days   | 9.0000 | 153.0000 | 166235.1225 | 151101.0386 | 18.7027 | 8.99534541600196e-21 | *     | 0.5238 |
 
 ** export blocks w/o languages
-   :PROPERTIES:
-   :DATE:     2010-07-09
-   :END:
+
 should raise an error
 
 source
@@ -4161,9 +3812,7 @@ example
 #+end_src
 
 ** scratch
-   :PROPERTIES:
-   :DATE:     2010-07-08
-   :END:
+
 
 #+begin_src emacs-lisp :exports results
   (+ 1 1 1 1)
@@ -4178,9 +3827,7 @@ looking at paths
 #+end_src
 
 ** dot
-   :PROPERTIES:
-   :DATE:     2010-07-06
-   :END:
+
 #+begin_src dot :file models.png :cmdline -Tpng
   digraph data_relationships {
     "data_requirement" [shape=Mrecord, label="{DataRequirement|description\lformat\l}"]
@@ -4193,9 +3840,7 @@ looking at paths
 [[file:models.png]]
 
 ** Tom found a bug
-   :PROPERTIES:
-   :DATE:     2010-07-06
-   :END:
+
 
 #+begin_src emacs-lisp :tangle something.el
   (list 1 (+ 2 3))
@@ -4205,9 +3850,7 @@ looking at paths
 | 1 | 5 |
 
 ** python errors
-   :PROPERTIES:
-   :DATE:     2010-07-04
-   :END:
+
 #+begin_src python :session :results value
   [1, [2], 3, 4]
 #+end_src
@@ -4324,9 +3967,7 @@ looking at paths
 #+end_src
 
 ** table comment issue
-   :PROPERTIES:
-   :DATE:     2010-06-30
-   :END:
+
 #+BEGIN_changemargin {-4.2cm}{0cm}
   #+TBLNAME: AutresFPNVE
   #+ATTR_LaTeX: align=lrrrrr
@@ -4367,17 +4008,13 @@ save me!
 #+end_example
 
 ** latex literals in export
-   :PROPERTIES:
-   :DATE:     2010-06-30
-   :END:
+
 
   #+ATTR_LaTeX: width=\textwidth
   [[./composite-pattern.png]]
 
 ** captions
-   :PROPERTIES:
-   :DATE:     2010-06-29
-   :END:
+
 
 #+caption: I'm not removed from export
 #+label: also-not-removed
@@ -4385,9 +4022,7 @@ save me!
 | 1 | 2 |
 
 ** booktabs
-   :PROPERTIES:
-   :DATE:     2010-06-29
-   :END:
+
 #+tblname: months
 | num | Abbrev. |
 |-----+---------|
@@ -4398,9 +4033,7 @@ save me!
 #+call: booktabs(table=months, align="r|l") :results latex :exports results
 
 ** complex
-   :PROPERTIES:
-   :DATE:     2010-06-28
-   :END:
+
 #+source: raw-data
 #+begin_src sh :results scalar
   wget --quiet -qO- "http://ogdi.cloudapp.net/v1/dc/RecreationParks?format=json"
@@ -4429,18 +4062,14 @@ save me!
 [[file:parks.png]]
 
 ** table-label
-   :PROPERTIES:
-   :DATE:     2010-06-28
-   :END:
+
 #+label: bam
 | 1 |
 | 2 |
 | 3 |
 
 ** haskell issues
-   :PROPERTIES:
-   :DATE:     2010-06-28
-   :END:
+
 
 #+begin_src haskell
   length [1, 2]
@@ -4466,9 +4095,7 @@ save me!
 : 7
 
 ** possible prefixes
-   :PROPERTIES:
-   :DATE:     2010-06-26
-   :END:
+
 
 | prefix   | remaining characters |
 |----------+----------------------|
@@ -4490,9 +4117,7 @@ save me!
 #+end_src
 
 ** hlines in python
-   :PROPERTIES:
-   :DATE:     2010-06-26
-   :END:
+
 
 #+tblname: many-cols
 | a | b | c |
@@ -4521,9 +4146,7 @@ save me!
 #+end_src
 
 ** protecting block bodies
-   :PROPERTIES:
-   :DATE:     2010-06-25
-   :END:
+
 neither of these work as expected
 
 #+begin_src org
@@ -4567,9 +4190,7 @@ neither of these work as expected
 final
 
 ** multiple evals for refs
-   :PROPERTIES:
-   :DATE:     2010-06-25
-   :END:
+
 #+begin_src emacs-lisp
   (setq counter 0)
 #+end_src
@@ -4591,9 +4212,7 @@ final
 : 3
 
 ** tangling
-   :PROPERTIES:
-   :DATE:     2010-06-17
-   :END:
+
 
 #+begin_src sh :shebang #!/bin/sh :tangle yes
   date
@@ -4612,9 +4231,7 @@ final
 #+end_src
 
 ** cache on export
-   :PROPERTIES:
-   :DATE:     2010-06-17
-   :END:
+
 do we export cached blocks
 
 #+begin_src sh :cache yes :exports results
@@ -4644,9 +4261,7 @@ and more stuff here and then the results
 [[file:fig1.pdf]]
 
 ** comments not commented
-   :PROPERTIES:
-   :DATE:     2010-06-16
-   :END:
+
 
 # $some stuff
 # some more stuff$ -- I should be a comment line
@@ -4665,9 +4280,7 @@ and more stuff here and then the results
 
 2) how about this one...
 ** don't eat me!
-   :PROPERTIES:
-   :DATE:     2010-06-15
-   :END:
+
 1) a source block inside of an =enumerate=
    #+begin_src emacs-lisp :exports results
      (list (list "I'm hungry" "I'm hungry")
@@ -4689,9 +4302,7 @@ and more stuff here and then the results
 2) source blocks should be able to be on adjacent lines
 
 ** simple reference
-   :PROPERTIES:
-   :DATE:     2010-06-13
-   :END:
+
 #+tblname: table-the-first
 | 1 | 2 | 3 |
 | 4 | 5 | 6 |
@@ -4705,9 +4316,7 @@ and more stuff here and then the results
 : 5
 
 ** exporting with call lines
-   :PROPERTIES:
-   :DATE:     2010-06-11
-   :END:
+
 #+source: rpn-to-alg(alg)
 #+begin_src clojure :results output :var alg="00+"
   (def binary-operators '(\+ \- \* \/))
@@ -4736,9 +4345,7 @@ and more stuff here and then the results
 #+call: rpn-to-alg(alg=distributed-best)
  
 ** can't open indented results
-   :PROPERTIES:
-   :DATE:     2010-06-11
-   :END:
+
 
    #+begin_src latex :packages '(("" "tikz") ("active,tightpage" "preview")) :file recursion.pdf
      \begin{preview}
@@ -4768,9 +4375,7 @@ and more stuff here and then the results
    [[file:recursion.pdf]]
 
 ** indented source-code blocks and indented results
-   :PROPERTIES:
-   :DATE:     2010-06-10
-   :END:
+
 
     #+source: time
     #+begin_src emacs-lisp :results append
@@ -4804,9 +4409,7 @@ and more stuff here and then the results
         : Thu Jun 10 14:06:00 2010
 
 ** not expand inlines in examples
-   :PROPERTIES:
-   :DATE:     2010-06-08
-   :END:
+
 
 : src_emacs-lisp{(+ 1 2 3)}
 
@@ -4821,9 +4424,7 @@ src_emacs-lisp{(+ 1 2 3)}
 #+end_example
 
 ** indented source names
-   :PROPERTIES:
-   :DATE:     2010-06-07
-   :END:
+
 
    #+srcname: i-am-indented
    #+begin_src emacs-lisp 
@@ -4844,9 +4445,7 @@ src_emacs-lisp{(+ 1 2 3)}
   : eric
 
 ** updating results "in-situ"
-   :PROPERTIES:
-   :DATE:     2010-06-07
-   :END:
+
 
 #+results: in-situ
 : update me in place please -- Mon Jun  7 16:44:44 2010
@@ -4884,18 +4483,14 @@ the results should be *above* the block
 #+end_src
 
 ** executing emacs-lisp on export
-   :PROPERTIES:
-   :DATE:     2010-06-07
-   :END:
+
 
 #+begin_src emacs-lisp
   (error "eric")
 #+end_src
 
 ** stripping existing results
-   :PROPERTIES:
-   :DATE:     2010-06-07
-   :END:
+
 #+results: trickily-located-somehwere-else
 : I shouldn't be exported
 
@@ -4916,9 +4511,7 @@ included...
 #+end_src
 
 ** export with existing results
-   :PROPERTIES:
-   :DATE:     2010-06-07
-   :END:
+
 
 #+begin_src emacs-lisp :exports none :results silent
   '((1 2) (3 4))
@@ -4944,18 +4537,14 @@ included...
 [[file:/tmp/eric.png]]
 
 ** non-empty comint prompt
-   :PROPERTIES:
-   :DATE:     2010-06-07
-   :END:
+
 
 #+begin_src ruby :session eric
   8 + 9
 #+end_src
 
 ** unwind-protect with narrowing
-   :PROPERTIES:
-   :DATE:     2010-06-07
-   :END:
+
 
 I'm not in the subtree
 
@@ -4968,9 +4557,7 @@ I'm not in the subtree
 #+end_src
 
 ** commas on tangling test
-   :PROPERTIES:
-   :DATE:     2010-06-07
-   :END:
+
 test comma protection on tangling
 
 #+begin_src emacs-lisp :results silent
@@ -4997,9 +4584,7 @@ test comma protection on tangling
 #+end_example
 
 ** simple table
-   :PROPERTIES:
-   :DATE:     2010-06-06
-   :END:
+
 #+begin_src emacs-lisp
   '((1 2 3) (4 5 6) (7 8 900))
 #+end_src
@@ -5024,9 +4609,7 @@ this value in a hidden inline block src_R[:exports none]{x<-2}, so
 it's value is now src_R{x}.
 
 ** adding file names to literal values on export
-   :PROPERTIES:
-   :DATE:     2010-06-01
-   :END:
+
 
 #+results: three
 : 9
@@ -5059,9 +4642,7 @@ append all these block
 #+end_src
 
 ** visibility affecting execution
-   :PROPERTIES:
-   :DATE:     2010-05-27
-   :END:
+
 
 *** folding
     :PROPERTIES:
@@ -5104,9 +4685,7 @@ lets test folding
 : unfolded2
 
 ** empty code blocks -- and latex vs. LaTeX
-   :PROPERTIES:
-   :DATE:     2010-05-26
-   :END:
+
 eric
 #+begin_src latex
   
@@ -5123,9 +4702,7 @@ schulte
 #+end_src
 
 ** colnames
-   :PROPERTIES:
-   :DATE:     2010-05-04
-   :END:
+
 
 #+tblname: A
 | a | b | c |
@@ -5159,9 +4736,7 @@ tab.map{|r| r.map{|e| e+"*"} }
 | g* | h* | i* |
 
 ** lisps not fully eval'd
-   :PROPERTIES:
-   :DATE:     2010-04-30
-   :END:
+
 
 #+begin_src emacs-lisp
   (message "one")
@@ -5181,9 +4756,7 @@ tab.map{|r| r.map{|e| e+"*"} }
 : 3
 
 ** tangling org
-   :PROPERTIES:
-   :DATE:     2010-04-27
-   :END:
+
 
 #+begin_src org :tangle ~/Desktop/test.org
   ,* first
@@ -5203,9 +4776,7 @@ tab.map{|r| r.map{|e| e+"*"} }
 #+end_src
 
 ** colnames mismatched sizes
-   :PROPERTIES:
-   :DATE:     2010-04-23
-   :END:
+
 #+tblname: mismatch-colnames
 | a |  b |
 |---+----|
@@ -5238,9 +4809,7 @@ tab.map{|r| r.map{|e| e+"*"} }
 | 1 | 2 |
 
 ** variable indexing
-   :PROPERTIES:
-   :DATE:     2010-04-23
-   :END:
+
 #+TBLNAME: MyTable
  |   X |  Y |
  |-----+----|
@@ -5276,9 +4845,7 @@ tab.map{|r| r.map{|e| e+"*"} }
 #+end_src
 
 ** hline processing
-   :PROPERTIES:
-   :DATE:     2010-04-12
-   :END:
+
 #+tblname: many-cols
 | a | b | c |
 |---+---+---|
@@ -5392,18 +4959,14 @@ functions
 #+end_src
 
 ** test gnuplot
-   :PROPERTIES:
-   :DATE:     2010-04-17
-   :END:
+
 
 #+begin_src gnuplot
   plot sin(x), x+5
 #+end_src
 
 ** evaluate references
-   :PROPERTIES:
-   :DATE:     2010-04-09
-   :END:
+
 
 #+begin_src emacs-lisp :var var=`(+ 9 ,(- 19 7)) :tangle yes
   (message "var is %S" var)
@@ -5439,9 +5002,7 @@ functions
 : This is the entry ID: 18b4f1be-bb1d-49bc-a651-c97406a35bdd
 
 ** latex attributes
-   :PROPERTIES:
-   :DATE:     2010-03-23
-   :END:
+
 
 #+ATTR_LaTeX: width=0.38\textwidth wrap placement={r}{0.4\textwidth}
 #+begin_src ditaa :file=scrap.png
@@ -5482,9 +5043,7 @@ functions
 : schulte
 
 ** variables into shell scripts
-   :PROPERTIES:
-   :DATE:     2010-02-23
-   :END:
+
 #+results: into-shell-scripts
 | username | guest   |
 | password | nothing |
@@ -5517,9 +5076,7 @@ functions
 | 9 |
 
 ** results lines for function calls
-   :PROPERTIES:
-   :DATE:     2010-02-15
-   :END:
+
 
 #+call: fibonacci(input=5) :resname eric
 
@@ -5534,9 +5091,7 @@ functions
 : fib(5)=8
 
 ** haskell variables
-   :PROPERTIES:
-   :DATE:     2010-02-15
-   :END:
+
 
 playing with Haskell
 
@@ -5555,9 +5110,7 @@ playing with Haskell
 : 10
 
 ** list index w/function style name
-   :PROPERTIES:
-   :DATE:     2010-02-14
-   :END:
+
 
 #+results: function-style-index
 | 0 |
@@ -5580,9 +5133,7 @@ playing with Haskell
 : ((1) (2) (3) (4))
 
 ** looking at source name exports
-   :PROPERTIES:
-   :DATE:     2010-02-09
-   :END:
+
 
 #+source: fibonacci
 #+begin_src emacs-lisp :var input=0
@@ -5601,9 +5152,7 @@ now applying our Fibonacci function
 #+call: fibonacci(input=5)
 
 ** short shell test
-   :PROPERTIES:
-   :DATE:     2010-02-07
-   :END:
+
 
 #+begin_src sh
   date
@@ -5647,9 +5196,7 @@ now applying our Fibonacci function
 : 1--1
 
 ** tables to shell scripts ideas
-   :PROPERTIES:
-   :DATE:     2010-02-06
-   :END:
+
 
 #+tblname: sec
 | Hello | World |
@@ -5715,9 +5262,7 @@ and a block
 ah, it works!
 
 ** ditaa blocks
-   :PROPERTIES:
-   :DATE:     2010-02-03
-   :END:
+
 
 #+begin_src ditaa :file communication.png :cache yes
   -------------
@@ -5727,9 +5272,7 @@ ah, it works!
 [[file:communication.png]]
 
 ** babel block overwrite
-   :PROPERTIES:
-   :DATE:     2010-01-18
-   :END:
+
 
 The first block overwrites
 #+begin_src clojure
@@ -5743,9 +5286,7 @@ this second block
 #+end_src
 
 ** load to session
-   :PROPERTIES:
-   :DATE:     2010-01-11
-   :END:
+
 #+begin_src clojure :session asm-gp
   (in-ns 'asm-gp)
 #+end_src
@@ -5775,9 +5316,7 @@ this second block
 #+end_src
 
 ** links
-   :PROPERTIES:
-   :DATE:     2010-01-06
-   :END:
+
 
 can LaTeX link itself to the middle of a paragraph with a simple
 inline link like <<keystone>> if not then we would probably need to
@@ -5788,9 +5327,7 @@ how about a link back to [[keystone]]
 The above appears to work in LaTeX, but not in HTML.
 
 ** fancier export
-   :PROPERTIES:
-   :DATE:     2010-01-05
-   :END:
+
 
 #+source: square
 #+begin_src emacs-lisp :var input=1
@@ -5798,9 +5335,7 @@ The above appears to work in LaTeX, but not in HTML.
 #+end_src
 
 ** exporting org-source
-   :PROPERTIES:
-   :DATE:     2009-12-23
-   :END:
+
 
 #+begin_src org
   ,lets see how this org-mode code exports to html
@@ -5813,9 +5348,7 @@ The above appears to work in LaTeX, but not in HTML.
 #+end_src
 
 ** exporting and caching
-   :PROPERTIES:
-   :DATE:     2009-12-23
-   :END:
+
 #+begin_src ditaa :file data/example.png :exports none
     +------------------+
     |  ditaa example   |
@@ -5828,9 +5361,7 @@ The above appears to work in LaTeX, but not in HTML.
 [[file:data/example.png]]
 
 ** no noweb by default
-   :PROPERTIES:
-   :DATE:     2009-12-18
-   :END:
+
 
 #+srcname: sample
 #+begin_src emacs-lisp 
@@ -5845,9 +5376,7 @@ The above appears to work in LaTeX, but not in HTML.
 : sample
 
 ** looking at double quotes
-   :PROPERTIES:
-   :DATE:     2009-12-18
-   :END:
+
 
 #+tblname: double-quote-test-input
 | test | this | 8 | 9 |
@@ -5861,9 +5390,7 @@ The above appears to work in LaTeX, but not in HTML.
 | test | this | 8 | 9 |
 
 ** quoted session name
-   :PROPERTIES:
-   :DATE:     2009-12-04
-   :END:
+
 
 #+begin_src sh :session "eric"
   echo 'name-me'
@@ -5873,9 +5400,7 @@ The above appears to work in LaTeX, but not in HTML.
 : name-me
 
 ** eval-buffer
-   :PROPERTIES:
-   :DATE:     2009-12-04
-   :END:
+
 #+begin_src emacs-lisp
   (+ 1 2)
 #+end_src
@@ -5891,9 +5416,7 @@ The above appears to work in LaTeX, but not in HTML.
 : 7
 
 ** gnuplot variable expansion
-   :PROPERTIES:
-   :DATE:     2009-11-30
-   :END:
+
 
 #+source: simple-function
 #+begin_src emacs-lisp
@@ -5905,9 +5428,7 @@ The above appears to work in LaTeX, but not in HTML.
 #+end_src
 
 ** debug hints
-   :PROPERTIES:
-   :DATE:     2009-11-30
-   :END:
+
 from mailing list
 
 - edebug-defun: (in emacs-lisp mode, C-u C-M-x) will mark the function
@@ -5919,9 +5440,7 @@ from mailing list
   the debugger and you can then evaluate arbitrary expressions.
 
 ** sql exports to latex
-   :PROPERTIES:
-   :DATE:     2009-11-30
-   :END:
+
 example from email list
 *** ECM
     :PROPERTIES:
@@ -5957,9 +5476,7 @@ example from email list
 #+end_src
 
 ** whitespace/newline results issues
-   :PROPERTIES:
-   :DATE:     2009-11-27
-   :END:
+
 
 #+begin_src sh
   echo output
@@ -5984,9 +5501,7 @@ ext here
 #+results:
 : 2
 ** sh with sessions
-   :PROPERTIES:
-   :DATE:     2009-11-27
-   :END:
+
 
 #+begin_src sh :session eric
   cd ~/Desktop
@@ -6001,9 +5516,7 @@ ext here
 | "ants.clj" | "" | "concurrent.clj" | "" | "hello.clj" | "" | "spell-checker.clj" |
 
 ** testing srcname aliases
-   :PROPERTIES:
-   :DATE:     2009-11-20
-   :END:
+
 
 #+source: two
 #+begin_src emacs-lisp
@@ -6018,9 +5531,7 @@ ext here
 : 3
 
 ** hiding results
-   :PROPERTIES:
-   :DATE:     2009-11-20
-   :END:
+
 #+begin_src emacs-lisp
   (mapcar (lambda (el) (list el)) (number-sequence 0 20))
 #+end_src
@@ -6049,9 +5560,7 @@ ext here
 | 20 |
 
 ** elisp references
-   :PROPERTIES:
-   :DATE:     2009-11-20
-   :END:
+
 
 #+begin_src emacs-lisp :results silent
    (setq first 10)
@@ -6067,9 +5576,7 @@ ext here
 #+end_src
 
 ** elisp variables
-   :PROPERTIES:
-   :DATE:     2009-11-20
-   :END:
+
 
 #+begin_src ditaa :file (format "%d.png" 45)
       +-----------+
@@ -6083,9 +5590,7 @@ ext here
 #+results:
 [[file:45.png]]
 ** haskell and tables
-   :PROPERTIES:
-   :DATE:     2009-11-20
-   :END:
+
 #+begin_src haskell
   sumListCond :: Int -> Int -> [Int] -> Int
   sumListCond l n xs
@@ -6097,9 +5602,7 @@ ext here
 #+end_src
 
 ** latex pngs
-   :PROPERTIES:
-   :DATE:     2009-11-20
-   :END:
+
 $x \mapsto y$
 
 *** Theorem
@@ -6121,9 +5624,7 @@ $|consts(t)| \leq sizes(t)$
     - $< size(t)$
 
 ** indexing into gnuplot
-   :PROPERTIES:
-   :DATE:     2009-11-20
-   :END:
+
 
 #+tblname: squares
 | 1 |  1 |
@@ -6152,9 +5653,7 @@ plot data using 1:2 with lines
 #+end_src
 
 ** multiple arguments
-   :PROPERTIES:
-   :DATE:     2009-11-20
-   :END:
+
 
 #+begin_src emacs-lisp :var first=9 :var second=10
   (+ first second)
@@ -6164,9 +5663,7 @@ plot data using 1:2 with lines
 : 19
 
 ** indexing into results
-   :PROPERTIES:
-   :DATE:     2009-11-20
-   :END:
+
 
 #+data: indexable-table
 | eric    |
@@ -6203,9 +5700,7 @@ plot data using 1:2 with lines
 | 7 | 8 |
 
 ** cached results
-   :PROPERTIES:
-   :DATE:     2009-11-20
-   :END:
+
 #+begin_src emacs-lisp :cache yes
    (setq org-babel-default-header-args '((:session . "none")
                                          (:results . "replace")
@@ -6239,9 +5734,7 @@ plot data using 1:2 with lines
 [[file:caching-example.png]]
 
 ** switches and references
-   :PROPERTIES:
-   :DATE:     2009-11-20
-   :END:
+
 
 #+begin_src ruby -n -r -l "(ref:%s)" :results output
   class Schulte
@@ -6270,9 +5763,7 @@ Line no. [[(imp)]] is important!
 : imp
 
 ** unresolved noweb references
-   :PROPERTIES:
-   :DATE:     2009-11-20
-   :END:
+
 
 #+begin_src emacs-lisp :results silent
   (setq org-babel-noweb-error-langs '("ruby"))
@@ -6292,17 +5783,13 @@ Line no. [[(imp)]] is important!
 : 6
 
 ** clojure
-   :PROPERTIES:
-   :DATE:     2009-11-20
-   :END:
+
 #+begin_src clojure :results silent
   (list 8 9)
 #+end_src
 
 ** reference parts of tables
-   :PROPERTIES:
-   :DATE:     2009-11-20
-   :END:
+
 
 #+TBLNAME: squares
 |  1 |   1 |
@@ -6331,9 +5818,7 @@ plot data using 1:2 with lines
 #+end_src
 
 ** results switches
-   :PROPERTIES:
-   :DATE:     2009-11-20
-   :END:
+
 #+begin_src ruby :results output :results_switches -n
   10.times do |n|
     puts "-"*n
@@ -6374,9 +5859,7 @@ plot data using 1:2 with lines
 #+end_example
 
 ** xml and n3
-   :PROPERTIES:
-   :DATE:     2009-11-20
-   :END:
+
 
 introduce org-babel to =xml= and =n3=
 #+begin_src emacs-lisp :results silent
@@ -6400,9 +5883,7 @@ inform org-babel-tangle of their existence and file extensions
 #+end_src
 
 ** noweb referernces
-   :PROPERTIES:
-   :DATE:     2009-11-20
-   :END:
+
 
 #+srcname: noweb-example
 #+begin_src ruby 
@@ -6418,9 +5899,7 @@ inform org-babel-tangle of their existence and file extensions
 : 32
 
 ** =pp= results
-   :PROPERTIES:
-   :DATE:     2009-11-20
-   :END:
+
 *** python
     :PROPERTIES:
     :DATE:     2009-11-20
@@ -6488,9 +5967,7 @@ inform org-babel-tangle of their existence and file extensions
 #+end_example
 
 ** empty =output= results for emacs-lisp
-   :PROPERTIES:
-   :DATE:     2009-11-20
-   :END:
+
 #+begin_src emacs-lisp :results output
    8
 #+end_src
@@ -6498,9 +5975,7 @@ inform org-babel-tangle of their existence and file extensions
 #+resname:
 
 ** =:table= results param
-   :PROPERTIES:
-   :DATE:     2009-11-20
-   :END:
+
 #+begin_src emacs-lisp :results table
   8
 #+end_src
@@ -6509,9 +5984,7 @@ inform org-babel-tangle of their existence and file extensions
 | 8 |
 
 ** code results
-   :PROPERTIES:
-   :DATE:     2009-11-20
-   :END:
+
 *** emacs lisp
     :PROPERTIES:
     :DATE:     2009-11-20
@@ -6604,18 +6077,14 @@ inform org-babel-tangle of their existence and file extensions
 #+END_SRC
 
 ** indentation
-   :PROPERTIES:
-   :DATE:     2009-11-20
-   :END:
+
 
 #+begin_src python
           9
 #+end_src
 
 ** persistent python
-   :PROPERTIES:
-   :DATE:     2009-11-20
-   :END:
+
 #+begin_src python :session :results silent
   import types
 #+end_src
@@ -6645,9 +6114,7 @@ inform org-babel-tangle of their existence and file extensions
 : function
 
 ** quoted latex
-   :PROPERTIES:
-   :DATE:     2009-11-20
-   :END:
+
 
 The following latex isn't exported correctly
 
@@ -6664,18 +6131,14 @@ The following latex isn't exported correctly
 #+end_src
 
 ** pretty print
-   :PROPERTIES:
-   :DATE:     2009-11-20
-   :END:
+
 
 #+begin_src emacs-lisp :results scalar
   '(1 2 3 4)
 #+end_src
 
 ** simple scalar
-   :PROPERTIES:
-   :DATE:     2009-11-20
-   :END:
+
 
 #+begin_src emacs-lisp
   (+ 1 3)
@@ -6685,9 +6148,7 @@ The following latex isn't exported correctly
 : 4
 
 ** lua export
-   :PROPERTIES:
-   :DATE:     2009-11-20
-   :END:
+
 
 #+srcname: determine the neighbors of the segments that the bisector hits
 #+begin_src lua :tangle no :exports code
@@ -6725,9 +6186,7 @@ local n2 = table_find_segment(cell.neighbors, s2)
 #+end_example
 
 ** simple R
-   :PROPERTIES:
-   :DATE:     2009-11-20
-   :END:
+
 
 #+begin_src R :session R
 8
@@ -6737,9 +6196,7 @@ local n2 = table_find_segment(cell.neighbors, s2)
 : 8
 
 ** changing source name
-   :PROPERTIES:
-   :DATE:     2009-11-20
-   :END:
+
 
 #+srcname: emacs-nine
 #+begin_src emacs-lisp
@@ -6753,9 +6210,7 @@ local n2 = table_find_segment(cell.neighbors, s2)
 : 8
 
 ** advanced table
-   :PROPERTIES:
-   :DATE:     2009-11-20
-   :END:
+
    | DATA             | WHAT       | WHERE       | HOW MUCH |
    |------------------+------------+-------------+----------|
    | [2009-09-25 Fri] |            |             |    28.95 |
@@ -6796,9 +6251,7 @@ local n2 = table_find_segment(cell.neighbors, s2)
 | "2009-09-29" | ""               | ""       | 15.23 |
 
 ** haskell
-   :PROPERTIES:
-   :DATE:     2009-11-20
-   :END:
+
 #+begin_src haskell
   powerSet :: [a] -> [[a]]
   powerSet = foldr (\ x ps -> map (\ y -> x : y) ps ++ ps ) [[]]
@@ -6809,9 +6262,7 @@ local n2 = table_find_segment(cell.neighbors, s2)
 #+end_src
 
 ** indented
-   :PROPERTIES:
-   :DATE:     2009-11-20
-   :END:
+
    #+begin_src emacs-lisp
      (message "I ran!!")   
    #+end_src
@@ -6820,9 +6271,7 @@ local n2 = table_find_segment(cell.neighbors, s2)
 : I ran!!
 
 ** dynamic table
-   :PROPERTIES:
-   :DATE:     2009-11-20
-   :END:
+
 #+TBLNAME: todays-clock
 #+BEGIN: clocktable :maxlevel 2 :block today :scope tree1 :link t
 Clock summary at [2009-09-15 Tue 08:51], for Tuesday, September 15, 2009.
@@ -6868,20 +6317,14 @@ pie(times[2:length(times),4], labels = times[2:length(times),2])
 #+end_src
 ** later
    CLOCK: [2009-09-15 Tue 09:41]--[2009-09-15 Tue 09:51] =>  0:10
-   :PROPERTIES:
-   :DATE:     2009-11-20
-   :END:
+
 stuff here
 
 ** and then more
-   :PROPERTIES:
-   :DATE:     2009-11-20
-   :END:
+
 and more stuffs here
 ** asymptote
-   :PROPERTIES:
-   :DATE:     2009-11-20
-   :END:
+
 
 #+begin_src asymptote :file asymptote-test.png :exports code
   import graph;
@@ -6904,9 +6347,7 @@ and more stuffs here
 [[file:asymptote-test.png]]
 
 ** asymptote cosine
-   :PROPERTIES:
-   :DATE:     2009-11-20
-   :END:
+
 #+begin_src asymptote :exports code
   import graph;
   
@@ -6931,20 +6372,15 @@ and more stuffs here
 #+end_src
 
 ** gnuplot
-   :PROPERTIES:
-   :DATE:     2009-11-20
-   :END:
+
 #+begin_src gnuplot
 plot cosx
 #+end_src
 
 
-#+end_src
-      
-
 * tools
 Map over all scraps and export each to a separate file.
-#+begin_src emacs-lisp
+#+begin_src emacs-lisp :results silent
   (defun dump-subtree-to-file ()
     (let* ((replacements '((" "   . "-")
                            ("w/o" . "without")
@@ -6960,8 +6396,7 @@ Map over all scraps and export each to a separate file.
                                     (car rep) (cdr rep) title)))
                      (downcase title))
                    full-title))
-           (date (org-entry-get (point) "DATE"))
-           (path (expand-file-name (concat date "-" title ".html") "scraps"))
+           (path (expand-file-name (concat title ".html") "scraps"))
            buf)
       (unless (file-exists-p path)
         (call-interactively #'org-copy-subtree)
@@ -6974,18 +6409,4 @@ Map over all scraps and export each to a separate file.
   
   (org-id-goto "96eaa17f-f1b6-4958-acb1-e271045fdfa2")
   (org-map-entries #'dump-subtree-to-file "+LEVEL=2")
-#+end_src
-
-add date properties to all subheadings using the git log
-#+begin_src emacs-lisp
-  (defun set-date-from-git-log ()
-    (org-entry-put (point) "DATE"
-     (org-babel-trim
-      (shell-command-to-string
-       (format
-        "git log --date=short --summary -1 %s|grep Date|awk '{print $2}'"
-        (git-blame-current-commit))))))
-  
-  (defun do-date-tree ()
-    (org-map-entries #'set-date-from-git-log nil 'tree))
 #+end_src
