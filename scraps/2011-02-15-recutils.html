@@ -1,0 +1,90 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<!-- Created by htmlize-1.36 in css mode. -->
+<html>
+  <head>
+    <title> *temp*</title>
+    <style type="text/css">
+    <!--
+      body {
+        color: #E6E1DC;
+        background-color: #232323;
+      }
+
+      a {
+        color: inherit;
+        background-color: inherit;
+        font: inherit;
+        text-decoration: inherit;
+      }
+      a:hover {
+        text-decoration: underline;
+      }
+    -->
+    </style>
+  </head>
+  <body>
+    <pre>
+** recutils
+   :PROPERTIES:
+   :DATE:     2011-02-15
+   :END:
+#+begin_src sh :file book.rec
+  cat &lt;&lt;EOF &gt; book.rec
+  # -*- mode: rec -*-
+  %rec: Book
+  %mandatory: Title
+  %type: Location enum loaned home unknown
+  %doc:
+  + A book in my personal collection.
+  
+  Title: GNU Emacs Manual
+  Author: Richard M. Stallman
+  Publisher: FSF
+  Location: home
+  
+  Title: The Colour of Magic
+  Author: Terry Pratchett
+  Location: loaned
+  
+  Title: Mio Cid
+  Author: Anonymous
+  Location: home
+  
+  Title: chapters.gnu.org administration guide
+  Author: Nacho Gonzalez
+  Author: Jose E. Marchesi
+  Location: unknown
+  
+  Title: Yeelong User Manual
+  Location: home
+  
+  # End of books.rec
+  EOF
+#+end_src
+
+#+results:
+[[file:book.rec]]
+
+#+begin_src rec :data book.rec :fields Title,Author
+  Location = 'loaned'
+#+end_src
+
+#+results:
+| Title               | Author          |
+| The Colour of Magic | Terry Pratchett |
+
+#+begin_src rec :data book.rec :fields Title,Author
+  
+#+end_src
+
+#+results:
+| Title                                 | Author              | Author_2         |
+| GNU Emacs Manual                      | Richard M. Stallman |                  |
+| The Colour of Magic                   | Terry Pratchett     |                  |
+| Mio Cid                               | Anonymous           |                  |
+| chapters.gnu.org administration guide | Nacho Gonzalez      | Jose E. Marchesi |
+| Yeelong User Manual                   |                     |                  |
+
+</pre>
+  </body>
+</html>

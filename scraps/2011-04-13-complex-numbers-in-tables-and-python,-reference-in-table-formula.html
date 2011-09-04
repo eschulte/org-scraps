@@ -1,0 +1,114 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<!-- Created by htmlize-1.36 in css mode. -->
+<html>
+  <head>
+    <title> *temp*</title>
+    <style type="text/css">
+    <!--
+      body {
+        color: #E6E1DC;
+        background-color: #232323;
+      }
+
+      a {
+        color: inherit;
+        background-color: inherit;
+        font: inherit;
+        text-decoration: inherit;
+      }
+      a:hover {
+        text-decoration: underline;
+      }
+    -->
+    </style>
+  </head>
+  <body>
+    <pre>
+** complex numbers in tables and python, reference in table formula
+   :PROPERTIES:
+   :DATE:     2011-04-13
+   :END:
+
+#+source: parameter-variation(data=0)
+#+begin_src python :result values
+  return 'text'
+#+end_src
+
+|---------------------------------------|
+| "(0.0331901438056,0.000535222885197)" |
+| "(0.0333434157791,0.000537930174356)" |
+| "(0.0345727512157,0.000559346040457)" |
+| "(0.0353146483908,0.000571501584524)" |
+| "(0.0355522909393,0.000574387067408)" |
+| "(0.0356575682336,0.000574851263615)" |
+| "(0.0357806926897,0.000575051685084)" |
+|---------------------------------------|
+| text                                  |
+#+TBLFM: @8$1='(sbe parameter-variation (nums @1$1..@7$1))
+
+| '(1 2 3 4) |
+|------------|
+|          4 |
+#+TBLFM: @2$1='(sbe quote (it @1$1))
+
+| (1 2 3 4) |
+|-----------|
+| #ERROR    |
+#+TBLFM: @2$1='(sbe quote (it @1$1))
+
+*** using vectors to represent complex number is lisp
+    :PROPERTIES:
+    :DATE:     2011-04-15
+    :END:
+| [1 2]            |
+|------------------|
+| real:1 complex:2 |
+#+TBLFM: @2$1='(sbe real (it @1$1))
+
+#+source: real(it='())
+#+begin_src emacs-lisp
+  (format "real:%d complex:%d" (aref it 0) (aref it 1))
+#+end_src
+
+*** reference the table in a table formula
+    :PROPERTIES:
+    :DATE:     2011-04-13
+    :END:
+#+results: complex-data
+|-------------------------------------|
+| (0.0331901438056,0.000535222885197) |
+|-------------------------------------|
+|                                   4 |
+#+TBLFM: @2$1='(sbe quote (it "complex-data"))
+
+*** externally referencing the table
+    :PROPERTIES:
+    :DATE:     2011-04-13
+    :END:
+#+results: complex-data
+|-------------------------------------|
+| (0.0331901438056,0.000535222885197) |
+| (0.0333434157791,0.000537930174356) |
+| (0.0345727512157,0.000559346040457) |
+| (0.0353146483908,0.000571501584524) |
+| (0.0355522909393,0.000574387067408) |
+| (0.0356575682336,0.000574851263615) |
+| (0.0357806926897,0.000575051685084) |
+#+TBLFM: @8$1='(sbe parameter-variation (nums @1$1..@7$1))
+
+#+begin_src python :var data=complex-data
+  return data
+#+end_src
+
+#+results:
+| (0.0331901438056,0.000535222885197) |
+| (0.0333434157791,0.000537930174356) |
+| (0.0345727512157,0.000559346040457) |
+| (0.0353146483908,0.000571501584524) |
+| (0.0355522909393,0.000574387067408) |
+| (0.0356575682336,0.000574851263615) |
+| (0.0357806926897,0.000575051685084) |
+
+</pre>
+  </body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<!-- Created by htmlize-1.36 in css mode. -->
+<html>
+  <head>
+    <title> *temp*</title>
+    <style type="text/css">
+    <!--
+      body {
+        color: #E6E1DC;
+        background-color: #232323;
+      }
+
+      a {
+        color: inherit;
+        background-color: inherit;
+        font: inherit;
+        text-decoration: inherit;
+      }
+      a:hover {
+        text-decoration: underline;
+      }
+    -->
+    </style>
+  </head>
+  <body>
+    <pre>
+** eval and noeval
+   :PROPERTIES:
+   :DATE:     2010-08-26
+   :END:
+date, should export both, but won't output results because of presence
+of the =:noeval= header argument.
+#+begin_src sh :noeval :exports both
+  date
+#+end_src
+
+should export code, so no need to do anything
+#+begin_src sh
+  date
+#+end_src
+
+should export nothing, and should not query
+#+source: this-is-ls
+#+begin_src sh :eval query :exports code
+  date
+#+end_src
+
+should export results, and should trigger query above
+#+begin_src emacs-lisp :var ls=this-is-ls :exports results
+  ls
+#+end_src
+
+</pre>
+  </body>
+</html>

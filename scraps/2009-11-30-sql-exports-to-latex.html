@@ -1,0 +1,67 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<!-- Created by htmlize-1.36 in css mode. -->
+<html>
+  <head>
+    <title> *temp*</title>
+    <style type="text/css">
+    <!--
+      body {
+        color: #E6E1DC;
+        background-color: #232323;
+      }
+
+      a {
+        color: inherit;
+        background-color: inherit;
+        font: inherit;
+        text-decoration: inherit;
+      }
+      a:hover {
+        text-decoration: underline;
+      }
+    -->
+    </style>
+  </head>
+  <body>
+    <pre>
+** sql exports to latex
+   :PROPERTIES:
+   :DATE:     2009-11-30
+   :END:
+example from email list
+*** ECM
+    :PROPERTIES:
+    :DATE:     2009-11-30
+    :END:
+
+   - faire un script Bash (et =isql=) envoyant un /listing/ de stagiaires;
+
+#+srcname: envoi-stg
+   #+begin_src sql
+       DECLARE @dateFmtStyleIn int; SET @dateFmtStyleIn = 120 -- ODBC canonical
+       DECLARE @dateFmtStyleOut int; SET @dateFmtStyleOut = 103 -- French dd/mm/yyyy
+
+       DECLARE @firstDayOfThisMonth smalldatetime
+       SET @firstDayOfThisMonth = CONVERT(smalldatetime,
+                                          CAST(YEAR(GETDATE()) AS char(4)) + '-'
+                                          + CAST(MONTH(GETDATE()) AS char(2)) + '-'
+                                          + '01' + ' 00:00:00',
+                                          @dateFmtStyleIn)
+
+       DECLARE @now smalldatetime
+       SET @now = CONVERT(smalldatetime,
+                          CAST(YEAR(GETDATE()) AS char(4)) + '-'
+                          + CAST(MONTH(GETDATE()) AS char(2)) + '-'
+                          + CAST(DAY(GETDATE()) AS char(2)) + ' '
+                          + CAST(DATEPART(hh, GETDATE()) AS char(2)) + ':'
+                          + CAST(DATEPART(mi, GETDATE()) AS char(2)) + ':'
+                          + '00',
+                          @dateFmtStyleIn)
+
+       SELECT pfiID
+       FROM dossier
+#+end_src
+
+</pre>
+  </body>
+</html>

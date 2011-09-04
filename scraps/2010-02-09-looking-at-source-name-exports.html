@@ -1,0 +1,50 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<!-- Created by htmlize-1.36 in css mode. -->
+<html>
+  <head>
+    <title> *temp*</title>
+    <style type="text/css">
+    <!--
+      body {
+        color: #E6E1DC;
+        background-color: #232323;
+      }
+
+      a {
+        color: inherit;
+        background-color: inherit;
+        font: inherit;
+        text-decoration: inherit;
+      }
+      a:hover {
+        text-decoration: underline;
+      }
+    -->
+    </style>
+  </head>
+  <body>
+    <pre>
+** looking at source name exports
+   :PROPERTIES:
+   :DATE:     2010-02-09
+   :END:
+
+#+source: fibonacci
+#+begin_src emacs-lisp :var input=0
+  (defun fib (n)
+    (if (&gt; n 1)
+        (+ (fib (- n 1)) (fib (- n 2)))
+        1))
+  (fib input)
+#+end_src
+
+#+results: fibonacci
+: 1
+
+now applying our Fibonacci function
+
+#+call: fibonacci(input=5)
+
+</pre>
+  </body>
+</html>

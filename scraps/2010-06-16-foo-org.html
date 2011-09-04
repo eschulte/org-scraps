@@ -1,0 +1,48 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<!-- Created by htmlize-1.36 in css mode. -->
+<html>
+  <head>
+    <title> *temp*</title>
+    <style type="text/css">
+    <!--
+      body {
+        color: #E6E1DC;
+        background-color: #232323;
+      }
+
+      a {
+        color: inherit;
+        background-color: inherit;
+        font: inherit;
+        text-decoration: inherit;
+      }
+      a:hover {
+        text-decoration: underline;
+      }
+    -->
+    </style>
+  </head>
+  <body>
+    <pre>
+** foo org
+   :PROPERTIES:
+   :session:  *R*
+   :DATE:     2010-06-16
+   :END:
+Figure \ref{fig:one} (p. \pageref{fig:one}) is produced by the following code
+#+BEGIN_SRC R 
+plot(x, y)
+abline(out1)
+#+END_SRC
+Note that =x=, =y=, and =out1= are remembered from the preceding code
+chunk.  We don't have to regenerate them.  All code chunks are part of
+one R "session".
+and more stuff here and then the results
+#+attr_latex: width=0.8\textwidth,placement=[p]
+#+label: fig:one
+#+caption: Scatter Plot with Regression Line
+[[file:fig1.pdf]]
+
+</pre>
+  </body>
+</html>

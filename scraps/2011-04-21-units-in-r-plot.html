@@ -1,0 +1,42 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<!-- Created by htmlize-1.36 in css mode. -->
+<html>
+  <head>
+    <title> *temp*</title>
+    <style type="text/css">
+    <!--
+      body {
+        color: #E6E1DC;
+        background-color: #232323;
+      }
+
+      a {
+        color: inherit;
+        background-color: inherit;
+        font: inherit;
+        text-decoration: inherit;
+      }
+      a:hover {
+        text-decoration: underline;
+      }
+    -->
+    </style>
+  </head>
+  <body>
+    <pre>
+** units in R plot
+   :PROPERTIES:
+   :DATE:     2011-04-21
+   :END:
+#+begin_src R  :results graphics :file test.png :width 8 :height 8 :res 200 :units cm
+  x &lt;- -10:10
+  y &lt;- x^2
+  plot(x, y, type="l", col="red", lty=1)
+#+end_src
+
+#+results:
+[[file:test.png]]
+
+</pre>
+  </body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<!-- Created by htmlize-1.36 in css mode. -->
+<html>
+  <head>
+    <title> *temp*</title>
+    <style type="text/css">
+    <!--
+      body {
+        color: #E6E1DC;
+        background-color: #232323;
+      }
+
+      a {
+        color: inherit;
+        background-color: inherit;
+        font: inherit;
+        text-decoration: inherit;
+      }
+      a:hover {
+        text-decoration: underline;
+      }
+    -->
+    </style>
+  </head>
+  <body>
+    <pre>
+** exporting with call lines
+   :PROPERTIES:
+   :DATE:     2010-06-11
+   :END:
+#+source: rpn-to-alg(alg)
+#+begin_src clojure :results output :var alg="00+"
+  (def binary-operators '(\+ \- \* \/))
+  (def unary-operators '(\s))
+  (defn rpn-to-alg [chars stack]
+    (if (&gt; (.size chars) 0)
+      (let [el (first chars)]
+        (if (some #{el} binary-operators)
+          (rpn-to-alg (rest chars)
+                      (cons
+                       (apply str "(" (or (second stack) 1) " " el " " (or (first stack) 1) ")")
+                       (rest (rest stack))))
+          (if (some #{el} unary-operators)
+            (rpn-to-alg (rest chars)
+                        (cons
+                         (apply str "(" el " " (or (first stack) 1) ")")
+                         (rest (rest stack))))
+            (rpn-to-alg (rest chars) (cons el stack)))))
+      (first stack)))
+  (println (apply str (rpn-to-alg (seq alg) '())))
+#+end_src
+
+#+results: distributed-best
+: 73*x11/+4/++51xxx13*y/++6y5*6/6-+xx+*
+
+#+call: rpn-to-alg(alg=distributed-best)
+ 
+</pre>
+  </body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<!-- Created by htmlize-1.36 in css mode. -->
+<html>
+  <head>
+    <title> *temp*</title>
+    <style type="text/css">
+    <!--
+      body {
+        color: #E6E1DC;
+        background-color: #232323;
+      }
+
+      a {
+        color: inherit;
+        background-color: inherit;
+        font: inherit;
+        text-decoration: inherit;
+      }
+      a:hover {
+        text-decoration: underline;
+      }
+    -->
+    </style>
+  </head>
+  <body>
+    <pre>
+** don't eat me!
+   :PROPERTIES:
+   :DATE:     2010-06-15
+   :END:
+1) a source block inside of an =enumerate=
+   #+begin_src emacs-lisp :exports results
+     (list (list "I'm hungry" "I'm hungry")
+           (list "I'm hungry" "I'm hungry")
+           (list "I'm hungry" "I'm hungry"))
+   #+end_src
+
+   #+results:
+   | I'm hungry | I'm hungry |
+   | I'm hungry | I'm hungry |
+   | I'm hungry | I'm hungry |
+
+   #+begin_src emacs-lisp
+     (message "don't eat me")
+   #+end_src
+
+   can cause problems
+
+2) source blocks should be able to be on adjacent lines
+
+</pre>
+  </body>
+</html>

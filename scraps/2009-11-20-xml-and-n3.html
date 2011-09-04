@@ -1,0 +1,55 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<!-- Created by htmlize-1.36 in css mode. -->
+<html>
+  <head>
+    <title> *temp*</title>
+    <style type="text/css">
+    <!--
+      body {
+        color: #E6E1DC;
+        background-color: #232323;
+      }
+
+      a {
+        color: inherit;
+        background-color: inherit;
+        font: inherit;
+        text-decoration: inherit;
+      }
+      a:hover {
+        text-decoration: underline;
+      }
+    -->
+    </style>
+  </head>
+  <body>
+    <pre>
+** xml and n3
+   :PROPERTIES:
+   :DATE:     2009-11-20
+   :END:
+
+introduce org-babel to =xml= and =n3=
+#+begin_src emacs-lisp :results silent
+  (add-to-list 'org-babel-interpreters "xml")
+  (add-to-list 'org-babel-interpreters "n3")
+#+end_src
+
+inform org-babel-tangle of their existence and file extensions
+#+begin_src emacs-lisp :results silent
+  (add-to-list 'org-babel-tangle-langs '("xml" "xml"))
+  (add-to-list 'org-babel-tangle-langs '("n3" "n3"))
+#+end_src
+
+#+begin_src xml :tangle example
+  &lt;first&gt;
+  &lt;/first&gt;
+#+end_src
+
+#+begin_src n3 :tangle example
+  n3 stuff
+#+end_src
+
+</pre>
+  </body>
+</html>

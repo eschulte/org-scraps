@@ -1,0 +1,64 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<!-- Created by htmlize-1.36 in css mode. -->
+<html>
+  <head>
+    <title> *temp*</title>
+    <style type="text/css">
+    <!--
+      body {
+        color: #E6E1DC;
+        background-color: #232323;
+      }
+
+      a {
+        color: inherit;
+        background-color: inherit;
+        font: inherit;
+        text-decoration: inherit;
+      }
+      a:hover {
+        text-decoration: underline;
+      }
+    -->
+    </style>
+  </head>
+  <body>
+    <pre>
+** new lists
+   :PROPERTIES:
+   :DATE:     2011-02-21
+   :END:
+*** results embedded inside of a list
+    :PROPERTIES:
+    :DATE:     2011-02-22
+    :END:
+1. this has results
+   #+results: something-in-a-list
+   : foo
+2. and this doesn't work
+   #+begin_src emacs-lisp :var data=something-in-a-list
+     data
+   #+end_src
+
+   #+results:
+   : foo
+
+*** reading and writing
+    :PROPERTIES:
+    :DATE:     2011-02-22
+    :END:
+#+results: simple-list
+- 1
+- two
+- 3
+- four
+
+
+#+source: simple-list
+#+begin_src emacs-lisp :var lst=simple-list :results list
+  (reverse lst)
+#+end_src
+
+</pre>
+  </body>
+</html>

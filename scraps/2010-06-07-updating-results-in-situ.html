@@ -1,0 +1,58 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<!-- Created by htmlize-1.36 in css mode. -->
+<html>
+  <head>
+    <title> *temp*</title>
+    <style type="text/css">
+    <!--
+      body {
+        color: #E6E1DC;
+        background-color: #232323;
+      }
+
+      a {
+        color: inherit;
+        background-color: inherit;
+        font: inherit;
+        text-decoration: inherit;
+      }
+      a:hover {
+        text-decoration: underline;
+      }
+    -->
+    </style>
+  </head>
+  <body>
+    <pre>
+** updating results "in-situ"
+   :PROPERTIES:
+   :DATE:     2010-06-07
+   :END:
+
+#+results: in-situ
+: update me in place please -- Mon Jun  7 16:44:44 2010
+: update me in place please -- Mon Jun  7 16:44:43 2010
+: update me in place please -- Mon Jun  7 16:44:42 2010
+: update me in place please -- Mon Jun  7 16:44:37 2010
+: update me in place please -- Mon Jun  7 16:42:14 2010
+: update me in place please (at the bottom) -- Mon Jun  7 16:44:59 2010
+: update me in place please (at the bottom) -- Mon Jun  7 16:45:00 2010
+: update me in place please (at the bottom) -- Mon Jun  7 16:45:02 2010
+
+the results should be *above* the block
+
+#+srcname: in-situ
+#+begin_src emacs-lisp :results prepend
+  (format "update me in place please -- %s"
+          (current-time-string))
+#+end_src
+
+#+srcname: in-situ
+#+begin_src emacs-lisp :results append
+  (format "update me in place please (at the bottom) -- %s"
+          (current-time-string))
+#+end_src
+
+</pre>
+  </body>
+</html>

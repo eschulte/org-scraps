@@ -1,0 +1,61 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<!-- Created by htmlize-1.36 in css mode. -->
+<html>
+  <head>
+    <title> *temp*</title>
+    <style type="text/css">
+    <!--
+      body {
+        color: #E6E1DC;
+        background-color: #232323;
+      }
+
+      a {
+        color: inherit;
+        background-color: inherit;
+        font: inherit;
+        text-decoration: inherit;
+      }
+      a:hover {
+        text-decoration: underline;
+      }
+    -->
+    </style>
+  </head>
+  <body>
+    <pre>
+*** looks like this is a problem with info collection
+    :PROPERTIES:
+    :DATE:     2010-08-25
+    :END:
+#+begin_src emacs-lisp
+  (format "%S" info)
+#+end_src
+
+#+begin_src emacs-lisp :results scalar :exports results :tangle yes :comments yes
+  (mapcar (lambda (el) (list (car el) (cdr el))) (nth 2 info))
+#+end_src
+
+#+results[4184710f118ac768ea0d90632508792d695efd7a]:
+| :cache    | yes                   |
+| :colnames | no                    |
+| :comments | yes                   |
+| :exports  | results               |
+| :hlines   | yes                   |
+| :noweb    | no                    |
+| :results  | output replace scalar |
+| :session  | *R*                   |
+| :shebang  |                       |
+| :tangle   | yes                   |
+
+#+begin_src emacs-lisp :exports results
+  (message "calculating info")
+  (org-babel-sha1-hash info)
+#+end_src
+
+#+results[0427db66afdc95462d1c8514b662829987d71ff5]:
+: 0427db66afdc95462d1c8514b662829987d71ff5
+
+</pre>
+  </body>
+</html>

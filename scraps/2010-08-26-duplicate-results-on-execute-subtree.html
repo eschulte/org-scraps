@@ -1,0 +1,47 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<!-- Created by htmlize-1.36 in css mode. -->
+<html>
+  <head>
+    <title> *temp*</title>
+    <style type="text/css">
+    <!--
+      body {
+        color: #E6E1DC;
+        background-color: #232323;
+      }
+
+      a {
+        color: inherit;
+        background-color: inherit;
+        font: inherit;
+        text-decoration: inherit;
+      }
+      a:hover {
+        text-decoration: underline;
+      }
+    -->
+    </style>
+  </head>
+  <body>
+    <pre>
+** duplicate results on execute subtree
+   :PROPERTIES:
+   :DATE:     2010-08-26
+   :END:
+#+begin_src emacs-lisp :results org :exports results
+  "- first
+- second
+- third
+"
+#+end_src
+
+#+results:
+#+BEGIN_SRC org
+- first
+- second
+- third
+#+END_SRC
+
+</pre>
+  </body>
+</html>

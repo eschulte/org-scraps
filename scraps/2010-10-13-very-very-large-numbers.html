@@ -1,0 +1,59 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<!-- Created by htmlize-1.36 in css mode. -->
+<html>
+  <head>
+    <title> *temp*</title>
+    <style type="text/css">
+    <!--
+      body {
+        color: #E6E1DC;
+        background-color: #232323;
+      }
+
+      a {
+        color: inherit;
+        background-color: inherit;
+        font: inherit;
+        text-decoration: inherit;
+      }
+      a:hover {
+        text-decoration: underline;
+      }
+    -->
+    </style>
+  </head>
+  <body>
+    <pre>
+** very very large numbers
+   :PROPERTIES:
+   :DATE:     2010-10-13
+   :END:
+#+tblname: numbers
+|                           1 |
+|                           2 |
+|                          12 |
+|                          45 |
+|                         166 |
+|                    12567890 |
+| 231231282371983279389999999 |
+
+#+begin_src emacs-lisp :var numbers=numbers
+  (mapcar
+   (lambda (line)
+       (let ((number (car line)))
+         (list number (type-of number))))
+     numbers)
+#+end_src
+
+#+results:
+|                      1 | integer |
+|                      2 | integer |
+|                     12 | integer |
+|                     45 | integer |
+|                    166 | integer |
+|               12567890 | integer |
+| 2.3123128237198328e+26 | float   |
+
+</pre>
+  </body>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<!-- Created by htmlize-1.36 in css mode. -->
+<html>
+  <head>
+    <title> *temp*</title>
+    <style type="text/css">
+    <!--
+      body {
+        color: #E6E1DC;
+        background-color: #232323;
+      }
+
+      a {
+        color: inherit;
+        background-color: inherit;
+        font: inherit;
+        text-decoration: inherit;
+      }
+      a:hover {
+        text-decoration: underline;
+      }
+    -->
+    </style>
+  </head>
+  <body>
+    <pre>
+*** named source block results
+    :PROPERTIES:
+    :DATE:     2010-07-12
+    :END:
+
+#+srcname: something-w-table
+#+begin_src emacs-lisp
+  (sleep-for 2)
+  (list '(1 2 3) '(4 5 8))
+#+end_src
+
+#+source: something
+#+begin_src emacs-lisp :cache yes
+  (+ 1 2 3 4 8)
+#+end_src
+
+Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enimad
+minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+aliquip ex ea commodo consequat. Duis aute irure dolor in
+reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
+culpa qui officia deserunt mollit anim id est laborum.
+
+# something else
+#+results[d053f6643d9dc52a0e804c15f2a762da73a00a07]: something
+: 18
+
+#+attr_latex: width=0.4\textwidth
+#+results[5fac69648ab749ef9ee88ea65b3d49d93f3f6cc8]: something-w-table
+| 1 | 2 | 3 |
+| 4 | 5 | 8 |
+
+</pre>
+  </body>
+</html>

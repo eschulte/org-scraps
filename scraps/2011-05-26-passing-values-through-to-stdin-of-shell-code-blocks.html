@@ -1,0 +1,52 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<!-- Created by htmlize-1.36 in css mode. -->
+<html>
+  <head>
+    <title> *temp*</title>
+    <style type="text/css">
+    <!--
+      body {
+        color: #E6E1DC;
+        background-color: #232323;
+      }
+
+      a {
+        color: inherit;
+        background-color: inherit;
+        font: inherit;
+        text-decoration: inherit;
+      }
+      a:hover {
+        text-decoration: underline;
+      }
+    -->
+    </style>
+  </head>
+  <body>
+    <pre>
+** passing values through to STDIN of shell code blocks
+   :PROPERTIES:
+   :DATE:     2011-05-26
+   :END:
+#+results: square-table
+| 1 | 2 | 3 |
+| 4 | 5 | 6 |
+| 7 | 8 | 9 |
+
+#+source: first-col
+#+begin_src sh :stdin square-table
+  awk '{print $1}'
+#+end_src
+
+#+begin_src sh :stdin first-col
+  sed 's/4/middle/g'
+#+end_src
+
+#+results:
+|      1 |
+| middle |
+|      7 |
+
+</pre>
+  </body>
+</html>

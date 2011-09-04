@@ -1,0 +1,68 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<!-- Created by htmlize-1.36 in css mode. -->
+<html>
+  <head>
+    <title> *temp*</title>
+    <style type="text/css">
+    <!--
+      body {
+        color: #E6E1DC;
+        background-color: #232323;
+      }
+
+      a {
+        color: inherit;
+        background-color: inherit;
+        font: inherit;
+        text-decoration: inherit;
+      }
+      a:hover {
+        text-decoration: underline;
+      }
+    -->
+    </style>
+  </head>
+  <body>
+    <pre>
+** indexing into results
+   :PROPERTIES:
+   :DATE:     2009-11-20
+   :END:
+
+#+data: indexable-table
+| eric    |
+| michael |
+| schulte |
+| is      |
+| my      |
+| name    |
+
+#+begin_src emacs-lisp :var data=indexable-table[2:4]
+   data
+#+end_src
+
+#+results:
+| schulte |
+| is      |
+| my      |
+
+#+tblname: multidimensional-indexing
+| 1 |  2 |
+| 3 |  4 |
+| 5 |  6 |
+| 7 |  8 |
+| 9 | 10 |
+
+#+begin_src emacs-lisp :var data=multidimensional-indexing[0:-2]
+   data
+#+end_src
+
+#+resname:
+| 1 | 2 |
+| 3 | 4 |
+| 5 | 6 |
+| 7 | 8 |
+
+</pre>
+  </body>
+</html>

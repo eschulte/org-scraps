@@ -1,0 +1,68 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<!-- Created by htmlize-1.36 in css mode. -->
+<html>
+  <head>
+    <title> *temp*</title>
+    <style type="text/css">
+    <!--
+      body {
+        color: #E6E1DC;
+        background-color: #232323;
+      }
+
+      a {
+        color: inherit;
+        background-color: inherit;
+        font: inherit;
+        text-decoration: inherit;
+      }
+      a:hover {
+        text-decoration: underline;
+      }
+    -->
+    </style>
+  </head>
+  <body>
+    <pre>
+** Letter
+   :PROPERTIES:
+   :DATE:     2010-09-21
+   :END:
+
+#+source: body
+#+begin_src org :results latex
+  ,My body includes a list:
+  
+  ,- one
+  ,- two
+  
+  ,and a small table:
+  
+  ,| first | second |
+  ,| other | last   |
+  
+  ,Not more.
+#+end_src
+
+#+begin_src latex :noweb yes :tangle yes
+\documentclass[11pt]{isodoc}
+\usepackage[utf8x]{inputenc}
+\usepackage[T1]{fontenc}
+
+\setupdocument{
+    to = {Eric},
+    subject = {Tough to understand what to do...},
+    opening = {Hi},
+    closing = {Best}
+}
+
+\begin{document}
+\letter{%
+&lt;&lt;body()&gt;&gt;
+}
+\end{document}
+#+end_src
+
+</pre>
+  </body>
+</html>

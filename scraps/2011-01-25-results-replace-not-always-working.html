@@ -1,0 +1,49 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<!-- Created by htmlize-1.36 in css mode. -->
+<html>
+  <head>
+    <title> *temp*</title>
+    <style type="text/css">
+    <!--
+      body {
+        color: #E6E1DC;
+        background-color: #232323;
+      }
+
+      a {
+        color: inherit;
+        background-color: inherit;
+        font: inherit;
+        text-decoration: inherit;
+      }
+      a:hover {
+        text-decoration: underline;
+      }
+    -->
+    </style>
+  </head>
+  <body>
+    <pre>
+** results replace not always working
+   :PROPERTIES:
+   :DATE:     2011-01-25
+   :END:
+#+begin_src sh :results output org replace :exports code
+  for i in `seq 4`;do
+      echo "- place $i in the list"
+  done
+#+end_src
+
+#+results:
+#+BEGIN_ORG
+- place 1 in the list
+- place 2 in the list
+- place 3 in the list
+- place 4 in the list
+#+END_ORG
+
+inline block src_emacs-lisp[:exports code :results replace]{(+ 1 1 1)} here is was
+
+</pre>
+  </body>
+</html>

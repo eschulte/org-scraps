@@ -1,0 +1,58 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<!-- Created by htmlize-1.36 in css mode. -->
+<html>
+  <head>
+    <title> *temp*</title>
+    <style type="text/css">
+    <!--
+      body {
+        color: #E6E1DC;
+        background-color: #232323;
+      }
+
+      a {
+        color: inherit;
+        background-color: inherit;
+        font: inherit;
+        text-decoration: inherit;
+      }
+      a:hover {
+        text-decoration: underline;
+      }
+    -->
+    </style>
+  </head>
+  <body>
+    <pre>
+** commas on tangling test
+   :PROPERTIES:
+   :DATE:     2010-06-07
+   :END:
+test comma protection on tangling
+
+#+begin_src emacs-lisp :results silent
+  (org-babel-add-interpreter "org")
+  (add-to-list 'org-babel-tangle-langs '("org" "org"))
+#+end_src
+
+#+begin_src org :tangle commas.org
+  ,* org-mode
+  ,  :PROPERTIES:
+  ,  :CUSTOM_ID: comma-protect
+  ,  :END:
+  
+  ,#+begin_src emacs-lisp
+  ,  protected?
+  ,#+end_src
+#+end_src
+
+#+begin_example 
+  ,* this should be
+  # commented out
+  
+  and maybe not this...
+#+end_example
+
+</pre>
+  </body>
+</html>

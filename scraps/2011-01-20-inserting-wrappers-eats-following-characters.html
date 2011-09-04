@@ -1,0 +1,53 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<!-- Created by htmlize-1.36 in css mode. -->
+<html>
+  <head>
+    <title> *temp*</title>
+    <style type="text/css">
+    <!--
+      body {
+        color: #E6E1DC;
+        background-color: #232323;
+      }
+
+      a {
+        color: inherit;
+        background-color: inherit;
+        font: inherit;
+        text-decoration: inherit;
+      }
+      a:hover {
+        text-decoration: underline;
+      }
+    -->
+    </style>
+  </head>
+  <body>
+    <pre>
+** inserting wrappers eats following characters
+   :PROPERTIES:
+   :DATE:     2011-01-20
+   :END:
+*** Test
+    :PROPERTIES:
+    :DATE:     2011-01-20
+    :END:
+  
+  #+begin_src emacs-lisp :results latex
+    "\\begin{equation}\\frac{1}{2}\n\\end{equation}"
+  #+end_src
+
+  #+results:
+  #+BEGIN_LaTeX
+  \begin{equation}\frac{1}{2}
+  \end{equation}
+  #+END_LaTeX
+  
+*** Watch me die :-(
+    :PROPERTIES:
+    :DATE:     2011-01-20
+    :END:
+
+</pre>
+  </body>
+</html>

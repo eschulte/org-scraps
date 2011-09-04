@@ -1,0 +1,60 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<!-- Created by htmlize-1.36 in css mode. -->
+<html>
+  <head>
+    <title> *temp*</title>
+    <style type="text/css">
+    <!--
+      body {
+        color: #E6E1DC;
+        background-color: #232323;
+      }
+
+      a {
+        color: inherit;
+        background-color: inherit;
+        font: inherit;
+        text-decoration: inherit;
+      }
+      a:hover {
+        text-decoration: underline;
+      }
+    -->
+    </style>
+  </head>
+  <body>
+    <pre>
+** indexing into gnuplot
+   :PROPERTIES:
+   :DATE:     2009-11-20
+   :END:
+
+#+tblname: squares
+| 1 |  1 |
+| 2 |  4 |
+| 3 |  9 |
+| 4 | 16 |
+| 5 | 25 |
+| 6 | 36 |
+
+#+begin_src gnuplot :var data=squares :results silent
+plot data using 1:2 with lines
+#+end_src
+
+#+tblname: squares-with-sum
+|  1 |  1 |
+|  2 |  4 |
+|  3 |  9 |
+|  4 | 16 |
+|  5 | 25 |
+|  6 | 36 |
+|----+----|
+| 21 | 91 |
+
+#+begin_src gnuplot :var data=squares-with-sum[0:-3] :results silent
+  plot data using 1:2 with lines
+#+end_src
+
+</pre>
+  </body>
+</html>

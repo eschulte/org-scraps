@@ -1,0 +1,48 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<!-- Created by htmlize-1.36 in css mode. -->
+<html>
+  <head>
+    <title> *temp*</title>
+    <style type="text/css">
+    <!--
+      body {
+        color: #E6E1DC;
+        background-color: #232323;
+      }
+
+      a {
+        color: inherit;
+        background-color: inherit;
+        font: inherit;
+        text-decoration: inherit;
+      }
+      a:hover {
+        text-decoration: underline;
+      }
+    -->
+    </style>
+  </head>
+  <body>
+    <pre>
+** including noweb refs w/o last newline
+   :PROPERTIES:
+   :DATE:     2011-07-19
+   :END:
+#+begin_src sh :noweb yes
+  &lt;&lt;my-name&gt;&gt; |\
+  &lt;&lt;capitalize-name&gt;&gt;
+#+end_src
+
+#+source: my-name
+#+begin_src sh
+  echo "eric schulte"
+#+end_src
+
+#+source: capitalize-name
+#+begin_src sh
+  sed 's/^e/E/;s/ s/ S/'
+#+end_src
+
+</pre>
+  </body>
+</html>

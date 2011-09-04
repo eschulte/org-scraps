@@ -1,0 +1,49 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<!-- Created by htmlize-1.36 in css mode. -->
+<html>
+  <head>
+    <title> *temp*</title>
+    <style type="text/css">
+    <!--
+      body {
+        color: #E6E1DC;
+        background-color: #232323;
+      }
+
+      a {
+        color: inherit;
+        background-color: inherit;
+        font: inherit;
+        text-decoration: inherit;
+      }
+      a:hover {
+        text-decoration: underline;
+      }
+    -->
+    </style>
+  </head>
+  <body>
+    <pre>
+** tangling out vc information
+   :PROPERTIES:
+   :DATE:     2011-04-01
+   :END:
+
+#+headers: :var STATE=(vc-state (or (buffer-file-name) org-current-export-file))
+#+headers: :var REV=(vc-working-revision (or (buffer-file-name) org-current-export-file))
+#+begin_src sh :tangle yes
+  rm -rf ./R
+  rm -f ./spreadSim.sub
+  REVISION=$REV.$STATE
+  tar -xf nsa.$REVISION.tar.gz
+  $HOME/R/R/R-2.12.0/bin/Rscript --vanilla -e
+"source('./R/generateLatinHypercubeScenarios.R'); doIt()"
+  for SCENARIO in ./R/scenarios/*.R; do
+    export SCENARIO=${SCENARIO#./R/scenarios/}
+    qsub nsa.sub
+  done
+#+end_src
+
+</pre>
+  </body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<!-- Created by htmlize-1.36 in css mode. -->
+<html>
+  <head>
+    <title> *temp*</title>
+    <style type="text/css">
+    <!--
+      body {
+        color: #E6E1DC;
+        background-color: #232323;
+      }
+
+      a {
+        color: inherit;
+        background-color: inherit;
+        font: inherit;
+        text-decoration: inherit;
+      }
+      a:hover {
+        text-decoration: underline;
+      }
+    -->
+    </style>
+  </head>
+  <body>
+    <pre>
+** adding file names to literal values on export
+   :PROPERTIES:
+   :DATE:     2010-06-01
+   :END:
+
+#+results: three
+: 9
+
+#+begin_src R :var num=three :exports results
+runif(n=num, min=0, max=1)
+#+end_src
+
+#+begin_src R :var num=3 :exports results
+runif(n=num, min=0, max=1)
+#+end_src
+
+</pre>
+  </body>
+</html>

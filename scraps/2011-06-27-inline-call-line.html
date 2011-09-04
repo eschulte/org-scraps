@@ -1,0 +1,57 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<!-- Created by htmlize-1.36 in css mode. -->
+<html>
+  <head>
+    <title> *temp*</title>
+    <style type="text/css">
+    <!--
+      body {
+        color: #E6E1DC;
+        background-color: #232323;
+      }
+
+      a {
+        color: inherit;
+        background-color: inherit;
+        font: inherit;
+        text-decoration: inherit;
+      }
+      a:hover {
+        text-decoration: underline;
+      }
+    -->
+    </style>
+  </head>
+  <body>
+    <pre>
+** inline call line
+   :PROPERTIES:
+   :DATE:     2011-06-27
+   :END:
+
+#+source: double
+#+begin_src emacs-lisp :var it=0
+  (* 2 it)
+#+end_src
+
+This is the number src_sh[:var it=double(it=1)]{echo $it} in the middle
+
+The following exports as a normal call line
+#+call: double(it=1)
+
+Now here is an inline call call_double(it=1) stuck in the middle of
+some prose.
+
+This one should not be exported =call_double(it=2)= because it is
+quoted.
+
+Finally this next one should export, even though it starts a line
+call_double(it=3) because sometimes inline blocks fold with a
+paragraph.
+
+And, a call with raw results call_double(4)[:results raw] should not
+have quoted results.
+
+</pre>
+  </body>
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<!-- Created by htmlize-1.36 in css mode. -->
+<html>
+  <head>
+    <title> *temp*</title>
+    <style type="text/css">
+    <!--
+      body {
+        color: #E6E1DC;
+        background-color: #232323;
+      }
+
+      a {
+        color: inherit;
+        background-color: inherit;
+        font: inherit;
+        text-decoration: inherit;
+      }
+      a:hover {
+        text-decoration: underline;
+      }
+    -->
+    </style>
+  </head>
+  <body>
+    <pre>
+** splitting code blocks
+   :PROPERTIES:
+   :DATE:     2010-09-19
+   :END:
+- with indentation
+  #+begin_src emacs-lisp
+    ;;;###autoload
+    (defun org-babel-previous-src-block (&amp;optional arg)
+      "Jump to the previous source block.
+    With optional prefix argument ARG, jump backward ARG many source blocks."
+      (interactive "P")
+      (condition-case nil
+          (re-search-backward org-babel-src-block-regexp nil nil (or arg 1))
+        (error (error "No previous code blocks")))
+      (goto-char (match-beginning 0)) (org-show-context))
+  #+end_src
+  
+  #+begin_src emacs-lisp
+    ;;;###autoload
+    (defun org-babel-split-block-maybe (&amp;optional arg)
+      "Split the current source code block on the cursor."
+      (interactive "p")
+      ((lambda (info)
+         (if info
+             (let ((lang (nth 0 info))
+                   (indent (nth 6 info))
+                   (stars (make-string (org-current-level) ?*)))
+               (insert (concat (if (looking-at "^") "" "\n")
+                               (make-string indent ? ) "#+end_src\n"
+                               (if arg stars (make-string indent ? )) "\n"
+                               (make-string indent ? ) "#+begin_src " lang
+                               (if (looking-at "[\n\r]") "" "\n  "))))
+           (message "Not in src block.")))
+       (org-babel-get-src-block-info)))
+    
+    ;; other stuff
+  #+end_src
+
+</pre>
+  </body>
+</html>

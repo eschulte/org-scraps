@@ -1,0 +1,69 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<!-- Created by htmlize-1.36 in css mode. -->
+<html>
+  <head>
+    <title> *temp*</title>
+    <style type="text/css">
+    <!--
+      body {
+        color: #E6E1DC;
+        background-color: #232323;
+      }
+
+      a {
+        color: inherit;
+        background-color: inherit;
+        font: inherit;
+        text-decoration: inherit;
+      }
+      a:hover {
+        text-decoration: underline;
+      }
+    -->
+    </style>
+  </head>
+  <body>
+    <pre>
+** lua export
+   :PROPERTIES:
+   :DATE:     2009-11-20
+   :END:
+
+#+srcname: determine the neighbors of the segments that the bisector hits
+#+begin_src lua :tangle no :exports code
+  local s1, s2 = intersecting_segs[1], intersecting_segs[2]
+  local n1 = table_find_segment(cell.neighbors, s1)
+  local n2 = table_find_segment(cell.neighbors, s2)
+#+end_src
+
+I got:
+#+begin_example
+\lstset{language=lua}
+\begin{lstlisting}
+local s1, s2 = intersecting_segs[1], intersecting_segs[2]
+local n1 = table_find_segment(cell.neighbors, s1)
+local n2 = table_find_segment(cell.neighbors, s2)
+\end{lstlisting}
+#+end_example
+
+Emacs -Q got:
+#+begin_example
+\begin{verbatim}
+local s1, s2 = intersecting_segs[1], intersecting_segs[2]
+local n1 = table_find_segment(cell.neighbors, s1)
+local n2 = table_find_segment(cell.neighbors, s2)
+\end{verbatim}
+#+end_example
+
+Emacs -Q + Org-babel got:
+#+begin_example
+\begin{verbatim}
+local s1, s2 = intersecting_segs[1], intersecting_segs[2]
+local n1 = table_find_segment(cell.neighbors, s1)
+local n2 = table_find_segment(cell.neighbors, s2)
+\end{verbatim}
+#+end_example
+
+</pre>
+  </body>
+</html>

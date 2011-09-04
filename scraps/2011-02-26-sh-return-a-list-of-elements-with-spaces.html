@@ -1,0 +1,55 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<!-- Created by htmlize-1.36 in css mode. -->
+<html>
+  <head>
+    <title> *temp*</title>
+    <style type="text/css">
+    <!--
+      body {
+        color: #E6E1DC;
+        background-color: #232323;
+      }
+
+      a {
+        color: inherit;
+        background-color: inherit;
+        font: inherit;
+        text-decoration: inherit;
+      }
+      a:hover {
+        text-decoration: underline;
+      }
+    -->
+    </style>
+  </head>
+  <body>
+    <pre>
+** sh return a list of elements with spaces
+   :PROPERTIES:
+   :DATE:     2011-02-26
+   :END:
+#+begin_src sh :results list
+  echo "eric schulte"
+  echo "dan davison"
+  echo "seb vauban"
+#+end_src
+
+#+results:
+- ("eric" "schulte")
+- ("dan" "davison")
+- ("seb" "vauban")
+
+#+begin_src sh :results scalar
+  echo "eric schulte"
+  echo "dan davison"
+  echo "seb vauban"
+#+end_src
+
+#+results:
+: eric schulte
+: dan davison
+: seb vauban
+
+</pre>
+  </body>
+</html>

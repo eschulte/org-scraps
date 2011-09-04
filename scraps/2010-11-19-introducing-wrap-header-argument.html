@@ -1,0 +1,64 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<!-- Created by htmlize-1.36 in css mode. -->
+<html>
+  <head>
+    <title> *temp*</title>
+    <style type="text/css">
+    <!--
+      body {
+        color: #E6E1DC;
+        background-color: #232323;
+      }
+
+      a {
+        color: inherit;
+        background-color: inherit;
+        font: inherit;
+        text-decoration: inherit;
+      }
+      a:hover {
+        text-decoration: underline;
+      }
+    -->
+    </style>
+  </head>
+  <body>
+    <pre>
+** introducing =wrap= header argument
+   :PROPERTIES:
+   :DATE:     2010-11-19
+   :END:
+#+begin_src emacs-lisp :results wrap :exports both
+  (mapcar (lambda (el) (list el (+ 1 (* el el)))) (number-sequence 0 10))
+#+end_src
+
+#+results:
+#+BEGIN_RESULT
+|  0 |   1 |
+|  1 |   2 |
+|  2 |   5 |
+|  3 |  10 |
+|  4 |  17 |
+|  5 |  26 |
+|  6 |  37 |
+|  7 |  50 |
+|  8 |  65 |
+|  9 |  82 |
+| 10 | 101 |
+#+END_RESULT
+
+now indented
+- first
+- second
+  #+begin_src emacs-lisp :results wrap :exports both
+    "something else"
+  #+end_src
+
+  #+results:
+  #+BEGIN_RESULT
+  : something else
+  #+END_RESULT
+
+</pre>
+  </body>
+</html>

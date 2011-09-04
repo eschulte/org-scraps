@@ -1,0 +1,51 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<!-- Created by htmlize-1.36 in css mode. -->
+<html>
+  <head>
+    <title> *temp*</title>
+    <style type="text/css">
+    <!--
+      body {
+        color: #E6E1DC;
+        background-color: #232323;
+      }
+
+      a {
+        color: inherit;
+        background-color: inherit;
+        font: inherit;
+        text-decoration: inherit;
+      }
+      a:hover {
+        text-decoration: underline;
+      }
+    -->
+    </style>
+  </head>
+  <body>
+    <pre>
+** tangling org
+   :PROPERTIES:
+   :DATE:     2010-04-27
+   :END:
+
+#+begin_src org :tangle ~/Desktop/test.org
+  ,* first
+  ,| eric   | me     |
+  ,| patton | my dog |
+  
+  ,* second
+  
+  ,some more stuff...
+  
+  ,#+HTML: &lt;b&gt;I bet this is quoted&lt;/b&gt;
+#+end_src
+
+#+begin_src ruby :tangle ~/Desktop/test.rb
+  # this is a comment
+  eric.map{|l| puts l}
+#+end_src
+
+</pre>
+  </body>
+</html>

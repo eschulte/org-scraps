@@ -1,0 +1,59 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<!-- Created by htmlize-1.36 in css mode. -->
+<html>
+  <head>
+    <title> *temp*</title>
+    <style type="text/css">
+    <!--
+      body {
+        color: #E6E1DC;
+        background-color: #232323;
+      }
+
+      a {
+        color: inherit;
+        background-color: inherit;
+        font: inherit;
+        text-decoration: inherit;
+      }
+      a:hover {
+        text-decoration: underline;
+      }
+    -->
+    </style>
+  </head>
+  <body>
+    <pre>
+** tangling with full comments
+   :PROPERTIES:
+   :comments: org
+   :tangle:   full-comments.el
+   :DATE:     2010-09-04
+   :END:
+The top block
+#+begin_src emacs-lisp
+  (message "first block")
+#+end_src
+
+here's some text which won't be tangled
+
+*** subheading
+    :PROPERTIES:
+    :DATE:     2010-09-04
+    :END:
+another block
+| 1 | first  |
+| 2 | second |
+#+begin_src emacs-lisp
+  (message "second")
+#+end_src
+
+and finally a block with a =:noweb= header argument
+#+begin_src emacs-lisp :noweb yes
+  (progn
+    &lt;&lt;tangle-el-the-second&gt;&gt;)
+#+end_src
+
+</pre>
+  </body>
+</html>

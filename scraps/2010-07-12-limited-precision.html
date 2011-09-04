@@ -1,0 +1,53 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<!-- Created by htmlize-1.36 in css mode. -->
+<html>
+  <head>
+    <title> *temp*</title>
+    <style type="text/css">
+    <!--
+      body {
+        color: #E6E1DC;
+        background-color: #232323;
+      }
+
+      a {
+        color: inherit;
+        background-color: inherit;
+        font: inherit;
+        text-decoration: inherit;
+      }
+      a:hover {
+        text-decoration: underline;
+      }
+    -->
+    </style>
+  </head>
+  <body>
+    <pre>
+** limited precision
+   :PROPERTIES:
+   :DATE:     2010-07-12
+   :END:
+
+#+results: anova-example
+| Effect | DFn | DFd |             SSn |              SSd |                F |                    p | p&lt;.05 |              pes |
+|--------+-----+-----+-----------------+------------------+------------------+----------------------+-------+------------------|
+| Days   |   9 | 153 | 166235.12250176 | 151101.038615303 | 18.7026979326383 | 8.99534541600196e-21 | *     | 0.52384550792003 |
+
+#+begin_src emacs-lisp :var tab=anova-example :colnames yes :cache yes
+  (mapcar
+   (lambda (row)
+     (mapcar
+      (lambda (cell) (if (numberp cell) (format "%.4f" cell) cell))
+      row))
+   tab)
+#+end_src
+
+#+results[16ac354f1e7a65594bb59e252ab221e6a4b10f80]:
+| Effect |    DFn |      DFd |         SSn |         SSd |       F |                    p | p&lt;.05 |    pes |
+|--------+--------+----------+-------------+-------------+---------+----------------------+-------+--------|
+| Days   | 9.0000 | 153.0000 | 166235.1225 | 151101.0386 | 18.7027 | 8.99534541600196e-21 | *     | 0.5238 |
+
+</pre>
+  </body>
+</html>

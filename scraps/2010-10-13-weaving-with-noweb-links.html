@@ -1,0 +1,45 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<!-- Created by htmlize-1.36 in css mode. -->
+<html>
+  <head>
+    <title> *temp*</title>
+    <style type="text/css">
+    <!--
+      body {
+        color: #E6E1DC;
+        background-color: #232323;
+      }
+
+      a {
+        color: inherit;
+        background-color: inherit;
+        font: inherit;
+        text-decoration: inherit;
+      }
+      a:hover {
+        text-decoration: underline;
+      }
+    -->
+    </style>
+  </head>
+  <body>
+    <pre>
+** weaving with noweb links
+   :PROPERTIES:
+   :tangle:   yes
+   :DATE:     2010-10-13
+   :END:
+
+#+source: name
+#+begin_src emacs-lisp
+  (message "eric")
+#+end_src
+
+#+begin_src emacs-lisp :noweb tangle
+  ;; name
+  &lt;&lt;name&gt;&gt;
+#+end_src
+
+</pre>
+  </body>
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<!-- Created by htmlize-1.36 in css mode. -->
+<html>
+  <head>
+    <title> *temp*</title>
+    <style type="text/css">
+    <!--
+      body {
+        color: #E6E1DC;
+        background-color: #232323;
+      }
+
+      a {
+        color: inherit;
+        background-color: inherit;
+        font: inherit;
+        text-decoration: inherit;
+      }
+      a:hover {
+        text-decoration: underline;
+      }
+    -->
+    </style>
+  </head>
+  <body>
+    <pre>
+** advanced table
+   :PROPERTIES:
+   :DATE:     2009-11-20
+   :END:
+   | DATA             | WHAT       | WHERE       | HOW MUCH |
+   |------------------+------------+-------------+----------|
+   | [2009-09-25 Fri] |            |             |    28.95 |
+   |------------------+------------+-------------+----------|
+   |                  | food       | supermarket |     7.85 |
+   |                  | ticket bus |             |      2.3 |
+   |                  | tea + ice  | ice uno     |      4.4 |
+   |                  | ticket     |             |     14.4 |
+   |------------------+------------+-------------+----------|
+   | [2009-09-26 Sat] |            |             |       41 |
+
+#+begin_src emacs-lisp
+  (let ((total 0) (responding t) purchases)
+    (while responding
+      (setq purchases
+            (cons
+             (list ""
+                   (read-from-minibuffer "What: ")
+                   (read-from-minibuffer "Where: ")
+                   (read-minibuffer "How Much: "))
+             purchases))
+      (setq responding (y-or-n-p "more? ")))
+    (append 
+     purchases
+     (list
+      (list
+       (format-time-string "%Y-%m-%d" (current-time))
+       "" "" (progn
+               (mapc (lambda (purchase)
+                       (setq total (+ total (fourth purchase))))
+                     purchases)
+               total)))))
+#+end_src
+
+#+resname:
+| ""           | "fish and chips" | "diner"  |  9.78 |
+| ""           | "food"           | "subway" |  5.45 |
+| "2009-09-29" | ""               | ""       | 15.23 |
+
+</pre>
+  </body>
+</html>

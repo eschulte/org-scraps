@@ -1,0 +1,43 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<!-- Created by htmlize-1.36 in css mode. -->
+<html>
+  <head>
+    <title> *temp*</title>
+    <style type="text/css">
+    <!--
+      body {
+        color: #E6E1DC;
+        background-color: #232323;
+      }
+
+      a {
+        color: inherit;
+        background-color: inherit;
+        font: inherit;
+        text-decoration: inherit;
+      }
+      a:hover {
+        text-decoration: underline;
+      }
+    -->
+    </style>
+  </head>
+  <body>
+    <pre>
+*** using vectors to represent complex number is lisp
+    :PROPERTIES:
+    :DATE:     2011-04-15
+    :END:
+| [1 2]            |
+|------------------|
+| real:1 complex:2 |
+#+TBLFM: @2$1='(sbe real (it @1$1))
+
+#+source: real(it='())
+#+begin_src emacs-lisp
+  (format "real:%d complex:%d" (aref it 0) (aref it 1))
+#+end_src
+
+</pre>
+  </body>
+</html>

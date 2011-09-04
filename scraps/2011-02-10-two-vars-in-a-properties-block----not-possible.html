@@ -1,0 +1,75 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<!-- Created by htmlize-1.36 in css mode. -->
+<html>
+  <head>
+    <title> *temp*</title>
+    <style type="text/css">
+    <!--
+      body {
+        color: #E6E1DC;
+        background-color: #232323;
+      }
+
+      a {
+        color: inherit;
+        background-color: inherit;
+        font: inherit;
+        text-decoration: inherit;
+      }
+      a:hover {
+        text-decoration: underline;
+      }
+    -->
+    </style>
+  </head>
+  <body>
+    <pre>
+** two vars in a properties block -- not possible
+   :PROPERTIES:
+   :var:      test1=7
+   :var:      test2=8
+   :DATE:     2011-02-10
+   :END:
+
+#+begin_src emacs-lisp
+  (message "test1=%S test2=%S" test1 test2)
+#+end_src
+
+results in Error
+: let: Symbol's value as variable is void: test2
+
+*** an alternative
+    :PROPERTIES:
+    :var:      tests=all-tests
+    :DATE:     2011-02-10
+    :END:
+
+#+tblname: all-tests
+- 7
+- 8
+
+#+begin_src emacs-lisp :var eric=89
+  (message "test1=%S test2=%S" (first tests) (second tests))
+#+end_src
+
+#+results:
+: test1=7 test2=8
+
+*** another alternative
+    :PROPERTIES:
+    :var:      vars=variables
+    :DATE:     2011-06-21
+    :END:
+
+#+tblname: variables
+| var1 | 1 |
+| var2 | 2 |
+
+#+begin_src python
+  print vars[0][1]
+  print vars[1][1]
+#+end_src
+
+</pre>
+  </body>
+</html>

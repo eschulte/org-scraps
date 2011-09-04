@@ -1,0 +1,65 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<!-- Created by htmlize-1.36 in css mode. -->
+<html>
+  <head>
+    <title> *temp*</title>
+    <style type="text/css">
+    <!--
+      body {
+        color: #E6E1DC;
+        background-color: #232323;
+      }
+
+      a {
+        color: inherit;
+        background-color: inherit;
+        font: inherit;
+        text-decoration: inherit;
+      }
+      a:hover {
+        text-decoration: underline;
+      }
+    -->
+    </style>
+  </head>
+  <body>
+    <pre>
+** cached results
+   :PROPERTIES:
+   :DATE:     2009-11-20
+   :END:
+#+begin_src emacs-lisp :cache yes
+   (setq org-babel-default-header-args '((:session . "none")
+                                         (:results . "replace")
+                                         (:exports . "code")(:cache)))
+#+end_src
+
+#+results[937269632ae5b5eee5c93f9eb50e0bc55e34520d]:
+| (:session . none) | (:results . replace) | (:exports . code) | (:cache) |
+
+#+srcname: eric-schulte
+#+begin_src emacs-lisp :cache yes
+   (+ 5 7 1)
+#+end_src
+
+#+results[005b04829608b3d22b61686e90309af3a9a6fe7c]: eric-schulte
+: 13
+
+#+begin_src ditaa :file caching-example.png
+    +--------------------+
+    |                    |     +-----------+
+    |                    |     |           |
+    |                    |     |           |
+    |      +----+        |     |           |
+    |      |    |        |     +-----------+
+    |      +----+        |
+    |                    |
+    +--------------------+
+#+end_src
+
+#+results[fd11ddbfd00f6038e6e37db71ddaf43d65b0e200]:
+[[file:caching-example.png]]
+
+</pre>
+  </body>
+</html>

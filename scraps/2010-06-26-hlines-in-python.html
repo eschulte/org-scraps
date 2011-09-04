@@ -1,0 +1,60 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<!-- Created by htmlize-1.36 in css mode. -->
+<html>
+  <head>
+    <title> *temp*</title>
+    <style type="text/css">
+    <!--
+      body {
+        color: #E6E1DC;
+        background-color: #232323;
+      }
+
+      a {
+        color: inherit;
+        background-color: inherit;
+        font: inherit;
+        text-decoration: inherit;
+      }
+      a:hover {
+        text-decoration: underline;
+      }
+    -->
+    </style>
+  </head>
+  <body>
+    <pre>
+** hlines in python
+   :PROPERTIES:
+   :DATE:     2010-06-26
+   :END:
+
+#+tblname: many-cols
+| a | b | c |
+|---+---+---|
+| d | e | f |
+|---+---+---|
+| g | h | i |
+
+#+source: echo-table
+#+begin_src python :var tab=many-cols :hlines yes :exports both :session
+  return tab
+#+end_src
+
+#+begin_src emacs-lisp :var table=echo-table :exports none
+  (butlast (apply #'append (mapcar (lambda (el) (list el 'hline)) table)))
+#+end_src
+
+#+call: echo-table(tab=many-cols)
+
+#+begin_src python :exports results
+  return [['foo', 'bar', 'baz'], ["a", "b", "None of the above"], ['1', 2, 3]]
+#+end_src
+
+#+begin_src emacs-lisp :exports results
+  (message "Exist")
+#+end_src
+
+</pre>
+  </body>
+</html>

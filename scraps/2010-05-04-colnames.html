@@ -1,0 +1,65 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<!-- Created by htmlize-1.36 in css mode. -->
+<html>
+  <head>
+    <title> *temp*</title>
+    <style type="text/css">
+    <!--
+      body {
+        color: #E6E1DC;
+        background-color: #232323;
+      }
+
+      a {
+        color: inherit;
+        background-color: inherit;
+        font: inherit;
+        text-decoration: inherit;
+      }
+      a:hover {
+        text-decoration: underline;
+      }
+    -->
+    </style>
+  </head>
+  <body>
+    <pre>
+** colnames
+   :PROPERTIES:
+   :DATE:     2010-05-04
+   :END:
+
+#+tblname: A
+| a | b | c |
+|---+---+---|
+| d | e | f |
+| g | h | i |
+
+#+begin_src python :var tab=A :colnames yes
+return [[val + '*' for val in row] for row in tab]
+#+end_src
+
+#+results:
+| a  | b  | c  |
+|----+----+----|
+| d* | e* | f* |
+| g* | h* | i* |
+
+#+tblname: A
+| a | b | c |
+| d | e | f |
+| g | h | i |
+
+#+begin_src ruby :var tab=A :colnames yes
+tab.map{|r| r.map{|e| e+"*"} }
+#+end_src
+
+#+results:
+| a  | b  | c  |
+|----+----+----|
+| d* | e* | f* |
+| g* | h* | i* |
+
+</pre>
+  </body>
+</html>

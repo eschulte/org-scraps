@@ -1,0 +1,75 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<!-- Created by htmlize-1.36 in css mode. -->
+<html>
+  <head>
+    <title> *temp*</title>
+    <style type="text/css">
+    <!--
+      body {
+        color: #E6E1DC;
+        background-color: #232323;
+      }
+
+      a {
+        color: inherit;
+        background-color: inherit;
+        font: inherit;
+        text-decoration: inherit;
+      }
+      a:hover {
+        text-decoration: underline;
+      }
+    -->
+    </style>
+  </head>
+  <body>
+    <pre>
+** add column to table with awk
+   :PROPERTIES:
+   :question_author: S&#233;bastien Vauban
+   :DATE:     2010-11-23
+   :END:
+I want to *add a column* to the following table.
+
+#+results: table-message
+| This is line 1 of the message.        |
+| This is line 2 of the message.        |
+| This is the last line of the message. |
+
+Its value should be dependant on a *regexp matching* the *current row*
+(for example, if 1 is detected in the original column, then write "A"
+in the new one, "B" if 2 is read, "C" if 3 is read, etc.).
+
+Hence, I'm thinking using AWK as an easy solution.
+
+    #+begin_src note
+    I'm open to other ideas on how I could do this as easily. Just throw me
+    ideas, if you have some.
+    #+end_src
+
+the easiest (for me) would be with the elisp =mapcar= function
+#+begin_src emacs-lisp :var tbl=table-message
+  (mapcar (lambda (row) (cons "New col" row)) tbl)
+#+end_src
+
+#+results:
+| New col | This is line 1 of the message.        |
+| New col | This is line 2 of the message.        |
+| New col | This is the last line of the message. |
+
+*First* trial: add a column whose cell contents will be *fixed* (here,
+equal to =New col=).
+
+#+srcname: add-col
+#+begin_src sh :var data=table-message :results output raw :exports both
+echo "$data" | awk '// {print "| New col | " $0 " |";}'
+#+end_src
+
+#+results: add-col
+| New col | This is line 1 of the message.        |
+| New col | This is line 2 of the message.        |
+| New col | This is the last line of the message. |
+
+</pre>
+  </body>
+</html>

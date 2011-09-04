@@ -1,0 +1,54 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<!-- Created by htmlize-1.36 in css mode. -->
+<html>
+  <head>
+    <title> *temp*</title>
+    <style type="text/css">
+    <!--
+      body {
+        color: #E6E1DC;
+        background-color: #232323;
+      }
+
+      a {
+        color: inherit;
+        background-color: inherit;
+        font: inherit;
+        text-decoration: inherit;
+      }
+      a:hover {
+        text-decoration: underline;
+      }
+    -->
+    </style>
+  </head>
+  <body>
+    <pre>
+** list index w/function style name
+   :PROPERTIES:
+   :DATE:     2010-02-14
+   :END:
+
+#+results: function-style-index
+| 0 |
+| 1 |
+| 2 |
+| 3 |
+| 4 |
+| 5 |
+| 6 |
+| 7 |
+| 8 |
+| 9 |
+
+#+srcname: function-style-indexing(data=function-style-index[1:4,0])
+#+begin_src emacs-lisp
+  (message "%S" data)
+#+end_src
+
+#+results: function-style-indexing
+: ((1) (2) (3) (4))
+
+</pre>
+  </body>
+</html>

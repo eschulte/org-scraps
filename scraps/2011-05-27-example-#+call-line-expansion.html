@@ -1,0 +1,60 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<!-- Created by htmlize-1.36 in css mode. -->
+<html>
+  <head>
+    <title> *temp*</title>
+    <style type="text/css">
+    <!--
+      body {
+        color: #E6E1DC;
+        background-color: #232323;
+      }
+
+      a {
+        color: inherit;
+        background-color: inherit;
+        font: inherit;
+        text-decoration: inherit;
+      }
+      a:hover {
+        text-decoration: underline;
+      }
+    -->
+    </style>
+  </head>
+  <body>
+    <pre>
+** example =#+call= line expansion
+   :PROPERTIES:
+   :DATE:     2011-05-27
+   :END:
+this code block peeks inside of the `params' variable which is used by
+babel during code block evaluation
+#+source: callee
+#+begin_src emacs-lisp
+  ;; this is cheating and shouldn't be done in user code :)
+  (or (cdr (assoc :foo params)) 'unset)
+#+end_src
+
+this code block evaluates to the following,
+#+results: callee
+: unset
+
+this call line,
+#+call: callee[:foo bar]() :results org
+
+expands into the following which is evaluated as a normal code block
+by Babel.
+#+begin_src emacs-lisp :var results=callee[:foo bar]() :results org
+  results
+#+end_src
+
+this code block evaluates to the following,
+#+results:
+#+BEGIN_ORG
+nothing
+#+END_ORG
+
+</pre>
+  </body>
+</html>

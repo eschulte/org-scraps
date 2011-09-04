@@ -1,0 +1,145 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<!-- Created by htmlize-1.36 in css mode. -->
+<html>
+  <head>
+    <title> *temp*</title>
+    <style type="text/css">
+    <!--
+      body {
+        color: #E6E1DC;
+        background-color: #232323;
+      }
+
+      a {
+        color: inherit;
+        background-color: inherit;
+        font: inherit;
+        text-decoration: inherit;
+      }
+      a:hover {
+        text-decoration: underline;
+      }
+    -->
+    </style>
+  </head>
+  <body>
+    <pre>
+** hline processing
+   :PROPERTIES:
+   :DATE:     2010-04-12
+   :END:
+#+tblname: many-cols
+| a | b | c |
+|---+---+---|
+| d | e | f |
+|---+---+---|
+| g | h | i |
+
+#+tblname: less-cols
+| 1 |
+|---|
+| 2 |
+| 3 |
+
+#+tblname: less-cols2
+| 1 | 2 | 3 |
+
+#+begin_src emacs-lisp :var tab=many-cols
+  (message "%S" tab)
+  ;; (remove 'hline tab)
+  ;; (flet ((rem-hline (el)
+  ;;                   (if (listp el)
+  ;;                       (remove nil (mapcar #'rem-hline el))
+  ;;                     (if (equal 'hline el) nil el))))
+  ;;   (rem-hline tab))
+#+end_src
+
+#+begin_src ruby :var tab=less-cols
+  tab
+#+end_src
+
+#+results:
+| 1 |
+|---|
+| 2 |
+| 3 |
+
+#+begin_src ruby :var one=2
+  1 + 2
+#+end_src
+
+#+results:
+: 3
+
+#+begin_src python :var tab=less-cols
+  return tab
+#+end_src
+
+#+results:
+| 1 |
+|---|
+| 2 |
+| 3 |
+
+#+begin_src ruby :var tab=less-cols :colnames no
+  tab
+#+end_src
+
+#+results:
+| 1 |
+| 2 |
+| 3 |
+
+#+begin_src emacs-lisp :var tab=row-and-col-names
+   (message "%S" tab)
+#+end_src
+
+#+results:
+: (("" "c1" "c2" "c3") hline ("r1" 1 4 7) ("r2" 2 5 8) ("r3" 3 6 9))
+
+#+tblname: row-and-col-names
+|    | c1 | c2 | c3 |
+|----+----+----+----|
+| r1 |  1 |  4 |  7 |
+| r2 |  2 |  5 |  8 |
+| r3 |  3 |  6 |  9 |
+
+functions
+#+begin_src emacs-lisp
+  (defun org-babel-del-hlines (table)
+    "Remove all 'hlines from TABLE."
+    (remove 'hline table))
+  
+  (defun org-babel-get-colnames (table)
+    "Return a cons cell, the `car' of which contains the TABLE
+        less colnames, and the `cdr' of which contains a list of the
+        column names"
+    (if (equal 'hline (second table))
+        (cons (cddr table) (car table))
+      table))
+    
+  (defun org-babel-get-rownames (table)
+    "Return a cons cell, the `car' of which contains the TABLE less
+     colnames, and the `cdr' of which contains a list of the column
+     names.  Note: this function removes any hlines in TABLE"
+    (flet ((trans (table) (apply #'mapcar* #'list table)))
+      (let ((table (trans (remove 'hline table))))
+        (cons (cdr table) (car table)))))
+  
+  (defun org-babel-put-colnames (table colnames)
+    "Add COLNAMES to TABLE if they exist."
+    (if colnames (apply 'list colnames 'hline table) table))
+  
+  (defun org-babel-put-rownames (table rownames)
+    "Add ROWNAMES to TABLE if they exist."
+    (if rownames
+        (mapcar (lambda (row)
+                  (if (listp row)
+                      (cons (or (pop rownames) "") row)
+                    row)) table)
+      table))
+#+end_src
+
+</pre>
+  </body>
+</html>

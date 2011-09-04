@@ -1,0 +1,55 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<!-- Created by htmlize-1.36 in css mode. -->
+<html>
+  <head>
+    <title> *temp*</title>
+    <style type="text/css">
+    <!--
+      body {
+        color: #E6E1DC;
+        background-color: #232323;
+      }
+
+      a {
+        color: inherit;
+        background-color: inherit;
+        font: inherit;
+        text-decoration: inherit;
+      }
+      a:hover {
+        text-decoration: underline;
+      }
+    -->
+    </style>
+  </head>
+  <body>
+    <pre>
+** looks like a pipe in a table
+   :PROPERTIES:
+   :DATE:     2011-03-07
+   :END:
+#+source: clean
+#+begin_src emacs-lisp :var in=""
+  (flet ((clean (in)
+                (if (listp in)
+                    (mapcar #'clean in)
+                  (if (stringp in)
+                      (replace-regexp-in-string "&#166;" "|" in)
+                    in))))
+    (clean in))
+#+end_src
+
+#+results: regexps
+| first  | (a&#166;b) |
+| second | (1&#166;2) |
+
+#+begin_src perl :var a=clean(in=regexps)[0,1] :var b=clean(in=regexps)[1,1]
+  $a; $b;
+#+end_src
+
+#+results:
+: (1|2)
+
+</pre>
+  </body>
+</html>

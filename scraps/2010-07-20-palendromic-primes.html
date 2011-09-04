@@ -1,0 +1,71 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<!-- Created by htmlize-1.36 in css mode. -->
+<html>
+  <head>
+    <title> *temp*</title>
+    <style type="text/css">
+    <!--
+      body {
+        color: #E6E1DC;
+        background-color: #232323;
+      }
+
+      a {
+        color: inherit;
+        background-color: inherit;
+        font: inherit;
+        text-decoration: inherit;
+      }
+      a:hover {
+        text-decoration: underline;
+      }
+    -->
+    </style>
+  </head>
+  <body>
+    <pre>
+** palendromic primes
+   :PROPERTIES:
+   :DATE:     2010-07-20
+   :END:
+Note that because Haskell is funny about what can be typed into the
+interpreter, the following should be loaded with
+=org-babel-load-in-session=.
+#+begin_src haskell
+  palendromic_primes = [x | x &lt;- [1..], prime x, palendrome x]
+      where
+        factors n = [x | x &lt;- [1..floor(sqrt(fromIntegral(n)))], n `mod` x == 0]
+        prime n = factors n == [1]
+        primes = [x | x &lt;- [2..], prime x]
+        palendrome n = show(n) == reverse(show(n))
+  
+  palendromic_prime_distances = map (\(x,y)-&gt; y-x) neighbors
+      where
+        neighbors = (zip palendromic_primes (tail palendromic_primes))
+#+end_src
+
+#+source: palendromic_prime_distances
+#+begin_src haskell
+  take 180 (zip [1..] palendromic_prime_distances)
+#+end_src
+
+For high-quality png output from gnuplot, the following sequence of
+graphing to a =.eps= file, and then converting to a =.png= can be
+useful.
+#+source: dist-graph
+#+begin_src gnuplot :var data=palendromic_prime_distances :file pps.eps
+  set term postscript landscape color enhanced
+  set log y
+  set title "distance between consecutive palendromic primes"
+  plot "$data" with fs notitle
+#+end_src
+
+The =convert= command is part of the [[http://www.imagemagick.org/script/index.php][imagemagick]] suite.
+#+begin_src sh :var input=dist-graph :results file
+  convert -depth 300 -rotate 90 $input pps.png
+  echo "pps.png"
+#+end_src
+
+</pre>
+  </body>
+</html>

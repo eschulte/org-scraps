@@ -1,0 +1,60 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<!-- Created by htmlize-1.36 in css mode. -->
+<html>
+  <head>
+    <title> *temp*</title>
+    <style type="text/css">
+    <!--
+      body {
+        color: #E6E1DC;
+        background-color: #232323;
+      }
+
+      a {
+        color: inherit;
+        background-color: inherit;
+        font: inherit;
+        text-decoration: inherit;
+      }
+      a:hover {
+        text-decoration: underline;
+      }
+    -->
+    </style>
+  </head>
+  <body>
+    <pre>
+** reference parts of tables
+   :PROPERTIES:
+   :DATE:     2009-11-20
+   :END:
+
+#+TBLNAME: squares
+|  1 |   1 |
+|  2 |   4 |
+|  3 |   9 |
+|  4 |  16 |
+|  5 |  25 |
+|  6 |  36 |
+|  7 |  49 |
+|  8 |  64 |
+|  9 |  81 |
+| 10 | 100 |
+| 11 | 121 |
+| 12 | 144 |
+| 13 | 169 |
+| 14 | 196 |
+| 15 | 225 |
+| 16 | 256 |
+| 17 | 289 |
+| 18 | 324 |
+#+TBLFM: $2=$1*$1
+
+#+begin_src gnuplot :var data=squares
+set title "Implementing Gnuplot"
+plot data using 1:2 with lines
+#+end_src
+
+</pre>
+  </body>
+</html>

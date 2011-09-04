@@ -1,0 +1,46 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<!-- Created by htmlize-1.36 in css mode. -->
+<html>
+  <head>
+    <title> *temp*</title>
+    <style type="text/css">
+    <!--
+      body {
+        color: #E6E1DC;
+        background-color: #232323;
+      }
+
+      a {
+        color: inherit;
+        background-color: inherit;
+        font: inherit;
+        text-decoration: inherit;
+      }
+      a:hover {
+        text-decoration: underline;
+      }
+    -->
+    </style>
+  </head>
+  <body>
+    <pre>
+** replace inline code block
+   :PROPERTIES:
+   :DATE:     2011-01-13
+   :END:
+This is src_emacs-lisp{(+ 1 2 3)} an inline block.
+
+#+begin_src emacs-lisp
+  (defun replace-inline-block ()
+    (interactive)
+    (if (save-excursion (re-search-backward "[ \f\t\n\r\v]" nil t)
+                        (looking-at org-babel-inline-src-block-regexp))
+        (replace-match
+         ((lambda (el) (if (stringp el) el (format "%S" el)))
+          (org-babel-execute-src-block)) nil nil nil 1)
+      (error "not inside of an inline source block.")))
+#+end_src
+
+</pre>
+  </body>
+</html>

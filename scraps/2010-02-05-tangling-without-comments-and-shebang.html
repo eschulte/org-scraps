@@ -1,0 +1,50 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<!-- Created by htmlize-1.36 in css mode. -->
+<html>
+  <head>
+    <title> *temp*</title>
+    <style type="text/css">
+    <!--
+      body {
+        color: #E6E1DC;
+        background-color: #232323;
+      }
+
+      a {
+        color: inherit;
+        background-color: inherit;
+        font: inherit;
+        text-decoration: inherit;
+      }
+      a:hover {
+        text-decoration: underline;
+      }
+    -->
+    </style>
+  </head>
+  <body>
+    <pre>
+** tangling w/o comments and shebang
+   :PROPERTIES:
+   :tangle:   yes
+   :DATE:     2010-02-05
+   :END:
+
+#+begin_src emacs-lisp :comments no :shebang (identity my-shebang)
+  (message "I should have no comments")
+#+end_src
+
+#+begin_src emacs-lisp :comments no
+  (setq my-shebang "foo")
+#+end_src
+
+#+results:
+: foo
+
+#+begin_src ruby :shebang #!/usr/bin/ruby
+  puts :nonstandard_shebang
+#+end_src
+
+</pre>
+  </body>
+</html>

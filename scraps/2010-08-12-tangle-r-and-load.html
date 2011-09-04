@@ -1,0 +1,56 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<!-- Created by htmlize-1.36 in css mode. -->
+<html>
+  <head>
+    <title> *temp*</title>
+    <style type="text/css">
+    <!--
+      body {
+        color: #E6E1DC;
+        background-color: #232323;
+      }
+
+      a {
+        color: inherit;
+        background-color: inherit;
+        font: inherit;
+        text-decoration: inherit;
+      }
+      a:hover {
+        text-decoration: underline;
+      }
+    -->
+    </style>
+  </head>
+  <body>
+    <pre>
+** tangle R and load
+  :PROPERTIES:
+  :tangle:   to-load.r
+  :DATE:     2010-08-12
+  :END:
+
+evaluate this
+#+begin_src emacs-lisp :results silent :tangle no
+  (setq org-babel-post-tangle-hook nil)
+  (add-hook 'org-babel-post-tangle-hook
+            (lambda () (ess-load-file (buffer-file-name))))
+#+end_src
+
+then tangle
+
+#+begin_src R :comments yes
+x &lt;- 10
+#+end_src
+
+#+begin_src R
+ y &lt;- 9
+#+end_src
+
+#+begin_src R :tangle file2.R
+ y &lt;- 9
+#+end_src
+
+</pre>
+  </body>
+</html>

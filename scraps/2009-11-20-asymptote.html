@@ -1,0 +1,54 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<!-- Created by htmlize-1.36 in css mode. -->
+<html>
+  <head>
+    <title> *temp*</title>
+    <style type="text/css">
+    <!--
+      body {
+        color: #E6E1DC;
+        background-color: #232323;
+      }
+
+      a {
+        color: inherit;
+        background-color: inherit;
+        font: inherit;
+        text-decoration: inherit;
+      }
+      a:hover {
+        text-decoration: underline;
+      }
+    -->
+    </style>
+  </head>
+  <body>
+    <pre>
+** asymptote
+   :PROPERTIES:
+   :DATE:     2009-11-20
+   :END:
+
+#+begin_src asymptote :file asymptote-test.png :exports code
+  import graph;
+  
+  size(0,4cm);
+  
+  real f(real t) {return 1+cos(t);}
+  
+  path g=polargraph(f,0,2pi,operator ..)--cycle;
+  filldraw(g,pink);
+  
+  xaxis("$x$",above=true);
+  yaxis("$y$",above=true);
+  
+  dot("$(a,0)$",(1,0),N);
+  dot("$(2a,0)$",(2,0),N+E);
+#+end_src
+
+#+resname:
+[[file:asymptote-test.png]]
+
+</pre>
+  </body>
+</html>

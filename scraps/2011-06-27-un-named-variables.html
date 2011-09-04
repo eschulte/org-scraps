@@ -1,0 +1,53 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<!-- Created by htmlize-1.36 in css mode. -->
+<html>
+  <head>
+    <title> *temp*</title>
+    <style type="text/css">
+    <!--
+      body {
+        color: #E6E1DC;
+        background-color: #232323;
+      }
+
+      a {
+        color: inherit;
+        background-color: inherit;
+        font: inherit;
+        text-decoration: inherit;
+      }
+      a:hover {
+        text-decoration: underline;
+      }
+    -->
+    </style>
+  </head>
+  <body>
+    <pre>
+** un-named variables
+   :PROPERTIES:
+   :DATE:     2011-06-27
+   :END:
+
+#+source: square
+#+begin_src emacs-lisp :var it=0
+  (* it it)
+#+end_src
+
+#+call: square(8)
+
+first we can name the argument with call_square(it=4) =16=
+
+then we can pass the argument unnamed with call_square(4) =16=
+
+#+source: minus
+#+begin_src emacs-lisp :var a=0 :var b=0
+  (- a b)
+#+end_src
+
+To ensure that these arguments are passed in the correct order we can
+use the following call_minus(8, 4) =-4=
+
+</pre>
+  </body>
+</html>

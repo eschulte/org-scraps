@@ -1,0 +1,59 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<!-- Created by htmlize-1.36 in css mode. -->
+<html>
+  <head>
+    <title> *temp*</title>
+    <style type="text/css">
+    <!--
+      body {
+        color: #E6E1DC;
+        background-color: #232323;
+      }
+
+      a {
+        color: inherit;
+        background-color: inherit;
+        font: inherit;
+        text-decoration: inherit;
+      }
+      a:hover {
+        text-decoration: underline;
+      }
+    -->
+    </style>
+  </head>
+  <body>
+    <pre>
+** passing elisp-looking variables to code blocks
+   :PROPERTIES:
+   :DATE:     2011-02-27
+   :END:
+#+begin_src perl :var it="(+ 1 1)" :results output
+  printf "passed in %s", $it
+#+end_src
+
+#+results:
+: passed in (+ 1 1)
+
+#+results: elisp-looking-table
+| 1 | (+ 1 1) |
+| 2 | (a b c) |
+| 3 | (+ 3 3) |
+
+#+begin_src perl :var data=elisp-looking-table[1,1]
+  $data
+#+end_src
+
+#+results:
+: (a b c)
+
+#+begin_src emacs-lisp :var data=elisp-looking-table[1,1]
+  data
+#+end_src
+
+#+results:
+: (a b c)
+
+</pre>
+  </body>
+</html>

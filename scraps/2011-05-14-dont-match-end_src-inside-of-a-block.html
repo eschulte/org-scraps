@@ -1,0 +1,42 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<!-- Created by htmlize-1.36 in css mode. -->
+<html>
+  <head>
+    <title> *temp*</title>
+    <style type="text/css">
+    <!--
+      body {
+        color: #E6E1DC;
+        background-color: #232323;
+      }
+
+      a {
+        color: inherit;
+        background-color: inherit;
+        font: inherit;
+        text-decoration: inherit;
+      }
+      a:hover {
+        text-decoration: underline;
+      }
+    -->
+    </style>
+  </head>
+  <body>
+    <pre>
+** don't match end_src inside of a block
+   :PROPERTIES:
+   :DATE:     2011-05-14
+   :END:
+
+#+srcname: the_issue
+#+begin_src sh :results output
+  echo '#+end_src'
+#+end_src
+
+#+results: the_issue
+: #+end_src block
+
+</pre>
+  </body>
+</html>

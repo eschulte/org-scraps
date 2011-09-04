@@ -1,0 +1,65 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<!-- Created by htmlize-1.36 in css mode. -->
+<html>
+  <head>
+    <title> *temp*</title>
+    <style type="text/css">
+    <!--
+      body {
+        color: #E6E1DC;
+        background-color: #232323;
+      }
+
+      a {
+        color: inherit;
+        background-color: inherit;
+        font: inherit;
+        text-decoration: inherit;
+      }
+      a:hover {
+        text-decoration: underline;
+      }
+    -->
+    </style>
+  </head>
+  <body>
+    <pre>
+** continued code blocks
+   :PROPERTIES:
+   :tangle:   yes
+   :comments: yes
+   :DATE:     2011-06-10
+   :END:
+#+source: foo
+#+begin_src emacs-lisp
+  (message "foo:%S" 1)
+#+end_src
+
+#+begin_src emacs-lisp
+  (message "un-named")
+#+end_src
+
+#+source: bar
+#+begin_src emacs-lisp
+  (message "bar:%S" 1)
+#+end_src
+
+#+source: foo
+#+begin_src emacs-lisp
+  (message "foo:%S" 2)
+#+end_src
+
+#+source: bar
+#+begin_src emacs-lisp
+  (message "bar:%S" 2)
+#+end_src
+
+#+begin_src emacs-lisp :tangle no :results silent
+  (with-temp-buffer
+    (insert-file-contents "scraps.el")
+    (eval-buffer))
+#+end_src
+
+</pre>
+  </body>
+</html>

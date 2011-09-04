@@ -1,0 +1,56 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<!-- Created by htmlize-1.36 in css mode. -->
+<html>
+  <head>
+    <title> *temp*</title>
+    <style type="text/css">
+    <!--
+      body {
+        color: #E6E1DC;
+        background-color: #232323;
+      }
+
+      a {
+        color: inherit;
+        background-color: inherit;
+        font: inherit;
+        text-decoration: inherit;
+      }
+      a:hover {
+        text-decoration: underline;
+      }
+    -->
+    </style>
+  </head>
+  <body>
+    <pre>
+** exporting cache and noweb
+   :PROPERTIES:
+   :DATE:     2011-02-27
+   :END:
+#+srcname: test_sleep
+#+begin_src R :session :exports code
+  Sys.sleep(time=5)
+  1:10
+#+end_src
+
+#+srcname: test_sleep
+#+begin_src R :session :exports results :noweb yes :cache yes
+  &lt;&lt;test_sleep&gt;&gt;
+#+end_src
+
+#+results[e2c9e6c2f84563b590a765502057d92463e50182]: test_sleep
+|  1 |
+|  2 |
+|  3 |
+|  4 |
+|  5 |
+|  6 |
+|  7 |
+|  8 |
+|  9 |
+| 10 |
+
+</pre>
+  </body>
+</html>

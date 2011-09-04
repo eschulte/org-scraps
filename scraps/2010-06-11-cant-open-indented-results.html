@@ -1,0 +1,61 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<!-- Created by htmlize-1.36 in css mode. -->
+<html>
+  <head>
+    <title> *temp*</title>
+    <style type="text/css">
+    <!--
+      body {
+        color: #E6E1DC;
+        background-color: #232323;
+      }
+
+      a {
+        color: inherit;
+        background-color: inherit;
+        font: inherit;
+        text-decoration: inherit;
+      }
+      a:hover {
+        text-decoration: underline;
+      }
+    -->
+    </style>
+  </head>
+  <body>
+    <pre>
+** can't open indented results
+   :PROPERTIES:
+   :DATE:     2010-06-11
+   :END:
+
+   #+begin_src latex :packages '(("" "tikz") ("active,tightpage" "preview")) :file recursion.pdf
+     \begin{preview}
+     \ovalbox{
+     \begin{tikzpicture}
+     \node{$n$}
+       child {
+         node{$\left(\frac{n}{2}\right)^2$}
+           child{
+             node{$\left(\frac{n}{4}\right)^2$}
+             node{$\left(\frac{n}{4}\right)^2$}
+           }
+         }
+       child{
+         node{$\left(\frac{n}{2}\right)^2$}
+         child{
+           node{$\left(\frac{n}{4}\right)^2$}
+           node{$\left(\frac{n}{4}\right)^2$}
+         }
+       };
+     \end{tikzpicture}
+     }
+     \end{preview}
+   #+end_src
+
+   #+results:
+   [[file:recursion.pdf]]
+
+</pre>
+  </body>
+</html>

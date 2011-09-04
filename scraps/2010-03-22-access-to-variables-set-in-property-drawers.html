@@ -1,0 +1,52 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<!-- Created by htmlize-1.36 in css mode. -->
+<html>
+  <head>
+    <title> *temp*</title>
+    <style type="text/css">
+    <!--
+      body {
+        color: #E6E1DC;
+        background-color: #232323;
+      }
+
+      a {
+        color: inherit;
+        background-color: inherit;
+        font: inherit;
+        text-decoration: inherit;
+      }
+      a:hover {
+        text-decoration: underline;
+      }
+    -->
+    </style>
+  </head>
+  <body>
+    <pre>
+** access to variables set in property drawers
+   :PROPERTIES:
+   :special:  89
+   :text: schulte
+   :DATE:     2010-03-22
+   :END:
+
+: "(org-entry-get nil "special" t)"
+
+#+begin_src emacs-lisp :var special=(string-to-number (org-entry-get nil "special" t))
+  (+ special 1)
+#+end_src
+
+#+results:
+: 90
+
+#+begin_src emacs-lisp :var special=(org-entry-get nil "text" t)
+  special  
+#+end_src
+
+#+results:
+: schulte
+
+</pre>
+  </body>
+</html>

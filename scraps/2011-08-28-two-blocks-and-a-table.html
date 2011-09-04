@@ -1,0 +1,51 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<!-- Created by htmlize-1.36 in css mode. -->
+<html>
+  <head>
+    <title> *temp*</title>
+    <style type="text/css">
+    <!--
+      body {
+        color: #E6E1DC;
+        background-color: #232323;
+      }
+
+      a {
+        color: inherit;
+        background-color: inherit;
+        font: inherit;
+        text-decoration: inherit;
+      }
+      a:hover {
+        text-decoration: underline;
+      }
+    -->
+    </style>
+  </head>
+  <body>
+    <pre>
+** two blocks and a table
+   :PROPERTIES:
+   :DATE:     2011-08-28
+   :END:
+
+#+source: stuff
+#+begin_src sh
+  echo 1
+  echo 2
+  echo 3
+#+end_src
+
+#+source: last-of-stuff
+#+begin_src sh :var input=stuff
+  echo "$input" |tail -1
+#+end_src
+
+| one |
+| two |
+| 3   |
+#+TBLFM: @3$1='(sbe last-of-stuff)
+
+</pre>
+  </body>
+</html>

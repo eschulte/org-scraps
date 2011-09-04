@@ -1,0 +1,124 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<!-- Created by htmlize-1.36 in css mode. -->
+<html>
+  <head>
+    <title> *temp*</title>
+    <style type="text/css">
+    <!--
+      body {
+        color: #E6E1DC;
+        background-color: #232323;
+      }
+
+      a {
+        color: inherit;
+        background-color: inherit;
+        font: inherit;
+        text-decoration: inherit;
+      }
+      a:hover {
+        text-decoration: underline;
+      }
+    -->
+    </style>
+  </head>
+  <body>
+    <pre>
+** code results
+   :PROPERTIES:
+   :DATE:     2009-11-20
+   :END:
+*** emacs lisp
+    :PROPERTIES:
+    :DATE:     2009-11-20
+    :END:
+#+begin_src emacs-lisp :results code
+  (mapcar (lambda (el) (lambda (item) (+ item el))) '(1 2 3 4 5))
+#+end_src
+
+#+resname:
+#+BEGIN_SRC emacs-lisp
+((lambda
+   (item)
+   (+ item el))
+ (lambda
+   (item)
+   (+ item el))
+ (lambda
+   (item)
+   (+ item el))
+ (lambda
+   (item)
+   (+ item el))
+ (lambda
+   (item)
+   (+ item el)))
+#+END_SRC
+
+#+begin_src emacs-lisp :results code
+  (mapcar (lambda (el) (* el el)) '(1 2 3 89))
+#+end_src
+
+#+resname:
+#+BEGIN_SRC emacs-lisp
+(1 4 9 7921)
+#+END_SRC
+
+*** ruby
+    :PROPERTIES:
+    :DATE:     2009-11-20
+    :END:
+
+#+begin_src ruby :results code
+  [1, 2, 33, 4].map{|n| "the number #{n}"}
+#+end_src
+
+#+resname:
+#+BEGIN_SRC ruby
+  ["the number 1", "the number 2", "the number 33", "the number 4"]
+#+END_SRC
+
+#+begin_src ruby :session :results code 
+  [1, 2, 33, 4].map{|n| n + 10 }
+#+end_src
+
+#+resname:
+#+BEGIN_SRC ruby
+[11, 12, 43, 14]
+#+END_SRC
+
+*** python
+    :PROPERTIES:
+    :DATE:     2009-11-20
+    :END:
+
+#+begin_src python :results code
+  ['one', 'two', 'three']
+#+end_src
+
+#+resname:
+#+BEGIN_SRC python
+['one', 'two', 'three']
+#+END_SRC
+
+#+begin_src python :results code
+  [1, 2, 33, 4]
+#+end_src
+
+#+resname:
+#+BEGIN_SRC python
+[1, 2, 33, 4]
+#+END_SRC
+
+#+begin_src python :session :results code 
+  [1, 2, 33, 4]
+#+end_src
+
+#+resname:
+#+BEGIN_SRC python
+[1, 2, 33, 4]
+#+END_SRC
+
+</pre>
+  </body>
+</html>

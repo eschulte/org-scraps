@@ -1,0 +1,59 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<!-- Created by htmlize-1.36 in css mode. -->
+<html>
+  <head>
+    <title> *temp*</title>
+    <style type="text/css">
+    <!--
+      body {
+        color: #E6E1DC;
+        background-color: #232323;
+      }
+
+      a {
+        color: inherit;
+        background-color: inherit;
+        font: inherit;
+        text-decoration: inherit;
+      }
+      a:hover {
+        text-decoration: underline;
+      }
+    -->
+    </style>
+  </head>
+  <body>
+    <pre>
+** python session
+   :PROPERTIES:
+   :DATE:     2011-06-19
+   :END:
+#+begin_src python :results output :session mypy 
+x = 1
+for i in range(1,5):
+  x = x + i
+  print x
+
+print "I throw an error"
+#+end_src
+
+#+results:
+: 
+: ... ... ... 2
+: 4
+: 7
+: 11
+: I throw an error
+
+#+begin_src python :results output :session
+  print y
+#+end_src
+
+#+results:
+: Traceback (most recent call last):
+:   File "&lt;stdin&gt;", line 1, in &lt;module&gt;
+: NameError: name 'y' is not defined
+
+</pre>
+  </body>
+</html>

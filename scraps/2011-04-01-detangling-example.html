@@ -1,0 +1,49 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<!-- Created by htmlize-1.36 in css mode. -->
+<html>
+  <head>
+    <title> *temp*</title>
+    <style type="text/css">
+    <!--
+      body {
+        color: #E6E1DC;
+        background-color: #232323;
+      }
+
+      a {
+        color: inherit;
+        background-color: inherit;
+        font: inherit;
+        text-decoration: inherit;
+      }
+      a:hover {
+        text-decoration: underline;
+      }
+    -->
+    </style>
+  </head>
+  <body>
+    <pre>
+** detangling example
+   :PROPERTIES:
+   :tangle:   yes
+   :comments: yes
+   :shebang:  #!/bin/sh
+   :ID:       7a22cf71-6be3-4fca-a700-4c8be8237303
+   :DATE:     2011-04-01
+   :END:
+
+#+source: sh-for-tangling
+#+begin_src sh
+  echo "this is the `sh-for-tangling' code block"
+  num=`expr 1 + 1`
+  echo "the value of num is $num"
+#+end_src
+
+#+begin_src sh
+  echo "this is an unnamed code block"
+#+end_src
+
+</pre>
+  </body>
+</html>

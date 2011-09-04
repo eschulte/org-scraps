@@ -1,0 +1,54 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<!-- Created by htmlize-1.36 in css mode. -->
+<html>
+  <head>
+    <title> *temp*</title>
+    <style type="text/css">
+    <!--
+      body {
+        color: #E6E1DC;
+        background-color: #232323;
+      }
+
+      a {
+        color: inherit;
+        background-color: inherit;
+        font: inherit;
+        text-decoration: inherit;
+      }
+      a:hover {
+        text-decoration: underline;
+      }
+    -->
+    </style>
+  </head>
+  <body>
+    <pre>
+** creating a directory when needed for tangling
+   :PROPERTIES:
+   :DATE:     2011-01-19
+   :END:
+#+begin_src clojure :tangle (prog1 "src/foo.clj" (make-directory "src" "."))
+  (ns something)
+#+end_src
+
+a helper function for the above
+#+begin_src emacs-lisp
+  (defun mkdir-p (file &amp;optional dir)
+    "Create any parent directories of FILE if missing and return FILE."
+    (make-directory (file-name-directory file) (or dir ".")) file)
+#+end_src
+
+allows the following
+#+begin_src clojure :tangle (mkdir-p "src/foo.clj")
+  (ns something)
+#+end_src
+
+There is now a new header argument controlling this behavior
+#+begin_src emacs-lisp :mkdirp yes :tangle novel/nested/directories/finally.clj
+  (message "contents")
+#+end_src
+
+</pre>
+  </body>
+</html>

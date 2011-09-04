@@ -1,0 +1,48 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<!-- Created by htmlize-1.36 in css mode. -->
+<html>
+  <head>
+    <title> *temp*</title>
+    <style type="text/css">
+    <!--
+      body {
+        color: #E6E1DC;
+        background-color: #232323;
+      }
+
+      a {
+        color: inherit;
+        background-color: inherit;
+        font: inherit;
+        text-decoration: inherit;
+      }
+      a:hover {
+        text-decoration: underline;
+      }
+    -->
+    </style>
+  </head>
+  <body>
+    <pre>
+** latex headers in latex code blocks
+   :PROPERTIES:
+   :DATE:     2010-10-26
+   :END:
+
+#+begin_src latex :headers \usepackage{lmodern} :file name1.pdf
+  Eric Schulte
+#+end_src
+
+#+results:
+[[file:name1.pdf]]
+
+#+begin_src latex :headers '("\\usepackage{mathpazo}" "\\usepackage{fullpage}") :file name2.pdf
+  Eric Schulte
+#+end_src
+
+#+results:
+[[file:name2.pdf]]
+
+</pre>
+  </body>
+</html>

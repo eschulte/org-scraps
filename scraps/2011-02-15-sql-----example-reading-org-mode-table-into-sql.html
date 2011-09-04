@@ -1,0 +1,48 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<!-- Created by htmlize-1.36 in css mode. -->
+<html>
+  <head>
+    <title> *temp*</title>
+    <style type="text/css">
+    <!--
+      body {
+        color: #E6E1DC;
+        background-color: #232323;
+      }
+
+      a {
+        color: inherit;
+        background-color: inherit;
+        font: inherit;
+        text-decoration: inherit;
+      }
+      a:hover {
+        text-decoration: underline;
+      }
+    -->
+    </style>
+  </head>
+  <body>
+    <pre>
+** SQL --- example reading org-mode table into sql
+   :PROPERTIES:
+   :DATE:     2011-02-15
+   :END:
+#+tblname: example-table-for-sql
+| a |  b |
+|---+----|
+| 1 | 10 |
+| 2 | 11 |
+| 3 | 12 |
+| 4 | 13 |
+| 5 | 14 |
+| 6 | 15 |
+
+#+headers: :var table=example-table-for-sql
+#+begin_src sql :engine mysql
+load data infile "$table" into mytable;
+#+end_src
+
+</pre>
+  </body>
+</html>

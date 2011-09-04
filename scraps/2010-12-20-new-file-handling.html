@@ -1,0 +1,86 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<!-- Created by htmlize-1.36 in css mode. -->
+<html>
+  <head>
+    <title> *temp*</title>
+    <style type="text/css">
+    <!--
+      body {
+        color: #E6E1DC;
+        background-color: #232323;
+      }
+
+      a {
+        color: inherit;
+        background-color: inherit;
+        font: inherit;
+        text-decoration: inherit;
+      }
+      a:hover {
+        text-decoration: underline;
+      }
+    -->
+    </style>
+  </head>
+  <body>
+    <pre>
+** new file handling
+   :PROPERTIES:
+   :DATE:     2010-12-20
+   :END:
+
+#+begin_src sh :sep , :file dirlisting
+  ls -l
+#+end_src
+
+#+results:
+[[file:dirlisting]]
+
+#+begin_src ruby :file ruby-out
+  [[1, 2, 3, 4],
+   [2, 4, 6, 8]]
+#+end_src
+
+#+results:
+[[file:ruby-out]]
+
+#+begin_src emacs-lisp :results file :results append
+  (let ((today (replace-regexp-in-string "[ \t]" "-" (current-time-string))))
+    (with-temp-file today
+      (insert (message "I'm feeling %s"
+                       (nth (random 3) (list "good" "bad" "just fine")))))
+    today)
+#+end_src
+
+#+results:
+[[file:Mon-Dec-20-17:27:52-2010]]
+
+from http://www.graphviz.org/Gallery/directed/fsm.gv.txt
+#+begin_src dot :file fsa.png
+  digraph finite_state_machine {
+          rankdir=LR;
+          size="8,5"
+          node [shape = doublecircle]; LR_0 LR_3 LR_4 LR_8;
+          node [shape = circle];
+          LR_0 -&gt; LR_2 [ label = "SS(B)" ];
+          LR_0 -&gt; LR_1 [ label = "SS(S)" ];
+          LR_1 -&gt; LR_3 [ label = "S($end)" ];
+          LR_2 -&gt; LR_6 [ label = "SS(b)" ];
+          LR_2 -&gt; LR_5 [ label = "SS(a)" ];
+          LR_2 -&gt; LR_4 [ label = "S(A)" ];
+          LR_5 -&gt; LR_7 [ label = "S(b)" ];
+          LR_5 -&gt; LR_5 [ label = "S(a)" ];
+          LR_6 -&gt; LR_6 [ label = "S(b)" ];
+          LR_6 -&gt; LR_5 [ label = "S(a)" ];
+          LR_7 -&gt; LR_8 [ label = "S(b)" ];
+          LR_7 -&gt; LR_5 [ label = "S(a)" ];
+          LR_8 -&gt; LR_6 [ label = "S(b)" ];
+          LR_8 -&gt; LR_5 [ label = "S(a)" ];
+  }
+#+end_src
+
+#+results:
+[[file:fsa.png]]
+</pre>
+  </body>
+</html>

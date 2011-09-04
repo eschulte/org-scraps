@@ -1,0 +1,46 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<!-- Created by htmlize-1.36 in css mode. -->
+<html>
+  <head>
+    <title> *temp*</title>
+    <style type="text/css">
+    <!--
+      body {
+        color: #E6E1DC;
+        background-color: #232323;
+      }
+
+      a {
+        color: inherit;
+        background-color: inherit;
+        font: inherit;
+        text-decoration: inherit;
+      }
+      a:hover {
+        text-decoration: underline;
+      }
+    -->
+    </style>
+  </head>
+  <body>
+    <pre>
+** results lines for function calls
+   :PROPERTIES:
+   :DATE:     2010-02-15
+   :END:
+
+#+call: fibonacci(input=5) :resname eric
+
+#+results:
+: 8
+
+#+begin_src emacs-lisp :var fib=fibonacci(input=5)
+  (message "fib(5)=%d" fib)
+#+end_src
+
+#+results:
+: fib(5)=8
+
+</pre>
+  </body>
+</html>

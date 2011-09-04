@@ -1,0 +1,65 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<!-- Created by htmlize-1.36 in css mode. -->
+<html>
+  <head>
+    <title> *temp*</title>
+    <style type="text/css">
+    <!--
+      body {
+        color: #E6E1DC;
+        background-color: #232323;
+      }
+
+      a {
+        color: inherit;
+        background-color: inherit;
+        font: inherit;
+        text-decoration: inherit;
+      }
+      a:hover {
+        text-decoration: underline;
+      }
+    -->
+    </style>
+  </head>
+  <body>
+    <pre>
+*** emacs lisp
+    :PROPERTIES:
+    :DATE:     2009-11-20
+    :END:
+#+begin_src emacs-lisp :results code
+  (mapcar (lambda (el) (lambda (item) (+ item el))) '(1 2 3 4 5))
+#+end_src
+
+#+resname:
+#+BEGIN_SRC emacs-lisp
+((lambda
+   (item)
+   (+ item el))
+ (lambda
+   (item)
+   (+ item el))
+ (lambda
+   (item)
+   (+ item el))
+ (lambda
+   (item)
+   (+ item el))
+ (lambda
+   (item)
+   (+ item el)))
+#+END_SRC
+
+#+begin_src emacs-lisp :results code
+  (mapcar (lambda (el) (* el el)) '(1 2 3 89))
+#+end_src
+
+#+resname:
+#+BEGIN_SRC emacs-lisp
+(1 4 9 7921)
+#+END_SRC
+
+</pre>
+  </body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<!-- Created by htmlize-1.36 in css mode. -->
+<html>
+  <head>
+    <title> *temp*</title>
+    <style type="text/css">
+    <!--
+      body {
+        color: #E6E1DC;
+        background-color: #232323;
+      }
+
+      a {
+        color: inherit;
+        background-color: inherit;
+        font: inherit;
+        text-decoration: inherit;
+      }
+      a:hover {
+        text-decoration: underline;
+      }
+    -->
+    </style>
+  </head>
+  <body>
+    <pre>
+** header arguments on call line
+   :PROPERTIES:
+   :DATE:     2010-09-09
+   :END:
+#+source: eight
+#+begin_src R
+  8
+#+end_src
+
+#+call: eight() :results vector
+
+#+results: eight()
+| 8 |
+
+maybe the following with the new proposed header arguments
+
+#+call: eight[:session *R*]() :results vector
+
+</pre>
+  </body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<!-- Created by htmlize-1.36 in css mode. -->
+<html>
+  <head>
+    <title> *temp*</title>
+    <style type="text/css">
+    <!--
+      body {
+        color: #E6E1DC;
+        background-color: #232323;
+      }
+
+      a {
+        color: inherit;
+        background-color: inherit;
+        font: inherit;
+        text-decoration: inherit;
+      }
+      a:hover {
+        text-decoration: underline;
+      }
+    -->
+    </style>
+  </head>
+  <body>
+    <pre>
+** input from an example block
+   :PROPERTIES:
+   :DATE:     2010-07-13
+   :END:
+#+results: lorem
+#+begin_example 
+  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+  eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+  enimad minim veniam, quis nostrud exercitation ullamco laboris nisi
+  ut aliquip ex ea commodo consequat. Duis aute irure dolor in
+  reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+  pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
+  culpa qui officia deserunt mollit anim id est laborum.
+#+end_example
+
+#+begin_src emacs-lisp :var lorem=lorem
+  (message "%d words in Lorem" (length (split-string lorem)))
+#+end_src
+
+#+results:
+: 68 words in Lorem
+
+#+results: 1D
+| 1 |
+| 2 |
+| 3 |
+| 4 |
+
+#+begin_src emacs-lisp :var lst=1D[:,0]
+  lst
+#+end_src
+
+#+results:
+: 1
+
+</pre>
+  </body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<!-- Created by htmlize-1.36 in css mode. -->
+<html>
+  <head>
+    <title> *temp*</title>
+    <style type="text/css">
+    <!--
+      body {
+        color: #E6E1DC;
+        background-color: #232323;
+      }
+
+      a {
+        color: inherit;
+        background-color: inherit;
+        font: inherit;
+        text-decoration: inherit;
+      }
+      a:hover {
+        text-decoration: underline;
+      }
+    -->
+    </style>
+  </head>
+  <body>
+    <pre>
+** a table with tags
+   :PROPERTIES:
+   :DATE:     2011-08-23
+   :END:
+
+#+TBLNAME: sandbox           :noexport:
+| 1 |         2 | 3 |
+| 4 | org-babel | 6 |
+
+#+begin_src emacs-lisp :var table=sandbox
+  (message "%S" table)
+#+end_src
+
+#+results:
+: ((1 2 3) (4 "org-babel" 6))
+
+</pre>
+  </body>
+</html>

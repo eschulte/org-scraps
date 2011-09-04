@@ -1,0 +1,67 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<!-- Created by htmlize-1.36 in css mode. -->
+<html>
+  <head>
+    <title> *temp*</title>
+    <style type="text/css">
+    <!--
+      body {
+        color: #E6E1DC;
+        background-color: #232323;
+      }
+
+      a {
+        color: inherit;
+        background-color: inherit;
+        font: inherit;
+        text-decoration: inherit;
+      }
+      a:hover {
+        text-decoration: underline;
+      }
+    -->
+    </style>
+  </head>
+  <body>
+    <pre>
+** initial javascript support
+   :PROPERTIES:
+   :DATE:     2010-08-27
+   :END:
+using node.js
+
+#+begin_src js
+  var n = 0;
+  n = n+1;
+  return n
+#+end_src
+
+#+results:
+: 1
+
+#+source: cars
+#+begin_src js
+  var cars = ["Saab","Volvo","BMW"];
+  return cars;
+#+end_src
+
+#+results: cars
+| Saab | Volvo | BMW |
+
+#+begin_src js :var cars=cars
+  return cars[0][0];
+#+end_src
+
+#+results:
+: Saab
+
+#+begin_src js :var cars=cars
+  return cars[0].length;
+#+end_src
+
+#+results:
+: 3
+
+</pre>
+  </body>
+</html>

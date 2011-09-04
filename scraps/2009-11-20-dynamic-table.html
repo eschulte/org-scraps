@@ -1,0 +1,57 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<!-- Created by htmlize-1.36 in css mode. -->
+<html>
+  <head>
+    <title> *temp*</title>
+    <style type="text/css">
+    <!--
+      body {
+        color: #E6E1DC;
+        background-color: #232323;
+      }
+
+      a {
+        color: inherit;
+        background-color: inherit;
+        font: inherit;
+        text-decoration: inherit;
+      }
+      a:hover {
+        text-decoration: underline;
+      }
+    -->
+    </style>
+  </head>
+  <body>
+    <pre>
+** dynamic table
+   :PROPERTIES:
+   :DATE:     2009-11-20
+   :END:
+#+TBLNAME: todays-clock
+#+BEGIN: clocktable :maxlevel 2 :block today :scope tree1 :link t
+Clock summary at [2009-09-15 Tue 08:51], for Tuesday, September 15, 2009.
+
+| L | Headline     | Time   |      |
+|---+--------------+--------+------|
+|   | *Total time* | *1:10* |      |
+|---+--------------+--------+------|
+| 1 | [[file:/Users/eschulte/Desktop/test.org::top][top]]          | 1:10   |    1 |
+| 2 | [[file:/Users/eschulte/Desktop/test.org::show%20all][show all]]     |        | 1:00 |
+| 2 | [[file:/Users/eschulte/Desktop/test.org::later][later]]        |        | 0:10 |
+#+END: clocktable
+
+#+begin_src emacs-lisp :var data=todays-clock(1,1)
+(message "table is %S" data)
+#+end_src
+
+#+resname:
+: table is (("L" "Headline" "Time" "") hline ("" "*Total time*" "*1:10*" "") hline (1 "[[file:/Users/eschulte/Desktop/test.org::top][top]]" "1:10" 1) (2 "[[file:/Users/eschulte/Desktop/test.org::show%20all][show all]]" "" "1:00") (2 "[[file:/Users/eschulte/Desktop/test.org::later][later]]" "" "0:10"))
+
+#+begin_src R :session R-pie-example :var times=todays-clock :results silent
+pie(times[2:length(times),4], labels = times[2:length(times),2])
+#+end_src
+
+</pre>
+  </body>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<!-- Created by htmlize-1.36 in css mode. -->
+<html>
+  <head>
+    <title> *temp*</title>
+    <style type="text/css">
+    <!--
+      body {
+        color: #E6E1DC;
+        background-color: #232323;
+      }
+
+      a {
+        color: inherit;
+        background-color: inherit;
+        font: inherit;
+        text-decoration: inherit;
+      }
+      a:hover {
+        text-decoration: underline;
+      }
+    -->
+    </style>
+  </head>
+  <body>
+    <pre>
+** emacs-lisp printing with output to string
+   :PROPERTIES:
+   :DATE:     2011-04-10
+   :END:
+
+#+begin_src emacs-lisp :results output
+  (let ((dog (sqrt 2))
+        (cat 7))
+    (print (format "%s %f" "Dog: " (eval dog)))
+    (print (format "%s %d" "Cat: " (eval cat)) nil)
+    (print "Fish."))
+#+end_src
+
+#+results:
+: 
+: "Dog:  1.414214"
+: 
+: "Cat:  7"
+: 
+: "Fish."
+
+#+begin_src emacs-lisp
+  (let ((dog (sqrt 2))
+        (cat 7))
+    `((dog ,dog)
+      (cat ,cat)
+      (fish)))
+#+end_src
+
+#+results:
+| dog  | 1.4142135623730951 |
+| cat  |                  7 |
+| fish |                    |
+
+</pre>
+  </body>
+</html>

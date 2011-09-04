@@ -1,0 +1,49 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<!-- Created by htmlize-1.36 in css mode. -->
+<html>
+  <head>
+    <title> *temp*</title>
+    <style type="text/css">
+    <!--
+      body {
+        color: #E6E1DC;
+        background-color: #232323;
+      }
+
+      a {
+        color: inherit;
+        background-color: inherit;
+        font: inherit;
+        text-decoration: inherit;
+      }
+      a:hover {
+        text-decoration: underline;
+      }
+    -->
+    </style>
+  </head>
+  <body>
+    <pre>
+** simple sbe example
+   :PROPERTIES:
+   :DATE:     2011-07-10
+   :END:
+
+|   1 |
+|   2 |
+|   3 |
+|   4 |
+|   5 |
+|   6 |
+| 3.5 |
+#+TBLFM: @7$1='(sbe mean (lst @1..@6))
+
+#+source: mean
+#+begin_src emacs-lisp :var lst=()
+  (let ((num (car lst)) (nums (cdr lst)))
+    (/ (float (+ num (apply #'+ nums))) (1+ (length nums))))
+#+end_src
+
+</pre>
+  </body>
+</html>

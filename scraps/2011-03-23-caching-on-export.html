@@ -1,0 +1,44 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<!-- Created by htmlize-1.36 in css mode. -->
+<html>
+  <head>
+    <title> *temp*</title>
+    <style type="text/css">
+    <!--
+      body {
+        color: #E6E1DC;
+        background-color: #232323;
+      }
+
+      a {
+        color: inherit;
+        background-color: inherit;
+        font: inherit;
+        text-decoration: inherit;
+      }
+      a:hover {
+        text-decoration: underline;
+      }
+    -->
+    </style>
+  </head>
+  <body>
+    <pre>
+** caching on export
+   :PROPERTIES:
+   :DATE:     2011-03-23
+   :END:
+#+source: testcache
+#+begin_src R :cache yes :exports results
+  dat &lt;-  matrix(runif(12), 3, 4)
+  print(dat)
+#+end_src
+
+#+results[e7b83e61596da84f85c5a24e61569576c802f9a2]: testcache
+| 0.590091332094744 | 0.101750465808436 | 0.487125408137217 |  0.92315583024174 |
+| 0.483292032498866 | 0.427640072302893 | 0.974636133294553 | 0.995571716455743 |
+|  0.60190233332105 | 0.122638279106468 | 0.437959408387542 | 0.015639441087842 |
+
+</pre>
+  </body>
+</html>

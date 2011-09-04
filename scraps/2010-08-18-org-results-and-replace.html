@@ -1,0 +1,69 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<!-- Created by htmlize-1.36 in css mode. -->
+<html>
+  <head>
+    <title> *temp*</title>
+    <style type="text/css">
+    <!--
+      body {
+        color: #E6E1DC;
+        background-color: #232323;
+      }
+
+      a {
+        color: inherit;
+        background-color: inherit;
+        font: inherit;
+        text-decoration: inherit;
+      }
+      a:hover {
+        text-decoration: underline;
+      }
+    -->
+    </style>
+  </head>
+  <body>
+    <pre>
+** org results and replace
+   :PROPERTIES:
+   :DATE:     2010-08-18
+   :END:
+
+#+begin_src emacs-lisp :results org
+  "| 1 | 2 |
+| 2 | 3 |"
+#+end_src
+
+#+results:
+| 1 | 2 |
+| 2 | 3 |
+
+#+begin_src R
+  rnorm(1)
+#+end_src
+
+#+begin_src R
+  numbers &lt;- matrix(c(51,43,22,92,28,21,68,22,9),ncol=3,byrow=TRUE)
+  numbers
+#+end_src
+
+#+results:
+| 51 | 43 | 22 |
+| 92 | 28 | 21 |
+| 68 | 22 |  9 |
+
+#+begin_src R :colnames yes
+  numbers &lt;- matrix(c(51,43,22,92,28,21,68,22,9),ncol=3,byrow=TRUE)
+  numbers
+#+end_src
+
+#+results:
+| V1 | V2 | V3 |
+|----+----+----|
+| 51 | 43 | 22 |
+| 92 | 28 | 21 |
+| 68 | 22 |  9 |
+
+</pre>
+  </body>
+</html>

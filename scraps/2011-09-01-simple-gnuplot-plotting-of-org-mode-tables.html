@@ -1,0 +1,103 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<!-- Created by htmlize-1.36 in css mode. -->
+<html>
+  <head>
+    <title> *temp*</title>
+    <style type="text/css">
+    <!--
+      body {
+        color: #E6E1DC;
+        background-color: #232323;
+      }
+      .constant {
+        /* font-lock-constant-face */
+        color: #6D9CBE;
+      }
+      .keyword {
+        /* font-lock-keyword-face */
+        color: #CC7833;
+      }
+      .org-block-begin-line {
+        /* org-block-begin-line */
+        color: #BC9458;
+        font-style: italic;
+      }
+      .org-block-end-line {
+        /* org-block-end-line */
+        color: #BC9458;
+        font-style: italic;
+      }
+      .org-level-2 {
+        /* org-level-2 */
+        color: #b0c4de;
+      }
+      .org-meta-line {
+        /* org-meta-line */
+        color: #BC9458;
+        font-style: italic;
+      }
+      .org-property-value {
+      }
+      .org-special-keyword {
+        /* org-special-keyword */
+        color: #CC7833;
+      }
+      .org-table {
+        /* org-table */
+        color: #87cefa;
+      }
+      .type {
+        /* font-lock-type-face */
+        color: #ffffff;
+      }
+      .variable-name {
+        /* font-lock-variable-name-face */
+        color: #b0c4de;
+      }
+
+      a {
+        color: inherit;
+        background-color: inherit;
+        font: inherit;
+        text-decoration: inherit;
+      }
+      a:hover {
+        text-decoration: underline;
+      }
+    -->
+    </style>
+  </head>
+  <body>
+    <pre>
+<span class="org-level-2">** simple gnuplot plotting of Org-mode tables</span>
+<span class="org-special-keyword">   :PROPERTIES:</span>
+   <span class="org-special-keyword">:DATE:</span>     <span class="org-property-value">2011-09-01</span>
+<span class="org-special-keyword">   :END:</span>
+<span class="org-meta-line">#+tblname: gnuplot-testing
+</span><span class="org-table">| x |  y |</span>
+<span class="org-table">|---+----|</span>
+<span class="org-table">| 1 |  2 |</span>
+<span class="org-table">| 2 |  4 |</span>
+<span class="org-table">| 3 |  6 |</span>
+<span class="org-table">| 4 |  8 |</span>
+<span class="org-table">| 5 | 10 |</span>
+<span class="org-table">| 6 | 12 |</span>
+<span class="org-table">| 7 | 14 |</span>
+<span class="org-table">| 8 | 16 |</span>
+
+<span class="org-block-begin-line">#+begin_src gnuplot :var data=gnuplot-testing :file output.eps :exports both
+</span><span class="constant">set</span> term postscript
+<span class="constant">set</span> <span class="type">title</span> "test"
+<span class="constant">set</span> auto x
+<span class="constant">set</span> style data histogram
+<span class="constant">set</span> style fill solid border -1
+<span class="constant">set</span> boxwidth 0.9
+<span class="keyword">plot</span> <span class="variable-name">data</span> <span class="type">using </span>2:xtic(1)
+<span class="org-block-end-line">#+end_src
+</span>
+#+results:
+
+
+</pre>
+  </body>
+</html>

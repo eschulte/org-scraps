@@ -1,0 +1,48 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<!-- Created by htmlize-1.36 in css mode. -->
+<html>
+  <head>
+    <title> *temp*</title>
+    <style type="text/css">
+    <!--
+      body {
+        color: #E6E1DC;
+        background-color: #232323;
+      }
+
+      a {
+        color: inherit;
+        background-color: inherit;
+        font: inherit;
+        text-decoration: inherit;
+      }
+      a:hover {
+        text-decoration: underline;
+      }
+    -->
+    </style>
+  </head>
+  <body>
+    <pre>
+** noweb then variables
+   :PROPERTIES:
+   :DATE:     2011-01-13
+   :END:
+#+source: replaced-first
+#+begin_src latex
+  \begin{itemize}
+  \item first
+  \item data
+  \item third
+  \end{itemize}
+#+end_src
+
+#+begin_src latex :var data="second" :noweb yes
+  \section{ordinals}
+  \label{sec:ordinals}
+  &lt;&lt;replaced-first&gt;&gt;
+#+end_src
+
+</pre>
+  </body>
+</html>

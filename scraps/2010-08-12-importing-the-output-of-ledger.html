@@ -1,0 +1,53 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<!-- Created by htmlize-1.36 in css mode. -->
+<html>
+  <head>
+    <title> *temp*</title>
+    <style type="text/css">
+    <!--
+      body {
+        color: #E6E1DC;
+        background-color: #232323;
+      }
+
+      a {
+        color: inherit;
+        background-color: inherit;
+        font: inherit;
+        text-decoration: inherit;
+      }
+      a:hover {
+        text-decoration: underline;
+      }
+    -->
+    </style>
+  </head>
+  <body>
+    <pre>
+** importing the output of ledger
+   :PROPERTIES:
+   :DATE:     2010-08-12
+   :END:
+#+results: ledger-output
+#+begin_example 
+  09-Aug-21 CHEQUE : 9953055                    Expenses:Unknown                                    166.70 EUR            166.70 EUR
+  09-Sep-17 CHEQUE : 7691785                    Expenses:Unknown                                    100.00 EUR            266.70 EUR
+  09-Oct-16 REMISE CHEQUE N 8686318 001 105     Expenses:Unknown                                   -525.00 EUR           -258.30 EUR
+#+end_example
+
+#+begin_src emacs-lisp :var ledger=ledger-output
+  (with-temp-buffer
+    (insert ledger)
+    (message ledger)
+    (org-table-convert-region (point-min) (point-max) 2)
+    (org-table-to-lisp))
+#+end_src
+
+#+results:
+| 09-Aug-21 CHEQUE : 9953055                | Expenses:Unknown | 166.70 EUR  | 166.70 EUR  |
+| 09-Sep-17 CHEQUE : 7691785                | Expenses:Unknown | 100.00 EUR  | 266.70 EUR  |
+| 09-Oct-16 REMISE CHEQUE N 8686318 001 105 | Expenses:Unknown | -525.00 EUR | -258.30 EUR |
+
+</pre>
+  </body>
+</html>

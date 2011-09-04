@@ -1,0 +1,43 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<!-- Created by htmlize-1.36 in css mode. -->
+<html>
+  <head>
+    <title> *temp*</title>
+    <style type="text/css">
+    <!--
+      body {
+        color: #E6E1DC;
+        background-color: #232323;
+      }
+
+      a {
+        color: inherit;
+        background-color: inherit;
+        font: inherit;
+        text-decoration: inherit;
+      }
+      a:hover {
+        text-decoration: underline;
+      }
+    -->
+    </style>
+  </head>
+  <body>
+    <pre>
+** haskell and tables
+   :PROPERTIES:
+   :DATE:     2009-11-20
+   :END:
+#+begin_src haskell
+  sumListCond :: Int -&gt; Int -&gt; [Int] -&gt; Int
+  sumListCond l n xs
+      | foldl (+) 0 (take l xs) &lt;= n = sumListCond (l + 1) n xs
+      | otherwise = foldl (+) 0 (take (l - 1) xs)
+#+end_src
+#+begin_src oz
+  
+#+end_src
+
+</pre>
+  </body>
+</html>

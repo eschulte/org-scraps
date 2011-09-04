@@ -1,0 +1,55 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<!-- Created by htmlize-1.36 in css mode. -->
+<html>
+  <head>
+    <title> *temp*</title>
+    <style type="text/css">
+    <!--
+      body {
+        color: #E6E1DC;
+        background-color: #232323;
+      }
+
+      a {
+        color: inherit;
+        background-color: inherit;
+        font: inherit;
+        text-decoration: inherit;
+      }
+      a:hover {
+        text-decoration: underline;
+      }
+    -->
+    </style>
+  </head>
+  <body>
+    <pre>
+** indexing into a list variable
+   :PROPERTIES:
+   :DATE:     2011-07-06
+   :END:
+
+#+begin_src emacs-lisp :var lst='(0 1 2)
+  (first lst)
+#+end_src
+
+#+results:
+: 0
+
+or as a noweb reference
+
+#+data: external-list
+- 0
+- 1
+- 2
+
+#+begin_src sh :noweb yes
+  echo &lt;&lt;external-list()[0]&gt;&gt;
+#+end_src
+
+#+results:
+: 0
+
+</pre>
+  </body>
+</html>

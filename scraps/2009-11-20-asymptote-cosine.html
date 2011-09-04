@@ -1,0 +1,56 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<!-- Created by htmlize-1.36 in css mode. -->
+<html>
+  <head>
+    <title> *temp*</title>
+    <style type="text/css">
+    <!--
+      body {
+        color: #E6E1DC;
+        background-color: #232323;
+      }
+
+      a {
+        color: inherit;
+        background-color: inherit;
+        font: inherit;
+        text-decoration: inherit;
+      }
+      a:hover {
+        text-decoration: underline;
+      }
+    -->
+    </style>
+  </head>
+  <body>
+    <pre>
+** asymptote cosine
+   :PROPERTIES:
+   :DATE:     2009-11-20
+   :END:
+#+begin_src asymptote :exports code
+  import graph;
+  
+  size(0,4cm);
+  
+  real f(real t) {return cos(t);}
+  
+  path g=polargraph(f,0,2pi,operator ..)--cycle;
+  filldraw(g,pink);
+  
+  for(int i=0; i &lt; 8; ++i) {
+    real j = 0.125 + 0.125*i;
+    real h(real t) {return j;};
+    path k=polargraph(h, -(acos(j)), acos(j), operator ..);
+    draw(k,blue);
+  }
+  
+  xaxis("$x$",above=true);
+  yaxis("$y$",above=true);
+  
+  dot("$(pi,0)$",(1,0),N);
+#+end_src
+
+</pre>
+  </body>
+</html>

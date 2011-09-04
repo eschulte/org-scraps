@@ -1,0 +1,60 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<!-- Created by htmlize-1.36 in css mode. -->
+<html>
+  <head>
+    <title> *temp*</title>
+    <style type="text/css">
+    <!--
+      body {
+        color: #E6E1DC;
+        background-color: #232323;
+      }
+
+      a {
+        color: inherit;
+        background-color: inherit;
+        font: inherit;
+        text-decoration: inherit;
+      }
+      a:hover {
+        text-decoration: underline;
+      }
+    -->
+    </style>
+  </head>
+  <body>
+    <pre>
+** colnames with call lines
+   :PROPERTIES:
+   :DATE:     2011-03-29
+   :END:
+#+TBLNAME: data
+| x | parameter | value |
+|---+-----------+-------|
+| 0 | heat      |    30 |
+| 1 | heat      |    30 |
+
+#+source: func5
+#+begin_src R :var name=data :var a="one" :colnames yes
+  names(name)
+#+end_src
+
+#+results: func5
+| x         |
+|-----------|
+| x         |
+| parameter |
+| value     |
+
+#+call: func5(name=data, a="two") :colnames yes
+
+#+results: func5(name=data, a="two")
+| x         |
+|-----------|
+| x         |
+| parameter |
+| value     |
+
+</pre>
+  </body>
+</html>

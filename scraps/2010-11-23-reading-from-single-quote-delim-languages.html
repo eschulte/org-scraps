@@ -1,0 +1,59 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<!-- Created by htmlize-1.36 in css mode. -->
+<html>
+  <head>
+    <title> *temp*</title>
+    <style type="text/css">
+    <!--
+      body {
+        color: #E6E1DC;
+        background-color: #232323;
+      }
+
+      a {
+        color: inherit;
+        background-color: inherit;
+        font: inherit;
+        text-decoration: inherit;
+      }
+      a:hover {
+        text-decoration: underline;
+      }
+    -->
+    </style>
+  </head>
+  <body>
+    <pre>
+** reading from single-quote-delim languages
+   :PROPERTIES:
+   :DATE:     2010-11-23
+   :END:
+#+BEGIN_SRC python
+return [['607', 'Show license short, name on the deed'],
+        ['255', "'(message (concat 'hello ' 'world))"]]
+#+END_SRC
+
+#+results:
+| 607 | Show license short, name on the deed |
+| 255 | '(message (concat 'hello ' 'world))  |
+
+#+begin_src ruby
+  [['607', 'Show license, short name on the deed'],
+   ['255', "))'(message (concat 'hello ' 'world"]]
+#+end_src
+
+#+results:
+| 607 | Show license, short name on the deed |
+| 255 | ))'(message (concat 'hello ' 'world  |
+
+#+begin_src haskell
+  [["'single quotes'", "b"], ["\"double quotes\"", "d"]]
+#+end_src
+
+#+results:
+| 'single quotes' | b |
+| "double quotes" | d |
+
+</pre>
+  </body>
+</html>

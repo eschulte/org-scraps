@@ -1,0 +1,47 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<!-- Created by htmlize-1.36 in css mode. -->
+<html>
+  <head>
+    <title> *temp*</title>
+    <style type="text/css">
+    <!--
+      body {
+        color: #E6E1DC;
+        background-color: #232323;
+      }
+
+      a {
+        color: inherit;
+        background-color: inherit;
+        font: inherit;
+        text-decoration: inherit;
+      }
+      a:hover {
+        text-decoration: underline;
+      }
+    -->
+    </style>
+  </head>
+  <body>
+    <pre>
+** calc variables inside of parenthesis
+   :PROPERTIES:
+   :DATE:     2011-02-22
+   :END:
+#+BEGIN_SRC calc :var testvar=9000
+testvar - 200
+#+END_SRC
+
+#+results:
+: 8800
+
+#+BEGIN_SRC calc :var testvar=9000
+(testvar - 200) 800
+#+END_SRC
+
+#+results:
+: 7040000
+
+</pre>
+  </body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<!-- Created by htmlize-1.36 in css mode. -->
+<html>
+  <head>
+    <title> *temp*</title>
+    <style type="text/css">
+    <!--
+      body {
+        color: #E6E1DC;
+        background-color: #232323;
+      }
+
+      a {
+        color: inherit;
+        background-color: inherit;
+        font: inherit;
+        text-decoration: inherit;
+      }
+      a:hover {
+        text-decoration: underline;
+      }
+    -->
+    </style>
+  </head>
+  <body>
+    <pre>
+** tables to shell scripts ideas
+   :PROPERTIES:
+   :DATE:     2010-02-06
+   :END:
+
+#+tblname: sec
+| Hello | World |
+
+
+1) allowing the user to specify a separator with a header argument as
+   follows
+   #+begin_src sh :var table=sec :separator ,
+     cat &lt;&lt;EOF
+     $table
+     EOF
+   #+end_src
+   
+   which would result in something like
+
+   : "Hello, World"
+
+2) writing the table to a tab or comma separated file and then
+   replacing =$table= in the source block body with the path to the
+   file name, s.t. something like
+   
+   #+begin_src sh :var table=data
+     wc $table
+   #+end_src
+
+   would return reasonable results
+
+</pre>
+  </body>
+</html>

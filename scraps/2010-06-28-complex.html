@@ -1,0 +1,60 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<!-- Created by htmlize-1.36 in css mode. -->
+<html>
+  <head>
+    <title> *temp*</title>
+    <style type="text/css">
+    <!--
+      body {
+        color: #E6E1DC;
+        background-color: #232323;
+      }
+
+      a {
+        color: inherit;
+        background-color: inherit;
+        font: inherit;
+        text-decoration: inherit;
+      }
+      a:hover {
+        text-decoration: underline;
+      }
+    -->
+    </style>
+  </head>
+  <body>
+    <pre>
+** complex
+   :PROPERTIES:
+   :DATE:     2010-06-28
+   :END:
+#+source: raw-data
+#+begin_src sh :results scalar
+  wget --quiet -qO- "http://ogdi.cloudapp.net/v1/dc/RecreationParks?format=json"
+#+end_src
+
+#+source: dc-parks
+#+begin_src emacs-lisp :var keys='(ward area) :var data=raw-data
+  (mapcar
+    (lambda (lis) (mapcar (lambda (key) (cdr (assoc key lis))) keys))
+    (cdr (car (with-temp-buffer
+                (insert data) (goto-char (point-min))
+                (json-read)))))
+#+end_src
+
+#+source: dc-parks-metric
+#+begin_src ruby :var data=dc-parks
+  data.map{|f| [f[0], 2.59 * f[1]]}
+#+end_src
+
+#+begin_src R :var parkData=dc-parks-metric :file parks.png :session *R*
+  plot(parkData)
+  title(main="Park size by Ward")
+#+end_src
+
+#+results:
+[[file:parks.png]]
+
+</pre>
+  </body>
+</html>

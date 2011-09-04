@@ -1,0 +1,66 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<!-- Created by htmlize-1.36 in css mode. -->
+<html>
+  <head>
+    <title> *temp*</title>
+    <style type="text/css">
+    <!--
+      body {
+        color: #E6E1DC;
+        background-color: #232323;
+      }
+
+      a {
+        color: inherit;
+        background-color: inherit;
+        font: inherit;
+        text-decoration: inherit;
+      }
+      a:hover {
+        text-decoration: underline;
+      }
+    -->
+    </style>
+  </head>
+  <body>
+    <pre>
+** convert results to all string
+   :PROPERTIES:
+   :DATE:     2011-08-29
+   :END:
+#+source: hetero-table
+#+begin_src emacs-lisp
+  '((1 2 3 4)
+    ("a" "b" "c" "d"))
+#+end_src
+
+#+source: all-to-string
+#+begin_src emacs-lisp :var tbl='()
+  (defun all-to-string (tbl)
+    (if (listp tbl)
+        (mapcar #'all-to-string tbl)
+      (if (stringp tbl)
+          tbl
+        (format "%s" tbl))))
+  (all-to-string tbl)
+#+end_src
+
+#+begin_src emacs-lisp :var tbl=hetero-table
+  (mapcar (lambda (row) (mapcar (lambda (cell) (stringp cell)) row)) tbl)
+#+end_src
+
+#+results:
+| nil | nil | nil | nil |
+| t   | t   | t   | t   |
+
+#+begin_src emacs-lisp :var tbl=all-to-string(hetero-table)
+  (mapcar (lambda (row) (mapcar (lambda (cell) (stringp cell)) row)) tbl)
+#+end_src
+
+#+results:
+| t | t | t | t |
+| t | t | t | t |
+
+</pre>
+  </body>
+</html>

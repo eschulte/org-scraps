@@ -1,0 +1,60 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<!-- Created by htmlize-1.36 in css mode. -->
+<html>
+  <head>
+    <title> *temp*</title>
+    <style type="text/css">
+    <!--
+      body {
+        color: #E6E1DC;
+        background-color: #232323;
+      }
+
+      a {
+        color: inherit;
+        background-color: inherit;
+        font: inherit;
+        text-decoration: inherit;
+      }
+      a:hover {
+        text-decoration: underline;
+      }
+    -->
+    </style>
+  </head>
+  <body>
+    <pre>
+** new names for results
+   :PROPERTIES:
+   :DATE:     2011-05-06
+   :END:
+
+#+results: simple
+: 1
+
+#+begin_src emacs-lisp :var data=simple
+  data
+#+end_src
+
+#+results:
+: 1
+
+changing the variable used to label data
+#+begin_src emacs-lisp :results silent
+  (setq org-babel-result-fmt
+        "^[ \t]*#\\+\\(TBLNAME\\|RESNAME\\|RESULTS\\|DATA\\):[ \t]*%s[ \t]*$")
+#+end_src
+
+#+data: not-so-simple
+: 2
+
+#+begin_src emacs-lisp :var data=not-so-simple
+  data
+#+end_src
+
+#+results:
+: 2
+
+</pre>
+  </body>
+</html>

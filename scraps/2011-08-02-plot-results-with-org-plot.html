@@ -1,0 +1,48 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<!-- Created by htmlize-1.36 in css mode. -->
+<html>
+  <head>
+    <title> *temp*</title>
+    <style type="text/css">
+    <!--
+      body {
+        color: #E6E1DC;
+        background-color: #232323;
+      }
+
+      a {
+        color: inherit;
+        background-color: inherit;
+        font: inherit;
+        text-decoration: inherit;
+      }
+      a:hover {
+        text-decoration: underline;
+      }
+    -->
+    </style>
+  </head>
+  <body>
+    <pre>
+** plot results with org-plot
+   :PROPERTIES:
+   :DATE:     2011-08-02
+   :END:
+#+source: disk-usage
+#+begin_src sh :exports both
+  df
+#+end_src
+
+#+PLOT: title:"Disk Usage" ind:6 deps:(5) type:2d with:histograms set:"yrange [0:100]"
+#+results: disk-usage
+| Filesystem | 1K-blocks |     Used | Available | Use% | Mounted   | on |
+| /dev/sda6  |  28835836 |  8447712 |  18923344 |  31% | /         |    |
+| none       |   2997072 |      676 |   2996396 |   1% | /dev      |    |
+| none       |   3006056 |        0 |   3006056 |   0% | /dev/shm  |    |
+| none       |   3006056 |       96 |   3005960 |   1% | /var/run  |    |
+| none       |   3006056 |        0 |   3006056 |   0% | /var/lock |    |
+| /dev/sda7  | 144176824 | 72225604 |  64627420 |  53% | /home     |    |
+
+</pre>
+  </body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<!-- Created by htmlize-1.36 in css mode. -->
+<html>
+  <head>
+    <title> *temp*</title>
+    <style type="text/css">
+    <!--
+      body {
+        color: #E6E1DC;
+        background-color: #232323;
+      }
+
+      a {
+        color: inherit;
+        background-color: inherit;
+        font: inherit;
+        text-decoration: inherit;
+      }
+      a:hover {
+        text-decoration: underline;
+      }
+    -->
+    </style>
+  </head>
+  <body>
+    <pre>
+** missing lines on tangle
+   :PROPERTIES:
+   :ID:       83eb62fd-4147-405b-bdc2-567b2d5cbd70
+   :DATE:     2010-12-13
+   :END:
+#+begin_src org :results latex :tangle latex-err.tex
+  ,one
+  ,two
+  ,three
+#+end_src
+
+#+begin_src org :results latex :results replace
+  ,- eric
+  ,- schulte
+#+end_src
+
+#+results:
+#+BEGIN_LaTeX
+\begin{itemize}
+\item eric
+\item schulte
+\end{itemize}
+#+END_LaTeX
+
+</pre>
+  </body>
+</html>

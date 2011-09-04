@@ -1,0 +1,43 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<!-- Created by htmlize-1.36 in css mode. -->
+<html>
+  <head>
+    <title> *temp*</title>
+    <style type="text/css">
+    <!--
+      body {
+        color: #E6E1DC;
+        background-color: #232323;
+      }
+
+      a {
+        color: inherit;
+        background-color: inherit;
+        font: inherit;
+        text-decoration: inherit;
+      }
+      a:hover {
+        text-decoration: underline;
+      }
+    -->
+    </style>
+  </head>
+  <body>
+    <pre>
+** quoting header args (e.g. :cmdline)
+   :PROPERTIES:
+   :DATE:     2010-09-03
+   :END:
+#+begin_src C :cmdline 1 2 3 4 5 :includes &lt;stdio.h&gt;
+  int main(int argc, char **argv){
+    printf("argv[1] %s\n", argv[1]);
+    return 0;
+  }
+#+end_src
+
+#+results:
+: argv[1] 1
+
+</pre>
+  </body>
+</html>

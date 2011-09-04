@@ -1,0 +1,67 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<!-- Created by htmlize-1.36 in css mode. -->
+<html>
+  <head>
+    <title> *temp*</title>
+    <style type="text/css">
+    <!--
+      body {
+        color: #E6E1DC;
+        background-color: #232323;
+      }
+
+      a {
+        color: inherit;
+        background-color: inherit;
+        font: inherit;
+        text-decoration: inherit;
+      }
+      a:hover {
+        text-decoration: underline;
+      }
+    -->
+    </style>
+  </head>
+  <body>
+    <pre>
+** variable indexing
+   :PROPERTIES:
+   :DATE:     2010-04-23
+   :END:
+#+TBLNAME: MyTable
+ |   X |  Y |
+ |-----+----|
+ |   0 |  0 |
+ |   1 |  1 |
+ |   2 |  4 |
+ |   3 |  9 |
+ |   4 | 16 |
+ |   5 | 25 |
+ |-----+----|
+ | Sum | 55 |
+ #+TBLFM: $2=$1*$1::@8$2=vsum(@2..@-1)
+
+#+begin_src python :var sum=MyTable[2:7,1] :exports none
+   return sum
+#+end_src
+
+#+results:
+| 0 | 1 | 4 | 9 | 16 | 25 |
+
+#+begin_src python :var sum=MyTable[9,1] :exports none
+   return sum
+#+end_src
+
+#+results:
+: 55
+
+#+begin_src gnuplot :var data=MyTable[1:-2] :var sum=MyTable[7,1]
+:results silent :exports none
+  reset
+  set label "Sum: %.0f",sum at graph 0.03, graph 0.93
+  plot data with linespoints
+#+end_src
+
+</pre>
+  </body>
+</html>

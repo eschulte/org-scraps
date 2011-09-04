@@ -1,0 +1,75 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<!-- Created by htmlize-1.36 in css mode. -->
+<html>
+  <head>
+    <title> *temp*</title>
+    <style type="text/css">
+    <!--
+      body {
+        color: #E6E1DC;
+        background-color: #232323;
+      }
+
+      a {
+        color: inherit;
+        background-color: inherit;
+        font: inherit;
+        text-decoration: inherit;
+      }
+      a:hover {
+        text-decoration: underline;
+      }
+    -->
+    </style>
+  </head>
+  <body>
+    <pre>
+** short shell test
+   :PROPERTIES:
+   :DATE:     2010-02-07
+   :END:
+
+#+begin_src sh
+  date
+#+end_src
+
+#+results:
+: Sun Feb  7 10:17:44 MST 2010
+
+#+tblname: fibs
+| 1 | 1 |
+| 2 | 1 |
+| 3 | 2 |
+| 4 | 3 |
+| 5 | 5 |
+| 6 | 8 |
+
+#+begin_src sh :var table=fibs
+  echo "$table" |wc
+#+end_src
+
+#+results:
+: 6      12      24
+
+#+begin_src sh :var table=fibs
+  echo "$table"
+#+end_src
+
+#+results:
+| 1 | 1 |
+| 2 | 1 |
+| 3 | 2 |
+| 4 | 3 |
+| 5 | 5 |
+| 6 | 8 |
+
+#+begin_src sh :var table=fibs :separator --
+  echo "$table" | head -1
+#+end_src
+
+#+results:
+: 1--1
+
+</pre>
+  </body>
+</html>

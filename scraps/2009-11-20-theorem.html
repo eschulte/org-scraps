@@ -1,0 +1,47 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<!-- Created by htmlize-1.36 in css mode. -->
+<html>
+  <head>
+    <title> *temp*</title>
+    <style type="text/css">
+    <!--
+      body {
+        color: #E6E1DC;
+        background-color: #232323;
+      }
+
+      a {
+        color: inherit;
+        background-color: inherit;
+        font: inherit;
+        text-decoration: inherit;
+      }
+      a:hover {
+        text-decoration: underline;
+      }
+    -->
+    </style>
+  </head>
+  <body>
+    <pre>
+*** Theorem
+    :PROPERTIES:
+    :DATE:     2009-11-20
+    :END:
+$|consts(t)| \leq sizes(t)$
+
+- by induction on the structure of t
+- base cases are $t \in [true, false, 0]$: 
+  - $|consts(t)| = |[t]| = 1 = size(t)$
+- inductive size
+  - $t \in [succ(t_1), pred(t_1), iszero(t_1)]$:
+    - $|consts(t)| = |consts(t_1)| = |[t]| \leq size(t_1) &lt; size(t)$
+  - $t = if\, t_1 \, then \, t_2 \, else t_3$
+    - $|consts(t)| = |consts(t_1) \cup consts(t_1) \cup consts(t_1)|$
+    - $\leq |consts(t_1)| + |consts(t_1)| + |consts(t_1)|$
+    - $\leq size(t_1) + size(t_1) + size(t_1)$
+    - $&lt; size(t)$
+
+</pre>
+  </body>
+</html>

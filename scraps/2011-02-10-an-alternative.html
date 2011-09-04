@@ -1,0 +1,46 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<!-- Created by htmlize-1.36 in css mode. -->
+<html>
+  <head>
+    <title> *temp*</title>
+    <style type="text/css">
+    <!--
+      body {
+        color: #E6E1DC;
+        background-color: #232323;
+      }
+
+      a {
+        color: inherit;
+        background-color: inherit;
+        font: inherit;
+        text-decoration: inherit;
+      }
+      a:hover {
+        text-decoration: underline;
+      }
+    -->
+    </style>
+  </head>
+  <body>
+    <pre>
+*** an alternative
+    :PROPERTIES:
+    :var:      tests=all-tests
+    :DATE:     2011-02-10
+    :END:
+
+#+tblname: all-tests
+- 7
+- 8
+
+#+begin_src emacs-lisp :var eric=89
+  (message "test1=%S test2=%S" (first tests) (second tests))
+#+end_src
+
+#+results:
+: test1=7 test2=8
+
+</pre>
+  </body>
+</html>

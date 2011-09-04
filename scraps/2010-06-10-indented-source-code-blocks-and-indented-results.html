@@ -1,0 +1,65 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<!-- Created by htmlize-1.36 in css mode. -->
+<html>
+  <head>
+    <title> *temp*</title>
+    <style type="text/css">
+    <!--
+      body {
+        color: #E6E1DC;
+        background-color: #232323;
+      }
+
+      a {
+        color: inherit;
+        background-color: inherit;
+        font: inherit;
+        text-decoration: inherit;
+      }
+      a:hover {
+        text-decoration: underline;
+      }
+    -->
+    </style>
+  </head>
+  <body>
+    <pre>
+** indented source-code blocks and indented results
+   :PROPERTIES:
+   :DATE:     2010-06-10
+   :END:
+
+    #+source: time
+    #+begin_src emacs-lisp :results append
+      ;; (list (list (current-time-string)))
+      (current-time-string)
+    #+end_src
+
+    #+results: time
+    | 1 | 2 | 3 |
+
+
+        #+call: time() :results prepend
+
+        #+results: time()
+        | 1 | 2 | 3 |
+        : Thu Jun 10 14:13:21 2010
+        : Thu Jun 10 14:13:21 2010
+        : : Thu Jun 10 14:13:21 2010
+        : : Thu Jun 10 14:13:21 2010
+        : : Thu Jun 10 14:13:21 2010
+        : nil
+        : nil
+        : Thu Jun 10 14:11:22 2010
+        : Thu Jun 10 14:11:20 2010
+        : nil
+        : nil
+        : Thu Jun 10 14:06:04 2010
+        : Thu Jun 10 14:06:03 2010
+        : Thu Jun 10 14:05:51 2010
+        : Thu Jun 10 14:05:57 2010
+        : Thu Jun 10 14:06:00 2010
+
+</pre>
+  </body>
+</html>

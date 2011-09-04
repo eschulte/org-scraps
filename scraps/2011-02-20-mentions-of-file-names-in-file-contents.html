@@ -1,0 +1,88 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<!-- Created by htmlize-1.36 in css mode. -->
+<html>
+  <head>
+    <title> *temp*</title>
+    <style type="text/css">
+    <!--
+      body {
+        color: #E6E1DC;
+        background-color: #232323;
+      }
+
+      a {
+        color: inherit;
+        background-color: inherit;
+        font: inherit;
+        text-decoration: inherit;
+      }
+      a:hover {
+        text-decoration: underline;
+      }
+    -->
+    </style>
+  </head>
+  <body>
+    <pre>
+** mentions of file names in file contents
+   :PROPERTIES:
+   :DATE:     2011-02-20
+   :END:
+directory to search
+#+results: graph-dir
+: graph-dir
+
+list all files in dir
+#+source: graph-files
+#+begin_src sh :results vector :var dir=graph-dir
+  find $dir -type f -exec basename {} \;
+#+end_src
+
+#+results: graph-files
+| other |
+| dan   |
+| eric  |
+| seb   |
+
+association of files with mentions
+#+source: graph-associations
+#+begin_src sh :var dir=graph-dir :var files=graph-files
+  for i in $files; do
+      for j in `grep -l -r $i $dir`;do
+          echo $i, `basename $j`
+      done
+  done
+#+end_src
+
+#+results: graph-associations
+| other | eric |
+| other | seb  |
+| dan   | eric |
+| eric  | seb  |
+| seb   | dan  |
+
+graphing with dot
+#+source: to-dot
+#+begin_src sh :var associations=graph-associations :results scalar
+  echo "$associations"|awk '{print $1, "-&gt;", $2}'
+#+end_src
+
+#+results: to-dot
+: other -&gt; eric
+: other -&gt; seb
+: dan -&gt; eric
+: eric -&gt; seb
+: seb -&gt; dan
+
+#+begin_src dot :var data=to-dot :file files.png
+  digraph G{
+    $data
+  }
+#+end_src
+
+#+results:
+[[file:files.png]]
+
+</pre>
+  </body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<!-- Created by htmlize-1.36 in css mode. -->
+<html>
+  <head>
+    <title> *temp*</title>
+    <style type="text/css">
+    <!--
+      body {
+        color: #E6E1DC;
+        background-color: #232323;
+      }
+
+      a {
+        color: inherit;
+        background-color: inherit;
+        font: inherit;
+        text-decoration: inherit;
+      }
+      a:hover {
+        text-decoration: underline;
+      }
+    -->
+    </style>
+  </head>
+  <body>
+    <pre>
+** lists as data types
+   :PROPERTIES:
+   :DATE:     2010-11-19
+   :END:
+
+#+results: a-list
+- org-mode
+- and
+- babel
+
+#+source: a-list
+#+begin_src emacs-lisp :var lst=a-list :results list
+  (reverse lst)
+#+end_src
+
+also for a block inside of a list
+1. First element
+2. Second element -- has a block
+   #+begin_src emacs-lisp
+     (+ 1 1 1 1)
+   #+end_src
+
+   #+results:
+   : 4
+
+3. third element
+
+</pre>
+  </body>
+</html>

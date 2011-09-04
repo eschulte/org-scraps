@@ -1,0 +1,53 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<!-- Created by htmlize-1.36 in css mode. -->
+<html>
+  <head>
+    <title> *temp*</title>
+    <style type="text/css">
+    <!--
+      body {
+        color: #E6E1DC;
+        background-color: #232323;
+      }
+
+      a {
+        color: inherit;
+        background-color: inherit;
+        font: inherit;
+        text-decoration: inherit;
+      }
+      a:hover {
+        text-decoration: underline;
+      }
+    -->
+    </style>
+  </head>
+  <body>
+    <pre>
+** possible prefixes
+   :PROPERTIES:
+   :DATE:     2010-06-26
+   :END:
+
+| prefix   | remaining characters |
+|----------+----------------------|
+| ob-      |                    5 |
+| org-b-   |                    2 |
+| orgb-    |                    3 |
+| org-bbl- |                    0 |
+| bbl-     |                    4 |
+| babel-   |                    2 |
+#+TBLFM: $2='(sbe leftover (prefix $$1))
+
+#+source: leftover
+#+begin_src emacs-lisp :var prefix=""
+  (-
+   ;; length w/o .el
+   (- 13 (length ".el"))
+   ;; length of prefix
+   (length prefix))
+#+end_src
+
+</pre>
+  </body>
+</html>
