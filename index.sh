@@ -54,7 +54,7 @@ cat <<EOF
     <pre>
 <span class="org-document-info-keyword">#+Title:</span><span class="comment"> </span><span class="org-document-title">Scraps</span>
 <span class="org-document-info-keyword">#+Author:</span><span class="comment"> </span><span class="org-document-info">Eric Schulte</span>
-<span class="org-document-info-keyword">#+Date:</span><span class="comment"> </span><span class="org-document-info">&lt;2011-09-03 Sat&gt;</span>
+<span class="org-document-info-keyword">#+Date:</span><span class="comment"> </span><span class="org-document-info">&lt;$(date +"%Y-%m-%d %a")&gt;</span>
 
 A collection of short Org-mode snippets demonstrating the usage of
 code blocks.
