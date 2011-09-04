@@ -36,6 +36,7 @@ plot data using 2:xtic(1)
 #+results:
 
 
+
 ** simple indexing
    :PROPERTIES:
    :DATE:     2011-09-01
@@ -6950,7 +6951,10 @@ Map over all scraps and export each to a separate file.
     (let* ((replacements '((" "   . "-")
                            ("w/o" . "without")
                            ("w/"  . "with")
-                           ("/"   . "-")))
+                           ("/"   . "-")
+                           ("\""  . "")
+                           ("="   . "")
+                           ("'"   . "")))
            (full-title (nth 4 (org-heading-components)))
            (title ((lambda (title)
                      (dolist (rep replacements)
@@ -6959,15 +6963,14 @@ Map over all scraps and export each to a separate file.
                      (downcase title))
                    full-title))
            (date (org-entry-get (point) "DATE"))
-           (path (expand-file-name (concat date "-" title ".html") "_posts"))
+           (path (expand-file-name (concat date "-" title ".html") "scraps"))
            buf)
       (unless (file-exists-p path)
         (org-copy-subtree)
         (with-temp-buffer
-          (yank) (setq buf (htmlize-buffer)))
+          (yank) (org-mode) (setq buf (htmlize-buffer)))
         (set-buffer buf)
         (goto-char (point-min))
-        (insert (format "---\ntitle: %s\nlayout: nil\n---\n" full-title))
         (write-file path))))
   
   (org-id-goto "96eaa17f-f1b6-4958-acb1-e271045fdfa2")
