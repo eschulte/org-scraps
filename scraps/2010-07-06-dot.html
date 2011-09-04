@@ -9,6 +9,52 @@
         color: #E6E1DC;
         background-color: #232323;
       }
+      .constant {
+        /* font-lock-constant-face */
+        color: #6D9CBE;
+      }
+      .function-name {
+        /* font-lock-function-name-face */
+        color: #FFC66D;
+      }
+      .org-block-begin-line {
+        /* org-block-begin-line */
+        color: #BC9458;
+        font-style: italic;
+      }
+      .org-block-end-line {
+        /* org-block-end-line */
+        color: #BC9458;
+        font-style: italic;
+      }
+      .org-level-2 {
+        /* org-level-2 */
+        color: #b0c4de;
+      }
+      .org-link {
+        /* org-link */
+        color: #00ffff;
+        text-decoration: underline;
+      }
+      .org-meta-line {
+        /* org-meta-line */
+        color: #BC9458;
+        font-style: italic;
+      }
+      .org-property-value {
+      }
+      .org-special-keyword {
+        /* org-special-keyword */
+        color: #CC7833;
+      }
+      .string {
+        /* font-lock-string-face */
+        color: #A5C261;
+      }
+      .variable-name {
+        /* font-lock-variable-name-face */
+        color: #b0c4de;
+      }
 
       a {
         color: inherit;
@@ -24,20 +70,20 @@
   </head>
   <body>
     <pre>
-** dot
-   :PROPERTIES:
-   :DATE:     2010-07-06
-   :END:
-#+begin_src dot :file models.png :cmdline -Tpng
-  digraph data_relationships {
-    "data_requirement" [shape=Mrecord, label="{DataRequirement|description\lformat\l}"]
-    "data_product" [shape=Mrecord, label="{DataProduct|name\lversion\lpoc\lformat\l}"]
-    "data_requirement" -&gt; "data_product"
-  }
-#+end_src
-
-#+results:
-[[file:models.png]]
+<span class="org-level-2">** dot</span>
+<span class="org-special-keyword">   :PROPERTIES:</span>
+   <span class="org-special-keyword">:DATE:</span>     <span class="org-property-value">2010-07-06</span>
+<span class="org-special-keyword">   :END:</span>
+<span class="org-block-begin-line">#+begin_src dot :file models.png :cmdline -Tpng
+</span>  digraph <span class="function-name">data</span>_relationships {
+    <span class="string">"data_requirement"</span> [<span class="variable-name">shape=</span><span class="constant">Mrecord</span>, <span class="variable-name">label=</span><span class="string">"{DataRequirement|description\lformat\l}"</span>]
+    <span class="string">"data_product"</span> [<span class="variable-name">shape=</span><span class="constant">Mrecord</span>, <span class="variable-name">label=</span><span class="string">"{DataProduct|name\lversion\lpoc\lformat\l}"</span>]
+    <span class="string">"data_requirement"</span> -&gt; <span class="string">"data_product"
+</span>  }
+<span class="org-block-end-line">#+end_src
+</span>
+<span class="org-meta-line">#+results:
+</span><span class="org-link">[[file:models.png]]</span>
 
 </pre>
   </body>

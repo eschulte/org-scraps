@@ -9,6 +9,10 @@
         color: #E6E1DC;
         background-color: #232323;
       }
+      .keyword {
+        /* font-lock-keyword-face */
+        color: #CC7833;
+      }
       .org-block-begin-line {
         /* org-block-begin-line */
         color: #BC9458;
@@ -68,31 +72,31 @@
 </span>  <span class="starter-kit-paren">(</span>message <span class="string">"foo:%S"</span> 1<span class="starter-kit-paren">)
 </span><span class="org-block-end-line">#+end_src
 </span>
-#+begin_src emacs-lisp
-  (message "un-named")
-#+end_src
-
-#+source: bar
-#+begin_src emacs-lisp
-  (message "bar:%S" 1)
-#+end_src
-
-#+source: foo
-#+begin_src emacs-lisp
-  (message "foo:%S" 2)
-#+end_src
-
-#+source: bar
-#+begin_src emacs-lisp
-  (message "bar:%S" 2)
-#+end_src
-
-#+begin_src emacs-lisp :tangle no :results silent
-  (with-temp-buffer
-    (insert-file-contents "scraps.el")
-    (eval-buffer))
-#+end_src
-
+<span class="org-block-begin-line">#+begin_src emacs-lisp
+</span>  <span class="starter-kit-paren">(</span>message <span class="string">"un-named"</span><span class="starter-kit-paren">)
+</span><span class="org-block-end-line">#+end_src
+</span>
+<span class="org-meta-line">#+source: bar
+</span><span class="org-block-begin-line">#+begin_src emacs-lisp
+</span>  <span class="starter-kit-paren">(</span>message <span class="string">"bar:%S"</span> 1<span class="starter-kit-paren">)
+</span><span class="org-block-end-line">#+end_src
+</span>
+<span class="org-meta-line">#+source: foo
+</span><span class="org-block-begin-line">#+begin_src emacs-lisp
+</span>  <span class="starter-kit-paren">(</span>message <span class="string">"foo:%S"</span> 2<span class="starter-kit-paren">)
+</span><span class="org-block-end-line">#+end_src
+</span>
+<span class="org-meta-line">#+source: bar
+</span><span class="org-block-begin-line">#+begin_src emacs-lisp
+</span>  <span class="starter-kit-paren">(</span>message <span class="string">"bar:%S"</span> 2<span class="starter-kit-paren">)
+</span><span class="org-block-end-line">#+end_src
+</span>
+<span class="org-block-begin-line">#+begin_src emacs-lisp :tangle no :results silent
+</span>  <span class="starter-kit-paren">(</span><span class="keyword">with-temp-buffer</span>
+    <span class="starter-kit-paren">(</span>insert-file-contents <span class="string">"scraps.el"</span><span class="starter-kit-paren">)</span>
+    <span class="starter-kit-paren">(</span>eval-buffer<span class="starter-kit-paren">))
+</span><span class="org-block-end-line">#+end_src
+</span>
 </pre>
   </body>
 </html>

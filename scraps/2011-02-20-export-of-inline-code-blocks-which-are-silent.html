@@ -9,6 +9,42 @@
         color: #E6E1DC;
         background-color: #232323;
       }
+      .builtin {
+        /* font-lock-builtin-face */
+        color: #D0D0FF;
+      }
+      .keyword {
+        /* font-lock-keyword-face */
+        color: #CC7833;
+      }
+      .org-block-begin-line {
+        /* org-block-begin-line */
+        color: #BC9458;
+        font-style: italic;
+      }
+      .org-block-end-line {
+        /* org-block-end-line */
+        color: #BC9458;
+        font-style: italic;
+      }
+      .org-level-2 {
+        /* org-level-2 */
+        color: #b0c4de;
+      }
+      .org-property-value {
+      }
+      .org-special-keyword {
+        /* org-special-keyword */
+        color: #CC7833;
+      }
+      .starter-kit-paren {
+        /* starter-kit-paren-face */
+        color: #7f7f7f;
+      }
+      .string {
+        /* font-lock-string-face */
+        color: #A5C261;
+      }
 
       a {
         color: inherit;
@@ -24,17 +60,17 @@
   </head>
   <body>
     <pre>
-** export of inline code blocks which are silent
-   :PROPERTIES:
-   :DATE:     2011-02-20
-   :END:
-#+begin_src emacs-lisp :results silent
-  (setf org-babel-default-inline-header-args
-        '((:session . "none")
-          (:results . (if (boundp 'org-current-export-file) "replace" "silent"))
-          (:exports . "results")))
-#+end_src
-
+<span class="org-level-2">** export of inline code blocks which are silent</span>
+<span class="org-special-keyword">   :PROPERTIES:</span>
+   <span class="org-special-keyword">:DATE:</span>     <span class="org-property-value">2011-02-20</span>
+<span class="org-special-keyword">   :END:</span>
+<span class="org-block-begin-line">#+begin_src emacs-lisp :results silent
+</span>  <span class="starter-kit-paren">(</span>setf org-babel-default-inline-header-args
+        '<span class="starter-kit-paren">((</span><span class="builtin">:session</span> . <span class="string">"none"</span><span class="starter-kit-paren">)</span>
+          <span class="starter-kit-paren">(</span><span class="builtin">:results</span> . <span class="starter-kit-paren">(</span><span class="keyword">if</span> <span class="starter-kit-paren">(</span>boundp 'org-current-export-file<span class="starter-kit-paren">)</span> <span class="string">"replace"</span> <span class="string">"silent"</span><span class="starter-kit-paren">))</span>
+          <span class="starter-kit-paren">(</span><span class="builtin">:exports</span> . <span class="string">"results"</span><span class="starter-kit-paren">)))
+</span><span class="org-block-end-line">#+end_src
+</span>
 Here is an inline code block src_sh{echo 8} &lt;- there
 
 </pre>

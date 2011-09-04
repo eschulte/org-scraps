@@ -9,6 +9,34 @@
         color: #E6E1DC;
         background-color: #232323;
       }
+      .org-block {
+        /* org-block */
+        color: #b3b3b3;
+      }
+      .org-block-begin-line {
+        /* org-block-begin-line */
+        color: #BC9458;
+        font-style: italic;
+      }
+      .org-block-end-line {
+        /* org-block-end-line */
+        color: #BC9458;
+        font-style: italic;
+      }
+      .org-code {
+        /* org-code */
+        color: #b3b3b3;
+      }
+      .org-level-2 {
+        /* org-level-2 */
+        color: #b0c4de;
+      }
+      .org-property-value {
+      }
+      .org-special-keyword {
+        /* org-special-keyword */
+        color: #CC7833;
+      }
 
       a {
         color: inherit;
@@ -24,23 +52,23 @@
   </head>
   <body>
     <pre>
-** not expand inlines in examples
-   :PROPERTIES:
-   :DATE:     2010-06-08
-   :END:
+<span class="org-level-2">** not expand inlines in examples</span>
+<span class="org-special-keyword">   :PROPERTIES:</span>
+   <span class="org-special-keyword">:DATE:</span>     <span class="org-property-value">2010-06-08</span>
+<span class="org-special-keyword">   :END:</span>
 
-: src_emacs-lisp{(+ 1 2 3)}
-
-#+begin_example 
-  src_emacs-lisp{(+ 1 2 3)}
-#+end_example
-
+<span class="org-code">: src_emacs-lisp{(+ 1 2 3)}
+</span>
+<span class="org-block-begin-line">#+begin_example 
+</span><span class="org-block">  src_emacs-lisp{(+ 1 2 3)}
+</span><span class="org-block-end-line">#+end_example
+</span>
 src_emacs-lisp{(+ 1 2 3)}
 
-#+begin_example 
-  src_emacs-lisp{(+ 1 2 3)}
-#+end_example
-
+<span class="org-block-begin-line">#+begin_example 
+</span><span class="org-block">  src_emacs-lisp{(+ 1 2 3)}
+</span><span class="org-block-end-line">#+end_example
+</span>
 </pre>
   </body>
 </html>

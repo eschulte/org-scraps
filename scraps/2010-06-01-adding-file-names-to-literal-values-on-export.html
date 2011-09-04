@@ -9,6 +9,35 @@
         color: #E6E1DC;
         background-color: #232323;
       }
+      .org-block-begin-line {
+        /* org-block-begin-line */
+        color: #BC9458;
+        font-style: italic;
+      }
+      .org-block-end-line {
+        /* org-block-end-line */
+        color: #BC9458;
+        font-style: italic;
+      }
+      .org-code {
+        /* org-code */
+        color: #b3b3b3;
+      }
+      .org-level-2 {
+        /* org-level-2 */
+        color: #b0c4de;
+      }
+      .org-meta-line {
+        /* org-meta-line */
+        color: #BC9458;
+        font-style: italic;
+      }
+      .org-property-value {
+      }
+      .org-special-keyword {
+        /* org-special-keyword */
+        color: #CC7833;
+      }
 
       a {
         color: inherit;
@@ -24,22 +53,22 @@
   </head>
   <body>
     <pre>
-** adding file names to literal values on export
-   :PROPERTIES:
-   :DATE:     2010-06-01
-   :END:
+<span class="org-level-2">** adding file names to literal values on export</span>
+<span class="org-special-keyword">   :PROPERTIES:</span>
+   <span class="org-special-keyword">:DATE:</span>     <span class="org-property-value">2010-06-01</span>
+<span class="org-special-keyword">   :END:</span>
 
-#+results: three
-: 9
-
-#+begin_src R :var num=three :exports results
-runif(n=num, min=0, max=1)
-#+end_src
-
-#+begin_src R :var num=3 :exports results
-runif(n=num, min=0, max=1)
-#+end_src
-
+<span class="org-meta-line">#+results: three
+</span><span class="org-code">: 9
+</span>
+<span class="org-block-begin-line">#+begin_src R :var num=three :exports results
+</span>runif(n=num, min=0, max=1)
+<span class="org-block-end-line">#+end_src
+</span>
+<span class="org-block-begin-line">#+begin_src R :var num=3 :exports results
+</span>runif(n=num, min=0, max=1)
+<span class="org-block-end-line">#+end_src
+</span>
 </pre>
   </body>
 </html>

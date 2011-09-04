@@ -9,15 +9,42 @@
         color: #E6E1DC;
         background-color: #232323;
       }
+      .builtin {
+        /* font-lock-builtin-face */
+        color: #D0D0FF;
+      }
+      .org-block-begin-line {
+        /* org-block-begin-line */
+        color: #BC9458;
+        font-style: italic;
+      }
+      .org-block-end-line {
+        /* org-block-end-line */
+        color: #BC9458;
+        font-style: italic;
+      }
+      .org-code {
+        /* org-code */
+        color: #b3b3b3;
+      }
       .org-level-2 {
         /* org-level-2 */
         color: #b0c4de;
+      }
+      .org-meta-line {
+        /* org-meta-line */
+        color: #BC9458;
+        font-style: italic;
       }
       .org-property-value {
       }
       .org-special-keyword {
         /* org-special-keyword */
         color: #CC7833;
+      }
+      .string {
+        /* font-lock-string-face */
+        color: #A5C261;
       }
 
       a {
@@ -38,20 +65,20 @@
 <span class="org-special-keyword">   :PROPERTIES:</span>
    <span class="org-special-keyword">:DATE:</span>     <span class="org-property-value">2011-06-06</span>
 <span class="org-special-keyword">   :END:</span>
-#+begin_src sh :session test :results output
-  echo foo
-#+end_src
-
-#+results:
-: foo
-
-#+begin_src ruby :results output :session simple
-  puts "foo"
-#+end_src
-
-#+results:
-: foo
-
+<span class="org-block-begin-line">#+begin_src sh :session test :results output
+</span>  <span class="builtin">echo </span>foo
+<span class="org-block-end-line">#+end_src
+</span>
+<span class="org-meta-line">#+results:
+</span><span class="org-code">: foo
+</span>
+<span class="org-block-begin-line">#+begin_src ruby :results output :session simple
+</span>  puts <span class="string">"foo"
+</span><span class="org-block-end-line">#+end_src
+</span>
+<span class="org-meta-line">#+results:
+</span><span class="org-code">: foo
+</span>
 </pre>
   </body>
 </html>

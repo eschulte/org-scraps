@@ -9,6 +9,63 @@
         color: #E6E1DC;
         background-color: #232323;
       }
+      .builtin {
+        /* font-lock-builtin-face */
+        color: #D0D0FF;
+      }
+      .constant {
+        /* font-lock-constant-face */
+        color: #6D9CBE;
+      }
+      .function-name {
+        /* font-lock-function-name-face */
+        color: #FFC66D;
+      }
+      .keyword {
+        /* font-lock-keyword-face */
+        color: #CC7833;
+      }
+      .org-block-begin-line {
+        /* org-block-begin-line */
+        color: #BC9458;
+        font-style: italic;
+      }
+      .org-block-end-line {
+        /* org-block-end-line */
+        color: #BC9458;
+        font-style: italic;
+      }
+      .org-code {
+        /* org-code */
+        color: #b3b3b3;
+      }
+      .org-level-2 {
+        /* org-level-2 */
+        color: #b0c4de;
+      }
+      .org-meta-line {
+        /* org-meta-line */
+        color: #BC9458;
+        font-style: italic;
+      }
+      .org-property-value {
+      }
+      .org-special-keyword {
+        /* org-special-keyword */
+        color: #CC7833;
+      }
+      .org-table {
+        /* org-table */
+        color: #87cefa;
+      }
+      .type {
+        /* font-lock-type-face */
+        color: #ffffff;
+      }
+      .variable-name {
+        /* font-lock-variable-name-face */
+        color: #b0c4de;
+      }
 
       a {
         color: inherit;
@@ -24,44 +81,44 @@
   </head>
   <body>
     <pre>
-** variable indexing
-   :PROPERTIES:
-   :DATE:     2010-04-23
-   :END:
-#+TBLNAME: MyTable
- |   X |  Y |
- |-----+----|
- |   0 |  0 |
- |   1 |  1 |
- |   2 |  4 |
- |   3 |  9 |
- |   4 | 16 |
- |   5 | 25 |
- |-----+----|
- | Sum | 55 |
- #+TBLFM: $2=$1*$1::@8$2=vsum(@2..@-1)
+<span class="org-level-2">** variable indexing</span>
+<span class="org-special-keyword">   :PROPERTIES:</span>
+   <span class="org-special-keyword">:DATE:</span>     <span class="org-property-value">2010-04-23</span>
+<span class="org-special-keyword">   :END:</span>
+<span class="org-meta-line">#+TBLNAME: MyTable
+</span> <span class="org-table">|   X |  Y |</span>
+ <span class="org-table">|-----+----|</span>
+ <span class="org-table">|   0 |  0 |</span>
+ <span class="org-table">|   1 |  1 |</span>
+ <span class="org-table">|   2 |  4 |</span>
+ <span class="org-table">|   3 |  9 |</span>
+ <span class="org-table">|   4 | 16 |</span>
+ <span class="org-table">|   5 | 25 |</span>
+ <span class="org-table">|-----+----|</span>
+ <span class="org-table">| Sum | 55 |</span>
+<span class="org-meta-line"> #+TBLFM: $2=$1*$1::@8$2=vsum(@2..@-1)</span>
 
-#+begin_src python :var sum=MyTable[2:7,1] :exports none
-   return sum
-#+end_src
+<span class="org-block-begin-line">#+begin_src python :var sum=MyTable[2:7,1] :exports none
+</span>   <span class="keyword">return</span> <span class="builtin">sum
+</span><span class="org-block-end-line">#+end_src
+</span>
+<span class="org-meta-line">#+results:
+</span><span class="org-table">| 0 | 1 | 4 | 9 | 16 | 25 |</span>
 
-#+results:
-| 0 | 1 | 4 | 9 | 16 | 25 |
-
-#+begin_src python :var sum=MyTable[9,1] :exports none
-   return sum
-#+end_src
-
-#+results:
-: 55
-
-#+begin_src gnuplot :var data=MyTable[1:-2] :var sum=MyTable[7,1]
-:results silent :exports none
+<span class="org-block-begin-line">#+begin_src python :var sum=MyTable[9,1] :exports none
+</span>   <span class="keyword">return</span> <span class="builtin">sum
+</span><span class="org-block-end-line">#+end_src
+</span>
+<span class="org-meta-line">#+results:
+</span><span class="org-code">: 55
+</span>
+<span class="org-block-begin-line">#+begin_src gnuplot :var data=MyTable[1:-2] :var sum=MyTable[7,1]
+</span>:results silent :exports none
   reset
-  set label "Sum: %.0f",sum at graph 0.03, graph 0.93
-  plot data with linespoints
-#+end_src
-
+  <span class="constant">set</span> label "Sum: %.0f",sum at graph 0.03, graph 0.93
+  <span class="keyword">plot</span> <span class="variable-name">data</span> <span class="type">with</span> <span class="function-name">linespoints
+</span><span class="org-block-end-line">#+end_src
+</span>
 </pre>
   </body>
 </html>

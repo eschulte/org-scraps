@@ -9,6 +9,35 @@
         color: #E6E1DC;
         background-color: #232323;
       }
+      .org-block-begin-line {
+        /* org-block-begin-line */
+        color: #BC9458;
+        font-style: italic;
+      }
+      .org-block-end-line {
+        /* org-block-end-line */
+        color: #BC9458;
+        font-style: italic;
+      }
+      .org-level-2 {
+        /* org-level-2 */
+        color: #b0c4de;
+      }
+      .org-meta-line {
+        /* org-meta-line */
+        color: #BC9458;
+        font-style: italic;
+      }
+      .org-property-value {
+      }
+      .org-special-keyword {
+        /* org-special-keyword */
+        color: #CC7833;
+      }
+      .string {
+        /* font-lock-string-face */
+        color: #A5C261;
+      }
 
       a {
         color: inherit;
@@ -24,24 +53,24 @@
   </head>
   <body>
     <pre>
-** wrapping up raw/org results
-   :PROPERTIES:
-   :DATE:     2010-08-26
-   :END:
-#+begin_src emacs-lisp :results org :exports results
-  "- first
+<span class="org-level-2">** wrapping up raw/org results</span>
+<span class="org-special-keyword">   :PROPERTIES:</span>
+   <span class="org-special-keyword">:DATE:</span>     <span class="org-property-value">2010-08-26</span>
+<span class="org-special-keyword">   :END:</span>
+<span class="org-block-begin-line">#+begin_src emacs-lisp :results org :exports results
+</span>  <span class="string">"- first
   - second
   - third
   "
-#+end_src
-
-#+results:
-#+BEGIN_SRC org
-- first
+</span><span class="org-block-end-line">#+end_src
+</span>
+<span class="org-meta-line">#+results:
+</span><span class="org-block-begin-line">#+BEGIN_SRC org
+</span>- first
 - second
 - third
-#+END_SRC
-
+<span class="org-block-end-line">#+END_SRC
+</span>
 </pre>
   </body>
 </html>

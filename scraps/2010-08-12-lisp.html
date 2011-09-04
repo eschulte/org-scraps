@@ -9,6 +9,47 @@
         color: #E6E1DC;
         background-color: #232323;
       }
+      .keyword {
+        /* font-lock-keyword-face */
+        color: #CC7833;
+      }
+      .org-block-begin-line {
+        /* org-block-begin-line */
+        color: #BC9458;
+        font-style: italic;
+      }
+      .org-block-end-line {
+        /* org-block-end-line */
+        color: #BC9458;
+        font-style: italic;
+      }
+      .org-code {
+        /* org-code */
+        color: #b3b3b3;
+      }
+      .org-level-2 {
+        /* org-level-2 */
+        color: #b0c4de;
+      }
+      .org-meta-line {
+        /* org-meta-line */
+        color: #BC9458;
+        font-style: italic;
+      }
+      .org-property-value {
+      }
+      .org-special-keyword {
+        /* org-special-keyword */
+        color: #CC7833;
+      }
+      .org-table {
+        /* org-table */
+        color: #87cefa;
+      }
+      .starter-kit-paren {
+        /* starter-kit-paren-face */
+        color: #7f7f7f;
+      }
 
       a {
         color: inherit;
@@ -24,30 +65,30 @@
   </head>
   <body>
     <pre>
-** lisp
-   :PROPERTIES:
-   :DATE:     2010-08-12
-   :END:
+<span class="org-level-2">** lisp</span>
+<span class="org-special-keyword">   :PROPERTIES:</span>
+   <span class="org-special-keyword">:DATE:</span>     <span class="org-property-value">2010-08-12</span>
+<span class="org-special-keyword">   :END:</span>
 
-#+begin_src lisp :var n=5
-  (mapcar (lambda (el) (* el el)) (append '(1 7 3 4) (list n)))
-#+end_src
+<span class="org-block-begin-line">#+begin_src lisp :var n=5
+</span>  <span class="starter-kit-paren">(</span>mapcar <span class="starter-kit-paren">(</span><span class="keyword">lambda</span> <span class="starter-kit-paren">(</span>el<span class="starter-kit-paren">)</span> <span class="starter-kit-paren">(</span>* el el<span class="starter-kit-paren">))</span> <span class="starter-kit-paren">(</span>append '<span class="starter-kit-paren">(</span>1 7 3 4<span class="starter-kit-paren">)</span> <span class="starter-kit-paren">(</span>list n<span class="starter-kit-paren">)))
+</span><span class="org-block-end-line">#+end_src
+</span>
+<span class="org-meta-line">#+results:
+</span><span class="org-table">| 1 | 49 | 9 | 16 | 25 |</span>
 
-#+results:
-| 1 | 49 | 9 | 16 | 25 |
+<span class="org-meta-line">#+results: short-list
+</span><span class="org-table">| 1 |</span>
+<span class="org-table">| 2 |</span>
+<span class="org-table">| 3 |</span>
 
-#+results: short-list
-| 1 |
-| 2 |
-| 3 |
-
-#+begin_src lisp :var lst=short-list :session t
-  (+ 1 (length lst))
-#+end_src
-
-#+results:
-: 4
-
+<span class="org-block-begin-line">#+begin_src lisp :var lst=short-list :session t
+</span>  <span class="starter-kit-paren">(</span>+ 1 <span class="starter-kit-paren">(</span>length lst<span class="starter-kit-paren">))
+</span><span class="org-block-end-line">#+end_src
+</span>
+<span class="org-meta-line">#+results:
+</span><span class="org-code">: 4
+</span>
 </pre>
   </body>
 </html>

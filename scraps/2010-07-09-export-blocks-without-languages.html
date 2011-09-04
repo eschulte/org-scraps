@@ -9,6 +9,44 @@
         color: #E6E1DC;
         background-color: #232323;
       }
+      .comment {
+        /* font-lock-comment-face */
+        color: #BC9458;
+        font-style: italic;
+      }
+      .comment-delimiter {
+        /* font-lock-comment-delimiter-face */
+        color: #BC9458;
+        font-style: italic;
+      }
+      .org-block {
+        /* org-block */
+        color: #b3b3b3;
+      }
+      .org-block-begin-line {
+        /* org-block-begin-line */
+        color: #BC9458;
+        font-style: italic;
+      }
+      .org-block-end-line {
+        /* org-block-end-line */
+        color: #BC9458;
+        font-style: italic;
+      }
+      .org-level-2 {
+        /* org-level-2 */
+        color: #b0c4de;
+      }
+      .org-property-value {
+      }
+      .org-special-keyword {
+        /* org-special-keyword */
+        color: #CC7833;
+      }
+      .starter-kit-paren {
+        /* starter-kit-paren-face */
+        color: #7f7f7f;
+      }
 
       a {
         color: inherit;
@@ -24,33 +62,33 @@
   </head>
   <body>
     <pre>
-** export blocks w/o languages
-   :PROPERTIES:
-   :DATE:     2010-07-09
-   :END:
+<span class="org-level-2">** export blocks w/o languages</span>
+<span class="org-special-keyword">   :PROPERTIES:</span>
+   <span class="org-special-keyword">:DATE:</span>     <span class="org-property-value">2010-07-09</span>
+<span class="org-special-keyword">   :END:</span>
 should raise an error
 
 source
-#+begin_src emacs-lisp
-  ;; this is a comment
-  (+ 1 1 1)
-#+end_src
-
+<span class="org-block-begin-line">#+begin_src emacs-lisp
+</span>  <span class="comment-delimiter">;; </span><span class="comment">this is a comment
+</span>  <span class="starter-kit-paren">(</span>+ 1 1 1<span class="starter-kit-paren">)
+</span><span class="org-block-end-line">#+end_src
+</span>
 broken source
-#+begin_src 
-  (+ 2 2 2)
-#+end_src
-
+<span class="org-block-begin-line">#+begin_src 
+</span><span class="org-block">  (+ 2 2 2)
+</span><span class="org-block-end-line">#+end_src
+</span>
 example
-#+begin_example 
-  this is exampled
-#+end_example
-
-#+begin_src ruby
-  # this is the first
-  [1, 2, 3, 4, 5].map{|r| r+1}
-#+end_src
-
+<span class="org-block-begin-line">#+begin_example 
+</span><span class="org-block">  this is exampled
+</span><span class="org-block-end-line">#+end_example
+</span>
+<span class="org-block-begin-line">#+begin_src ruby
+</span>  <span class="comment-delimiter"># </span><span class="comment">this is the first
+ </span> [1, 2, 3, 4, 5].map{|r| r+1}
+<span class="org-block-end-line">#+end_src
+</span>
 </pre>
   </body>
 </html>

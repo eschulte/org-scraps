@@ -9,6 +9,57 @@
         color: #E6E1DC;
         background-color: #232323;
       }
+      .constant {
+        /* font-lock-constant-face */
+        color: #6D9CBE;
+      }
+      .font-latex-sectioning-2 {
+        /* font-latex-sectioning-2-face */
+        color: #ffff00;
+        font-size: 133%;
+        font-weight: bold;
+      }
+      .font-latex-sedate {
+        /* font-latex-sedate-face */
+        color: #d3d3d3;
+      }
+      .font-latex-string {
+        /* font-latex-string-face */
+        color: #ffa07a;
+      }
+      .function-name {
+        /* font-lock-function-name-face */
+        color: #FFC66D;
+      }
+      .keyword {
+        /* font-lock-keyword-face */
+        color: #CC7833;
+      }
+      .org-block-begin-line {
+        /* org-block-begin-line */
+        color: #BC9458;
+        font-style: italic;
+      }
+      .org-block-end-line {
+        /* org-block-end-line */
+        color: #BC9458;
+        font-style: italic;
+      }
+      .org-level-2 {
+        /* org-level-2 */
+        color: #b0c4de;
+      }
+      .org-meta-line {
+        /* org-meta-line */
+        color: #BC9458;
+        font-style: italic;
+      }
+      .org-property-value {
+      }
+      .org-special-keyword {
+        /* org-special-keyword */
+        color: #CC7833;
+      }
 
       a {
         color: inherit;
@@ -24,25 +75,25 @@
   </head>
   <body>
     <pre>
-** noweb then variables
-   :PROPERTIES:
-   :DATE:     2011-01-13
-   :END:
-#+source: replaced-first
-#+begin_src latex
-  \begin{itemize}
-  \item first
-  \item data
-  \item third
-  \end{itemize}
-#+end_src
-
-#+begin_src latex :var data="second" :noweb yes
-  \section{ordinals}
-  \label{sec:ordinals}
-  &lt;&lt;replaced-first&gt;&gt;
-#+end_src
-
+<span class="org-level-2">** noweb then variables</span>
+<span class="org-special-keyword">   :PROPERTIES:</span>
+   <span class="org-special-keyword">:DATE:</span>     <span class="org-property-value">2011-01-13</span>
+<span class="org-special-keyword">   :END:</span>
+<span class="org-meta-line">#+source: replaced-first
+</span><span class="org-block-begin-line">#+begin_src latex
+</span>  <span class="font-latex-sedate"><span class="keyword">\begin</span></span>{<span class="function-name">itemize</span>}
+  <span class="font-latex-sedate"><span class="keyword">\item</span></span> first
+  <span class="font-latex-sedate"><span class="keyword">\item</span></span> data
+  <span class="font-latex-sedate"><span class="keyword">\item</span></span> third
+  <span class="font-latex-sedate"><span class="keyword">\end</span></span>{<span class="function-name">itemize}</span>
+<span class="org-block-end-line">#+end_src
+</span>
+<span class="org-block-begin-line">#+begin_src latex :var data="second" :noweb yes
+</span>  <span class="font-latex-sedate"><span class="keyword">\section</span></span>{<span class="font-latex-sectioning-2">ordinals</span>}
+  <span class="font-latex-sedate"><span class="keyword">\label</span></span>{<span class="constant">sec:ordinals</span>}
+  <span class="font-latex-string">&lt;&lt;replaced-first&gt;&gt;
+</span><span class="org-block-end-line">#+end_src
+</span>
 </pre>
   </body>
 </html>

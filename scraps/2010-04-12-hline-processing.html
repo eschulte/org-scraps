@@ -9,6 +9,73 @@
         color: #E6E1DC;
         background-color: #232323;
       }
+      .comment {
+        /* font-lock-comment-face */
+        color: #BC9458;
+        font-style: italic;
+      }
+      .comment-delimiter {
+        /* font-lock-comment-delimiter-face */
+        color: #BC9458;
+        font-style: italic;
+      }
+      .constant {
+        /* font-lock-constant-face */
+        color: #6D9CBE;
+      }
+      .doc {
+        /* font-lock-doc-face */
+        color: #A5C261;
+      }
+      .function-name {
+        /* font-lock-function-name-face */
+        color: #FFC66D;
+      }
+      .keyword {
+        /* font-lock-keyword-face */
+        color: #CC7833;
+      }
+      .org-block-begin-line {
+        /* org-block-begin-line */
+        color: #BC9458;
+        font-style: italic;
+      }
+      .org-block-end-line {
+        /* org-block-end-line */
+        color: #BC9458;
+        font-style: italic;
+      }
+      .org-code {
+        /* org-code */
+        color: #b3b3b3;
+      }
+      .org-level-2 {
+        /* org-level-2 */
+        color: #b0c4de;
+      }
+      .org-meta-line {
+        /* org-meta-line */
+        color: #BC9458;
+        font-style: italic;
+      }
+      .org-property-value {
+      }
+      .org-special-keyword {
+        /* org-special-keyword */
+        color: #CC7833;
+      }
+      .org-table {
+        /* org-table */
+        color: #87cefa;
+      }
+      .starter-kit-paren {
+        /* starter-kit-paren-face */
+        color: #7f7f7f;
+      }
+      .string {
+        /* font-lock-string-face */
+        color: #A5C261;
+      }
 
       a {
         color: inherit;
@@ -24,122 +91,122 @@
   </head>
   <body>
     <pre>
-** hline processing
-   :PROPERTIES:
-   :DATE:     2010-04-12
-   :END:
-#+tblname: many-cols
-| a | b | c |
-|---+---+---|
-| d | e | f |
-|---+---+---|
-| g | h | i |
+<span class="org-level-2">** hline processing</span>
+<span class="org-special-keyword">   :PROPERTIES:</span>
+   <span class="org-special-keyword">:DATE:</span>     <span class="org-property-value">2010-04-12</span>
+<span class="org-special-keyword">   :END:</span>
+<span class="org-meta-line">#+tblname: many-cols
+</span><span class="org-table">| a | b | c |</span>
+<span class="org-table">|---+---+---|</span>
+<span class="org-table">| d | e | f |</span>
+<span class="org-table">|---+---+---|</span>
+<span class="org-table">| g | h | i |</span>
 
-#+tblname: less-cols
-| 1 |
-|---|
-| 2 |
-| 3 |
+<span class="org-meta-line">#+tblname: less-cols
+</span><span class="org-table">| 1 |</span>
+<span class="org-table">|---|</span>
+<span class="org-table">| 2 |</span>
+<span class="org-table">| 3 |</span>
 
-#+tblname: less-cols2
-| 1 | 2 | 3 |
+<span class="org-meta-line">#+tblname: less-cols2
+</span><span class="org-table">| 1 | 2 | 3 |</span>
 
-#+begin_src emacs-lisp :var tab=many-cols
-  (message "%S" tab)
-  ;; (remove 'hline tab)
-  ;; (flet ((rem-hline (el)
-  ;;                   (if (listp el)
-  ;;                       (remove nil (mapcar #'rem-hline el))
-  ;;                     (if (equal 'hline el) nil el))))
-  ;;   (rem-hline tab))
-#+end_src
+<span class="org-block-begin-line">#+begin_src emacs-lisp :var tab=many-cols
+</span>  <span class="starter-kit-paren">(</span>message <span class="string">"%S"</span> tab<span class="starter-kit-paren">)</span>
+  <span class="comment-delimiter">;; </span><span class="comment">(remove 'hline tab)
+</span>  <span class="comment-delimiter">;; </span><span class="comment">(flet ((rem-hline (el)
+</span>  <span class="comment-delimiter">;;                   </span><span class="comment">(if (listp el)
+</span>  <span class="comment-delimiter">;;                       </span><span class="comment">(remove nil (mapcar #'rem-hline el))
+</span>  <span class="comment-delimiter">;;                     </span><span class="comment">(if (equal 'hline el) nil el))))
+</span>  <span class="comment-delimiter">;;   </span><span class="comment">(rem-hline tab))
+</span><span class="org-block-end-line">#+end_src
+</span>
+<span class="org-block-begin-line">#+begin_src ruby :var tab=less-cols
+</span>  tab
+<span class="org-block-end-line">#+end_src
+</span>
+<span class="org-meta-line">#+results:
+</span><span class="org-table">| 1 |</span>
+<span class="org-table">|---|</span>
+<span class="org-table">| 2 |</span>
+<span class="org-table">| 3 |</span>
 
-#+begin_src ruby :var tab=less-cols
-  tab
-#+end_src
+<span class="org-block-begin-line">#+begin_src ruby :var one=2
+</span>  1 + 2
+<span class="org-block-end-line">#+end_src
+</span>
+<span class="org-meta-line">#+results:
+</span><span class="org-code">: 3
+</span>
+<span class="org-block-begin-line">#+begin_src python :var tab=less-cols
+</span>  <span class="keyword">return </span>tab
+<span class="org-block-end-line">#+end_src
+</span>
+<span class="org-meta-line">#+results:
+</span><span class="org-table">| 1 |</span>
+<span class="org-table">|---|</span>
+<span class="org-table">| 2 |</span>
+<span class="org-table">| 3 |</span>
 
-#+results:
-| 1 |
-|---|
-| 2 |
-| 3 |
+<span class="org-block-begin-line">#+begin_src ruby :var tab=less-cols :colnames no
+</span>  tab
+<span class="org-block-end-line">#+end_src
+</span>
+<span class="org-meta-line">#+results:
+</span><span class="org-table">| 1 |</span>
+<span class="org-table">| 2 |</span>
+<span class="org-table">| 3 |</span>
 
-#+begin_src ruby :var one=2
-  1 + 2
-#+end_src
-
-#+results:
-: 3
-
-#+begin_src python :var tab=less-cols
-  return tab
-#+end_src
-
-#+results:
-| 1 |
-|---|
-| 2 |
-| 3 |
-
-#+begin_src ruby :var tab=less-cols :colnames no
-  tab
-#+end_src
-
-#+results:
-| 1 |
-| 2 |
-| 3 |
-
-#+begin_src emacs-lisp :var tab=row-and-col-names
-   (message "%S" tab)
-#+end_src
-
-#+results:
-: (("" "c1" "c2" "c3") hline ("r1" 1 4 7) ("r2" 2 5 8) ("r3" 3 6 9))
-
-#+tblname: row-and-col-names
-|    | c1 | c2 | c3 |
-|----+----+----+----|
-| r1 |  1 |  4 |  7 |
-| r2 |  2 |  5 |  8 |
-| r3 |  3 |  6 |  9 |
+<span class="org-block-begin-line">#+begin_src emacs-lisp :var tab=row-and-col-names
+</span>   <span class="starter-kit-paren">(</span>message <span class="string">"%S"</span> tab<span class="starter-kit-paren">)
+</span><span class="org-block-end-line">#+end_src
+</span>
+<span class="org-meta-line">#+results:
+</span><span class="org-code">: (("" "c1" "c2" "c3") hline ("r1" 1 4 7) ("r2" 2 5 8) ("r3" 3 6 9))
+</span>
+<span class="org-meta-line">#+tblname: row-and-col-names
+</span><span class="org-table">|    | c1 | c2 | c3 |</span>
+<span class="org-table">|----+----+----+----|</span>
+<span class="org-table">| r1 |  1 |  4 |  7 |</span>
+<span class="org-table">| r2 |  2 |  5 |  8 |</span>
+<span class="org-table">| r3 |  3 |  6 |  9 |</span>
 
 functions
-#+begin_src emacs-lisp
-  (defun org-babel-del-hlines (table)
-    "Remove all 'hlines from TABLE."
-    (remove 'hline table))
+<span class="org-block-begin-line">#+begin_src emacs-lisp
+</span>  <span class="starter-kit-paren">(</span><span class="keyword">defun</span> <span class="function-name">org-babel-del-hlines</span> <span class="starter-kit-paren">(</span>table<span class="starter-kit-paren">)</span>
+    <span class="doc">"Remove all 'hlines from TABLE."</span>
+    <span class="starter-kit-paren">(</span>remove 'hline table<span class="starter-kit-paren">))</span>
   
-  (defun org-babel-get-colnames (table)
-    "Return a cons cell, the `car' of which contains the TABLE
-        less colnames, and the `cdr' of which contains a list of the
-        column names"
-    (if (equal 'hline (second table))
-        (cons (cddr table) (car table))
-      table))
+  <span class="starter-kit-paren">(</span><span class="keyword">defun</span> <span class="function-name">org-babel-get-colnames</span> <span class="starter-kit-paren">(</span>table<span class="starter-kit-paren">)</span>
+    <span class="doc">"Return a cons cell, the `</span><span class="doc"><span class="constant">car</span></span><span class="doc">' of which contains the TABLE
+        less colnames, and the `</span><span class="doc"><span class="constant">cdr</span></span><span class="doc">' of which contains a list of the
+        column names"</span>
+    <span class="starter-kit-paren">(</span><span class="keyword">if</span> <span class="starter-kit-paren">(</span>equal 'hline <span class="starter-kit-paren">(</span>second table<span class="starter-kit-paren">))</span>
+        <span class="starter-kit-paren">(</span>cons <span class="starter-kit-paren">(</span>cddr table<span class="starter-kit-paren">)</span> <span class="starter-kit-paren">(</span>car table<span class="starter-kit-paren">))</span>
+      table<span class="starter-kit-paren">))</span>
     
-  (defun org-babel-get-rownames (table)
-    "Return a cons cell, the `car' of which contains the TABLE less
-     colnames, and the `cdr' of which contains a list of the column
-     names.  Note: this function removes any hlines in TABLE"
-    (flet ((trans (table) (apply #'mapcar* #'list table)))
-      (let ((table (trans (remove 'hline table))))
-        (cons (cdr table) (car table)))))
+  <span class="starter-kit-paren">(</span><span class="keyword">defun</span> <span class="function-name">org-babel-get-rownames</span> <span class="starter-kit-paren">(</span>table<span class="starter-kit-paren">)</span>
+    <span class="doc">"Return a cons cell, the `</span><span class="doc"><span class="constant">car</span></span><span class="doc">' of which contains the TABLE less
+     colnames, and the `</span><span class="doc"><span class="constant">cdr</span></span><span class="doc">' of which contains a list of the column
+     names.  </span><span class="doc"><span class="constant">Note</span></span><span class="doc">: this function removes any hlines in TABLE"</span>
+    <span class="starter-kit-paren">(</span><span class="keyword">flet</span> <span class="starter-kit-paren">((</span>trans <span class="starter-kit-paren">(</span>table<span class="starter-kit-paren">)</span> <span class="starter-kit-paren">(</span>apply #'mapcar* #'list table<span class="starter-kit-paren">)))</span>
+      <span class="starter-kit-paren">(</span><span class="keyword">let</span> <span class="starter-kit-paren">((</span>table <span class="starter-kit-paren">(</span>trans <span class="starter-kit-paren">(</span>remove 'hline table<span class="starter-kit-paren">))))</span>
+        <span class="starter-kit-paren">(</span>cons <span class="starter-kit-paren">(</span>cdr table<span class="starter-kit-paren">)</span> <span class="starter-kit-paren">(</span>car table<span class="starter-kit-paren">)))))</span>
   
-  (defun org-babel-put-colnames (table colnames)
-    "Add COLNAMES to TABLE if they exist."
-    (if colnames (apply 'list colnames 'hline table) table))
+  <span class="starter-kit-paren">(</span><span class="keyword">defun</span> <span class="function-name">org-babel-put-colnames</span> <span class="starter-kit-paren">(</span>table colnames<span class="starter-kit-paren">)</span>
+    <span class="doc">"Add COLNAMES to TABLE if they exist."</span>
+    <span class="starter-kit-paren">(</span><span class="keyword">if</span> colnames <span class="starter-kit-paren">(</span>apply 'list colnames 'hline table<span class="starter-kit-paren">)</span> table<span class="starter-kit-paren">))</span>
   
-  (defun org-babel-put-rownames (table rownames)
-    "Add ROWNAMES to TABLE if they exist."
-    (if rownames
-        (mapcar (lambda (row)
-                  (if (listp row)
-                      (cons (or (pop rownames) "") row)
-                    row)) table)
-      table))
-#+end_src
-
+  <span class="starter-kit-paren">(</span><span class="keyword">defun</span> <span class="function-name">org-babel-put-rownames</span> <span class="starter-kit-paren">(</span>table rownames<span class="starter-kit-paren">)</span>
+    <span class="doc">"Add ROWNAMES to TABLE if they exist."</span>
+    <span class="starter-kit-paren">(</span><span class="keyword">if</span> rownames
+        <span class="starter-kit-paren">(</span>mapcar <span class="starter-kit-paren">(</span><span class="keyword">lambda</span> <span class="starter-kit-paren">(</span>row<span class="starter-kit-paren">)</span>
+                  <span class="starter-kit-paren">(</span><span class="keyword">if</span> <span class="starter-kit-paren">(</span>listp row<span class="starter-kit-paren">)</span>
+                      <span class="starter-kit-paren">(</span>cons <span class="starter-kit-paren">(</span>or <span class="starter-kit-paren">(</span>pop rownames<span class="starter-kit-paren">)</span> <span class="string">""</span><span class="starter-kit-paren">)</span> row<span class="starter-kit-paren">)</span>
+                    row<span class="starter-kit-paren">))</span> table<span class="starter-kit-paren">)</span>
+      table<span class="starter-kit-paren">))
+</span><span class="org-block-end-line">#+end_src
+</span>
 </pre>
   </body>
 </html>

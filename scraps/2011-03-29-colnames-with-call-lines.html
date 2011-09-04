@@ -9,6 +9,16 @@
         color: #E6E1DC;
         background-color: #232323;
       }
+      .org-block-begin-line {
+        /* org-block-begin-line */
+        color: #BC9458;
+        font-style: italic;
+      }
+      .org-block-end-line {
+        /* org-block-end-line */
+        color: #BC9458;
+        font-style: italic;
+      }
       .org-level-2 {
         /* org-level-2 */
         color: #b0c4de;
@@ -54,25 +64,25 @@
 <span class="org-table">| 1 | heat      |    30 |</span>
 
 <span class="org-meta-line">#+source: func5
-</span>#+begin_src R :var name=data :var a="one" :colnames yes
-  names(name)
-#+end_src
+</span><span class="org-block-begin-line">#+begin_src R :var name=data :var a="one" :colnames yes
+</span>  names(name)
+<span class="org-block-end-line">#+end_src
+</span>
+<span class="org-meta-line">#+results: func5
+</span><span class="org-table">| x         |</span>
+<span class="org-table">|-----------|</span>
+<span class="org-table">| x         |</span>
+<span class="org-table">| parameter |</span>
+<span class="org-table">| value     |</span>
 
-#+results: func5
-| x         |
-|-----------|
-| x         |
-| parameter |
-| value     |
-
-#+call: func5(name=data, a="two") :colnames yes
-
-#+results: func5(name=data, a="two")
-| x         |
-|-----------|
-| x         |
-| parameter |
-| value     |
+<span class="org-meta-line">#+call: func5(name=data, a="two") :colnames yes
+</span>
+<span class="org-meta-line">#+results: func5(name=data, a="two")
+</span><span class="org-table">| x         |</span>
+<span class="org-table">|-----------|</span>
+<span class="org-table">| x         |</span>
+<span class="org-table">| parameter |</span>
+<span class="org-table">| value     |</span>
 
 </pre>
   </body>

@@ -9,6 +9,47 @@
         color: #E6E1DC;
         background-color: #232323;
       }
+      .function-name {
+        /* font-lock-function-name-face */
+        color: #FFC66D;
+      }
+      .keyword {
+        /* font-lock-keyword-face */
+        color: #CC7833;
+      }
+      .org-block-begin-line {
+        /* org-block-begin-line */
+        color: #BC9458;
+        font-style: italic;
+      }
+      .org-block-end-line {
+        /* org-block-end-line */
+        color: #BC9458;
+        font-style: italic;
+      }
+      .org-code {
+        /* org-code */
+        color: #b3b3b3;
+      }
+      .org-level-2 {
+        /* org-level-2 */
+        color: #b0c4de;
+      }
+      .org-meta-line {
+        /* org-meta-line */
+        color: #BC9458;
+        font-style: italic;
+      }
+      .org-property-value {
+      }
+      .org-special-keyword {
+        /* org-special-keyword */
+        color: #CC7833;
+      }
+      .starter-kit-paren {
+        /* starter-kit-paren-face */
+        color: #7f7f7f;
+      }
 
       a {
         color: inherit;
@@ -24,27 +65,27 @@
   </head>
   <body>
     <pre>
-** looking at source name exports
-   :PROPERTIES:
-   :DATE:     2010-02-09
-   :END:
+<span class="org-level-2">** looking at source name exports</span>
+<span class="org-special-keyword">   :PROPERTIES:</span>
+   <span class="org-special-keyword">:DATE:</span>     <span class="org-property-value">2010-02-09</span>
+<span class="org-special-keyword">   :END:</span>
 
-#+source: fibonacci
-#+begin_src emacs-lisp :var input=0
-  (defun fib (n)
-    (if (&gt; n 1)
-        (+ (fib (- n 1)) (fib (- n 2)))
-        1))
-  (fib input)
-#+end_src
-
-#+results: fibonacci
-: 1
-
+<span class="org-meta-line">#+source: fibonacci
+</span><span class="org-block-begin-line">#+begin_src emacs-lisp :var input=0
+</span>  <span class="starter-kit-paren">(</span><span class="keyword">defun</span> <span class="function-name">fib</span> <span class="starter-kit-paren">(</span>n<span class="starter-kit-paren">)</span>
+    <span class="starter-kit-paren">(</span><span class="keyword">if</span> <span class="starter-kit-paren">(</span>&gt; n 1<span class="starter-kit-paren">)</span>
+        <span class="starter-kit-paren">(</span>+ <span class="starter-kit-paren">(</span>fib <span class="starter-kit-paren">(</span>- n 1<span class="starter-kit-paren">))</span> <span class="starter-kit-paren">(</span>fib <span class="starter-kit-paren">(</span>- n 2<span class="starter-kit-paren">)))</span>
+        1<span class="starter-kit-paren">))</span>
+  <span class="starter-kit-paren">(</span>fib input<span class="starter-kit-paren">)
+</span><span class="org-block-end-line">#+end_src
+</span>
+<span class="org-meta-line">#+results: fibonacci
+</span><span class="org-code">: 1
+</span>
 now applying our Fibonacci function
 
-#+call: fibonacci(input=5)
-
+<span class="org-meta-line">#+call: fibonacci(input=5)
+</span>
 </pre>
   </body>
 </html>

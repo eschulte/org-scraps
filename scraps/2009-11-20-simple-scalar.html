@@ -9,15 +9,38 @@
         color: #E6E1DC;
         background-color: #232323;
       }
+      .org-block-begin-line {
+        /* org-block-begin-line */
+        color: #BC9458;
+        font-style: italic;
+      }
+      .org-block-end-line {
+        /* org-block-end-line */
+        color: #BC9458;
+        font-style: italic;
+      }
+      .org-code {
+        /* org-code */
+        color: #b3b3b3;
+      }
       .org-level-2 {
         /* org-level-2 */
         color: #b0c4de;
+      }
+      .org-meta-line {
+        /* org-meta-line */
+        color: #BC9458;
+        font-style: italic;
       }
       .org-property-value {
       }
       .org-special-keyword {
         /* org-special-keyword */
         color: #CC7833;
+      }
+      .starter-kit-paren {
+        /* starter-kit-paren-face */
+        color: #7f7f7f;
       }
 
       a {
@@ -39,13 +62,13 @@
    <span class="org-special-keyword">:DATE:</span>     <span class="org-property-value">2009-11-20</span>
 <span class="org-special-keyword">   :END:</span>
 
-#+begin_src emacs-lisp
-  (+ 1 3)
-#+end_src
-
-#+resname:
-: 4
-
+<span class="org-block-begin-line">#+begin_src emacs-lisp
+</span>  <span class="starter-kit-paren">(</span>+ 1 3<span class="starter-kit-paren">)
+</span><span class="org-block-end-line">#+end_src
+</span>
+<span class="org-meta-line">#+resname:
+</span><span class="org-code">: 4
+</span>
 </pre>
   </body>
 </html>

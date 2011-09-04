@@ -9,6 +9,47 @@
         color: #E6E1DC;
         background-color: #232323;
       }
+      .constant {
+        /* font-lock-constant-face */
+        color: #6D9CBE;
+      }
+      .org-block-begin-line {
+        /* org-block-begin-line */
+        color: #BC9458;
+        font-style: italic;
+      }
+      .org-block-end-line {
+        /* org-block-end-line */
+        color: #BC9458;
+        font-style: italic;
+      }
+      .org-level-2 {
+        /* org-level-2 */
+        color: #b0c4de;
+      }
+      .org-meta-line {
+        /* org-meta-line */
+        color: #BC9458;
+        font-style: italic;
+      }
+      .org-property-value {
+      }
+      .org-special-keyword {
+        /* org-special-keyword */
+        color: #CC7833;
+      }
+      .org-table {
+        /* org-table */
+        color: #87cefa;
+      }
+      .string {
+        /* font-lock-string-face */
+        color: #A5C261;
+      }
+      .type {
+        /* font-lock-type-face */
+        color: #ffffff;
+      }
 
       a {
         color: inherit;
@@ -24,45 +65,45 @@
   </head>
   <body>
     <pre>
-** org results and replace
-   :PROPERTIES:
-   :DATE:     2010-08-18
-   :END:
+<span class="org-level-2">** org results and replace</span>
+<span class="org-special-keyword">   :PROPERTIES:</span>
+   <span class="org-special-keyword">:DATE:</span>     <span class="org-property-value">2010-08-18</span>
+<span class="org-special-keyword">   :END:</span>
 
-#+begin_src emacs-lisp :results org
-  "| 1 | 2 |
+<span class="org-block-begin-line">#+begin_src emacs-lisp :results org
+</span>  <span class="string">"| 1 | 2 |
 | 2 | 3 |"
-#+end_src
+</span><span class="org-block-end-line">#+end_src
+</span>
+<span class="org-meta-line">#+results:
+</span><span class="org-table">| 1 | 2 |</span>
+<span class="org-table">| 2 | 3 |</span>
 
-#+results:
-| 1 | 2 |
-| 2 | 3 |
-
-#+begin_src R
-  rnorm(1)
-#+end_src
-
-#+begin_src R
-  numbers &lt;- matrix(c(51,43,22,92,28,21,68,22,9),ncol=3,byrow=TRUE)
+<span class="org-block-begin-line">#+begin_src R
+</span>  rnorm(1)
+<span class="org-block-end-line">#+end_src
+</span>
+<span class="org-block-begin-line">#+begin_src R
+</span>  numbers <span class="constant">&lt;-</span> matrix(c(51,43,22,92,28,21,68,22,9),ncol=3,byrow=<span class="type">TRUE)</span>
   numbers
-#+end_src
+<span class="org-block-end-line">#+end_src
+</span>
+<span class="org-meta-line">#+results:
+</span><span class="org-table">| 51 | 43 | 22 |</span>
+<span class="org-table">| 92 | 28 | 21 |</span>
+<span class="org-table">| 68 | 22 |  9 |</span>
 
-#+results:
-| 51 | 43 | 22 |
-| 92 | 28 | 21 |
-| 68 | 22 |  9 |
-
-#+begin_src R :colnames yes
-  numbers &lt;- matrix(c(51,43,22,92,28,21,68,22,9),ncol=3,byrow=TRUE)
+<span class="org-block-begin-line">#+begin_src R :colnames yes
+</span>  numbers <span class="constant">&lt;-</span> matrix(c(51,43,22,92,28,21,68,22,9),ncol=3,byrow=<span class="type">TRUE)</span>
   numbers
-#+end_src
-
-#+results:
-| V1 | V2 | V3 |
-|----+----+----|
-| 51 | 43 | 22 |
-| 92 | 28 | 21 |
-| 68 | 22 |  9 |
+<span class="org-block-end-line">#+end_src
+</span>
+<span class="org-meta-line">#+results:
+</span><span class="org-table">| V1 | V2 | V3 |</span>
+<span class="org-table">|----+----+----|</span>
+<span class="org-table">| 51 | 43 | 22 |</span>
+<span class="org-table">| 92 | 28 | 21 |</span>
+<span class="org-table">| 68 | 22 |  9 |</span>
 
 </pre>
   </body>

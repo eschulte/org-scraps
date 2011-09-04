@@ -9,6 +9,39 @@
         color: #E6E1DC;
         background-color: #232323;
       }
+      .org-block-begin-line {
+        /* org-block-begin-line */
+        color: #BC9458;
+        font-style: italic;
+      }
+      .org-block-end-line {
+        /* org-block-end-line */
+        color: #BC9458;
+        font-style: italic;
+      }
+      .org-level-2 {
+        /* org-level-2 */
+        color: #b0c4de;
+      }
+      .org-level-3 {
+        /* org-level-3 */
+        color: #CC7833;
+      }
+      .org-meta-line {
+        /* org-meta-line */
+        color: #BC9458;
+        font-style: italic;
+      }
+      .org-property-value {
+      }
+      .org-special-keyword {
+        /* org-special-keyword */
+        color: #CC7833;
+      }
+      .org-table {
+        /* org-table */
+        color: #87cefa;
+      }
 
       a {
         color: inherit;
@@ -24,28 +57,28 @@
   </head>
   <body>
     <pre>
-** reference to a commented out subtree
-   :PROPERTIES:
-   :DATE:     2011-02-28
-   :END:
-*** COMMENT I don't export
-    :PROPERTIES:
-    :DATE:     2011-02-28
-    :END:
-#+results: hidden-parameters
-| 1 |
-| 2 |
-| 3 |
-| 4 |
+<span class="org-level-2">** reference to a commented out subtree</span>
+<span class="org-special-keyword">   :PROPERTIES:</span>
+   <span class="org-special-keyword">:DATE:</span>     <span class="org-property-value">2011-02-28</span>
+<span class="org-special-keyword">   :END:</span>
+<span class="org-level-3">*** </span><span class="org-special-keyword">COMMENT</span><span class="org-level-3"> I don't export</span>
+<span class="org-special-keyword">    :PROPERTIES:</span>
+    <span class="org-special-keyword">:DATE:</span>     <span class="org-property-value">2011-02-28</span>
+<span class="org-special-keyword">    :END:</span>
+<span class="org-meta-line">#+results: hidden-parameters
+</span><span class="org-table">| 1 |</span>
+<span class="org-table">| 2 |</span>
+<span class="org-table">| 3 |</span>
+<span class="org-table">| 4 |</span>
 
-*** I do export
-    :PROPERTIES:
-    :DATE:     2011-02-28
-    :END:
-#+begin_src emacs-lisp :var params=hidden-parameters :exports both
-  params
-#+end_src
-
+<span class="org-level-3">*** I do export</span>
+<span class="org-special-keyword">    :PROPERTIES:</span>
+    <span class="org-special-keyword">:DATE:</span>     <span class="org-property-value">2011-02-28</span>
+<span class="org-special-keyword">    :END:</span>
+<span class="org-block-begin-line">#+begin_src emacs-lisp :var params=hidden-parameters :exports both
+</span>  params
+<span class="org-block-end-line">#+end_src
+</span>
 </pre>
   </body>
 </html>

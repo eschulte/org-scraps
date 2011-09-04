@@ -9,9 +9,32 @@
         color: #E6E1DC;
         background-color: #232323;
       }
+      .constant {
+        /* font-lock-constant-face */
+        color: #6D9CBE;
+      }
+      .org-block-begin-line {
+        /* org-block-begin-line */
+        color: #BC9458;
+        font-style: italic;
+      }
+      .org-block-end-line {
+        /* org-block-end-line */
+        color: #BC9458;
+        font-style: italic;
+      }
+      .org-code {
+        /* org-code */
+        color: #b3b3b3;
+      }
       .org-level-2 {
         /* org-level-2 */
         color: #b0c4de;
+      }
+      .org-meta-line {
+        /* org-meta-line */
+        color: #BC9458;
+        font-style: italic;
       }
       .org-property-value {
       }
@@ -37,16 +60,16 @@
 <span class="org-level-2">** export of inline R code</span>
 <span class="org-special-keyword">   :PROPERTIES:</span>
    <span class="org-special-keyword">:DATE:</span>     <span class="org-property-value">2011-03-03</span>
-   :END:
+<span class="org-special-keyword">   :END:</span>
 Here I test inline code evaluation in R.
 
-#+begin_src R :session *R*
-x &lt;- 100
-#+end_src
-
-#+results:
-: 100
-
+<span class="org-block-begin-line">#+begin_src R :session *R*
+</span>x <span class="constant">&lt;- </span>100
+<span class="org-block-end-line">#+end_src
+</span>
+<span class="org-meta-line">#+results:
+</span><span class="org-code">: 100
+</span>
 Now I want to export the value of x, which should be
 src_R[:session *R*]{x} .
 

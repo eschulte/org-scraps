@@ -9,6 +9,43 @@
         color: #E6E1DC;
         background-color: #232323;
       }
+      .keyword {
+        /* font-lock-keyword-face */
+        color: #CC7833;
+      }
+      .org-block-begin-line {
+        /* org-block-begin-line */
+        color: #BC9458;
+        font-style: italic;
+      }
+      .org-block-end-line {
+        /* org-block-end-line */
+        color: #BC9458;
+        font-style: italic;
+      }
+      .org-level-2 {
+        /* org-level-2 */
+        color: #b0c4de;
+      }
+      .org-meta-line {
+        /* org-meta-line */
+        color: #BC9458;
+        font-style: italic;
+      }
+      .org-property-value {
+      }
+      .org-special-keyword {
+        /* org-special-keyword */
+        color: #CC7833;
+      }
+      .string {
+        /* font-lock-string-face */
+        color: #A5C261;
+      }
+      .variable-name {
+        /* font-lock-variable-name-face */
+        color: #b0c4de;
+      }
 
       a {
         color: inherit;
@@ -24,20 +61,20 @@
   </head>
   <body>
     <pre>
-** gnuplot variable expansion
-   :PROPERTIES:
-   :DATE:     2009-11-30
-   :END:
+<span class="org-level-2">** gnuplot variable expansion</span>
+<span class="org-special-keyword">   :PROPERTIES:</span>
+   <span class="org-special-keyword">:DATE:</span>     <span class="org-property-value">2009-11-30</span>
+<span class="org-special-keyword">   :END:</span>
 
-#+source: simple-function
-#+begin_src emacs-lisp
-  "sin(x)"
-#+end_src
-
-#+begin_src gnuplot :var fun=simple-function
-  plot $fun
-#+end_src
-
+<span class="org-meta-line">#+source: simple-function
+</span><span class="org-block-begin-line">#+begin_src emacs-lisp
+</span>  <span class="string">"sin(x)"
+</span><span class="org-block-end-line">#+end_src
+</span>
+<span class="org-block-begin-line">#+begin_src gnuplot :var fun=simple-function
+</span>  <span class="keyword">plot</span> <span class="variable-name">$fun
+</span><span class="org-block-end-line">#+end_src
+</span>
 </pre>
   </body>
 </html>

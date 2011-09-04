@@ -9,6 +9,39 @@
         color: #E6E1DC;
         background-color: #232323;
       }
+      .org-block-begin-line {
+        /* org-block-begin-line */
+        color: #BC9458;
+        font-style: italic;
+      }
+      .org-block-end-line {
+        /* org-block-end-line */
+        color: #BC9458;
+        font-style: italic;
+      }
+      .org-code {
+        /* org-code */
+        color: #b3b3b3;
+      }
+      .org-level-2 {
+        /* org-level-2 */
+        color: #b0c4de;
+      }
+      .org-meta-line {
+        /* org-meta-line */
+        color: #BC9458;
+        font-style: italic;
+      }
+      .org-property-value {
+      }
+      .org-special-keyword {
+        /* org-special-keyword */
+        color: #CC7833;
+      }
+      .starter-kit-paren {
+        /* starter-kit-paren-face */
+        color: #7f7f7f;
+      }
 
       a {
         color: inherit;
@@ -24,29 +57,29 @@
   </head>
   <body>
     <pre>
-** access to variables set in property drawers
-   :PROPERTIES:
-   :special:  89
-   :text: schulte
-   :DATE:     2010-03-22
-   :END:
+<span class="org-level-2">** access to variables set in property drawers</span>
+<span class="org-special-keyword">   :PROPERTIES:</span>
+   <span class="org-special-keyword">:special:</span>  <span class="org-property-value">89</span>
+   <span class="org-special-keyword">:text:</span> <span class="org-property-value">schulte</span>
+   <span class="org-special-keyword">:DATE:</span>     <span class="org-property-value">2010-03-22</span>
+<span class="org-special-keyword">   :END:</span>
 
-: "(org-entry-get nil "special" t)"
-
-#+begin_src emacs-lisp :var special=(string-to-number (org-entry-get nil "special" t))
-  (+ special 1)
-#+end_src
-
-#+results:
-: 90
-
-#+begin_src emacs-lisp :var special=(org-entry-get nil "text" t)
-  special  
-#+end_src
-
-#+results:
-: schulte
-
+<span class="org-code">: "(org-entry-get nil "special" t)"
+</span>
+<span class="org-block-begin-line">#+begin_src emacs-lisp :var special=(string-to-number (org-entry-get nil "special" t))
+</span>  <span class="starter-kit-paren">(</span>+ special 1<span class="starter-kit-paren">)
+</span><span class="org-block-end-line">#+end_src
+</span>
+<span class="org-meta-line">#+results:
+</span><span class="org-code">: 90
+</span>
+<span class="org-block-begin-line">#+begin_src emacs-lisp :var special=(org-entry-get nil "text" t)
+</span>  special  
+<span class="org-block-end-line">#+end_src
+</span>
+<span class="org-meta-line">#+results:
+</span><span class="org-code">: schulte
+</span>
 </pre>
   </body>
 </html>

@@ -9,9 +9,37 @@
         color: #E6E1DC;
         background-color: #232323;
       }
+      .builtin {
+        /* font-lock-builtin-face */
+        color: #D0D0FF;
+      }
+      .constant {
+        /* font-lock-constant-face */
+        color: #6D9CBE;
+      }
+      .org-block-begin-line {
+        /* org-block-begin-line */
+        color: #BC9458;
+        font-style: italic;
+      }
+      .org-block-end-line {
+        /* org-block-end-line */
+        color: #BC9458;
+        font-style: italic;
+      }
       .org-level-2 {
         /* org-level-2 */
         color: #b0c4de;
+      }
+      .org-level-3 {
+        /* org-level-3 */
+        color: #CC7833;
+      }
+      .org-property-value {
+      }
+      .org-special-keyword {
+        /* org-special-keyword */
+        color: #CC7833;
       }
 
       a {
@@ -29,30 +57,30 @@
   <body>
     <pre>
 <span class="org-level-2">** inline code block and downstream src blocks</span>
-   :PROPERTIES:
-   :DATE:     2011-08-21
-   :END:
+<span class="org-special-keyword">   :PROPERTIES:</span>
+   <span class="org-special-keyword">:DATE:</span>     <span class="org-property-value">2011-08-21</span>
+<span class="org-special-keyword">   :END:</span>
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 something src_sh{echo eric}
 CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
-#+begin_src sh
-  echo schulte
-#+end_src
-EEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE
+<span class="org-block-begin-line">#+begin_src sh
+</span>  <span class="builtin">echo </span>schulte
+<span class="org-block-end-line">#+end_src
+</span>EEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE
 
-*** with R
-    :PROPERTIES:
-    :DATE:     2011-08-21
-    :END:
+<span class="org-level-3">*** with R</span>
+<span class="org-special-keyword">    :PROPERTIES:</span>
+    <span class="org-special-keyword">:DATE:</span>     <span class="org-property-value">2011-08-21</span>
+<span class="org-special-keyword">    :END:</span>
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 blah blah src_R[:results output]{cat(rnorm(2))}
 CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
-#+begin_src R :eval never :exports none
-  1+2
-  a &lt;- b + c
+<span class="org-block-begin-line">#+begin_src R :eval never :exports none
+</span>  1+2
+  a <span class="constant">&lt;- </span>b + c
   xyz
-#+end_src
-DDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDD
+<span class="org-block-end-line">#+end_src
+</span>DDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDD
 
 </pre>
   </body>

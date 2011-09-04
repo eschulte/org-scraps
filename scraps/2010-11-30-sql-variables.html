@@ -9,6 +9,44 @@
         color: #E6E1DC;
         background-color: #232323;
       }
+      .comment {
+        /* font-lock-comment-face */
+        color: #BC9458;
+        font-style: italic;
+      }
+      .org-block-begin-line {
+        /* org-block-begin-line */
+        color: #BC9458;
+        font-style: italic;
+      }
+      .org-block-end-line {
+        /* org-block-end-line */
+        color: #BC9458;
+        font-style: italic;
+      }
+      .org-level-2 {
+        /* org-level-2 */
+        color: #b0c4de;
+      }
+      .org-meta-line {
+        /* org-meta-line */
+        color: #BC9458;
+        font-style: italic;
+      }
+      .org-property-value {
+      }
+      .org-special-keyword {
+        /* org-special-keyword */
+        color: #CC7833;
+      }
+      .org-table {
+        /* org-table */
+        color: #87cefa;
+      }
+      .string {
+        /* font-lock-string-face */
+        color: #A5C261;
+      }
 
       a {
         color: inherit;
@@ -24,31 +62,31 @@
   </head>
   <body>
     <pre>
-** sql variables
-   :PROPERTIES:
-   :DATE:     2010-11-30
-   :END:
-#+results: sql-param
-| table       | valueTable0       |
-| column      | valueColumn0      |
-| type        | valueType0        |
-| nullability | valueNullability0 |
+<span class="org-level-2">** sql variables</span>
+<span class="org-special-keyword">   :PROPERTIES:</span>
+   <span class="org-special-keyword">:DATE:</span>     <span class="org-property-value">2010-11-30</span>
+<span class="org-special-keyword">   :END:</span>
+<span class="org-meta-line">#+results: sql-param
+</span><span class="org-table">| table       | valueTable0       |</span>
+<span class="org-table">| column      | valueColumn0      |</span>
+<span class="org-table">| type        | valueType0        |</span>
+<span class="org-table">| nullability | valueNullability0 |</span>
 
 I want to apply the values onto the following chunk of code:
 
-#+srcname: add-column-in-table-0
-#+begin_src sql :var table=sql-param[0,1] :var column=sql-param[1,1] :var type=sql-param[2,1] :var nullability=sql-param[3,1]
--- add column `@column' (if column does not exist yet)
-IF NOT EXISTS (SELECT *
+<span class="org-meta-line">#+srcname: add-column-in-table-0
+</span><span class="org-block-begin-line">#+begin_src sql :var table=sql-param[0,1] :var column=sql-param[1,1] :var type=sql-param[2,1] :var nullability=sql-param[3,1]
+</span><span class="comment">-- add column `@column' (if column does not exist yet)
+</span>IF NOT EXISTS (SELECT *
                FROM INFORMATION_SCHEMA.COLUMNS
-               WHERE TABLE_NAME = '@table'
-               AND COLUMN_NAME = '@column')
+               WHERE TABLE_NAME = <span class="string">'@table'</span>
+               AND COLUMN_NAME = <span class="string">'@column')</span>
 BEGIN
     ALTER TABLE $table
     ADD $column $type @nullability
 END
-#+end_src
-
+<span class="org-block-end-line">#+end_src
+</span>
 </pre>
   </body>
 </html>

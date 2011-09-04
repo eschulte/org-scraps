@@ -13,6 +13,16 @@
         /* font-lock-builtin-face */
         color: #D0D0FF;
       }
+      .comment {
+        /* font-lock-comment-face */
+        color: #BC9458;
+        font-style: italic;
+      }
+      .comment-delimiter {
+        /* font-lock-comment-delimiter-face */
+        color: #BC9458;
+        font-style: italic;
+      }
       .keyword {
         /* font-lock-keyword-face */
         color: #CC7833;
@@ -80,8 +90,8 @@
   $<span class="variable-name">HOME</span>/R/R/R-2.12.0/bin/Rscript --vanilla -e
 <span class="string">"source('./R/generateLatinHypercubeScenarios.R'); doIt()"</span>
   <span class="keyword">for</span> SCENARIO<span class="keyword"> in</span> ./R/scenarios/*.R; <span class="keyword">do</span>
-    <span class="builtin">export</span> <span class="variable-name">SCENARIO</span>=${<span class="variable-name">SCENARIO</span>#./R/scenarios/}
-    qsub nsa.sub
+    <span class="builtin">export</span> <span class="variable-name">SCENARIO</span>=${<span class="variable-name">SCENARIO</span><span class="comment-delimiter">#</span><span class="comment">./R/scenarios/}
+</span>    qsub nsa.sub
   <span class="keyword">done
 </span><span class="org-block-end-line">#+end_src
 </span>

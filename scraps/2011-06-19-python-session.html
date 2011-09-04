@@ -27,9 +27,18 @@
         color: #BC9458;
         font-style: italic;
       }
+      .org-code {
+        /* org-code */
+        color: #b3b3b3;
+      }
       .org-level-2 {
         /* org-level-2 */
         color: #b0c4de;
+      }
+      .org-meta-line {
+        /* org-meta-line */
+        color: #BC9458;
+        font-style: italic;
       }
       .org-property-value {
       }
@@ -73,23 +82,23 @@
 <span class="keyword">print</span> <span class="string">"I throw an error"
 </span><span class="org-block-end-line">#+end_src
 </span>
-#+results:
-: 
+<span class="org-meta-line">#+results:
+</span><span class="org-code">: 
 : ... ... ... 2
 : 4
 : 7
 : 11
 : I throw an error
-
-#+begin_src python :results output :session
-  print y
-#+end_src
-
-#+results:
-: Traceback (most recent call last):
+</span>
+<span class="org-block-begin-line">#+begin_src python :results output :session
+</span>  <span class="keyword">print </span>y
+<span class="org-block-end-line">#+end_src
+</span>
+<span class="org-meta-line">#+results:
+</span><span class="org-code">: Traceback (most recent call last):
 :   File "&lt;stdin&gt;", line 1, in &lt;module&gt;
 : NameError: name 'y' is not defined
-
+</span>
 </pre>
   </body>
 </html>

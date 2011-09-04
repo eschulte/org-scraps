@@ -9,6 +9,39 @@
         color: #E6E1DC;
         background-color: #232323;
       }
+      .org-block-begin-line {
+        /* org-block-begin-line */
+        color: #BC9458;
+        font-style: italic;
+      }
+      .org-block-end-line {
+        /* org-block-end-line */
+        color: #BC9458;
+        font-style: italic;
+      }
+      .org-code {
+        /* org-code */
+        color: #b3b3b3;
+      }
+      .org-level-2 {
+        /* org-level-2 */
+        color: #b0c4de;
+      }
+      .org-meta-line {
+        /* org-meta-line */
+        color: #BC9458;
+        font-style: italic;
+      }
+      .org-property-value {
+      }
+      .org-special-keyword {
+        /* org-special-keyword */
+        color: #CC7833;
+      }
+      .org-table {
+        /* org-table */
+        color: #87cefa;
+      }
 
       a {
         color: inherit;
@@ -24,41 +57,41 @@
   </head>
   <body>
     <pre>
-** lob calls with header argument pass through
-   :PROPERTIES:
-   :DATE:     2010-11-08
-   :END:
+<span class="org-level-2">** lob calls with header argument pass through</span>
+<span class="org-special-keyword">   :PROPERTIES:</span>
+   <span class="org-special-keyword">:DATE:</span>     <span class="org-property-value">2010-11-08</span>
+<span class="org-special-keyword">   :END:</span>
 
-#+source: lob-header
-#+begin_src emacs-lisp :var n=20
-  n
-#+end_src
+<span class="org-meta-line">#+source: lob-header
+</span><span class="org-block-begin-line">#+begin_src emacs-lisp :var n=20
+</span>  n
+<span class="org-block-end-line">#+end_src
+</span>
+<span class="org-meta-line">#+call: lob-header[:results vector](n=15)
+</span>
+<span class="org-meta-line">#+results: lob-header[:results vector](n=15)
+</span><span class="org-table">| 15 |</span>
 
-#+call: lob-header[:results vector](n=15)
-
-#+results: lob-header[:results vector](n=15)
-| 15 |
-
-#+call: lob-header(n=10) :results vector
-
-#+results: lob-header(n=10)
-| 10 |
+<span class="org-meta-line">#+call: lob-header(n=10) :results vector
+</span>
+<span class="org-meta-line">#+results: lob-header(n=10)
+</span><span class="org-table">| 10 |</span>
 
 need ob-ref.el to pass through the header arguments in "[]"s
-#+begin_src emacs-lisp :var n=lob-header[:results vector](n=8)
-  n
-#+end_src
+<span class="org-block-begin-line">#+begin_src emacs-lisp :var n=lob-header[:results vector](n=8)
+</span>  n
+<span class="org-block-end-line">#+end_src
+</span>
+<span class="org-meta-line">#+results:
+</span><span class="org-table">| 8 |</span>
 
-#+results:
-| 8 |
-
-#+begin_src emacs-lisp :var n=lob-header[:results vector](n=8)[0,0]
-  n
-#+end_src
-
-#+results:
-: 8
-
+<span class="org-block-begin-line">#+begin_src emacs-lisp :var n=lob-header[:results vector](n=8)[0,0]
+</span>  n
+<span class="org-block-end-line">#+end_src
+</span>
+<span class="org-meta-line">#+results:
+</span><span class="org-code">: 8
+</span>
 </pre>
   </body>
 </html>

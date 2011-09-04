@@ -9,6 +9,68 @@
         color: #E6E1DC;
         background-color: #232323;
       }
+      .builtin {
+        /* font-lock-builtin-face */
+        color: #D0D0FF;
+      }
+      .constant {
+        /* font-lock-constant-face */
+        color: #6D9CBE;
+      }
+      .function-name {
+        /* font-lock-function-name-face */
+        color: #FFC66D;
+      }
+      .keyword {
+        /* font-lock-keyword-face */
+        color: #CC7833;
+      }
+      .org-block-begin-line {
+        /* org-block-begin-line */
+        color: #BC9458;
+        font-style: italic;
+      }
+      .org-block-end-line {
+        /* org-block-end-line */
+        color: #BC9458;
+        font-style: italic;
+      }
+      .org-code {
+        /* org-code */
+        color: #b3b3b3;
+      }
+      .org-level-2 {
+        /* org-level-2 */
+        color: #b0c4de;
+      }
+      .org-link {
+        /* org-link */
+        color: #00ffff;
+        text-decoration: underline;
+      }
+      .org-meta-line {
+        /* org-meta-line */
+        color: #BC9458;
+        font-style: italic;
+      }
+      .org-property-value {
+      }
+      .org-special-keyword {
+        /* org-special-keyword */
+        color: #CC7833;
+      }
+      .string {
+        /* font-lock-string-face */
+        color: #A5C261;
+      }
+      .type {
+        /* font-lock-type-face */
+        color: #ffffff;
+      }
+      .variable-name {
+        /* font-lock-variable-name-face */
+        color: #b0c4de;
+      }
 
       a {
         color: inherit;
@@ -24,48 +86,48 @@
   </head>
   <body>
     <pre>
-** palendromic primes
-   :PROPERTIES:
-   :DATE:     2010-07-20
-   :END:
+<span class="org-level-2">** palendromic primes</span>
+<span class="org-special-keyword">   :PROPERTIES:</span>
+   <span class="org-special-keyword">:DATE:</span>     <span class="org-property-value">2010-07-20</span>
+<span class="org-special-keyword">   :END:</span>
 Note that because Haskell is funny about what can be typed into the
 interpreter, the following should be loaded with
-=org-babel-load-in-session=.
-#+begin_src haskell
-  palendromic_primes = [x | x &lt;- [1..], prime x, palendrome x]
-      where
-        factors n = [x | x &lt;- [1..floor(sqrt(fromIntegral(n)))], n `mod` x == 0]
-        prime n = factors n == [1]
-        primes = [x | x &lt;- [2..], prime x]
-        palendrome n = show(n) == reverse(show(n))
+<span class="org-code">=org-babel-load-in-session=</span>.
+<span class="org-block-begin-line">#+begin_src haskell
+</span>  palendromic_primes <span class="variable-name">=</span> [x <span class="variable-name">|</span> x <span class="variable-name">&lt;-</span> [1<span class="variable-name">..</span>], prime x, palendrome x]
+      <span class="keyword">where</span>
+        factors n <span class="variable-name">=</span> [x <span class="variable-name">|</span> x <span class="variable-name">&lt;-</span> [1<span class="variable-name">..</span>floor(sqrt(fromIntegral(n)))], n <span class="variable-name">`mod`</span> x <span class="variable-name">==</span> 0]
+        prime n <span class="variable-name">=</span> factors n <span class="variable-name">==</span> [1]
+        primes <span class="variable-name">=</span> [x <span class="variable-name">|</span> x <span class="variable-name">&lt;-</span> [2<span class="variable-name">..</span>], prime x]
+        palendrome n <span class="variable-name">=</span> show(n) <span class="variable-name">==</span> reverse(show(n))
   
-  palendromic_prime_distances = map (\(x,y)-&gt; y-x) neighbors
-      where
-        neighbors = (zip palendromic_primes (tail palendromic_primes))
-#+end_src
-
-#+source: palendromic_prime_distances
-#+begin_src haskell
-  take 180 (zip [1..] palendromic_prime_distances)
-#+end_src
-
+  palendromic_prime_distances <span class="variable-name">=</span> map (<span class="variable-name">\</span>(x,y)<span class="variable-name">-&gt;</span> y<span class="variable-name">-</span>x) neighbors
+      <span class="keyword">where</span>
+        neighbors <span class="variable-name">= </span>(zip palendromic_primes (tail palendromic_primes))
+<span class="org-block-end-line">#+end_src
+</span>
+<span class="org-meta-line">#+source: palendromic_prime_distances
+</span><span class="org-block-begin-line">#+begin_src haskell
+</span>  take 180 (zip [1<span class="variable-name">..]</span> palendromic_prime_distances)
+<span class="org-block-end-line">#+end_src
+</span>
 For high-quality png output from gnuplot, the following sequence of
-graphing to a =.eps= file, and then converting to a =.png= can be
+graphing to a <span class="org-code">=.eps=</span> file, and then converting to a <span class="org-code">=.png=</span> can be
 useful.
-#+source: dist-graph
-#+begin_src gnuplot :var data=palendromic_prime_distances :file pps.eps
-  set term postscript landscape color enhanced
-  set log y
-  set title "distance between consecutive palendromic primes"
-  plot "$data" with fs notitle
-#+end_src
-
-The =convert= command is part of the [[http://www.imagemagick.org/script/index.php][imagemagick]] suite.
-#+begin_src sh :var input=dist-graph :results file
-  convert -depth 300 -rotate 90 $input pps.png
-  echo "pps.png"
-#+end_src
-
+<span class="org-meta-line">#+source: dist-graph
+</span><span class="org-block-begin-line">#+begin_src gnuplot :var data=palendromic_prime_distances :file pps.eps
+</span>  <span class="constant">set</span> term postscript landscape color enhanced
+  <span class="constant">set</span> <span class="function-name">log</span> y
+  <span class="constant">set</span> <span class="type">title</span> "distance between consecutive palendromic primes"
+  <span class="keyword">plot</span> "$data" <span class="type">with</span> fs <span class="type">notitle
+</span><span class="org-block-end-line">#+end_src
+</span>
+The <span class="org-code">=convert=</span> command is part of the <span class="org-link">[[http://www.imagemagick.org/script/index.php][imagemagick]]</span> suite.
+<span class="org-block-begin-line">#+begin_src sh :var input=dist-graph :results file
+</span>  convert -depth 300 -rotate 90 $<span class="variable-name">input</span> pps.png
+  <span class="builtin">echo</span> <span class="string">"pps.png"
+</span><span class="org-block-end-line">#+end_src
+</span>
 </pre>
   </body>
 </html>

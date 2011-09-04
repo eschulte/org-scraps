@@ -9,6 +9,34 @@
         color: #E6E1DC;
         background-color: #232323;
       }
+      .constant {
+        /* font-lock-constant-face */
+        color: #6D9CBE;
+      }
+      .italic {
+        /* italic */
+        font-style: italic;
+      }
+      .org-block-begin-line {
+        /* org-block-begin-line */
+        color: #BC9458;
+        font-style: italic;
+      }
+      .org-block-end-line {
+        /* org-block-end-line */
+        color: #BC9458;
+        font-style: italic;
+      }
+      .org-level-2 {
+        /* org-level-2 */
+        color: #b0c4de;
+      }
+      .org-property-value {
+      }
+      .org-special-keyword {
+        /* org-special-keyword */
+        color: #CC7833;
+      }
 
       a {
         color: inherit;
@@ -24,23 +52,23 @@
   </head>
   <body>
     <pre>
-** :session evaluation on export
-   :PROPERTIES:
-   :DATE:     2010-09-01
-   :END:
-This first block is evaluated but /doesn't/ appear in export.
+<span class="org-level-2">** :session evaluation on export</span>
+<span class="org-special-keyword">   :PROPERTIES:</span>
+   <span class="org-special-keyword">:DATE:</span>     <span class="org-property-value">2010-09-01</span>
+<span class="org-special-keyword">   :END:</span>
+This first block is evaluated but <span class="italic">/doesn't/</span> appear in export.
 
-/:session *R* :exports none/
-#+begin_src R :session *R* :exports none
-  x &lt;- 8
-#+end_src
+<span class="italic">/:session *R* :exports none/</span>
+<span class="org-block-begin-line">#+begin_src R :session *R* :exports none
+</span>  x <span class="constant">&lt;- </span>8
+<span class="org-block-end-line">#+end_src
+</span>
+This second block <span class="italic">/does/</span> appear in export.
 
-This second block /does/ appear in export.
-
-#+begin_src R :session *R* :exports results
-  x
-#+end_src
-
+<span class="org-block-begin-line">#+begin_src R :session *R* :exports results
+</span>  x
+<span class="org-block-end-line">#+end_src
+</span>
 </pre>
   </body>
 </html>

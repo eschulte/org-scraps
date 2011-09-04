@@ -9,6 +9,47 @@
         color: #E6E1DC;
         background-color: #232323;
       }
+      .builtin {
+        /* font-lock-builtin-face */
+        color: #D0D0FF;
+      }
+      .org-block-begin-line {
+        /* org-block-begin-line */
+        color: #BC9458;
+        font-style: italic;
+      }
+      .org-block-end-line {
+        /* org-block-end-line */
+        color: #BC9458;
+        font-style: italic;
+      }
+      .org-code {
+        /* org-code */
+        color: #b3b3b3;
+      }
+      .org-level-2 {
+        /* org-level-2 */
+        color: #b0c4de;
+      }
+      .org-meta-line {
+        /* org-meta-line */
+        color: #BC9458;
+        font-style: italic;
+      }
+      .org-property-value {
+      }
+      .org-special-keyword {
+        /* org-special-keyword */
+        color: #CC7833;
+      }
+      .string {
+        /* font-lock-string-face */
+        color: #A5C261;
+      }
+      .variable-name {
+        /* font-lock-variable-name-face */
+        color: #b0c4de;
+      }
 
       a {
         color: inherit;
@@ -24,42 +65,42 @@
   </head>
   <body>
     <pre>
-** tangle templates
-   :PROPERTIES:
-   :DATE:     2010-12-13
-   :END:
-#+source: template-heading
-#+begin_src emacs-lisp
-  some stuff here
-#+end_src
-
-#+source: template-footing
-#+begin_src emacs-lisp
-  some other stuff here
-#+end_src
-
-#+source: template
-#+begin_src sh :results output :noweb yes :var body="body stuff"
-heading=$(cat&lt;&lt;EOF
+<span class="org-level-2">** tangle templates</span>
+<span class="org-special-keyword">   :PROPERTIES:</span>
+   <span class="org-special-keyword">:DATE:</span>     <span class="org-property-value">2010-12-13</span>
+<span class="org-special-keyword">   :END:</span>
+<span class="org-meta-line">#+source: template-heading
+</span><span class="org-block-begin-line">#+begin_src emacs-lisp
+</span>  some stuff here
+<span class="org-block-end-line">#+end_src
+</span>
+<span class="org-meta-line">#+source: template-footing
+</span><span class="org-block-begin-line">#+begin_src emacs-lisp
+</span>  some other stuff here
+<span class="org-block-end-line">#+end_src
+</span>
+<span class="org-meta-line">#+source: template
+</span><span class="org-block-begin-line">#+begin_src sh :results output :noweb yes :var body="body stuff"
+</span><span class="variable-name">heading</span>=$(cat&lt;&lt;EOF
 &lt;&lt;template-heading&gt;&gt;
 EOF
 )
-footing=$(cat&lt;&lt;EOF
+<span class="variable-name">footing</span>=$(cat&lt;&lt;EOF
 &lt;&lt;template-footing&gt;&gt;
 EOF
 )
-echo $heading
-echo "$body"
-echo $footing
-#+end_src
-
-#+call: template[:noweb yes](body="something new")
-
-#+results: template[:noweb yes](body="something new")
-: some stuff here
+<span class="builtin">echo</span> $<span class="variable-name">heading</span>
+<span class="builtin">echo</span> <span class="string">"$body"</span>
+<span class="builtin">echo</span> $<span class="variable-name">footing
+</span><span class="org-block-end-line">#+end_src
+</span>
+<span class="org-meta-line">#+call: template[:noweb yes](body="something new")
+</span>
+<span class="org-meta-line">#+results: template[:noweb yes](body="something new")
+</span><span class="org-code">: some stuff here
 : something new
 : some other stuff here
-
+</span>
 </pre>
   </body>
 </html>

@@ -23,11 +23,24 @@
         /* org-level-2 */
         color: #b0c4de;
       }
+      .org-level-3 {
+        /* org-level-3 */
+        color: #CC7833;
+      }
+      .org-meta-line {
+        /* org-meta-line */
+        color: #BC9458;
+        font-style: italic;
+      }
       .org-property-value {
       }
       .org-special-keyword {
         /* org-special-keyword */
         color: #CC7833;
+      }
+      .string {
+        /* font-lock-string-face */
+        color: #A5C261;
       }
 
       a {
@@ -55,52 +68,52 @@
   EOF
 <span class="org-block-end-line">#+end_src
 </span>
-#+results:
-#+BEGIN_ORG
-- first
-- second
-#+END_ORG
-
-*** Version 1
-    :PROPERTIES:
-    :DATE:     2011-03-02
-    :END:
+<span class="org-meta-line">#+results:
+</span><span class="org-block-begin-line">#+BEGIN_ORG
+</span>- first
+- second<span class="org-meta-line">
+</span><span class="org-block-end-line">#+END_ORG
+</span>
+<span class="org-level-3">*** Version 1</span>
+<span class="org-special-keyword">    :PROPERTIES:</span>
+    <span class="org-special-keyword">:DATE:</span>     <span class="org-property-value">2011-03-02</span>
+<span class="org-special-keyword">    :END:</span>
 This version only prints the org code for the table, but does not interprets it.
-#+begin_src R :exports both :results output raw
-  cat(
-      "|--|--|\n",
-      "|name|[[./pdf1.pdf]]|\n",
-      "|--|--|\n"
-      )
-#+end_src
-
-*** Version 2
-    :PROPERTIES:
-    :DATE:     2011-03-02
-    :END:
+<span class="org-block-begin-line">#+begin_src R :exports both :results output raw
+</span>  cat(
+      <span class="string">"|--|--|\n"</span>,
+      <span class="string">"|name|[[./pdf1.pdf]]|\n"</span>,
+      <span class="string">"|--|--|\n"
+</span>      )
+<span class="org-block-end-line">#+end_src
+</span>
+<span class="org-level-3">*** Version 2</span>
+<span class="org-special-keyword">    :PROPERTIES:</span>
+    <span class="org-special-keyword">:DATE:</span>     <span class="org-property-value">2011-03-02</span>
+<span class="org-special-keyword">    :END:</span>
 This version prints the table including the graph as expected, but
 :results is used twice as a header argument.
-#+begin_src R :results output :exports both :results raw
-  cat(
-      "|--|--|\n",
-      "|name|[[./pdf1.pdf]]|\n",
-      "|--|--|\n"
-      )
-#+end_src
-
-*** Version 3
-    :PROPERTIES:
-    :DATE:     2011-03-02
-    :END:
+<span class="org-block-begin-line">#+begin_src R :results output :exports both :results raw
+</span>  cat(
+      <span class="string">"|--|--|\n"</span>,
+      <span class="string">"|name|[[./pdf1.pdf]]|\n"</span>,
+      <span class="string">"|--|--|\n"
+</span>      )
+<span class="org-block-end-line">#+end_src
+</span>
+<span class="org-level-3">*** Version 3</span>
+<span class="org-special-keyword">    :PROPERTIES:</span>
+    <span class="org-special-keyword">:DATE:</span>     <span class="org-property-value">2011-03-02</span>
+<span class="org-special-keyword">    :END:</span>
 Finally this version does only export the R code
-#+begin_src R :exports both :results raw
-  cat(
-      "|--|--|\n",
-      "|name|[[./pdf1.pdf]]|\n",
-      "|--|--|\n"
-      )
-#+end_src
-
+<span class="org-block-begin-line">#+begin_src R :exports both :results raw
+</span>  cat(
+      <span class="string">"|--|--|\n"</span>,
+      <span class="string">"|name|[[./pdf1.pdf]]|\n"</span>,
+      <span class="string">"|--|--|\n"
+</span>      )
+<span class="org-block-end-line">#+end_src
+</span>
 </pre>
   </body>
 </html>

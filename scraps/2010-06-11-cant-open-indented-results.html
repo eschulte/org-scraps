@@ -9,6 +9,56 @@
         color: #E6E1DC;
         background-color: #232323;
       }
+      .font-latex-math {
+        /* font-latex-math-face */
+        color: #deb887;
+      }
+      .font-latex-sedate {
+        /* font-latex-sedate-face */
+        color: #d3d3d3;
+      }
+      .font-latex-superscript {
+        /* font-latex-superscript-face */
+        font-size: 80%;
+      }
+      .function-name {
+        /* font-lock-function-name-face */
+        color: #FFC66D;
+      }
+      .keyword {
+        /* font-lock-keyword-face */
+        color: #CC7833;
+      }
+      .org-block-begin-line {
+        /* org-block-begin-line */
+        color: #BC9458;
+        font-style: italic;
+      }
+      .org-block-end-line {
+        /* org-block-end-line */
+        color: #BC9458;
+        font-style: italic;
+      }
+      .org-level-2 {
+        /* org-level-2 */
+        color: #b0c4de;
+      }
+      .org-link {
+        /* org-link */
+        color: #00ffff;
+        text-decoration: underline;
+      }
+      .org-meta-line {
+        /* org-meta-line */
+        color: #BC9458;
+        font-style: italic;
+      }
+      .org-property-value {
+      }
+      .org-special-keyword {
+        /* org-special-keyword */
+        color: #CC7833;
+      }
 
       a {
         color: inherit;
@@ -24,37 +74,37 @@
   </head>
   <body>
     <pre>
-** can't open indented results
-   :PROPERTIES:
-   :DATE:     2010-06-11
-   :END:
+<span class="org-level-2">** can't open indented results</span>
+<span class="org-special-keyword">   :PROPERTIES:</span>
+   <span class="org-special-keyword">:DATE:</span>     <span class="org-property-value">2010-06-11</span>
+<span class="org-special-keyword">   :END:</span>
 
-   #+begin_src latex :packages '(("" "tikz") ("active,tightpage" "preview")) :file recursion.pdf
-     \begin{preview}
-     \ovalbox{
-     \begin{tikzpicture}
-     \node{$n$}
+<span class="org-block-begin-line">   #+begin_src latex :packages '(("" "tikz") ("active,tightpage" "preview")) :file recursion.pdf
+</span>     <span class="font-latex-sedate"><span class="keyword">\begin</span></span>{<span class="function-name">preview</span>}
+     <span class="font-latex-sedate">\ovalbox</span>{
+     <span class="font-latex-sedate"><span class="keyword">\begin</span></span>{<span class="function-name">tikzpicture</span>}
+     <span class="font-latex-sedate">\node</span>{<span class="font-latex-math">$n$</span>}
        child {
-         node{$\left(\frac{n}{2}\right)^2$}
+         node{<span class="font-latex-math">$</span><span class="font-latex-sedate"><span class="font-latex-math">\left</span></span><span class="font-latex-math">(</span><span class="font-latex-sedate"><span class="font-latex-math">\frac</span></span><span class="font-latex-math">{n}{2}</span><span class="font-latex-sedate"><span class="font-latex-math">\right</span></span><span class="font-latex-math">)^</span><span class="font-latex-superscript"><span class="font-latex-math">2</span></span><span class="font-latex-math">$</span>}
            child{
-             node{$\left(\frac{n}{4}\right)^2$}
-             node{$\left(\frac{n}{4}\right)^2$}
+             node{<span class="font-latex-math">$</span><span class="font-latex-sedate"><span class="font-latex-math">\left</span></span><span class="font-latex-math">(</span><span class="font-latex-sedate"><span class="font-latex-math">\frac</span></span><span class="font-latex-math">{n}{4}</span><span class="font-latex-sedate"><span class="font-latex-math">\right</span></span><span class="font-latex-math">)^</span><span class="font-latex-superscript"><span class="font-latex-math">2</span></span><span class="font-latex-math">$</span>}
+             node{<span class="font-latex-math">$</span><span class="font-latex-sedate"><span class="font-latex-math">\left</span></span><span class="font-latex-math">(</span><span class="font-latex-sedate"><span class="font-latex-math">\frac</span></span><span class="font-latex-math">{n}{4}</span><span class="font-latex-sedate"><span class="font-latex-math">\right</span></span><span class="font-latex-math">)^</span><span class="font-latex-superscript"><span class="font-latex-math">2</span></span><span class="font-latex-math">$</span>}
            }
          }
        child{
-         node{$\left(\frac{n}{2}\right)^2$}
+         node{<span class="font-latex-math">$</span><span class="font-latex-sedate"><span class="font-latex-math">\left</span></span><span class="font-latex-math">(</span><span class="font-latex-sedate"><span class="font-latex-math">\frac</span></span><span class="font-latex-math">{n}{2}</span><span class="font-latex-sedate"><span class="font-latex-math">\right</span></span><span class="font-latex-math">)^</span><span class="font-latex-superscript"><span class="font-latex-math">2</span></span><span class="font-latex-math">$</span>}
          child{
-           node{$\left(\frac{n}{4}\right)^2$}
-           node{$\left(\frac{n}{4}\right)^2$}
+           node{<span class="font-latex-math">$</span><span class="font-latex-sedate"><span class="font-latex-math">\left</span></span><span class="font-latex-math">(</span><span class="font-latex-sedate"><span class="font-latex-math">\frac</span></span><span class="font-latex-math">{n}{4}</span><span class="font-latex-sedate"><span class="font-latex-math">\right</span></span><span class="font-latex-math">)^</span><span class="font-latex-superscript"><span class="font-latex-math">2</span></span><span class="font-latex-math">$</span>}
+           node{<span class="font-latex-math">$</span><span class="font-latex-sedate"><span class="font-latex-math">\left</span></span><span class="font-latex-math">(</span><span class="font-latex-sedate"><span class="font-latex-math">\frac</span></span><span class="font-latex-math">{n}{4}</span><span class="font-latex-sedate"><span class="font-latex-math">\right</span></span><span class="font-latex-math">)^</span><span class="font-latex-superscript"><span class="font-latex-math">2</span></span><span class="font-latex-math">$</span>}
          }
        };
-     \end{tikzpicture}
+     <span class="font-latex-sedate"><span class="keyword">\end</span></span>{<span class="function-name">tikzpicture</span>}
      }
-     \end{preview}
-   #+end_src
-
-   #+results:
-   [[file:recursion.pdf]]
+     <span class="font-latex-sedate"><span class="keyword">\end</span></span>{<span class="function-name">preview}</span>
+<span class="org-block-end-line">   #+end_src
+</span>
+<span class="org-meta-line">   #+results:</span>
+   <span class="org-link">[[file:recursion.pdf]]</span>
 
 </pre>
   </body>

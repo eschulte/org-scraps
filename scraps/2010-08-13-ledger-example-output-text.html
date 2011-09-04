@@ -9,6 +9,43 @@
         color: #E6E1DC;
         background-color: #232323;
       }
+      .builtin {
+        /* font-lock-builtin-face */
+        color: #D0D0FF;
+      }
+      .org-block {
+        /* org-block */
+        color: #b3b3b3;
+      }
+      .org-block-begin-line {
+        /* org-block-begin-line */
+        color: #BC9458;
+        font-style: italic;
+      }
+      .org-block-end-line {
+        /* org-block-end-line */
+        color: #BC9458;
+        font-style: italic;
+      }
+      .org-level-2 {
+        /* org-level-2 */
+        color: #b0c4de;
+      }
+      .org-meta-line {
+        /* org-meta-line */
+        color: #BC9458;
+        font-style: italic;
+      }
+      .org-property-value {
+      }
+      .org-special-keyword {
+        /* org-special-keyword */
+        color: #CC7833;
+      }
+      .string {
+        /* font-lock-string-face */
+        color: #A5C261;
+      }
 
       a {
         color: inherit;
@@ -24,21 +61,21 @@
   </head>
   <body>
     <pre>
-** ledger example output text
-   :PROPERTIES:
-   :DATE:     2010-08-13
-   :END:
-#+results: ledger-stuff
-#+begin_example
-09-Aug-21 CHEQUE : 9953055                    Expenses:Unknown                                    166.70 EUR            166.70 EUR
+<span class="org-level-2">** ledger example output text</span>
+<span class="org-special-keyword">   :PROPERTIES:</span>
+   <span class="org-special-keyword">:DATE:</span>     <span class="org-property-value">2010-08-13</span>
+<span class="org-special-keyword">   :END:</span>
+<span class="org-meta-line">#+results: ledger-stuff
+</span><span class="org-block-begin-line">#+begin_example
+</span><span class="org-block">09-Aug-21 CHEQUE : 9953055                    Expenses:Unknown                                    166.70 EUR            166.70 EUR
 09-Sep-17 CHEQUE : 7691785                    Expenses:Unknown                                    100.00 EUR            266.70 EUR
 09-Oct-16 REMISE CHEQUE N 8686318 001 105     Expenses:Unknown                                   -525.00 EUR           -258.30 EUR
-#+end_example
-
-#+begin_src sh :var stuff=ledger-stuff
-  echo "$stuff"
-#+end_src
-
+</span><span class="org-block-end-line">#+end_example
+</span>
+<span class="org-block-begin-line">#+begin_src sh :var stuff=ledger-stuff
+</span>  <span class="builtin">echo</span> <span class="string">"$stuff"
+</span><span class="org-block-end-line">#+end_src
+</span>
 </pre>
   </body>
 </html>

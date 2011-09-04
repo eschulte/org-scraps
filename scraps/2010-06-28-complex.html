@@ -9,6 +9,48 @@
         color: #E6E1DC;
         background-color: #232323;
       }
+      .keyword {
+        /* font-lock-keyword-face */
+        color: #CC7833;
+      }
+      .org-block-begin-line {
+        /* org-block-begin-line */
+        color: #BC9458;
+        font-style: italic;
+      }
+      .org-block-end-line {
+        /* org-block-end-line */
+        color: #BC9458;
+        font-style: italic;
+      }
+      .org-level-2 {
+        /* org-level-2 */
+        color: #b0c4de;
+      }
+      .org-link {
+        /* org-link */
+        color: #00ffff;
+        text-decoration: underline;
+      }
+      .org-meta-line {
+        /* org-meta-line */
+        color: #BC9458;
+        font-style: italic;
+      }
+      .org-property-value {
+      }
+      .org-special-keyword {
+        /* org-special-keyword */
+        color: #CC7833;
+      }
+      .starter-kit-paren {
+        /* starter-kit-paren-face */
+        color: #7f7f7f;
+      }
+      .string {
+        /* font-lock-string-face */
+        color: #A5C261;
+      }
 
       a {
         color: inherit;
@@ -24,36 +66,36 @@
   </head>
   <body>
     <pre>
-** complex
-   :PROPERTIES:
-   :DATE:     2010-06-28
-   :END:
-#+source: raw-data
-#+begin_src sh :results scalar
-  wget --quiet -qO- "http://ogdi.cloudapp.net/v1/dc/RecreationParks?format=json"
-#+end_src
-
-#+source: dc-parks
-#+begin_src emacs-lisp :var keys='(ward area) :var data=raw-data
-  (mapcar
-    (lambda (lis) (mapcar (lambda (key) (cdr (assoc key lis))) keys))
-    (cdr (car (with-temp-buffer
-                (insert data) (goto-char (point-min))
-                (json-read)))))
-#+end_src
-
-#+source: dc-parks-metric
-#+begin_src ruby :var data=dc-parks
-  data.map{|f| [f[0], 2.59 * f[1]]}
-#+end_src
-
-#+begin_src R :var parkData=dc-parks-metric :file parks.png :session *R*
-  plot(parkData)
-  title(main="Park size by Ward")
-#+end_src
-
-#+results:
-[[file:parks.png]]
+<span class="org-level-2">** complex</span>
+<span class="org-special-keyword">   :PROPERTIES:</span>
+   <span class="org-special-keyword">:DATE:</span>     <span class="org-property-value">2010-06-28</span>
+<span class="org-special-keyword">   :END:</span>
+<span class="org-meta-line">#+source: raw-data
+</span><span class="org-block-begin-line">#+begin_src sh :results scalar
+</span>  wget --quiet -qO- <span class="string">"http://ogdi.cloudapp.net/v1/dc/RecreationParks?format=json"
+</span><span class="org-block-end-line">#+end_src
+</span>
+<span class="org-meta-line">#+source: dc-parks
+</span><span class="org-block-begin-line">#+begin_src emacs-lisp :var keys='(ward area) :var data=raw-data
+</span>  <span class="starter-kit-paren">(</span>mapcar
+    <span class="starter-kit-paren">(</span><span class="keyword">lambda</span> <span class="starter-kit-paren">(</span>lis<span class="starter-kit-paren">)</span> <span class="starter-kit-paren">(</span>mapcar <span class="starter-kit-paren">(</span><span class="keyword">lambda</span> <span class="starter-kit-paren">(</span>key<span class="starter-kit-paren">)</span> <span class="starter-kit-paren">(</span>cdr <span class="starter-kit-paren">(</span>assoc key lis<span class="starter-kit-paren">)))</span> keys<span class="starter-kit-paren">))</span>
+    <span class="starter-kit-paren">(</span>cdr <span class="starter-kit-paren">(</span>car <span class="starter-kit-paren">(</span><span class="keyword">with-temp-buffer</span>
+                <span class="starter-kit-paren">(</span>insert data<span class="starter-kit-paren">)</span> <span class="starter-kit-paren">(</span>goto-char <span class="starter-kit-paren">(</span>point-min<span class="starter-kit-paren">))</span>
+                <span class="starter-kit-paren">(</span>json-read<span class="starter-kit-paren">)))))
+</span><span class="org-block-end-line">#+end_src
+</span>
+<span class="org-meta-line">#+source: dc-parks-metric
+</span><span class="org-block-begin-line">#+begin_src ruby :var data=dc-parks
+</span>  data.map{|f| [f[0], 2.59 * f[1]]}
+<span class="org-block-end-line">#+end_src
+</span>
+<span class="org-block-begin-line">#+begin_src R :var parkData=dc-parks-metric :file parks.png :session *R*
+</span>  plot(parkData)
+  title(main=<span class="string">"Park size by Ward")</span>
+<span class="org-block-end-line">#+end_src
+</span>
+<span class="org-meta-line">#+results:
+</span><span class="org-link">[[file:parks.png]]</span>
 
 </pre>
   </body>

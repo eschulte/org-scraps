@@ -9,6 +9,35 @@
         color: #E6E1DC;
         background-color: #232323;
       }
+      .org-block-begin-line {
+        /* org-block-begin-line */
+        color: #BC9458;
+        font-style: italic;
+      }
+      .org-block-end-line {
+        /* org-block-end-line */
+        color: #BC9458;
+        font-style: italic;
+      }
+      .org-level-2 {
+        /* org-level-2 */
+        color: #b0c4de;
+      }
+      .org-meta-line {
+        /* org-meta-line */
+        color: #BC9458;
+        font-style: italic;
+      }
+      .org-property-value {
+      }
+      .org-special-keyword {
+        /* org-special-keyword */
+        color: #CC7833;
+      }
+      .org-table {
+        /* org-table */
+        color: #87cefa;
+      }
 
       a {
         color: inherit;
@@ -24,24 +53,24 @@
   </head>
   <body>
     <pre>
-** header arguments on call line
-   :PROPERTIES:
-   :DATE:     2010-09-09
-   :END:
-#+source: eight
-#+begin_src R
-  8
-#+end_src
-
-#+call: eight() :results vector
-
-#+results: eight()
-| 8 |
+<span class="org-level-2">** header arguments on call line</span>
+<span class="org-special-keyword">   :PROPERTIES:</span>
+   <span class="org-special-keyword">:DATE:</span>     <span class="org-property-value">2010-09-09</span>
+<span class="org-special-keyword">   :END:</span>
+<span class="org-meta-line">#+source: eight
+</span><span class="org-block-begin-line">#+begin_src R
+</span>  8
+<span class="org-block-end-line">#+end_src
+</span>
+<span class="org-meta-line">#+call: eight() :results vector
+</span>
+<span class="org-meta-line">#+results: eight()
+</span><span class="org-table">| 8 |</span>
 
 maybe the following with the new proposed header arguments
 
-#+call: eight[:session *R*]() :results vector
-
+<span class="org-meta-line">#+call: eight[:session *R*]() :results vector
+</span>
 </pre>
   </body>
 </html>

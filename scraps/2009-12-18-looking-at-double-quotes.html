@@ -9,6 +9,39 @@
         color: #E6E1DC;
         background-color: #232323;
       }
+      .keyword {
+        /* font-lock-keyword-face */
+        color: #CC7833;
+      }
+      .org-block-begin-line {
+        /* org-block-begin-line */
+        color: #BC9458;
+        font-style: italic;
+      }
+      .org-block-end-line {
+        /* org-block-end-line */
+        color: #BC9458;
+        font-style: italic;
+      }
+      .org-level-2 {
+        /* org-level-2 */
+        color: #b0c4de;
+      }
+      .org-meta-line {
+        /* org-meta-line */
+        color: #BC9458;
+        font-style: italic;
+      }
+      .org-property-value {
+      }
+      .org-special-keyword {
+        /* org-special-keyword */
+        color: #CC7833;
+      }
+      .org-table {
+        /* org-table */
+        color: #87cefa;
+      }
 
       a {
         color: inherit;
@@ -24,21 +57,21 @@
   </head>
   <body>
     <pre>
-** looking at double quotes
-   :PROPERTIES:
-   :DATE:     2009-12-18
-   :END:
+<span class="org-level-2">** looking at double quotes</span>
+<span class="org-special-keyword">   :PROPERTIES:</span>
+   <span class="org-special-keyword">:DATE:</span>     <span class="org-property-value">2009-12-18</span>
+<span class="org-special-keyword">   :END:</span>
 
-#+tblname: double-quote-test-input
-| test | this | 8 | 9 |
+<span class="org-meta-line">#+tblname: double-quote-test-input
+</span><span class="org-table">| test | this | 8 | 9 |</span>
 
-#+srcname: double-quote-test-output
-#+begin_src python :var data=double-quote-test-input
-  return data
-#+end_src
-
-#+results: double-quote-test-output
-| test | this | 8 | 9 |
+<span class="org-meta-line">#+srcname: double-quote-test-output
+</span><span class="org-block-begin-line">#+begin_src python :var data=double-quote-test-input
+</span>  <span class="keyword">return </span>data
+<span class="org-block-end-line">#+end_src
+</span>
+<span class="org-meta-line">#+results: double-quote-test-output
+</span><span class="org-table">| test | this | 8 | 9 |</span>
 
 </pre>
   </body>

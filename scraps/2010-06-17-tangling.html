@@ -9,6 +9,46 @@
         color: #E6E1DC;
         background-color: #232323;
       }
+      .builtin {
+        /* font-lock-builtin-face */
+        color: #D0D0FF;
+      }
+      .constant {
+        /* font-lock-constant-face */
+        color: #6D9CBE;
+      }
+      .org-block-begin-line {
+        /* org-block-begin-line */
+        color: #BC9458;
+        font-style: italic;
+      }
+      .org-block-end-line {
+        /* org-block-end-line */
+        color: #BC9458;
+        font-style: italic;
+      }
+      .org-level-2 {
+        /* org-level-2 */
+        color: #b0c4de;
+      }
+      .org-property-value {
+      }
+      .org-special-keyword {
+        /* org-special-keyword */
+        color: #CC7833;
+      }
+      .starter-kit-paren {
+        /* starter-kit-paren-face */
+        color: #7f7f7f;
+      }
+      .string {
+        /* font-lock-string-face */
+        color: #A5C261;
+      }
+      .variable-name {
+        /* font-lock-variable-name-face */
+        color: #b0c4de;
+      }
 
       a {
         color: inherit;
@@ -24,27 +64,27 @@
   </head>
   <body>
     <pre>
-** tangling
-   :PROPERTIES:
-   :DATE:     2010-06-17
-   :END:
+<span class="org-level-2">** tangling</span>
+<span class="org-special-keyword">   :PROPERTIES:</span>
+   <span class="org-special-keyword">:DATE:</span>     <span class="org-property-value">2010-06-17</span>
+<span class="org-special-keyword">   :END:</span>
 
-#+begin_src sh :shebang #!/bin/sh :tangle yes
-  date
-#+end_src
-
-#+begin_src sh :shebang #!/bin/bash :tangle whoisme :exports both
-  echo $USER
-#+end_src
-
-#+begin_src emacs-lisp :tangle yes :comments yes
-  (message "BAM")
-#+end_src
-
-#+begin_src fortran :exports both
-  1+8
-#+end_src
-
+<span class="org-block-begin-line">#+begin_src sh :shebang #!/bin/sh :tangle yes
+</span>  date
+<span class="org-block-end-line">#+end_src
+</span>
+<span class="org-block-begin-line">#+begin_src sh :shebang #!/bin/bash :tangle whoisme :exports both
+</span>  <span class="builtin">echo</span> $<span class="variable-name">USER
+</span><span class="org-block-end-line">#+end_src
+</span>
+<span class="org-block-begin-line">#+begin_src emacs-lisp :tangle yes :comments yes
+</span>  <span class="starter-kit-paren">(</span>message <span class="string">"BAM"</span><span class="starter-kit-paren">)
+</span><span class="org-block-end-line">#+end_src
+</span>
+<span class="org-block-begin-line">#+begin_src fortran :exports both
+</span><span class="constant">  1+</span>8
+<span class="org-block-end-line">#+end_src
+</span>
 </pre>
   </body>
 </html>

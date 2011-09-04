@@ -9,6 +9,35 @@
         color: #E6E1DC;
         background-color: #232323;
       }
+      .org-block-begin-line {
+        /* org-block-begin-line */
+        color: #BC9458;
+        font-style: italic;
+      }
+      .org-block-end-line {
+        /* org-block-end-line */
+        color: #BC9458;
+        font-style: italic;
+      }
+      .org-level-2 {
+        /* org-level-2 */
+        color: #b0c4de;
+      }
+      .org-meta-line {
+        /* org-meta-line */
+        color: #BC9458;
+        font-style: italic;
+      }
+      .org-property-value {
+      }
+      .org-special-keyword {
+        /* org-special-keyword */
+        color: #CC7833;
+      }
+      .org-table {
+        /* org-table */
+        color: #87cefa;
+      }
 
       a {
         color: inherit;
@@ -24,25 +53,25 @@
   </head>
   <body>
     <pre>
-** SQL --- example reading org-mode table into sql
-   :PROPERTIES:
-   :DATE:     2011-02-15
-   :END:
-#+tblname: example-table-for-sql
-| a |  b |
-|---+----|
-| 1 | 10 |
-| 2 | 11 |
-| 3 | 12 |
-| 4 | 13 |
-| 5 | 14 |
-| 6 | 15 |
+<span class="org-level-2">** SQL --- example reading org-mode table into sql</span>
+<span class="org-special-keyword">   :PROPERTIES:</span>
+   <span class="org-special-keyword">:DATE:</span>     <span class="org-property-value">2011-02-15</span>
+<span class="org-special-keyword">   :END:</span>
+<span class="org-meta-line">#+tblname: example-table-for-sql
+</span><span class="org-table">| a |  b |</span>
+<span class="org-table">|---+----|</span>
+<span class="org-table">| 1 | 10 |</span>
+<span class="org-table">| 2 | 11 |</span>
+<span class="org-table">| 3 | 12 |</span>
+<span class="org-table">| 4 | 13 |</span>
+<span class="org-table">| 5 | 14 |</span>
+<span class="org-table">| 6 | 15 |</span>
 
-#+headers: :var table=example-table-for-sql
-#+begin_src sql :engine mysql
-load data infile "$table" into mytable;
-#+end_src
-
+<span class="org-meta-line">#+headers: :var table=example-table-for-sql
+</span><span class="org-block-begin-line">#+begin_src sql :engine mysql
+</span>load data infile "$table" into mytable;
+<span class="org-block-end-line">#+end_src
+</span>
 </pre>
   </body>
 </html>

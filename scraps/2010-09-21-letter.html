@@ -9,6 +9,56 @@
         color: #E6E1DC;
         background-color: #232323;
       }
+      .comment {
+        /* font-lock-comment-face */
+        color: #BC9458;
+        font-style: italic;
+      }
+      .font-latex-sedate {
+        /* font-latex-sedate-face */
+        color: #d3d3d3;
+      }
+      .font-latex-string {
+        /* font-latex-string-face */
+        color: #ffa07a;
+      }
+      .function-name {
+        /* font-lock-function-name-face */
+        color: #FFC66D;
+      }
+      .keyword {
+        /* font-lock-keyword-face */
+        color: #CC7833;
+      }
+      .org-block-begin-line {
+        /* org-block-begin-line */
+        color: #BC9458;
+        font-style: italic;
+      }
+      .org-block-end-line {
+        /* org-block-end-line */
+        color: #BC9458;
+        font-style: italic;
+      }
+      .org-level-2 {
+        /* org-level-2 */
+        color: #b0c4de;
+      }
+      .org-meta-line {
+        /* org-meta-line */
+        color: #BC9458;
+        font-style: italic;
+      }
+      .org-property-value {
+      }
+      .org-special-keyword {
+        /* org-special-keyword */
+        color: #CC7833;
+      }
+      .variable-name {
+        /* font-lock-variable-name-face */
+        color: #b0c4de;
+      }
 
       a {
         color: inherit;
@@ -24,14 +74,14 @@
   </head>
   <body>
     <pre>
-** Letter
-   :PROPERTIES:
-   :DATE:     2010-09-21
-   :END:
+<span class="org-level-2">** Letter</span>
+<span class="org-special-keyword">   :PROPERTIES:</span>
+   <span class="org-special-keyword">:DATE:</span>     <span class="org-property-value">2010-09-21</span>
+<span class="org-special-keyword">   :END:</span>
 
-#+source: body
-#+begin_src org :results latex
-  ,My body includes a list:
+<span class="org-meta-line">#+source: body
+</span><span class="org-block-begin-line">#+begin_src org :results latex
+</span>  ,My body includes a list:
   
   ,- one
   ,- two
@@ -42,27 +92,27 @@
   ,| other | last   |
   
   ,Not more.
-#+end_src
+<span class="org-block-end-line">#+end_src
+</span>
+<span class="org-block-begin-line">#+begin_src latex :noweb yes :tangle yes
+</span><span class="font-latex-sedate"><span class="keyword">\documentclass</span></span>[<span class="variable-name">11pt</span>]{<span class="function-name">isodoc</span>}
+<span class="font-latex-sedate"><span class="keyword">\usepackage</span></span>[<span class="variable-name">utf8x</span>]{<span class="function-name">inputenc</span>}
+<span class="font-latex-sedate"><span class="keyword">\usepackage</span></span>[<span class="variable-name">T1</span>]{<span class="function-name">fontenc</span>}
 
-#+begin_src latex :noweb yes :tangle yes
-\documentclass[11pt]{isodoc}
-\usepackage[utf8x]{inputenc}
-\usepackage[T1]{fontenc}
-
-\setupdocument{
+<span class="font-latex-sedate">\setupdocument</span>{
     to = {Eric},
     subject = {Tough to understand what to do...},
     opening = {Hi},
     closing = {Best}
 }
 
-\begin{document}
-\letter{%
-&lt;&lt;body()&gt;&gt;
+<span class="font-latex-sedate"><span class="keyword">\begin</span></span>{<span class="function-name">document</span>}
+<span class="font-latex-sedate">\letter</span>{<span class="comment">%
+</span><span class="font-latex-string">&lt;&lt;body()&gt;&gt;</span>
 }
-\end{document}
-#+end_src
-
+<span class="font-latex-sedate"><span class="keyword">\end</span></span>{<span class="function-name">document}</span>
+<span class="org-block-end-line">#+end_src
+</span>
 </pre>
   </body>
 </html>

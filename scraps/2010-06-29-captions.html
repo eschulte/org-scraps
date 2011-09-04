@@ -9,6 +9,25 @@
         color: #E6E1DC;
         background-color: #232323;
       }
+      .org-level-2 {
+        /* org-level-2 */
+        color: #b0c4de;
+      }
+      .org-meta-line {
+        /* org-meta-line */
+        color: #BC9458;
+        font-style: italic;
+      }
+      .org-property-value {
+      }
+      .org-special-keyword {
+        /* org-special-keyword */
+        color: #CC7833;
+      }
+      .org-table {
+        /* org-table */
+        color: #87cefa;
+      }
 
       a {
         color: inherit;
@@ -24,15 +43,15 @@
   </head>
   <body>
     <pre>
-** captions
-   :PROPERTIES:
-   :DATE:     2010-06-29
-   :END:
+<span class="org-level-2">** captions</span>
+<span class="org-special-keyword">   :PROPERTIES:</span>
+   <span class="org-special-keyword">:DATE:</span>     <span class="org-property-value">2010-06-29</span>
+<span class="org-special-keyword">   :END:</span>
 
-#+caption: I'm not removed from export
+<span class="org-meta-line">#+caption: I'm not removed from export
 #+label: also-not-removed
-| A | B |
-| 1 | 2 |
+</span><span class="org-table">| A | B |</span>
+<span class="org-table">| 1 | 2 |</span>
 
 </pre>
   </body>

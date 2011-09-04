@@ -9,6 +9,48 @@
         color: #E6E1DC;
         background-color: #232323;
       }
+      .builtin {
+        /* font-lock-builtin-face */
+        color: #D0D0FF;
+      }
+      .comment {
+        /* font-lock-comment-face */
+        color: #BC9458;
+        font-style: italic;
+      }
+      .comment-delimiter {
+        /* font-lock-comment-delimiter-face */
+        color: #BC9458;
+        font-style: italic;
+      }
+      .org-block-begin-line {
+        /* org-block-begin-line */
+        color: #BC9458;
+        font-style: italic;
+      }
+      .org-block-end-line {
+        /* org-block-end-line */
+        color: #BC9458;
+        font-style: italic;
+      }
+      .org-level-2 {
+        /* org-level-2 */
+        color: #b0c4de;
+      }
+      .org-property-value {
+      }
+      .org-special-keyword {
+        /* org-special-keyword */
+        color: #CC7833;
+      }
+      .starter-kit-paren {
+        /* starter-kit-paren-face */
+        color: #7f7f7f;
+      }
+      .string {
+        /* font-lock-string-face */
+        color: #A5C261;
+      }
 
       a {
         color: inherit;
@@ -24,19 +66,19 @@
   </head>
   <body>
     <pre>
-** preceding blank lines on tangle
-   :PROPERTIES:
-   :DATE:     2010-10-13
-   :END:
-#+begin_src emacs-lisp :results silent
-  (setq org-babel-tangle-pad-newline nil)
-#+end_src
-
-#+begin_src sh :tangle something.reg
-  # something
-  echo "else"
-#+end_src
-
+<span class="org-level-2">** preceding blank lines on tangle</span>
+<span class="org-special-keyword">   :PROPERTIES:</span>
+   <span class="org-special-keyword">:DATE:</span>     <span class="org-property-value">2010-10-13</span>
+<span class="org-special-keyword">   :END:</span>
+<span class="org-block-begin-line">#+begin_src emacs-lisp :results silent
+</span>  <span class="starter-kit-paren">(</span>setq org-babel-tangle-pad-newline nil<span class="starter-kit-paren">)
+</span><span class="org-block-end-line">#+end_src
+</span>
+<span class="org-block-begin-line">#+begin_src sh :tangle something.reg
+</span>  <span class="comment-delimiter"># </span><span class="comment">something
+</span>  <span class="builtin">echo</span> <span class="string">"else"
+</span><span class="org-block-end-line">#+end_src
+</span>
 </pre>
   </body>
 </html>

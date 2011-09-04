@@ -9,6 +9,49 @@
         color: #E6E1DC;
         background-color: #232323;
       }
+      .comment {
+        /* font-lock-comment-face */
+        color: #BC9458;
+        font-style: italic;
+      }
+      .comment-delimiter {
+        /* font-lock-comment-delimiter-face */
+        color: #BC9458;
+        font-style: italic;
+      }
+      .constant {
+        /* font-lock-constant-face */
+        color: #6D9CBE;
+      }
+      .org-block-begin-line {
+        /* org-block-begin-line */
+        color: #BC9458;
+        font-style: italic;
+      }
+      .org-block-end-line {
+        /* org-block-end-line */
+        color: #BC9458;
+        font-style: italic;
+      }
+      .org-code {
+        /* org-code */
+        color: #b3b3b3;
+      }
+      .org-level-2 {
+        /* org-level-2 */
+        color: #b0c4de;
+      }
+      .org-meta-line {
+        /* org-meta-line */
+        color: #BC9458;
+        font-style: italic;
+      }
+      .org-property-value {
+      }
+      .org-special-keyword {
+        /* org-special-keyword */
+        color: #CC7833;
+      }
 
       a {
         color: inherit;
@@ -24,22 +67,22 @@
   </head>
   <body>
     <pre>
-** comments in R blocks
-   :PROPERTIES:
-   :DATE:     2010-08-12
-   :END:
+<span class="org-level-2">** comments in R blocks</span>
+<span class="org-special-keyword">   :PROPERTIES:</span>
+   <span class="org-special-keyword">:DATE:</span>     <span class="org-property-value">2010-08-12</span>
+<span class="org-special-keyword">   :END:</span>
 
-#+begin_src R :session *R* :results output
-  # this is a comment
-  x &lt;- rnorm(1)
-  # this is another comment
-  x
-#+end_src
-
-#+results:
-: 
+<span class="org-block-begin-line">#+begin_src R :session *R* :results output
+</span>  <span class="comment-delimiter"># </span><span class="comment">this is a comment
+</span>  x <span class="constant">&lt;-</span> rnorm(1)
+  <span class="comment-delimiter"># </span><span class="comment">this is another comment
+ </span> x
+<span class="org-block-end-line">#+end_src
+</span>
+<span class="org-meta-line">#+results:
+</span><span class="org-code">: 
 : [1] 1.320853
-
+</span>
 </pre>
   </body>
 </html>

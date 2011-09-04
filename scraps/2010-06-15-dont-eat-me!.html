@@ -9,6 +9,47 @@
         color: #E6E1DC;
         background-color: #232323;
       }
+      .org-block-begin-line {
+        /* org-block-begin-line */
+        color: #BC9458;
+        font-style: italic;
+      }
+      .org-block-end-line {
+        /* org-block-end-line */
+        color: #BC9458;
+        font-style: italic;
+      }
+      .org-code {
+        /* org-code */
+        color: #b3b3b3;
+      }
+      .org-level-2 {
+        /* org-level-2 */
+        color: #b0c4de;
+      }
+      .org-meta-line {
+        /* org-meta-line */
+        color: #BC9458;
+        font-style: italic;
+      }
+      .org-property-value {
+      }
+      .org-special-keyword {
+        /* org-special-keyword */
+        color: #CC7833;
+      }
+      .org-table {
+        /* org-table */
+        color: #87cefa;
+      }
+      .starter-kit-paren {
+        /* starter-kit-paren-face */
+        color: #7f7f7f;
+      }
+      .string {
+        /* font-lock-string-face */
+        color: #A5C261;
+      }
 
       a {
         color: inherit;
@@ -24,26 +65,26 @@
   </head>
   <body>
     <pre>
-** don't eat me!
-   :PROPERTIES:
-   :DATE:     2010-06-15
-   :END:
-1) a source block inside of an =enumerate=
-   #+begin_src emacs-lisp :exports results
-     (list (list "I'm hungry" "I'm hungry")
-           (list "I'm hungry" "I'm hungry")
-           (list "I'm hungry" "I'm hungry"))
-   #+end_src
+<span class="org-level-2">** don't eat me!</span>
+<span class="org-special-keyword">   :PROPERTIES:</span>
+   <span class="org-special-keyword">:DATE:</span>     <span class="org-property-value">2010-06-15</span>
+<span class="org-special-keyword">   :END:</span>
+1) a source block inside of an <span class="org-code">=enumerate=</span>
+<span class="org-block-begin-line">   #+begin_src emacs-lisp :exports results
+</span>     <span class="starter-kit-paren">(</span>list <span class="starter-kit-paren">(</span>list <span class="string">"I'm hungry"</span> <span class="string">"I'm hungry"</span><span class="starter-kit-paren">)</span>
+           <span class="starter-kit-paren">(</span>list <span class="string">"I'm hungry"</span> <span class="string">"I'm hungry"</span><span class="starter-kit-paren">)</span>
+           <span class="starter-kit-paren">(</span>list <span class="string">"I'm hungry"</span> <span class="string">"I'm hungry"</span><span class="starter-kit-paren">))
+</span><span class="org-block-end-line">   #+end_src
+</span>
+<span class="org-meta-line">   #+results:</span>
+   <span class="org-table">| I'm hungry | I'm hungry |</span>
+   <span class="org-table">| I'm hungry | I'm hungry |</span>
+   <span class="org-table">| I'm hungry | I'm hungry |</span>
 
-   #+results:
-   | I'm hungry | I'm hungry |
-   | I'm hungry | I'm hungry |
-   | I'm hungry | I'm hungry |
-
-   #+begin_src emacs-lisp
-     (message "don't eat me")
-   #+end_src
-
+<span class="org-block-begin-line">   #+begin_src emacs-lisp
+</span>     <span class="starter-kit-paren">(</span>message <span class="string">"don't eat me"</span><span class="starter-kit-paren">)
+</span><span class="org-block-end-line">   #+end_src
+</span>
    can cause problems
 
 2) source blocks should be able to be on adjacent lines

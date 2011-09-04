@@ -9,6 +9,26 @@
         color: #E6E1DC;
         background-color: #232323;
       }
+      .org-block-begin-line {
+        /* org-block-begin-line */
+        color: #BC9458;
+        font-style: italic;
+      }
+      .org-block-end-line {
+        /* org-block-end-line */
+        color: #BC9458;
+        font-style: italic;
+      }
+      .org-level-2 {
+        /* org-level-2 */
+        color: #b0c4de;
+      }
+      .org-property-value {
+      }
+      .org-special-keyword {
+        /* org-special-keyword */
+        color: #CC7833;
+      }
 
       a {
         color: inherit;
@@ -24,15 +44,15 @@
   </head>
   <body>
     <pre>
-** catch the file name during export
-   :PROPERTIES:
-   :DATE:     2011-02-21
-   :END:
+<span class="org-level-2">** catch the file name during export</span>
+<span class="org-special-keyword">   :PROPERTIES:</span>
+   <span class="org-special-keyword">:DATE:</span>     <span class="org-property-value">2011-02-21</span>
+<span class="org-special-keyword">   :END:</span>
 
-#+begin_src emacs-lisp :var file-name=(buffer-file-name) :exports both
-  file-name
-#+end_src
-
+<span class="org-block-begin-line">#+begin_src emacs-lisp :var file-name=(buffer-file-name) :exports both
+</span>  file-name
+<span class="org-block-end-line">#+end_src
+</span>
 </pre>
   </body>
 </html>

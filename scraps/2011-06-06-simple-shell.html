@@ -19,6 +19,10 @@
         color: #BC9458;
         font-style: italic;
       }
+      .org-code {
+        /* org-code */
+        color: #b3b3b3;
+      }
       .org-level-2 {
         /* org-level-2 */
         color: #b0c4de;
@@ -74,13 +78,13 @@
 <span class="org-table">| scraps.org      |</span>
 <span class="org-table">| scraps.tex      |</span>
 
-#+begin_src ruby :session eric
-  puts [1..4]
-#+end_src
-
-#+results:
-: nil
-
+<span class="org-block-begin-line">#+begin_src ruby :session eric
+</span>  puts [1..4]
+<span class="org-block-end-line">#+end_src
+</span>
+<span class="org-meta-line">#+results:
+</span><span class="org-code">: nil
+</span>
 </pre>
   </body>
 </html>

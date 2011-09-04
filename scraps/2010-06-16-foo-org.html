@@ -9,6 +9,44 @@
         color: #E6E1DC;
         background-color: #232323;
       }
+      .bold {
+        /* bold */
+        font-weight: bold;
+      }
+      .org-block-begin-line {
+        /* org-block-begin-line */
+        color: #BC9458;
+        font-style: italic;
+      }
+      .org-block-end-line {
+        /* org-block-end-line */
+        color: #BC9458;
+        font-style: italic;
+      }
+      .org-code {
+        /* org-code */
+        color: #b3b3b3;
+      }
+      .org-level-2 {
+        /* org-level-2 */
+        color: #b0c4de;
+      }
+      .org-link {
+        /* org-link */
+        color: #00ffff;
+        text-decoration: underline;
+      }
+      .org-meta-line {
+        /* org-meta-line */
+        color: #BC9458;
+        font-style: italic;
+      }
+      .org-property-value {
+      }
+      .org-special-keyword {
+        /* org-special-keyword */
+        color: #CC7833;
+      }
 
       a {
         color: inherit;
@@ -24,24 +62,24 @@
   </head>
   <body>
     <pre>
-** foo org
-   :PROPERTIES:
-   :session:  *R*
-   :DATE:     2010-06-16
-   :END:
+<span class="org-level-2">** foo org</span>
+<span class="org-special-keyword">   :PROPERTIES:</span>
+   <span class="org-special-keyword">:session:</span>  <span class="org-property-value"><span class="bold">*R*</span></span>
+   <span class="org-special-keyword">:DATE:</span>     <span class="org-property-value">2010-06-16</span>
+<span class="org-special-keyword">   :END:</span>
 Figure \ref{fig:one} (p. \pageref{fig:one}) is produced by the following code
-#+BEGIN_SRC R 
-plot(x, y)
+<span class="org-block-begin-line">#+BEGIN_SRC R 
+</span>plot(x, y)
 abline(out1)
-#+END_SRC
-Note that =x=, =y=, and =out1= are remembered from the preceding code
+<span class="org-block-end-line">#+END_SRC
+</span>Note that <span class="org-code">=x=</span>, <span class="org-code">=y=</span>, and <span class="org-code">=out1=</span> are remembered from the preceding code
 chunk.  We don't have to regenerate them.  All code chunks are part of
 one R "session".
 and more stuff here and then the results
-#+attr_latex: width=0.8\textwidth,placement=[p]
+<span class="org-meta-line">#+attr_latex: width=0.8\textwidth,placement=[p]
 #+label: fig:one
 #+caption: Scatter Plot with Regression Line
-[[file:fig1.pdf]]
+</span><span class="org-link">[[file:fig1.pdf]]</span>
 
 </pre>
   </body>

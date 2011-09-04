@@ -9,6 +9,51 @@
         color: #E6E1DC;
         background-color: #232323;
       }
+      .builtin {
+        /* font-lock-builtin-face */
+        color: #D0D0FF;
+      }
+      .function-name {
+        /* font-lock-function-name-face */
+        color: #FFC66D;
+      }
+      .keyword {
+        /* font-lock-keyword-face */
+        color: #CC7833;
+      }
+      .org-block-begin-line {
+        /* org-block-begin-line */
+        color: #BC9458;
+        font-style: italic;
+      }
+      .org-block-end-line {
+        /* org-block-end-line */
+        color: #BC9458;
+        font-style: italic;
+      }
+      .org-level-2 {
+        /* org-level-2 */
+        color: #b0c4de;
+      }
+      .org-meta-line {
+        /* org-meta-line */
+        color: #BC9458;
+        font-style: italic;
+      }
+      .org-property-value {
+      }
+      .org-special-keyword {
+        /* org-special-keyword */
+        color: #CC7833;
+      }
+      .org-table {
+        /* org-table */
+        color: #87cefa;
+      }
+      .starter-kit-paren {
+        /* starter-kit-paren-face */
+        color: #7f7f7f;
+      }
 
       a {
         color: inherit;
@@ -24,35 +69,35 @@
   </head>
   <body>
     <pre>
-** clojure code blocks and the lazies
-   :PROPERTIES:
-   :DATE:     2010-11-06
-   :END:
-#+begin_src emacs-lisp :results silent
-  (defun org-babel-execute:clojure (body params)
-    (with-temp-buffer
-      (insert body)
-      (read
-       (slime-eval
-        `(swank:interactive-eval-region 
-          ,(buffer-substring-no-properties (point-min) (point-max)))))))
-#+end_src
-
-#+begin_src clojure
-  (map (fn [el] (list el (* el el)))(range 10))
-#+end_src
-
-#+results:
-| 0 |  0 |
-| 1 |  1 |
-| 2 |  4 |
-| 3 |  9 |
-| 4 | 16 |
-| 5 | 25 |
-| 6 | 36 |
-| 7 | 49 |
-| 8 | 64 |
-| 9 | 81 |
+<span class="org-level-2">** clojure code blocks and the lazies</span>
+<span class="org-special-keyword">   :PROPERTIES:</span>
+   <span class="org-special-keyword">:DATE:</span>     <span class="org-property-value">2010-11-06</span>
+<span class="org-special-keyword">   :END:</span>
+<span class="org-block-begin-line">#+begin_src emacs-lisp :results silent
+</span>  <span class="starter-kit-paren">(</span><span class="keyword">defun</span> <span class="function-name">org-babel-execute:clojure</span> <span class="starter-kit-paren">(</span>body params<span class="starter-kit-paren">)</span>
+    <span class="starter-kit-paren">(</span><span class="keyword">with-temp-buffer</span>
+      <span class="starter-kit-paren">(</span>insert body<span class="starter-kit-paren">)</span>
+      <span class="starter-kit-paren">(</span>read
+       <span class="starter-kit-paren">(</span>slime-eval
+        `<span class="starter-kit-paren">(</span>swank:interactive-eval-region 
+          ,<span class="starter-kit-paren">(</span>buffer-substring-no-properties <span class="starter-kit-paren">(</span>point-min<span class="starter-kit-paren">)</span> <span class="starter-kit-paren">(</span>point-max<span class="starter-kit-paren">)))))))
+</span><span class="org-block-end-line">#+end_src
+</span>
+<span class="org-block-begin-line">#+begin_src clojure
+</span>  <span class="starter-kit-paren">(</span><span class="builtin">map</span> <span class="starter-kit-paren">(</span><span class="builtin">fn</span> [el] <span class="starter-kit-paren">(</span><span class="builtin">list</span> el <span class="starter-kit-paren">(</span><span class="builtin">*</span> el el<span class="starter-kit-paren">)))(</span><span class="builtin">range</span> 10<span class="starter-kit-paren">))
+</span><span class="org-block-end-line">#+end_src
+</span>
+<span class="org-meta-line">#+results:
+</span><span class="org-table">| 0 |  0 |</span>
+<span class="org-table">| 1 |  1 |</span>
+<span class="org-table">| 2 |  4 |</span>
+<span class="org-table">| 3 |  9 |</span>
+<span class="org-table">| 4 | 16 |</span>
+<span class="org-table">| 5 | 25 |</span>
+<span class="org-table">| 6 | 36 |</span>
+<span class="org-table">| 7 | 49 |</span>
+<span class="org-table">| 8 | 64 |</span>
+<span class="org-table">| 9 | 81 |</span>
 
 </pre>
   </body>

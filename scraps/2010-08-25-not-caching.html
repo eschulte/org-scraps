@@ -9,6 +9,59 @@
         color: #E6E1DC;
         background-color: #232323;
       }
+      .bold {
+        /* bold */
+        font-weight: bold;
+      }
+      .keyword {
+        /* font-lock-keyword-face */
+        color: #CC7833;
+      }
+      .org-block-begin-line {
+        /* org-block-begin-line */
+        color: #BC9458;
+        font-style: italic;
+      }
+      .org-block-end-line {
+        /* org-block-end-line */
+        color: #BC9458;
+        font-style: italic;
+      }
+      .org-code {
+        /* org-code */
+        color: #b3b3b3;
+      }
+      .org-level-2 {
+        /* org-level-2 */
+        color: #b0c4de;
+      }
+      .org-level-3 {
+        /* org-level-3 */
+        color: #CC7833;
+      }
+      .org-meta-line {
+        /* org-meta-line */
+        color: #BC9458;
+        font-style: italic;
+      }
+      .org-property-value {
+      }
+      .org-special-keyword {
+        /* org-special-keyword */
+        color: #CC7833;
+      }
+      .org-table {
+        /* org-table */
+        color: #87cefa;
+      }
+      .starter-kit-paren {
+        /* starter-kit-paren-face */
+        color: #7f7f7f;
+      }
+      .string {
+        /* font-lock-string-face */
+        color: #A5C261;
+      }
 
       a {
         color: inherit;
@@ -24,72 +77,72 @@
   </head>
   <body>
     <pre>
-** not caching
-   :PROPERTIES:
-   :session:  *R*
-   :results:  output
-   :exports:  both
+<span class="org-level-2">** not caching</span>
+<span class="org-special-keyword">   :PROPERTIES:</span>
+   <span class="org-special-keyword">:session:</span>  <span class="org-property-value"><span class="bold">*R*</span></span>
+   <span class="org-special-keyword">:results:</span>  <span class="org-property-value">output</span>
+   <span class="org-special-keyword">:exports:</span>  <span class="org-property-value">both</span>
    :cache:    yes
    :DATE:     2010-08-25
-   :END:
+<span class="org-special-keyword">   :END:</span>
 
-#+begin_src R :noeval
-  cat("random result:", runif(1), "\n")
+<span class="org-block-begin-line">#+begin_src R :noeval
+</span>  cat(<span class="string">"random result:"</span>, runif(1), <span class="string">"\n")</span>
   Sys.sleep(2)
   alarm()
-#+end_src 
-
-#+begin_src R :noeval
-  cat("random result:", runif(1), "\n")
+<span class="org-block-end-line">#+end_src 
+</span>
+<span class="org-block-begin-line">#+begin_src R :noeval
+</span>  cat(<span class="string">"random result:"</span>, runif(1), <span class="string">"\n")</span>
   Sys.sleep(2)
   alarm()
-#+end_src 
-
-*** cache on export
-    :PROPERTIES:
-    :DATE:     2010-08-25
-    :END:
+<span class="org-block-end-line">#+end_src 
+</span>
+<span class="org-level-3">*** cache on export</span>
+<span class="org-special-keyword">    :PROPERTIES:</span>
+    <span class="org-special-keyword">:DATE:</span>     <span class="org-property-value">2010-08-25</span>
+<span class="org-special-keyword">    :END:</span>
 do we export cached blocks
 
-#+begin_src emacs-lisp :cache yes :exports results
-  (random)
-#+end_src
-
-#+results[46632b4fe2e3a23e847953c95adcba58c270b381]:
-: 490528137
-
-*** looks like this is a problem with info collection
-    :PROPERTIES:
+<span class="org-block-begin-line">#+begin_src emacs-lisp :cache yes :exports results
+</span>  <span class="starter-kit-paren">(</span>random<span class="starter-kit-paren">)
+</span><span class="org-block-end-line">#+end_src
+</span>
+<span class="org-meta-line">#+results[46632b4fe2e3a23e847953c95adcba58c270b381]:
+</span><span class="org-code">: 490528137
+</span>
+<span class="org-level-3">*** looks like this is a problem with info collection</span>
+<span class="org-special-keyword">    :PROPERTIES:</span>
     :DATE:     2010-08-25
-    :END:
-#+begin_src emacs-lisp
-  (format "%S" info)
-#+end_src
+<span class="org-special-keyword">    :END:</span>
+<span class="org-block-begin-line">#+begin_src emacs-lisp
+</span>  <span class="starter-kit-paren">(</span>format <span class="string">"%S"</span> info<span class="starter-kit-paren">)
+</span><span class="org-block-end-line">#+end_src
+</span>
+<span class="org-block-begin-line">#+begin_src emacs-lisp :results scalar :exports results :tangle yes :comments yes
+</span>  <span class="starter-kit-paren">(</span>mapcar <span class="starter-kit-paren">(</span><span class="keyword">lambda</span> <span class="starter-kit-paren">(</span>el<span class="starter-kit-paren">)</span> <span class="starter-kit-paren">(</span>list <span class="starter-kit-paren">(</span>car el<span class="starter-kit-paren">)</span> <span class="starter-kit-paren">(</span>cdr el<span class="starter-kit-paren">)))</span> <span class="starter-kit-paren">(</span>nth 2 info<span class="starter-kit-paren">))
+</span><span class="org-block-end-line">#+end_src
+</span>
+<span class="org-meta-line">#+results[4184710f118ac768ea0d90632508792d695efd7a]:
+</span><span class="org-table">| :cache    | yes                   |</span>
+<span class="org-table">| :colnames | no                    |</span>
+<span class="org-table">| :comments | yes                   |</span>
+<span class="org-table">| :exports  | results               |</span>
+<span class="org-table">| :hlines   | yes                   |</span>
+<span class="org-table">| :noweb    | no                    |</span>
+<span class="org-table">| :results  | output replace scalar |</span>
+<span class="org-table">| :session  | </span><span class="org-table"><span class="bold">*R*</span></span><span class="org-table">                   |</span>
+<span class="org-table">| :shebang  |                       |</span>
+<span class="org-table">| :tangle   | yes                   |</span>
 
-#+begin_src emacs-lisp :results scalar :exports results :tangle yes :comments yes
-  (mapcar (lambda (el) (list (car el) (cdr el))) (nth 2 info))
-#+end_src
-
-#+results[4184710f118ac768ea0d90632508792d695efd7a]:
-| :cache    | yes                   |
-| :colnames | no                    |
-| :comments | yes                   |
-| :exports  | results               |
-| :hlines   | yes                   |
-| :noweb    | no                    |
-| :results  | output replace scalar |
-| :session  | *R*                   |
-| :shebang  |                       |
-| :tangle   | yes                   |
-
-#+begin_src emacs-lisp :exports results
-  (message "calculating info")
-  (org-babel-sha1-hash info)
-#+end_src
-
-#+results[0427db66afdc95462d1c8514b662829987d71ff5]:
-: 0427db66afdc95462d1c8514b662829987d71ff5
-
+<span class="org-block-begin-line">#+begin_src emacs-lisp :exports results
+</span>  <span class="starter-kit-paren">(</span>message <span class="string">"calculating info"</span><span class="starter-kit-paren">)</span>
+  <span class="starter-kit-paren">(</span>org-babel-sha1-hash info<span class="starter-kit-paren">)
+</span><span class="org-block-end-line">#+end_src
+</span>
+<span class="org-meta-line">#+results[0427db66afdc95462d1c8514b662829987d71ff5]:
+</span><span class="org-code">: 0427db66afdc95462d1c8514b662829987d71ff5
+</span>
 </pre>
   </body>
 </html>

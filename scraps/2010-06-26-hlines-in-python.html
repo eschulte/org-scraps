@@ -9,6 +9,47 @@
         color: #E6E1DC;
         background-color: #232323;
       }
+      .keyword {
+        /* font-lock-keyword-face */
+        color: #CC7833;
+      }
+      .org-block-begin-line {
+        /* org-block-begin-line */
+        color: #BC9458;
+        font-style: italic;
+      }
+      .org-block-end-line {
+        /* org-block-end-line */
+        color: #BC9458;
+        font-style: italic;
+      }
+      .org-level-2 {
+        /* org-level-2 */
+        color: #b0c4de;
+      }
+      .org-meta-line {
+        /* org-meta-line */
+        color: #BC9458;
+        font-style: italic;
+      }
+      .org-property-value {
+      }
+      .org-special-keyword {
+        /* org-special-keyword */
+        color: #CC7833;
+      }
+      .org-table {
+        /* org-table */
+        color: #87cefa;
+      }
+      .starter-kit-paren {
+        /* starter-kit-paren-face */
+        color: #7f7f7f;
+      }
+      .string {
+        /* font-lock-string-face */
+        color: #A5C261;
+      }
 
       a {
         color: inherit;
@@ -24,37 +65,37 @@
   </head>
   <body>
     <pre>
-** hlines in python
-   :PROPERTIES:
-   :DATE:     2010-06-26
-   :END:
+<span class="org-level-2">** hlines in python</span>
+<span class="org-special-keyword">   :PROPERTIES:</span>
+   <span class="org-special-keyword">:DATE:</span>     <span class="org-property-value">2010-06-26</span>
+<span class="org-special-keyword">   :END:</span>
 
-#+tblname: many-cols
-| a | b | c |
-|---+---+---|
-| d | e | f |
-|---+---+---|
-| g | h | i |
+<span class="org-meta-line">#+tblname: many-cols
+</span><span class="org-table">| a | b | c |</span>
+<span class="org-table">|---+---+---|</span>
+<span class="org-table">| d | e | f |</span>
+<span class="org-table">|---+---+---|</span>
+<span class="org-table">| g | h | i |</span>
 
-#+source: echo-table
-#+begin_src python :var tab=many-cols :hlines yes :exports both :session
-  return tab
-#+end_src
-
-#+begin_src emacs-lisp :var table=echo-table :exports none
-  (butlast (apply #'append (mapcar (lambda (el) (list el 'hline)) table)))
-#+end_src
-
-#+call: echo-table(tab=many-cols)
-
-#+begin_src python :exports results
-  return [['foo', 'bar', 'baz'], ["a", "b", "None of the above"], ['1', 2, 3]]
-#+end_src
-
-#+begin_src emacs-lisp :exports results
-  (message "Exist")
-#+end_src
-
+<span class="org-meta-line">#+source: echo-table
+</span><span class="org-block-begin-line">#+begin_src python :var tab=many-cols :hlines yes :exports both :session
+</span>  <span class="keyword">return </span>tab
+<span class="org-block-end-line">#+end_src
+</span>
+<span class="org-block-begin-line">#+begin_src emacs-lisp :var table=echo-table :exports none
+</span>  <span class="starter-kit-paren">(</span>butlast <span class="starter-kit-paren">(</span>apply #'append <span class="starter-kit-paren">(</span>mapcar <span class="starter-kit-paren">(</span><span class="keyword">lambda</span> <span class="starter-kit-paren">(</span>el<span class="starter-kit-paren">)</span> <span class="starter-kit-paren">(</span>list el 'hline<span class="starter-kit-paren">))</span> table<span class="starter-kit-paren">)))
+</span><span class="org-block-end-line">#+end_src
+</span>
+<span class="org-meta-line">#+call: echo-table(tab=many-cols)
+</span>
+<span class="org-block-begin-line">#+begin_src python :exports results
+</span>  <span class="keyword">return</span> [[<span class="string">'foo'</span>, <span class="string">'bar'</span>, <span class="string">'baz'</span>], [<span class="string">"a"</span>, <span class="string">"b"</span>, <span class="string">"None of the above"</span>], [<span class="string">'1',</span> 2, 3]]
+<span class="org-block-end-line">#+end_src
+</span>
+<span class="org-block-begin-line">#+begin_src emacs-lisp :exports results
+</span>  <span class="starter-kit-paren">(</span>message <span class="string">"Exist"</span><span class="starter-kit-paren">)
+</span><span class="org-block-end-line">#+end_src
+</span>
 </pre>
   </body>
 </html>

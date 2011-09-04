@@ -9,6 +9,65 @@
         color: #E6E1DC;
         background-color: #232323;
       }
+      .comment {
+        /* font-lock-comment-face */
+        color: #BC9458;
+        font-style: italic;
+      }
+      .comment-delimiter {
+        /* font-lock-comment-delimiter-face */
+        color: #BC9458;
+        font-style: italic;
+      }
+      .doc {
+        /* font-lock-doc-face */
+        color: #A5C261;
+      }
+      .function-name {
+        /* font-lock-function-name-face */
+        color: #FFC66D;
+      }
+      .keyword {
+        /* font-lock-keyword-face */
+        color: #CC7833;
+      }
+      .org-block-begin-line {
+        /* org-block-begin-line */
+        color: #BC9458;
+        font-style: italic;
+      }
+      .org-block-end-line {
+        /* org-block-end-line */
+        color: #BC9458;
+        font-style: italic;
+      }
+      .org-level-2 {
+        /* org-level-2 */
+        color: #b0c4de;
+      }
+      .org-property-value {
+      }
+      .org-special-keyword {
+        /* org-special-keyword */
+        color: #CC7833;
+      }
+      .starter-kit-paren {
+        /* starter-kit-paren-face */
+        color: #7f7f7f;
+      }
+      .string {
+        /* font-lock-string-face */
+        color: #A5C261;
+      }
+      .type {
+        /* font-lock-type-face */
+        color: #ffffff;
+      }
+      .warning {
+        /* font-lock-warning-face */
+        color: #ffc0cb;
+        font-weight: bold;
+      }
 
       a {
         color: inherit;
@@ -24,44 +83,44 @@
   </head>
   <body>
     <pre>
-** splitting code blocks
-   :PROPERTIES:
-   :DATE:     2010-09-19
-   :END:
+<span class="org-level-2">** splitting code blocks</span>
+<span class="org-special-keyword">   :PROPERTIES:</span>
+   <span class="org-special-keyword">:DATE:</span>     <span class="org-property-value">2010-09-19</span>
+<span class="org-special-keyword">   :END:</span>
 - with indentation
-  #+begin_src emacs-lisp
-    ;;;###autoload
-    (defun org-babel-previous-src-block (&amp;optional arg)
-      "Jump to the previous source block.
-    With optional prefix argument ARG, jump backward ARG many source blocks."
-      (interactive "P")
-      (condition-case nil
-          (re-search-backward org-babel-src-block-regexp nil nil (or arg 1))
-        (error (error "No previous code blocks")))
-      (goto-char (match-beginning 0)) (org-show-context))
-  #+end_src
-  
-  #+begin_src emacs-lisp
-    ;;;###autoload
-    (defun org-babel-split-block-maybe (&amp;optional arg)
-      "Split the current source code block on the cursor."
-      (interactive "p")
-      ((lambda (info)
-         (if info
-             (let ((lang (nth 0 info))
-                   (indent (nth 6 info))
-                   (stars (make-string (org-current-level) ?*)))
-               (insert (concat (if (looking-at "^") "" "\n")
-                               (make-string indent ? ) "#+end_src\n"
-                               (if arg stars (make-string indent ? )) "\n"
-                               (make-string indent ? ) "#+begin_src " lang
-                               (if (looking-at "[\n\r]") "" "\n  "))))
-           (message "Not in src block.")))
-       (org-babel-get-src-block-info)))
+<span class="org-block-begin-line">  #+begin_src emacs-lisp
+</span>    <span class="comment-delimiter">;;;</span><span class="comment">###autoload
+</span>    <span class="starter-kit-paren">(</span><span class="keyword">defun</span> <span class="function-name">org-babel-previous-src-block</span> <span class="starter-kit-paren">(</span><span class="type">&amp;optional</span> arg<span class="starter-kit-paren">)</span>
+      <span class="doc">"Jump to the previous source block.
+    With optional prefix argument ARG, jump backward ARG many source blocks."</span>
+      <span class="starter-kit-paren">(</span>interactive <span class="string">"P"</span><span class="starter-kit-paren">)</span>
+      <span class="starter-kit-paren">(</span><span class="keyword">condition-case</span> nil
+          <span class="starter-kit-paren">(</span>re-search-backward org-babel-src-block-regexp nil nil <span class="starter-kit-paren">(</span>or arg 1<span class="starter-kit-paren">))</span>
+        <span class="starter-kit-paren">(</span><span class="warning">error</span> <span class="starter-kit-paren">(</span><span class="warning">error</span> <span class="string">"No previous code blocks"</span><span class="starter-kit-paren">)))</span>
+      <span class="starter-kit-paren">(</span>goto-char <span class="starter-kit-paren">(</span>match-beginning 0<span class="starter-kit-paren">))</span> <span class="starter-kit-paren">(</span>org-show-context<span class="starter-kit-paren">))
+</span><span class="org-block-end-line">  #+end_src
+</span>  
+<span class="org-block-begin-line">  #+begin_src emacs-lisp
+</span>    <span class="comment-delimiter">;;;</span><span class="comment">###autoload
+</span>    <span class="starter-kit-paren">(</span><span class="keyword">defun</span> <span class="function-name">org-babel-split-block-maybe</span> <span class="starter-kit-paren">(</span><span class="type">&amp;optional</span> arg<span class="starter-kit-paren">)</span>
+      <span class="doc">"Split the current source code block on the cursor."</span>
+      <span class="starter-kit-paren">(</span>interactive <span class="string">"p"</span><span class="starter-kit-paren">)</span>
+      <span class="starter-kit-paren">((</span><span class="keyword">lambda</span> <span class="starter-kit-paren">(</span>info<span class="starter-kit-paren">)</span>
+         <span class="starter-kit-paren">(</span><span class="keyword">if</span> info
+             <span class="starter-kit-paren">(</span><span class="keyword">let</span> <span class="starter-kit-paren">((</span>lang <span class="starter-kit-paren">(</span>nth 0 info<span class="starter-kit-paren">))</span>
+                   <span class="starter-kit-paren">(</span>indent <span class="starter-kit-paren">(</span>nth 6 info<span class="starter-kit-paren">))</span>
+                   <span class="starter-kit-paren">(</span>stars <span class="starter-kit-paren">(</span>make-string <span class="starter-kit-paren">(</span>org-current-level<span class="starter-kit-paren">)</span> ?*<span class="starter-kit-paren">)))</span>
+               <span class="starter-kit-paren">(</span>insert <span class="starter-kit-paren">(</span>concat <span class="starter-kit-paren">(</span><span class="keyword">if</span> <span class="starter-kit-paren">(</span>looking-at <span class="string">"^"</span><span class="starter-kit-paren">)</span> <span class="string">""</span> <span class="string">"\n"</span><span class="starter-kit-paren">)</span>
+                               <span class="starter-kit-paren">(</span>make-string indent ? <span class="starter-kit-paren">)</span> <span class="string">"#+end_src\n"</span>
+                               <span class="starter-kit-paren">(</span><span class="keyword">if</span> arg stars <span class="starter-kit-paren">(</span>make-string indent ? <span class="starter-kit-paren">))</span> <span class="string">"\n"</span>
+                               <span class="starter-kit-paren">(</span>make-string indent ? <span class="starter-kit-paren">)</span> <span class="string">"#+begin_src "</span> lang
+                               <span class="starter-kit-paren">(</span><span class="keyword">if</span> <span class="starter-kit-paren">(</span>looking-at <span class="string">"[\n\r]"</span><span class="starter-kit-paren">)</span> <span class="string">""</span> <span class="string">"\n  "</span><span class="starter-kit-paren">))))</span>
+           <span class="starter-kit-paren">(</span>message <span class="string">"Not in src block."</span><span class="starter-kit-paren">)))</span>
+       <span class="starter-kit-paren">(</span>org-babel-get-src-block-info<span class="starter-kit-paren">)))</span>
     
-    ;; other stuff
-  #+end_src
-
+    <span class="comment-delimiter">;; </span><span class="comment">other stuff
+</span><span class="org-block-end-line">  #+end_src
+</span>
 </pre>
   </body>
 </html>

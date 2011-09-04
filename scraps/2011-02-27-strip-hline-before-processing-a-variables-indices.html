@@ -9,6 +9,43 @@
         color: #E6E1DC;
         background-color: #232323;
       }
+      .org-block-begin-line {
+        /* org-block-begin-line */
+        color: #BC9458;
+        font-style: italic;
+      }
+      .org-block-end-line {
+        /* org-block-end-line */
+        color: #BC9458;
+        font-style: italic;
+      }
+      .org-code {
+        /* org-code */
+        color: #b3b3b3;
+      }
+      .org-level-2 {
+        /* org-level-2 */
+        color: #b0c4de;
+      }
+      .org-meta-line {
+        /* org-meta-line */
+        color: #BC9458;
+        font-style: italic;
+      }
+      .org-property-value {
+      }
+      .org-special-keyword {
+        /* org-special-keyword */
+        color: #CC7833;
+      }
+      .org-table {
+        /* org-table */
+        color: #87cefa;
+      }
+      .variable-name {
+        /* font-lock-variable-name-face */
+        color: #b0c4de;
+      }
 
       a {
         color: inherit;
@@ -24,36 +61,36 @@
   </head>
   <body>
     <pre>
-** strip hline before processing a variables indices
-   :PROPERTIES:
-   :DATE:     2011-02-27
-   :END:
-#+results: table-w-hline
-| 1 | a |
-|---+---|
-| 2 | b |
-| 3 | c |
-| 4 | d |
+<span class="org-level-2">** strip hline before processing a variables indices</span>
+<span class="org-special-keyword">   :PROPERTIES:</span>
+   <span class="org-special-keyword">:DATE:</span>     <span class="org-property-value">2011-02-27</span>
+<span class="org-special-keyword">   :END:</span>
+<span class="org-meta-line">#+results: table-w-hline
+</span><span class="org-table">| 1 | a |</span>
+<span class="org-table">|---+---|</span>
+<span class="org-table">| 2 | b |</span>
+<span class="org-table">| 3 | c |</span>
+<span class="org-table">| 4 | d |</span>
 
-#+begin_src emacs-lisp :var table=table-w-hline[1,1] :hlines no
-  table
-#+end_src
+<span class="org-block-begin-line">#+begin_src emacs-lisp :var table=table-w-hline[1,1] :hlines no
+</span>  table
+<span class="org-block-end-line">#+end_src
+</span>
+<span class="org-meta-line">#+results:
+</span><span class="org-code">: hline
+</span>
+<span class="org-meta-line">#+tblname: perl-table-w-hline
+</span><span class="org-table">| colA | colB |</span>
+<span class="org-table">|------+------|</span>
+<span class="org-table">| a1   | b1   |</span>
+<span class="org-table">| a2   | b2   |</span>
 
-#+results:
-: hline
-
-#+tblname: perl-table-w-hline
-| colA | colB |
-|------+------|
-| a1   | b1   |
-| a2   | b2   |
-
-#+headers: :var b=perl-table-w-hline[2..,1]
+<span class="org-meta-line">#+headers: :var b=perl-table-w-hline[2..,1]
 #+headers: :var a=perl-table-w-hline[2..,0]
-#+begin_src perl :tangle yes
-  $a; $b;
-#+end_src 
-
+</span><span class="org-block-begin-line">#+begin_src perl :tangle yes
+</span>  $<span class="variable-name">a</span>; $<span class="variable-name">b;</span>
+<span class="org-block-end-line">#+end_src 
+</span>
 </pre>
   </body>
 </html>

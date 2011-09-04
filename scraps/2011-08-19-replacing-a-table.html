@@ -9,6 +9,20 @@
         color: #E6E1DC;
         background-color: #232323;
       }
+      .keyword {
+        /* font-lock-keyword-face */
+        color: #CC7833;
+      }
+      .org-block-begin-line {
+        /* org-block-begin-line */
+        color: #BC9458;
+        font-style: italic;
+      }
+      .org-block-end-line {
+        /* org-block-end-line */
+        color: #BC9458;
+        font-style: italic;
+      }
       .org-level-2 {
         /* org-level-2 */
         color: #b0c4de;
@@ -27,6 +41,10 @@
       .org-table {
         /* org-table */
         color: #87cefa;
+      }
+      .starter-kit-paren {
+        /* starter-kit-paren-face */
+        color: #7f7f7f;
       }
 
       a {
@@ -53,10 +71,10 @@
 <span class="org-table">| 3 | 6 | 9 |</span>
 
 <span class="org-meta-line">#+source: this-is-the-table
-</span>#+begin_src emacs-lisp :var table=this-is-the-table
-  (mapcar (lambda (row) (mapcar (lambda (cell) (* cell 2)) row)) table)
-#+end_src
-
+</span><span class="org-block-begin-line">#+begin_src emacs-lisp :var table=this-is-the-table
+</span>  <span class="starter-kit-paren">(</span>mapcar <span class="starter-kit-paren">(</span><span class="keyword">lambda</span> <span class="starter-kit-paren">(</span>row<span class="starter-kit-paren">)</span> <span class="starter-kit-paren">(</span>mapcar <span class="starter-kit-paren">(</span><span class="keyword">lambda</span> <span class="starter-kit-paren">(</span>cell<span class="starter-kit-paren">)</span> <span class="starter-kit-paren">(</span>* cell 2<span class="starter-kit-paren">))</span> row<span class="starter-kit-paren">))</span> table<span class="starter-kit-paren">)
+</span><span class="org-block-end-line">#+end_src
+</span>
 </pre>
   </body>
 </html>

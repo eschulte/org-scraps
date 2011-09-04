@@ -9,6 +9,43 @@
         color: #E6E1DC;
         background-color: #232323;
       }
+      .org-block-begin-line {
+        /* org-block-begin-line */
+        color: #BC9458;
+        font-style: italic;
+      }
+      .org-block-end-line {
+        /* org-block-end-line */
+        color: #BC9458;
+        font-style: italic;
+      }
+      .org-code {
+        /* org-code */
+        color: #b3b3b3;
+      }
+      .org-level-2 {
+        /* org-level-2 */
+        color: #b0c4de;
+      }
+      .org-meta-line {
+        /* org-meta-line */
+        color: #BC9458;
+        font-style: italic;
+      }
+      .org-property-value {
+      }
+      .org-special-keyword {
+        /* org-special-keyword */
+        color: #CC7833;
+      }
+      .org-table {
+        /* org-table */
+        color: #87cefa;
+      }
+      .variable-name {
+        /* font-lock-variable-name-face */
+        color: #b0c4de;
+      }
 
       a {
         color: inherit;
@@ -24,35 +61,35 @@
   </head>
   <body>
     <pre>
-** tables to shell scripts ideas
-   :PROPERTIES:
-   :DATE:     2010-02-06
-   :END:
+<span class="org-level-2">** tables to shell scripts ideas</span>
+<span class="org-special-keyword">   :PROPERTIES:</span>
+   <span class="org-special-keyword">:DATE:</span>     <span class="org-property-value">2010-02-06</span>
+<span class="org-special-keyword">   :END:</span>
 
-#+tblname: sec
-| Hello | World |
+<span class="org-meta-line">#+tblname: sec
+</span><span class="org-table">| Hello | World |</span>
 
 
 1) allowing the user to specify a separator with a header argument as
    follows
-   #+begin_src sh :var table=sec :separator ,
-     cat &lt;&lt;EOF
-     $table
-     EOF
-   #+end_src
-   
+<span class="org-block-begin-line">   #+begin_src sh :var table=sec :separator ,
+</span>     cat &lt;&lt;EOF
+     $<span class="variable-name">table
+</span>     EOF
+<span class="org-block-end-line">   #+end_src
+</span>   
    which would result in something like
 
-   : "Hello, World"
-
+   <span class="org-code">: "Hello, World"
+</span>
 2) writing the table to a tab or comma separated file and then
-   replacing =$table= in the source block body with the path to the
+   replacing <span class="org-code">=$table=</span> in the source block body with the path to the
    file name, s.t. something like
    
-   #+begin_src sh :var table=data
-     wc $table
-   #+end_src
-
+<span class="org-block-begin-line">   #+begin_src sh :var table=data
+</span>     wc $<span class="variable-name">table
+</span><span class="org-block-end-line">   #+end_src
+</span>
    would return reasonable results
 
 </pre>

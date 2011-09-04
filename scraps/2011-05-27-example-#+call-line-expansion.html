@@ -84,24 +84,24 @@ babel during code block evaluation
 </span><span class="org-block-end-line">#+end_src
 </span>
 this code block evaluates to the following,
-#+results: callee
-: unset
-
+<span class="org-meta-line">#+results: callee
+</span><span class="org-code">: unset
+</span>
 this call line,
-#+call: callee[:foo bar]() :results org
-
+<span class="org-meta-line">#+call: callee[:foo bar]() :results org
+</span>
 expands into the following which is evaluated as a normal code block
 by Babel.
-#+begin_src emacs-lisp :var results=callee[:foo bar]() :results org
-  results
-#+end_src
-
+<span class="org-block-begin-line">#+begin_src emacs-lisp :var results=callee[:foo bar]() :results org
+</span>  results
+<span class="org-block-end-line">#+end_src
+</span>
 this code block evaluates to the following,
-#+results:
-#+BEGIN_ORG
-nothing
-#+END_ORG
-
+<span class="org-meta-line">#+results:
+</span><span class="org-block-begin-line">#+BEGIN_ORG
+</span>nothing<span class="org-meta-line">
+</span><span class="org-block-end-line">#+END_ORG
+</span>
 </pre>
   </body>
 </html>

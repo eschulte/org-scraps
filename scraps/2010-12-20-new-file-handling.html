@@ -9,6 +9,60 @@
         color: #E6E1DC;
         background-color: #232323;
       }
+      .constant {
+        /* font-lock-constant-face */
+        color: #6D9CBE;
+      }
+      .function-name {
+        /* font-lock-function-name-face */
+        color: #FFC66D;
+      }
+      .keyword {
+        /* font-lock-keyword-face */
+        color: #CC7833;
+      }
+      .org-block-begin-line {
+        /* org-block-begin-line */
+        color: #BC9458;
+        font-style: italic;
+      }
+      .org-block-end-line {
+        /* org-block-end-line */
+        color: #BC9458;
+        font-style: italic;
+      }
+      .org-level-2 {
+        /* org-level-2 */
+        color: #b0c4de;
+      }
+      .org-link {
+        /* org-link */
+        color: #00ffff;
+        text-decoration: underline;
+      }
+      .org-meta-line {
+        /* org-meta-line */
+        color: #BC9458;
+        font-style: italic;
+      }
+      .org-property-value {
+      }
+      .org-special-keyword {
+        /* org-special-keyword */
+        color: #CC7833;
+      }
+      .starter-kit-paren {
+        /* starter-kit-paren-face */
+        color: #7f7f7f;
+      }
+      .string {
+        /* font-lock-string-face */
+        color: #A5C261;
+      }
+      .variable-name {
+        /* font-lock-variable-name-face */
+        color: #b0c4de;
+      }
 
       a {
         color: inherit;
@@ -24,63 +78,63 @@
   </head>
   <body>
     <pre>
-** new file handling
-   :PROPERTIES:
-   :DATE:     2010-12-20
-   :END:
+<span class="org-level-2">** new file handling</span>
+<span class="org-special-keyword">   :PROPERTIES:</span>
+   <span class="org-special-keyword">:DATE:</span>     <span class="org-property-value">2010-12-20</span>
+<span class="org-special-keyword">   :END:</span>
 
-#+begin_src sh :sep , :file dirlisting
-  ls -l
-#+end_src
+<span class="org-block-begin-line">#+begin_src sh :sep , :file dirlisting
+</span>  ls -l
+<span class="org-block-end-line">#+end_src
+</span>
+<span class="org-meta-line">#+results:
+</span><span class="org-link">[[file:dirlisting]]</span>
 
-#+results:
-[[file:dirlisting]]
-
-#+begin_src ruby :file ruby-out
-  [[1, 2, 3, 4],
+<span class="org-block-begin-line">#+begin_src ruby :file ruby-out
+</span>  [[1, 2, 3, 4],
    [2, 4, 6, 8]]
-#+end_src
+<span class="org-block-end-line">#+end_src
+</span>
+<span class="org-meta-line">#+results:
+</span><span class="org-link">[[file:ruby-out]]</span>
 
-#+results:
-[[file:ruby-out]]
+<span class="org-block-begin-line">#+begin_src emacs-lisp :results file :results append
+</span>  <span class="starter-kit-paren">(</span><span class="keyword">let</span> <span class="starter-kit-paren">((</span>today <span class="starter-kit-paren">(</span>replace-regexp-in-string <span class="string">"[ \t]"</span> <span class="string">"-"</span> <span class="starter-kit-paren">(</span>current-time-string<span class="starter-kit-paren">))))</span>
+    <span class="starter-kit-paren">(</span><span class="keyword">with-temp-file</span> today
+      <span class="starter-kit-paren">(</span>insert <span class="starter-kit-paren">(</span>message <span class="string">"I'm feeling %s"</span>
+                       <span class="starter-kit-paren">(</span>nth <span class="starter-kit-paren">(</span>random 3<span class="starter-kit-paren">)</span> <span class="starter-kit-paren">(</span>list <span class="string">"good"</span> <span class="string">"bad"</span> <span class="string">"just fine"</span><span class="starter-kit-paren">)))))</span>
+    today<span class="starter-kit-paren">)
+</span><span class="org-block-end-line">#+end_src
+</span>
+<span class="org-meta-line">#+results:
+</span><span class="org-link">[[file:Mon-Dec-20-17:27:52-2010]]</span>
 
-#+begin_src emacs-lisp :results file :results append
-  (let ((today (replace-regexp-in-string "[ \t]" "-" (current-time-string))))
-    (with-temp-file today
-      (insert (message "I'm feeling %s"
-                       (nth (random 3) (list "good" "bad" "just fine")))))
-    today)
-#+end_src
-
-#+results:
-[[file:Mon-Dec-20-17:27:52-2010]]
-
-from http://www.graphviz.org/Gallery/directed/fsm.gv.txt
-#+begin_src dot :file fsa.png
-  digraph finite_state_machine {
-          rankdir=LR;
-          size="8,5"
-          node [shape = doublecircle]; LR_0 LR_3 LR_4 LR_8;
-          node [shape = circle];
-          LR_0 -&gt; LR_2 [ label = "SS(B)" ];
-          LR_0 -&gt; LR_1 [ label = "SS(S)" ];
-          LR_1 -&gt; LR_3 [ label = "S($end)" ];
-          LR_2 -&gt; LR_6 [ label = "SS(b)" ];
-          LR_2 -&gt; LR_5 [ label = "SS(a)" ];
-          LR_2 -&gt; LR_4 [ label = "S(A)" ];
-          LR_5 -&gt; LR_7 [ label = "S(b)" ];
-          LR_5 -&gt; LR_5 [ label = "S(a)" ];
-          LR_6 -&gt; LR_6 [ label = "S(b)" ];
-          LR_6 -&gt; LR_5 [ label = "S(a)" ];
-          LR_7 -&gt; LR_8 [ label = "S(b)" ];
-          LR_7 -&gt; LR_5 [ label = "S(a)" ];
-          LR_8 -&gt; LR_6 [ label = "S(b)" ];
-          LR_8 -&gt; LR_5 [ label = "S(a)" ];
+from <span class="org-link">http://www.graphviz.org/Gallery/directed/fsm.gv.txt</span>
+<span class="org-block-begin-line">#+begin_src dot :file fsa.png
+</span>  digraph <span class="function-name">finite</span>_state_machine {
+          <span class="variable-name">rankdir=</span><span class="constant">LR</span>;
+          <span class="variable-name">size=</span><span class="string">"8,5"</span>
+          node [<span class="variable-name">shape =</span> <span class="constant">doublecircle</span>]; <span class="constant">LR</span>_0 <span class="constant">LR</span>_3 <span class="constant">LR</span>_4 <span class="constant">LR</span>_8;
+          node [<span class="variable-name">shape =</span> <span class="constant">circle</span>];
+          <span class="constant">LR</span>_0 -&gt; <span class="constant">LR</span>_2 [ <span class="variable-name">label =</span> <span class="string">"SS(B)"</span> ];
+          <span class="constant">LR</span>_0 -&gt; <span class="constant">LR</span>_1 [ <span class="variable-name">label =</span> <span class="string">"SS(S)"</span> ];
+          <span class="constant">LR</span>_1 -&gt; <span class="constant">LR</span>_3 [ <span class="variable-name">label =</span> <span class="string">"S($end)"</span> ];
+          <span class="constant">LR</span>_2 -&gt; <span class="constant">LR</span>_6 [ <span class="variable-name">label =</span> <span class="string">"SS(b)"</span> ];
+          <span class="constant">LR</span>_2 -&gt; <span class="constant">LR</span>_5 [ <span class="variable-name">label =</span> <span class="string">"SS(a)"</span> ];
+          <span class="constant">LR</span>_2 -&gt; <span class="constant">LR</span>_4 [ <span class="variable-name">label =</span> <span class="string">"S(A)"</span> ];
+          <span class="constant">LR</span>_5 -&gt; <span class="constant">LR</span>_7 [ <span class="variable-name">label =</span> <span class="string">"S(b)"</span> ];
+          <span class="constant">LR</span>_5 -&gt; <span class="constant">LR</span>_5 [ <span class="variable-name">label =</span> <span class="string">"S(a)"</span> ];
+          <span class="constant">LR</span>_6 -&gt; <span class="constant">LR</span>_6 [ <span class="variable-name">label =</span> <span class="string">"S(b)"</span> ];
+          <span class="constant">LR</span>_6 -&gt; <span class="constant">LR</span>_5 [ <span class="variable-name">label =</span> <span class="string">"S(a)"</span> ];
+          <span class="constant">LR</span>_7 -&gt; <span class="constant">LR</span>_8 [ <span class="variable-name">label =</span> <span class="string">"S(b)"</span> ];
+          <span class="constant">LR</span>_7 -&gt; <span class="constant">LR</span>_5 [ <span class="variable-name">label =</span> <span class="string">"S(a)"</span> ];
+          <span class="constant">LR</span>_8 -&gt; <span class="constant">LR</span>_6 [ <span class="variable-name">label =</span> <span class="string">"S(b)"</span> ];
+          <span class="constant">LR</span>_8 -&gt; <span class="constant">LR</span>_5 [ <span class="variable-name">label =</span> <span class="string">"S(a)" </span>];
   }
-#+end_src
-
-#+results:
-[[file:fsa.png]]
+<span class="org-block-end-line">#+end_src
+</span>
+<span class="org-meta-line">#+results:
+</span><span class="org-link">[[file:fsa.png]]</span>
 </pre>
   </body>
 </html>

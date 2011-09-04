@@ -9,6 +9,30 @@
         color: #E6E1DC;
         background-color: #232323;
       }
+      .org-block {
+        /* org-block */
+        color: #b3b3b3;
+      }
+      .org-block-begin-line {
+        /* org-block-begin-line */
+        color: #BC9458;
+        font-style: italic;
+      }
+      .org-block-end-line {
+        /* org-block-end-line */
+        color: #BC9458;
+        font-style: italic;
+      }
+      .org-level-2 {
+        /* org-level-2 */
+        color: #b0c4de;
+      }
+      .org-property-value {
+      }
+      .org-special-keyword {
+        /* org-special-keyword */
+        color: #CC7833;
+      }
 
       a {
         color: inherit;
@@ -24,14 +48,14 @@
   </head>
   <body>
     <pre>
-** protecting block bodies
-   :PROPERTIES:
-   :DATE:     2010-06-25
-   :END:
+<span class="org-level-2">** protecting block bodies</span>
+<span class="org-special-keyword">   :PROPERTIES:</span>
+   <span class="org-special-keyword">:DATE:</span>     <span class="org-property-value">2010-06-25</span>
+<span class="org-special-keyword">   :END:</span>
 neither of these work as expected
 
-#+begin_src org
-  ,#+TITLE: stuff
+<span class="org-block-begin-line">#+begin_src org
+</span>  ,#+TITLE: stuff
   
   ,#+begin_src emacs-lisp
   ,  (message "something")
@@ -43,32 +67,32 @@ neither of these work as expected
   ,: value
   
   ,# and a comment
-#+end_src
-
-#+begin_src org
-  ,* example org
+<span class="org-block-end-line">#+end_src
+</span>
+<span class="org-block-begin-line">#+begin_src org
+</span>  ,* example org
   
   ,# this is a comment
   ,this is not a comment
-#+end_src
+<span class="org-block-end-line">#+end_src
+</span>
 
-
-#+begin_src org
-  ,* escaped org-mode markup
+<span class="org-block-begin-line">#+begin_src org
+</span>  ,* escaped org-mode markup
   
   ,this should be exported as is
   ,#+results: escaping-example
   ,: 24
-#+end_src
+<span class="org-block-end-line">#+end_src
+</span>
 
-
-#+begin_html 
-&lt;pre&gt;
+<span class="org-block-begin-line">#+begin_html 
+</span><span class="org-block">&lt;pre&gt;
 #comment
 #+end_src
 &lt;/pre&gt;
-#+end_html
-final
+</span><span class="org-block-end-line">#+end_html
+</span>final
 
 </pre>
   </body>

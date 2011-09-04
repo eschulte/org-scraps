@@ -9,6 +9,51 @@
         color: #E6E1DC;
         background-color: #232323;
       }
+      .keyword {
+        /* font-lock-keyword-face */
+        color: #CC7833;
+      }
+      .org-block-begin-line {
+        /* org-block-begin-line */
+        color: #BC9458;
+        font-style: italic;
+      }
+      .org-block-end-line {
+        /* org-block-end-line */
+        color: #BC9458;
+        font-style: italic;
+      }
+      .org-code {
+        /* org-code */
+        color: #b3b3b3;
+      }
+      .org-level-2 {
+        /* org-level-2 */
+        color: #b0c4de;
+      }
+      .org-meta-line {
+        /* org-meta-line */
+        color: #BC9458;
+        font-style: italic;
+      }
+      .org-property-value {
+      }
+      .org-special-keyword {
+        /* org-special-keyword */
+        color: #CC7833;
+      }
+      .org-table {
+        /* org-table */
+        color: #87cefa;
+      }
+      .starter-kit-paren {
+        /* starter-kit-paren-face */
+        color: #7f7f7f;
+      }
+      .string {
+        /* font-lock-string-face */
+        color: #A5C261;
+      }
 
       a {
         color: inherit;
@@ -24,41 +69,41 @@
   </head>
   <body>
     <pre>
-** introducing =wrap= header argument
-   :PROPERTIES:
-   :DATE:     2010-11-19
-   :END:
-#+begin_src emacs-lisp :results wrap :exports both
-  (mapcar (lambda (el) (list el (+ 1 (* el el)))) (number-sequence 0 10))
-#+end_src
-
-#+results:
-#+BEGIN_RESULT
-|  0 |   1 |
-|  1 |   2 |
-|  2 |   5 |
-|  3 |  10 |
-|  4 |  17 |
-|  5 |  26 |
-|  6 |  37 |
-|  7 |  50 |
-|  8 |  65 |
-|  9 |  82 |
-| 10 | 101 |
-#+END_RESULT
-
+<span class="org-level-2">** introducing </span><span class="org-level-2"><span class="org-code">=wrap=</span></span><span class="org-level-2"> header argument</span>
+<span class="org-special-keyword">   :PROPERTIES:</span>
+   <span class="org-special-keyword">:DATE:</span>     <span class="org-property-value">2010-11-19</span>
+<span class="org-special-keyword">   :END:</span>
+<span class="org-block-begin-line">#+begin_src emacs-lisp :results wrap :exports both
+</span>  <span class="starter-kit-paren">(</span>mapcar <span class="starter-kit-paren">(</span><span class="keyword">lambda</span> <span class="starter-kit-paren">(</span>el<span class="starter-kit-paren">)</span> <span class="starter-kit-paren">(</span>list el <span class="starter-kit-paren">(</span>+ 1 <span class="starter-kit-paren">(</span>* el el<span class="starter-kit-paren">))))</span> <span class="starter-kit-paren">(</span>number-sequence 0 10<span class="starter-kit-paren">))
+</span><span class="org-block-end-line">#+end_src
+</span>
+<span class="org-meta-line">#+results:
+</span><span class="org-block-begin-line">#+BEGIN_RESULT
+</span><span class="org-table">|  0 |   1 |</span>
+<span class="org-table">|  1 |   2 |</span>
+<span class="org-table">|  2 |   5 |</span>
+<span class="org-table">|  3 |  10 |</span>
+<span class="org-table">|  4 |  17 |</span>
+<span class="org-table">|  5 |  26 |</span>
+<span class="org-table">|  6 |  37 |</span>
+<span class="org-table">|  7 |  50 |</span>
+<span class="org-table">|  8 |  65 |</span>
+<span class="org-table">|  9 |  82 |</span>
+<span class="org-table">| 10 | 101 |</span><span class="org-meta-line">
+</span><span class="org-block-end-line">#+END_RESULT
+</span>
 now indented
 - first
 - second
-  #+begin_src emacs-lisp :results wrap :exports both
-    "something else"
-  #+end_src
-
-  #+results:
-  #+BEGIN_RESULT
-  : something else
-  #+END_RESULT
-
+<span class="org-block-begin-line">  #+begin_src emacs-lisp :results wrap :exports both
+</span>    <span class="string">"something else"
+</span><span class="org-block-end-line">  #+end_src
+</span>
+<span class="org-meta-line">  #+results:</span>
+<span class="org-block-begin-line">  #+BEGIN_RESULT
+</span>  <span class="org-code">: something else</span><span class="org-meta-line">
+</span><span class="org-block-end-line">  #+END_RESULT
+</span>
 </pre>
   </body>
 </html>

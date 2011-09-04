@@ -9,6 +9,47 @@
         color: #E6E1DC;
         background-color: #232323;
       }
+      .function-name {
+        /* font-lock-function-name-face */
+        color: #FFC66D;
+      }
+      .keyword {
+        /* font-lock-keyword-face */
+        color: #CC7833;
+      }
+      .org-block-begin-line {
+        /* org-block-begin-line */
+        color: #BC9458;
+        font-style: italic;
+      }
+      .org-block-end-line {
+        /* org-block-end-line */
+        color: #BC9458;
+        font-style: italic;
+      }
+      .org-level-2 {
+        /* org-level-2 */
+        color: #b0c4de;
+      }
+      .org-property-value {
+      }
+      .org-special-keyword {
+        /* org-special-keyword */
+        color: #CC7833;
+      }
+      .starter-kit-paren {
+        /* starter-kit-paren-face */
+        color: #7f7f7f;
+      }
+      .string {
+        /* font-lock-string-face */
+        color: #A5C261;
+      }
+      .warning {
+        /* font-lock-warning-face */
+        color: #ffc0cb;
+        font-weight: bold;
+      }
 
       a {
         color: inherit;
@@ -24,23 +65,23 @@
   </head>
   <body>
     <pre>
-** replace inline code block
-   :PROPERTIES:
-   :DATE:     2011-01-13
-   :END:
+<span class="org-level-2">** replace inline code block</span>
+<span class="org-special-keyword">   :PROPERTIES:</span>
+   <span class="org-special-keyword">:DATE:</span>     <span class="org-property-value">2011-01-13</span>
+<span class="org-special-keyword">   :END:</span>
 This is src_emacs-lisp{(+ 1 2 3)} an inline block.
 
-#+begin_src emacs-lisp
-  (defun replace-inline-block ()
-    (interactive)
-    (if (save-excursion (re-search-backward "[ \f\t\n\r\v]" nil t)
-                        (looking-at org-babel-inline-src-block-regexp))
-        (replace-match
-         ((lambda (el) (if (stringp el) el (format "%S" el)))
-          (org-babel-execute-src-block)) nil nil nil 1)
-      (error "not inside of an inline source block.")))
-#+end_src
-
+<span class="org-block-begin-line">#+begin_src emacs-lisp
+</span>  <span class="starter-kit-paren">(</span><span class="keyword">defun</span> <span class="function-name">replace-inline-block</span> <span class="starter-kit-paren">()</span>
+    <span class="starter-kit-paren">(</span>interactive<span class="starter-kit-paren">)</span>
+    <span class="starter-kit-paren">(</span><span class="keyword">if</span> <span class="starter-kit-paren">(</span><span class="keyword">save-excursion</span> <span class="starter-kit-paren">(</span>re-search-backward <span class="string">"[ \f\t\n\r\v]"</span> nil t<span class="starter-kit-paren">)</span>
+                        <span class="starter-kit-paren">(</span>looking-at org-babel-inline-src-block-regexp<span class="starter-kit-paren">))</span>
+        <span class="starter-kit-paren">(</span>replace-match
+         <span class="starter-kit-paren">((</span><span class="keyword">lambda</span> <span class="starter-kit-paren">(</span>el<span class="starter-kit-paren">)</span> <span class="starter-kit-paren">(</span><span class="keyword">if</span> <span class="starter-kit-paren">(</span>stringp el<span class="starter-kit-paren">)</span> el <span class="starter-kit-paren">(</span>format <span class="string">"%S"</span> el<span class="starter-kit-paren">)))</span>
+          <span class="starter-kit-paren">(</span>org-babel-execute-src-block<span class="starter-kit-paren">))</span> nil nil nil 1<span class="starter-kit-paren">)</span>
+      <span class="starter-kit-paren">(</span><span class="warning">error</span> <span class="string">"not inside of an inline source block."</span><span class="starter-kit-paren">)))
+</span><span class="org-block-end-line">#+end_src
+</span>
 </pre>
   </body>
 </html>

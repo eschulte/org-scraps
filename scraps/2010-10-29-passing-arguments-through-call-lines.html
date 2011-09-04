@@ -9,6 +9,40 @@
         color: #E6E1DC;
         background-color: #232323;
       }
+      .org-block-begin-line {
+        /* org-block-begin-line */
+        color: #BC9458;
+        font-style: italic;
+      }
+      .org-block-end-line {
+        /* org-block-end-line */
+        color: #BC9458;
+        font-style: italic;
+      }
+      .org-code {
+        /* org-code */
+        color: #b3b3b3;
+      }
+      .org-level-2 {
+        /* org-level-2 */
+        color: #b0c4de;
+      }
+      .org-link {
+        /* org-link */
+        color: #00ffff;
+        text-decoration: underline;
+      }
+      .org-meta-line {
+        /* org-meta-line */
+        color: #BC9458;
+        font-style: italic;
+      }
+      .org-property-value {
+      }
+      .org-special-keyword {
+        /* org-special-keyword */
+        color: #CC7833;
+      }
 
       a {
         color: inherit;
@@ -24,24 +58,24 @@
   </head>
   <body>
     <pre>
-** passing arguments through call lines
-   :PROPERTIES:
-   :DATE:     2010-10-29
-   :END:
+<span class="org-level-2">** passing arguments through call lines</span>
+<span class="org-special-keyword">   :PROPERTIES:</span>
+   <span class="org-special-keyword">:DATE:</span>     <span class="org-property-value">2010-10-29</span>
+<span class="org-special-keyword">   :END:</span>
 
-#+source: test
-#+begin_src R :session :file test.pdf :var myarg="bla"
-  plot(1:10, main=myarg)
-#+end_src
+<span class="org-meta-line">#+source: test
+</span><span class="org-block-begin-line">#+begin_src R :session :file test.pdf :var myarg="bla"
+</span>  plot(1:10, main=myarg)
+<span class="org-block-end-line">#+end_src
+</span>
+<span class="org-meta-line">#+results: test
+</span><span class="org-link">[[file:test.pdf]]</span>
 
-#+results: test
-[[file:test.pdf]]
-
-#+call: test(myarg="hiho")
-
-#+results: test(myarg="hiho")
-: test.pdf
-
+<span class="org-meta-line">#+call: test(myarg="hiho")
+</span>
+<span class="org-meta-line">#+results: test(myarg="hiho")
+</span><span class="org-code">: test.pdf
+</span>
 </pre>
   </body>
 </html>

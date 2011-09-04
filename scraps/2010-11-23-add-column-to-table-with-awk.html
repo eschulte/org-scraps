@@ -9,6 +9,59 @@
         color: #E6E1DC;
         background-color: #232323;
       }
+      .bold {
+        /* bold */
+        font-weight: bold;
+      }
+      .builtin {
+        /* font-lock-builtin-face */
+        color: #D0D0FF;
+      }
+      .keyword {
+        /* font-lock-keyword-face */
+        color: #CC7833;
+      }
+      .org-block-begin-line {
+        /* org-block-begin-line */
+        color: #BC9458;
+        font-style: italic;
+      }
+      .org-block-end-line {
+        /* org-block-end-line */
+        color: #BC9458;
+        font-style: italic;
+      }
+      .org-code {
+        /* org-code */
+        color: #b3b3b3;
+      }
+      .org-level-2 {
+        /* org-level-2 */
+        color: #b0c4de;
+      }
+      .org-meta-line {
+        /* org-meta-line */
+        color: #BC9458;
+        font-style: italic;
+      }
+      .org-property-value {
+      }
+      .org-special-keyword {
+        /* org-special-keyword */
+        color: #CC7833;
+      }
+      .org-table {
+        /* org-table */
+        color: #87cefa;
+      }
+      .starter-kit-paren {
+        /* starter-kit-paren-face */
+        color: #7f7f7f;
+      }
+      .string {
+        /* font-lock-string-face */
+        color: #A5C261;
+      }
 
       a {
         color: inherit;
@@ -24,51 +77,51 @@
   </head>
   <body>
     <pre>
-** add column to table with awk
-   :PROPERTIES:
-   :question_author: S&#233;bastien Vauban
-   :DATE:     2010-11-23
-   :END:
-I want to *add a column* to the following table.
+<span class="org-level-2">** add column to table with awk</span>
+<span class="org-special-keyword">   :PROPERTIES:</span>
+   <span class="org-special-keyword">:question_author:</span> <span class="org-property-value">S&#233;bastien Vauban</span>
+   <span class="org-special-keyword">:DATE:</span>     <span class="org-property-value">2010-11-23</span>
+<span class="org-special-keyword">   :END:</span>
+I want to <span class="bold">*add a column*</span> to the following table.
 
-#+results: table-message
-| This is line 1 of the message.        |
-| This is line 2 of the message.        |
-| This is the last line of the message. |
+<span class="org-meta-line">#+results: table-message
+</span><span class="org-table">| This is line 1 of the message.        |</span>
+<span class="org-table">| This is line 2 of the message.        |</span>
+<span class="org-table">| This is the last line of the message. |</span>
 
-Its value should be dependant on a *regexp matching* the *current row*
+Its value should be dependant on a <span class="bold">*regexp matching*</span> the <span class="bold">*current row*</span>
 (for example, if 1 is detected in the original column, then write "A"
 in the new one, "B" if 2 is read, "C" if 3 is read, etc.).
 
 Hence, I'm thinking using AWK as an easy solution.
 
-    #+begin_src note
-    I'm open to other ideas on how I could do this as easily. Just throw me
-    ideas, if you have some.
-    #+end_src
+<span class="org-block-begin-line">    #+begin_src note
+</span>    I'm open to other ideas on how I could do this as easily. Just throw me
+    ideas, if you have some.<span class="org-meta-line">
+</span><span class="org-block-end-line">    #+end_src
+</span>
+the easiest (for me) would be with the elisp <span class="org-code">=mapcar=</span> function
+<span class="org-block-begin-line">#+begin_src emacs-lisp :var tbl=table-message
+</span>  <span class="starter-kit-paren">(</span>mapcar <span class="starter-kit-paren">(</span><span class="keyword">lambda</span> <span class="starter-kit-paren">(</span>row<span class="starter-kit-paren">)</span> <span class="starter-kit-paren">(</span>cons <span class="string">"New col"</span> row<span class="starter-kit-paren">))</span> tbl<span class="starter-kit-paren">)
+</span><span class="org-block-end-line">#+end_src
+</span>
+<span class="org-meta-line">#+results:
+</span><span class="org-table">| New col | This is line 1 of the message.        |</span>
+<span class="org-table">| New col | This is line 2 of the message.        |</span>
+<span class="org-table">| New col | This is the last line of the message. |</span>
 
-the easiest (for me) would be with the elisp =mapcar= function
-#+begin_src emacs-lisp :var tbl=table-message
-  (mapcar (lambda (row) (cons "New col" row)) tbl)
-#+end_src
+<span class="bold">*First*</span> trial: add a column whose cell contents will be <span class="bold">*fixed*</span> (here,
+equal to <span class="org-code">=New col=</span>).
 
-#+results:
-| New col | This is line 1 of the message.        |
-| New col | This is line 2 of the message.        |
-| New col | This is the last line of the message. |
-
-*First* trial: add a column whose cell contents will be *fixed* (here,
-equal to =New col=).
-
-#+srcname: add-col
-#+begin_src sh :var data=table-message :results output raw :exports both
-echo "$data" | awk '// {print "| New col | " $0 " |";}'
-#+end_src
-
-#+results: add-col
-| New col | This is line 1 of the message.        |
-| New col | This is line 2 of the message.        |
-| New col | This is the last line of the message. |
+<span class="org-meta-line">#+srcname: add-col
+</span><span class="org-block-begin-line">#+begin_src sh :var data=table-message :results output raw :exports both
+</span><span class="builtin">echo</span> <span class="string">"$data"</span> | awk <span class="string">'// {print "| New col | " $0 " |";}'
+</span><span class="org-block-end-line">#+end_src
+</span>
+<span class="org-meta-line">#+results: add-col
+</span><span class="org-table">| New col | This is line 1 of the message.        |</span>
+<span class="org-table">| New col | This is line 2 of the message.        |</span>
+<span class="org-table">| New col | This is the last line of the message. |</span>
 
 </pre>
   </body>

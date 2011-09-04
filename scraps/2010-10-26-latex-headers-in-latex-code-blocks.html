@@ -9,6 +9,36 @@
         color: #E6E1DC;
         background-color: #232323;
       }
+      .org-block-begin-line {
+        /* org-block-begin-line */
+        color: #BC9458;
+        font-style: italic;
+      }
+      .org-block-end-line {
+        /* org-block-end-line */
+        color: #BC9458;
+        font-style: italic;
+      }
+      .org-level-2 {
+        /* org-level-2 */
+        color: #b0c4de;
+      }
+      .org-link {
+        /* org-link */
+        color: #00ffff;
+        text-decoration: underline;
+      }
+      .org-meta-line {
+        /* org-meta-line */
+        color: #BC9458;
+        font-style: italic;
+      }
+      .org-property-value {
+      }
+      .org-special-keyword {
+        /* org-special-keyword */
+        color: #CC7833;
+      }
 
       a {
         color: inherit;
@@ -24,24 +54,24 @@
   </head>
   <body>
     <pre>
-** latex headers in latex code blocks
-   :PROPERTIES:
-   :DATE:     2010-10-26
-   :END:
+<span class="org-level-2">** latex headers in latex code blocks</span>
+<span class="org-special-keyword">   :PROPERTIES:</span>
+   <span class="org-special-keyword">:DATE:</span>     <span class="org-property-value">2010-10-26</span>
+<span class="org-special-keyword">   :END:</span>
 
-#+begin_src latex :headers \usepackage{lmodern} :file name1.pdf
-  Eric Schulte
-#+end_src
+<span class="org-block-begin-line">#+begin_src latex :headers \usepackage{lmodern} :file name1.pdf
+</span>  Eric Schulte
+<span class="org-block-end-line">#+end_src
+</span>
+<span class="org-meta-line">#+results:
+</span><span class="org-link">[[file:name1.pdf]]</span>
 
-#+results:
-[[file:name1.pdf]]
-
-#+begin_src latex :headers '("\\usepackage{mathpazo}" "\\usepackage{fullpage}") :file name2.pdf
-  Eric Schulte
-#+end_src
-
-#+results:
-[[file:name2.pdf]]
+<span class="org-block-begin-line">#+begin_src latex :headers '("\\usepackage{mathpazo}" "\\usepackage{fullpage}") :file name2.pdf
+</span>  Eric Schulte
+<span class="org-block-end-line">#+end_src
+</span>
+<span class="org-meta-line">#+results:
+</span><span class="org-link">[[file:name2.pdf]]</span>
 
 </pre>
   </body>

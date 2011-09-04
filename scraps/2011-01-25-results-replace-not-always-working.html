@@ -9,6 +9,47 @@
         color: #E6E1DC;
         background-color: #232323;
       }
+      .builtin {
+        /* font-lock-builtin-face */
+        color: #D0D0FF;
+      }
+      .keyword {
+        /* font-lock-keyword-face */
+        color: #CC7833;
+      }
+      .org-block-begin-line {
+        /* org-block-begin-line */
+        color: #BC9458;
+        font-style: italic;
+      }
+      .org-block-end-line {
+        /* org-block-end-line */
+        color: #BC9458;
+        font-style: italic;
+      }
+      .org-level-2 {
+        /* org-level-2 */
+        color: #b0c4de;
+      }
+      .org-meta-line {
+        /* org-meta-line */
+        color: #BC9458;
+        font-style: italic;
+      }
+      .org-property-value {
+      }
+      .org-special-keyword {
+        /* org-special-keyword */
+        color: #CC7833;
+      }
+      .sh-quoted-exec {
+        /* sh-quoted-exec */
+        color: #fa8072;
+      }
+      .string {
+        /* font-lock-string-face */
+        color: #A5C261;
+      }
 
       a {
         color: inherit;
@@ -24,24 +65,24 @@
   </head>
   <body>
     <pre>
-** results replace not always working
-   :PROPERTIES:
-   :DATE:     2011-01-25
-   :END:
-#+begin_src sh :results output org replace :exports code
-  for i in `seq 4`;do
-      echo "- place $i in the list"
-  done
-#+end_src
-
-#+results:
-#+BEGIN_ORG
-- place 1 in the list
+<span class="org-level-2">** results replace not always working</span>
+<span class="org-special-keyword">   :PROPERTIES:</span>
+   <span class="org-special-keyword">:DATE:</span>     <span class="org-property-value">2011-01-25</span>
+<span class="org-special-keyword">   :END:</span>
+<span class="org-block-begin-line">#+begin_src sh :results output org replace :exports code
+</span>  <span class="keyword">for</span> i<span class="keyword"> in</span> <span class="sh-quoted-exec">`seq 4`</span>;<span class="keyword">do</span>
+      <span class="builtin">echo</span> <span class="string">"- place $i in the list"</span>
+  <span class="keyword">done
+</span><span class="org-block-end-line">#+end_src
+</span>
+<span class="org-meta-line">#+results:
+</span><span class="org-block-begin-line">#+BEGIN_ORG
+</span>- place 1 in the list
 - place 2 in the list
 - place 3 in the list
-- place 4 in the list
-#+END_ORG
-
+- place 4 in the list<span class="org-meta-line">
+</span><span class="org-block-end-line">#+END_ORG
+</span>
 inline block src_emacs-lisp[:exports code :results replace]{(+ 1 1 1)} here is was
 
 </pre>

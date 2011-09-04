@@ -9,6 +9,39 @@
         color: #E6E1DC;
         background-color: #232323;
       }
+      .org-block-begin-line {
+        /* org-block-begin-line */
+        color: #BC9458;
+        font-style: italic;
+      }
+      .org-block-end-line {
+        /* org-block-end-line */
+        color: #BC9458;
+        font-style: italic;
+      }
+      .org-level-2 {
+        /* org-level-2 */
+        color: #b0c4de;
+      }
+      .org-meta-line {
+        /* org-meta-line */
+        color: #BC9458;
+        font-style: italic;
+      }
+      .org-property-value {
+      }
+      .org-special-keyword {
+        /* org-special-keyword */
+        color: #CC7833;
+      }
+      .org-table {
+        /* org-table */
+        color: #87cefa;
+      }
+      .starter-kit-paren {
+        /* starter-kit-paren-face */
+        color: #7f7f7f;
+      }
 
       a {
         color: inherit;
@@ -24,26 +57,26 @@
   </head>
   <body>
     <pre>
-** cycle -- the input is the output
-   :PROPERTIES:
-   :DATE:     2010-09-29
-   :END:
+<span class="org-level-2">** cycle -- the input is the output</span>
+<span class="org-special-keyword">   :PROPERTIES:</span>
+   <span class="org-special-keyword">:DATE:</span>     <span class="org-property-value">2010-09-29</span>
+<span class="org-special-keyword">   :END:</span>
 and the rhythm is the base and the base is the treble
 
-#+results: cycle
-| one   |
-| two   |
-| three |
+<span class="org-meta-line">#+results: cycle
+</span><span class="org-table">| one   |</span>
+<span class="org-table">| two   |</span>
+<span class="org-table">| three |</span>
 
-#+source: cycle
-#+begin_src emacs-lisp :var table=cycle
-  (append (last table) (butlast table))
-#+end_src
-
-#+begin_src emacs-lisp :exports results
-  (+ 1 1 1)
-#+end_src
-
+<span class="org-meta-line">#+source: cycle
+</span><span class="org-block-begin-line">#+begin_src emacs-lisp :var table=cycle
+</span>  <span class="starter-kit-paren">(</span>append <span class="starter-kit-paren">(</span>last table<span class="starter-kit-paren">)</span> <span class="starter-kit-paren">(</span>butlast table<span class="starter-kit-paren">))
+</span><span class="org-block-end-line">#+end_src
+</span>
+<span class="org-block-begin-line">#+begin_src emacs-lisp :exports results
+</span>  <span class="starter-kit-paren">(</span>+ 1 1 1<span class="starter-kit-paren">)
+</span><span class="org-block-end-line">#+end_src
+</span>
 </pre>
   </body>
 </html>

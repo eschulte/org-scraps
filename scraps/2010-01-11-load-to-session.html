@@ -9,6 +9,42 @@
         color: #E6E1DC;
         background-color: #232323;
       }
+      .constant {
+        /* font-lock-constant-face */
+        color: #6D9CBE;
+      }
+      .function-name {
+        /* font-lock-function-name-face */
+        color: #FFC66D;
+      }
+      .keyword {
+        /* font-lock-keyword-face */
+        color: #CC7833;
+      }
+      .org-block-begin-line {
+        /* org-block-begin-line */
+        color: #BC9458;
+        font-style: italic;
+      }
+      .org-block-end-line {
+        /* org-block-end-line */
+        color: #BC9458;
+        font-style: italic;
+      }
+      .org-level-2 {
+        /* org-level-2 */
+        color: #b0c4de;
+      }
+      .org-property-value {
+      }
+      .org-special-keyword {
+        /* org-special-keyword */
+        color: #CC7833;
+      }
+      .starter-kit-paren {
+        /* starter-kit-paren-face */
+        color: #7f7f7f;
+      }
 
       a {
         color: inherit;
@@ -24,38 +60,38 @@
   </head>
   <body>
     <pre>
-** load to session
-   :PROPERTIES:
-   :DATE:     2010-01-11
-   :END:
-#+begin_src clojure :session asm-gp
-  (in-ns 'asm-gp)
-#+end_src
-
-#+begin_src ruby :session
-  puts :eric
-#+end_src
-
-#+begin_src python :session
-  5 + 1 
-#+end_src
-
-#+begin_src R :session
-  6 + 1
-#+end_src
-
-#+begin_src sh :session
-  date
-#+end_src
-
-#+begin_src ocaml :session
-  eric
-#+end_src
-
-#+begin_src gnuplot :session
-  plot sin(x)
-#+end_src
-
+<span class="org-level-2">** load to session</span>
+<span class="org-special-keyword">   :PROPERTIES:</span>
+   <span class="org-special-keyword">:DATE:</span>     <span class="org-property-value">2010-01-11</span>
+<span class="org-special-keyword">   :END:</span>
+<span class="org-block-begin-line">#+begin_src clojure :session asm-gp
+</span>  <span class="starter-kit-paren">(</span><span class="keyword">in-ns</span> 'asm-gp<span class="starter-kit-paren">)
+</span><span class="org-block-end-line">#+end_src
+</span>
+<span class="org-block-begin-line">#+begin_src ruby :session
+</span>  puts <span class="constant">:eric
+</span><span class="org-block-end-line">#+end_src
+</span>
+<span class="org-block-begin-line">#+begin_src python :session
+</span>  5 + 1 
+<span class="org-block-end-line">#+end_src
+</span>
+<span class="org-block-begin-line">#+begin_src R :session
+</span>  6 + 1
+<span class="org-block-end-line">#+end_src
+</span>
+<span class="org-block-begin-line">#+begin_src sh :session
+</span>  date
+<span class="org-block-end-line">#+end_src
+</span>
+<span class="org-block-begin-line">#+begin_src ocaml :session
+</span>  eric
+<span class="org-block-end-line">#+end_src
+</span>
+<span class="org-block-begin-line">#+begin_src gnuplot :session
+</span>  <span class="keyword">plot</span> <span class="function-name">sin(</span>x)
+<span class="org-block-end-line">#+end_src
+</span>
 </pre>
   </body>
 </html>

@@ -9,6 +9,54 @@
         color: #E6E1DC;
         background-color: #232323;
       }
+      .comment {
+        /* font-lock-comment-face */
+        color: #BC9458;
+        font-style: italic;
+      }
+      .comment-delimiter {
+        /* font-lock-comment-delimiter-face */
+        color: #BC9458;
+        font-style: italic;
+      }
+      .keyword {
+        /* font-lock-keyword-face */
+        color: #CC7833;
+      }
+      .org-block-begin-line {
+        /* org-block-begin-line */
+        color: #BC9458;
+        font-style: italic;
+      }
+      .org-block-end-line {
+        /* org-block-end-line */
+        color: #BC9458;
+        font-style: italic;
+      }
+      .org-level-2 {
+        /* org-level-2 */
+        color: #b0c4de;
+      }
+      .org-link {
+        /* org-link */
+        color: #00ffff;
+        text-decoration: underline;
+      }
+      .org-meta-line {
+        /* org-meta-line */
+        color: #BC9458;
+        font-style: italic;
+      }
+      .org-property-value {
+      }
+      .org-special-keyword {
+        /* org-special-keyword */
+        color: #CC7833;
+      }
+      .org-table {
+        /* org-table */
+        color: #87cefa;
+      }
 
       a {
         color: inherit;
@@ -24,18 +72,18 @@
   </head>
   <body>
     <pre>
-** recutils
-   :PROPERTIES:
-   :DATE:     2011-02-15
-   :END:
-#+begin_src sh :file book.rec
-  cat &lt;&lt;EOF &gt; book.rec
-  # -*- mode: rec -*-
-  %rec: Book
+<span class="org-level-2">** recutils</span>
+<span class="org-special-keyword">   :PROPERTIES:</span>
+   <span class="org-special-keyword">:DATE:</span>     <span class="org-property-value">2011-02-15</span>
+<span class="org-special-keyword">   :END:</span>
+<span class="org-block-begin-line">#+begin_src sh :file book.rec
+</span>  cat &lt;&lt;EOF &gt; book.rec
+  <span class="comment-delimiter"># </span><span class="comment">-*- mode: rec -*-
+</span>  %rec: Book
   %mandatory: Title
   %type: Location enum loaned home unknown
   %doc:
-  + A book in my personal collection.
+  + A book<span class="keyword"> in</span> my personal collection.
   
   Title: GNU Emacs Manual
   Author: Richard M. Stallman
@@ -58,32 +106,32 @@
   Title: Yeelong User Manual
   Location: home
   
-  # End of books.rec
-  EOF
-#+end_src
+  <span class="comment-delimiter"># </span><span class="comment">End of books.rec
+ </span> EOF
+<span class="org-block-end-line">#+end_src
+</span>
+<span class="org-meta-line">#+results:
+</span><span class="org-link">[[file:book.rec]]</span>
 
-#+results:
-[[file:book.rec]]
+<span class="org-block-begin-line">#+begin_src rec :data book.rec :fields Title,Author
+</span>  Location = 'loaned'<span class="org-meta-line">
+</span><span class="org-block-end-line">#+end_src
+</span>
+<span class="org-meta-line">#+results:
+</span><span class="org-table">| Title               | Author          |</span>
+<span class="org-table">| The Colour of Magic | Terry Pratchett |</span>
 
-#+begin_src rec :data book.rec :fields Title,Author
-  Location = 'loaned'
-#+end_src
-
-#+results:
-| Title               | Author          |
-| The Colour of Magic | Terry Pratchett |
-
-#+begin_src rec :data book.rec :fields Title,Author
-  
-#+end_src
-
-#+results:
-| Title                                 | Author              | Author_2         |
-| GNU Emacs Manual                      | Richard M. Stallman |                  |
-| The Colour of Magic                   | Terry Pratchett     |                  |
-| Mio Cid                               | Anonymous           |                  |
-| chapters.gnu.org administration guide | Nacho Gonzalez      | Jose E. Marchesi |
-| Yeelong User Manual                   |                     |                  |
+<span class="org-block-begin-line">#+begin_src rec :data book.rec :fields Title,Author
+</span>  <span class="org-meta-line">
+</span><span class="org-block-end-line">#+end_src
+</span>
+<span class="org-meta-line">#+results:
+</span><span class="org-table">| Title                                 | Author              | Author_2         |</span>
+<span class="org-table">| GNU Emacs Manual                      | Richard M. Stallman |                  |</span>
+<span class="org-table">| The Colour of Magic                   | Terry Pratchett     |                  |</span>
+<span class="org-table">| Mio Cid                               | Anonymous           |                  |</span>
+<span class="org-table">| chapters.gnu.org administration guide | Nacho Gonzalez      | Jose E. Marchesi |</span>
+<span class="org-table">| Yeelong User Manual                   |                     |                  |</span>
 
 </pre>
   </body>

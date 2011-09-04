@@ -9,6 +9,26 @@
         color: #E6E1DC;
         background-color: #232323;
       }
+      .org-level-2 {
+        /* org-level-2 */
+        color: #b0c4de;
+      }
+      .org-link {
+        /* org-link */
+        color: #00ffff;
+        text-decoration: underline;
+      }
+      .org-meta-line {
+        /* org-meta-line */
+        color: #BC9458;
+        font-style: italic;
+      }
+      .org-property-value {
+      }
+      .org-special-keyword {
+        /* org-special-keyword */
+        color: #CC7833;
+      }
 
       a {
         color: inherit;
@@ -24,13 +44,13 @@
   </head>
   <body>
     <pre>
-** latex literals in export
-   :PROPERTIES:
-   :DATE:     2010-06-30
-   :END:
+<span class="org-level-2">** latex literals in export</span>
+<span class="org-special-keyword">   :PROPERTIES:</span>
+   <span class="org-special-keyword">:DATE:</span>     <span class="org-property-value">2010-06-30</span>
+<span class="org-special-keyword">   :END:</span>
 
-  #+ATTR_LaTeX: width=\textwidth
-  [[./composite-pattern.png]]
+<span class="org-meta-line">  #+ATTR_LaTeX: width=\textwidth</span>
+  <span class="org-link">[[./composite-pattern.png]]</span>
 
 </pre>
   </body>

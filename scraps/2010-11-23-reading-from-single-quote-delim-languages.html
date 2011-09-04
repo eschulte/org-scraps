@@ -9,6 +9,43 @@
         color: #E6E1DC;
         background-color: #232323;
       }
+      .keyword {
+        /* font-lock-keyword-face */
+        color: #CC7833;
+      }
+      .org-block-begin-line {
+        /* org-block-begin-line */
+        color: #BC9458;
+        font-style: italic;
+      }
+      .org-block-end-line {
+        /* org-block-end-line */
+        color: #BC9458;
+        font-style: italic;
+      }
+      .org-level-2 {
+        /* org-level-2 */
+        color: #b0c4de;
+      }
+      .org-meta-line {
+        /* org-meta-line */
+        color: #BC9458;
+        font-style: italic;
+      }
+      .org-property-value {
+      }
+      .org-special-keyword {
+        /* org-special-keyword */
+        color: #CC7833;
+      }
+      .org-table {
+        /* org-table */
+        color: #87cefa;
+      }
+      .string {
+        /* font-lock-string-face */
+        color: #A5C261;
+      }
 
       a {
         color: inherit;
@@ -24,35 +61,35 @@
   </head>
   <body>
     <pre>
-** reading from single-quote-delim languages
-   :PROPERTIES:
-   :DATE:     2010-11-23
-   :END:
-#+BEGIN_SRC python
-return [['607', 'Show license short, name on the deed'],
-        ['255', "'(message (concat 'hello ' 'world))"]]
-#+END_SRC
+<span class="org-level-2">** reading from single-quote-delim languages</span>
+<span class="org-special-keyword">   :PROPERTIES:</span>
+   <span class="org-special-keyword">:DATE:</span>     <span class="org-property-value">2010-11-23</span>
+<span class="org-special-keyword">   :END:</span>
+<span class="org-block-begin-line">#+BEGIN_SRC python
+</span><span class="keyword">return</span> [[<span class="string">'607'</span>, <span class="string">'Show license short, name on the deed'</span>],
+        [<span class="string">'255'</span>, <span class="string">"'(message (concat 'hello ' 'world))"]</span>]
+<span class="org-block-end-line">#+END_SRC
+</span>
+<span class="org-meta-line">#+results:
+</span><span class="org-table">| 607 | Show license short, name on the deed |</span>
+<span class="org-table">| 255 | '(message (concat 'hello ' 'world))  |</span>
 
-#+results:
-| 607 | Show license short, name on the deed |
-| 255 | '(message (concat 'hello ' 'world))  |
+<span class="org-block-begin-line">#+begin_src ruby
+</span>  [[<span class="string">'607'</span>, <span class="string">'Show license, short name on the deed'</span>],
+   [<span class="string">'255'</span>, <span class="string">"))'(message (concat 'hello ' 'world"]</span>]
+<span class="org-block-end-line">#+end_src
+</span>
+<span class="org-meta-line">#+results:
+</span><span class="org-table">| 607 | Show license, short name on the deed |</span>
+<span class="org-table">| 255 | ))'(message (concat 'hello ' 'world  |</span>
 
-#+begin_src ruby
-  [['607', 'Show license, short name on the deed'],
-   ['255', "))'(message (concat 'hello ' 'world"]]
-#+end_src
-
-#+results:
-| 607 | Show license, short name on the deed |
-| 255 | ))'(message (concat 'hello ' 'world  |
-
-#+begin_src haskell
-  [["'single quotes'", "b"], ["\"double quotes\"", "d"]]
-#+end_src
-
-#+results:
-| 'single quotes' | b |
-| "double quotes" | d |
+<span class="org-block-begin-line">#+begin_src haskell
+</span>  [[<span class="string">"'single quotes'"</span>, <span class="string">"b"</span>], [<span class="string">"\"double quotes\""</span>, <span class="string">"d"]</span>]
+<span class="org-block-end-line">#+end_src
+</span>
+<span class="org-meta-line">#+results:
+</span><span class="org-table">| 'single quotes' | b |</span>
+<span class="org-table">| "double quotes" | d |</span>
 
 </pre>
   </body>

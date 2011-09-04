@@ -27,6 +27,10 @@
         /* org-level-2 */
         color: #b0c4de;
       }
+      .org-level-3 {
+        /* org-level-3 */
+        color: #CC7833;
+      }
       .org-meta-line {
         /* org-meta-line */
         color: #BC9458;
@@ -37,6 +41,14 @@
       .org-special-keyword {
         /* org-special-keyword */
         color: #CC7833;
+      }
+      .org-table {
+        /* org-table */
+        color: #87cefa;
+      }
+      .starter-kit-paren {
+        /* starter-kit-paren-face */
+        color: #7f7f7f;
       }
       .string {
         /* font-lock-string-face */
@@ -67,80 +79,80 @@
 </span>  <span class="keyword">return</span> <span class="string">'text'
 </span><span class="org-block-end-line">#+end_src
 </span>
-|---------------------------------------|
-| "(0.0331901438056,0.000535222885197)" |
-| "(0.0333434157791,0.000537930174356)" |
-| "(0.0345727512157,0.000559346040457)" |
-| "(0.0353146483908,0.000571501584524)" |
-| "(0.0355522909393,0.000574387067408)" |
-| "(0.0356575682336,0.000574851263615)" |
-| "(0.0357806926897,0.000575051685084)" |
-|---------------------------------------|
-| text                                  |
-#+TBLFM: @8$1='(sbe parameter-variation (nums @1$1..@7$1))
-
-| '(1 2 3 4) |
-|------------|
-|          4 |
-#+TBLFM: @2$1='(sbe quote (it @1$1))
-
-| (1 2 3 4) |
-|-----------|
-| #ERROR    |
-#+TBLFM: @2$1='(sbe quote (it @1$1))
-
-*** using vectors to represent complex number is lisp
-    :PROPERTIES:
-    :DATE:     2011-04-15
-    :END:
-| [1 2]            |
-|------------------|
-| real:1 complex:2 |
-#+TBLFM: @2$1='(sbe real (it @1$1))
-
-#+source: real(it='())
-#+begin_src emacs-lisp
-  (format "real:%d complex:%d" (aref it 0) (aref it 1))
-#+end_src
-
-*** reference the table in a table formula
-    :PROPERTIES:
-    :DATE:     2011-04-13
-    :END:
-#+results: complex-data
-|-------------------------------------|
-| (0.0331901438056,0.000535222885197) |
-|-------------------------------------|
-|                                   4 |
-#+TBLFM: @2$1='(sbe quote (it "complex-data"))
-
-*** externally referencing the table
-    :PROPERTIES:
-    :DATE:     2011-04-13
-    :END:
-#+results: complex-data
-|-------------------------------------|
-| (0.0331901438056,0.000535222885197) |
-| (0.0333434157791,0.000537930174356) |
-| (0.0345727512157,0.000559346040457) |
-| (0.0353146483908,0.000571501584524) |
-| (0.0355522909393,0.000574387067408) |
-| (0.0356575682336,0.000574851263615) |
-| (0.0357806926897,0.000575051685084) |
-#+TBLFM: @8$1='(sbe parameter-variation (nums @1$1..@7$1))
-
-#+begin_src python :var data=complex-data
-  return data
-#+end_src
-
-#+results:
-| (0.0331901438056,0.000535222885197) |
-| (0.0333434157791,0.000537930174356) |
-| (0.0345727512157,0.000559346040457) |
-| (0.0353146483908,0.000571501584524) |
-| (0.0355522909393,0.000574387067408) |
-| (0.0356575682336,0.000574851263615) |
-| (0.0357806926897,0.000575051685084) |
+<span class="org-table">|---------------------------------------|</span>
+<span class="org-table">| "(0.0331901438056,0.000535222885197)" |</span>
+<span class="org-table">| "(0.0333434157791,0.000537930174356)" |</span>
+<span class="org-table">| "(0.0345727512157,0.000559346040457)" |</span>
+<span class="org-table">| "(0.0353146483908,0.000571501584524)" |</span>
+<span class="org-table">| "(0.0355522909393,0.000574387067408)" |</span>
+<span class="org-table">| "(0.0356575682336,0.000574851263615)" |</span>
+<span class="org-table">| "(0.0357806926897,0.000575051685084)" |</span>
+<span class="org-table">|---------------------------------------|</span>
+<span class="org-table">| text                                  |</span>
+<span class="org-meta-line">#+TBLFM: @8$1='(sbe parameter-variation (nums @1$1..@7$1))
+</span>
+<span class="org-table">| '(1 2 3 4) |</span>
+<span class="org-table">|------------|</span>
+<span class="org-table">|          4 |</span>
+<span class="org-meta-line">#+TBLFM: @2$1='(sbe quote (it @1$1))
+</span>
+<span class="org-table">| (1 2 3 4) |</span>
+<span class="org-table">|-----------|</span>
+<span class="org-table">| #ERROR    |</span>
+<span class="org-meta-line">#+TBLFM: @2$1='(sbe quote (it @1$1))
+</span>
+<span class="org-level-3">*** using vectors to represent complex number is lisp</span>
+<span class="org-special-keyword">    :PROPERTIES:</span>
+    <span class="org-special-keyword">:DATE:</span>     <span class="org-property-value">2011-04-15</span>
+<span class="org-special-keyword">    :END:</span>
+<span class="org-table">| [1 2]            |</span>
+<span class="org-table">|------------------|</span>
+<span class="org-table">| real:1 complex:2 |</span>
+<span class="org-meta-line">#+TBLFM: @2$1='(sbe real (it @1$1))
+</span>
+<span class="org-meta-line">#+source: real(it='())
+</span><span class="org-block-begin-line">#+begin_src emacs-lisp
+</span>  <span class="starter-kit-paren">(</span>format <span class="string">"real:%d complex:%d"</span> <span class="starter-kit-paren">(</span>aref it 0<span class="starter-kit-paren">)</span> <span class="starter-kit-paren">(</span>aref it 1<span class="starter-kit-paren">))
+</span><span class="org-block-end-line">#+end_src
+</span>
+<span class="org-level-3">*** reference the table in a table formula</span>
+<span class="org-special-keyword">    :PROPERTIES:</span>
+    <span class="org-special-keyword">:DATE:</span>     <span class="org-property-value">2011-04-13</span>
+<span class="org-special-keyword">    :END:</span>
+<span class="org-meta-line">#+results: complex-data
+</span><span class="org-table">|-------------------------------------|</span>
+<span class="org-table">| (0.0331901438056,0.000535222885197) |</span>
+<span class="org-table">|-------------------------------------|</span>
+<span class="org-table">|                                   4 |</span>
+<span class="org-meta-line">#+TBLFM: @2$1='(sbe quote (it "complex-data"))
+</span>
+<span class="org-level-3">*** externally referencing the table</span>
+<span class="org-special-keyword">    :PROPERTIES:</span>
+    <span class="org-special-keyword">:DATE:</span>     <span class="org-property-value">2011-04-13</span>
+<span class="org-special-keyword">    :END:</span>
+<span class="org-meta-line">#+results: complex-data
+</span><span class="org-table">|-------------------------------------|</span>
+<span class="org-table">| (0.0331901438056,0.000535222885197) |</span>
+<span class="org-table">| (0.0333434157791,0.000537930174356) |</span>
+<span class="org-table">| (0.0345727512157,0.000559346040457) |</span>
+<span class="org-table">| (0.0353146483908,0.000571501584524) |</span>
+<span class="org-table">| (0.0355522909393,0.000574387067408) |</span>
+<span class="org-table">| (0.0356575682336,0.000574851263615) |</span>
+<span class="org-table">| (0.0357806926897,0.000575051685084) |</span>
+<span class="org-meta-line">#+TBLFM: @8$1='(sbe parameter-variation (nums @1$1..@7$1))
+</span>
+<span class="org-block-begin-line">#+begin_src python :var data=complex-data
+</span>  <span class="keyword">return </span>data
+<span class="org-block-end-line">#+end_src
+</span>
+<span class="org-meta-line">#+results:
+</span><span class="org-table">| (0.0331901438056,0.000535222885197) |</span>
+<span class="org-table">| (0.0333434157791,0.000537930174356) |</span>
+<span class="org-table">| (0.0345727512157,0.000559346040457) |</span>
+<span class="org-table">| (0.0353146483908,0.000571501584524) |</span>
+<span class="org-table">| (0.0355522909393,0.000574387067408) |</span>
+<span class="org-table">| (0.0356575682336,0.000574851263615) |</span>
+<span class="org-table">| (0.0357806926897,0.000575051685084) |</span>
 
 </pre>
   </body>

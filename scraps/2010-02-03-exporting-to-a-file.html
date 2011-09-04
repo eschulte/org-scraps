@@ -9,6 +9,38 @@
         color: #E6E1DC;
         background-color: #232323;
       }
+      .builtin {
+        /* font-lock-builtin-face */
+        color: #D0D0FF;
+      }
+      .org-block-begin-line {
+        /* org-block-begin-line */
+        color: #BC9458;
+        font-style: italic;
+      }
+      .org-block-end-line {
+        /* org-block-end-line */
+        color: #BC9458;
+        font-style: italic;
+      }
+      .org-level-2 {
+        /* org-level-2 */
+        color: #b0c4de;
+      }
+      .org-property-value {
+      }
+      .org-special-keyword {
+        /* org-special-keyword */
+        color: #CC7833;
+      }
+      .starter-kit-paren {
+        /* starter-kit-paren-face */
+        color: #7f7f7f;
+      }
+      .string {
+        /* font-lock-string-face */
+        color: #A5C261;
+      }
 
       a {
         color: inherit;
@@ -24,20 +56,20 @@
   </head>
   <body>
     <pre>
-** exporting to a file
-   :PROPERTIES:
-   :EXPORT_FILE_NAME: simple
-   :EXPORT_TITLE: testing file export
+<span class="org-level-2">** exporting to a file</span>
+<span class="org-special-keyword">   :PROPERTIES:</span>
+   <span class="org-special-keyword">:EXPORT_FILE_NAME:</span> <span class="org-property-value">simple</span>
+   <span class="org-special-keyword">:EXPORT_TITLE:</span> <span class="org-property-value">testing file export</span>
    :DATE:     2010-02-03
-   :END:
+<span class="org-special-keyword">   :END:</span>
 
 this is the contents
 
 and a block
-#+begin_src clojure
-  (println "is a nice lisp")
-#+end_src
-
+<span class="org-block-begin-line">#+begin_src clojure
+</span>  <span class="starter-kit-paren">(</span><span class="builtin">println</span> <span class="string">"is a nice lisp"</span><span class="starter-kit-paren">)
+</span><span class="org-block-end-line">#+end_src
+</span>
 ah, it works!
 
 </pre>

@@ -9,6 +9,43 @@
         color: #E6E1DC;
         background-color: #232323;
       }
+      .keyword {
+        /* font-lock-keyword-face */
+        color: #CC7833;
+      }
+      .org-block-begin-line {
+        /* org-block-begin-line */
+        color: #BC9458;
+        font-style: italic;
+      }
+      .org-block-end-line {
+        /* org-block-end-line */
+        color: #BC9458;
+        font-style: italic;
+      }
+      .org-level-2 {
+        /* org-level-2 */
+        color: #b0c4de;
+      }
+      .org-meta-line {
+        /* org-meta-line */
+        color: #BC9458;
+        font-style: italic;
+      }
+      .org-property-value {
+      }
+      .org-special-keyword {
+        /* org-special-keyword */
+        color: #CC7833;
+      }
+      .org-table {
+        /* org-table */
+        color: #87cefa;
+      }
+      .starter-kit-paren {
+        /* starter-kit-paren-face */
+        color: #7f7f7f;
+      }
 
       a {
         color: inherit;
@@ -24,35 +61,35 @@
   </head>
   <body>
     <pre>
-** very very large numbers
-   :PROPERTIES:
-   :DATE:     2010-10-13
-   :END:
-#+tblname: numbers
-|                           1 |
-|                           2 |
-|                          12 |
-|                          45 |
-|                         166 |
-|                    12567890 |
-| 231231282371983279389999999 |
+<span class="org-level-2">** very very large numbers</span>
+<span class="org-special-keyword">   :PROPERTIES:</span>
+   <span class="org-special-keyword">:DATE:</span>     <span class="org-property-value">2010-10-13</span>
+<span class="org-special-keyword">   :END:</span>
+<span class="org-meta-line">#+tblname: numbers
+</span><span class="org-table">|                           1 |</span>
+<span class="org-table">|                           2 |</span>
+<span class="org-table">|                          12 |</span>
+<span class="org-table">|                          45 |</span>
+<span class="org-table">|                         166 |</span>
+<span class="org-table">|                    12567890 |</span>
+<span class="org-table">| 231231282371983279389999999 |</span>
 
-#+begin_src emacs-lisp :var numbers=numbers
-  (mapcar
-   (lambda (line)
-       (let ((number (car line)))
-         (list number (type-of number))))
-     numbers)
-#+end_src
-
-#+results:
-|                      1 | integer |
-|                      2 | integer |
-|                     12 | integer |
-|                     45 | integer |
-|                    166 | integer |
-|               12567890 | integer |
-| 2.3123128237198328e+26 | float   |
+<span class="org-block-begin-line">#+begin_src emacs-lisp :var numbers=numbers
+</span>  <span class="starter-kit-paren">(</span>mapcar
+   <span class="starter-kit-paren">(</span><span class="keyword">lambda</span> <span class="starter-kit-paren">(</span>line<span class="starter-kit-paren">)</span>
+       <span class="starter-kit-paren">(</span><span class="keyword">let</span> <span class="starter-kit-paren">((</span>number <span class="starter-kit-paren">(</span>car line<span class="starter-kit-paren">)))</span>
+         <span class="starter-kit-paren">(</span>list number <span class="starter-kit-paren">(</span>type-of number<span class="starter-kit-paren">))))</span>
+     numbers<span class="starter-kit-paren">)
+</span><span class="org-block-end-line">#+end_src
+</span>
+<span class="org-meta-line">#+results:
+</span><span class="org-table">|                      1 | integer |</span>
+<span class="org-table">|                      2 | integer |</span>
+<span class="org-table">|                     12 | integer |</span>
+<span class="org-table">|                     45 | integer |</span>
+<span class="org-table">|                    166 | integer |</span>
+<span class="org-table">|               12567890 | integer |</span>
+<span class="org-table">| 2.3123128237198328e+26 | float   |</span>
 
 </pre>
   </body>

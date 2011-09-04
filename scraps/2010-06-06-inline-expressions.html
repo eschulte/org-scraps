@@ -9,6 +9,30 @@
         color: #E6E1DC;
         background-color: #232323;
       }
+      .constant {
+        /* font-lock-constant-face */
+        color: #6D9CBE;
+      }
+      .org-block-begin-line {
+        /* org-block-begin-line */
+        color: #BC9458;
+        font-style: italic;
+      }
+      .org-block-end-line {
+        /* org-block-end-line */
+        color: #BC9458;
+        font-style: italic;
+      }
+      .org-level-2 {
+        /* org-level-2 */
+        color: #b0c4de;
+      }
+      .org-property-value {
+      }
+      .org-special-keyword {
+        /* org-special-keyword */
+        color: #CC7833;
+      }
 
       a {
         color: inherit;
@@ -24,16 +48,16 @@
   </head>
   <body>
     <pre>
-** inline expressions
-   :PROPERTIES:
-   :session:  'default
-   :DATE:     2010-06-06
-   :END:
+<span class="org-level-2">** inline expressions</span>
+<span class="org-special-keyword">   :PROPERTIES:</span>
+   <span class="org-special-keyword">:session:</span>  <span class="org-property-value">'default</span>
+   <span class="org-special-keyword">:DATE:</span>     <span class="org-property-value">2010-06-06</span>
+<span class="org-special-keyword">   :END:</span>
 
-#+begin_src R :exports code :results silent
-  x&lt;-4
-#+end_src
-
+<span class="org-block-begin-line">#+begin_src R :exports code :results silent
+</span>  x<span class="constant">&lt;-4</span>
+<span class="org-block-end-line">#+end_src
+</span>
 the sum of 1 and x is equal to src_R{x+1}, now I'll sneakily reset
 this value in a hidden inline block src_R[:exports none]{x&lt;-2}, so
 it's value is now src_R{x}.

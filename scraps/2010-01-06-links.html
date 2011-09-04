@@ -9,6 +9,21 @@
         color: #E6E1DC;
         background-color: #232323;
       }
+      .org-level-2 {
+        /* org-level-2 */
+        color: #b0c4de;
+      }
+      .org-link {
+        /* org-link */
+        color: #00ffff;
+        text-decoration: underline;
+      }
+      .org-property-value {
+      }
+      .org-special-keyword {
+        /* org-special-keyword */
+        color: #CC7833;
+      }
 
       a {
         color: inherit;
@@ -24,16 +39,16 @@
   </head>
   <body>
     <pre>
-** links
-   :PROPERTIES:
-   :DATE:     2010-01-06
-   :END:
+<span class="org-level-2">** links</span>
+<span class="org-special-keyword">   :PROPERTIES:</span>
+   <span class="org-special-keyword">:DATE:</span>     <span class="org-property-value">2010-01-06</span>
+<span class="org-special-keyword">   :END:</span>
 
 can LaTeX link itself to the middle of a paragraph with a simple
 inline link like &lt;&lt;keystone&gt;&gt; if not then we would probably need to
 wrap source-code blocks in figures to make them referable.
 
-how about a link back to [[keystone]]
+how about a link back to <span class="org-link">[[keystone]]</span>
 
 The above appears to work in LaTeX, but not in HTML.
 

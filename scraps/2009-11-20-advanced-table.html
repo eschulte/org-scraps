@@ -9,6 +9,20 @@
         color: #E6E1DC;
         background-color: #232323;
       }
+      .keyword {
+        /* font-lock-keyword-face */
+        color: #CC7833;
+      }
+      .org-block-begin-line {
+        /* org-block-begin-line */
+        color: #BC9458;
+        font-style: italic;
+      }
+      .org-block-end-line {
+        /* org-block-end-line */
+        color: #BC9458;
+        font-style: italic;
+      }
       .org-date {
         /* org-date */
         color: #00ffff;
@@ -17,6 +31,11 @@
       .org-level-2 {
         /* org-level-2 */
         color: #b0c4de;
+      }
+      .org-meta-line {
+        /* org-meta-line */
+        color: #BC9458;
+        font-style: italic;
       }
       .org-property-value {
       }
@@ -27,6 +46,14 @@
       .org-table {
         /* org-table */
         color: #87cefa;
+      }
+      .starter-kit-paren {
+        /* starter-kit-paren-face */
+        color: #7f7f7f;
+      }
+      .string {
+        /* font-lock-string-face */
+        color: #A5C261;
       }
 
       a {
@@ -50,41 +77,41 @@
    <span class="org-table">| DATA             | WHAT       | WHERE       | HOW MUCH |</span>
    <span class="org-table">|------------------+------------+-------------+----------|</span>
    <span class="org-table">| </span><span class="org-date">[2009-09-25 Fri]</span><span class="org-table"> |            |             |    28.95 |</span>
-   |------------------+------------+-------------+----------|
-   |                  | food       | supermarket |     7.85 |
-   |                  | ticket bus |             |      2.3 |
-   |                  | tea + ice  | ice uno     |      4.4 |
-   |                  | ticket     |             |     14.4 |
-   |------------------+------------+-------------+----------|
-   | [2009-09-26 Sat] |            |             |       41 |
+   <span class="org-table">|------------------+------------+-------------+----------|</span>
+   <span class="org-table">|                  | food       | supermarket |     7.85 |</span>
+   <span class="org-table">|                  | ticket bus |             |      2.3 |</span>
+   <span class="org-table">|                  | tea + ice  | ice uno     |      4.4 |</span>
+   <span class="org-table">|                  | ticket     |             |     14.4 |</span>
+   <span class="org-table">|------------------+------------+-------------+----------|</span>
+   <span class="org-table">| </span><span class="org-date">[2009-09-26 Sat]</span><span class="org-table"> |            |             |       41 |</span>
 
-#+begin_src emacs-lisp
-  (let ((total 0) (responding t) purchases)
-    (while responding
-      (setq purchases
-            (cons
-             (list ""
-                   (read-from-minibuffer "What: ")
-                   (read-from-minibuffer "Where: ")
-                   (read-minibuffer "How Much: "))
-             purchases))
-      (setq responding (y-or-n-p "more? ")))
-    (append 
+<span class="org-block-begin-line">#+begin_src emacs-lisp
+</span>  <span class="starter-kit-paren">(</span><span class="keyword">let</span> <span class="starter-kit-paren">((</span>total 0<span class="starter-kit-paren">)</span> <span class="starter-kit-paren">(</span>responding t<span class="starter-kit-paren">)</span> purchases<span class="starter-kit-paren">)</span>
+    <span class="starter-kit-paren">(</span><span class="keyword">while</span> responding
+      <span class="starter-kit-paren">(</span>setq purchases
+            <span class="starter-kit-paren">(</span>cons
+             <span class="starter-kit-paren">(</span>list <span class="string">""</span>
+                   <span class="starter-kit-paren">(</span>read-from-minibuffer <span class="string">"What: "</span><span class="starter-kit-paren">)</span>
+                   <span class="starter-kit-paren">(</span>read-from-minibuffer <span class="string">"Where: "</span><span class="starter-kit-paren">)</span>
+                   <span class="starter-kit-paren">(</span>read-minibuffer <span class="string">"How Much: "</span><span class="starter-kit-paren">))</span>
+             purchases<span class="starter-kit-paren">))</span>
+      <span class="starter-kit-paren">(</span>setq responding <span class="starter-kit-paren">(</span>y-or-n-p <span class="string">"more? "</span><span class="starter-kit-paren">)))</span>
+    <span class="starter-kit-paren">(</span>append 
      purchases
-     (list
-      (list
-       (format-time-string "%Y-%m-%d" (current-time))
-       "" "" (progn
-               (mapc (lambda (purchase)
-                       (setq total (+ total (fourth purchase))))
-                     purchases)
-               total)))))
-#+end_src
-
-#+resname:
-| ""           | "fish and chips" | "diner"  |  9.78 |
-| ""           | "food"           | "subway" |  5.45 |
-| "2009-09-29" | ""               | ""       | 15.23 |
+     <span class="starter-kit-paren">(</span>list
+      <span class="starter-kit-paren">(</span>list
+       <span class="starter-kit-paren">(</span>format-time-string <span class="string">"%Y-%m-%d"</span> <span class="starter-kit-paren">(</span>current-time<span class="starter-kit-paren">))</span>
+       <span class="string">""</span> <span class="string">""</span> <span class="starter-kit-paren">(</span><span class="keyword">progn</span>
+               <span class="starter-kit-paren">(</span>mapc <span class="starter-kit-paren">(</span><span class="keyword">lambda</span> <span class="starter-kit-paren">(</span>purchase<span class="starter-kit-paren">)</span>
+                       <span class="starter-kit-paren">(</span>setq total <span class="starter-kit-paren">(</span>+ total <span class="starter-kit-paren">(</span>fourth purchase<span class="starter-kit-paren">))))</span>
+                     purchases<span class="starter-kit-paren">)</span>
+               total<span class="starter-kit-paren">)))))
+</span><span class="org-block-end-line">#+end_src
+</span>
+<span class="org-meta-line">#+resname:
+</span><span class="org-table">| ""           | "fish and chips" | "diner"  |  9.78 |</span>
+<span class="org-table">| ""           | "food"           | "subway" |  5.45 |</span>
+<span class="org-table">| "2009-09-29" | ""               | ""       | 15.23 |</span>
 
 </pre>
   </body>

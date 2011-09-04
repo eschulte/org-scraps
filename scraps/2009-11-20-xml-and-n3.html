@@ -9,13 +9,48 @@
         color: #E6E1DC;
         background-color: #232323;
       }
+      .nxml-element-local-name {
+        /* nxml-element-local-name */
+        color: #FFC66D;
+      }
+      .nxml-tag-delimiter {
+      }
+      .nxml-tag-slash {
+      }
+      .org-block-begin-line {
+        /* org-block-begin-line */
+        color: #BC9458;
+        font-style: italic;
+      }
+      .org-block-end-line {
+        /* org-block-end-line */
+        color: #BC9458;
+        font-style: italic;
+      }
+      .org-code {
+        /* org-code */
+        color: #b3b3b3;
+      }
       .org-level-2 {
         /* org-level-2 */
         color: #b0c4de;
       }
+      .org-meta-line {
+        /* org-meta-line */
+        color: #BC9458;
+        font-style: italic;
+      }
       .org-special-keyword {
         /* org-special-keyword */
         color: #CC7833;
+      }
+      .starter-kit-paren {
+        /* starter-kit-paren-face */
+        color: #7f7f7f;
+      }
+      .string {
+        /* font-lock-string-face */
+        color: #A5C261;
       }
 
       a {
@@ -35,29 +70,29 @@
 <span class="org-level-2">** xml and n3</span>
 <span class="org-special-keyword">   :PROPERTIES:</span>
    :DATE:     2009-11-20
-   :END:
+<span class="org-special-keyword">   :END:</span>
 
-introduce org-babel to =xml= and =n3=
-#+begin_src emacs-lisp :results silent
-  (add-to-list 'org-babel-interpreters "xml")
-  (add-to-list 'org-babel-interpreters "n3")
-#+end_src
-
+introduce org-babel to <span class="org-code">=xml=</span> and <span class="org-code">=n3=</span>
+<span class="org-block-begin-line">#+begin_src emacs-lisp :results silent
+</span>  <span class="starter-kit-paren">(</span>add-to-list 'org-babel-interpreters <span class="string">"xml"</span><span class="starter-kit-paren">)</span>
+  <span class="starter-kit-paren">(</span>add-to-list 'org-babel-interpreters <span class="string">"n3"</span><span class="starter-kit-paren">)
+</span><span class="org-block-end-line">#+end_src
+</span>
 inform org-babel-tangle of their existence and file extensions
-#+begin_src emacs-lisp :results silent
-  (add-to-list 'org-babel-tangle-langs '("xml" "xml"))
-  (add-to-list 'org-babel-tangle-langs '("n3" "n3"))
-#+end_src
-
-#+begin_src xml :tangle example
-  &lt;first&gt;
-  &lt;/first&gt;
-#+end_src
-
-#+begin_src n3 :tangle example
-  n3 stuff
-#+end_src
-
+<span class="org-block-begin-line">#+begin_src emacs-lisp :results silent
+</span>  <span class="starter-kit-paren">(</span>add-to-list 'org-babel-tangle-langs '<span class="starter-kit-paren">(</span><span class="string">"xml"</span> <span class="string">"xml"</span><span class="starter-kit-paren">))</span>
+  <span class="starter-kit-paren">(</span>add-to-list 'org-babel-tangle-langs '<span class="starter-kit-paren">(</span><span class="string">"n3"</span> <span class="string">"n3"</span><span class="starter-kit-paren">))
+</span><span class="org-block-end-line">#+end_src
+</span>
+<span class="org-block-begin-line">#+begin_src xml :tangle example
+</span>  <span class="nxml-tag-delimiter">&lt;</span><span class="nxml-element-local-name">first</span><span class="nxml-tag-delimiter">&gt;</span>
+  <span class="nxml-tag-delimiter">&lt;</span><span class="nxml-tag-slash">/</span><span class="nxml-element-local-name">first</span><span class="nxml-tag-delimiter">&gt;
+</span><span class="org-block-end-line">#+end_src
+</span>
+<span class="org-block-begin-line">#+begin_src n3 :tangle example
+</span>  n3 stuff<span class="org-meta-line">
+</span><span class="org-block-end-line">#+end_src
+</span>
 </pre>
   </body>
 </html>

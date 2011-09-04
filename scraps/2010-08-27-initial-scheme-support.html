@@ -9,6 +9,43 @@
         color: #E6E1DC;
         background-color: #232323;
       }
+      .keyword {
+        /* font-lock-keyword-face */
+        color: #CC7833;
+      }
+      .org-block-begin-line {
+        /* org-block-begin-line */
+        color: #BC9458;
+        font-style: italic;
+      }
+      .org-block-end-line {
+        /* org-block-end-line */
+        color: #BC9458;
+        font-style: italic;
+      }
+      .org-level-2 {
+        /* org-level-2 */
+        color: #b0c4de;
+      }
+      .org-meta-line {
+        /* org-meta-line */
+        color: #BC9458;
+        font-style: italic;
+      }
+      .org-property-value {
+      }
+      .org-special-keyword {
+        /* org-special-keyword */
+        color: #CC7833;
+      }
+      .org-table {
+        /* org-table */
+        color: #87cefa;
+      }
+      .starter-kit-paren {
+        /* starter-kit-paren-face */
+        color: #7f7f7f;
+      }
 
       a {
         color: inherit;
@@ -24,24 +61,24 @@
   </head>
   <body>
     <pre>
-** initial scheme support
-   :PROPERTIES:
-   :DATE:     2010-08-27
-   :END:
-#+source: numbers
-#+begin_src scheme
-  (map (lambda (el) (+ el 1)) '(1 2 3))
-#+end_src
+<span class="org-level-2">** initial scheme support</span>
+<span class="org-special-keyword">   :PROPERTIES:</span>
+   <span class="org-special-keyword">:DATE:</span>     <span class="org-property-value">2010-08-27</span>
+<span class="org-special-keyword">   :END:</span>
+<span class="org-meta-line">#+source: numbers
+</span><span class="org-block-begin-line">#+begin_src scheme
+</span>  <span class="starter-kit-paren">(</span><span class="keyword">map</span> <span class="starter-kit-paren">(</span><span class="keyword">lambda</span> <span class="starter-kit-paren">(</span>el<span class="starter-kit-paren">)</span> <span class="starter-kit-paren">(</span>+ el 1<span class="starter-kit-paren">))</span> '<span class="starter-kit-paren">(</span>1 2 3<span class="starter-kit-paren">))
+</span><span class="org-block-end-line">#+end_src
+</span>
+<span class="org-meta-line">#+results:
+</span><span class="org-table">| 2 | 3 | 4 |</span>
 
-#+results:
-| 2 | 3 | 4 |
-
-#+begin_src scheme :var numbers=numbers
-  (map (lambda (el) (- el 1)) numbers)
-#+end_src
-
-#+results:
-| 1 | 2 | 3 |
+<span class="org-block-begin-line">#+begin_src scheme :var numbers=numbers
+</span>  <span class="starter-kit-paren">(</span><span class="keyword">map</span> <span class="starter-kit-paren">(</span><span class="keyword">lambda</span> <span class="starter-kit-paren">(</span>el<span class="starter-kit-paren">)</span> <span class="starter-kit-paren">(</span>- el 1<span class="starter-kit-paren">))</span> numbers<span class="starter-kit-paren">)
+</span><span class="org-block-end-line">#+end_src
+</span>
+<span class="org-meta-line">#+results:
+</span><span class="org-table">| 1 | 2 | 3 |</span>
 
 </pre>
   </body>

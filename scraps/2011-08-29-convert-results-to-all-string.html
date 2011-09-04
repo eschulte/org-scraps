@@ -42,6 +42,10 @@
         /* org-special-keyword */
         color: #CC7833;
       }
+      .org-table {
+        /* org-table */
+        color: #87cefa;
+      }
       .starter-kit-paren {
         /* starter-kit-paren-face */
         color: #7f7f7f;
@@ -86,21 +90,21 @@
   <span class="starter-kit-paren">(</span>all-to-string tbl<span class="starter-kit-paren">)
 </span><span class="org-block-end-line">#+end_src
 </span>
-#+begin_src emacs-lisp :var tbl=hetero-table
-  (mapcar (lambda (row) (mapcar (lambda (cell) (stringp cell)) row)) tbl)
-#+end_src
+<span class="org-block-begin-line">#+begin_src emacs-lisp :var tbl=hetero-table
+</span>  <span class="starter-kit-paren">(</span>mapcar <span class="starter-kit-paren">(</span><span class="keyword">lambda</span> <span class="starter-kit-paren">(</span>row<span class="starter-kit-paren">)</span> <span class="starter-kit-paren">(</span>mapcar <span class="starter-kit-paren">(</span><span class="keyword">lambda</span> <span class="starter-kit-paren">(</span>cell<span class="starter-kit-paren">)</span> <span class="starter-kit-paren">(</span>stringp cell<span class="starter-kit-paren">))</span> row<span class="starter-kit-paren">))</span> tbl<span class="starter-kit-paren">)
+</span><span class="org-block-end-line">#+end_src
+</span>
+<span class="org-meta-line">#+results:
+</span><span class="org-table">| nil | nil | nil | nil |</span>
+<span class="org-table">| t   | t   | t   | t   |</span>
 
-#+results:
-| nil | nil | nil | nil |
-| t   | t   | t   | t   |
-
-#+begin_src emacs-lisp :var tbl=all-to-string(hetero-table)
-  (mapcar (lambda (row) (mapcar (lambda (cell) (stringp cell)) row)) tbl)
-#+end_src
-
-#+results:
-| t | t | t | t |
-| t | t | t | t |
+<span class="org-block-begin-line">#+begin_src emacs-lisp :var tbl=all-to-string(hetero-table)
+</span>  <span class="starter-kit-paren">(</span>mapcar <span class="starter-kit-paren">(</span><span class="keyword">lambda</span> <span class="starter-kit-paren">(</span>row<span class="starter-kit-paren">)</span> <span class="starter-kit-paren">(</span>mapcar <span class="starter-kit-paren">(</span><span class="keyword">lambda</span> <span class="starter-kit-paren">(</span>cell<span class="starter-kit-paren">)</span> <span class="starter-kit-paren">(</span>stringp cell<span class="starter-kit-paren">))</span> row<span class="starter-kit-paren">))</span> tbl<span class="starter-kit-paren">)
+</span><span class="org-block-end-line">#+end_src
+</span>
+<span class="org-meta-line">#+results:
+</span><span class="org-table">| t | t | t | t |</span>
+<span class="org-table">| t | t | t | t |</span>
 
 </pre>
   </body>

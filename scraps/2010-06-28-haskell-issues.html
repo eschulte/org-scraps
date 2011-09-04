@@ -9,6 +9,39 @@
         color: #E6E1DC;
         background-color: #232323;
       }
+      .org-block-begin-line {
+        /* org-block-begin-line */
+        color: #BC9458;
+        font-style: italic;
+      }
+      .org-block-end-line {
+        /* org-block-end-line */
+        color: #BC9458;
+        font-style: italic;
+      }
+      .org-code {
+        /* org-code */
+        color: #b3b3b3;
+      }
+      .org-level-2 {
+        /* org-level-2 */
+        color: #b0c4de;
+      }
+      .org-meta-line {
+        /* org-meta-line */
+        color: #BC9458;
+        font-style: italic;
+      }
+      .org-property-value {
+      }
+      .org-special-keyword {
+        /* org-special-keyword */
+        color: #CC7833;
+      }
+      .org-table {
+        /* org-table */
+        color: #87cefa;
+      }
 
       a {
         color: inherit;
@@ -24,34 +57,34 @@
   </head>
   <body>
     <pre>
-** haskell issues
-   :PROPERTIES:
-   :DATE:     2010-06-28
-   :END:
+<span class="org-level-2">** haskell issues</span>
+<span class="org-special-keyword">   :PROPERTIES:</span>
+   <span class="org-special-keyword">:DATE:</span>     <span class="org-property-value">2010-06-28</span>
+<span class="org-special-keyword">   :END:</span>
 
-#+begin_src haskell
-  length [1, 2]
-#+end_src
+<span class="org-block-begin-line">#+begin_src haskell
+</span>  length [1, 2]
+<span class="org-block-end-line">#+end_src
+</span>
+<span class="org-meta-line">#+results:
+</span><span class="org-code">: 2
+</span>
+<span class="org-meta-line">#+tblname: example-4-haskell
+</span><span class="org-table">| 1 |</span>
+<span class="org-table">| 2 |</span>
+<span class="org-table">| 3 |</span>
+<span class="org-table">| 4 |</span>
+<span class="org-table">| 5 |</span>
+<span class="org-table">| 6 |</span>
+<span class="org-table">| 7 |</span>
 
-#+results:
-: 2
-
-#+tblname: example-4-haskell
-| 1 |
-| 2 |
-| 3 |
-| 4 |
-| 5 |
-| 6 |
-| 7 |
-
-#+begin_src haskell :var this=example-4-haskell
-  length this
-#+end_src
-
-#+results:
-: 7
-
+<span class="org-block-begin-line">#+begin_src haskell :var this=example-4-haskell
+</span>  length this
+<span class="org-block-end-line">#+end_src
+</span>
+<span class="org-meta-line">#+results:
+</span><span class="org-code">: 7
+</span>
 </pre>
   </body>
 </html>

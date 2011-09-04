@@ -9,6 +9,51 @@
         color: #E6E1DC;
         background-color: #232323;
       }
+      .org-block {
+        /* org-block */
+        color: #b3b3b3;
+      }
+      .org-block-begin-line {
+        /* org-block-begin-line */
+        color: #BC9458;
+        font-style: italic;
+      }
+      .org-block-end-line {
+        /* org-block-end-line */
+        color: #BC9458;
+        font-style: italic;
+      }
+      .org-code {
+        /* org-code */
+        color: #b3b3b3;
+      }
+      .org-level-2 {
+        /* org-level-2 */
+        color: #b0c4de;
+      }
+      .org-meta-line {
+        /* org-meta-line */
+        color: #BC9458;
+        font-style: italic;
+      }
+      .org-property-value {
+      }
+      .org-special-keyword {
+        /* org-special-keyword */
+        color: #CC7833;
+      }
+      .org-table {
+        /* org-table */
+        color: #87cefa;
+      }
+      .starter-kit-paren {
+        /* starter-kit-paren-face */
+        color: #7f7f7f;
+      }
+      .string {
+        /* font-lock-string-face */
+        color: #A5C261;
+      }
 
       a {
         color: inherit;
@@ -24,41 +69,41 @@
   </head>
   <body>
     <pre>
-** input from an example block
-   :PROPERTIES:
-   :DATE:     2010-07-13
-   :END:
-#+results: lorem
-#+begin_example 
-  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+<span class="org-level-2">** input from an example block</span>
+<span class="org-special-keyword">   :PROPERTIES:</span>
+   <span class="org-special-keyword">:DATE:</span>     <span class="org-property-value">2010-07-13</span>
+<span class="org-special-keyword">   :END:</span>
+<span class="org-meta-line">#+results: lorem
+</span><span class="org-block-begin-line">#+begin_example 
+</span><span class="org-block">  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
   eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
   enimad minim veniam, quis nostrud exercitation ullamco laboris nisi
   ut aliquip ex ea commodo consequat. Duis aute irure dolor in
   reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
   pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
   culpa qui officia deserunt mollit anim id est laborum.
-#+end_example
+</span><span class="org-block-end-line">#+end_example
+</span>
+<span class="org-block-begin-line">#+begin_src emacs-lisp :var lorem=lorem
+</span>  <span class="starter-kit-paren">(</span>message <span class="string">"%d words in Lorem"</span> <span class="starter-kit-paren">(</span>length <span class="starter-kit-paren">(</span>split-string lorem<span class="starter-kit-paren">)))
+</span><span class="org-block-end-line">#+end_src
+</span>
+<span class="org-meta-line">#+results:
+</span><span class="org-code">: 68 words in Lorem
+</span>
+<span class="org-meta-line">#+results: 1D
+</span><span class="org-table">| 1 |</span>
+<span class="org-table">| 2 |</span>
+<span class="org-table">| 3 |</span>
+<span class="org-table">| 4 |</span>
 
-#+begin_src emacs-lisp :var lorem=lorem
-  (message "%d words in Lorem" (length (split-string lorem)))
-#+end_src
-
-#+results:
-: 68 words in Lorem
-
-#+results: 1D
-| 1 |
-| 2 |
-| 3 |
-| 4 |
-
-#+begin_src emacs-lisp :var lst=1D[:,0]
-  lst
-#+end_src
-
-#+results:
-: 1
-
+<span class="org-block-begin-line">#+begin_src emacs-lisp :var lst=1D[:,0]
+</span>  lst
+<span class="org-block-end-line">#+end_src
+</span>
+<span class="org-meta-line">#+results:
+</span><span class="org-code">: 1
+</span>
 </pre>
   </body>
 </html>

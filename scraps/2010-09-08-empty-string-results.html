@@ -9,6 +9,43 @@
         color: #E6E1DC;
         background-color: #232323;
       }
+      .keyword {
+        /* font-lock-keyword-face */
+        color: #CC7833;
+      }
+      .org-block-begin-line {
+        /* org-block-begin-line */
+        color: #BC9458;
+        font-style: italic;
+      }
+      .org-block-end-line {
+        /* org-block-end-line */
+        color: #BC9458;
+        font-style: italic;
+      }
+      .org-level-2 {
+        /* org-level-2 */
+        color: #b0c4de;
+      }
+      .org-meta-line {
+        /* org-meta-line */
+        color: #BC9458;
+        font-style: italic;
+      }
+      .org-property-value {
+      }
+      .org-special-keyword {
+        /* org-special-keyword */
+        color: #CC7833;
+      }
+      .org-table {
+        /* org-table */
+        color: #87cefa;
+      }
+      .starter-kit-paren {
+        /* starter-kit-paren-face */
+        color: #7f7f7f;
+      }
 
       a {
         color: inherit;
@@ -24,35 +61,35 @@
   </head>
   <body>
     <pre>
-** empty-string results
-   :PROPERTIES:
-   :DATE:     2010-09-08
-   :END:
+<span class="org-level-2">** empty-string results</span>
+<span class="org-special-keyword">   :PROPERTIES:</span>
+   <span class="org-special-keyword">:DATE:</span>     <span class="org-property-value">2010-09-08</span>
+<span class="org-special-keyword">   :END:</span>
 test me one two 3
 
-#+begin_src emacs-lisp
-#+end_src
-
+<span class="org-block-begin-line">#+begin_src emacs-lisp
+</span><span class="org-block-end-line">#+end_src
+</span>
 More test
 
-#+begin_src emacs-lisp
-  (mapcar
-   (lambda (pair)
-     (list (car pair) (cdr pair)))
-   params)
-#+end_src
-
-#+results:
-| :cache    | no      |
-| :colnames | no      |
-| :comments |         |
-| :exports  | code    |
-| :hlines   | yes     |
-| :noweb    | no      |
-| :results  | replace |
-| :session  | none    |
-| :shebang  |         |
-| :tangle   | no      |
+<span class="org-block-begin-line">#+begin_src emacs-lisp
+</span>  <span class="starter-kit-paren">(</span>mapcar
+   <span class="starter-kit-paren">(</span><span class="keyword">lambda</span> <span class="starter-kit-paren">(</span>pair<span class="starter-kit-paren">)</span>
+     <span class="starter-kit-paren">(</span>list <span class="starter-kit-paren">(</span>car pair<span class="starter-kit-paren">)</span> <span class="starter-kit-paren">(</span>cdr pair<span class="starter-kit-paren">)))</span>
+   params<span class="starter-kit-paren">)
+</span><span class="org-block-end-line">#+end_src
+</span>
+<span class="org-meta-line">#+results:
+</span><span class="org-table">| :cache    | no      |</span>
+<span class="org-table">| :colnames | no      |</span>
+<span class="org-table">| :comments |         |</span>
+<span class="org-table">| :exports  | code    |</span>
+<span class="org-table">| :hlines   | yes     |</span>
+<span class="org-table">| :noweb    | no      |</span>
+<span class="org-table">| :results  | replace |</span>
+<span class="org-table">| :session  | none    |</span>
+<span class="org-table">| :shebang  |         |</span>
+<span class="org-table">| :tangle   | no      |</span>
 
 </pre>
   </body>

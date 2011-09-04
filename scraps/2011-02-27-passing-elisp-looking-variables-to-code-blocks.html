@@ -9,6 +9,47 @@
         color: #E6E1DC;
         background-color: #232323;
       }
+      .org-block-begin-line {
+        /* org-block-begin-line */
+        color: #BC9458;
+        font-style: italic;
+      }
+      .org-block-end-line {
+        /* org-block-end-line */
+        color: #BC9458;
+        font-style: italic;
+      }
+      .org-code {
+        /* org-code */
+        color: #b3b3b3;
+      }
+      .org-level-2 {
+        /* org-level-2 */
+        color: #b0c4de;
+      }
+      .org-meta-line {
+        /* org-meta-line */
+        color: #BC9458;
+        font-style: italic;
+      }
+      .org-property-value {
+      }
+      .org-special-keyword {
+        /* org-special-keyword */
+        color: #CC7833;
+      }
+      .org-table {
+        /* org-table */
+        color: #87cefa;
+      }
+      .string {
+        /* font-lock-string-face */
+        color: #A5C261;
+      }
+      .variable-name {
+        /* font-lock-variable-name-face */
+        color: #b0c4de;
+      }
 
       a {
         color: inherit;
@@ -24,36 +65,36 @@
   </head>
   <body>
     <pre>
-** passing elisp-looking variables to code blocks
-   :PROPERTIES:
-   :DATE:     2011-02-27
-   :END:
-#+begin_src perl :var it="(+ 1 1)" :results output
-  printf "passed in %s", $it
-#+end_src
+<span class="org-level-2">** passing elisp-looking variables to code blocks</span>
+<span class="org-special-keyword">   :PROPERTIES:</span>
+   <span class="org-special-keyword">:DATE:</span>     <span class="org-property-value">2011-02-27</span>
+<span class="org-special-keyword">   :END:</span>
+<span class="org-block-begin-line">#+begin_src perl :var it="(+ 1 1)" :results output
+</span>  printf <span class="string">"passed in %s"</span>, $<span class="variable-name">it
+</span><span class="org-block-end-line">#+end_src
+</span>
+<span class="org-meta-line">#+results:
+</span><span class="org-code">: passed in (+ 1 1)
+</span>
+<span class="org-meta-line">#+results: elisp-looking-table
+</span><span class="org-table">| 1 | (+ 1 1) |</span>
+<span class="org-table">| 2 | (a b c) |</span>
+<span class="org-table">| 3 | (+ 3 3) |</span>
 
-#+results:
-: passed in (+ 1 1)
-
-#+results: elisp-looking-table
-| 1 | (+ 1 1) |
-| 2 | (a b c) |
-| 3 | (+ 3 3) |
-
-#+begin_src perl :var data=elisp-looking-table[1,1]
-  $data
-#+end_src
-
-#+results:
-: (a b c)
-
-#+begin_src emacs-lisp :var data=elisp-looking-table[1,1]
-  data
-#+end_src
-
-#+results:
-: (a b c)
-
+<span class="org-block-begin-line">#+begin_src perl :var data=elisp-looking-table[1,1]
+</span>  $<span class="variable-name">data
+</span><span class="org-block-end-line">#+end_src
+</span>
+<span class="org-meta-line">#+results:
+</span><span class="org-code">: (a b c)
+</span>
+<span class="org-block-begin-line">#+begin_src emacs-lisp :var data=elisp-looking-table[1,1]
+</span>  data
+<span class="org-block-end-line">#+end_src
+</span>
+<span class="org-meta-line">#+results:
+</span><span class="org-code">: (a b c)
+</span>
 </pre>
   </body>
 </html>

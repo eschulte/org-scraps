@@ -9,6 +9,53 @@
         color: #E6E1DC;
         background-color: #232323;
       }
+      .comment {
+        /* font-lock-comment-face */
+        color: #BC9458;
+        font-style: italic;
+      }
+      .comment-delimiter {
+        /* font-lock-comment-delimiter-face */
+        color: #BC9458;
+        font-style: italic;
+      }
+      .org-block-begin-line {
+        /* org-block-begin-line */
+        color: #BC9458;
+        font-style: italic;
+      }
+      .org-block-end-line {
+        /* org-block-end-line */
+        color: #BC9458;
+        font-style: italic;
+      }
+      .org-code {
+        /* org-code */
+        color: #b3b3b3;
+      }
+      .org-level-2 {
+        /* org-level-2 */
+        color: #b0c4de;
+      }
+      .org-meta-line {
+        /* org-meta-line */
+        color: #BC9458;
+        font-style: italic;
+      }
+      .org-property-value {
+      }
+      .org-special-keyword {
+        /* org-special-keyword */
+        color: #CC7833;
+      }
+      .org-table {
+        /* org-table */
+        color: #87cefa;
+      }
+      .starter-kit-paren {
+        /* starter-kit-paren-face */
+        color: #7f7f7f;
+      }
 
       a {
         color: inherit;
@@ -24,42 +71,42 @@
   </head>
   <body>
     <pre>
-** indented source-code blocks and indented results
-   :PROPERTIES:
-   :DATE:     2010-06-10
-   :END:
+<span class="org-level-2">** indented source-code blocks and indented results</span>
+<span class="org-special-keyword">   :PROPERTIES:</span>
+   <span class="org-special-keyword">:DATE:</span>     <span class="org-property-value">2010-06-10</span>
+<span class="org-special-keyword">   :END:</span>
 
-    #+source: time
-    #+begin_src emacs-lisp :results append
-      ;; (list (list (current-time-string)))
-      (current-time-string)
-    #+end_src
+<span class="org-meta-line">    #+source: time</span>
+<span class="org-block-begin-line">    #+begin_src emacs-lisp :results append
+</span>      <span class="comment-delimiter">;; </span><span class="comment">(list (list (current-time-string)))
+</span>      <span class="starter-kit-paren">(</span>current-time-string<span class="starter-kit-paren">)
+</span><span class="org-block-end-line">    #+end_src
+</span>
+<span class="org-meta-line">    #+results: time</span>
+    <span class="org-table">| 1 | 2 | 3 |</span>
 
-    #+results: time
-    | 1 | 2 | 3 |
 
+<span class="org-meta-line">        #+call: time() :results prepend</span>
 
-        #+call: time() :results prepend
-
-        #+results: time()
-        | 1 | 2 | 3 |
-        : Thu Jun 10 14:13:21 2010
-        : Thu Jun 10 14:13:21 2010
-        : : Thu Jun 10 14:13:21 2010
-        : : Thu Jun 10 14:13:21 2010
-        : : Thu Jun 10 14:13:21 2010
-        : nil
-        : nil
-        : Thu Jun 10 14:11:22 2010
-        : Thu Jun 10 14:11:20 2010
-        : nil
-        : nil
-        : Thu Jun 10 14:06:04 2010
-        : Thu Jun 10 14:06:03 2010
-        : Thu Jun 10 14:05:51 2010
-        : Thu Jun 10 14:05:57 2010
-        : Thu Jun 10 14:06:00 2010
-
+<span class="org-meta-line">        #+results: time()</span>
+        <span class="org-table">| 1 | 2 | 3 |</span>
+        <span class="org-code">: Thu Jun 10 14:13:21 2010
+</span>        <span class="org-code">: Thu Jun 10 14:13:21 2010
+</span>        <span class="org-code">: : Thu Jun 10 14:13:21 2010
+</span>        <span class="org-code">: : Thu Jun 10 14:13:21 2010
+</span>        <span class="org-code">: : Thu Jun 10 14:13:21 2010
+</span>        <span class="org-code">: nil
+</span>        <span class="org-code">: nil
+</span>        <span class="org-code">: Thu Jun 10 14:11:22 2010
+</span>        <span class="org-code">: Thu Jun 10 14:11:20 2010
+</span>        <span class="org-code">: nil
+</span>        <span class="org-code">: nil
+</span>        <span class="org-code">: Thu Jun 10 14:06:04 2010
+</span>        <span class="org-code">: Thu Jun 10 14:06:03 2010
+</span>        <span class="org-code">: Thu Jun 10 14:05:51 2010
+</span>        <span class="org-code">: Thu Jun 10 14:05:57 2010
+</span>        <span class="org-code">: Thu Jun 10 14:06:00 2010
+</span>
 </pre>
   </body>
 </html>

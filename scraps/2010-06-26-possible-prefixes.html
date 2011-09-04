@@ -9,6 +9,53 @@
         color: #E6E1DC;
         background-color: #232323;
       }
+      .comment {
+        /* font-lock-comment-face */
+        color: #BC9458;
+        font-style: italic;
+      }
+      .comment-delimiter {
+        /* font-lock-comment-delimiter-face */
+        color: #BC9458;
+        font-style: italic;
+      }
+      .org-block-begin-line {
+        /* org-block-begin-line */
+        color: #BC9458;
+        font-style: italic;
+      }
+      .org-block-end-line {
+        /* org-block-end-line */
+        color: #BC9458;
+        font-style: italic;
+      }
+      .org-level-2 {
+        /* org-level-2 */
+        color: #b0c4de;
+      }
+      .org-meta-line {
+        /* org-meta-line */
+        color: #BC9458;
+        font-style: italic;
+      }
+      .org-property-value {
+      }
+      .org-special-keyword {
+        /* org-special-keyword */
+        color: #CC7833;
+      }
+      .org-table {
+        /* org-table */
+        color: #87cefa;
+      }
+      .starter-kit-paren {
+        /* starter-kit-paren-face */
+        color: #7f7f7f;
+      }
+      .string {
+        /* font-lock-string-face */
+        color: #A5C261;
+      }
 
       a {
         color: inherit;
@@ -24,30 +71,30 @@
   </head>
   <body>
     <pre>
-** possible prefixes
-   :PROPERTIES:
-   :DATE:     2010-06-26
-   :END:
+<span class="org-level-2">** possible prefixes</span>
+<span class="org-special-keyword">   :PROPERTIES:</span>
+   <span class="org-special-keyword">:DATE:</span>     <span class="org-property-value">2010-06-26</span>
+<span class="org-special-keyword">   :END:</span>
 
-| prefix   | remaining characters |
-|----------+----------------------|
-| ob-      |                    5 |
-| org-b-   |                    2 |
-| orgb-    |                    3 |
-| org-bbl- |                    0 |
-| bbl-     |                    4 |
-| babel-   |                    2 |
-#+TBLFM: $2='(sbe leftover (prefix $$1))
-
-#+source: leftover
-#+begin_src emacs-lisp :var prefix=""
-  (-
-   ;; length w/o .el
-   (- 13 (length ".el"))
-   ;; length of prefix
-   (length prefix))
-#+end_src
-
+<span class="org-table">| prefix   | remaining characters |</span>
+<span class="org-table">|----------+----------------------|</span>
+<span class="org-table">| ob-      |                    5 |</span>
+<span class="org-table">| org-b-   |                    2 |</span>
+<span class="org-table">| orgb-    |                    3 |</span>
+<span class="org-table">| org-bbl- |                    0 |</span>
+<span class="org-table">| bbl-     |                    4 |</span>
+<span class="org-table">| babel-   |                    2 |</span>
+<span class="org-meta-line">#+TBLFM: $2='(sbe leftover (prefix $$1))
+</span>
+<span class="org-meta-line">#+source: leftover
+</span><span class="org-block-begin-line">#+begin_src emacs-lisp :var prefix=""
+</span>  <span class="starter-kit-paren">(</span>-
+   <span class="comment-delimiter">;; </span><span class="comment">length w/o .el
+</span>   <span class="starter-kit-paren">(</span>- 13 <span class="starter-kit-paren">(</span>length <span class="string">".el"</span><span class="starter-kit-paren">))</span>
+   <span class="comment-delimiter">;; </span><span class="comment">length of prefix
+</span>   <span class="starter-kit-paren">(</span>length prefix<span class="starter-kit-paren">))
+</span><span class="org-block-end-line">#+end_src
+</span>
 </pre>
   </body>
 </html>

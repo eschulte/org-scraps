@@ -9,6 +9,47 @@
         color: #E6E1DC;
         background-color: #232323;
       }
+      .keyword {
+        /* font-lock-keyword-face */
+        color: #CC7833;
+      }
+      .org-block-begin-line {
+        /* org-block-begin-line */
+        color: #BC9458;
+        font-style: italic;
+      }
+      .org-block-end-line {
+        /* org-block-end-line */
+        color: #BC9458;
+        font-style: italic;
+      }
+      .org-level-2 {
+        /* org-level-2 */
+        color: #b0c4de;
+      }
+      .org-meta-line {
+        /* org-meta-line */
+        color: #BC9458;
+        font-style: italic;
+      }
+      .org-property-value {
+      }
+      .org-special-keyword {
+        /* org-special-keyword */
+        color: #CC7833;
+      }
+      .org-table {
+        /* org-table */
+        color: #87cefa;
+      }
+      .starter-kit-paren {
+        /* starter-kit-paren-face */
+        color: #7f7f7f;
+      }
+      .string {
+        /* font-lock-string-face */
+        color: #A5C261;
+      }
 
       a {
         color: inherit;
@@ -24,29 +65,29 @@
   </head>
   <body>
     <pre>
-** limited precision
-   :PROPERTIES:
-   :DATE:     2010-07-12
-   :END:
+<span class="org-level-2">** limited precision</span>
+<span class="org-special-keyword">   :PROPERTIES:</span>
+   <span class="org-special-keyword">:DATE:</span>     <span class="org-property-value">2010-07-12</span>
+<span class="org-special-keyword">   :END:</span>
 
-#+results: anova-example
-| Effect | DFn | DFd |             SSn |              SSd |                F |                    p | p&lt;.05 |              pes |
-|--------+-----+-----+-----------------+------------------+------------------+----------------------+-------+------------------|
-| Days   |   9 | 153 | 166235.12250176 | 151101.038615303 | 18.7026979326383 | 8.99534541600196e-21 | *     | 0.52384550792003 |
+<span class="org-meta-line">#+results: anova-example
+</span><span class="org-table">| Effect | DFn | DFd |             SSn |              SSd |                F |                    p | p&lt;.05 |              pes |</span>
+<span class="org-table">|--------+-----+-----+-----------------+------------------+------------------+----------------------+-------+------------------|</span>
+<span class="org-table">| Days   |   9 | 153 | 166235.12250176 | 151101.038615303 | 18.7026979326383 | 8.99534541600196e-21 | *     | 0.52384550792003 |</span>
 
-#+begin_src emacs-lisp :var tab=anova-example :colnames yes :cache yes
-  (mapcar
-   (lambda (row)
-     (mapcar
-      (lambda (cell) (if (numberp cell) (format "%.4f" cell) cell))
-      row))
-   tab)
-#+end_src
-
-#+results[16ac354f1e7a65594bb59e252ab221e6a4b10f80]:
-| Effect |    DFn |      DFd |         SSn |         SSd |       F |                    p | p&lt;.05 |    pes |
-|--------+--------+----------+-------------+-------------+---------+----------------------+-------+--------|
-| Days   | 9.0000 | 153.0000 | 166235.1225 | 151101.0386 | 18.7027 | 8.99534541600196e-21 | *     | 0.5238 |
+<span class="org-block-begin-line">#+begin_src emacs-lisp :var tab=anova-example :colnames yes :cache yes
+</span>  <span class="starter-kit-paren">(</span>mapcar
+   <span class="starter-kit-paren">(</span><span class="keyword">lambda</span> <span class="starter-kit-paren">(</span>row<span class="starter-kit-paren">)</span>
+     <span class="starter-kit-paren">(</span>mapcar
+      <span class="starter-kit-paren">(</span><span class="keyword">lambda</span> <span class="starter-kit-paren">(</span>cell<span class="starter-kit-paren">)</span> <span class="starter-kit-paren">(</span><span class="keyword">if</span> <span class="starter-kit-paren">(</span>numberp cell<span class="starter-kit-paren">)</span> <span class="starter-kit-paren">(</span>format <span class="string">"%.4f"</span> cell<span class="starter-kit-paren">)</span> cell<span class="starter-kit-paren">))</span>
+      row<span class="starter-kit-paren">))</span>
+   tab<span class="starter-kit-paren">)
+</span><span class="org-block-end-line">#+end_src
+</span>
+<span class="org-meta-line">#+results[16ac354f1e7a65594bb59e252ab221e6a4b10f80]:
+</span><span class="org-table">| Effect |    DFn |      DFd |         SSn |         SSd |       F |                    p | p&lt;.05 |    pes |</span>
+<span class="org-table">|--------+--------+----------+-------------+-------------+---------+----------------------+-------+--------|</span>
+<span class="org-table">| Days   | 9.0000 | 153.0000 | 166235.1225 | 151101.0386 | 18.7027 | 8.99534541600196e-21 | *     | 0.5238 |</span>
 
 </pre>
   </body>

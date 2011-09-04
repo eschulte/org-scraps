@@ -9,15 +9,54 @@
         color: #E6E1DC;
         background-color: #232323;
       }
+      .constant {
+        /* font-lock-constant-face */
+        color: #6D9CBE;
+      }
+      .function-name {
+        /* font-lock-function-name-face */
+        color: #FFC66D;
+      }
+      .keyword {
+        /* font-lock-keyword-face */
+        color: #CC7833;
+      }
+      .org-block-begin-line {
+        /* org-block-begin-line */
+        color: #BC9458;
+        font-style: italic;
+      }
+      .org-block-end-line {
+        /* org-block-end-line */
+        color: #BC9458;
+        font-style: italic;
+      }
       .org-level-2 {
         /* org-level-2 */
         color: #b0c4de;
+      }
+      .org-meta-line {
+        /* org-meta-line */
+        color: #BC9458;
+        font-style: italic;
       }
       .org-property-value {
       }
       .org-special-keyword {
         /* org-special-keyword */
         color: #CC7833;
+      }
+      .org-table {
+        /* org-table */
+        color: #87cefa;
+      }
+      .type {
+        /* font-lock-type-face */
+        color: #ffffff;
+      }
+      .variable-name {
+        /* font-lock-variable-name-face */
+        color: #b0c4de;
       }
 
       a {
@@ -37,34 +76,34 @@
 <span class="org-level-2">** reference parts of tables</span>
 <span class="org-special-keyword">   :PROPERTIES:</span>
    <span class="org-special-keyword">:DATE:</span>     <span class="org-property-value">2009-11-20</span>
-   :END:
+<span class="org-special-keyword">   :END:</span>
 
-#+TBLNAME: squares
-|  1 |   1 |
-|  2 |   4 |
-|  3 |   9 |
-|  4 |  16 |
-|  5 |  25 |
-|  6 |  36 |
-|  7 |  49 |
-|  8 |  64 |
-|  9 |  81 |
-| 10 | 100 |
-| 11 | 121 |
-| 12 | 144 |
-| 13 | 169 |
-| 14 | 196 |
-| 15 | 225 |
-| 16 | 256 |
-| 17 | 289 |
-| 18 | 324 |
-#+TBLFM: $2=$1*$1
-
-#+begin_src gnuplot :var data=squares
-set title "Implementing Gnuplot"
-plot data using 1:2 with lines
-#+end_src
-
+<span class="org-meta-line">#+TBLNAME: squares
+</span><span class="org-table">|  1 |   1 |</span>
+<span class="org-table">|  2 |   4 |</span>
+<span class="org-table">|  3 |   9 |</span>
+<span class="org-table">|  4 |  16 |</span>
+<span class="org-table">|  5 |  25 |</span>
+<span class="org-table">|  6 |  36 |</span>
+<span class="org-table">|  7 |  49 |</span>
+<span class="org-table">|  8 |  64 |</span>
+<span class="org-table">|  9 |  81 |</span>
+<span class="org-table">| 10 | 100 |</span>
+<span class="org-table">| 11 | 121 |</span>
+<span class="org-table">| 12 | 144 |</span>
+<span class="org-table">| 13 | 169 |</span>
+<span class="org-table">| 14 | 196 |</span>
+<span class="org-table">| 15 | 225 |</span>
+<span class="org-table">| 16 | 256 |</span>
+<span class="org-table">| 17 | 289 |</span>
+<span class="org-table">| 18 | 324 |</span>
+<span class="org-meta-line">#+TBLFM: $2=$1*$1
+</span>
+<span class="org-block-begin-line">#+begin_src gnuplot :var data=squares
+</span><span class="constant">set</span> <span class="type">title</span> "Implementing Gnuplot"
+<span class="keyword">plot</span> <span class="variable-name">data</span> <span class="type">using</span> 1:2 <span class="type">with</span> <span class="function-name">lines
+</span><span class="org-block-end-line">#+end_src
+</span>
 </pre>
   </body>
 </html>

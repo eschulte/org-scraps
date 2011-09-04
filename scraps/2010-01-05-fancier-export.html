@@ -9,6 +9,35 @@
         color: #E6E1DC;
         background-color: #232323;
       }
+      .org-block-begin-line {
+        /* org-block-begin-line */
+        color: #BC9458;
+        font-style: italic;
+      }
+      .org-block-end-line {
+        /* org-block-end-line */
+        color: #BC9458;
+        font-style: italic;
+      }
+      .org-level-2 {
+        /* org-level-2 */
+        color: #b0c4de;
+      }
+      .org-meta-line {
+        /* org-meta-line */
+        color: #BC9458;
+        font-style: italic;
+      }
+      .org-property-value {
+      }
+      .org-special-keyword {
+        /* org-special-keyword */
+        color: #CC7833;
+      }
+      .starter-kit-paren {
+        /* starter-kit-paren-face */
+        color: #7f7f7f;
+      }
 
       a {
         color: inherit;
@@ -24,16 +53,16 @@
   </head>
   <body>
     <pre>
-** fancier export
-   :PROPERTIES:
-   :DATE:     2010-01-05
-   :END:
+<span class="org-level-2">** fancier export</span>
+<span class="org-special-keyword">   :PROPERTIES:</span>
+   <span class="org-special-keyword">:DATE:</span>     <span class="org-property-value">2010-01-05</span>
+<span class="org-special-keyword">   :END:</span>
 
-#+source: square
-#+begin_src emacs-lisp :var input=1
-  (* input input)
-#+end_src
-
+<span class="org-meta-line">#+source: square
+</span><span class="org-block-begin-line">#+begin_src emacs-lisp :var input=1
+</span>  <span class="starter-kit-paren">(</span>* input input<span class="starter-kit-paren">)
+</span><span class="org-block-end-line">#+end_src
+</span>
 </pre>
   </body>
 </html>

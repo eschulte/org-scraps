@@ -9,6 +9,20 @@
         color: #E6E1DC;
         background-color: #232323;
       }
+      .builtin {
+        /* font-lock-builtin-face */
+        color: #D0D0FF;
+      }
+      .org-block-begin-line {
+        /* org-block-begin-line */
+        color: #BC9458;
+        font-style: italic;
+      }
+      .org-block-end-line {
+        /* org-block-end-line */
+        color: #BC9458;
+        font-style: italic;
+      }
       .org-level-2 {
         /* org-level-2 */
         color: #b0c4de;
@@ -42,16 +56,16 @@ try evaluating the following blocks, then removing their results with
 M-x `org-babel-remove-result'
 
 Verbiage to begin the paragraph
-#+begin_src sh
-  echo eric
-#+end_src
-and verbiage to end the same paragraph.
+<span class="org-block-begin-line">#+begin_src sh
+</span>  <span class="builtin">echo </span>eric
+<span class="org-block-end-line">#+end_src
+</span>and verbiage to end the same paragraph.
 
-#+begin_src sh
-  echo 1
-  echo 2
-#+end_src
-
+<span class="org-block-begin-line">#+begin_src sh
+</span>  <span class="builtin">echo</span> 1
+  <span class="builtin">echo </span>2
+<span class="org-block-end-line">#+end_src
+</span>
 and verbiage to end the same paragraph.
 
 </pre>

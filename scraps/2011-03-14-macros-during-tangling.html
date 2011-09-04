@@ -9,6 +9,10 @@
         color: #E6E1DC;
         background-color: #232323;
       }
+      .builtin {
+        /* font-lock-builtin-face */
+        color: #D0D0FF;
+      }
       .keyword {
         /* font-lock-keyword-face */
         color: #CC7833;
@@ -26,6 +30,11 @@
       .org-level-2 {
         /* org-level-2 */
         color: #b0c4de;
+      }
+      .org-meta-line {
+        /* org-meta-line */
+        color: #BC9458;
+        font-style: italic;
       }
       .org-property-value {
       }
@@ -69,15 +78,15 @@ Then define the macro.  Note: you may need to export the buffer before
 tangling so that the macro definition is noticed and processed by
 Org-mode.
 
-#+MACRO: CONFIG_PARAM01 45
-
+<span class="org-meta-line">#+MACRO: CONFIG_PARAM01 45
+</span>
 Then on both export and tangling the macro in the following code block
 will be replaced.
 
-#+begin_src sh :tangle yes
-  echo org-mode set CONFIG_PARAMETER to: {{{CONFIG_PARAM01}}}
-#+end_src
-
+<span class="org-block-begin-line">#+begin_src sh :tangle yes
+</span>  <span class="builtin">echo </span>org-mode set CONFIG_PARAMETER to: {{{CONFIG_PARAM01}}}
+<span class="org-block-end-line">#+end_src
+</span>
 </pre>
   </body>
 </html>

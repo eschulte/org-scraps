@@ -9,6 +9,30 @@
         color: #E6E1DC;
         background-color: #232323;
       }
+      .org-block-begin-line {
+        /* org-block-begin-line */
+        color: #BC9458;
+        font-style: italic;
+      }
+      .org-block-end-line {
+        /* org-block-end-line */
+        color: #BC9458;
+        font-style: italic;
+      }
+      .org-level-2 {
+        /* org-level-2 */
+        color: #b0c4de;
+      }
+      .org-level-3 {
+        /* org-level-3 */
+        color: #CC7833;
+      }
+      .org-property-value {
+      }
+      .org-special-keyword {
+        /* org-special-keyword */
+        color: #CC7833;
+      }
 
       a {
         color: inherit;
@@ -24,64 +48,64 @@
   </head>
   <body>
     <pre>
-** new block regexp tests
-   :PROPERTIES:
-   :DATE:     2011-02-27
-   :END:
-*** Block 1 (Exports OK)
-    :PROPERTIES:
-    :DATE:     2011-02-27
-    :END:
+<span class="org-level-2">** new block regexp tests</span>
+<span class="org-special-keyword">   :PROPERTIES:</span>
+   <span class="org-special-keyword">:DATE:</span>     <span class="org-property-value">2011-02-27</span>
+<span class="org-special-keyword">   :END:</span>
+<span class="org-level-3">*** Block 1 (Exports OK)</span>
+<span class="org-special-keyword">    :PROPERTIES:</span>
+    <span class="org-special-keyword">:DATE:</span>     <span class="org-property-value">2011-02-27</span>
+<span class="org-special-keyword">    :END:</span>
 
-#+BEGIN_SRC sh :tangle test-out
-Block 1
-#+END_SRC
+<span class="org-block-begin-line">#+BEGIN_SRC sh :tangle test-out
+</span>Block 1
+<span class="org-block-end-line">#+END_SRC
+</span>
+<span class="org-level-3">*** Block 2 (Exports OK - double blank line no white-space in Block)</span>
+<span class="org-special-keyword">    :PROPERTIES:</span>
+    <span class="org-special-keyword">:DATE:</span>     <span class="org-property-value">2011-02-27</span>
+<span class="org-special-keyword">    :END:</span>
 
-*** Block 2 (Exports OK - double blank line no white-space in Block)
-    :PROPERTIES:
-    :DATE:     2011-02-27
-    :END:
+<span class="org-block-begin-line">#+BEGIN_SRC sh :tangle test-out
+</span>
 
-#+BEGIN_SRC sh :tangle test-out
+<span class="org-block-end-line">#+END_SRC
+</span>
+<span class="org-level-3">*** Block 3 (Fails - single blank line no white-space in Block)</span>
+<span class="org-special-keyword">    :PROPERTIES:</span>
+    <span class="org-special-keyword">:DATE:</span>     <span class="org-property-value">2011-02-27</span>
+<span class="org-special-keyword">    :END:</span>
 
+<span class="org-block-begin-line">#+BEGIN_SRC sh :tangle test-out
+</span>
+<span class="org-block-end-line">#+END_SRC
+</span>
+<span class="org-level-3">*** Block 4 (Gets consumed by previous Block)</span>
+<span class="org-special-keyword">    :PROPERTIES:</span>
+    <span class="org-special-keyword">:DATE:</span>     <span class="org-property-value">2011-02-27</span>
+<span class="org-special-keyword">    :END:</span>
 
-#+END_SRC
+<span class="org-block-begin-line">#+BEGIN_SRC sh :tangle test-out
+</span>Block 4
+<span class="org-block-end-line">#+END_SRC
+</span>
+<span class="org-level-3">*** Block 5 (Fails - no lines in Block)</span>
+<span class="org-special-keyword">    :PROPERTIES:</span>
+    <span class="org-special-keyword">:DATE:</span>     <span class="org-property-value">2011-02-27</span>
+<span class="org-special-keyword">    :END:</span>
 
-*** Block 3 (Fails - single blank line no white-space in Block)
-    :PROPERTIES:
-    :DATE:     2011-02-27
-    :END:
+<span class="org-block-begin-line">#+BEGIN_SRC sh :tangle test-out
+</span><span class="org-block-end-line">#+END_SRC
+</span>
+<span class="org-level-3">*** Block 6 (Gets consumed by previous Block</span>
+<span class="org-special-keyword">    :PROPERTIES:</span>
+    <span class="org-special-keyword">:DATE:</span>     <span class="org-property-value">2011-02-27</span>
+<span class="org-special-keyword">    :END:</span>
 
-#+BEGIN_SRC sh :tangle test-out
-
-#+END_SRC
-
-*** Block 4 (Gets consumed by previous Block)
-    :PROPERTIES:
-    :DATE:     2011-02-27
-    :END:
-
-#+BEGIN_SRC sh :tangle test-out
-Block 4
-#+END_SRC
-
-*** Block 5 (Fails - no lines in Block)
-    :PROPERTIES:
-    :DATE:     2011-02-27
-    :END:
-
-#+BEGIN_SRC sh :tangle test-out
-#+END_SRC
-
-*** Block 6 (Gets consumed by previous Block
-    :PROPERTIES:
-    :DATE:     2011-02-27
-    :END:
-
-#+BEGIN_SRC sh :tangle test-out
-Block 6
-#+END_SRC
-
+<span class="org-block-begin-line">#+BEGIN_SRC sh :tangle test-out
+</span>Block 6
+<span class="org-block-end-line">#+END_SRC
+</span>
 </pre>
   </body>
 </html>

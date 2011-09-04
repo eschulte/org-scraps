@@ -9,6 +9,20 @@
         color: #E6E1DC;
         background-color: #232323;
       }
+      .org-code {
+        /* org-code */
+        color: #b3b3b3;
+      }
+      .org-level-2 {
+        /* org-level-2 */
+        color: #b0c4de;
+      }
+      .org-property-value {
+      }
+      .org-special-keyword {
+        /* org-special-keyword */
+        color: #CC7833;
+      }
 
       a {
         color: inherit;
@@ -24,11 +38,11 @@
   </head>
   <body>
     <pre>
-** non-inlined inline code block
-   :PROPERTIES:
-   :DATE:     2011-01-27
-   :END:
-The Date is src_sh[:results replace]{date} at the time of =this= export.
+<span class="org-level-2">** non-inlined inline code block</span>
+<span class="org-special-keyword">   :PROPERTIES:</span>
+   <span class="org-special-keyword">:DATE:</span>     <span class="org-property-value">2011-01-27</span>
+<span class="org-special-keyword">   :END:</span>
+The Date is src_sh[:results replace]{date} at the time of <span class="org-code">=this=</span> export.
 
 src_sh[:results replace]{ls}
 

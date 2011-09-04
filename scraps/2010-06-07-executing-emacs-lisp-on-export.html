@@ -9,6 +9,39 @@
         color: #E6E1DC;
         background-color: #232323;
       }
+      .org-block-begin-line {
+        /* org-block-begin-line */
+        color: #BC9458;
+        font-style: italic;
+      }
+      .org-block-end-line {
+        /* org-block-end-line */
+        color: #BC9458;
+        font-style: italic;
+      }
+      .org-level-2 {
+        /* org-level-2 */
+        color: #b0c4de;
+      }
+      .org-property-value {
+      }
+      .org-special-keyword {
+        /* org-special-keyword */
+        color: #CC7833;
+      }
+      .starter-kit-paren {
+        /* starter-kit-paren-face */
+        color: #7f7f7f;
+      }
+      .string {
+        /* font-lock-string-face */
+        color: #A5C261;
+      }
+      .warning {
+        /* font-lock-warning-face */
+        color: #ffc0cb;
+        font-weight: bold;
+      }
 
       a {
         color: inherit;
@@ -24,15 +57,15 @@
   </head>
   <body>
     <pre>
-** executing emacs-lisp on export
-   :PROPERTIES:
-   :DATE:     2010-06-07
-   :END:
+<span class="org-level-2">** executing emacs-lisp on export</span>
+<span class="org-special-keyword">   :PROPERTIES:</span>
+   <span class="org-special-keyword">:DATE:</span>     <span class="org-property-value">2010-06-07</span>
+<span class="org-special-keyword">   :END:</span>
 
-#+begin_src emacs-lisp
-  (error "eric")
-#+end_src
-
+<span class="org-block-begin-line">#+begin_src emacs-lisp
+</span>  <span class="starter-kit-paren">(</span><span class="warning">error</span> <span class="string">"eric"</span><span class="starter-kit-paren">)
+</span><span class="org-block-end-line">#+end_src
+</span>
 </pre>
   </body>
 </html>

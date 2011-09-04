@@ -9,9 +9,37 @@
         color: #E6E1DC;
         background-color: #232323;
       }
+      .bold {
+        /* bold */
+        font-weight: bold;
+      }
+      .org-block-begin-line {
+        /* org-block-begin-line */
+        color: #BC9458;
+        font-style: italic;
+      }
+      .org-block-end-line {
+        /* org-block-end-line */
+        color: #BC9458;
+        font-style: italic;
+      }
+      .org-code {
+        /* org-code */
+        color: #b3b3b3;
+      }
+      .org-date {
+        /* org-date */
+        color: #00ffff;
+        text-decoration: underline;
+      }
       .org-level-2 {
         /* org-level-2 */
         color: #b0c4de;
+      }
+      .org-link {
+        /* org-link */
+        color: #00ffff;
+        text-decoration: underline;
       }
       .org-meta-line {
         /* org-meta-line */
@@ -23,6 +51,18 @@
       .org-special-keyword {
         /* org-special-keyword */
         color: #CC7833;
+      }
+      .org-table {
+        /* org-table */
+        color: #87cefa;
+      }
+      .starter-kit-paren {
+        /* starter-kit-paren-face */
+        color: #7f7f7f;
+      }
+      .string {
+        /* font-lock-string-face */
+        color: #A5C261;
       }
 
       a {
@@ -45,28 +85,28 @@
 <span class="org-special-keyword">   :END:</span>
 <span class="org-meta-line">#+TBLNAME: todays-clock
 #+BEGIN: clocktable :maxlevel 2 :block today :scope tree1 :link t
-</span>Clock summary at [2009-09-15 Tue 08:51], for Tuesday, September 15, 2009.
+</span>Clock summary at <span class="org-date">[2009-09-15 Tue 08:51]</span>, for Tuesday, September 15, 2009.
 
-| L | Headline     | Time   |      |
-|---+--------------+--------+------|
-|   | *Total time* | *1:10* |      |
-|---+--------------+--------+------|
-| 1 | [[file:/Users/eschulte/Desktop/test.org::top][top]]          | 1:10   |    1 |
-| 2 | [[file:/Users/eschulte/Desktop/test.org::show%20all][show all]]     |        | 1:00 |
-| 2 | [[file:/Users/eschulte/Desktop/test.org::later][later]]        |        | 0:10 |
-#+END: clocktable
-
-#+begin_src emacs-lisp :var data=todays-clock(1,1)
-(message "table is %S" data)
-#+end_src
-
-#+resname:
-: table is (("L" "Headline" "Time" "") hline ("" "*Total time*" "*1:10*" "") hline (1 "[[file:/Users/eschulte/Desktop/test.org::top][top]]" "1:10" 1) (2 "[[file:/Users/eschulte/Desktop/test.org::show%20all][show all]]" "" "1:00") (2 "[[file:/Users/eschulte/Desktop/test.org::later][later]]" "" "0:10"))
-
-#+begin_src R :session R-pie-example :var times=todays-clock :results silent
-pie(times[2:length(times),4], labels = times[2:length(times),2])
-#+end_src
-
+<span class="org-table">| L | Headline     | Time   |      |</span>
+<span class="org-table">|---+--------------+--------+------|</span>
+<span class="org-table">|   | </span><span class="org-table"><span class="bold">*Total time*</span></span><span class="org-table"> | </span><span class="org-table"><span class="bold">*1:10*</span></span><span class="org-table"> |      |</span>
+<span class="org-table">|---+--------------+--------+------|</span>
+<span class="org-table">| 1 | </span><span class="org-link">[[file:/Users/eschulte/Desktop/test.org::top][top]]</span><span class="org-table">          | 1:10   |    1 |</span>
+<span class="org-table">| 2 | </span><span class="org-link">[[file:/Users/eschulte/Desktop/test.org::show%20all][show all]]</span><span class="org-table">     |        | 1:00 |</span>
+<span class="org-table">| 2 | </span><span class="org-link">[[file:/Users/eschulte/Desktop/test.org::later][later]]</span><span class="org-table">        |        | 0:10 |</span>
+<span class="org-meta-line">#+END: clocktable
+</span>
+<span class="org-block-begin-line">#+begin_src emacs-lisp :var data=todays-clock(1,1)
+</span><span class="starter-kit-paren">(</span>message <span class="string">"table is %S"</span> data<span class="starter-kit-paren">)
+</span><span class="org-block-end-line">#+end_src
+</span>
+<span class="org-meta-line">#+resname:
+</span><span class="org-code">: table is (("L" "Headline" "Time" "") hline ("" "*Total time*" "*1:10*" "") hline (1 "[[file:/Users/eschulte/Desktop/test.org::top][top]]" "1:10" 1) (2 "[[file:/Users/eschulte/Desktop/test.org::show%20all][show all]]" "" "1:00") (2 "[[file:/Users/eschulte/Desktop/test.org::later][later]]" "" "0:10"))
+</span>
+<span class="org-block-begin-line">#+begin_src R :session R-pie-example :var times=todays-clock :results silent
+</span>pie(times[2:length(times),4], labels = times[2:length(times),2])
+<span class="org-block-end-line">#+end_src
+</span>
 </pre>
   </body>
 </html>

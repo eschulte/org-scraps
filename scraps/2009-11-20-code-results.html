@@ -31,6 +31,11 @@
         /* org-level-3 */
         color: #CC7833;
       }
+      .org-meta-line {
+        /* org-meta-line */
+        color: #BC9458;
+        font-style: italic;
+      }
       .org-property-value {
       }
       .org-special-keyword {
@@ -40,6 +45,14 @@
       .starter-kit-paren {
         /* starter-kit-paren-face */
         color: #7f7f7f;
+      }
+      .string {
+        /* font-lock-string-face */
+        color: #A5C261;
+      }
+      .variable-name {
+        /* font-lock-variable-name-face */
+        color: #b0c4de;
       }
 
       a {
@@ -68,89 +81,89 @@
 </span>  <span class="starter-kit-paren">(</span>mapcar <span class="starter-kit-paren">(</span><span class="keyword">lambda</span> <span class="starter-kit-paren">(</span>el<span class="starter-kit-paren">)</span> <span class="starter-kit-paren">(</span><span class="keyword">lambda</span> <span class="starter-kit-paren">(</span>item<span class="starter-kit-paren">)</span> <span class="starter-kit-paren">(</span>+ item el<span class="starter-kit-paren">)))</span> '<span class="starter-kit-paren">(</span>1 2 3 4 5<span class="starter-kit-paren">))
 </span><span class="org-block-end-line">#+end_src
 </span>
-#+resname:
-#+BEGIN_SRC emacs-lisp
-((lambda
-   (item)
-   (+ item el))
- (lambda
-   (item)
-   (+ item el))
- (lambda
-   (item)
-   (+ item el))
- (lambda
-   (item)
-   (+ item el))
- (lambda
-   (item)
-   (+ item el)))
-#+END_SRC
+<span class="org-meta-line">#+resname:
+</span><span class="org-block-begin-line">#+BEGIN_SRC emacs-lisp
+</span><span class="starter-kit-paren">((</span><span class="keyword">lambda</span>
+   <span class="starter-kit-paren">(</span>item<span class="starter-kit-paren">)</span>
+   <span class="starter-kit-paren">(</span>+ item el<span class="starter-kit-paren">))</span>
+ <span class="starter-kit-paren">(</span><span class="keyword">lambda</span>
+   <span class="starter-kit-paren">(</span>item<span class="starter-kit-paren">)</span>
+   <span class="starter-kit-paren">(</span>+ item el<span class="starter-kit-paren">))</span>
+ <span class="starter-kit-paren">(</span><span class="keyword">lambda</span>
+   <span class="starter-kit-paren">(</span>item<span class="starter-kit-paren">)</span>
+   <span class="starter-kit-paren">(</span>+ item el<span class="starter-kit-paren">))</span>
+ <span class="starter-kit-paren">(</span><span class="keyword">lambda</span>
+   <span class="starter-kit-paren">(</span>item<span class="starter-kit-paren">)</span>
+   <span class="starter-kit-paren">(</span>+ item el<span class="starter-kit-paren">))</span>
+ <span class="starter-kit-paren">(</span><span class="keyword">lambda</span>
+   <span class="starter-kit-paren">(</span>item<span class="starter-kit-paren">)</span>
+   <span class="starter-kit-paren">(</span>+ item el<span class="starter-kit-paren">)))
+</span><span class="org-block-end-line">#+END_SRC
+</span>
+<span class="org-block-begin-line">#+begin_src emacs-lisp :results code
+</span>  <span class="starter-kit-paren">(</span>mapcar <span class="starter-kit-paren">(</span><span class="keyword">lambda</span> <span class="starter-kit-paren">(</span>el<span class="starter-kit-paren">)</span> <span class="starter-kit-paren">(</span>* el el<span class="starter-kit-paren">))</span> '<span class="starter-kit-paren">(</span>1 2 3 89<span class="starter-kit-paren">))
+</span><span class="org-block-end-line">#+end_src
+</span>
+<span class="org-meta-line">#+resname:
+</span><span class="org-block-begin-line">#+BEGIN_SRC emacs-lisp
+</span><span class="starter-kit-paren">(</span>1 4 9 7921<span class="starter-kit-paren">)
+</span><span class="org-block-end-line">#+END_SRC
+</span>
+<span class="org-level-3">*** ruby</span>
+<span class="org-special-keyword">    :PROPERTIES:</span>
+    <span class="org-special-keyword">:DATE:</span>     <span class="org-property-value">2009-11-20</span>
+<span class="org-special-keyword">    :END:</span>
 
-#+begin_src emacs-lisp :results code
-  (mapcar (lambda (el) (* el el)) '(1 2 3 89))
-#+end_src
+<span class="org-block-begin-line">#+begin_src ruby :results code
+</span>  [1, 2, 33, 4].map{|n| <span class="string">"the number </span><span class="variable-name">#{n}</span><span class="string">"}</span>
+<span class="org-block-end-line">#+end_src
+</span>
+<span class="org-meta-line">#+resname:
+</span><span class="org-block-begin-line">#+BEGIN_SRC ruby
+</span>  [<span class="string">"the number 1"</span>, <span class="string">"the number 2"</span>, <span class="string">"the number 33"</span>, <span class="string">"the number 4"]</span>
+<span class="org-block-end-line">#+END_SRC
+</span>
+<span class="org-block-begin-line">#+begin_src ruby :session :results code 
+</span>  [1, 2, 33, 4].map{|n| n + 10 }
+<span class="org-block-end-line">#+end_src
+</span>
+<span class="org-meta-line">#+resname:
+</span><span class="org-block-begin-line">#+BEGIN_SRC ruby
+</span>[11, 12, 43, 14]
+<span class="org-block-end-line">#+END_SRC
+</span>
+<span class="org-level-3">*** python</span>
+<span class="org-special-keyword">    :PROPERTIES:</span>
+    <span class="org-special-keyword">:DATE:</span>     <span class="org-property-value">2009-11-20</span>
+<span class="org-special-keyword">    :END:</span>
 
-#+resname:
-#+BEGIN_SRC emacs-lisp
-(1 4 9 7921)
-#+END_SRC
-
-*** ruby
-    :PROPERTIES:
-    :DATE:     2009-11-20
-    :END:
-
-#+begin_src ruby :results code
-  [1, 2, 33, 4].map{|n| "the number #{n}"}
-#+end_src
-
-#+resname:
-#+BEGIN_SRC ruby
-  ["the number 1", "the number 2", "the number 33", "the number 4"]
-#+END_SRC
-
-#+begin_src ruby :session :results code 
-  [1, 2, 33, 4].map{|n| n + 10 }
-#+end_src
-
-#+resname:
-#+BEGIN_SRC ruby
-[11, 12, 43, 14]
-#+END_SRC
-
-*** python
-    :PROPERTIES:
-    :DATE:     2009-11-20
-    :END:
-
-#+begin_src python :results code
-  ['one', 'two', 'three']
-#+end_src
-
-#+resname:
-#+BEGIN_SRC python
-['one', 'two', 'three']
-#+END_SRC
-
-#+begin_src python :results code
-  [1, 2, 33, 4]
-#+end_src
-
-#+resname:
-#+BEGIN_SRC python
-[1, 2, 33, 4]
-#+END_SRC
-
-#+begin_src python :session :results code 
-  [1, 2, 33, 4]
-#+end_src
-
-#+resname:
-#+BEGIN_SRC python
-[1, 2, 33, 4]
-#+END_SRC
-
+<span class="org-block-begin-line">#+begin_src python :results code
+</span>  [<span class="string">'one'</span>, <span class="string">'two'</span>, <span class="string">'three']</span>
+<span class="org-block-end-line">#+end_src
+</span>
+<span class="org-meta-line">#+resname:
+</span><span class="org-block-begin-line">#+BEGIN_SRC python
+</span>[<span class="string">'one'</span>, <span class="string">'two'</span>, <span class="string">'three']</span>
+<span class="org-block-end-line">#+END_SRC
+</span>
+<span class="org-block-begin-line">#+begin_src python :results code
+</span>  [1, 2, 33, 4]
+<span class="org-block-end-line">#+end_src
+</span>
+<span class="org-meta-line">#+resname:
+</span><span class="org-block-begin-line">#+BEGIN_SRC python
+</span>[1, 2, 33, 4]
+<span class="org-block-end-line">#+END_SRC
+</span>
+<span class="org-block-begin-line">#+begin_src python :session :results code 
+</span>  [1, 2, 33, 4]
+<span class="org-block-end-line">#+end_src
+</span>
+<span class="org-meta-line">#+resname:
+</span><span class="org-block-begin-line">#+BEGIN_SRC python
+</span>[1, 2, 33, 4]
+<span class="org-block-end-line">#+END_SRC
+</span>
 </pre>
   </body>
 </html>

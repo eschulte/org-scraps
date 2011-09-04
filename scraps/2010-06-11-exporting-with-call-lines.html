@@ -9,6 +9,63 @@
         color: #E6E1DC;
         background-color: #232323;
       }
+      .builtin {
+        /* font-lock-builtin-face */
+        color: #D0D0FF;
+      }
+      .column-marker-3 {
+        /* column-marker-3 */
+        background-color: #cd69c9;
+      }
+      .function-name {
+        /* font-lock-function-name-face */
+        color: #FFC66D;
+      }
+      .keyword {
+        /* font-lock-keyword-face */
+        color: #CC7833;
+      }
+      .org-block-begin-line {
+        /* org-block-begin-line */
+        color: #BC9458;
+        font-style: italic;
+      }
+      .org-block-end-line {
+        /* org-block-end-line */
+        color: #BC9458;
+        font-style: italic;
+      }
+      .org-code {
+        /* org-code */
+        color: #b3b3b3;
+      }
+      .org-level-2 {
+        /* org-level-2 */
+        color: #b0c4de;
+      }
+      .org-meta-line {
+        /* org-meta-line */
+        color: #BC9458;
+        font-style: italic;
+      }
+      .org-property-value {
+      }
+      .org-special-keyword {
+        /* org-special-keyword */
+        color: #CC7833;
+      }
+      .preprocessor {
+        /* font-lock-preprocessor-face */
+        color: #CC7833;
+      }
+      .starter-kit-paren {
+        /* starter-kit-paren-face */
+        color: #7f7f7f;
+      }
+      .string {
+        /* font-lock-string-face */
+        color: #A5C261;
+      }
 
       a {
         color: inherit;
@@ -24,37 +81,37 @@
   </head>
   <body>
     <pre>
-** exporting with call lines
-   :PROPERTIES:
-   :DATE:     2010-06-11
-   :END:
-#+source: rpn-to-alg(alg)
-#+begin_src clojure :results output :var alg="00+"
-  (def binary-operators '(\+ \- \* \/))
-  (def unary-operators '(\s))
-  (defn rpn-to-alg [chars stack]
-    (if (&gt; (.size chars) 0)
-      (let [el (first chars)]
-        (if (some #{el} binary-operators)
-          (rpn-to-alg (rest chars)
-                      (cons
-                       (apply str "(" (or (second stack) 1) " " el " " (or (first stack) 1) ")")
-                       (rest (rest stack))))
-          (if (some #{el} unary-operators)
-            (rpn-to-alg (rest chars)
-                        (cons
-                         (apply str "(" el " " (or (first stack) 1) ")")
-                         (rest (rest stack))))
-            (rpn-to-alg (rest chars) (cons el stack)))))
-      (first stack)))
-  (println (apply str (rpn-to-alg (seq alg) '())))
-#+end_src
-
-#+results: distributed-best
-: 73*x11/+4/++51xxx13*y/++6y5*6/6-+xx+*
-
-#+call: rpn-to-alg(alg=distributed-best)
- 
+<span class="org-level-2">** exporting with call lines</span>
+<span class="org-special-keyword">   :PROPERTIES:</span>
+   <span class="org-special-keyword">:DATE:</span>     <span class="org-property-value">2010-06-11</span>
+<span class="org-special-keyword">   :END:</span>
+<span class="org-meta-line">#+source: rpn-to-alg(alg)
+</span><span class="org-block-begin-line">#+begin_src clojure :results output :var alg="00+"
+</span>  <span class="starter-kit-paren">(</span><span class="keyword">def</span> <span class="function-name">binary-operators</span> '<span class="starter-kit-paren">(</span>\+ \- \* \/<span class="starter-kit-paren">))</span>
+  <span class="starter-kit-paren">(</span><span class="keyword">def</span> <span class="function-name">unary-operators</span> '<span class="starter-kit-paren">(</span>\s<span class="starter-kit-paren">))</span>
+  <span class="starter-kit-paren">(</span><span class="keyword">defn</span> <span class="function-name">rpn-to-alg</span> [chars stack]
+    <span class="starter-kit-paren">(</span><span class="keyword">if</span> <span class="starter-kit-paren">(</span><span class="builtin">&gt;</span> <span class="starter-kit-paren">(</span><span class="preprocessor">.size</span> chars<span class="starter-kit-paren">)</span> 0<span class="starter-kit-paren">)</span>
+      <span class="starter-kit-paren">(</span><span class="keyword">let</span> [el <span class="starter-kit-paren">(</span><span class="builtin">first</span> chars<span class="starter-kit-paren">)</span>]
+        <span class="starter-kit-paren">(</span><span class="keyword">if</span> <span class="starter-kit-paren">(</span><span class="builtin">some</span> #{el} binary-operators<span class="starter-kit-paren">)</span>
+          <span class="starter-kit-paren">(</span>rpn-to-alg <span class="starter-kit-paren">(</span><span class="builtin">rest</span> chars<span class="starter-kit-paren">)</span>
+                      <span class="starter-kit-paren">(</span><span class="builtin">cons</span>
+                       <span class="starter-kit-paren">(</span><span class="builtin">apply</span> str <span class="string">"("</span> <span class="starter-kit-paren">(</span><span class="keyword">or</span> <span class="starter-kit-paren">(</span><span class="builtin">second</span> stack<span class="starter-kit-paren">)</span> 1<span class="starter-kit-paren">)</span> <span class="string">" "</span> el <span class="string">" "</span> <span class="starter-kit-paren">(</span><span class="keyword">or</span> <span class="starter-kit-paren">(</span><span class="builtin">firs</span><span class="builtin"><span class="column-marker-3">t</span></span> stack<span class="starter-kit-paren">)</span> 1<span class="starter-kit-paren">)</span> <span class="string">")"</span><span class="starter-kit-paren">)</span>
+                       <span class="starter-kit-paren">(</span><span class="builtin">rest</span> <span class="starter-kit-paren">(</span><span class="builtin">rest</span> stack<span class="starter-kit-paren">))))</span>
+          <span class="starter-kit-paren">(</span><span class="keyword">if</span> <span class="starter-kit-paren">(</span><span class="builtin">some</span> #{el} unary-operators<span class="starter-kit-paren">)</span>
+            <span class="starter-kit-paren">(</span>rpn-to-alg <span class="starter-kit-paren">(</span><span class="builtin">rest</span> chars<span class="starter-kit-paren">)</span>
+                        <span class="starter-kit-paren">(</span><span class="builtin">cons</span>
+                         <span class="starter-kit-paren">(</span><span class="builtin">apply</span> str <span class="string">"("</span> el <span class="string">" "</span> <span class="starter-kit-paren">(</span><span class="keyword">or</span> <span class="starter-kit-paren">(</span><span class="builtin">first</span> stack<span class="starter-kit-paren">)</span> 1<span class="starter-kit-paren">)</span> <span class="string">")"</span><span class="starter-kit-paren">)</span>
+                         <span class="starter-kit-paren">(</span><span class="builtin">rest</span> <span class="starter-kit-paren">(</span><span class="builtin">rest</span> stack<span class="starter-kit-paren">))))</span>
+            <span class="starter-kit-paren">(</span>rpn-to-alg <span class="starter-kit-paren">(</span><span class="builtin">rest</span> chars<span class="starter-kit-paren">)</span> <span class="starter-kit-paren">(</span><span class="builtin">cons</span> el stack<span class="starter-kit-paren">)))))</span>
+      <span class="starter-kit-paren">(</span><span class="builtin">first</span> stack<span class="starter-kit-paren">)))</span>
+  <span class="starter-kit-paren">(</span><span class="builtin">println</span> <span class="starter-kit-paren">(</span><span class="builtin">apply</span> str <span class="starter-kit-paren">(</span>rpn-to-alg <span class="starter-kit-paren">(</span><span class="builtin">seq</span> alg<span class="starter-kit-paren">)</span> '<span class="starter-kit-paren">())))
+</span><span class="org-block-end-line">#+end_src
+</span>
+<span class="org-meta-line">#+results: distributed-best
+</span><span class="org-code">: 73*x11/+4/++51xxx13*y/++6y5*6/6-+xx+*
+</span>
+<span class="org-meta-line">#+call: rpn-to-alg(alg=distributed-best)
+</span> 
 </pre>
   </body>
 </html>

@@ -9,6 +9,18 @@
         color: #E6E1DC;
         background-color: #232323;
       }
+      .constant {
+        /* font-lock-constant-face */
+        color: #6D9CBE;
+      }
+      .keyword {
+        /* font-lock-keyword-face */
+        color: #CC7833;
+      }
+      .org-block {
+        /* org-block */
+        color: #b3b3b3;
+      }
       .org-block-begin-line {
         /* org-block-begin-line */
         color: #BC9458;
@@ -46,6 +58,10 @@
         /* font-lock-string-face */
         color: #A5C261;
       }
+      .type {
+        /* font-lock-type-face */
+        color: #ffffff;
+      }
 
       a {
         color: inherit;
@@ -76,33 +92,33 @@
 <span class="org-meta-line">#+resname:
 </span><span class="org-code">: ['one', 'two', 'three', 'one', 'two', 'three', 'one', 'two', 'three']
 </span>
-*** ruby
-    :PROPERTIES:
-    :DATE:     2009-11-20
-    :END:
-#+begin_src ruby :results pp
-  class Schulte
-    attr_accessor :name, :age
-  end
+<span class="org-level-3">*** ruby</span>
+<span class="org-special-keyword">    :PROPERTIES:</span>
+    <span class="org-special-keyword">:DATE:</span>     <span class="org-property-value">2009-11-20</span>
+<span class="org-special-keyword">    :END:</span>
+<span class="org-block-begin-line">#+begin_src ruby :results pp
+</span>  <span class="keyword">class</span> <span class="type">Schulte</span>
+    attr_accessor <span class="constant">:name</span>, <span class="constant">:age</span>
+  <span class="keyword">end</span>
   
-  eric = Schulte.new
-  eric.name = "eric"
-  eric.age = 27
+  eric = <span class="type">Schulte</span>.new
+  eric.name = <span class="string">"eric"
+</span>  eric.age = 27
   
   eric
-#+end_src
+<span class="org-block-end-line">#+end_src
+</span>
+<span class="org-meta-line">#+resname:
+</span>
 
-#+resname:
-
-
-#+begin_src ruby :results pp
-  a = [1, 2, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3]
+<span class="org-block-begin-line">#+begin_src ruby :results pp
+</span>  a = [1, 2, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3]
   a
-#+end_src
-
-#+resname:
-#+begin_example
-[1,
+<span class="org-block-end-line">#+end_src
+</span>
+<span class="org-meta-line">#+resname:
+</span><span class="org-block-begin-line">#+begin_example
+</span><span class="org-block">[1,
  2,
  3,
  1,
@@ -129,8 +145,8 @@
  1,
  2,
  3]
-#+end_example
-
+</span><span class="org-block-end-line">#+end_example
+</span>
 </pre>
   </body>
 </html>

@@ -9,6 +9,34 @@
         color: #E6E1DC;
         background-color: #232323;
       }
+      .function-name {
+        /* font-lock-function-name-face */
+        color: #FFC66D;
+      }
+      .keyword {
+        /* font-lock-keyword-face */
+        color: #CC7833;
+      }
+      .org-block-begin-line {
+        /* org-block-begin-line */
+        color: #BC9458;
+        font-style: italic;
+      }
+      .org-block-end-line {
+        /* org-block-end-line */
+        color: #BC9458;
+        font-style: italic;
+      }
+      .org-level-2 {
+        /* org-level-2 */
+        color: #b0c4de;
+      }
+      .org-property-value {
+      }
+      .org-special-keyword {
+        /* org-special-keyword */
+        color: #CC7833;
+      }
 
       a {
         color: inherit;
@@ -24,15 +52,15 @@
   </head>
   <body>
     <pre>
-** test gnuplot
-   :PROPERTIES:
-   :DATE:     2010-04-17
-   :END:
+<span class="org-level-2">** test gnuplot</span>
+<span class="org-special-keyword">   :PROPERTIES:</span>
+   <span class="org-special-keyword">:DATE:</span>     <span class="org-property-value">2010-04-17</span>
+<span class="org-special-keyword">   :END:</span>
 
-#+begin_src gnuplot
-  plot sin(x), x+5
-#+end_src
-
+<span class="org-block-begin-line">#+begin_src gnuplot
+</span>  <span class="keyword">plot</span> <span class="function-name">sin(</span>x), x+5
+<span class="org-block-end-line">#+end_src
+</span>
 </pre>
   </body>
 </html>

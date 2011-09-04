@@ -9,13 +9,36 @@
         color: #E6E1DC;
         background-color: #232323;
       }
+      .org-block-begin-line {
+        /* org-block-begin-line */
+        color: #BC9458;
+        font-style: italic;
+      }
+      .org-block-end-line {
+        /* org-block-end-line */
+        color: #BC9458;
+        font-style: italic;
+      }
+      .org-code {
+        /* org-code */
+        color: #b3b3b3;
+      }
       .org-level-2 {
         /* org-level-2 */
         color: #b0c4de;
       }
+      .org-meta-line {
+        /* org-meta-line */
+        color: #BC9458;
+        font-style: italic;
+      }
       .org-special-keyword {
         /* org-special-keyword */
         color: #CC7833;
+      }
+      .starter-kit-paren {
+        /* starter-kit-paren-face */
+        color: #7f7f7f;
       }
 
       a {
@@ -35,22 +58,22 @@
 <span class="org-level-2">** inline call line</span>
 <span class="org-special-keyword">   :PROPERTIES:</span>
    :DATE:     2011-06-27
-   :END:
+<span class="org-special-keyword">   :END:</span>
 
-#+source: double
-#+begin_src emacs-lisp :var it=0
-  (* 2 it)
-#+end_src
-
+<span class="org-meta-line">#+source: double
+</span><span class="org-block-begin-line">#+begin_src emacs-lisp :var it=0
+</span>  <span class="starter-kit-paren">(</span>* 2 it<span class="starter-kit-paren">)
+</span><span class="org-block-end-line">#+end_src
+</span>
 This is the number src_sh[:var it=double(it=1)]{echo $it} in the middle
 
 The following exports as a normal call line
-#+call: double(it=1)
-
+<span class="org-meta-line">#+call: double(it=1)
+</span>
 Now here is an inline call call_double(it=1) stuck in the middle of
 some prose.
 
-This one should not be exported =call_double(it=2)= because it is
+This one should not be exported <span class="org-code">=call_double(it=2)=</span> because it is
 quoted.
 
 Finally this next one should export, even though it starts a line

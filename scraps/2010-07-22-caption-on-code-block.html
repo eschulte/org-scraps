@@ -9,6 +9,31 @@
         color: #E6E1DC;
         background-color: #232323;
       }
+      .org-block-begin-line {
+        /* org-block-begin-line */
+        color: #BC9458;
+        font-style: italic;
+      }
+      .org-block-end-line {
+        /* org-block-end-line */
+        color: #BC9458;
+        font-style: italic;
+      }
+      .org-level-2 {
+        /* org-level-2 */
+        color: #b0c4de;
+      }
+      .org-meta-line {
+        /* org-meta-line */
+        color: #BC9458;
+        font-style: italic;
+      }
+      .org-property-value {
+      }
+      .org-special-keyword {
+        /* org-special-keyword */
+        color: #CC7833;
+      }
 
       a {
         color: inherit;
@@ -24,17 +49,17 @@
   </head>
   <body>
     <pre>
-** caption on code block
-   :PROPERTIES:
-   :DATE:     2010-07-22
-   :END:
+<span class="org-level-2">** caption on code block</span>
+<span class="org-special-keyword">   :PROPERTIES:</span>
+   <span class="org-special-keyword">:DATE:</span>     <span class="org-property-value">2010-07-22</span>
+<span class="org-special-keyword">   :END:</span>
 
-#+caption: Examples of variable declaration.
+<span class="org-meta-line">#+caption: Examples of variable declaration.
 #+label: sql-block
-#+begin_src sql
-SELECT 6*9;
-#+end_src
-
+</span><span class="org-block-begin-line">#+begin_src sql
+</span>SELECT 6*9;
+<span class="org-block-end-line">#+end_src
+</span>
 </pre>
   </body>
 </html>

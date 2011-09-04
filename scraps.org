@@ -24,9 +24,6 @@ accumsan nulla. Nullam rutrum. Nam vestibulum accumsan nisl.
   echo nothing
 #+end_src
 
-#+results:
-[[file:something.txt]]
-
 ** simple gnuplot plotting of Org-mode tables
    :PROPERTIES:
    :DATE:     2011-09-01
@@ -52,9 +49,6 @@ set style fill solid border -1
 set boxwidth 0.9
 plot data using 2:xtic(1)
 #+end_src
-
-#+results:
-| t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t |
 
 ** simple indexing
    :PROPERTIES:
@@ -6963,8 +6957,11 @@ plot cosx
       
 
 * tools
-Map over all scraps and export each to a separate file.
-#+begin_src emacs-lisp
+Map over all scraps and export each to a separate file. Note that this
+relies on the fontification in the original Org-mode buffer, so before
+exporting expand the entire buffer, and scroll through from top to
+bottom so that everything will be fontified.
+#+begin_src emacs-lisp :results silent
   (defun dump-subtree-to-file ()
     (let* ((replacements '((" "   . "-")
                            ("w/o" . "without")

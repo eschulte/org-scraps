@@ -9,6 +9,43 @@
         color: #E6E1DC;
         background-color: #232323;
       }
+      .keyword {
+        /* font-lock-keyword-face */
+        color: #CC7833;
+      }
+      .org-block-begin-line {
+        /* org-block-begin-line */
+        color: #BC9458;
+        font-style: italic;
+      }
+      .org-block-end-line {
+        /* org-block-end-line */
+        color: #BC9458;
+        font-style: italic;
+      }
+      .org-level-2 {
+        /* org-level-2 */
+        color: #b0c4de;
+      }
+      .org-meta-line {
+        /* org-meta-line */
+        color: #BC9458;
+        font-style: italic;
+      }
+      .org-property-value {
+      }
+      .org-special-keyword {
+        /* org-special-keyword */
+        color: #CC7833;
+      }
+      .org-table {
+        /* org-table */
+        color: #87cefa;
+      }
+      .string {
+        /* font-lock-string-face */
+        color: #A5C261;
+      }
 
       a {
         color: inherit;
@@ -24,41 +61,41 @@
   </head>
   <body>
     <pre>
-** colnames
-   :PROPERTIES:
-   :DATE:     2010-05-04
-   :END:
+<span class="org-level-2">** colnames</span>
+<span class="org-special-keyword">   :PROPERTIES:</span>
+   <span class="org-special-keyword">:DATE:</span>     <span class="org-property-value">2010-05-04</span>
+<span class="org-special-keyword">   :END:</span>
 
-#+tblname: A
-| a | b | c |
-|---+---+---|
-| d | e | f |
-| g | h | i |
+<span class="org-meta-line">#+tblname: A
+</span><span class="org-table">| a | b | c |</span>
+<span class="org-table">|---+---+---|</span>
+<span class="org-table">| d | e | f |</span>
+<span class="org-table">| g | h | i |</span>
 
-#+begin_src python :var tab=A :colnames yes
-return [[val + '*' for val in row] for row in tab]
-#+end_src
+<span class="org-block-begin-line">#+begin_src python :var tab=A :colnames yes
+</span><span class="keyword">return</span> [[val + <span class="string">'*'</span> <span class="keyword">for</span> val <span class="keyword">in</span> row] <span class="keyword">for</span> row <span class="keyword">in </span>tab]
+<span class="org-block-end-line">#+end_src
+</span>
+<span class="org-meta-line">#+results:
+</span><span class="org-table">| a  | b  | c  |</span>
+<span class="org-table">|----+----+----|</span>
+<span class="org-table">| d* | e* | f* |</span>
+<span class="org-table">| g* | h* | i* |</span>
 
-#+results:
-| a  | b  | c  |
-|----+----+----|
-| d* | e* | f* |
-| g* | h* | i* |
+<span class="org-meta-line">#+tblname: A
+</span><span class="org-table">| a | b | c |</span>
+<span class="org-table">| d | e | f |</span>
+<span class="org-table">| g | h | i |</span>
 
-#+tblname: A
-| a | b | c |
-| d | e | f |
-| g | h | i |
-
-#+begin_src ruby :var tab=A :colnames yes
-tab.map{|r| r.map{|e| e+"*"} }
-#+end_src
-
-#+results:
-| a  | b  | c  |
-|----+----+----|
-| d* | e* | f* |
-| g* | h* | i* |
+<span class="org-block-begin-line">#+begin_src ruby :var tab=A :colnames yes
+</span>tab.map{|r| r.map{|e| e+<span class="string">"*"}</span> }
+<span class="org-block-end-line">#+end_src
+</span>
+<span class="org-meta-line">#+results:
+</span><span class="org-table">| a  | b  | c  |</span>
+<span class="org-table">|----+----+----|</span>
+<span class="org-table">| d* | e* | f* |</span>
+<span class="org-table">| g* | h* | i* |</span>
 
 </pre>
   </body>

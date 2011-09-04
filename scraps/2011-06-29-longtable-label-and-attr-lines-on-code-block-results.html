@@ -34,6 +34,10 @@
         /* org-special-keyword */
         color: #CC7833;
       }
+      .org-table {
+        /* org-table */
+        color: #87cefa;
+      }
       .starter-kit-paren {
         /* starter-kit-paren-face */
         color: #7f7f7f;
@@ -64,10 +68,10 @@
     <span class="starter-kit-paren">(</span>bar baz<span class="starter-kit-paren">))
 </span><span class="org-block-end-line">#+end_src
 </span>
-#+LABEL: Foo
+<span class="org-meta-line">#+LABEL: Foo
 #+results: faz
-| foo | foo |
-| bar | baz |
+</span><span class="org-table">| foo | foo |</span>
+<span class="org-table">| bar | baz |</span>
 
 </pre>
   </body>

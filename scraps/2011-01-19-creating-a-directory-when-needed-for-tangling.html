@@ -9,6 +9,50 @@
         color: #E6E1DC;
         background-color: #232323;
       }
+      .doc {
+        /* font-lock-doc-face */
+        color: #A5C261;
+      }
+      .function-name {
+        /* font-lock-function-name-face */
+        color: #FFC66D;
+      }
+      .keyword {
+        /* font-lock-keyword-face */
+        color: #CC7833;
+      }
+      .org-block-begin-line {
+        /* org-block-begin-line */
+        color: #BC9458;
+        font-style: italic;
+      }
+      .org-block-end-line {
+        /* org-block-end-line */
+        color: #BC9458;
+        font-style: italic;
+      }
+      .org-level-2 {
+        /* org-level-2 */
+        color: #b0c4de;
+      }
+      .org-property-value {
+      }
+      .org-special-keyword {
+        /* org-special-keyword */
+        color: #CC7833;
+      }
+      .starter-kit-paren {
+        /* starter-kit-paren-face */
+        color: #7f7f7f;
+      }
+      .string {
+        /* font-lock-string-face */
+        color: #A5C261;
+      }
+      .type {
+        /* font-lock-type-face */
+        color: #ffffff;
+      }
 
       a {
         color: inherit;
@@ -24,31 +68,31 @@
   </head>
   <body>
     <pre>
-** creating a directory when needed for tangling
-   :PROPERTIES:
-   :DATE:     2011-01-19
-   :END:
-#+begin_src clojure :tangle (prog1 "src/foo.clj" (make-directory "src" "."))
-  (ns something)
-#+end_src
-
+<span class="org-level-2">** creating a directory when needed for tangling</span>
+<span class="org-special-keyword">   :PROPERTIES:</span>
+   <span class="org-special-keyword">:DATE:</span>     <span class="org-property-value">2011-01-19</span>
+<span class="org-special-keyword">   :END:</span>
+<span class="org-block-begin-line">#+begin_src clojure :tangle (prog1 "src/foo.clj" (make-directory "src" "."))
+</span>  <span class="starter-kit-paren">(</span><span class="keyword">ns</span> something<span class="starter-kit-paren">)
+</span><span class="org-block-end-line">#+end_src
+</span>
 a helper function for the above
-#+begin_src emacs-lisp
-  (defun mkdir-p (file &amp;optional dir)
-    "Create any parent directories of FILE if missing and return FILE."
-    (make-directory (file-name-directory file) (or dir ".")) file)
-#+end_src
-
+<span class="org-block-begin-line">#+begin_src emacs-lisp
+</span>  <span class="starter-kit-paren">(</span><span class="keyword">defun</span> <span class="function-name">mkdir-p</span> <span class="starter-kit-paren">(</span>file <span class="type">&amp;optional</span> dir<span class="starter-kit-paren">)</span>
+    <span class="doc">"Create any parent directories of FILE if missing and return FILE."</span>
+    <span class="starter-kit-paren">(</span>make-directory <span class="starter-kit-paren">(</span>file-name-directory file<span class="starter-kit-paren">)</span> <span class="starter-kit-paren">(</span>or dir <span class="string">"."</span><span class="starter-kit-paren">))</span> file<span class="starter-kit-paren">)
+</span><span class="org-block-end-line">#+end_src
+</span>
 allows the following
-#+begin_src clojure :tangle (mkdir-p "src/foo.clj")
-  (ns something)
-#+end_src
-
+<span class="org-block-begin-line">#+begin_src clojure :tangle (mkdir-p "src/foo.clj")
+</span>  <span class="starter-kit-paren">(</span><span class="keyword">ns</span> something<span class="starter-kit-paren">)
+</span><span class="org-block-end-line">#+end_src
+</span>
 There is now a new header argument controlling this behavior
-#+begin_src emacs-lisp :mkdirp yes :tangle novel/nested/directories/finally.clj
-  (message "contents")
-#+end_src
-
+<span class="org-block-begin-line">#+begin_src emacs-lisp :mkdirp yes :tangle novel/nested/directories/finally.clj
+</span>  <span class="starter-kit-paren">(</span>message <span class="string">"contents"</span><span class="starter-kit-paren">)
+</span><span class="org-block-end-line">#+end_src
+</span>
 </pre>
   </body>
 </html>

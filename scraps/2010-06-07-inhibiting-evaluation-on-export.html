@@ -9,6 +9,34 @@
         color: #E6E1DC;
         background-color: #232323;
       }
+      .builtin {
+        /* font-lock-builtin-face */
+        color: #D0D0FF;
+      }
+      .org-block-begin-line {
+        /* org-block-begin-line */
+        color: #BC9458;
+        font-style: italic;
+      }
+      .org-block-end-line {
+        /* org-block-end-line */
+        color: #BC9458;
+        font-style: italic;
+      }
+      .org-level-2 {
+        /* org-level-2 */
+        color: #b0c4de;
+      }
+      .org-property-value {
+      }
+      .org-special-keyword {
+        /* org-special-keyword */
+        color: #CC7833;
+      }
+      .starter-kit-paren {
+        /* starter-kit-paren-face */
+        color: #7f7f7f;
+      }
 
       a {
         color: inherit;
@@ -24,17 +52,17 @@
   </head>
   <body>
     <pre>
-** inhibiting evaluation on export
-   :PROPERTIES:
-   :noeval:   don't do it
-   :DATE:     2010-06-07
-   :END:
+<span class="org-level-2">** inhibiting evaluation on export</span>
+<span class="org-special-keyword">   :PROPERTIES:</span>
+   <span class="org-special-keyword">:noeval:</span>   <span class="org-property-value">don't do it</span>
+   <span class="org-special-keyword">:DATE:</span>     <span class="org-property-value">2010-06-07</span>
+<span class="org-special-keyword">   :END:</span>
 
-#+begin_src clojure :session eric :exports none
-  (+ 1 1 1 1)
-  (error)
-#+end_src
-
+<span class="org-block-begin-line">#+begin_src clojure :session eric :exports none
+</span>  <span class="starter-kit-paren">(</span><span class="builtin">+</span> 1 1 1 1<span class="starter-kit-paren">)</span>
+  <span class="starter-kit-paren">(</span>error<span class="starter-kit-paren">)
+</span><span class="org-block-end-line">#+end_src
+</span>
 </pre>
   </body>
 </html>

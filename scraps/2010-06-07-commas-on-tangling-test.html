@@ -9,6 +9,38 @@
         color: #E6E1DC;
         background-color: #232323;
       }
+      .org-block {
+        /* org-block */
+        color: #b3b3b3;
+      }
+      .org-block-begin-line {
+        /* org-block-begin-line */
+        color: #BC9458;
+        font-style: italic;
+      }
+      .org-block-end-line {
+        /* org-block-end-line */
+        color: #BC9458;
+        font-style: italic;
+      }
+      .org-level-2 {
+        /* org-level-2 */
+        color: #b0c4de;
+      }
+      .org-property-value {
+      }
+      .org-special-keyword {
+        /* org-special-keyword */
+        color: #CC7833;
+      }
+      .starter-kit-paren {
+        /* starter-kit-paren-face */
+        color: #7f7f7f;
+      }
+      .string {
+        /* font-lock-string-face */
+        color: #A5C261;
+      }
 
       a {
         color: inherit;
@@ -24,19 +56,19 @@
   </head>
   <body>
     <pre>
-** commas on tangling test
-   :PROPERTIES:
-   :DATE:     2010-06-07
-   :END:
+<span class="org-level-2">** commas on tangling test</span>
+<span class="org-special-keyword">   :PROPERTIES:</span>
+   <span class="org-special-keyword">:DATE:</span>     <span class="org-property-value">2010-06-07</span>
+<span class="org-special-keyword">   :END:</span>
 test comma protection on tangling
 
-#+begin_src emacs-lisp :results silent
-  (org-babel-add-interpreter "org")
-  (add-to-list 'org-babel-tangle-langs '("org" "org"))
-#+end_src
-
-#+begin_src org :tangle commas.org
-  ,* org-mode
+<span class="org-block-begin-line">#+begin_src emacs-lisp :results silent
+</span>  <span class="starter-kit-paren">(</span>org-babel-add-interpreter <span class="string">"org"</span><span class="starter-kit-paren">)</span>
+  <span class="starter-kit-paren">(</span>add-to-list 'org-babel-tangle-langs '<span class="starter-kit-paren">(</span><span class="string">"org"</span> <span class="string">"org"</span><span class="starter-kit-paren">))
+</span><span class="org-block-end-line">#+end_src
+</span>
+<span class="org-block-begin-line">#+begin_src org :tangle commas.org
+</span>  ,* org-mode
   ,  :PROPERTIES:
   ,  :CUSTOM_ID: comma-protect
   ,  :END:
@@ -44,15 +76,15 @@ test comma protection on tangling
   ,#+begin_src emacs-lisp
   ,  protected?
   ,#+end_src
-#+end_src
-
-#+begin_example 
-  ,* this should be
+<span class="org-block-end-line">#+end_src
+</span>
+<span class="org-block-begin-line">#+begin_example 
+</span><span class="org-block">  ,* this should be
   # commented out
   
   and maybe not this...
-#+end_example
-
+</span><span class="org-block-end-line">#+end_example
+</span>
 </pre>
   </body>
 </html>

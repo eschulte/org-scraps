@@ -9,6 +9,52 @@
         color: #E6E1DC;
         background-color: #232323;
       }
+      .comment {
+        /* font-lock-comment-face */
+        color: #BC9458;
+        font-style: italic;
+      }
+      .org-block-begin-line {
+        /* org-block-begin-line */
+        color: #BC9458;
+        font-style: italic;
+      }
+      .org-block-end-line {
+        /* org-block-end-line */
+        color: #BC9458;
+        font-style: italic;
+      }
+      .org-code {
+        /* org-code */
+        color: #b3b3b3;
+      }
+      .org-level-2 {
+        /* org-level-2 */
+        color: #b0c4de;
+      }
+      .org-level-3 {
+        /* org-level-3 */
+        color: #CC7833;
+      }
+      .org-meta-line {
+        /* org-meta-line */
+        color: #BC9458;
+        font-style: italic;
+      }
+      .org-property-value {
+      }
+      .org-special-keyword {
+        /* org-special-keyword */
+        color: #CC7833;
+      }
+      .org-table {
+        /* org-table */
+        color: #87cefa;
+      }
+      .starter-kit-paren {
+        /* starter-kit-paren-face */
+        color: #7f7f7f;
+      }
 
       a {
         color: inherit;
@@ -24,58 +70,58 @@
   </head>
   <body>
     <pre>
-** fixing result insertion
-   :PROPERTIES:
-   :DATE:     2010-07-12
-   :END:
+<span class="org-level-2">** fixing result insertion</span>
+<span class="org-special-keyword">   :PROPERTIES:</span>
+   <span class="org-special-keyword">:DATE:</span>     <span class="org-property-value">2010-07-12</span>
+<span class="org-special-keyword">   :END:</span>
 needs to replace the results when there is a new hash
 
-*** normal results
-    :PROPERTIES:
-    :DATE:     2010-07-12
-    :END:
-#+begin_src sh
-  date
-#+end_src
+<span class="org-level-3">*** normal results</span>
+<span class="org-special-keyword">    :PROPERTIES:</span>
+    <span class="org-special-keyword">:DATE:</span>     <span class="org-property-value">2010-07-12</span>
+<span class="org-special-keyword">    :END:</span>
+<span class="org-block-begin-line">#+begin_src sh
+</span>  date
+<span class="org-block-end-line">#+end_src
+</span>
+<span class="org-meta-line">#+results:
+</span><span class="org-code">: Mon Jul 12 22:18:16 PDT 2010
+</span>
+<span class="org-level-3">*** unnamed source block results</span>
+<span class="org-special-keyword">    :PROPERTIES:</span>
+    <span class="org-special-keyword">:DATE:</span>     <span class="org-property-value">2010-07-12</span>
+<span class="org-special-keyword">    :END:</span>
+<span class="org-block-begin-line">#+begin_src emacs-lisp :cache yes
+</span>  <span class="starter-kit-paren">(</span>+ 1 2 3 4<span class="starter-kit-paren">)
+</span><span class="org-block-end-line">#+end_src
+</span>
+<span class="org-meta-line">#+results[16a776d6d139e1d39e99d736536a546df115c2dc]:
+</span><span class="org-code">: 10
+</span>
+<span class="org-block-begin-line">#+begin_src emacs-lisp :cache yes
+</span>  <span class="starter-kit-paren">(</span>list '<span class="starter-kit-paren">(</span>1 2 3<span class="starter-kit-paren">)</span> '<span class="starter-kit-paren">(</span>4 5 6<span class="starter-kit-paren">))
+</span><span class="org-block-end-line">#+end_src
+</span>
+<span class="org-meta-line">#+results[53f489ed6977857b9945d79d06e575b2cbbebf11]:
+</span><span class="org-table">| 1 | 2 | 3 |</span>
+<span class="org-table">| 4 | 5 | 6 |</span>
 
-#+results:
-: Mon Jul 12 22:18:16 PDT 2010
+<span class="org-level-3">*** named source block results</span>
+<span class="org-special-keyword">    :PROPERTIES:</span>
+    <span class="org-special-keyword">:DATE:</span>     <span class="org-property-value">2010-07-12</span>
+<span class="org-special-keyword">    :END:</span>
 
-*** unnamed source block results
-    :PROPERTIES:
-    :DATE:     2010-07-12
-    :END:
-#+begin_src emacs-lisp :cache yes
-  (+ 1 2 3 4)
-#+end_src
-
-#+results[16a776d6d139e1d39e99d736536a546df115c2dc]:
-: 10
-
-#+begin_src emacs-lisp :cache yes
-  (list '(1 2 3) '(4 5 6))
-#+end_src
-
-#+results[53f489ed6977857b9945d79d06e575b2cbbebf11]:
-| 1 | 2 | 3 |
-| 4 | 5 | 6 |
-
-*** named source block results
-    :PROPERTIES:
-    :DATE:     2010-07-12
-    :END:
-
-#+srcname: something-w-table
-#+begin_src emacs-lisp
-  (sleep-for 2)
-  (list '(1 2 3) '(4 5 8))
-#+end_src
-
-#+source: something
-#+begin_src emacs-lisp :cache yes
-  (+ 1 2 3 4 8)
-#+end_src
-
+<span class="org-meta-line">#+srcname: something-w-table
+</span><span class="org-block-begin-line">#+begin_src emacs-lisp
+</span>  <span class="starter-kit-paren">(</span>sleep-for 2<span class="starter-kit-paren">)</span>
+  <span class="starter-kit-paren">(</span>list '<span class="starter-kit-paren">(</span>1 2 3<span class="starter-kit-paren">)</span> '<span class="starter-kit-paren">(</span>4 5 8<span class="starter-kit-paren">))
+</span><span class="org-block-end-line">#+end_src
+</span>
+<span class="org-meta-line">#+source: something
+</span><span class="org-block-begin-line">#+begin_src emacs-lisp :cache yes
+</span>  <span class="starter-kit-paren">(</span>+ 1 2 3 4 8<span class="starter-kit-paren">)
+</span><span class="org-block-end-line">#+end_src
+</span>
 Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
 eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enimad
 minim veniam, quis nostrud exercitation ullamco laboris nisi ut
@@ -84,14 +130,14 @@ reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
 pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
 culpa qui officia deserunt mollit anim id est laborum.
 
-# something else
-#+results[d053f6643d9dc52a0e804c15f2a762da73a00a07]: something
-: 18
-
-#+attr_latex: width=0.4\textwidth
+<span class="comment"># something else</span>
+<span class="org-meta-line">#+results[d053f6643d9dc52a0e804c15f2a762da73a00a07]: something
+</span><span class="org-code">: 18
+</span>
+<span class="org-meta-line">#+attr_latex: width=0.4\textwidth
 #+results[5fac69648ab749ef9ee88ea65b3d49d93f3f6cc8]: something-w-table
-| 1 | 2 | 3 |
-| 4 | 5 | 8 |
+</span><span class="org-table">| 1 | 2 | 3 |</span>
+<span class="org-table">| 4 | 5 | 8 |</span>
 
 </pre>
   </body>

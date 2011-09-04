@@ -9,6 +9,30 @@
         color: #E6E1DC;
         background-color: #232323;
       }
+      .builtin {
+        /* font-lock-builtin-face */
+        color: #D0D0FF;
+      }
+      .org-block-begin-line {
+        /* org-block-begin-line */
+        color: #BC9458;
+        font-style: italic;
+      }
+      .org-block-end-line {
+        /* org-block-end-line */
+        color: #BC9458;
+        font-style: italic;
+      }
+      .org-level-2 {
+        /* org-level-2 */
+        color: #b0c4de;
+      }
+      .org-property-value {
+      }
+      .org-special-keyword {
+        /* org-special-keyword */
+        color: #CC7833;
+      }
 
       a {
         color: inherit;
@@ -24,16 +48,16 @@
   </head>
   <body>
     <pre>
-** how to set no-expand in properties
-   :PROPERTIES:
-   :no-expand: yes
-   :DATE:     2011-02-10
-   :END:
+<span class="org-level-2">** how to set no-expand in properties</span>
+<span class="org-special-keyword">   :PROPERTIES:</span>
+   <span class="org-special-keyword">:no-expand:</span> <span class="org-property-value">yes</span>
+   <span class="org-special-keyword">:DATE:</span>     <span class="org-property-value">2011-02-10</span>
+<span class="org-special-keyword">   :END:</span>
 
-#+begin_src emacs-lisp :var something="other thing" :tangle no-expand.el
-  :test
-#+end_src
-
+<span class="org-block-begin-line">#+begin_src emacs-lisp :var something="other thing" :tangle no-expand.el
+</span>  <span class="builtin">:test
+</span><span class="org-block-end-line">#+end_src
+</span>
 tangles to
 
 </pre>

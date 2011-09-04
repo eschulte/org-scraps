@@ -9,6 +9,36 @@
         color: #E6E1DC;
         background-color: #232323;
       }
+      .comment {
+        /* font-lock-comment-face */
+        color: #BC9458;
+        font-style: italic;
+      }
+      .comment-delimiter {
+        /* font-lock-comment-delimiter-face */
+        color: #BC9458;
+        font-style: italic;
+      }
+      .org-block-begin-line {
+        /* org-block-begin-line */
+        color: #BC9458;
+        font-style: italic;
+      }
+      .org-block-end-line {
+        /* org-block-end-line */
+        color: #BC9458;
+        font-style: italic;
+      }
+      .org-level-2 {
+        /* org-level-2 */
+        color: #b0c4de;
+      }
+      .org-property-value {
+      }
+      .org-special-keyword {
+        /* org-special-keyword */
+        color: #CC7833;
+      }
 
       a {
         color: inherit;
@@ -24,13 +54,13 @@
   </head>
   <body>
     <pre>
-** tangling org
-   :PROPERTIES:
-   :DATE:     2010-04-27
-   :END:
+<span class="org-level-2">** tangling org</span>
+<span class="org-special-keyword">   :PROPERTIES:</span>
+   <span class="org-special-keyword">:DATE:</span>     <span class="org-property-value">2010-04-27</span>
+<span class="org-special-keyword">   :END:</span>
 
-#+begin_src org :tangle ~/Desktop/test.org
-  ,* first
+<span class="org-block-begin-line">#+begin_src org :tangle ~/Desktop/test.org
+</span>  ,* first
   ,| eric   | me     |
   ,| patton | my dog |
   
@@ -39,13 +69,13 @@
   ,some more stuff...
   
   ,#+HTML: &lt;b&gt;I bet this is quoted&lt;/b&gt;
-#+end_src
-
-#+begin_src ruby :tangle ~/Desktop/test.rb
-  # this is a comment
-  eric.map{|l| puts l}
-#+end_src
-
+<span class="org-block-end-line">#+end_src
+</span>
+<span class="org-block-begin-line">#+begin_src ruby :tangle ~/Desktop/test.rb
+</span>  <span class="comment-delimiter"># </span><span class="comment">this is a comment
+ </span> eric.map{|l| puts l}
+<span class="org-block-end-line">#+end_src
+</span>
 </pre>
   </body>
 </html>
