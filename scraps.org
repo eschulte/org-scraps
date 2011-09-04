@@ -34,6 +34,7 @@ plot data using 2:xtic(1)
 #+end_src
 
 #+results:
+| t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | nil | nil | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t | t |
 
 
 
@@ -6966,12 +6967,13 @@ Map over all scraps and export each to a separate file.
            (path (expand-file-name (concat date "-" title ".html") "scraps"))
            buf)
       (unless (file-exists-p path)
-        (org-copy-subtree)
+        (call-interactively #'org-copy-subtree)
         (with-temp-buffer
-          (yank) (org-mode) (setq buf (htmlize-buffer)))
+          (call-interactively #'yank) (setq buf (htmlize-buffer)))
         (set-buffer buf)
         (goto-char (point-min))
-        (write-file path))))
+        (write-file path)
+        (kill-buffer))))
   
   (org-id-goto "96eaa17f-f1b6-4958-acb1-e271045fdfa2")
   (org-map-entries #'dump-subtree-to-file nil 'tree)
