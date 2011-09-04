@@ -7,6 +7,32 @@
   :ID:       96eaa17f-f1b6-4958-acb1-e271045fdfa2
   :DATE:     2011-09-03
   :END:
+** demarcation of indented blocks
+   :PROPERTIES:
+   :DATE:     2011-09-04
+   :END:
+Demarcating a block with the point part-way in a line should indent
+the remainder of the line in the second block.
+    #+begin_src sh
+      echo 1
+      echo 2
+      echo 3
+      echo 4
+    #+end_src
+
+becomes
+
+    #+begin_src sh :results silent :session something
+      echo 1
+      echo 2
+      echo
+    #+end_src
+    
+    #+begin_src sh :results silent :session something
+           3
+      echo 4
+    #+end_src
+
 ** returning file type to inline call line
    :PROPERTIES:
    :DATE:     2011-09-04
