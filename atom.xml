@@ -3,7 +3,7 @@
  <title>Org-mode scraps</title>
  <link href="http://eschulte.github.com/org-scraps/atom.xml" rel="self"/>
  <link href="http://eschulte.github.com/org-scraps/"/>
- <updated>2011-09-04:17:07:58-06:00</updated>
+ <updated>2011-09-06:10:34:38-06:00</updated>
  <id>http://eschulte.github.com/org-scraps/</id>
  <author>
    <name>Eric Schulte</name>
@@ -10049,6 +10049,27 @@ accumsan nulla. Nullam rutrum. Nam vestibulum accumsan nisl.
 </span><span class="org-block-begin-line">#+begin_src sh :file something.txt
 </span>  <span class="builtin">echo </span>nothing
 <span class="org-block-end-line">#+end_src
+</span>
+   </pre>
+   </content>
+</entry>
+<entry>
+   <title>silent-results-in-org-but-not-in-export</title>
+   <link href="http://eschulte.github.com/org-scraps/scraps/2011-09-06-silent-results-in-org-but-not-in-export.html"/>
+   <updated>2011-09-06:00:00:00-06:00</updated>
+   <id>http://eschulte.github.com/org-scraps/scraps/2011-09-06-silent-results-in-org-but-not-in-export.html</id>
+   <content type="html">
+   <pre>
+<span class="org-level-2">** silent results in org but not in export</span>
+<span class="org-special-keyword">   :PROPERTIES:</span>
+   <span class="org-special-keyword">:DATE:</span>     <span class="org-property-value">2011-09-06</span>
+<span class="org-special-keyword">   :END:</span>
+The results of the following code block will not be inserted during
+interactive evaluation but will during export.
+
+<span class="org-block-begin-line">#+begin_src sh :results (if org-current-export-file "replace" "silent") :exports both
+</span>  <span class="builtin">echo</span>  <span class="string">"I want to see this in HTML/PDF, but not in Org"
+</span><span class="org-block-end-line">#+end_src
 </span>
    </pre>
    </content>
