@@ -7,6 +7,19 @@
   :ID:       96eaa17f-f1b6-4958-acb1-e271045fdfa2
   :DATE:     2011-09-03
   :END:
+** removing result with a silent header argument
+   :PROPERTIES:
+   :DATE:     2011-09-07
+   :END:
+evaluating the following code block will remove the related result.
+
+#+begin_src sh :results silent
+  date +%Y-%m-%d
+#+end_src
+
+#+results:
+: 2011-09-07
+
 ** leading commas in code blocks
    :PROPERTIES:
    :DATE:     2011-09-06
