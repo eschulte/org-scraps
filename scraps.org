@@ -7,6 +7,57 @@
   :ID:       96eaa17f-f1b6-4958-acb1-e271045fdfa2
   :DATE:     2011-09-03
   :END:
+** header arguments on call lines
+   :PROPERTIES:
+   :DATE:     2011-09-11
+   :END:
+#+source: simple-example
+#+begin_src emacs-lisp
+  "the result"
+#+end_src
+
+#+call: simple-example()
+
+#+results: simple-example()
+: the result
+
+#+call: simple-example() :results raw
+
+#+results: simple-example()
+the result
+
+** removing result with a silent header argument
+   :PROPERTIES:
+   :DATE:     2011-09-07
+   :END:
+evaluating the following code block will remove the related result.
+
+#+begin_src sh :results silent
+  date +%Y-%m-%d
+#+end_src
+
+#+results:
+: 2011-09-07
+
+** leading commas in code blocks
+   :PROPERTIES:
+   :DATE:     2011-09-06
+   :END:
+#+begin_src r :exports code
+  a <- c(1
+         , 2
+         , 3)
+#+end_src
+
+#+begin_src org :exports code
+  ,this one will have commas removed
+  ,#+begin_src R
+  ,  a <- c(1
+  ,         , 2
+  ,         , 3)
+  ,#+end_src
+#+end_src
+
 ** silent results in org but not in export
    :PROPERTIES:
    :DATE:     2011-09-06
