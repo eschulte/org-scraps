@@ -7,6 +7,25 @@
   :ID:       96eaa17f-f1b6-4958-acb1-e271045fdfa2
   :DATE:     2011-09-03
   :END:
+** header arguments on call lines
+   :PROPERTIES:
+   :DATE:     2011-09-11
+   :END:
+#+source: simple-example
+#+begin_src emacs-lisp
+  "the result"
+#+end_src
+
+#+call: simple-example()
+
+#+results: simple-example()
+: the result
+
+#+call: simple-example() :results raw
+
+#+results: simple-example()
+the result
+
 ** removing result with a silent header argument
    :PROPERTIES:
    :DATE:     2011-09-07
