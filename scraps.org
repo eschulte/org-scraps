@@ -7,6 +7,26 @@
   :ID:       96eaa17f-f1b6-4958-acb1-e271045fdfa2
   :DATE:     2011-09-03
   :END:
+** should this throw an error for no variable definition
+   :PROPERTIES:
+   :DATE:     2011-09-15
+   :END:
+Evaluating this block should raise an error that there are
+uninitialized variables.
+
+#+srcname: add-column-in-table(table="", column="", something, type="", else, nullability)
+#+begin_src sql
+-- add column `$column' (if column does not exist yet)
+IF NOT EXISTS (SELECT *
+               FROM INFORMATION_SCHEMA.COLUMNS
+               WHERE TABLE_NAME = '$table'
+               AND COLUMN_NAME = '$column')
+BEGIN
+    ALTER TABLE $table
+    ADD $column $type $nullability
+END
+#+end_src
+
 ** header arguments on call lines
    :PROPERTIES:
    :DATE:     2011-09-11
