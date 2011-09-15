@@ -492,14 +492,12 @@ and verbiage to end the same paragraph.
 #+results:
 : [[file:./cv.cls]]
 
-#+begin_src sh :results org
+#+begin_src sh :results raw scalar
    echo "[[file:./cv.cls]]"
 #+end_src
 
 #+results:
-#+BEGIN_ORG
-[[file:\./cv\.cls]]
-#+END_ORG
+[[file:./cv.cls]]
 
 ** java code block
    :PROPERTIES:
