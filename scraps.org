@@ -7,6 +7,17 @@
   :ID:       96eaa17f-f1b6-4958-acb1-e271045fdfa2
   :DATE:     2011-09-03
   :END:
+** simple R session
+   :PROPERTIES:
+   :DATE:     2011-09-21
+   :END:
+#+begin_src R :session R
+  paste("Yep!")
+#+end_src
+
+#+results:
+: Yep!
+
 ** should this throw an error for no variable definition
    :PROPERTIES:
    :DATE:     2011-09-15
