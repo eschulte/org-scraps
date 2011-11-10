@@ -70,7 +70,7 @@
    <span class="org-special-keyword">:DATE:</span>     <span class="org-property-value">2010-06-07</span>
 <span class="org-special-keyword">   :END:</span>
 
-<span class="org-meta-line">#+results: in-situ
+<span class="org-meta-line">#+name: in-situ
 </span><span class="org-code">: update me in place please -- Mon Jun  7 16:44:44 2010
 : update me in place please -- Mon Jun  7 16:44:43 2010
 : update me in place please -- Mon Jun  7 16:44:42 2010
@@ -82,13 +82,13 @@
 </span>
 the results should be <span class="bold">*above*</span> the block
 
-<span class="org-meta-line">#+srcname: in-situ
+<span class="org-meta-line">#+name: in-situ
 </span><span class="org-block-begin-line">#+begin_src emacs-lisp :results prepend
 </span>  <span class="starter-kit-paren">(</span>format <span class="string">"update me in place please -- %s"</span>
           <span class="starter-kit-paren">(</span>current-time-string<span class="starter-kit-paren">))
 </span><span class="org-block-end-line">#+end_src
 </span>
-<span class="org-meta-line">#+srcname: in-situ
+<span class="org-meta-line">#+name: in-situ
 </span><span class="org-block-begin-line">#+begin_src emacs-lisp :results append
 </span>  <span class="starter-kit-paren">(</span>format <span class="string">"update me in place please (at the bottom) -- %s"</span>
           <span class="starter-kit-paren">(</span>current-time-string<span class="starter-kit-paren">))

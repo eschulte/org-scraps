@@ -63,12 +63,12 @@
 <span class="org-table">| 0 | heat      |    30 |</span>
 <span class="org-table">| 1 | heat      |    30 |</span>
 
-<span class="org-meta-line">#+source: func5
+<span class="org-meta-line">#+name: func5
 </span><span class="org-block-begin-line">#+begin_src R :var name=data :var a="one" :colnames yes
 </span>  names(name)
 <span class="org-block-end-line">#+end_src
 </span>
-<span class="org-meta-line">#+results: func5
+<span class="org-meta-line">#+name: func5
 </span><span class="org-table">| x         |</span>
 <span class="org-table">|-----------|</span>
 <span class="org-table">| x         |</span>
@@ -77,7 +77,7 @@
 
 <span class="org-meta-line">#+call: func5(name=data, a="two") :colnames yes
 </span>
-<span class="org-meta-line">#+results: func5(name=data, a="two")
+<span class="org-meta-line">#+name: func5(name=data, a="two")
 </span><span class="org-table">| x         |</span>
 <span class="org-table">|-----------|</span>
 <span class="org-table">| x         |</span>

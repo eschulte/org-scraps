@@ -9,26 +9,6 @@
         color: #E6E1DC;
         background-color: #232323;
       }
-      .comment {
-        /* font-lock-comment-face */
-        color: #BC9458;
-        font-style: italic;
-      }
-      .comment-delimiter {
-        /* font-lock-comment-delimiter-face */
-        color: #BC9458;
-        font-style: italic;
-      }
-      .org-block-begin-line {
-        /* org-block-begin-line */
-        color: #BC9458;
-        font-style: italic;
-      }
-      .org-block-end-line {
-        /* org-block-end-line */
-        color: #BC9458;
-        font-style: italic;
-      }
       .org-code {
         /* org-code */
         color: #b3b3b3;
@@ -36,11 +16,6 @@
       .org-level-2 {
         /* org-level-2 */
         color: #b0c4de;
-      }
-      .org-meta-line {
-        /* org-meta-line */
-        color: #BC9458;
-        font-style: italic;
       }
       .org-property-value {
       }
@@ -51,10 +26,6 @@
       .org-table {
         /* org-table */
         color: #87cefa;
-      }
-      .starter-kit-paren {
-        /* starter-kit-paren-face */
-        color: #7f7f7f;
       }
 
       a {
@@ -76,19 +47,19 @@
    <span class="org-special-keyword">:DATE:</span>     <span class="org-property-value">2010-06-10</span>
 <span class="org-special-keyword">   :END:</span>
 
-<span class="org-meta-line">    #+source: time</span>
-<span class="org-block-begin-line">    #+begin_src emacs-lisp :results append
-</span>      <span class="comment-delimiter">;; </span><span class="comment">(list (list (current-time-string)))
-</span>      <span class="starter-kit-paren">(</span>current-time-string<span class="starter-kit-paren">)
-</span><span class="org-block-end-line">    #+end_src
-</span>
-<span class="org-meta-line">    #+results: time</span>
+    #+name: time
+    #+begin_src emacs-lisp :results append
+      ;; (list (list (current-time-string)))
+      (current-time-string)
+    #+end_src
+
+    #+name: time
     <span class="org-table">| 1 | 2 | 3 |</span>
 
 
-<span class="org-meta-line">        #+call: time() :results prepend</span>
+        #+call: time() :results prepend
 
-<span class="org-meta-line">        #+results: time()</span>
+        #+name: time()
         <span class="org-table">| 1 | 2 | 3 |</span>
         <span class="org-code">: Thu Jun 10 14:13:21 2010
 </span>        <span class="org-code">: Thu Jun 10 14:13:21 2010

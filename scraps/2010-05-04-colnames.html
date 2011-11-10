@@ -76,7 +76,7 @@
 </span><span class="keyword">return</span> [[val + <span class="string">'*'</span> <span class="keyword">for</span> val <span class="keyword">in</span> row] <span class="keyword">for</span> row <span class="keyword">in </span>tab]
 <span class="org-block-end-line">#+end_src
 </span>
-<span class="org-meta-line">#+results:
+<span class="org-meta-line">#+name:
 </span><span class="org-table">| a  | b  | c  |</span>
 <span class="org-table">|----+----+----|</span>
 <span class="org-table">| d* | e* | f* |</span>
@@ -91,7 +91,7 @@
 </span>tab.map{|r| r.map{|e| e+<span class="string">"*"}</span> }
 <span class="org-block-end-line">#+end_src
 </span>
-<span class="org-meta-line">#+results:
+<span class="org-meta-line">#+name:
 </span><span class="org-table">| a  | b  | c  |</span>
 <span class="org-table">|----+----+----|</span>
 <span class="org-table">| d* | e* | f* |</span>

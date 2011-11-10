@@ -9,6 +9,11 @@
         color: #E6E1DC;
         background-color: #232323;
       }
+      .comment {
+        /* font-lock-comment-face */
+        color: #BC9458;
+        font-style: italic;
+      }
       .org-block-begin-line {
         /* org-block-begin-line */
         color: #BC9458;
@@ -18,10 +23,6 @@
         /* org-block-end-line */
         color: #BC9458;
         font-style: italic;
-      }
-      .org-code {
-        /* org-code */
-        color: #b3b3b3;
       }
       .org-level-2 {
         /* org-level-2 */
@@ -38,9 +39,9 @@
         /* org-special-keyword */
         color: #CC7833;
       }
-      .org-tag {
-        /* org-tag */
-        font-weight: bold;
+      .string {
+        /* font-lock-string-face */
+        color: #A5C261;
       }
 
       a {
@@ -57,17 +58,25 @@
   </head>
   <body>
     <pre>
-<span class="org-level-2">** pulling information from tags                                       </span><span class="org-level-2"><span class="org-tag">:blue:</span></span>
+<span class="org-level-2">** should this throw an error for no variable definition</span>
 <span class="org-special-keyword">   :PROPERTIES:</span>
-   <span class="org-special-keyword">:DATE:</span>     <span class="org-property-value">2010-08-30</span>
+   <span class="org-special-keyword">:DATE:</span>     <span class="org-property-value">2011-09-15</span>
 <span class="org-special-keyword">   :END:</span>
+Evaluating this block should raise an error that there are
+uninitialized variables.
 
-<span class="org-block-begin-line">#+begin_src R :var color=(car (org-get-tags-at (point))) :tangle example.R
-</span>  color
+<span class="org-meta-line">#+name: add-column-in-table(table="", column="", something, type="", else, nullability)
+</span><span class="org-block-begin-line">#+begin_src sql
+</span><span class="comment">-- add column `$column' (if column does not exist yet)
+</span>IF NOT EXISTS (SELECT *
+               FROM INFORMATION_SCHEMA.COLUMNS
+               WHERE TABLE_NAME = <span class="string">'$table'</span>
+               AND COLUMN_NAME = <span class="string">'$column')</span>
+BEGIN
+    ALTER TABLE $table
+    ADD $column $type $nullability
+END
 <span class="org-block-end-line">#+end_src
-</span>
-<span class="org-meta-line">#+name:
-</span><span class="org-code">: blue
 </span>
 </pre>
   </body>

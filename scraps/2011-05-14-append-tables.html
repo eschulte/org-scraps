@@ -61,20 +61,20 @@
 <span class="org-special-keyword">   :PROPERTIES:</span>
    <span class="org-special-keyword">:DATE:</span>     <span class="org-property-value">2011-05-14</span>
 <span class="org-special-keyword">   :END:</span>
-<span class="org-meta-line">#+data: table-names
+<span class="org-meta-line">#+name: table-names
 </span>- first-table
 - second-table
 - third-table
 
-<span class="org-meta-line">#+data: first-table
+<span class="org-meta-line">#+name: first-table
 </span><span class="org-table">| a | 1 |</span>
 <span class="org-table">| b | 2 |</span>
 
-<span class="org-meta-line">#+data: second-table
+<span class="org-meta-line">#+name: second-table
 </span><span class="org-table">| c | 3 |</span>
 <span class="org-table">| d | 4 |</span>
 
-<span class="org-meta-line">#+data: third-table
+<span class="org-meta-line">#+name: third-table
 </span><span class="org-table">| e | 5 |</span>
 <span class="org-table">| f | 6 |</span>
 
@@ -82,7 +82,7 @@
 </span>  <span class="starter-kit-paren">(</span>mapcar #'org-babel-ref-resolve table-names<span class="starter-kit-paren">)
 </span><span class="org-block-end-line">#+end_src
 </span>
-<span class="org-meta-line">#+results:
+<span class="org-meta-line">#+name:
 </span><span class="org-table">| (a 1) | (b 2) |</span>
 <span class="org-table">| (c 3) | (d 4) |</span>
 <span class="org-table">| (e 5) | (f 6) |</span>

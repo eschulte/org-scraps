@@ -66,14 +66,14 @@
    <span class="org-special-keyword">:DATE:</span>     <span class="org-property-value">2011-08-28</span>
 <span class="org-special-keyword">   :END:</span>
 
-<span class="org-meta-line">#+source: stuff
+<span class="org-meta-line">#+name: stuff
 </span><span class="org-block-begin-line">#+begin_src sh
 </span>  <span class="builtin">echo</span> 1
   <span class="builtin">echo</span> 2
   <span class="builtin">echo </span>3
 <span class="org-block-end-line">#+end_src
 </span>
-<span class="org-meta-line">#+source: last-of-stuff
+<span class="org-meta-line">#+name: last-of-stuff
 </span><span class="org-block-begin-line">#+begin_src sh :var input=stuff
 </span>  <span class="builtin">echo</span> <span class="string">"$input" </span>|tail -1
 <span class="org-block-end-line">#+end_src

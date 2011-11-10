@@ -81,14 +81,14 @@
 </span>  [1, [2], 3, 4]
 <span class="org-block-end-line">#+end_src
 </span>
-<span class="org-meta-line">#+results:
+<span class="org-meta-line">#+name:
 </span><span class="org-table">| 1 | (2) | 3 | 4 |</span>
 
 <span class="org-block-begin-line">#+begin_src ruby :results output :session
 </span>  [1, 2, 3, 4, 6].map{|n| puts n}
 <span class="org-block-end-line">#+end_src
 </span>
-<span class="org-meta-line">#+results:
+<span class="org-meta-line">#+name:
 </span><span class="org-code">: 1
 : 2
 : 3
@@ -99,7 +99,7 @@
 </span>  <span class="keyword">print </span>9
 <span class="org-block-end-line">#+end_src
 </span>
-<span class="org-meta-line">#+results: R-with-colnames
+<span class="org-meta-line">#+name: R-with-colnames
 </span><span class="org-table">| one |</span>
 <span class="org-table">|-----|</span>
 <span class="org-table">| 1   |</span>
@@ -108,7 +108,7 @@
 </span>  <span class="string">"something"
 </span><span class="org-block-end-line">#+end_src
 </span>
-<span class="org-meta-line">#+results:
+<span class="org-meta-line">#+name:
 </span><span class="org-code">: [1] "something"
 </span>
 <span class="org-block-begin-line">#+begin_src R :session *R* :results output
@@ -118,7 +118,7 @@
   4
 <span class="org-block-end-line">#+end_src
 </span>
-<span class="org-meta-line">#+results:
+<span class="org-meta-line">#+name:
 </span><span class="org-code">: [1] 1
 : [1] 2
 : [1] 3
@@ -129,7 +129,7 @@
   print <span class="string">"9\n";</span>
 <span class="org-block-end-line">#+end_src
 </span>
-<span class="org-meta-line">#+results:
+<span class="org-meta-line">#+name:
 </span><span class="org-code">: 8
 : 9
 </span>
@@ -137,35 +137,35 @@
 </span>  <span class="starter-kit-paren">(</span><span class="builtin">+</span> 8 7<span class="starter-kit-paren">)
 </span><span class="org-block-end-line">#+end_src
 </span>
-<span class="org-meta-line">#+results:
+<span class="org-meta-line">#+name:
 </span><span class="org-code">: 15
 </span>
 <span class="org-block-begin-line">#+begin_src clojure :session *clj*
 </span>  <span class="starter-kit-paren">(</span><span class="builtin">println</span> <span class="string">"eric"</span><span class="starter-kit-paren">)
 </span><span class="org-block-end-line">#+end_src
 </span>
-<span class="org-meta-line">#+results:
+<span class="org-meta-line">#+name:
 </span><span class="org-code">: nil
 </span>
 <span class="org-block-begin-line">#+begin_src perl :results value
 </span>  8
 <span class="org-block-end-line">#+end_src
 </span>
-<span class="org-meta-line">#+results:
+<span class="org-meta-line">#+name:
 </span><span class="org-code">: 8
 </span>
 <span class="org-block-begin-line">#+begin_src c++ :includes '(&lt;stdio.h&gt; &lt;math.h&gt; &lt;cstdlib&gt; &lt;time.h&gt;)
 </span>  printf(<span class="string">"eric schulte\n")</span>;
 <span class="org-block-end-line">#+end_src
 </span>
-<span class="org-meta-line">#+results:
+<span class="org-meta-line">#+name:
 </span><span class="org-code">: eric schulte
 </span>
 <span class="org-block-begin-line">#+begin_src sh
 </span>  <span class="builtin">echo </span>78
 <span class="org-block-end-line">#+end_src
 </span>
-<span class="org-meta-line">#+results:
+<span class="org-meta-line">#+name:
 </span><span class="org-code">: 78
 </span>
 </pre>

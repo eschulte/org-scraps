@@ -32,8 +32,6 @@
         color: #BC9458;
         font-style: italic;
       }
-      .org-property-value {
-      }
       .org-special-keyword {
         /* org-special-keyword */
         color: #CC7833;
@@ -67,14 +65,14 @@
     <pre>
 <span class="org-level-2">** detangling example</span>
 <span class="org-special-keyword">   :PROPERTIES:</span>
-   <span class="org-special-keyword">:tangle:</span>   <span class="org-property-value">yes</span>
-   <span class="org-special-keyword">:comments:</span> <span class="org-property-value">yes</span>
-   <span class="org-special-keyword">:shebang:</span>  <span class="org-property-value">#!/bin/sh</span>
-   <span class="org-special-keyword">:ID:</span>       <span class="org-property-value">7a22cf71-6be3-4fca-a700-4c8be8237303</span>
+   :tangle:   yes
+   :comments: yes
+   :shebang:  #!/bin/sh
+   :ID:       7a22cf71-6be3-4fca-a700-4c8be8237303
    :DATE:     2011-04-01
 <span class="org-special-keyword">   :END:</span>
 
-<span class="org-meta-line">#+source: sh-for-tangling
+<span class="org-meta-line">#+name: sh-for-tangling
 </span><span class="org-block-begin-line">#+begin_src sh
 </span>  <span class="builtin">echo</span> <span class="string">"this is the `sh-for-tangling' code block"</span>
   <span class="variable-name">num</span>=<span class="sh-quoted-exec">`expr 1 + 1`</span>

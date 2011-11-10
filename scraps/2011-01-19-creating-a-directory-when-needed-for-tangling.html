@@ -9,13 +9,10 @@
         color: #E6E1DC;
         background-color: #232323;
       }
-      .doc {
-        /* font-lock-doc-face */
-        color: #A5C261;
-      }
-      .function-name {
-        /* font-lock-function-name-face */
-        color: #FFC66D;
+      .comment {
+        /* font-lock-comment-face */
+        color: #BC9458;
+        font-style: italic;
       }
       .keyword {
         /* font-lock-keyword-face */
@@ -35,6 +32,11 @@
         /* org-level-2 */
         color: #b0c4de;
       }
+      .org-meta-line {
+        /* org-meta-line */
+        color: #BC9458;
+        font-style: italic;
+      }
       .org-property-value {
       }
       .org-special-keyword {
@@ -48,10 +50,6 @@
       .string {
         /* font-lock-string-face */
         color: #A5C261;
-      }
-      .type {
-        /* font-lock-type-face */
-        color: #ffffff;
       }
 
       a {
@@ -72,16 +70,16 @@
 <span class="org-special-keyword">   :PROPERTIES:</span>
    <span class="org-special-keyword">:DATE:</span>     <span class="org-property-value">2011-01-19</span>
 <span class="org-special-keyword">   :END:</span>
-<span class="org-block-begin-line">#+begin_src clojure :tangle (prog1 "src/foo.clj" (make-directory "src" "."))
-</span>  <span class="starter-kit-paren">(</span><span class="keyword">ns</span> something<span class="starter-kit-paren">)
-</span><span class="org-block-end-line">#+end_src
-</span>
+<span class="comment">#+begin_src clojure :tangle (prog1 "src/foo.clj" (make-directory "src" "."))</span>
+  (ns something)
+<span class="comment">#+end_src</span>
+
 a helper function for the above
-<span class="org-block-begin-line">#+begin_src emacs-lisp
-</span>  <span class="starter-kit-paren">(</span><span class="keyword">defun</span> <span class="function-name">mkdir-p</span> <span class="starter-kit-paren">(</span>file <span class="type">&amp;optional</span> dir<span class="starter-kit-paren">)</span>
-    <span class="doc">"Create any parent directories of FILE if missing and return FILE."</span>
-    <span class="starter-kit-paren">(</span>make-directory <span class="starter-kit-paren">(</span>file-name-directory file<span class="starter-kit-paren">)</span> <span class="starter-kit-paren">(</span>or dir <span class="string">"."</span><span class="starter-kit-paren">))</span> file<span class="starter-kit-paren">)
-</span><span class="org-block-end-line">#+end_src
+<span class="comment">#+begin_src emacs-lisp</span>
+  (defun mkdir-p (file &amp;optional dir)
+    "Create any parent directories of FILE if missing and return FILE."
+    (make-directory (file-name-directory file) (or dir ".")) file)
+<span class="org-meta-line">#+end_src
 </span>
 allows the following
 <span class="org-block-begin-line">#+begin_src clojure :tangle (mkdir-p "src/foo.clj")

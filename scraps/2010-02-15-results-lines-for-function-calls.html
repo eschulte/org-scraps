@@ -32,6 +32,8 @@
         color: #BC9458;
         font-style: italic;
       }
+      .org-property-value {
+      }
       .org-special-keyword {
         /* org-special-keyword */
         color: #CC7833;
@@ -61,19 +63,19 @@
     <pre>
 <span class="org-level-2">** results lines for function calls</span>
 <span class="org-special-keyword">   :PROPERTIES:</span>
-   :DATE:     2010-02-15
+   <span class="org-special-keyword">:DATE:</span>     <span class="org-property-value">2010-02-15</span>
 <span class="org-special-keyword">   :END:</span>
 
 <span class="org-meta-line">#+call: fibonacci(input=5) :resname eric
 </span>
-<span class="org-meta-line">#+results:
+<span class="org-meta-line">#+name:
 </span><span class="org-code">: 8
 </span>
 <span class="org-block-begin-line">#+begin_src emacs-lisp :var fib=fibonacci(input=5)
 </span>  <span class="starter-kit-paren">(</span>message <span class="string">"fib(5)=%d"</span> fib<span class="starter-kit-paren">)
 </span><span class="org-block-end-line">#+end_src
 </span>
-<span class="org-meta-line">#+results:
+<span class="org-meta-line">#+name:
 </span><span class="org-code">: fib(5)=8
 </span>
 </pre>

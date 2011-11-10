@@ -9,13 +9,8 @@
         color: #E6E1DC;
         background-color: #232323;
       }
-      .org-block-begin-line {
-        /* org-block-begin-line */
-        color: #BC9458;
-        font-style: italic;
-      }
-      .org-block-end-line {
-        /* org-block-end-line */
+      .comment {
+        /* font-lock-comment-face */
         color: #BC9458;
         font-style: italic;
       }
@@ -27,24 +22,11 @@
         /* org-level-2 */
         color: #b0c4de;
       }
-      .org-meta-line {
-        /* org-meta-line */
-        color: #BC9458;
-        font-style: italic;
-      }
       .org-property-value {
       }
       .org-special-keyword {
         /* org-special-keyword */
         color: #CC7833;
-      }
-      .starter-kit-paren {
-        /* starter-kit-paren-face */
-        color: #7f7f7f;
-      }
-      .string {
-        /* font-lock-string-face */
-        color: #A5C261;
       }
 
       a {
@@ -66,22 +48,22 @@
    <span class="org-special-keyword">:DATE:</span>     <span class="org-property-value">2010-06-07</span>
 <span class="org-special-keyword">   :END:</span>
 
-<span class="org-meta-line">   #+srcname: i-am-indented</span>
-<span class="org-block-begin-line">   #+begin_src emacs-lisp 
-</span>     <span class="starter-kit-paren">(</span>message <span class="string">"i am indented"</span><span class="starter-kit-paren">)
-</span><span class="org-block-end-line">   #+end_src
+   #+name: i-am-indented
+   #+begin_src emacs-lisp 
+     (message "i am indented")
+   #+end_src
+
+<span class="comment">#+name: i-am-indented</span>
+<span class="org-code">: i am indented
 </span>
-<span class="org-meta-line">#+results: i-am-indented
-</span><span class="org-code">: i am indented
+<span class="comment">#+begin_src emacs-lisp :var output=i-am-indented</span>
+  (length output)
+<span class="comment">#+end_src</span>
+
+<span class="comment">#+name:</span>
+<span class="org-code">: 13
 </span>
-<span class="org-block-begin-line">#+begin_src emacs-lisp :var output=i-am-indented
-</span>  <span class="starter-kit-paren">(</span>length output<span class="starter-kit-paren">)
-</span><span class="org-block-end-line">#+end_src
-</span>
-<span class="org-meta-line">#+results:
-</span><span class="org-code">: 13
-</span>
-<span class="org-meta-line">  #+results:</span>
+  #+name:
   <span class="org-code">: eric
 </span>
 </pre>

@@ -81,30 +81,30 @@ using node.js
   <span class="keyword">return </span>n
 <span class="org-block-end-line">#+end_src
 </span>
-<span class="org-meta-line">#+results:
+<span class="org-meta-line">#+name:
 </span><span class="org-code">: 1
 </span>
-<span class="org-meta-line">#+source: cars
+<span class="org-meta-line">#+name: cars
 </span><span class="org-block-begin-line">#+begin_src js
 </span>  <span class="keyword">var</span> <span class="variable-name">cars</span> = [<span class="string">"Saab"</span>,<span class="string">"Volvo"</span>,<span class="string">"BMW"</span>];
   <span class="keyword">return </span>cars;
 <span class="org-block-end-line">#+end_src
 </span>
-<span class="org-meta-line">#+results: cars
+<span class="org-meta-line">#+name: cars
 </span><span class="org-table">| Saab | Volvo | BMW |</span>
 
 <span class="org-block-begin-line">#+begin_src js :var cars=cars
 </span>  <span class="keyword">return </span>cars[0][0];
 <span class="org-block-end-line">#+end_src
 </span>
-<span class="org-meta-line">#+results:
+<span class="org-meta-line">#+name:
 </span><span class="org-code">: Saab
 </span>
 <span class="org-block-begin-line">#+begin_src js :var cars=cars
 </span>  <span class="keyword">return </span>cars[0].length;
 <span class="org-block-end-line">#+end_src
 </span>
-<span class="org-meta-line">#+results:
+<span class="org-meta-line">#+name:
 </span><span class="org-code">: 3
 </span>
 </pre>

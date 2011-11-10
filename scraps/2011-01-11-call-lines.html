@@ -61,19 +61,19 @@
 <span class="org-special-keyword">   :PROPERTIES:</span>
    <span class="org-special-keyword">:DATE:</span>     <span class="org-property-value">2011-01-11</span>
 <span class="org-special-keyword">   :END:</span>
-<span class="org-meta-line">#+source: doubler
+<span class="org-meta-line">#+name: doubler
 </span><span class="org-block-begin-line">#+begin_src emacs-lisp :var n=2
 </span>  <span class="starter-kit-paren">(</span>* n 2<span class="starter-kit-paren">)
 </span><span class="org-block-end-line">#+end_src
 </span>
 <span class="org-meta-line">#+call: doubler(n=3)
 </span>
-<span class="org-meta-line">#+results: doubler(n=3)
+<span class="org-meta-line">#+name: doubler(n=3)
 </span><span class="org-code">: 6
 </span>
 <span class="org-meta-line">#+call: doubler[:var n=3]()
 </span>
-<span class="org-meta-line">#+results: doubler[:var n=3]()
+<span class="org-meta-line">#+name: doubler[:var n=3]()
 </span><span class="org-code">: 6
 </span>
 </pre>

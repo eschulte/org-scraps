@@ -36,8 +36,6 @@
         color: #BC9458;
         font-style: italic;
       }
-      .org-property-value {
-      }
       .org-special-keyword {
         /* org-special-keyword */
         color: #CC7833;
@@ -71,21 +69,21 @@
     <pre>
 <span class="org-level-2">** eval query</span>
 <span class="org-special-keyword">   :PROPERTIES:</span>
-   <span class="org-special-keyword">:DATE:</span>     <span class="org-property-value">2010-12-21</span>
+   :DATE:     2010-12-21
 <span class="org-special-keyword">   :END:</span>
 <span class="org-block-begin-line">#+begin_src emacs-lisp
 </span>  <span class="starter-kit-paren">(</span>setq org-confirm-babel-evaluate
         <span class="starter-kit-paren">(</span><span class="keyword">lambda</span> <span class="starter-kit-paren">(</span>lang body<span class="starter-kit-paren">)</span> <span class="starter-kit-paren">(</span>not <span class="starter-kit-paren">(</span>equal <span class="string">"ditaa"</span> lang<span class="starter-kit-paren">))))
 </span><span class="org-block-end-line">#+end_src
 </span>
-<span class="org-meta-line">#+results:
+<span class="org-meta-line">#+name:
 </span><span class="org-table">| lambda | (lang body) | (not (equal ditaa lang)) |</span>
 
 <span class="org-block-begin-line">#+begin_src emacs-lisp :eval query
 </span>  <span class="starter-kit-paren">(</span>message <span class="string">"eval'd"</span><span class="starter-kit-paren">)
 </span><span class="org-block-end-line">#+end_src
 </span>
-<span class="org-meta-line">#+results:
+<span class="org-meta-line">#+name:
 </span><span class="org-code">: eval'd
 </span>
 <span class="org-block-begin-line">#+begin_src ditaa

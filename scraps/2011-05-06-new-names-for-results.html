@@ -74,14 +74,14 @@
    <span class="org-special-keyword">:DATE:</span>     <span class="org-property-value">2011-05-06</span>
 <span class="org-special-keyword">   :END:</span>
 
-<span class="org-meta-line">#+results: simple
+<span class="org-meta-line">#+name: simple
 </span><span class="org-code">: 1
 </span>
 <span class="org-block-begin-line">#+begin_src emacs-lisp :var data=simple
 </span>  data
 <span class="org-block-end-line">#+end_src
 </span>
-<span class="org-meta-line">#+results:
+<span class="org-meta-line">#+name:
 </span><span class="org-code">: 1
 </span>
 changing the variable used to label data
@@ -90,14 +90,14 @@ changing the variable used to label data
         <span class="string">"^[ \t]*#\\+</span><span class="string"><span class="regexp-grouping-backslash">\\</span></span><span class="string"><span class="regexp-grouping-construct">(</span></span><span class="string">TBLNAME</span><span class="string"><span class="regexp-grouping-backslash">\\</span></span><span class="string"><span class="regexp-grouping-construct">|</span></span><span class="string">RESNAME</span><span class="string"><span class="regexp-grouping-backslash">\\</span></span><span class="string"><span class="regexp-grouping-construct">|</span></span><span class="string">RESULTS</span><span class="string"><span class="regexp-grouping-backslash">\\</span></span><span class="string"><span class="regexp-grouping-construct">|</span></span><span class="string">DATA</span><span class="string"><span class="regexp-grouping-backslash">\\</span></span><span class="string"><span class="regexp-grouping-construct">)</span></span><span class="string">:[ \t]*%s[ \t]*$"</span><span class="starter-kit-paren">)
 </span><span class="org-block-end-line">#+end_src
 </span>
-<span class="org-meta-line">#+data: not-so-simple
+<span class="org-meta-line">#+name: not-so-simple
 </span><span class="org-code">: 2
 </span>
 <span class="org-block-begin-line">#+begin_src emacs-lisp :var data=not-so-simple
 </span>  data
 <span class="org-block-end-line">#+end_src
 </span>
-<span class="org-meta-line">#+results:
+<span class="org-meta-line">#+name:
 </span><span class="org-code">: 2
 </span>
 </pre>

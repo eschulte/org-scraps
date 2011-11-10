@@ -70,12 +70,12 @@
 </span>  <span class="starter-kit-paren">(</span>first lst<span class="starter-kit-paren">)
 </span><span class="org-block-end-line">#+end_src
 </span>
-<span class="org-meta-line">#+results:
+<span class="org-meta-line">#+name:
 </span><span class="org-code">: 0
 </span>
 or as a noweb reference
 
-<span class="org-meta-line">#+data: external-list
+<span class="org-meta-line">#+name: external-list
 </span>- 0
 - 1
 - 2
@@ -84,7 +84,7 @@ or as a noweb reference
 </span>  <span class="builtin">echo </span>&lt;&lt;external-list()[0]&gt;&gt;
 <span class="org-block-end-line">#+end_src
 </span>
-<span class="org-meta-line">#+results:
+<span class="org-meta-line">#+name:
 </span><span class="org-code">: 0
 </span>
 </pre>

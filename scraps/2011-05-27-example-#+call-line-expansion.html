@@ -77,14 +77,14 @@
 <span class="org-special-keyword">   :END:</span>
 this code block peeks inside of the `params' variable which is used by
 babel during code block evaluation
-<span class="org-meta-line">#+source: callee
+<span class="org-meta-line">#+name: callee
 </span><span class="org-block-begin-line">#+begin_src emacs-lisp
 </span>  <span class="comment-delimiter">;; </span><span class="comment">this is cheating and shouldn't be done in user code :)
 </span>  <span class="starter-kit-paren">(</span>or <span class="starter-kit-paren">(</span>cdr <span class="starter-kit-paren">(</span>assoc <span class="builtin">:foo</span> params<span class="starter-kit-paren">))</span> 'unset<span class="starter-kit-paren">)
 </span><span class="org-block-end-line">#+end_src
 </span>
 this code block evaluates to the following,
-<span class="org-meta-line">#+results: callee
+<span class="org-meta-line">#+name: callee
 </span><span class="org-code">: unset
 </span>
 this call line,
@@ -97,7 +97,7 @@ by Babel.
 <span class="org-block-end-line">#+end_src
 </span>
 this code block evaluates to the following,
-<span class="org-meta-line">#+results:
+<span class="org-meta-line">#+name:
 </span><span class="org-block-begin-line">#+BEGIN_ORG
 </span>nothing<span class="org-meta-line">
 </span><span class="org-block-end-line">#+END_ORG

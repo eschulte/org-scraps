@@ -77,7 +77,7 @@
 <span class="org-special-keyword">   :PROPERTIES:</span>
    <span class="org-special-keyword">:DATE:</span>     <span class="org-property-value">2011-03-07</span>
 <span class="org-special-keyword">   :END:</span>
-<span class="org-meta-line">#+source: clean
+<span class="org-meta-line">#+name: clean
 </span><span class="org-block-begin-line">#+begin_src emacs-lisp :var in=""
 </span>  <span class="starter-kit-paren">(</span><span class="keyword">flet</span> <span class="starter-kit-paren">((</span>clean <span class="starter-kit-paren">(</span>in<span class="starter-kit-paren">)</span>
                 <span class="starter-kit-paren">(</span><span class="keyword">if</span> <span class="starter-kit-paren">(</span>listp in<span class="starter-kit-paren">)</span>
@@ -88,7 +88,7 @@
     <span class="starter-kit-paren">(</span>clean in<span class="starter-kit-paren">))
 </span><span class="org-block-end-line">#+end_src
 </span>
-<span class="org-meta-line">#+results: regexps
+<span class="org-meta-line">#+name: regexps
 </span><span class="org-table">| first  | (a&#166;b) |</span>
 <span class="org-table">| second | (1&#166;2) |</span>
 
@@ -96,7 +96,7 @@
 </span>  $<span class="variable-name">a</span>; $<span class="variable-name">b;</span>
 <span class="org-block-end-line">#+end_src
 </span>
-<span class="org-meta-line">#+results:
+<span class="org-meta-line">#+name:
 </span><span class="org-code">: (1|2)
 </span>
 </pre>

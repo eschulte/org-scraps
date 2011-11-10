@@ -84,7 +84,7 @@
 <span class="org-special-keyword">   :END:</span>
 I want to <span class="bold">*add a column*</span> to the following table.
 
-<span class="org-meta-line">#+results: table-message
+<span class="org-meta-line">#+name: table-message
 </span><span class="org-table">| This is line 1 of the message.        |</span>
 <span class="org-table">| This is line 2 of the message.        |</span>
 <span class="org-table">| This is the last line of the message. |</span>
@@ -105,7 +105,7 @@ the easiest (for me) would be with the elisp <span class="org-code">=mapcar=</sp
 </span>  <span class="starter-kit-paren">(</span>mapcar <span class="starter-kit-paren">(</span><span class="keyword">lambda</span> <span class="starter-kit-paren">(</span>row<span class="starter-kit-paren">)</span> <span class="starter-kit-paren">(</span>cons <span class="string">"New col"</span> row<span class="starter-kit-paren">))</span> tbl<span class="starter-kit-paren">)
 </span><span class="org-block-end-line">#+end_src
 </span>
-<span class="org-meta-line">#+results:
+<span class="org-meta-line">#+name:
 </span><span class="org-table">| New col | This is line 1 of the message.        |</span>
 <span class="org-table">| New col | This is line 2 of the message.        |</span>
 <span class="org-table">| New col | This is the last line of the message. |</span>
@@ -113,12 +113,12 @@ the easiest (for me) would be with the elisp <span class="org-code">=mapcar=</sp
 <span class="bold">*First*</span> trial: add a column whose cell contents will be <span class="bold">*fixed*</span> (here,
 equal to <span class="org-code">=New col=</span>).
 
-<span class="org-meta-line">#+srcname: add-col
+<span class="org-meta-line">#+name: add-col
 </span><span class="org-block-begin-line">#+begin_src sh :var data=table-message :results output raw :exports both
 </span><span class="builtin">echo</span> <span class="string">"$data"</span> | awk <span class="string">'// {print "| New col | " $0 " |";}'
 </span><span class="org-block-end-line">#+end_src
 </span>
-<span class="org-meta-line">#+results: add-col
+<span class="org-meta-line">#+name: add-col
 </span><span class="org-table">| New col | This is line 1 of the message.        |</span>
 <span class="org-table">| New col | This is line 2 of the message.        |</span>
 <span class="org-table">| New col | This is the last line of the message. |</span>

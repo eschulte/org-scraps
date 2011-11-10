@@ -57,13 +57,13 @@
 <span class="org-special-keyword">   :PROPERTIES:</span>
    <span class="org-special-keyword">:DATE:</span>     <span class="org-property-value">2011-08-02</span>
 <span class="org-special-keyword">   :END:</span>
-<span class="org-meta-line">#+source: disk-usage
+<span class="org-meta-line">#+name: disk-usage
 </span><span class="org-block-begin-line">#+begin_src sh :exports both
 </span>  df
 <span class="org-block-end-line">#+end_src
 </span>
 <span class="org-meta-line">#+PLOT: title:"Disk Usage" ind:6 deps:(5) type:2d with:histograms set:"yrange [0:100]"
-#+results: disk-usage
+#+name: disk-usage
 </span><span class="org-table">| Filesystem | 1K-blocks |     Used | Available | Use% | Mounted   | on |</span>
 <span class="org-table">| /dev/sda6  |  28835836 |  8447712 |  18923344 |  31% | /         |    |</span>
 <span class="org-table">| none       |   2997072 |      676 |   2996396 |   1% | /dev      |    |</span>

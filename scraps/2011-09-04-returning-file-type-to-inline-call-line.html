@@ -9,6 +9,20 @@
         color: #E6E1DC;
         background-color: #232323;
       }
+      .builtin {
+        /* font-lock-builtin-face */
+        color: #D0D0FF;
+      }
+      .org-block-begin-line {
+        /* org-block-begin-line */
+        color: #BC9458;
+        font-style: italic;
+      }
+      .org-block-end-line {
+        /* org-block-end-line */
+        color: #BC9458;
+        font-style: italic;
+      }
       .org-level-2 {
         /* org-level-2 */
         color: #b0c4de;
@@ -17,6 +31,11 @@
         /* org-link */
         color: #00ffff;
         text-decoration: underline;
+      }
+      .org-meta-line {
+        /* org-meta-line */
+        color: #BC9458;
+        font-style: italic;
       }
       .org-property-value {
       }
@@ -51,11 +70,11 @@ mus. Nulla posuere. Donec vitae dolor. Nullam tristique diam non
 turpis. call_nothing_to_something()[:results file] <span class="org-link">[[file:something.txt]]</span> Cras placerat
 accumsan nulla. Nullam rutrum. Nam vestibulum accumsan nisl.
 
-#+source: nothing_to_something
-#+begin_src sh :file something.txt
-  echo nothing
-#+end_src
-
+<span class="org-meta-line">#+name: nothing_to_something
+</span><span class="org-block-begin-line">#+begin_src sh :file something.txt
+</span>  <span class="builtin">echo </span>nothing
+<span class="org-block-end-line">#+end_src
+</span>
 </pre>
   </body>
 </html>

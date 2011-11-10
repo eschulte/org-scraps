@@ -66,7 +66,7 @@
 <span class="org-special-keyword">   :PROPERTIES:</span>
    <span class="org-special-keyword">:DATE:</span>     <span class="org-property-value">2010-11-30</span>
 <span class="org-special-keyword">   :END:</span>
-<span class="org-meta-line">#+results: sql-param
+<span class="org-meta-line">#+name: sql-param
 </span><span class="org-table">| table       | valueTable0       |</span>
 <span class="org-table">| column      | valueColumn0      |</span>
 <span class="org-table">| type        | valueType0        |</span>
@@ -74,7 +74,7 @@
 
 I want to apply the values onto the following chunk of code:
 
-<span class="org-meta-line">#+srcname: add-column-in-table-0
+<span class="org-meta-line">#+name: add-column-in-table-0
 </span><span class="org-block-begin-line">#+begin_src sql :var table=sql-param[0,1] :var column=sql-param[1,1] :var type=sql-param[2,1] :var nullability=sql-param[3,1]
 </span><span class="comment">-- add column `@column' (if column does not exist yet)
 </span>IF NOT EXISTS (SELECT *

@@ -38,9 +38,9 @@
         /* org-special-keyword */
         color: #CC7833;
       }
-      .org-tag {
-        /* org-tag */
-        font-weight: bold;
+      .string {
+        /* font-lock-string-face */
+        color: #A5C261;
       }
 
       a {
@@ -57,17 +57,16 @@
   </head>
   <body>
     <pre>
-<span class="org-level-2">** pulling information from tags                                       </span><span class="org-level-2"><span class="org-tag">:blue:</span></span>
+<span class="org-level-2">** simple R session</span>
 <span class="org-special-keyword">   :PROPERTIES:</span>
-   <span class="org-special-keyword">:DATE:</span>     <span class="org-property-value">2010-08-30</span>
+   <span class="org-special-keyword">:DATE:</span>     <span class="org-property-value">2011-09-21</span>
 <span class="org-special-keyword">   :END:</span>
-
-<span class="org-block-begin-line">#+begin_src R :var color=(car (org-get-tags-at (point))) :tangle example.R
-</span>  color
+<span class="org-block-begin-line">#+begin_src R :session R
+</span>  paste(<span class="string">"Yep!")</span>
 <span class="org-block-end-line">#+end_src
 </span>
 <span class="org-meta-line">#+name:
-</span><span class="org-code">: blue
+</span><span class="org-code">: Yep!
 </span>
 </pre>
   </body>

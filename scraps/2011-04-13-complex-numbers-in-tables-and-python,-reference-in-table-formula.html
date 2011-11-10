@@ -74,7 +74,7 @@
    <span class="org-special-keyword">:DATE:</span>     <span class="org-property-value">2011-04-13</span>
 <span class="org-special-keyword">   :END:</span>
 
-<span class="org-meta-line">#+source: parameter-variation(data=0)
+<span class="org-meta-line">#+name: parameter-variation(data=0)
 </span><span class="org-block-begin-line">#+begin_src python :result values
 </span>  <span class="keyword">return</span> <span class="string">'text'
 </span><span class="org-block-end-line">#+end_src
@@ -110,7 +110,7 @@
 <span class="org-table">| real:1 complex:2 |</span>
 <span class="org-meta-line">#+TBLFM: @2$1='(sbe real (it @1$1))
 </span>
-<span class="org-meta-line">#+source: real(it='())
+<span class="org-meta-line">#+name: real(it='())
 </span><span class="org-block-begin-line">#+begin_src emacs-lisp
 </span>  <span class="starter-kit-paren">(</span>format <span class="string">"real:%d complex:%d"</span> <span class="starter-kit-paren">(</span>aref it 0<span class="starter-kit-paren">)</span> <span class="starter-kit-paren">(</span>aref it 1<span class="starter-kit-paren">))
 </span><span class="org-block-end-line">#+end_src
@@ -119,7 +119,7 @@
 <span class="org-special-keyword">    :PROPERTIES:</span>
     <span class="org-special-keyword">:DATE:</span>     <span class="org-property-value">2011-04-13</span>
 <span class="org-special-keyword">    :END:</span>
-<span class="org-meta-line">#+results: complex-data
+<span class="org-meta-line">#+name: complex-data
 </span><span class="org-table">|-------------------------------------|</span>
 <span class="org-table">| (0.0331901438056,0.000535222885197) |</span>
 <span class="org-table">|-------------------------------------|</span>
@@ -130,7 +130,7 @@
 <span class="org-special-keyword">    :PROPERTIES:</span>
     <span class="org-special-keyword">:DATE:</span>     <span class="org-property-value">2011-04-13</span>
 <span class="org-special-keyword">    :END:</span>
-<span class="org-meta-line">#+results: complex-data
+<span class="org-meta-line">#+name: complex-data
 </span><span class="org-table">|-------------------------------------|</span>
 <span class="org-table">| (0.0331901438056,0.000535222885197) |</span>
 <span class="org-table">| (0.0333434157791,0.000537930174356) |</span>
@@ -145,7 +145,7 @@
 </span>  <span class="keyword">return </span>data
 <span class="org-block-end-line">#+end_src
 </span>
-<span class="org-meta-line">#+results:
+<span class="org-meta-line">#+name:
 </span><span class="org-table">| (0.0331901438056,0.000535222885197) |</span>
 <span class="org-table">| (0.0333434157791,0.000537930174356) |</span>
 <span class="org-table">| (0.0345727512157,0.000559346040457) |</span>

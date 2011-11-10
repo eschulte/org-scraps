@@ -91,23 +91,23 @@
    <span class="org-special-keyword">:DATE:</span>     <span class="org-property-value">2011-02-20</span>
 <span class="org-special-keyword">   :END:</span>
 directory to search
-<span class="org-meta-line">#+results: graph-dir
+<span class="org-meta-line">#+name: graph-dir
 </span><span class="org-code">: graph-dir
 </span>
 list all files in dir
-<span class="org-meta-line">#+source: graph-files
+<span class="org-meta-line">#+name: graph-files
 </span><span class="org-block-begin-line">#+begin_src sh :results vector :var dir=graph-dir
 </span>  find $<span class="variable-name">dir</span> -type f -exec basename {} <span class="string">\;
 </span><span class="org-block-end-line">#+end_src
 </span>
-<span class="org-meta-line">#+results: graph-files
+<span class="org-meta-line">#+name: graph-files
 </span><span class="org-table">| other |</span>
 <span class="org-table">| dan   |</span>
 <span class="org-table">| eric  |</span>
 <span class="org-table">| seb   |</span>
 
 association of files with mentions
-<span class="org-meta-line">#+source: graph-associations
+<span class="org-meta-line">#+name: graph-associations
 </span><span class="org-block-begin-line">#+begin_src sh :var dir=graph-dir :var files=graph-files
 </span>  <span class="keyword">for</span> i<span class="keyword"> in</span> $<span class="variable-name">files</span>; <span class="keyword">do</span>
       <span class="keyword">for</span> j<span class="keyword"> in</span> <span class="sh-quoted-exec">`grep -l -r $i $dir`</span>;<span class="keyword">do</span>
@@ -116,7 +116,7 @@ association of files with mentions
   <span class="keyword">done
 </span><span class="org-block-end-line">#+end_src
 </span>
-<span class="org-meta-line">#+results: graph-associations
+<span class="org-meta-line">#+name: graph-associations
 </span><span class="org-table">| other | eric |</span>
 <span class="org-table">| other | seb  |</span>
 <span class="org-table">| dan   | eric |</span>
@@ -124,12 +124,12 @@ association of files with mentions
 <span class="org-table">| seb   | dan  |</span>
 
 graphing with dot
-<span class="org-meta-line">#+source: to-dot
+<span class="org-meta-line">#+name: to-dot
 </span><span class="org-block-begin-line">#+begin_src sh :var associations=graph-associations :results scalar
 </span>  <span class="builtin">echo</span> <span class="string">"$associations"</span>|awk <span class="string">'{print $1, "-&gt;", $2}'
 </span><span class="org-block-end-line">#+end_src
 </span>
-<span class="org-meta-line">#+results: to-dot
+<span class="org-meta-line">#+name: to-dot
 </span><span class="org-code">: other -&gt; eric
 : other -&gt; seb
 : dan -&gt; eric
@@ -142,7 +142,7 @@ graphing with dot
   }
 <span class="org-block-end-line">#+end_src
 </span>
-<span class="org-meta-line">#+results:
+<span class="org-meta-line">#+name:
 </span><span class="org-link">[[file:files.png]]</span>
 
 </pre>

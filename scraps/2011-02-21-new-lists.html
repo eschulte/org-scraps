@@ -9,13 +9,8 @@
         color: #E6E1DC;
         background-color: #232323;
       }
-      .org-block-begin-line {
-        /* org-block-begin-line */
-        color: #BC9458;
-        font-style: italic;
-      }
-      .org-block-end-line {
-        /* org-block-end-line */
+      .comment {
+        /* font-lock-comment-face */
         color: #BC9458;
         font-style: italic;
       }
@@ -31,20 +26,11 @@
         /* org-level-3 */
         color: #CC7833;
       }
-      .org-meta-line {
-        /* org-meta-line */
-        color: #BC9458;
-        font-style: italic;
-      }
       .org-property-value {
       }
       .org-special-keyword {
         /* org-special-keyword */
         color: #CC7833;
-      }
-      .starter-kit-paren {
-        /* starter-kit-paren-face */
-        color: #7f7f7f;
       }
 
       a {
@@ -63,39 +49,39 @@
     <pre>
 <span class="org-level-2">** new lists</span>
 <span class="org-special-keyword">   :PROPERTIES:</span>
-   <span class="org-special-keyword">:DATE:</span>     <span class="org-property-value">2011-02-21</span>
+   :DATE:     2011-02-21
 <span class="org-special-keyword">   :END:</span>
 <span class="org-level-3">*** results embedded inside of a list</span>
 <span class="org-special-keyword">    :PROPERTIES:</span>
     <span class="org-special-keyword">:DATE:</span>     <span class="org-property-value">2011-02-22</span>
 <span class="org-special-keyword">    :END:</span>
 1. this has results
-<span class="org-meta-line">   #+results: something-in-a-list</span>
+   #+name: something-in-a-list
    <span class="org-code">: foo
 </span>2. and this doesn't work
-<span class="org-block-begin-line">   #+begin_src emacs-lisp :var data=something-in-a-list
-</span>     data
-<span class="org-block-end-line">   #+end_src
-</span>
-<span class="org-meta-line">   #+results:</span>
+   #+begin_src emacs-lisp :var data=something-in-a-list
+     data
+   #+end_src
+
+   #+name:
    <span class="org-code">: foo
 </span>
 <span class="org-level-3">*** reading and writing</span>
 <span class="org-special-keyword">    :PROPERTIES:</span>
     <span class="org-special-keyword">:DATE:</span>     <span class="org-property-value">2011-02-22</span>
 <span class="org-special-keyword">    :END:</span>
-<span class="org-meta-line">#+results: simple-list
-</span>- 1
+<span class="comment">#+name: simple-list</span>
+- 1
 - two
 - 3
 - four
 
 
-<span class="org-meta-line">#+source: simple-list
-</span><span class="org-block-begin-line">#+begin_src emacs-lisp :var lst=simple-list :results list
-</span>  <span class="starter-kit-paren">(</span>reverse lst<span class="starter-kit-paren">)
-</span><span class="org-block-end-line">#+end_src
-</span>
+<span class="comment">#+name: simple-list</span>
+<span class="comment">#+begin_src emacs-lisp :var lst=simple-list :results list</span>
+  (reverse lst)
+<span class="comment">#+end_src</span>
+
 </pre>
   </body>
 </html>

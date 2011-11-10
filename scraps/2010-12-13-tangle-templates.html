@@ -69,17 +69,17 @@
 <span class="org-special-keyword">   :PROPERTIES:</span>
    <span class="org-special-keyword">:DATE:</span>     <span class="org-property-value">2010-12-13</span>
 <span class="org-special-keyword">   :END:</span>
-<span class="org-meta-line">#+source: template-heading
+<span class="org-meta-line">#+name: template-heading
 </span><span class="org-block-begin-line">#+begin_src emacs-lisp
 </span>  some stuff here
 <span class="org-block-end-line">#+end_src
 </span>
-<span class="org-meta-line">#+source: template-footing
+<span class="org-meta-line">#+name: template-footing
 </span><span class="org-block-begin-line">#+begin_src emacs-lisp
 </span>  some other stuff here
 <span class="org-block-end-line">#+end_src
 </span>
-<span class="org-meta-line">#+source: template
+<span class="org-meta-line">#+name: template
 </span><span class="org-block-begin-line">#+begin_src sh :results output :noweb yes :var body="body stuff"
 </span><span class="variable-name">heading</span>=$(cat&lt;&lt;EOF
 &lt;&lt;template-heading&gt;&gt;
@@ -96,7 +96,7 @@ EOF
 </span>
 <span class="org-meta-line">#+call: template[:noweb yes](body="something new")
 </span>
-<span class="org-meta-line">#+results: template[:noweb yes](body="something new")
+<span class="org-meta-line">#+name: template[:noweb yes](body="something new")
 </span><span class="org-code">: some stuff here
 : something new
 : some other stuff here

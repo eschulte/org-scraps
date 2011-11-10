@@ -80,7 +80,7 @@
 <span class="org-table">| 3 | third  |</span>
 <span class="org-table">| 4 | fourth |</span> 
 
-<span class="org-meta-line">#+source: rec-string-wrap
+<span class="org-meta-line">#+name: rec-string-wrap
 </span><span class="org-block-begin-line">#+begin_src emacs-lisp :var data=mixed-table
 </span>  <span class="starter-kit-paren">(</span><span class="keyword">defun</span> <span class="function-name">rec-string-wrap</span> <span class="starter-kit-paren">(</span>in<span class="starter-kit-paren">)</span>
     <span class="starter-kit-paren">(</span><span class="keyword">if</span> <span class="starter-kit-paren">(</span>listp in<span class="starter-kit-paren">)</span> <span class="starter-kit-paren">(</span>mapcar #'rec-string-wrap in<span class="starter-kit-paren">)</span> <span class="starter-kit-paren">(</span>format <span class="string">"%S"</span> in<span class="starter-kit-paren">)))</span>
@@ -91,7 +91,7 @@
 </span>  map head tbl
 <span class="org-block-end-line">#+end_src
 </span>
-<span class="org-meta-line">#+results:
+<span class="org-meta-line">#+name:
 </span><span class="org-table">| 1 | 2 | 3 | 4 |</span>
 
 </pre>

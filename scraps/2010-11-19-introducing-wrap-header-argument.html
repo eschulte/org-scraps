@@ -77,7 +77,7 @@
 </span>  <span class="starter-kit-paren">(</span>mapcar <span class="starter-kit-paren">(</span><span class="keyword">lambda</span> <span class="starter-kit-paren">(</span>el<span class="starter-kit-paren">)</span> <span class="starter-kit-paren">(</span>list el <span class="starter-kit-paren">(</span>+ 1 <span class="starter-kit-paren">(</span>* el el<span class="starter-kit-paren">))))</span> <span class="starter-kit-paren">(</span>number-sequence 0 10<span class="starter-kit-paren">))
 </span><span class="org-block-end-line">#+end_src
 </span>
-<span class="org-meta-line">#+results:
+<span class="org-meta-line">#+name:
 </span><span class="org-block-begin-line">#+BEGIN_RESULT
 </span><span class="org-table">|  0 |   1 |</span>
 <span class="org-table">|  1 |   2 |</span>
@@ -99,11 +99,11 @@ now indented
 </span>    <span class="string">"something else"
 </span><span class="org-block-end-line">  #+end_src
 </span>
-<span class="org-meta-line">  #+results:</span>
-<span class="org-block-begin-line">  #+BEGIN_RESULT
-</span>  <span class="org-code">: something else</span><span class="org-meta-line">
-</span><span class="org-block-end-line">  #+END_RESULT
-</span>
+  #+name:
+  #+BEGIN_RESULT
+  <span class="org-code">: something else
+</span>  #+END_RESULT
+
 </pre>
   </body>
 </html>

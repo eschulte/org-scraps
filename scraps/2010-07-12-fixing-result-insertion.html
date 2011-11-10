@@ -84,7 +84,7 @@ needs to replace the results when there is a new hash
 </span>  date
 <span class="org-block-end-line">#+end_src
 </span>
-<span class="org-meta-line">#+results:
+<span class="org-meta-line">#+name:
 </span><span class="org-code">: Mon Jul 12 22:18:16 PDT 2010
 </span>
 <span class="org-level-3">*** unnamed source block results</span>
@@ -95,14 +95,14 @@ needs to replace the results when there is a new hash
 </span>  <span class="starter-kit-paren">(</span>+ 1 2 3 4<span class="starter-kit-paren">)
 </span><span class="org-block-end-line">#+end_src
 </span>
-<span class="org-meta-line">#+results[16a776d6d139e1d39e99d736536a546df115c2dc]:
+<span class="org-meta-line">#+name[16a776d6d139e1d39e99d736536a546df115c2dc]:
 </span><span class="org-code">: 10
 </span>
 <span class="org-block-begin-line">#+begin_src emacs-lisp :cache yes
 </span>  <span class="starter-kit-paren">(</span>list '<span class="starter-kit-paren">(</span>1 2 3<span class="starter-kit-paren">)</span> '<span class="starter-kit-paren">(</span>4 5 6<span class="starter-kit-paren">))
 </span><span class="org-block-end-line">#+end_src
 </span>
-<span class="org-meta-line">#+results[53f489ed6977857b9945d79d06e575b2cbbebf11]:
+<span class="org-meta-line">#+name[53f489ed6977857b9945d79d06e575b2cbbebf11]:
 </span><span class="org-table">| 1 | 2 | 3 |</span>
 <span class="org-table">| 4 | 5 | 6 |</span>
 
@@ -111,13 +111,13 @@ needs to replace the results when there is a new hash
     <span class="org-special-keyword">:DATE:</span>     <span class="org-property-value">2010-07-12</span>
 <span class="org-special-keyword">    :END:</span>
 
-<span class="org-meta-line">#+srcname: something-w-table
+<span class="org-meta-line">#+name: something-w-table
 </span><span class="org-block-begin-line">#+begin_src emacs-lisp
 </span>  <span class="starter-kit-paren">(</span>sleep-for 2<span class="starter-kit-paren">)</span>
   <span class="starter-kit-paren">(</span>list '<span class="starter-kit-paren">(</span>1 2 3<span class="starter-kit-paren">)</span> '<span class="starter-kit-paren">(</span>4 5 8<span class="starter-kit-paren">))
 </span><span class="org-block-end-line">#+end_src
 </span>
-<span class="org-meta-line">#+source: something
+<span class="org-meta-line">#+name: something
 </span><span class="org-block-begin-line">#+begin_src emacs-lisp :cache yes
 </span>  <span class="starter-kit-paren">(</span>+ 1 2 3 4 8<span class="starter-kit-paren">)
 </span><span class="org-block-end-line">#+end_src
@@ -131,11 +131,11 @@ pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
 culpa qui officia deserunt mollit anim id est laborum.
 
 <span class="comment"># something else</span>
-<span class="org-meta-line">#+results[d053f6643d9dc52a0e804c15f2a762da73a00a07]: something
+<span class="org-meta-line">#+name[d053f6643d9dc52a0e804c15f2a762da73a00a07]: something
 </span><span class="org-code">: 18
 </span>
 <span class="org-meta-line">#+attr_latex: width=0.4\textwidth
-#+results[5fac69648ab749ef9ee88ea65b3d49d93f3f6cc8]: something-w-table
+#+name[5fac69648ab749ef9ee88ea65b3d49d93f3f6cc8]: something-w-table
 </span><span class="org-table">| 1 | 2 | 3 |</span>
 <span class="org-table">| 4 | 5 | 8 |</span>
 

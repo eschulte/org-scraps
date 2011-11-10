@@ -9,34 +9,15 @@
         color: #E6E1DC;
         background-color: #232323;
       }
-      .org-block-begin-line {
-        /* org-block-begin-line */
-        color: #BC9458;
-        font-style: italic;
-      }
-      .org-block-end-line {
-        /* org-block-end-line */
-        color: #BC9458;
-        font-style: italic;
-      }
       .org-level-2 {
         /* org-level-2 */
         color: #b0c4de;
-      }
-      .org-meta-line {
-        /* org-meta-line */
-        color: #BC9458;
-        font-style: italic;
       }
       .org-property-value {
       }
       .org-special-keyword {
         /* org-special-keyword */
         color: #CC7833;
-      }
-      .starter-kit-paren {
-        /* starter-kit-paren-face */
-        color: #7f7f7f;
       }
 
       a {
@@ -58,15 +39,15 @@
    <span class="org-special-keyword">:DATE:</span>     <span class="org-property-value">2010-08-26</span>
 <span class="org-special-keyword">   :END:</span>
 - one plus one
-<span class="org-meta-line">  #+source: one-plus-one</span>
-<span class="org-block-begin-line">  #+begin_src emacs-lisp :exports none :results silent
-</span>    <span class="starter-kit-paren">(</span>+ 1 1<span class="starter-kit-paren">)
-</span><span class="org-block-end-line">  #+end_src
-</span>- plus one is
-<span class="org-block-begin-line">  #+begin_src emacs-lisp :var two=one-plus-one :exports both
-</span>    <span class="starter-kit-paren">(</span>+ 1 two<span class="starter-kit-paren">)
-</span><span class="org-block-end-line">  #+end_src
-</span>
+  #+name: one-plus-one
+  #+begin_src emacs-lisp :exports none :results silent
+    (+ 1 1)
+  #+end_src
+- plus one is
+  #+begin_src emacs-lisp :var two=one-plus-one :exports both
+    (+ 1 two)
+  #+end_src
+
 </pre>
   </body>
 </html>

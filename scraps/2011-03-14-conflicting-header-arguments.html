@@ -63,7 +63,7 @@
 <span class="org-special-keyword">   :END:</span>
 
 code block
-<span class="org-meta-line">#+source: conflict-block
+<span class="org-meta-line">#+name: conflict-block
 </span><span class="org-block-begin-line">#+begin_src sh :exports results :results silent
 </span>  <span class="builtin">echo </span>eric
 <span class="org-block-end-line">#+end_src
@@ -71,7 +71,7 @@ code block
 call line
 <span class="org-meta-line">#+call: conflict-block() :exports results
 </span>
-<span class="org-meta-line">#+results: conflict-block()
+<span class="org-meta-line">#+name: conflict-block()
 </span><span class="org-code">: eric
 </span>
 </pre>

@@ -73,13 +73,13 @@
 <span class="org-special-keyword">   :PROPERTIES:</span>
    <span class="org-special-keyword">:DATE:</span>     <span class="org-property-value">2011-08-29</span>
 <span class="org-special-keyword">   :END:</span>
-<span class="org-meta-line">#+source: hetero-table
+<span class="org-meta-line">#+name: hetero-table
 </span><span class="org-block-begin-line">#+begin_src emacs-lisp
 </span>  '<span class="starter-kit-paren">((</span>1 2 3 4<span class="starter-kit-paren">)</span>
     <span class="starter-kit-paren">(</span><span class="string">"a"</span> <span class="string">"b"</span> <span class="string">"c"</span> <span class="string">"d"</span><span class="starter-kit-paren">))
 </span><span class="org-block-end-line">#+end_src
 </span>
-<span class="org-meta-line">#+source: all-to-string
+<span class="org-meta-line">#+name: all-to-string
 </span><span class="org-block-begin-line">#+begin_src emacs-lisp :var tbl='()
 </span>  <span class="starter-kit-paren">(</span><span class="keyword">defun</span> <span class="function-name">all-to-string</span> <span class="starter-kit-paren">(</span>tbl<span class="starter-kit-paren">)</span>
     <span class="starter-kit-paren">(</span><span class="keyword">if</span> <span class="starter-kit-paren">(</span>listp tbl<span class="starter-kit-paren">)</span>
@@ -94,7 +94,7 @@
 </span>  <span class="starter-kit-paren">(</span>mapcar <span class="starter-kit-paren">(</span><span class="keyword">lambda</span> <span class="starter-kit-paren">(</span>row<span class="starter-kit-paren">)</span> <span class="starter-kit-paren">(</span>mapcar <span class="starter-kit-paren">(</span><span class="keyword">lambda</span> <span class="starter-kit-paren">(</span>cell<span class="starter-kit-paren">)</span> <span class="starter-kit-paren">(</span>stringp cell<span class="starter-kit-paren">))</span> row<span class="starter-kit-paren">))</span> tbl<span class="starter-kit-paren">)
 </span><span class="org-block-end-line">#+end_src
 </span>
-<span class="org-meta-line">#+results:
+<span class="org-meta-line">#+name:
 </span><span class="org-table">| nil | nil | nil | nil |</span>
 <span class="org-table">| t   | t   | t   | t   |</span>
 
@@ -102,7 +102,7 @@
 </span>  <span class="starter-kit-paren">(</span>mapcar <span class="starter-kit-paren">(</span><span class="keyword">lambda</span> <span class="starter-kit-paren">(</span>row<span class="starter-kit-paren">)</span> <span class="starter-kit-paren">(</span>mapcar <span class="starter-kit-paren">(</span><span class="keyword">lambda</span> <span class="starter-kit-paren">(</span>cell<span class="starter-kit-paren">)</span> <span class="starter-kit-paren">(</span>stringp cell<span class="starter-kit-paren">))</span> row<span class="starter-kit-paren">))</span> tbl<span class="starter-kit-paren">)
 </span><span class="org-block-end-line">#+end_src
 </span>
-<span class="org-meta-line">#+results:
+<span class="org-meta-line">#+name:
 </span><span class="org-table">| t | t | t | t |</span>
 <span class="org-table">| t | t | t | t |</span>
 

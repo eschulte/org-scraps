@@ -106,7 +106,7 @@ interpreter, the following should be loaded with
         neighbors <span class="variable-name">= </span>(zip palendromic_primes (tail palendromic_primes))
 <span class="org-block-end-line">#+end_src
 </span>
-<span class="org-meta-line">#+source: palendromic_prime_distances
+<span class="org-meta-line">#+name: palendromic_prime_distances
 </span><span class="org-block-begin-line">#+begin_src haskell
 </span>  take 180 (zip [1<span class="variable-name">..]</span> palendromic_prime_distances)
 <span class="org-block-end-line">#+end_src
@@ -114,7 +114,7 @@ interpreter, the following should be loaded with
 For high-quality png output from gnuplot, the following sequence of
 graphing to a <span class="org-code">=.eps=</span> file, and then converting to a <span class="org-code">=.png=</span> can be
 useful.
-<span class="org-meta-line">#+source: dist-graph
+<span class="org-meta-line">#+name: dist-graph
 </span><span class="org-block-begin-line">#+begin_src gnuplot :var data=palendromic_prime_distances :file pps.eps
 </span>  <span class="constant">set</span> term postscript landscape color enhanced
   <span class="constant">set</span> <span class="function-name">log</span> y

@@ -63,17 +63,17 @@
    <span class="org-special-keyword">:DATE:</span>     <span class="org-property-value">2010-10-29</span>
 <span class="org-special-keyword">   :END:</span>
 
-<span class="org-meta-line">#+source: test
+<span class="org-meta-line">#+name: test
 </span><span class="org-block-begin-line">#+begin_src R :session :file test.pdf :var myarg="bla"
 </span>  plot(1:10, main=myarg)
 <span class="org-block-end-line">#+end_src
 </span>
-<span class="org-meta-line">#+results: test
+<span class="org-meta-line">#+name: test
 </span><span class="org-link">[[file:test.pdf]]</span>
 
 <span class="org-meta-line">#+call: test(myarg="hiho")
 </span>
-<span class="org-meta-line">#+results: test(myarg="hiho")
+<span class="org-meta-line">#+name: test(myarg="hiho")
 </span><span class="org-code">: test.pdf
 </span>
 </pre>

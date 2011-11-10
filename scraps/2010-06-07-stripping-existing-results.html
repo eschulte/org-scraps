@@ -65,7 +65,7 @@
 <span class="org-special-keyword">   :PROPERTIES:</span>
    <span class="org-special-keyword">:DATE:</span>     <span class="org-property-value">2010-06-07</span>
 <span class="org-special-keyword">   :END:</span>
-<span class="org-meta-line">#+results: trickily-located-somehwere-else
+<span class="org-meta-line">#+name: trickily-located-somehwere-else
 </span><span class="org-code">: I shouldn't be exported
 </span>
 Neither of the result strings for the following two code blocks should
@@ -76,10 +76,10 @@ included...
 </span>  <span class="starter-kit-paren">(</span>+ 1 1 1 1<span class="starter-kit-paren">)
 </span><span class="org-block-end-line">#+end_src
 </span>
-<span class="org-meta-line">#+results:
+<span class="org-meta-line">#+name:
 </span><span class="org-code">: don't include me in the export!!!!!!!
 </span>
-<span class="org-meta-line">#+srcname: trickily-located-somehwere-else
+<span class="org-meta-line">#+name: trickily-located-somehwere-else
 </span><span class="org-block-begin-line">#+begin_src emacs-lisp :exports none
 </span>  <span class="starter-kit-paren">(</span>message <span class="string">"I shouldn't be exported"</span><span class="starter-kit-paren">)
 </span><span class="org-block-end-line">#+end_src

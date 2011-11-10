@@ -70,12 +70,12 @@
 <span class="org-special-keyword">   :PROPERTIES:</span>
    <span class="org-special-keyword">:DATE:</span>     <span class="org-property-value">2010-06-28</span>
 <span class="org-special-keyword">   :END:</span>
-<span class="org-meta-line">#+source: raw-data
+<span class="org-meta-line">#+name: raw-data
 </span><span class="org-block-begin-line">#+begin_src sh :results scalar
 </span>  wget --quiet -qO- <span class="string">"http://ogdi.cloudapp.net/v1/dc/RecreationParks?format=json"
 </span><span class="org-block-end-line">#+end_src
 </span>
-<span class="org-meta-line">#+source: dc-parks
+<span class="org-meta-line">#+name: dc-parks
 </span><span class="org-block-begin-line">#+begin_src emacs-lisp :var keys='(ward area) :var data=raw-data
 </span>  <span class="starter-kit-paren">(</span>mapcar
     <span class="starter-kit-paren">(</span><span class="keyword">lambda</span> <span class="starter-kit-paren">(</span>lis<span class="starter-kit-paren">)</span> <span class="starter-kit-paren">(</span>mapcar <span class="starter-kit-paren">(</span><span class="keyword">lambda</span> <span class="starter-kit-paren">(</span>key<span class="starter-kit-paren">)</span> <span class="starter-kit-paren">(</span>cdr <span class="starter-kit-paren">(</span>assoc key lis<span class="starter-kit-paren">)))</span> keys<span class="starter-kit-paren">))</span>
@@ -84,7 +84,7 @@
                 <span class="starter-kit-paren">(</span>json-read<span class="starter-kit-paren">)))))
 </span><span class="org-block-end-line">#+end_src
 </span>
-<span class="org-meta-line">#+source: dc-parks-metric
+<span class="org-meta-line">#+name: dc-parks-metric
 </span><span class="org-block-begin-line">#+begin_src ruby :var data=dc-parks
 </span>  data.map{|f| [f[0], 2.59 * f[1]]}
 <span class="org-block-end-line">#+end_src
@@ -94,7 +94,7 @@
   title(main=<span class="string">"Park size by Ward")</span>
 <span class="org-block-end-line">#+end_src
 </span>
-<span class="org-meta-line">#+results:
+<span class="org-meta-line">#+name:
 </span><span class="org-link">[[file:parks.png]]</span>
 
 </pre>

@@ -75,7 +75,7 @@
 <span class="org-table">| 3.5 |</span>
 <span class="org-meta-line">#+TBLFM: @7$1='(sbe mean (lst @1..@6))
 </span>
-<span class="org-meta-line">#+source: mean
+<span class="org-meta-line">#+name: mean
 </span><span class="org-block-begin-line">#+begin_src emacs-lisp :var lst=()
 </span>  <span class="starter-kit-paren">(</span><span class="keyword">let</span> <span class="starter-kit-paren">((</span>num <span class="starter-kit-paren">(</span>car lst<span class="starter-kit-paren">))</span> <span class="starter-kit-paren">(</span>nums <span class="starter-kit-paren">(</span>cdr lst<span class="starter-kit-paren">)))</span>
     <span class="starter-kit-paren">(</span>/ <span class="starter-kit-paren">(</span>float <span class="starter-kit-paren">(</span>+ num <span class="starter-kit-paren">(</span>apply #'+ nums<span class="starter-kit-paren">)))</span> <span class="starter-kit-paren">(</span>1+ <span class="starter-kit-paren">(</span>length nums<span class="starter-kit-paren">))))

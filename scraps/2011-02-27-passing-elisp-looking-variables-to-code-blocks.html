@@ -73,10 +73,10 @@
 </span>  printf <span class="string">"passed in %s"</span>, $<span class="variable-name">it
 </span><span class="org-block-end-line">#+end_src
 </span>
-<span class="org-meta-line">#+results:
+<span class="org-meta-line">#+name:
 </span><span class="org-code">: passed in (+ 1 1)
 </span>
-<span class="org-meta-line">#+results: elisp-looking-table
+<span class="org-meta-line">#+name: elisp-looking-table
 </span><span class="org-table">| 1 | (+ 1 1) |</span>
 <span class="org-table">| 2 | (a b c) |</span>
 <span class="org-table">| 3 | (+ 3 3) |</span>
@@ -85,14 +85,14 @@
 </span>  $<span class="variable-name">data
 </span><span class="org-block-end-line">#+end_src
 </span>
-<span class="org-meta-line">#+results:
+<span class="org-meta-line">#+name:
 </span><span class="org-code">: (a b c)
 </span>
 <span class="org-block-begin-line">#+begin_src emacs-lisp :var data=elisp-looking-table[1,1]
 </span>  data
 <span class="org-block-end-line">#+end_src
 </span>
-<span class="org-meta-line">#+results:
+<span class="org-meta-line">#+name:
 </span><span class="org-code">: (a b c)
 </span>
 </pre>

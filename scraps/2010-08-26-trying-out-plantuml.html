@@ -9,13 +9,10 @@
         color: #E6E1DC;
         background-color: #232323;
       }
-      .constant {
-        /* font-lock-constant-face */
-        color: #6D9CBE;
-      }
-      .keyword {
-        /* font-lock-keyword-face */
-        color: #CC7833;
+      .comment {
+        /* font-lock-comment-face */
+        color: #BC9458;
+        font-style: italic;
       }
       .org-block-begin-line {
         /* org-block-begin-line */
@@ -47,14 +44,6 @@
         /* org-special-keyword */
         color: #CC7833;
       }
-      .starter-kit-paren {
-        /* starter-kit-paren-face */
-        color: #7f7f7f;
-      }
-      .string {
-        /* font-lock-string-face */
-        color: #A5C261;
-      }
 
       a {
         color: inherit;
@@ -75,10 +64,10 @@
    <span class="org-special-keyword">:DATE:</span>     <span class="org-property-value">2010-08-26</span>
 <span class="org-special-keyword">   :END:</span>
 setup
-<span class="org-block-begin-line">#+begin_src emacs-lisp :results silent
-</span>  <span class="starter-kit-paren">(</span><span class="keyword">require</span> '<span class="constant">ob-plantuml</span><span class="starter-kit-paren">)</span>
-  <span class="starter-kit-paren">(</span>setq org-plantuml-jar-path <span class="string">"~/src/org/contrib/scripts/plantuml.jar"</span><span class="starter-kit-paren">)
-</span><span class="org-block-end-line">#+end_src
+<span class="comment">#+begin_src emacs-lisp :results silent</span>
+  (require 'ob-plantuml)
+  (setq org-plantuml-jar-path "~/src/org/contrib/scripts/plantuml.jar")
+<span class="org-meta-line">#+end_src
 </span>
 usage -- sequence diagram
 <span class="org-block-begin-line">#+begin_src plantuml :file tryout.png
@@ -86,7 +75,7 @@ usage -- sequence diagram
   Alice -&gt;&gt; Bob: asynchronous call
 <span class="org-block-end-line">#+end_src
 </span>
-<span class="org-meta-line">#+results:
+<span class="org-meta-line">#+name:
 </span><span class="org-link">[[file:tryout.png]]</span>
 
 </pre>
