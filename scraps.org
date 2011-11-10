@@ -15,7 +15,7 @@
   paste("Yep!")
 #+end_src
 
-#+results:
+#+name:
 : Yep!
 
 ** should this throw an error for no variable definition
@@ -25,7 +25,7 @@
 Evaluating this block should raise an error that there are
 uninitialized variables.
 
-#+srcname: add-column-in-table(table="", column="", something, type="", else, nullability)
+#+name: add-column-in-table(table="", column="", something, type="", else, nullability)
 #+begin_src sql
 -- add column `$column' (if column does not exist yet)
 IF NOT EXISTS (SELECT *
@@ -42,19 +42,19 @@ END
    :PROPERTIES:
    :DATE:     2011-09-11
    :END:
-#+source: simple-example
+#+name: simple-example
 #+begin_src emacs-lisp
   "the result"
 #+end_src
 
 #+call: simple-example()
 
-#+results: simple-example()
+#+name: simple-example()
 : the result
 
 #+call: simple-example() :results raw
 
-#+results: simple-example()
+#+name: simple-example()
 the result
 
 ** removing result with a silent header argument
@@ -67,7 +67,7 @@ evaluating the following code block will remove the related result.
   date +%Y-%m-%d
 #+end_src
 
-#+results:
+#+name:
 : 2011-09-07
 
 ** leading commas in code blocks
@@ -138,7 +138,7 @@ mus. Nulla posuere. Donec vitae dolor. Nullam tristique diam non
 turpis. call_nothing_to_something()[:results file] [[file:something.txt]] Cras placerat
 accumsan nulla. Nullam rutrum. Nam vestibulum accumsan nisl.
 
-#+source: nothing_to_something
+#+name: nothing_to_something
 #+begin_src sh :file something.txt
   echo nothing
 #+end_src
@@ -173,7 +173,7 @@ plot data using 2:xtic(1)
    :PROPERTIES:
    :DATE:     2011-09-01
    :END:
-#+data: list-o-numbers
+#+name: list-o-numbers
 | 1 | 2 | 3 |
 | 4 | 5 | 6 |
 | 7 | 8 | 9 |
@@ -182,20 +182,20 @@ plot data using 2:xtic(1)
   echo $column
 #+end_src
 
-#+results:
+#+name:
 : 1 4 7
 
 ** convert results to all string
    :PROPERTIES:
    :DATE:     2011-08-29
    :END:
-#+source: hetero-table
+#+name: hetero-table
 #+begin_src emacs-lisp
   '((1 2 3 4)
     ("a" "b" "c" "d"))
 #+end_src
 
-#+source: all-to-string
+#+name: all-to-string
 #+begin_src emacs-lisp :var tbl='()
   (defun all-to-string (tbl)
     (if (listp tbl)
@@ -210,7 +210,7 @@ plot data using 2:xtic(1)
   (mapcar (lambda (row) (mapcar (lambda (cell) (stringp cell)) row)) tbl)
 #+end_src
 
-#+results:
+#+name:
 | nil | nil | nil | nil |
 | t   | t   | t   | t   |
 
@@ -218,7 +218,7 @@ plot data using 2:xtic(1)
   (mapcar (lambda (row) (mapcar (lambda (cell) (stringp cell)) row)) tbl)
 #+end_src
 
-#+results:
+#+name:
 | t | t | t | t |
 | t | t | t | t |
 
@@ -230,7 +230,7 @@ plot data using 2:xtic(1)
 c(1,23,54,5)
 #+END_SRC
 
-#+results:
+#+name:
 |  1 |
 | 23 |
 | 54 |
@@ -241,14 +241,14 @@ c(1,23,54,5)
    :DATE:     2011-08-28
    :END:
 
-#+source: stuff
+#+name: stuff
 #+begin_src sh
   echo 1
   echo 2
   echo 3
 #+end_src
 
-#+source: last-of-stuff
+#+name: last-of-stuff
 #+begin_src sh :var input=stuff
   echo "$input" |tail -1
 #+end_src
@@ -278,7 +278,7 @@ c(1,23,54,5)
    +-----------------------------+
 #+end_src
 
-#+results:
+#+name:
 [[file:something.png]]
 
 ** a table with tags
@@ -294,7 +294,7 @@ c(1,23,54,5)
   (message "%S" table)
 #+end_src
 
-#+results:
+#+name:
 : ((1 2 3) (4 "org-babel" 6))
 
 ** shell script output not in table
@@ -307,7 +307,7 @@ c(1,23,54,5)
   echo 3
 #+end_src
 
-#+results:
+#+name:
 : 1
 : 2
 : 3
@@ -342,12 +342,12 @@ DDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDD
    :PROPERTIES:
    :DATE:     2011-08-19
    :END:
-#+results: this-is-another-table
+#+name: this-is-another-table
 | 0 | 0 | 0 |
 | 0 | 0 | 0 |
 | 0 | 0 | 0 |
 
-#+source: this-is-another-table
+#+name: this-is-another-table
 #+begin_src emacs-lisp :var table=this-is-another-table
   (setf (nth 1 table) '(2 2 2))
   table
@@ -385,19 +385,19 @@ and verbiage to end the same paragraph.
     +-------+             +--------+
 #+end_src
 
-#+results:
+#+name:
 [[file:work-flow.png]]
 
 ** replacing a table
    :PROPERTIES:
    :DATE:     2011-08-19
    :END:
-#+results: this-is-the-table
+#+name: this-is-the-table
 | 1 | 4 | 7 |
 | 2 | 5 | 8 |
 | 3 | 6 | 9 |
 
-#+source: this-is-the-table
+#+name: this-is-the-table
 #+begin_src emacs-lisp :var table=this-is-the-table
   (mapcar (lambda (row) (mapcar (lambda (cell) (* cell 2)) row)) table)
 #+end_src
@@ -410,7 +410,7 @@ and verbiage to end the same paragraph.
   1+2
 #+end_src
 
-#+results:
+#+name:
 : 3
 
 ** bug with undefined function copy-seq
@@ -430,7 +430,7 @@ and verbiage to end the same paragraph.
   wc $TANGLED
 #+end_src
 
-#+results:
+#+name:
 : 2  2 11 it.sh
 
 #+begin_src sh :tangle it.sh
@@ -441,13 +441,13 @@ and verbiage to end the same paragraph.
    :PROPERTIES:
    :DATE:     2011-08-02
    :END:
-#+source: disk-usage
+#+name: disk-usage
 #+begin_src sh :exports both
   df
 #+end_src
 
 #+PLOT: title:"Disk Usage" ind:6 deps:(5) type:2d with:histograms set:"yrange [0:100]"
-#+results: disk-usage
+#+name: disk-usage
 | Filesystem | 1K-blocks |     Used | Available | Use% | Mounted   | on |
 | /dev/sda6  |  28835836 |  8447712 |  18923344 |  31% | /         |    |
 | none       |   2997072 |      676 |   2996396 |   1% | /dev      |    |
@@ -465,7 +465,7 @@ and verbiage to end the same paragraph.
   '(nil nil nil nil)
 #+end_src
 
-#+results:
+#+name:
 : (nil nil nil nil)
 
 ** non-defined code blocks can still tangle
@@ -482,7 +482,7 @@ and verbiage to end the same paragraph.
    :PROPERTIES:
    :DATE:     2011-07-25
    :END:
-#+source: def-something
+#+name: def-something
 #+begin_src sh
   SOMETHING=nothing
 #+end_src
@@ -500,14 +500,14 @@ and verbiage to end the same paragraph.
   echo "[[file:./cv.cls]]"
 #+end_src
 
-#+results:
+#+name:
 : [[file:./cv.cls]]
 
 #+begin_src sh :results raw scalar
-   echo "[[file:./cv.cls]]"
+  echo "[[file:./cv.cls]]"
 #+end_src
 
-#+results:
+#+name:
 [[file:./cv.cls]]
 
 ** java code block
@@ -524,7 +524,7 @@ and verbiage to end the same paragraph.
   }
 #+end_src
 
-#+results:
+#+name:
 : Hello World!
 
 ** exporting a ditaa example
@@ -539,7 +539,7 @@ and verbiage to end the same paragraph.
 \---------------/
 #+end_src
 
-#+results:
+#+name:
 [[file:blue.png]]
 
 ** including noweb refs w/o last newline
@@ -551,12 +551,12 @@ and verbiage to end the same paragraph.
   <<capitalize-name>>
 #+end_src
 
-#+source: my-name
+#+name: my-name
 #+begin_src sh
   echo "eric schulte"
 #+end_src
 
-#+source: capitalize-name
+#+name: capitalize-name
 #+begin_src sh
   sed 's/^e/E/;s/ s/ S/'
 #+end_src
@@ -575,7 +575,7 @@ and verbiage to end the same paragraph.
 | 3.5 |
 #+TBLFM: @7$1='(sbe mean (lst @1..@6))
 
-#+source: mean
+#+name: mean
 #+begin_src emacs-lisp :var lst=()
   (let ((num (car lst)) (nums (cdr lst)))
     (/ (float (+ num (apply #'+ nums))) (1+ (length nums))))
@@ -590,7 +590,7 @@ and verbiage to end the same paragraph.
   (message "launch missles")
 #+end_src
 
-#+results:
+#+name:
 : launch missles
 
 ** indexing into a list variable
@@ -602,12 +602,12 @@ and verbiage to end the same paragraph.
   (first lst)
 #+end_src
 
-#+results:
+#+name:
 : 0
 
 or as a noweb reference
 
-#+data: external-list
+#+name: external-list
 - 0
 - 1
 - 2
@@ -616,21 +616,21 @@ or as a noweb reference
   echo <<external-list()[0]>>
 #+end_src
 
-#+results:
+#+name:
 : 0
 
 ** data alias for resname
    :PROPERTIES:
    :DATE:     2011-07-05
    :END:
-#+data: blah
+#+name: blah
 : blahcontent
 
 #+begin_src emacs-lisp :var it=blah
   it
 #+end_src
 
-#+results:
+#+name:
 : blahcontent
 
 ** define a block with a name for noweb expansion
@@ -640,7 +640,7 @@ or as a noweb reference
    :DATE:     2011-07-01
    :END:
 
-#+source: simple(something="something")
+#+name: simple(something="something")
 #+begin_src emacs-lisp
   something
 #+end_src
@@ -659,7 +659,7 @@ another block including the first block
   it
 #+end_src
 
-#+results:
+#+name:
 : 
 : here it is
 
@@ -676,14 +676,14 @@ here it is
    :DATE:     2011-06-29
    :END:
 
-#+source: faz
+#+name: faz
 #+begin_src emacs-lisp :exports results
   '((foo foo)
     (bar baz))
 #+end_src
 
 #+LABEL: Foo
-#+results: faz
+#+name: faz
 | foo | foo |
 | bar | baz |
 
@@ -691,7 +691,7 @@ here it is
    :PROPERTIES:
    :DATE:     2011-06-29
    :END:
-#+source: square
+#+name: square
 #+begin_src emacs-lisp :var it=0
   (* it it)
 #+end_src
@@ -707,7 +707,7 @@ Here is another 25^2=call_square(it=25).
 
 Should work call_concat(1, 2, 3) =123= in order.
 
-#+source: concat
+#+name: concat
 #+begin_src emacs-lisp :var a=0 :var b=0 :var c=0
   (format "%S%S%S" a b c)
 #+end_src
@@ -719,7 +719,7 @@ Should be positive call_lob-minus(4, 3) =1= by order.
    :DATE:     2011-06-27
    :END:
 
-#+source: square
+#+name: square
 #+begin_src emacs-lisp :var it=0
   (* it it)
 #+end_src
@@ -730,7 +730,7 @@ first we can name the argument with call_square(it=4) =16=
 
 then we can pass the argument unnamed with call_square(4) =16=
 
-#+source: minus
+#+name: minus
 #+begin_src emacs-lisp :var a=0 :var b=0
   (- a b)
 #+end_src
@@ -743,7 +743,7 @@ use the following call_minus(8, 4) =-4=
    :DATE:     2011-06-27
    :END:
 
-#+source: double
+#+name: double
 #+begin_src emacs-lisp :var it=0
   (* 2 it)
 #+end_src
@@ -779,7 +779,7 @@ print(seq(1,10))
 plot(seq(1,10))
 #+end_src
 
-#+results:
+#+name:
 [[file:example.png]]
 
 ** large code in inline blocks
@@ -787,7 +787,7 @@ plot(seq(1,10))
    :DATE:     2011-06-22
    :END:
 
-#+source: big-block
+#+name: big-block
 #+begin_src emacs-lisp :exports none
   "something complex"
 #+end_src
@@ -825,7 +825,7 @@ for i in range(1,5):
 print "I throw an error"
 #+end_src
 
-#+results:
+#+name:
 : 
 : ... ... ... 2
 : 4
@@ -837,7 +837,7 @@ print "I throw an error"
   print y
 #+end_src
 
-#+results:
+#+name:
 : Traceback (most recent call last):
 :   File "<stdin>", line 1, in <module>
 : NameError: name 'y' is not defined
@@ -850,7 +850,7 @@ print "I throw an error"
   '(1 2 3)
 #+end_src
 
-#+results:
+#+name:
 : (1 2 3)
 
 ** named code block export
@@ -859,7 +859,7 @@ print "I throw an error"
    :END:
 This has a name which is not exported.
 
-#+source: rand(n)
+#+name: rand(n)
 #+begin_src R
   runif(n)
 #+end_src
@@ -869,7 +869,7 @@ This has a name which is not exported.
    :comments: yes
    :DATE:     2011-06-10
    :END:
-#+source: foo
+#+name: foo
 #+begin_src emacs-lisp
   (message "foo:%S" 1)
 #+end_src
@@ -878,17 +878,17 @@ This has a name which is not exported.
   (message "un-named")
 #+end_src
 
-#+source: bar
+#+name: bar
 #+begin_src emacs-lisp
   (message "bar:%S" 1)
 #+end_src
 
-#+source: foo
+#+name: foo
 #+begin_src emacs-lisp
   (message "foo:%S" 2)
 #+end_src
 
-#+source: bar
+#+name: bar
 #+begin_src emacs-lisp
   (message "bar:%S" 2)
 #+end_src
@@ -908,7 +908,7 @@ This has a name which is not exported.
   3.times{ puts :hello }
 #+end_src
 
-#+results:
+#+name:
 #+BEGIN_SRC ruby
 2 + 2 # => 4
 3.times{ puts :hello }
@@ -934,14 +934,14 @@ a test
   echo foo
 #+end_src
 
-#+results:
+#+name:
 : foo
 
 #+begin_src ruby :results output :session simple
   puts "foo"
 #+end_src
 
-#+results:
+#+name:
 : foo
 
 ** =:file= and python
@@ -952,7 +952,7 @@ a test
   return 1
 #+end_src
 
-#+results:
+#+name:
 [[file:/tmp/test.png]]
 
 ** simple shell
@@ -963,7 +963,7 @@ a test
   sleep 10 && ls
 #+end_src
 
-#+results:
+#+name:
 | _config.yml     |
 | data            |
 | development.org |
@@ -980,7 +980,7 @@ a test
   puts [1..4]
 #+end_src
 
-#+results:
+#+name:
 : nil
 
 ** testing new data names
@@ -988,7 +988,7 @@ a test
    :DATE:     2011-06-02
    :END:
 
-#+data: simple-123
+#+name: simple-123
 : 123
 
 #+begin_src emacs-lisp :var simple=simple-123 :exports both
@@ -1001,7 +1001,7 @@ data
 
 my data is results
 
-#+results:
+#+name:
 : 246
 
 ** default directory examples in lisp
@@ -1021,7 +1021,7 @@ my data is results
   *default-pathname-defaults*
 #+end_src
 
-#+results:
+#+name:
 : #P""
 
 ** lisp body with multiple forms
@@ -1034,7 +1034,7 @@ my data is results
   (+ 1 2)
 #+end_src
 
-#+results:
+#+name:
 : 3
 
 ** example =#+call= line expansion
@@ -1043,14 +1043,14 @@ my data is results
    :END:
 this code block peeks inside of the `params' variable which is used by
 babel during code block evaluation
-#+source: callee
+#+name: callee
 #+begin_src emacs-lisp
   ;; this is cheating and shouldn't be done in user code :)
   (or (cdr (assoc :foo params)) 'unset)
 #+end_src
 
 this code block evaluates to the following,
-#+results: callee
+#+name: callee
 : unset
 
 this call line,
@@ -1063,7 +1063,7 @@ by Babel.
 #+end_src
 
 this code block evaluates to the following,
-#+results:
+#+name:
 #+BEGIN_ORG
 nothing
 #+END_ORG
@@ -1073,7 +1073,7 @@ nothing
    :DATE:     2011-05-26
    :END:
 
-#+results: simple-table
+#+name: simple-table
 | 1 | 2 | 3 |
 | 4 | 5 | 6 |
 | 7 | 8 | 9 |
@@ -1082,7 +1082,7 @@ nothing
   {print $1}
 #+end_src
 
-#+results:
+#+name:
 | 1 |
 | 4 |
 | 7 |
@@ -1091,12 +1091,12 @@ nothing
    :PROPERTIES:
    :DATE:     2011-05-26
    :END:
-#+results: square-table
+#+name: square-table
 | 1 | 2 | 3 |
 | 4 | 5 | 6 |
 | 7 | 8 | 9 |
 
-#+source: first-col
+#+name: first-col
 #+begin_src sh :stdin square-table
   awk '{print $1}'
 #+end_src
@@ -1105,7 +1105,7 @@ nothing
   sed 's/4/middle/g'
 #+end_src
 
-#+results:
+#+name:
 |      1 |
 | middle |
 |      7 |
@@ -1115,32 +1115,32 @@ nothing
    :DATE:     2011-05-14
    :END:
 
-#+srcname: the_issue
+#+name: the_issue
 #+begin_src sh :results output
   echo '#+end_src'
 #+end_src
 
-#+results: the_issue
+#+name: the_issue
 : #+end_src block
 
 ** append tables
    :PROPERTIES:
    :DATE:     2011-05-14
    :END:
-#+data: table-names
+#+name: table-names
 - first-table
 - second-table
 - third-table
 
-#+data: first-table
+#+name: first-table
 | a | 1 |
 | b | 2 |
 
-#+data: second-table
+#+name: second-table
 | c | 3 |
 | d | 4 |
 
-#+data: third-table
+#+name: third-table
 | e | 5 |
 | f | 6 |
 
@@ -1148,7 +1148,7 @@ nothing
   (mapcar #'org-babel-ref-resolve table-names)
 #+end_src
 
-#+results:
+#+name:
 | (a 1) | (b 2) |
 | (c 3) | (d 4) |
 | (e 5) | (f 6) |
@@ -1158,14 +1158,14 @@ nothing
    :DATE:     2011-05-06
    :END:
 
-#+results: simple
+#+name: simple
 : 1
 
 #+begin_src emacs-lisp :var data=simple
   data
 #+end_src
 
-#+results:
+#+name:
 : 1
 
 changing the variable used to label data
@@ -1174,14 +1174,14 @@ changing the variable used to label data
         "^[ \t]*#\\+\\(TBLNAME\\|RESNAME\\|RESULTS\\|DATA\\):[ \t]*%s[ \t]*$")
 #+end_src
 
-#+data: not-so-simple
+#+name: not-so-simple
 : 2
 
 #+begin_src emacs-lisp :var data=not-so-simple
   data
 #+end_src
 
-#+results:
+#+name:
 : 2
 
 ** ocaml
@@ -1193,7 +1193,7 @@ changing the variable used to label data
   [3;2;3] @ [3;2;3;4;5];;
 #+end_src
 
-#+results:
+#+name:
 | 3 | 2 | 3 | 3 | 2 | 3 | 4 | 5 |
 
 ** simple latex verbatim wrap example
@@ -1221,7 +1221,7 @@ changing the variable used to label data
    13)")
 #+end_src
 
-#+results:
+#+name:
 | :return | (:ok {:model #<MINLP f(x,y)={(x[0]-5)^2+(x[1]-3)^2-y*sqrt($x),2}>, :v #<Variables x={ 4.0, 4.0 } y={ 0 }>, :z nil}) | 13 |
 
 ** automatic org-mode formatting
@@ -1229,7 +1229,7 @@ changing the variable used to label data
    :DATE:     2011-04-27
    :END:
 
-#+source: raw-results
+#+name: raw-results
 #+begin_src sh :results output tabular
   echo "| 1 |"
   echo "| 2 |"
@@ -1239,7 +1239,7 @@ changing the variable used to label data
   (stringp in)
 #+end_src
 
-#+results:
+#+name:
 : t
 
 ** units in R plot
@@ -1252,7 +1252,7 @@ changing the variable used to label data
   plot(x, y, type="l", col="red", lty=1)
 #+end_src
 
-#+results:
+#+name:
 [[file:test.png]]
 
 ** Ocaml appending blocks
@@ -1265,7 +1265,7 @@ block
   [|1;2;3|];;
 #+end_src
 
-#+results:
+#+name:
 | 1 | 2 | 3 |
 
 ** simple Oz example
@@ -1281,7 +1281,7 @@ block
    :DATE:     2011-04-13
    :END:
 
-#+source: parameter-variation(data=0)
+#+name: parameter-variation(data=0)
 #+begin_src python :result values
   return 'text'
 #+end_src
@@ -1317,7 +1317,7 @@ block
 | real:1 complex:2 |
 #+TBLFM: @2$1='(sbe real (it @1$1))
 
-#+source: real(it='())
+#+name: real(it='())
 #+begin_src emacs-lisp
   (format "real:%d complex:%d" (aref it 0) (aref it 1))
 #+end_src
@@ -1326,7 +1326,7 @@ block
     :PROPERTIES:
     :DATE:     2011-04-13
     :END:
-#+results: complex-data
+#+name: complex-data
 |-------------------------------------|
 | (0.0331901438056,0.000535222885197) |
 |-------------------------------------|
@@ -1337,7 +1337,7 @@ block
     :PROPERTIES:
     :DATE:     2011-04-13
     :END:
-#+results: complex-data
+#+name: complex-data
 |-------------------------------------|
 | (0.0331901438056,0.000535222885197) |
 | (0.0333434157791,0.000537930174356) |
@@ -1352,7 +1352,7 @@ block
   return data
 #+end_src
 
-#+results:
+#+name:
 | (0.0331901438056,0.000535222885197) |
 | (0.0333434157791,0.000537930174356) |
 | (0.0345727512157,0.000559346040457) |
@@ -1374,7 +1374,7 @@ block
     (print "Fish."))
 #+end_src
 
-#+results:
+#+name:
 : 
 : "Dog:  1.414214"
 : 
@@ -1390,7 +1390,7 @@ block
       (fish)))
 #+end_src
 
-#+results:
+#+name:
 | dog  | 1.4142135623730951 |
 | cat  |                  7 |
 | fish |                    |
@@ -1417,7 +1417,7 @@ block
   str(data)
 #+end_src
 
-#+results[135a7f73839b69d118780ca29a64c3840601f7b9]:
+#+name[135a7f73839b69d118780ca29a64c3840601f7b9]:
 : 'data.frame':	9 obs. of  2 variables:
 :  $ condition : chr  "1.MMM" "2.MMU" "3.MUM" "4.UMU" ... 
 :  $ Mean.offer: num  48.5 42.6 44.9 46.4 44.1 ... eric
@@ -1432,7 +1432,7 @@ block
   y-x
 #+end_src
 
-#+results:
+#+name:
 : 1
 
 ** detangling example
@@ -1444,7 +1444,7 @@ block
    :DATE:     2011-04-01
    :END:
 
-#+source: sh-for-tangling
+#+name: sh-for-tangling
 #+begin_src sh
   echo "this is the `sh-for-tangling' code block"
   num=`expr 1 + 1`
@@ -1476,7 +1476,7 @@ the library of babel.
   (mapcar #'list (mapcar #'1+ (range 10)))
 #+end_src
 
-#+results:
+#+name:
 |  1 |
 |  2 |
 |  3 |
@@ -1532,12 +1532,12 @@ Eric
 | 0 | heat      |    30 |
 | 1 | heat      |    30 |
 
-#+source: func5
+#+name: func5
 #+begin_src R :var name=data :var a="one" :colnames yes
   names(name)
 #+end_src
 
-#+results: func5
+#+name: func5
 | x         |
 |-----------|
 | x         |
@@ -1546,7 +1546,7 @@ Eric
 
 #+call: func5(name=data, a="two") :colnames yes
 
-#+results: func5(name=data, a="two")
+#+name: func5(name=data, a="two")
 | x         |
 |-----------|
 | x         |
@@ -1557,13 +1557,13 @@ Eric
    :PROPERTIES:
    :DATE:     2011-03-23
    :END:
-#+source: testcache
+#+name: testcache
 #+begin_src R :cache yes :exports results
   dat <-  matrix(runif(12), 3, 4)
   print(dat)
 #+end_src
 
-#+results[e7b83e61596da84f85c5a24e61569576c802f9a2]: testcache
+#+name[e7b83e61596da84f85c5a24e61569576c802f9a2]: testcache
 | 0.590091332094744 | 0.101750465808436 | 0.487125408137217 |  0.92315583024174 |
 | 0.483292032498866 | 0.427640072302893 | 0.974636133294553 | 0.995571716455743 |
 |  0.60190233332105 | 0.122638279106468 | 0.437959408387542 | 0.015639441087842 |
@@ -1574,7 +1574,7 @@ Eric
    :END:
 
 code block
-#+source: conflict-block
+#+name: conflict-block
 #+begin_src sh :exports results :results silent
   echo eric
 #+end_src
@@ -1582,7 +1582,7 @@ code block
 call line
 #+call: conflict-block() :exports results
 
-#+results: conflict-block()
+#+name: conflict-block()
 : eric
 
 ** macros during tangling
@@ -1615,7 +1615,7 @@ will be replaced.
    :PROPERTIES:
    :DATE:     2011-03-07
    :END:
-#+source: clean
+#+name: clean
 #+begin_src emacs-lisp :var in=""
   (flet ((clean (in)
                 (if (listp in)
@@ -1626,7 +1626,7 @@ will be replaced.
     (clean in))
 #+end_src
 
-#+results: regexps
+#+name: regexps
 | first  | (a¦b) |
 | second | (1¦2) |
 
@@ -1634,7 +1634,7 @@ will be replaced.
   $a; $b;
 #+end_src
 
-#+results:
+#+name:
 : (1|2)
 
 ** eval results as a list
@@ -1645,28 +1645,28 @@ will be replaced.
   return "(mapcar (lambda (el) (+ 1 el)) '(1 2))"
 #+end_src
 
-#+results:
+#+name:
 | 2 | 3 |
 
 #+begin_src python :results value
   return "[1, 2]"
 #+end_src
 
-#+results:
+#+name:
 | 1 | 2 |
 
 #+begin_src python :results value
   return [1, 2]
 #+end_src
 
-#+results:
+#+name:
 | 1 | 2 |
 
 #+begin_src python :results value
   return "%r" % "[1 2]"
 #+end_src
 
-#+results:
+#+name:
 : [1 2]
 
 ** export of inline R code
@@ -1679,7 +1679,7 @@ Here I test inline code evaluation in R.
 x <- 100
 #+end_src
 
-#+results:
+#+name:
 : 100
 
 Now I want to export the value of x, which should be
@@ -1699,7 +1699,7 @@ Did the number 100 show up at the end of the previous sentence on export?
    :PROPERTIES:
    :DATE:     2011-03-02
    :END:
-#+results: spaces-wrapped-string
+#+name: spaces-wrapped-string
 - " pass through with space "
 
 
@@ -1707,7 +1707,7 @@ Did the number 100 show up at the end of the previous sentence on export?
   res
 #+end_src
 
-#+results:
+#+name:
 :  pass through with space 
 
 ** results org raw wrap
@@ -1721,7 +1721,7 @@ Did the number 100 show up at the end of the previous sentence on export?
   EOF
 #+end_src
 
-#+results:
+#+name:
 #+BEGIN_ORG
 - first
 - second
@@ -1775,7 +1775,7 @@ Finally this version does only export the R code
 | "eric schulte" | 12 |
 #+TBLFM: @1$2='(sbe length (in $1))
 
-#+source: length
+#+name: length
 #+begin_src emacs-lisp :var in="foo"
   (length in)
 #+end_src
@@ -1788,7 +1788,7 @@ Finally this version does only export the R code
     :PROPERTIES:
     :DATE:     2011-02-28
     :END:
-#+results: hidden-parameters
+#+name: hidden-parameters
 | 1 |
 | 2 |
 | 3 |
@@ -1806,7 +1806,7 @@ Finally this version does only export the R code
    :PROPERTIES:
    :DATE:     2011-02-27
    :END:
-#+results: table-w-hline
+#+name: table-w-hline
 | 1 | a |
 |---+---|
 | 2 | b |
@@ -1817,7 +1817,7 @@ Finally this version does only export the R code
   table
 #+end_src
 
-#+results:
+#+name:
 : hline
 
 #+tblname: perl-table-w-hline
@@ -1899,28 +1899,28 @@ Block 6
   y
 #+end_src
 
-#+results:
+#+name:
 : [1 2 3]
 
 #+begin_src calc :var y=[1 2 3]
   3 y
 #+end_src
 
-#+results:
+#+name:
 : [3, 6, 9]
 
 #+begin_src emacs-lisp :var data=[1 2 3]
   (elt data 1)
 #+end_src
 
-#+results:
+#+name:
 : 2
 
 #+begin_src calc
   1 * 8
 #+end_src
 
-#+results:
+#+name:
 : 8
 
 ** don't interpret tuples as elisp code
@@ -1931,7 +1931,7 @@ Block 6
   return (1,2)
 #+end_src
 
-#+results:
+#+name:
 : (1, 2)
 
 ** passing elisp-looking variables to code blocks
@@ -1942,10 +1942,10 @@ Block 6
   printf "passed in %s", $it
 #+end_src
 
-#+results:
+#+name:
 : passed in (+ 1 1)
 
-#+results: elisp-looking-table
+#+name: elisp-looking-table
 | 1 | (+ 1 1) |
 | 2 | (a b c) |
 | 3 | (+ 3 3) |
@@ -1954,32 +1954,32 @@ Block 6
   $data
 #+end_src
 
-#+results:
+#+name:
 : (a b c)
 
 #+begin_src emacs-lisp :var data=elisp-looking-table[1,1]
   data
 #+end_src
 
-#+results:
+#+name:
 : (a b c)
 
 ** exporting cache and noweb
    :PROPERTIES:
    :DATE:     2011-02-27
    :END:
-#+srcname: test_sleep
+#+name: test_sleep
 #+begin_src R :session :exports code
   Sys.sleep(time=5)
   1:10
 #+end_src
 
-#+srcname: test_sleep
+#+name: test_sleep
 #+begin_src R :session :exports results :noweb yes :cache yes
   <<test_sleep>>
 #+end_src
 
-#+results[e2c9e6c2f84563b590a765502057d92463e50182]: test_sleep
+#+name[e2c9e6c2f84563b590a765502057d92463e50182]: test_sleep
 |  1 |
 |  2 |
 |  3 |
@@ -2008,7 +2008,7 @@ Block 6
   foo += 1
 #+end_src
 
-#+results:
+#+name:
 : 9
 
 ** sh return a list of elements with spaces
@@ -2021,7 +2021,7 @@ Block 6
   echo "seb vauban"
 #+end_src
 
-#+results:
+#+name:
 - ("eric" "schulte")
 - ("dan" "davison")
 - ("seb" "vauban")
@@ -2032,7 +2032,7 @@ Block 6
   echo "seb vauban"
 #+end_src
 
-#+results:
+#+name:
 : eric schulte
 : dan davison
 : seb vauban
@@ -2045,14 +2045,14 @@ Block 6
 testvar - 200
 #+END_SRC
 
-#+results:
+#+name:
 : 8800
 
 #+BEGIN_SRC calc :var testvar=9000
 (testvar - 200) 800
 #+END_SRC
 
-#+results:
+#+name:
 : 7040000
 
 ** new lists
@@ -2064,28 +2064,28 @@ testvar - 200
     :DATE:     2011-02-22
     :END:
 1. this has results
-   #+results: something-in-a-list
+   #+name: something-in-a-list
    : foo
 2. and this doesn't work
    #+begin_src emacs-lisp :var data=something-in-a-list
      data
    #+end_src
 
-   #+results:
+   #+name:
    : foo
 
 *** reading and writing
     :PROPERTIES:
     :DATE:     2011-02-22
     :END:
-#+results: simple-list
+#+name: simple-list
 - 1
 - two
 - 3
 - four
 
 
-#+source: simple-list
+#+name: simple-list
 #+begin_src emacs-lisp :var lst=simple-list :results list
   (reverse lst)
 #+end_src
@@ -2117,23 +2117,23 @@ Here is an inline code block src_sh{echo 8} <- there
    :DATE:     2011-02-20
    :END:
 directory to search
-#+results: graph-dir
+#+name: graph-dir
 : graph-dir
 
 list all files in dir
-#+source: graph-files
+#+name: graph-files
 #+begin_src sh :results vector :var dir=graph-dir
   find $dir -type f -exec basename {} \;
 #+end_src
 
-#+results: graph-files
+#+name: graph-files
 | other |
 | dan   |
 | eric  |
 | seb   |
 
 association of files with mentions
-#+source: graph-associations
+#+name: graph-associations
 #+begin_src sh :var dir=graph-dir :var files=graph-files
   for i in $files; do
       for j in `grep -l -r $i $dir`;do
@@ -2142,7 +2142,7 @@ association of files with mentions
   done
 #+end_src
 
-#+results: graph-associations
+#+name: graph-associations
 | other | eric |
 | other | seb  |
 | dan   | eric |
@@ -2150,12 +2150,12 @@ association of files with mentions
 | seb   | dan  |
 
 graphing with dot
-#+source: to-dot
+#+name: to-dot
 #+begin_src sh :var associations=graph-associations :results scalar
   echo "$associations"|awk '{print $1, "->", $2}'
 #+end_src
 
-#+results: to-dot
+#+name: to-dot
 : other -> eric
 : other -> seb
 : dan -> eric
@@ -2168,7 +2168,7 @@ graphing with dot
   }
 #+end_src
 
-#+results:
+#+name:
 [[file:files.png]]
 
 ** inline code block
@@ -2216,14 +2216,14 @@ here is an inline block src_R{1+1}
   EOF
 #+end_src
 
-#+results:
+#+name:
 [[file:book.rec]]
 
 #+begin_src rec :data book.rec :fields Title,Author
   Location = 'loaned'
 #+end_src
 
-#+results:
+#+name:
 | Title               | Author          |
 | The Colour of Magic | Terry Pratchett |
 
@@ -2231,7 +2231,7 @@ here is an inline block src_R{1+1}
   
 #+end_src
 
-#+results:
+#+name:
 | Title                                 | Author              | Author_2         |
 | GNU Emacs Manual                      | Richard M. Stallman |                  |
 | The Colour of Magic                   | Terry Pratchett     |                  |
@@ -2267,7 +2267,7 @@ load data infile "$table" into mytable;
   lst
 #+end_src
 
-#+results:
+#+name:
 | :no-expand | other |
 
 ** two vars in a properties block -- not possible
@@ -2298,7 +2298,7 @@ results in Error
   (message "test1=%S test2=%S" (first tests) (second tests))
 #+end_src
 
-#+results:
+#+name:
 : test1=7 test2=8
 
 *** another alternative
@@ -2346,7 +2346,7 @@ src_sh[:results replace]{ls}
   done
 #+end_src
 
-#+results:
+#+name:
 #+BEGIN_ORG
 - place 1 in the list
 - place 2 in the list
@@ -2364,7 +2364,7 @@ inline block src_emacs-lisp[:exports code :results replace]{(+ 1 1 1)} here is w
 2*3
 #+end_src
 
-#+results:
+#+name:
 : 6
 
 ** inserting wrappers eats following characters
@@ -2380,7 +2380,7 @@ inline block src_emacs-lisp[:exports code :results replace]{(+ 1 1 1)} here is w
     "\\begin{equation}\\frac{1}{2}\n\\end{equation}"
   #+end_src
 
-  #+results:
+  #+name:
   #+BEGIN_LaTeX
   \begin{equation}\frac{1}{2}
   \end{equation}
@@ -2420,13 +2420,13 @@ There is now a new header argument controlling this behavior
    :PROPERTIES:
    :DATE:     2011-01-18
    :END:
-#+results: something
+#+name: something
 : eric
 :   schulte
 :     yes
 : more
 
-#+results: something-list
+#+name: something-list
 | 1 |
 | 2 |
 | 3 |
@@ -2435,7 +2435,7 @@ There is now a new header argument controlling this behavior
   echo "$data"|wc -l
 #+end_src
 
-#+results:
+#+name:
 : 3
 
 #+begin_src emacs-lisp :results silent
@@ -2446,7 +2446,7 @@ There is now a new header argument controlling this behavior
    :PROPERTIES:
    :DATE:     2011-01-16
    :END:
-#+source: wrappable
+#+name: wrappable
 #+begin_src emacs-lisp
   (setq x (+ 4 x))
 #+end_src
@@ -2479,7 +2479,7 @@ This is src_emacs-lisp{(+ 1 2 3)} an inline block.
    :PROPERTIES:
    :DATE:     2011-01-13
    :END:
-#+source: replaced-first
+#+name: replaced-first
 #+begin_src latex
   \begin{itemize}
   \item first
@@ -2503,26 +2503,26 @@ This is src_emacs-lisp{(+ 1 2 3)} an inline block.
   (concat foo "bar")
 #+end_src
 
-#+results:
+#+name:
 : bar
 
 ** call lines
    :PROPERTIES:
    :DATE:     2011-01-11
    :END:
-#+source: doubler
+#+name: doubler
 #+begin_src emacs-lisp :var n=2
   (* n 2)
 #+end_src
 
 #+call: doubler(n=3)
 
-#+results: doubler(n=3)
+#+name: doubler(n=3)
 : 6
 
 #+call: doubler[:var n=3]()
 
-#+results: doubler[:var n=3]()
+#+name: doubler[:var n=3]()
 : 6
 
 ** language name abbreviations
@@ -2547,14 +2547,14 @@ This is src_emacs-lisp{(+ 1 2 3)} an inline block.
         (lambda (lang body) (not (equal "ditaa" lang))))
 #+end_src
 
-#+results:
+#+name:
 | lambda | (lang body) | (not (equal ditaa lang)) |
 
 #+begin_src emacs-lisp :eval query
   (message "eval'd")
 #+end_src
 
-#+results:
+#+name:
 : eval'd
 
 #+begin_src ditaa
@@ -2570,7 +2570,7 @@ This is src_emacs-lisp{(+ 1 2 3)} an inline block.
   ls -l
 #+end_src
 
-#+results:
+#+name:
 [[file:dirlisting]]
 
 #+begin_src ruby :file ruby-out
@@ -2578,7 +2578,7 @@ This is src_emacs-lisp{(+ 1 2 3)} an inline block.
    [2, 4, 6, 8]]
 #+end_src
 
-#+results:
+#+name:
 [[file:ruby-out]]
 
 #+begin_src emacs-lisp :results file :results append
@@ -2589,7 +2589,7 @@ This is src_emacs-lisp{(+ 1 2 3)} an inline block.
     today)
 #+end_src
 
-#+results:
+#+name:
 [[file:Mon-Dec-20-17:27:52-2010]]
 
 from http://www.graphviz.org/Gallery/directed/fsm.gv.txt
@@ -2616,23 +2616,23 @@ from http://www.graphviz.org/Gallery/directed/fsm.gv.txt
   }
 #+end_src
 
-#+results:
+#+name:
 [[file:fsa.png]]
 ** tangle templates
    :PROPERTIES:
    :DATE:     2010-12-13
    :END:
-#+source: template-heading
+#+name: template-heading
 #+begin_src emacs-lisp
   some stuff here
 #+end_src
 
-#+source: template-footing
+#+name: template-footing
 #+begin_src emacs-lisp
   some other stuff here
 #+end_src
 
-#+source: template
+#+name: template
 #+begin_src sh :results output :noweb yes :var body="body stuff"
 heading=$(cat<<EOF
 <<template-heading>>
@@ -2649,7 +2649,7 @@ echo $footing
 
 #+call: template[:noweb yes](body="something new")
 
-#+results: template[:noweb yes](body="something new")
+#+name: template[:noweb yes](body="something new")
 : some stuff here
 : something new
 : some other stuff here
@@ -2670,7 +2670,7 @@ echo $footing
   ,- schulte
 #+end_src
 
-#+results:
+#+name:
 #+BEGIN_LaTeX
 \begin{itemize}
 \item eric
@@ -2690,7 +2690,7 @@ echo $footing
   local = unicode ("é","latin1")
 #+end_src
 
-#+results:
+#+name:
 | 2 | 2 |
 
 ** Python requires a utf-8 coding prefix
@@ -2701,7 +2701,7 @@ echo $footing
 s = "é"
 #+end_src
 
-#+results:
+#+name:
 : é
 
 #+begin_src python :prefix # -*- coding: utf-8 -*- :results output
@@ -2709,7 +2709,7 @@ s = "é"
 print(s)
 #+end_src
 
-#+results:
+#+name:
 : é
 
 ** empty lines in R session output
@@ -2723,7 +2723,7 @@ print(s)
   x + 4
 #+end_src R
 
-#+results:
+#+name:
 : [1] 1
 : [1] 2
 : [1] 5
@@ -2732,19 +2732,19 @@ print(s)
    :PROPERTIES:
    :DATE:     2010-11-30
    :END:
-#+source: i-have-a-name
+#+name: i-have-a-name
 #+begin_src sh :eval query
   date
 #+end_src
 
-#+results: i-have-a-name
+#+name: i-have-a-name
 : Tue Nov 30 22:03:25 MST 2010
 
 ** sql variables
    :PROPERTIES:
    :DATE:     2010-11-30
    :END:
-#+results: sql-param
+#+name: sql-param
 | table       | valueTable0       |
 | column      | valueColumn0      |
 | type        | valueType0        |
@@ -2752,7 +2752,7 @@ print(s)
 
 I want to apply the values onto the following chunk of code:
 
-#+srcname: add-column-in-table-0
+#+name: add-column-in-table-0
 #+begin_src sql :var table=sql-param[0,1] :var column=sql-param[1,1] :var type=sql-param[2,1] :var nullability=sql-param[3,1]
 -- add column `@column' (if column does not exist yet)
 IF NOT EXISTS (SELECT *
@@ -2776,7 +2776,7 @@ END
   2
 #+end_src
 
-#+results:
+#+name:
 : 98
 
 ** safe lists for Haskell
@@ -2790,7 +2790,7 @@ END
 | 3 | third  |
 | 4 | fourth | 
 
-#+source: rec-string-wrap
+#+name: rec-string-wrap
 #+begin_src emacs-lisp :var data=mixed-table
   (defun rec-string-wrap (in)
     (if (listp in) (mapcar #'rec-string-wrap in) (format "%S" in)))
@@ -2801,7 +2801,7 @@ END
   map head tbl
 #+end_src
 
-#+results:
+#+name:
 | 1 | 2 | 3 | 4 |
 
 ** add column to table with awk
@@ -2811,7 +2811,7 @@ END
    :END:
 I want to *add a column* to the following table.
 
-#+results: table-message
+#+name: table-message
 | This is line 1 of the message.        |
 | This is line 2 of the message.        |
 | This is the last line of the message. |
@@ -2832,7 +2832,7 @@ the easiest (for me) would be with the elisp =mapcar= function
   (mapcar (lambda (row) (cons "New col" row)) tbl)
 #+end_src
 
-#+results:
+#+name:
 | New col | This is line 1 of the message.        |
 | New col | This is line 2 of the message.        |
 | New col | This is the last line of the message. |
@@ -2840,12 +2840,12 @@ the easiest (for me) would be with the elisp =mapcar= function
 *First* trial: add a column whose cell contents will be *fixed* (here,
 equal to =New col=).
 
-#+srcname: add-col
+#+name: add-col
 #+begin_src sh :var data=table-message :results output raw :exports both
 echo "$data" | awk '// {print "| New col | " $0 " |";}'
 #+end_src
 
-#+results: add-col
+#+name: add-col
 | New col | This is line 1 of the message.        |
 | New col | This is line 2 of the message.        |
 | New col | This is the last line of the message. |
@@ -2859,7 +2859,7 @@ return [['607', 'Show license short, name on the deed'],
         ['255', "'(message (concat 'hello ' 'world))"]]
 #+END_SRC
 
-#+results:
+#+name:
 | 607 | Show license short, name on the deed |
 | 255 | '(message (concat 'hello ' 'world))  |
 
@@ -2868,7 +2868,7 @@ return [['607', 'Show license short, name on the deed'],
    ['255', "))'(message (concat 'hello ' 'world"]]
 #+end_src
 
-#+results:
+#+name:
 | 607 | Show license, short name on the deed |
 | 255 | ))'(message (concat 'hello ' 'world  |
 
@@ -2876,7 +2876,7 @@ return [['607', 'Show license short, name on the deed'],
   [["'single quotes'", "b"], ["\"double quotes\"", "d"]]
 #+end_src
 
-#+results:
+#+name:
 | 'single quotes' | b |
 | "double quotes" | d |
 
@@ -2888,14 +2888,14 @@ return [['607', 'Show license short, name on the deed'],
   8
 #+end_src
 
-#+results:
+#+name:
 : 8
 
 #+begin_src emacs-lisp :eric
 8  
 #+end_src
 
-#+results:
+#+name:
 : 8
 
 #+BEGIN_SRC R :session :results output
@@ -2906,7 +2906,7 @@ return [['607', 'Show license short, name on the deed'],
 9
 #+END_SRC
 
-#+results:
+#+name:
 : [1] 9
 
 ** introducing =wrap= header argument
@@ -2917,7 +2917,7 @@ return [['607', 'Show license short, name on the deed'],
   (mapcar (lambda (el) (list el (+ 1 (* el el)))) (number-sequence 0 10))
 #+end_src
 
-#+results:
+#+name:
 #+BEGIN_RESULT
 |  0 |   1 |
 |  1 |   2 |
@@ -2939,7 +2939,7 @@ now indented
     "something else"
   #+end_src
 
-  #+results:
+  #+name:
   #+BEGIN_RESULT
   : something else
   #+END_RESULT
@@ -2949,12 +2949,12 @@ now indented
    :DATE:     2010-11-19
    :END:
 
-#+results: a-list
+#+name: a-list
 - org-mode
 - and
 - babel
 
-#+source: a-list
+#+name: a-list
 #+begin_src emacs-lisp :var lst=a-list :results list
   (reverse lst)
 #+end_src
@@ -2966,7 +2966,7 @@ also for a block inside of a list
      (+ 1 1 1 1)
    #+end_src
 
-   #+results:
+   #+name:
    : 4
 
 3. third element
@@ -2979,7 +2979,7 @@ also for a block inside of a list
   select count(*) from temps;
 #+end_src
 
-#+results:
+#+name:
 : 422689
 
 ** lob calls with header argument pass through
@@ -2987,19 +2987,19 @@ also for a block inside of a list
    :DATE:     2010-11-08
    :END:
 
-#+source: lob-header
+#+name: lob-header
 #+begin_src emacs-lisp :var n=20
   n
 #+end_src
 
 #+call: lob-header[:results vector](n=15)
 
-#+results: lob-header[:results vector](n=15)
+#+name: lob-header[:results vector](n=15)
 | 15 |
 
 #+call: lob-header(n=10) :results vector
 
-#+results: lob-header(n=10)
+#+name: lob-header(n=10)
 | 10 |
 
 need ob-ref.el to pass through the header arguments in "[]"s
@@ -3007,14 +3007,14 @@ need ob-ref.el to pass through the header arguments in "[]"s
   n
 #+end_src
 
-#+results:
+#+name:
 | 8 |
 
 #+begin_src emacs-lisp :var n=lob-header[:results vector](n=8)[0,0]
   n
 #+end_src
 
-#+results:
+#+name:
 : 8
 
 ** clojure code blocks and the lazies
@@ -3035,7 +3035,7 @@ need ob-ref.el to pass through the header arguments in "[]"s
   (map (fn [el] (list el (* el el)))(range 10))
 #+end_src
 
-#+results:
+#+name:
 | 0 |  0 |
 | 1 |  1 |
 | 2 |  4 |
@@ -3063,28 +3063,28 @@ need ob-ref.el to pass through the header arguments in "[]"s
   '+
 #+end_src
 
-#+results:
+#+name:
 : 80
 
 #+begin_src calc
   2*(8+8)
 #+end_src
 
-#+results:
+#+name:
 : 32
 
 #+begin_src calc
   2*e
 #+end_src
 
-#+results:
+#+name:
 : 5.43656365692
 
 #+begin_src calc :var something=9
   2*something
 #+end_src
 
-#+results:
+#+name:
 : 18
 
 ** shell blocks returning a file name
@@ -3095,7 +3095,7 @@ need ob-ref.el to pass through the header arguments in "[]"s
   date
 #+end_src
 
-#+results:
+#+name:
 [[file:quick.txt]]
 
 ** passing arguments through call lines
@@ -3103,24 +3103,24 @@ need ob-ref.el to pass through the header arguments in "[]"s
    :DATE:     2010-10-29
    :END:
 
-#+source: test
+#+name: test
 #+begin_src R :session :file test.pdf :var myarg="bla"
   plot(1:10, main=myarg)
 #+end_src
 
-#+results: test
+#+name: test
 [[file:test.pdf]]
 
 #+call: test(myarg="hiho")
 
-#+results: test(myarg="hiho")
+#+name: test(myarg="hiho")
 : test.pdf
 
 ** simple gnuplot tests
    :PROPERTIES:
    :DATE:     2010-10-26
    :END:
-#+results: some-more-gnuplot
+#+name: some-more-gnuplot
 | 1 |  1 |
 | 2 |  4 |
 | 3 |  9 |
@@ -3135,7 +3135,7 @@ need ob-ref.el to pass through the header arguments in "[]"s
   plot "$data"
 #+end_src
 
-#+results:
+#+name:
 
 Plotting data points from a table could look like this:
 #+tblname: basic-plot
@@ -3167,7 +3167,7 @@ plot data u 1:2 w p lw 2 title 'x vs. y1', \
      data u 1:3 w lp lw 1 title 'x vx. y2'
 #+end_src
 
-#+results:
+#+name:
 [[file:basic-plot.png]]
 
 ** latex headers in latex code blocks
@@ -3179,14 +3179,14 @@ plot data u 1:2 w p lw 2 title 'x vs. y1', \
   Eric Schulte
 #+end_src
 
-#+results:
+#+name:
 [[file:name1.pdf]]
 
 #+begin_src latex :headers '("\\usepackage{mathpazo}" "\\usepackage{fullpage}") :file name2.pdf
   Eric Schulte
 #+end_src
 
-#+results:
+#+name:
 [[file:name2.pdf]]
 
 ** export-specific header arguments
@@ -3199,7 +3199,7 @@ plot data u 1:2 w p lw 2 title 'x vs. y1', \
   out
 #+end_src
 
-#+results:
+#+name:
 : not latex
 
 ** security problem with elisp in header arguments
@@ -3244,7 +3244,7 @@ plot data u 1:2 w p lw 2 title 'x vs. y1', \
      numbers)
 #+end_src
 
-#+results:
+#+name:
 |                      1 | integer |
 |                      2 | integer |
 |                     12 | integer |
@@ -3259,7 +3259,7 @@ plot data u 1:2 w p lw 2 title 'x vs. y1', \
    :DATE:     2010-10-13
    :END:
 
-#+source: name
+#+name: name
 #+begin_src emacs-lisp
   (message "eric")
 #+end_src
@@ -3281,7 +3281,7 @@ plot data u 1:2 w p lw 2 title 'x vs. y1', \
   scalar
 #+end_src
 
-#+results:
+#+name:
 : a
 
 ** cycle -- the input is the output
@@ -3290,12 +3290,12 @@ plot data u 1:2 w p lw 2 title 'x vs. y1', \
    :END:
 and the rhythm is the base and the base is the treble
 
-#+results: cycle
+#+name: cycle
 | one   |
 | two   |
 | three |
 
-#+source: cycle
+#+name: cycle
 #+begin_src emacs-lisp :var table=cycle
   (append (last table) (butlast table))
 #+end_src
@@ -3309,7 +3309,7 @@ and the rhythm is the base and the base is the treble
    :DATE:     2010-09-21
    :END:
 
-#+source: body
+#+name: body
 #+begin_src org :results latex
   ,My body includes a list:
   
@@ -3385,14 +3385,14 @@ and the rhythm is the base and the base is the treble
    :PROPERTIES:
    :DATE:     2010-09-09
    :END:
-#+source: eight
+#+name: eight
 #+begin_src R
   8
 #+end_src
 
 #+call: eight() :results vector
 
-#+results: eight()
+#+name: eight()
 | 8 |
 
 maybe the following with the new proposed header arguments
@@ -3417,7 +3417,7 @@ More test
    params)
 #+end_src
 
-#+results:
+#+name:
 | :cache    | no      |
 | :colnames | no      |
 | :comments |         |
@@ -3433,7 +3433,7 @@ More test
    :PROPERTIES:
    :DATE:     2010-09-07
    :END:
-#+source: org-list
+#+name: org-list
 #+begin_src org :results latex
   - one
   - two
@@ -3454,7 +3454,7 @@ More test
   (progn (+ 1 1) nil)
 #+end_src
 
-#+results:
+#+name:
 
 ** comparative speed of python evaluation
    :PROPERTIES:
@@ -3464,14 +3464,14 @@ More test
   2+2
 #+end_src
 
-#+results:
+#+name:
 : 4
 
 #+begin_src python
   return 2+2
 #+end_src
 
-#+results:
+#+name:
 : 4
 
 #+begin_src python :session test
@@ -3482,7 +3482,7 @@ def sub(a,b):
 add(sub(10,1),sub(10,2))
 #+end_src
 
-#+results:
+#+name:
 : org_babel_python_eoe
 
 ** customizable comment formats
@@ -3550,7 +3550,7 @@ and finally a block with a =:noweb= header argument
   }
 #+end_src
 
-#+results:
+#+name:
 : argv[1] 1
 
 ** :var (buffer-file-name)
@@ -3633,14 +3633,14 @@ This second block /does/ appear in export.
   (+ number 0)
 #+end_src
 
-#+results:
+#+name:
 : 9
 
 #+begin_src scheme :var number=9 :session *scheme* :scheme racket
   (+ number 1)
 #+end_src
 
-#+results:
+#+name:
 : 10
 
 ** pulling information from tags                                       :blue:
@@ -3652,26 +3652,26 @@ This second block /does/ appear in export.
   color
 #+end_src
 
-#+results:
+#+name:
 : blue
 
 ** initial scheme support
    :PROPERTIES:
    :DATE:     2010-08-27
    :END:
-#+source: numbers
+#+name: numbers
 #+begin_src scheme
   (map (lambda (el) (+ el 1)) '(1 2 3))
 #+end_src
 
-#+results:
+#+name:
 | 2 | 3 | 4 |
 
 #+begin_src scheme :var numbers=numbers
   (map (lambda (el) (- el 1)) numbers)
 #+end_src
 
-#+results:
+#+name:
 | 1 | 2 | 3 |
 
 ** initial javascript support
@@ -3686,30 +3686,30 @@ using node.js
   return n
 #+end_src
 
-#+results:
+#+name:
 : 1
 
-#+source: cars
+#+name: cars
 #+begin_src js
   var cars = ["Saab","Volvo","BMW"];
   return cars;
 #+end_src
 
-#+results: cars
+#+name: cars
 | Saab | Volvo | BMW |
 
 #+begin_src js :var cars=cars
   return cars[0][0];
 #+end_src
 
-#+results:
+#+name:
 : Saab
 
 #+begin_src js :var cars=cars
   return cars[0].length;
 #+end_src
 
-#+results:
+#+name:
 : 3
 
 ** duplicate results on execute subtree
@@ -3723,7 +3723,7 @@ using node.js
 "
 #+end_src
 
-#+results:
+#+name:
 #+BEGIN_SRC org
 - first
 - second
@@ -3735,7 +3735,7 @@ using node.js
    :DATE:     2010-08-26
    :END:
 - one plus one
-  #+source: one-plus-one
+  #+name: one-plus-one
   #+begin_src emacs-lisp :exports none :results silent
     (+ 1 1)
   #+end_src
@@ -3760,7 +3760,7 @@ usage -- sequence diagram
   Alice ->> Bob: asynchronous call
 #+end_src
 
-#+results:
+#+name:
 [[file:tryout.png]]
 
 ** wrapping up raw/org results
@@ -3774,7 +3774,7 @@ usage -- sequence diagram
   "
 #+end_src
 
-#+results:
+#+name:
 #+BEGIN_SRC org
 - first
 - second
@@ -3812,7 +3812,7 @@ do we export cached blocks
   (random)
 #+end_src
 
-#+results[46632b4fe2e3a23e847953c95adcba58c270b381]:
+#+name[46632b4fe2e3a23e847953c95adcba58c270b381]:
 : 490528137
 
 *** looks like this is a problem with info collection
@@ -3827,7 +3827,7 @@ do we export cached blocks
   (mapcar (lambda (el) (list (car el) (cdr el))) (nth 2 info))
 #+end_src
 
-#+results[4184710f118ac768ea0d90632508792d695efd7a]:
+#+name[4184710f118ac768ea0d90632508792d695efd7a]:
 | :cache    | yes                   |
 | :colnames | no                    |
 | :comments | yes                   |
@@ -3844,7 +3844,7 @@ do we export cached blocks
   (org-babel-sha1-hash info)
 #+end_src
 
-#+results[0427db66afdc95462d1c8514b662829987d71ff5]:
+#+name[0427db66afdc95462d1c8514b662829987d71ff5]:
 : 0427db66afdc95462d1c8514b662829987d71ff5
 
 ** eval and noeval
@@ -3863,7 +3863,7 @@ should export code, so no need to do anything
 #+end_src
 
 should export nothing, and should not query
-#+source: this-is-ls
+#+name: this-is-ls
 #+begin_src sh :eval query :exports code
   date
 #+end_src
@@ -3892,7 +3892,7 @@ should export results, and should trigger query above
 | 2 | 3 |"
 #+end_src
 
-#+results:
+#+name:
 | 1 | 2 |
 | 2 | 3 |
 
@@ -3905,7 +3905,7 @@ should export results, and should trigger query above
   numbers
 #+end_src
 
-#+results:
+#+name:
 | 51 | 43 | 22 |
 | 92 | 28 | 21 |
 | 68 | 22 |  9 |
@@ -3915,7 +3915,7 @@ should export results, and should trigger query above
   numbers
 #+end_src
 
-#+results:
+#+name:
 | V1 | V2 | V3 |
 |----+----+----|
 | 51 | 43 | 22 |
@@ -3926,7 +3926,7 @@ should export results, and should trigger query above
    :PROPERTIES:
    :DATE:     2010-08-13
    :END:
-#+results: ledger-stuff
+#+name: ledger-stuff
 #+begin_example
 09-Aug-21 CHEQUE : 9953055                    Expenses:Unknown                                    166.70 EUR            166.70 EUR
 09-Sep-17 CHEQUE : 7691785                    Expenses:Unknown                                    100.00 EUR            266.70 EUR
@@ -3941,7 +3941,7 @@ should export results, and should trigger query above
    :PROPERTIES:
    :DATE:     2010-08-12
    :END:
-#+results: ledger-output
+#+name: ledger-output
 #+begin_example 
   09-Aug-21 CHEQUE : 9953055                    Expenses:Unknown                                    166.70 EUR            166.70 EUR
   09-Sep-17 CHEQUE : 7691785                    Expenses:Unknown                                    100.00 EUR            266.70 EUR
@@ -3956,7 +3956,7 @@ should export results, and should trigger query above
     (org-table-to-lisp))
 #+end_src
 
-#+results:
+#+name:
 | 09-Aug-21 CHEQUE : 9953055                | Expenses:Unknown | 166.70 EUR  | 166.70 EUR  |
 | 09-Sep-17 CHEQUE : 7691785                | Expenses:Unknown | 100.00 EUR  | 266.70 EUR  |
 | 09-Oct-16 REMISE CHEQUE N 8686318 001 105 | Expenses:Unknown | -525.00 EUR | -258.30 EUR |
@@ -3965,7 +3965,7 @@ should export results, and should trigger query above
    :PROPERTIES:
    :DATE:     2010-08-12
    :END:
-#+source: table
+#+name: table
 #+begin_src emacs-lisp
   (mapcar
    (lambda (el) (number-sequence el (+ el 3)))
@@ -3990,10 +3990,10 @@ write the results out as a normal org-mode file
   (mapcar (lambda (el) (* el el)) (append '(1 7 3 4) (list n)))
 #+end_src
 
-#+results:
+#+name:
 | 1 | 49 | 9 | 16 | 25 |
 
-#+results: short-list
+#+name: short-list
 | 1 |
 | 2 |
 | 3 |
@@ -4002,7 +4002,7 @@ write the results out as a normal org-mode file
   (+ 1 (length lst))
 #+end_src
 
-#+results:
+#+name:
 : 4
 
 ** comments in R blocks
@@ -4017,7 +4017,7 @@ write the results out as a normal org-mode file
   x
 #+end_src
 
-#+results:
+#+name:
 : 
 : [1] 1.320853
 
@@ -4067,7 +4067,7 @@ x <- 10
   return nospec
 #+end_src
 
-#+results:
+#+name:
 | one   | two | thee |
 |-------+-----+------|
 | three | two | one  |
@@ -4104,7 +4104,7 @@ interpreter, the following should be loaded with
         neighbors = (zip palendromic_primes (tail palendromic_primes))
 #+end_src
 
-#+source: palendromic_prime_distances
+#+name: palendromic_prime_distances
 #+begin_src haskell
   take 180 (zip [1..] palendromic_prime_distances)
 #+end_src
@@ -4112,7 +4112,7 @@ interpreter, the following should be loaded with
 For high-quality png output from gnuplot, the following sequence of
 graphing to a =.eps= file, and then converting to a =.png= can be
 useful.
-#+source: dist-graph
+#+name: dist-graph
 #+begin_src gnuplot :var data=palendromic_prime_distances :file pps.eps
   set term postscript landscape color enhanced
   set log y
@@ -4130,7 +4130,7 @@ The =convert= command is part of the [[http://www.imagemagick.org/script/index.p
    :PROPERTIES:
    :DATE:     2010-07-13
    :END:
-#+results: lorem
+#+name: lorem
 #+begin_example 
   Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
   eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
@@ -4145,10 +4145,10 @@ The =convert= command is part of the [[http://www.imagemagick.org/script/index.p
   (message "%d words in Lorem" (length (split-string lorem)))
 #+end_src
 
-#+results:
+#+name:
 : 68 words in Lorem
 
-#+results: 1D
+#+name: 1D
 | 1 |
 | 2 |
 | 3 |
@@ -4158,7 +4158,7 @@ The =convert= command is part of the [[http://www.imagemagick.org/script/index.p
   lst
 #+end_src
 
-#+results:
+#+name:
 : 1
 
 ** fixing result insertion
@@ -4175,7 +4175,7 @@ needs to replace the results when there is a new hash
   date
 #+end_src
 
-#+results:
+#+name:
 : Mon Jul 12 22:18:16 PDT 2010
 
 *** unnamed source block results
@@ -4186,14 +4186,14 @@ needs to replace the results when there is a new hash
   (+ 1 2 3 4)
 #+end_src
 
-#+results[16a776d6d139e1d39e99d736536a546df115c2dc]:
+#+name[16a776d6d139e1d39e99d736536a546df115c2dc]:
 : 10
 
 #+begin_src emacs-lisp :cache yes
   (list '(1 2 3) '(4 5 6))
 #+end_src
 
-#+results[53f489ed6977857b9945d79d06e575b2cbbebf11]:
+#+name[53f489ed6977857b9945d79d06e575b2cbbebf11]:
 | 1 | 2 | 3 |
 | 4 | 5 | 6 |
 
@@ -4202,13 +4202,13 @@ needs to replace the results when there is a new hash
     :DATE:     2010-07-12
     :END:
 
-#+srcname: something-w-table
+#+name: something-w-table
 #+begin_src emacs-lisp
   (sleep-for 2)
   (list '(1 2 3) '(4 5 8))
 #+end_src
 
-#+source: something
+#+name: something
 #+begin_src emacs-lisp :cache yes
   (+ 1 2 3 4 8)
 #+end_src
@@ -4222,11 +4222,11 @@ pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
 culpa qui officia deserunt mollit anim id est laborum.
 
 # something else
-#+results[d053f6643d9dc52a0e804c15f2a762da73a00a07]: something
+#+name[d053f6643d9dc52a0e804c15f2a762da73a00a07]: something
 : 18
 
 #+attr_latex: width=0.4\textwidth
-#+results[5fac69648ab749ef9ee88ea65b3d49d93f3f6cc8]: something-w-table
+#+name[5fac69648ab749ef9ee88ea65b3d49d93f3f6cc8]: something-w-table
 | 1 | 2 | 3 |
 | 4 | 5 | 8 |
 
@@ -4245,7 +4245,7 @@ delete emacs-lisp below for errors
    :DATE:     2010-07-12
    :END:
 
-#+results: anova-example
+#+name: anova-example
 | Effect | DFn | DFd |             SSn |              SSd |                F |                    p | p<.05 |              pes |
 |--------+-----+-----+-----------------+------------------+------------------+----------------------+-------+------------------|
 | Days   |   9 | 153 | 166235.12250176 | 151101.038615303 | 18.7026979326383 | 8.99534541600196e-21 | *     | 0.52384550792003 |
@@ -4259,7 +4259,7 @@ delete emacs-lisp below for errors
    tab)
 #+end_src
 
-#+results[16ac354f1e7a65594bb59e252ab221e6a4b10f80]:
+#+name[16ac354f1e7a65594bb59e252ab221e6a4b10f80]:
 | Effect |    DFn |      DFd |         SSn |         SSd |       F |                    p | p<.05 |    pes |
 |--------+--------+----------+-------------+-------------+---------+----------------------+-------+--------|
 | Days   | 9.0000 | 153.0000 | 166235.1225 | 151101.0386 | 18.7027 | 8.99534541600196e-21 | *     | 0.5238 |
@@ -4320,7 +4320,7 @@ looking at paths
   }
 #+end_src
 
-#+results:
+#+name:
 [[file:models.png]]
 
 ** Tom found a bug
@@ -4332,7 +4332,7 @@ looking at paths
   (list 1 (+ 2 3))
 #+end_src
 
-#+results:
+#+name:
 | 1 | 5 |
 
 ** python errors
@@ -4343,14 +4343,14 @@ looking at paths
   [1, [2], 3, 4]
 #+end_src
 
-#+results:
+#+name:
 | 1 | (2) | 3 | 4 |
 
 #+begin_src ruby :results output :session
   [1, 2, 3, 4, 6].map{|n| puts n}
 #+end_src
 
-#+results:
+#+name:
 : 1
 : 2
 : 3
@@ -4361,7 +4361,7 @@ looking at paths
   print 9
 #+end_src
 
-#+results: R-with-colnames
+#+name: R-with-colnames
 | one |
 |-----|
 | 1   |
@@ -4370,7 +4370,7 @@ looking at paths
   "something"
 #+end_src
 
-#+results:
+#+name:
 : [1] "something"
 
 #+begin_src R :session *R* :results output
@@ -4380,7 +4380,7 @@ looking at paths
   4
 #+end_src
 
-#+results:
+#+name:
 : [1] 1
 : [1] 2
 : [1] 3
@@ -4391,7 +4391,7 @@ looking at paths
   print "9\n";
 #+end_src
 
-#+results:
+#+name:
 : 8
 : 9
 
@@ -4399,35 +4399,35 @@ looking at paths
   (+ 8 7)
 #+end_src
 
-#+results:
+#+name:
 : 15
 
 #+begin_src clojure :session *clj*
   (println "eric")
 #+end_src
 
-#+results:
+#+name:
 : nil
 
 #+begin_src perl :results value
   8
 #+end_src
 
-#+results:
+#+name:
 : 8
 
 #+begin_src c++ :includes '(<stdio.h> <math.h> <cstdlib> <time.h>)
   printf("eric schulte\n");
 #+end_src
 
-#+results:
+#+name:
 : eric schulte
 
 #+begin_src sh
   echo 78
 #+end_src
 
-#+results:
+#+name:
 : 78
 
 ** tangle R and load
@@ -4449,7 +4449,7 @@ looking at paths
   y <- 9
 #+end_src
 
-#+srcname: i-have-a-name
+#+name: i-have-a-name
 #+begin_src R 
   x+y+z
 #+end_src
@@ -4532,12 +4532,12 @@ save me!
    :PROPERTIES:
    :DATE:     2010-06-28
    :END:
-#+source: raw-data
+#+name: raw-data
 #+begin_src sh :results scalar
   wget --quiet -qO- "http://ogdi.cloudapp.net/v1/dc/RecreationParks?format=json"
 #+end_src
 
-#+source: dc-parks
+#+name: dc-parks
 #+begin_src emacs-lisp :var keys='(ward area) :var data=raw-data
   (mapcar
     (lambda (lis) (mapcar (lambda (key) (cdr (assoc key lis))) keys))
@@ -4546,7 +4546,7 @@ save me!
                 (json-read)))))
 #+end_src
 
-#+source: dc-parks-metric
+#+name: dc-parks-metric
 #+begin_src ruby :var data=dc-parks
   data.map{|f| [f[0], 2.59 * f[1]]}
 #+end_src
@@ -4556,7 +4556,7 @@ save me!
   title(main="Park size by Ward")
 #+end_src
 
-#+results:
+#+name:
 [[file:parks.png]]
 
 ** table-label
@@ -4577,7 +4577,7 @@ save me!
   length [1, 2]
 #+end_src
 
-#+results:
+#+name:
 : 2
 
 #+tblname: example-4-haskell
@@ -4593,7 +4593,7 @@ save me!
   length this
 #+end_src
 
-#+results:
+#+name:
 : 7
 
 ** possible prefixes
@@ -4611,7 +4611,7 @@ save me!
 | babel-   |                    2 |
 #+TBLFM: $2='(sbe leftover (prefix $$1))
 
-#+source: leftover
+#+name: leftover
 #+begin_src emacs-lisp :var prefix=""
   (-
    ;; length w/o .el
@@ -4632,7 +4632,7 @@ save me!
 |---+---+---|
 | g | h | i |
 
-#+source: echo-table
+#+name: echo-table
 #+begin_src python :var tab=many-cols :hlines yes :exports both :session
   return tab
 #+end_src
@@ -4705,10 +4705,10 @@ final
   (setq counter 0)
 #+end_src
 
-#+results:
+#+name:
 : 0
 
-#+source: counter
+#+name: counter
 #+begin_src emacs-lisp
   (setq counter (+ 1 counter))
   counter
@@ -4718,7 +4718,7 @@ final
   counter_val
 #+end_src
 
-#+results:
+#+name:
 : 3
 
 ** tangling
@@ -4752,7 +4752,7 @@ do we export cached blocks
   date
 #+end_src
 
-#+results[06ed73c6d8d022cf9c323d92af885952865add17]:
+#+name[06ed73c6d8d022cf9c323d92af885952865add17]:
 : Thu Jun 17 07:35:19 PDT 2010
 
 ** foo org
@@ -4783,7 +4783,7 @@ and more stuff here and then the results
 # some more stuff$ -- I should be a comment line
 
 1) a source block inside of an =enumerate=
-   #+source: plotxy
+   #+name: plotxy
    #+begin_src emacs-lisp :exports results
      (message "I think so")
    #+end_src
@@ -4806,7 +4806,7 @@ and more stuff here and then the results
            (list "I'm hungry" "I'm hungry"))
    #+end_src
 
-   #+results:
+   #+name:
    | I'm hungry | I'm hungry |
    | I'm hungry | I'm hungry |
    | I'm hungry | I'm hungry |
@@ -4832,14 +4832,14 @@ and more stuff here and then the results
   data
 #+end_src
 
-#+results:
+#+name:
 : 5
 
 ** exporting with call lines
    :PROPERTIES:
    :DATE:     2010-06-11
    :END:
-#+source: rpn-to-alg(alg)
+#+name: rpn-to-alg(alg)
 #+begin_src clojure :results output :var alg="00+"
   (def binary-operators '(\+ \- \* \/))
   (def unary-operators '(\s))
@@ -4861,7 +4861,7 @@ and more stuff here and then the results
   (println (apply str (rpn-to-alg (seq alg) '())))
 #+end_src
 
-#+results: distributed-best
+#+name: distributed-best
 : 73*x11/+4/++51xxx13*y/++6y5*6/6-+xx+*
 
 #+call: rpn-to-alg(alg=distributed-best)
@@ -4895,7 +4895,7 @@ and more stuff here and then the results
      \end{preview}
    #+end_src
 
-   #+results:
+   #+name:
    [[file:recursion.pdf]]
 
 ** indented source-code blocks and indented results
@@ -4903,19 +4903,19 @@ and more stuff here and then the results
    :DATE:     2010-06-10
    :END:
 
-    #+source: time
+    #+name: time
     #+begin_src emacs-lisp :results append
       ;; (list (list (current-time-string)))
       (current-time-string)
     #+end_src
 
-    #+results: time
+    #+name: time
     | 1 | 2 | 3 |
 
 
         #+call: time() :results prepend
 
-        #+results: time()
+        #+name: time()
         | 1 | 2 | 3 |
         : Thu Jun 10 14:13:21 2010
         : Thu Jun 10 14:13:21 2010
@@ -4956,22 +4956,22 @@ src_emacs-lisp{(+ 1 2 3)}
    :DATE:     2010-06-07
    :END:
 
-   #+srcname: i-am-indented
+   #+name: i-am-indented
    #+begin_src emacs-lisp 
      (message "i am indented")
    #+end_src
 
-#+results: i-am-indented
+#+name: i-am-indented
 : i am indented
 
 #+begin_src emacs-lisp :var output=i-am-indented
   (length output)
 #+end_src
 
-#+results:
+#+name:
 : 13
 
-  #+results:
+  #+name:
   : eric
 
 ** updating results "in-situ"
@@ -4979,7 +4979,7 @@ src_emacs-lisp{(+ 1 2 3)}
    :DATE:     2010-06-07
    :END:
 
-#+results: in-situ
+#+name: in-situ
 : update me in place please -- Mon Jun  7 16:44:44 2010
 : update me in place please -- Mon Jun  7 16:44:43 2010
 : update me in place please -- Mon Jun  7 16:44:42 2010
@@ -4991,13 +4991,13 @@ src_emacs-lisp{(+ 1 2 3)}
 
 the results should be *above* the block
 
-#+srcname: in-situ
+#+name: in-situ
 #+begin_src emacs-lisp :results prepend
   (format "update me in place please -- %s"
           (current-time-string))
 #+end_src
 
-#+srcname: in-situ
+#+name: in-situ
 #+begin_src emacs-lisp :results append
   (format "update me in place please (at the bottom) -- %s"
           (current-time-string))
@@ -5027,7 +5027,7 @@ the results should be *above* the block
    :PROPERTIES:
    :DATE:     2010-06-07
    :END:
-#+results: trickily-located-somehwere-else
+#+name: trickily-located-somehwere-else
 : I shouldn't be exported
 
 Neither of the result strings for the following two code blocks should
@@ -5038,10 +5038,10 @@ included...
   (+ 1 1 1 1)
 #+end_src
 
-#+results:
+#+name:
 : don't include me in the export!!!!!!!
 
-#+srcname: trickily-located-somehwere-else
+#+name: trickily-located-somehwere-else
 #+begin_src emacs-lisp :exports none
   (message "I shouldn't be exported")
 #+end_src
@@ -5055,7 +5055,7 @@ included...
   '((1 2) (3 4))
 #+end_src
 
-#+results:
+#+name:
 | 1 | 2 |
 | 3 | 4 |
 
@@ -5071,7 +5071,7 @@ included...
     +---------------+
 #+end_src
 
-#+results:
+#+name:
 [[file:/tmp/eric.png]]
 
 ** non-empty comint prompt
@@ -5135,7 +5135,7 @@ test comma protection on tangling
   '((1 2 3) (4 5 6) (7 8 900))
 #+end_src
 
-#+results:
+#+name:
 | 1 | 2 |   3 |
 | 4 | 5 |   6 |
 | 7 | 8 | 900 |
@@ -5159,7 +5159,7 @@ it's value is now src_R{x}.
    :DATE:     2010-06-01
    :END:
 
-#+results: three
+#+name: three
 : 9
 
 #+begin_src R :var num=three :exports results
@@ -5208,14 +5208,14 @@ lets test folding
   (message "folded1")
 #+end_src
 
-#+results:
+#+name:
 : folded1
 
 #+begin_src emacs-lisp
   (message "folded2")
 #+end_src
 
-#+results:
+#+name:
 : folded2
 **** unfolded
      :PROPERTIES:
@@ -5225,13 +5225,13 @@ lets test folding
   (message "unfolded1")
 #+end_src
 
-#+results:
+#+name:
 : unfolded1
 #+begin_src emacs-lisp
   (message "unfolded2")
 #+end_src
 
-#+results:
+#+name:
 : unfolded2
 
 ** empty code blocks -- and latex vs. LaTeX
@@ -5268,7 +5268,7 @@ schulte
 return [[val + '*' for val in row] for row in tab]
 #+end_src
 
-#+results:
+#+name:
 | a  | b  | c  |
 |----+----+----|
 | d* | e* | f* |
@@ -5283,7 +5283,7 @@ return [[val + '*' for val in row] for row in tab]
 tab.map{|r| r.map{|e| e+"*"} }
 #+end_src
 
-#+results:
+#+name:
 | a  | b  | c  |
 |----+----+----|
 | d* | e* | f* |
@@ -5299,7 +5299,7 @@ tab.map{|r| r.map{|e| e+"*"} }
   (message "two")
 #+end_src
 
-#+results:
+#+name:
 : two
 
 #+begin_src clojure :session :default
@@ -5308,7 +5308,7 @@ tab.map{|r| r.map{|e| e+"*"} }
   (+ 1 2)
 #+end_src
 
-#+results:
+#+name:
 : 3
 
 ** tangling org
@@ -5349,14 +5349,14 @@ tab.map{|r| r.map{|e| e+"*"} }
   return [[1, 2, 3]]
 #+end_src
 
-#+results:
+#+name:
 | 1 | 2 | 3 |
 
 #+begin_src python :var tab=mismatch-colnames
   return [[1, 2]]
 #+end_src
 
-#+results:
+#+name:
 | a | b |
 |---+---|
 | 1 | 2 |
@@ -5365,7 +5365,7 @@ tab.map{|r| r.map{|e| e+"*"} }
   return [1,2]
 #+end_src
 
-#+results:
+#+name:
 | 1 | 2 |
 
 ** variable indexing
@@ -5389,14 +5389,14 @@ tab.map{|r| r.map{|e| e+"*"} }
    return sum
 #+end_src
 
-#+results:
+#+name:
 | 0 | 1 | 4 | 9 | 16 | 25 |
 
 #+begin_src python :var sum=MyTable[9,1] :exports none
    return sum
 #+end_src
 
-#+results:
+#+name:
 : 55
 
 #+begin_src gnuplot :var data=MyTable[1:-2] :var sum=MyTable[7,1]
@@ -5440,7 +5440,7 @@ tab.map{|r| r.map{|e| e+"*"} }
   tab
 #+end_src
 
-#+results:
+#+name:
 | 1 |
 |---|
 | 2 |
@@ -5450,14 +5450,14 @@ tab.map{|r| r.map{|e| e+"*"} }
   1 + 2
 #+end_src
 
-#+results:
+#+name:
 : 3
 
 #+begin_src python :var tab=less-cols
   return tab
 #+end_src
 
-#+results:
+#+name:
 | 1 |
 |---|
 | 2 |
@@ -5467,7 +5467,7 @@ tab.map{|r| r.map{|e| e+"*"} }
   tab
 #+end_src
 
-#+results:
+#+name:
 | 1 |
 | 2 |
 | 3 |
@@ -5476,7 +5476,7 @@ tab.map{|r| r.map{|e| e+"*"} }
    (message "%S" tab)
 #+end_src
 
-#+results:
+#+name:
 : (("" "c1" "c2" "c3") hline ("r1" 1 4 7) ("r2" 2 5 8) ("r3" 3 6 9))
 
 #+tblname: row-and-col-names
@@ -5544,14 +5544,14 @@ functions
   (+ 1 2)
 #+end_src
 
-#+results:
+#+name:
 : 3
 
 #+begin_src ruby
   + 1 2
 #+end_src
 
-#+results:
+#+name:
 : nil
 
 ** tangling and variable resolution
@@ -5561,12 +5561,12 @@ functions
   :DATE:     2010-03-31
   :END:
 
-#+source: A
+#+name: A
 #+begin_src emacs-lisp :eval no :expand yes :var id=(org-entry-get nil "ID" t) :var two=2
   (concat "This is the entry ID: " id)
 #+end_src
 
-#+results: A
+#+name: A
 : This is the entry ID: 18b4f1be-bb1d-49bc-a651-c97406a35bdd
 
 ** latex attributes
@@ -5602,21 +5602,21 @@ functions
   (+ special 1)
 #+end_src
 
-#+results:
+#+name:
 : 90
 
 #+begin_src emacs-lisp :var special=(org-entry-get nil "text" t)
   special  
 #+end_src
 
-#+results:
+#+name:
 : schulte
 
 ** variables into shell scripts
    :PROPERTIES:
    :DATE:     2010-02-23
    :END:
-#+results: into-shell-scripts
+#+name: into-shell-scripts
 | username | guest   |
 | password | nothing |
 
@@ -5624,10 +5624,10 @@ functions
   echo "$username -p $password"
 #+end_src
 
-#+results:
+#+name:
 : username -p nothing
 
-#+results: number-into-shell
+#+name: number-into-shell
 : 9
 
 #+begin_src sh :var num=number-into-shell
@@ -5636,7 +5636,7 @@ functions
   done
 #+end_src
 
-#+results:
+#+name:
 | 1 |
 | 2 |
 | 3 |
@@ -5654,14 +5654,14 @@ functions
 
 #+call: fibonacci(input=5) :resname eric
 
-#+results:
+#+name:
 : 8
 
 #+begin_src emacs-lisp :var fib=fibonacci(input=5)
   (message "fib(5)=%d" fib)
 #+end_src
 
-#+results:
+#+name:
 : fib(5)=8
 
 ** haskell variables
@@ -5671,7 +5671,7 @@ functions
 
 playing with Haskell
 
-#+results: haskell-stuff
+#+name: haskell-stuff
 : 9
 
 #+begin_src haskell :var num=haskell-stuff
@@ -5682,7 +5682,7 @@ playing with Haskell
   num + 1
 #+end_src
 
-#+results:
+#+name:
 : 10
 
 ** list index w/function style name
@@ -5690,7 +5690,7 @@ playing with Haskell
    :DATE:     2010-02-14
    :END:
 
-#+results: function-style-index
+#+name: function-style-index
 | 0 |
 | 1 |
 | 2 |
@@ -5702,12 +5702,12 @@ playing with Haskell
 | 8 |
 | 9 |
 
-#+srcname: function-style-indexing(data=function-style-index[1:4,0])
+#+name: function-style-indexing(data=function-style-index[1:4,0])
 #+begin_src emacs-lisp
   (message "%S" data)
 #+end_src
 
-#+results: function-style-indexing
+#+name: function-style-indexing
 : ((1) (2) (3) (4))
 
 ** looking at source name exports
@@ -5715,7 +5715,7 @@ playing with Haskell
    :DATE:     2010-02-09
    :END:
 
-#+source: fibonacci
+#+name: fibonacci
 #+begin_src emacs-lisp :var input=0
   (defun fib (n)
     (if (> n 1)
@@ -5724,7 +5724,7 @@ playing with Haskell
   (fib input)
 #+end_src
 
-#+results: fibonacci
+#+name: fibonacci
 : 1
 
 now applying our Fibonacci function
@@ -5740,7 +5740,7 @@ now applying our Fibonacci function
   date
 #+end_src
 
-#+results:
+#+name:
 : Sun Feb  7 10:17:44 MST 2010
 
 #+tblname: fibs
@@ -5755,14 +5755,14 @@ now applying our Fibonacci function
   echo "$table" |wc
 #+end_src
 
-#+results:
+#+name:
 : 6      12      24
 
 #+begin_src sh :var table=fibs
   echo "$table"
 #+end_src
 
-#+results:
+#+name:
 | 1 | 1 |
 | 2 | 1 |
 | 3 | 2 |
@@ -5774,7 +5774,7 @@ now applying our Fibonacci function
   echo "$table" | head -1
 #+end_src
 
-#+results:
+#+name:
 : 1--1
 
 ** tables to shell scripts ideas
@@ -5822,7 +5822,7 @@ now applying our Fibonacci function
   (setq my-shebang "foo")
 #+end_src
 
-#+results:
+#+name:
 : foo
 
 #+begin_src ruby :shebang #!/usr/bin/ruby
@@ -5854,7 +5854,7 @@ ah, it works!
   -------------
 #+end_src
 
-#+results[4fbfc78b37abd8a788958d28a7335445e6042c96]:
+#+name[4fbfc78b37abd8a788958d28a7335445e6042c96]:
 [[file:communication.png]]
 
 ** babel block overwrite
@@ -5923,7 +5923,7 @@ The above appears to work in LaTeX, but not in HTML.
    :DATE:     2010-01-05
    :END:
 
-#+source: square
+#+name: square
 #+begin_src emacs-lisp :var input=1
   (* input input)
 #+end_src
@@ -5955,7 +5955,7 @@ The above appears to work in LaTeX, but not in HTML.
     +------------------+
 #+end_src
 
-#+results:
+#+name:
 [[file:data/example.png]]
 
 ** no noweb by default
@@ -5963,7 +5963,7 @@ The above appears to work in LaTeX, but not in HTML.
    :DATE:     2009-12-18
    :END:
 
-#+srcname: sample
+#+name: sample
 #+begin_src emacs-lisp 
   (message "sample")
 #+end_src
@@ -5972,7 +5972,7 @@ The above appears to work in LaTeX, but not in HTML.
   <<sample>>
 #+end_src
 
-#+results:
+#+name:
 : sample
 
 ** looking at double quotes
@@ -5983,12 +5983,12 @@ The above appears to work in LaTeX, but not in HTML.
 #+tblname: double-quote-test-input
 | test | this | 8 | 9 |
 
-#+srcname: double-quote-test-output
+#+name: double-quote-test-output
 #+begin_src python :var data=double-quote-test-input
   return data
 #+end_src
 
-#+results: double-quote-test-output
+#+name: double-quote-test-output
 | test | this | 8 | 9 |
 
 ** quoted session name
@@ -6000,7 +6000,7 @@ The above appears to work in LaTeX, but not in HTML.
   echo 'name-me'
 #+end_src
 
-#+results:
+#+name:
 : name-me
 
 ** eval-buffer
@@ -6011,14 +6011,14 @@ The above appears to work in LaTeX, but not in HTML.
   (+ 1 2)
 #+end_src
 
-#+results:
+#+name:
 : 3
 
 #+begin_src emacs-lisp
   (+ 3 4)
 #+end_src
 
-#+results:
+#+name:
 : 7
 
 ** gnuplot variable expansion
@@ -6026,7 +6026,7 @@ The above appears to work in LaTeX, but not in HTML.
    :DATE:     2009-11-30
    :END:
 
-#+source: simple-function
+#+name: simple-function
 #+begin_src emacs-lisp
   "sin(x)"
 #+end_src
@@ -6061,7 +6061,7 @@ example from email list
 
    - faire un script Bash (et =isql=) envoyant un /listing/ de stagiaires;
 
-#+srcname: envoi-stg
+#+name: envoi-stg
    #+begin_src sql
        DECLARE @dateFmtStyleIn int; SET @dateFmtStyleIn = 120 -- ODBC canonical
        DECLARE @dateFmtStyleOut int; SET @dateFmtStyleOut = 103 -- French dd/mm/yyyy
@@ -6112,7 +6112,7 @@ ext here
   (+ 1 1)
 #+end_src
 
-#+results:
+#+name:
 : 2
 ** sh with sessions
    :PROPERTIES:
@@ -6128,7 +6128,7 @@ ext here
   ls *.clj
 #+end_src
 
-#+results:
+#+name:
 | "ants.clj" | "" | "concurrent.clj" | "" | "hello.clj" | "" | "spell-checker.clj" |
 
 ** testing srcname aliases
@@ -6136,7 +6136,7 @@ ext here
    :DATE:     2009-11-20
    :END:
 
-#+source: two
+#+name: two
 #+begin_src emacs-lisp
   2
 #+end_src
@@ -6145,7 +6145,7 @@ ext here
   (+ input 1)
 #+end_src
 
-#+results[1ec6c8d3de6aaeac7b2720f1d801402e762875ea]:
+#+name[1ec6c8d3de6aaeac7b2720f1d801402e762875ea]:
 : 3
 
 ** hiding results
@@ -6156,7 +6156,7 @@ ext here
   (mapcar (lambda (el) (list el)) (number-sequence 0 20))
 #+end_src
 
-#+results:
+#+name:
 |  0 |
 |  1 |
 |  2 |
@@ -6188,7 +6188,7 @@ ext here
    (setq first 10)
 #+end_src
 
-#+srcname: resolve(name=nil)
+#+name: resolve(name=nil)
 #+begin_src emacs-lisp :results silent
   (eval (intern name))
 #+end_src
@@ -6211,7 +6211,7 @@ ext here
       +-----------+
 #+end_src
 
-#+results:
+#+name:
 [[file:45.png]]
 ** haskell and tables
    :PROPERTIES:
@@ -6299,7 +6299,7 @@ plot data using 1:2 with lines
    :DATE:     2009-11-20
    :END:
 
-#+data: indexable-table
+#+name: indexable-table
 | eric    |
 | michael |
 | schulte |
@@ -6311,7 +6311,7 @@ plot data using 1:2 with lines
    data
 #+end_src
 
-#+results:
+#+name:
 | schulte |
 | is      |
 | my      |
@@ -6343,15 +6343,15 @@ plot data using 1:2 with lines
                                          (:exports . "code")(:cache)))
 #+end_src
 
-#+results[937269632ae5b5eee5c93f9eb50e0bc55e34520d]:
+#+name[937269632ae5b5eee5c93f9eb50e0bc55e34520d]:
 | (:session . none) | (:results . replace) | (:exports . code) | (:cache) |
 
-#+srcname: eric-schulte
+#+name: eric-schulte
 #+begin_src emacs-lisp :cache yes
    (+ 5 7 1)
 #+end_src
 
-#+results[005b04829608b3d22b61686e90309af3a9a6fe7c]: eric-schulte
+#+name[005b04829608b3d22b61686e90309af3a9a6fe7c]: eric-schulte
 : 13
 
 #+begin_src ditaa :file caching-example.png
@@ -6366,7 +6366,7 @@ plot data using 1:2 with lines
     +--------------------+
 #+end_src
 
-#+results[fd11ddbfd00f6038e6e37db71ddaf43d65b0e200]:
+#+name[fd11ddbfd00f6038e6e37db71ddaf43d65b0e200]:
 [[file:caching-example.png]]
 
 ** switches and references
@@ -6409,7 +6409,7 @@ Line no. [[(imp)]] is important!
   (setq org-babel-noweb-error-langs '("ruby"))
 #+end_src
 
-#+srcname: i-have-a-name
+#+name: i-have-a-name
 #+begin_src ruby 
   1 + 2
 #+end_src
@@ -6535,7 +6535,7 @@ inform org-babel-tangle of their existence and file extensions
    :DATE:     2009-11-20
    :END:
 
-#+srcname: noweb-example
+#+name: noweb-example
 #+begin_src ruby 
   a = 28
 #+end_src
@@ -6820,7 +6820,7 @@ The following latex isn't exported correctly
    :DATE:     2009-11-20
    :END:
 
-#+srcname: determine the neighbors of the segments that the bisector hits
+#+name: determine the neighbors of the segments that the bisector hits
 #+begin_src lua :tangle no :exports code
   local s1, s2 = intersecting_segs[1], intersecting_segs[2]
   local n1 = table_find_segment(cell.neighbors, s1)
@@ -6872,7 +6872,7 @@ local n2 = table_find_segment(cell.neighbors, s2)
    :DATE:     2009-11-20
    :END:
 
-#+srcname: emacs-nine
+#+name: emacs-nine
 #+begin_src emacs-lisp
   8
 #+end_src
