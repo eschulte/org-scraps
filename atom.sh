@@ -10,7 +10,7 @@ cat <<EOF
  <id>http://eschulte.github.com/org-scraps/</id>
  <author>
    <name>Eric Schulte</name>
-   <email>eric.schulte@gmail.com</email>
+   <email>eric.schulte@gmx.com</email>
  </author>"
 EOF
 for i in scraps/*; do
@@ -23,10 +23,11 @@ for i in scraps/*; do
    <id>http://eschulte.github.com/org-scraps/$i</id>
    <content type=\"html\">
    <pre>"
-    cat $i|awk 'BEGIN{prnt=0}
+    cat $i|sed 's/<\/span><\/pre>/<\/span>\n<\/pre>/' \
+        |awk 'BEGIN{prnt=0}
                      {if ($0 ~ /^<\/pre>$/) prnt=0;
                       if (prnt == 1) print
                       if ($0 ~ /<pre>/) prnt=1;}'
-    echo "   </pre>\n   </content>\n</entry>"
+    echo -e "   </pre>\n</content>\n</entry>"
 done
 echo "</feed>"

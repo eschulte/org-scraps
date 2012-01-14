@@ -3,11 +3,11 @@
  <title>Org-mode scraps</title>
  <link href="http://eschulte.github.com/org-scraps/atom.xml" rel="self"/>
  <link href="http://eschulte.github.com/org-scraps/"/>
- <updated>2012-01-14:11:39:49-07:00</updated>
+ <updated>2012-01-14:11:56:00-07:00</updated>
  <id>http://eschulte.github.com/org-scraps/</id>
  <author>
    <name>Eric Schulte</name>
-   <email>eric.schulte@gmail.com</email>
+   <email>eric.schulte@gmx.com</email>
  </author>"
 <entry>
    <title>advanced-table</title>
@@ -59,7 +59,9 @@
 <span class="org-table">| ""           | "food"           | "subway" |  5.45 |</span>
 <span class="org-table">| "2009-09-29" | ""               | ""       | 15.23 |</span>
 
-   </pre>\n   </content>\n</entry>
+   </pre>
+</content>
+</entry>
 <entry>
    <title>and-then-more</title>
    <link href="http://eschulte.github.com/org-scraps/scraps/2009-11-20-and-then-more.html"/>
@@ -72,7 +74,9 @@
    <span class="org-special-keyword">:DATE:</span>     <span class="org-property-value">2009-11-20</span>
 <span class="org-special-keyword">   :END:</span>
 and more stuffs here
-   </pre>\n   </content>\n</entry>
+   </pre>
+</content>
+</entry>
 <entry>
    <title>asymptote-cosine</title>
    <link href="http://eschulte.github.com/org-scraps/scraps/2009-11-20-asymptote-cosine.html"/>
@@ -107,7 +111,9 @@ and more stuffs here
   dot("$(pi,0)$",(1,0),N);<span class="org-meta-line">
 </span><span class="org-block-end-line">#+end_src
 </span>
-   </pre>\n   </content>\n</entry>
+   </pre>
+</content>
+</entry>
 <entry>
    <title>asymptote</title>
    <link href="http://eschulte.github.com/org-scraps/scraps/2009-11-20-asymptote.html"/>
@@ -140,7 +146,9 @@ and more stuffs here
 <span class="org-meta-line">#+resname:
 </span><span class="org-link">[[file:asymptote-test.png]]</span>
 
-   </pre>\n   </content>\n</entry>
+   </pre>
+</content>
+</entry>
 <entry>
    <title>cached-results</title>
    <link href="http://eschulte.github.com/org-scraps/scraps/2009-11-20-cached-results.html"/>
@@ -184,7 +192,9 @@ and more stuffs here
 <span class="org-meta-line">#+name[fd11ddbfd00f6038e6e37db71ddaf43d65b0e200]:
 </span><span class="org-link">[[file:caching-example.png]]</span>
 
-   </pre>\n   </content>\n</entry>
+   </pre>
+</content>
+</entry>
 <entry>
    <title>changing-source-name</title>
    <link href="http://eschulte.github.com/org-scraps/scraps/2009-11-20-changing-source-name.html"/>
@@ -208,7 +218,9 @@ and more stuffs here
 <span class="org-meta-line">#+resname: emacs-eight
 </span><span class="org-code">: 8
 </span>
-   </pre>\n   </content>\n</entry>
+   </pre>
+</content>
+</entry>
 <entry>
    <title>clojure</title>
    <link href="http://eschulte.github.com/org-scraps/scraps/2009-11-20-clojure.html"/>
@@ -224,7 +236,9 @@ and more stuffs here
 </span>  <span class="starter-kit-paren">(</span><span class="builtin">list</span> 8 9<span class="starter-kit-paren">)
 </span><span class="org-block-end-line">#+end_src
 </span>
-   </pre>\n   </content>\n</entry>
+   </pre>
+</content>
+</entry>
 <entry>
    <title>code-results</title>
    <link href="http://eschulte.github.com/org-scraps/scraps/2009-11-20-code-results.html"/>
@@ -327,7 +341,9 @@ and more stuffs here
 </span>[1, 2, 33, 4]
 <span class="org-block-end-line">#+END_SRC
 </span>
-   </pre>\n   </content>\n</entry>
+   </pre>
+</content>
+</entry>
 <entry>
    <title>dynamic-table</title>
    <link href="http://eschulte.github.com/org-scraps/scraps/2009-11-20-dynamic-table.html"/>
@@ -363,7 +379,9 @@ and more stuffs here
 </span>pie(times[2:length(times),4], labels = times[2:length(times),2])
 <span class="org-block-end-line">#+end_src
 </span>
-   </pre>\n   </content>\n</entry>
+   </pre>
+</content>
+</entry>
 <entry>
    <title>elisp-references</title>
    <link href="http://eschulte.github.com/org-scraps/scraps/2009-11-20-elisp-references.html"/>
@@ -389,7 +407,9 @@ and more stuffs here
 </span>  <span class="keyword">return </span>a + 10
 <span class="org-block-end-line">#+end_src
 </span>
-   </pre>\n   </content>\n</entry>
+   </pre>
+</content>
+</entry>
 <entry>
    <title>elisp-variables</title>
    <link href="http://eschulte.github.com/org-scraps/scraps/2009-11-20-elisp-variables.html"/>
@@ -413,7 +433,9 @@ and more stuffs here
 </span>
 <span class="org-meta-line">#+name:
 </span><span class="org-link">[[file:45.png]]</span>
-   </pre>\n   </content>\n</entry>
+   </pre>
+</content>
+</entry>
 <entry>
    <title>empty-output-results-for-emacs-lisp</title>
    <link href="http://eschulte.github.com/org-scraps/scraps/2009-11-20-empty-output-results-for-emacs-lisp.html"/>
@@ -431,7 +453,9 @@ and more stuffs here
 </span>
 <span class="org-meta-line">#+resname:
 </span>
-   </pre>\n   </content>\n</entry>
+   </pre>
+</content>
+</entry>
 <entry>
    <title>gnuplot</title>
    <link href="http://eschulte.github.com/org-scraps/scraps/2009-11-20-gnuplot.html"/>
@@ -451,7 +475,9 @@ and more stuffs here
 <span class="org-meta-line">#+end_src
 </span>      
 
-   </pre>\n   </content>\n</entry>
+   </pre>
+</content>
+</entry>
 <entry>
    <title>haskell-and-tables</title>
    <link href="http://eschulte.github.com/org-scraps/scraps/2009-11-20-haskell-and-tables.html"/>
@@ -473,7 +499,9 @@ and more stuffs here
 </span>  <span class="org-meta-line">
 </span><span class="org-block-end-line">#+end_src
 </span>
-   </pre>\n   </content>\n</entry>
+   </pre>
+</content>
+</entry>
 <entry>
    <title>haskell</title>
    <link href="http://eschulte.github.com/org-scraps/scraps/2009-11-20-haskell.html"/>
@@ -494,7 +522,9 @@ and more stuffs here
 </span>  powerSet [1, 2, 3]
 <span class="org-block-end-line">#+end_src
 </span>
-   </pre>\n   </content>\n</entry>
+   </pre>
+</content>
+</entry>
 <entry>
    <title>hiding-results</title>
    <link href="http://eschulte.github.com/org-scraps/scraps/2009-11-20-hiding-results.html"/>
@@ -533,7 +563,9 @@ and more stuffs here
 <span class="org-table">| 19 |</span>
 <span class="org-table">| 20 |</span>
 
-   </pre>\n   </content>\n</entry>
+   </pre>
+</content>
+</entry>
 <entry>
    <title>indentation</title>
    <link href="http://eschulte.github.com/org-scraps/scraps/2009-11-20-indentation.html"/>
@@ -550,7 +582,9 @@ and more stuffs here
 </span>          9
 <span class="org-block-end-line">#+end_src
 </span>
-   </pre>\n   </content>\n</entry>
+   </pre>
+</content>
+</entry>
 <entry>
    <title>indented</title>
    <link href="http://eschulte.github.com/org-scraps/scraps/2009-11-20-indented.html"/>
@@ -569,7 +603,9 @@ and more stuffs here
 <span class="org-meta-line">#+resname:
 </span><span class="org-code">: I ran!!
 </span>
-   </pre>\n   </content>\n</entry>
+   </pre>
+</content>
+</entry>
 <entry>
    <title>indexing-into-gnuplot</title>
    <link href="http://eschulte.github.com/org-scraps/scraps/2009-11-20-indexing-into-gnuplot.html"/>
@@ -608,7 +644,9 @@ and more stuffs here
 </span>  <span class="keyword">plot</span> <span class="variable-name">data</span> <span class="type">using</span> 1:2 <span class="type">with</span> <span class="function-name">lines
 </span><span class="org-block-end-line">#+end_src
 </span>
-   </pre>\n   </content>\n</entry>
+   </pre>
+</content>
+</entry>
 <entry>
    <title>indexing-into-results</title>
    <link href="http://eschulte.github.com/org-scraps/scraps/2009-11-20-indexing-into-results.html"/>
@@ -655,7 +693,9 @@ and more stuffs here
 <span class="org-table">| 5 | 6 |</span>
 <span class="org-table">| 7 | 8 |</span>
 
-   </pre>\n   </content>\n</entry>
+   </pre>
+</content>
+</entry>
 <entry>
    <title>later</title>
    <link href="http://eschulte.github.com/org-scraps/scraps/2009-11-20-later.html"/>
@@ -670,7 +710,9 @@ and more stuffs here
 <span class="org-special-keyword">   :END:</span>
 stuff here
 
-   </pre>\n   </content>\n</entry>
+   </pre>
+</content>
+</entry>
 <entry>
    <title>latex-pngs</title>
    <link href="http://eschulte.github.com/org-scraps/scraps/2009-11-20-latex-pngs.html"/>
@@ -702,7 +744,9 @@ $|consts(t)| \leq sizes(t)$
     - $\leq size(t_1) + size(t_1) + size(t_1)$
     - $&lt; size(t)$
 
-   </pre>\n   </content>\n</entry>
+   </pre>
+</content>
+</entry>
 <entry>
    <title>lua-export</title>
    <link href="http://eschulte.github.com/org-scraps/scraps/2009-11-20-lua-export.html"/>
@@ -750,7 +794,9 @@ local n2 = table_find_segment(cell.neighbors, s2)
 \end{verbatim}
 </span><span class="org-block-end-line">#+end_example
 </span>
-   </pre>\n   </content>\n</entry>
+   </pre>
+</content>
+</entry>
 <entry>
    <title>multiple-arguments</title>
    <link href="http://eschulte.github.com/org-scraps/scraps/2009-11-20-multiple-arguments.html"/>
@@ -770,7 +816,9 @@ local n2 = table_find_segment(cell.neighbors, s2)
 <span class="org-meta-line">#+resname:
 </span><span class="org-code">: 19
 </span>
-   </pre>\n   </content>\n</entry>
+   </pre>
+</content>
+</entry>
 <entry>
    <title>noweb-referernces</title>
    <link href="http://eschulte.github.com/org-scraps/scraps/2009-11-20-noweb-referernces.html"/>
@@ -796,7 +844,9 @@ local n2 = table_find_segment(cell.neighbors, s2)
 <span class="org-meta-line">#+resname:
 </span><span class="org-code">: 32
 </span>
-   </pre>\n   </content>\n</entry>
+   </pre>
+</content>
+</entry>
 <entry>
    <title>persistent-python</title>
    <link href="http://eschulte.github.com/org-scraps/scraps/2009-11-20-persistent-python.html"/>
@@ -836,7 +886,9 @@ local n2 = table_find_segment(cell.neighbors, s2)
 <span class="org-meta-line">#+resname:
 </span><span class="org-code">: function
 </span>
-   </pre>\n   </content>\n</entry>
+   </pre>
+</content>
+</entry>
 <entry>
    <title>pp-results</title>
    <link href="http://eschulte.github.com/org-scraps/scraps/2009-11-20-pp-results.html"/>
@@ -914,7 +966,9 @@ local n2 = table_find_segment(cell.neighbors, s2)
  3]
 </span><span class="org-block-end-line">#+end_example
 </span>
-   </pre>\n   </content>\n</entry>
+   </pre>
+</content>
+</entry>
 <entry>
    <title>pretty-print</title>
    <link href="http://eschulte.github.com/org-scraps/scraps/2009-11-20-pretty-print.html"/>
@@ -931,7 +985,9 @@ local n2 = table_find_segment(cell.neighbors, s2)
 </span>  '<span class="starter-kit-paren">(</span>1 2 3 4<span class="starter-kit-paren">)
 </span><span class="org-block-end-line">#+end_src
 </span>
-   </pre>\n   </content>\n</entry>
+   </pre>
+</content>
+</entry>
 <entry>
    <title>quoted-latex</title>
    <link href="http://eschulte.github.com/org-scraps/scraps/2009-11-20-quoted-latex.html"/>
@@ -958,7 +1014,9 @@ The following latex isn't exported correctly
              <span class="variable-name">|</span> <span class="type">Node</span> <span class="type">Tree</span> <span class="type">Tree
 </span><span class="org-block-end-line">#+end_src
 </span>
-   </pre>\n   </content>\n</entry>
+   </pre>
+</content>
+</entry>
 <entry>
    <title>reference-parts-of-tables</title>
    <link href="http://eschulte.github.com/org-scraps/scraps/2009-11-20-reference-parts-of-tables.html"/>
@@ -997,7 +1055,9 @@ The following latex isn't exported correctly
 <span class="keyword">plot</span> <span class="variable-name">data</span> <span class="type">using</span> 1:2 <span class="type">with</span> <span class="function-name">lines
 </span><span class="org-block-end-line">#+end_src
 </span>
-   </pre>\n   </content>\n</entry>
+   </pre>
+</content>
+</entry>
 <entry>
    <title>results-switches</title>
    <link href="http://eschulte.github.com/org-scraps/scraps/2009-11-20-results-switches.html"/>
@@ -1048,7 +1108,9 @@ The following latex isn't exported correctly
   ---------
 </span><span class="org-block-end-line">#+end_example
 </span>
-   </pre>\n   </content>\n</entry>
+   </pre>
+</content>
+</entry>
 <entry>
    <title>show-all</title>
    <link href="http://eschulte.github.com/org-scraps/scraps/2009-11-20-show-all.html"/>
@@ -1075,10 +1137,10 @@ The following latex isn't exported correctly
    |                      |
    +----------------------+
 <span class="org-block-end-line">#+end_src
-</span></pre>
-  </body>
-</html>
-   </pre>\n   </content>\n</entry>
+</span>
+   </pre>
+</content>
+</entry>
 <entry>
    <title>simple-r</title>
    <link href="http://eschulte.github.com/org-scraps/scraps/2009-11-20-simple-r.html"/>
@@ -1098,7 +1160,9 @@ The following latex isn't exported correctly
 <span class="org-meta-line">#+resname:
 </span><span class="org-code">: 8
 </span>
-   </pre>\n   </content>\n</entry>
+   </pre>
+</content>
+</entry>
 <entry>
    <title>simple-scalar</title>
    <link href="http://eschulte.github.com/org-scraps/scraps/2009-11-20-simple-scalar.html"/>
@@ -1118,7 +1182,9 @@ The following latex isn't exported correctly
 <span class="org-meta-line">#+resname:
 </span><span class="org-code">: 4
 </span>
-   </pre>\n   </content>\n</entry>
+   </pre>
+</content>
+</entry>
 <entry>
    <title>switches-and-references</title>
    <link href="http://eschulte.github.com/org-scraps/scraps/2009-11-20-switches-and-references.html"/>
@@ -1157,7 +1223,9 @@ Line no. <span class="org-link">[[(imp)]]</span> is important!
 <span class="org-meta-line">#+resname: eric
 </span><span class="org-code">: imp
 </span>
-   </pre>\n   </content>\n</entry>
+   </pre>
+</content>
+</entry>
 <entry>
    <title>:table-results-param</title>
    <link href="http://eschulte.github.com/org-scraps/scraps/2009-11-20-:table-results-param.html"/>
@@ -1176,7 +1244,9 @@ Line no. <span class="org-link">[[(imp)]]</span> is important!
 <span class="org-meta-line">#+resname:
 </span><span class="org-table">| 8 |</span>
 
-   </pre>\n   </content>\n</entry>
+   </pre>
+</content>
+</entry>
 <entry>
    <title>testing-srcname-aliases</title>
    <link href="http://eschulte.github.com/org-scraps/scraps/2009-11-20-testing-srcname-aliases.html"/>
@@ -1201,7 +1271,9 @@ Line no. <span class="org-link">[[(imp)]]</span> is important!
 <span class="org-meta-line">#+name[1ec6c8d3de6aaeac7b2720f1d801402e762875ea]:
 </span><span class="org-code">: 3
 </span>
-   </pre>\n   </content>\n</entry>
+   </pre>
+</content>
+</entry>
 <entry>
    <title>unresolved-noweb-references</title>
    <link href="http://eschulte.github.com/org-scraps/scraps/2009-11-20-unresolved-noweb-references.html"/>
@@ -1231,7 +1303,9 @@ Line no. <span class="org-link">[[(imp)]]</span> is important!
 <span class="org-meta-line">#+resname:
 </span><span class="org-code">: 6
 </span>
-   </pre>\n   </content>\n</entry>
+   </pre>
+</content>
+</entry>
 <entry>
    <title>xml-and-n3</title>
    <link href="http://eschulte.github.com/org-scraps/scraps/2009-11-20-xml-and-n3.html"/>
@@ -1265,7 +1339,9 @@ inform org-babel-tangle of their existence and file extensions
 </span>  n3 stuff<span class="org-meta-line">
 </span><span class="org-block-end-line">#+end_src
 </span>
-   </pre>\n   </content>\n</entry>
+   </pre>
+</content>
+</entry>
 <entry>
    <title>sh-with-sessions</title>
    <link href="http://eschulte.github.com/org-scraps/scraps/2009-11-27-sh-with-sessions.html"/>
@@ -1290,7 +1366,9 @@ inform org-babel-tangle of their existence and file extensions
 <span class="org-meta-line">#+name:
 </span><span class="org-table">| "ants.clj" | "" | "concurrent.clj" | "" | "hello.clj" | "" | "spell-checker.clj" |</span>
 
-   </pre>\n   </content>\n</entry>
+   </pre>
+</content>
+</entry>
 <entry>
    <title>whitespace-newline-results-issues</title>
    <link href="http://eschulte.github.com/org-scraps/scraps/2009-11-27-whitespace-newline-results-issues.html"/>
@@ -1325,10 +1403,10 @@ t#+results:
 </span>
 <span class="org-meta-line">#+name:
 </span><span class="org-code">: 2
-</span></pre>
-  </body>
-</html>
-   </pre>\n   </content>\n</entry>
+</span>
+   </pre>
+</content>
+</entry>
 <entry>
    <title>debug-hints</title>
    <link href="http://eschulte.github.com/org-scraps/scraps/2009-11-30-debug-hints.html"/>
@@ -1350,7 +1428,9 @@ from mailing list
   function.  If/when the debug call is executed, you are dropped into
   the debugger and you can then evaluate arbitrary expressions.
 
-   </pre>\n   </content>\n</entry>
+   </pre>
+</content>
+</entry>
 <entry>
    <title>gnuplot-variable-expansion</title>
    <link href="http://eschulte.github.com/org-scraps/scraps/2009-11-30-gnuplot-variable-expansion.html"/>
@@ -1372,7 +1452,9 @@ from mailing list
 </span>  <span class="keyword">plot</span> <span class="variable-name">$fun
 </span><span class="org-block-end-line">#+end_src
 </span>
-   </pre>\n   </content>\n</entry>
+   </pre>
+</content>
+</entry>
 <entry>
    <title>sql-exports-to-latex</title>
    <link href="http://eschulte.github.com/org-scraps/scraps/2009-11-30-sql-exports-to-latex.html"/>
@@ -1418,7 +1500,9 @@ example from email list
        FROM dossier
 <span class="org-block-end-line">#+end_src
 </span>
-   </pre>\n   </content>\n</entry>
+   </pre>
+</content>
+</entry>
 <entry>
    <title>eval-buffer</title>
    <link href="http://eschulte.github.com/org-scraps/scraps/2009-12-04-eval-buffer.html"/>
@@ -1444,7 +1528,9 @@ example from email list
 <span class="org-meta-line">#+name:
 </span><span class="org-code">: 7
 </span>
-   </pre>\n   </content>\n</entry>
+   </pre>
+</content>
+</entry>
 <entry>
    <title>quoted-session-name</title>
    <link href="http://eschulte.github.com/org-scraps/scraps/2009-12-04-quoted-session-name.html"/>
@@ -1464,7 +1550,9 @@ example from email list
 <span class="org-meta-line">#+name:
 </span><span class="org-code">: name-me
 </span>
-   </pre>\n   </content>\n</entry>
+   </pre>
+</content>
+</entry>
 <entry>
    <title>looking-at-double-quotes</title>
    <link href="http://eschulte.github.com/org-scraps/scraps/2009-12-18-looking-at-double-quotes.html"/>
@@ -1488,7 +1576,9 @@ example from email list
 <span class="org-meta-line">#+name: double-quote-test-output
 </span><span class="org-table">| test | this | 8 | 9 |</span>
 
-   </pre>\n   </content>\n</entry>
+   </pre>
+</content>
+</entry>
 <entry>
    <title>no-noweb-by-default</title>
    <link href="http://eschulte.github.com/org-scraps/scraps/2009-12-18-no-noweb-by-default.html"/>
@@ -1513,7 +1603,9 @@ example from email list
 <span class="org-meta-line">#+name:
 </span><span class="org-code">: sample
 </span>
-   </pre>\n   </content>\n</entry>
+   </pre>
+</content>
+</entry>
 <entry>
    <title>exporting-and-caching</title>
    <link href="http://eschulte.github.com/org-scraps/scraps/2009-12-23-exporting-and-caching.html"/>
@@ -1536,7 +1628,9 @@ example from email list
 <span class="org-meta-line">#+name:
 </span><span class="org-link">[[file:data/example.png]]</span>
 
-   </pre>\n   </content>\n</entry>
+   </pre>
+</content>
+</entry>
 <entry>
    <title>exporting-org-source</title>
    <link href="http://eschulte.github.com/org-scraps/scraps/2009-12-23-exporting-org-source.html"/>
@@ -1559,7 +1653,9 @@ example from email list
   ,#+end_src
 <span class="org-block-end-line">#+end_src
 </span>
-   </pre>\n   </content>\n</entry>
+   </pre>
+</content>
+</entry>
 <entry>
    <title>fancier-export</title>
    <link href="http://eschulte.github.com/org-scraps/scraps/2010-01-05-fancier-export.html"/>
@@ -1577,7 +1673,9 @@ example from email list
 </span>  <span class="starter-kit-paren">(</span>* input input<span class="starter-kit-paren">)
 </span><span class="org-block-end-line">#+end_src
 </span>
-   </pre>\n   </content>\n</entry>
+   </pre>
+</content>
+</entry>
 <entry>
    <title>links</title>
    <link href="http://eschulte.github.com/org-scraps/scraps/2010-01-06-links.html"/>
@@ -1598,7 +1696,9 @@ how about a link back to <span class="org-link">[[keystone]]</span>
 
 The above appears to work in LaTeX, but not in HTML.
 
-   </pre>\n   </content>\n</entry>
+   </pre>
+</content>
+</entry>
 <entry>
    <title>load-to-session</title>
    <link href="http://eschulte.github.com/org-scraps/scraps/2010-01-11-load-to-session.html"/>
@@ -1638,7 +1738,9 @@ The above appears to work in LaTeX, but not in HTML.
 </span>  <span class="keyword">plot</span> <span class="function-name">sin(</span>x)
 <span class="org-block-end-line">#+end_src
 </span>
-   </pre>\n   </content>\n</entry>
+   </pre>
+</content>
+</entry>
 <entry>
    <title>babel-block-overwrite</title>
    <link href="http://eschulte.github.com/org-scraps/scraps/2010-01-18-babel-block-overwrite.html"/>
@@ -1662,7 +1764,9 @@ this second block
   &lt;       movl    $1024, 8(%esp)
 </span><span class="org-block-end-line">#+end_src
 </span>
-   </pre>\n   </content>\n</entry>
+   </pre>
+</content>
+</entry>
 <entry>
    <title>ditaa-blocks</title>
    <link href="http://eschulte.github.com/org-scraps/scraps/2010-02-03-ditaa-blocks.html"/>
@@ -1682,7 +1786,9 @@ this second block
 <span class="org-meta-line">#+name[4fbfc78b37abd8a788958d28a7335445e6042c96]:
 </span><span class="org-link">[[file:communication.png]]</span>
 
-   </pre>\n   </content>\n</entry>
+   </pre>
+</content>
+</entry>
 <entry>
    <title>exporting-to-a-file</title>
    <link href="http://eschulte.github.com/org-scraps/scraps/2010-02-03-exporting-to-a-file.html"/>
@@ -1706,7 +1812,9 @@ and a block
 </span>
 ah, it works!
 
-   </pre>\n   </content>\n</entry>
+   </pre>
+</content>
+</entry>
 <entry>
    <title>tangling-without-comments-and-shebang</title>
    <link href="http://eschulte.github.com/org-scraps/scraps/2010-02-05-tangling-without-comments-and-shebang.html"/>
@@ -1735,7 +1843,9 @@ ah, it works!
 </span>  puts <span class="constant">:nonstandard_shebang
 </span><span class="org-block-end-line">#+end_src
 </span>
-   </pre>\n   </content>\n</entry>
+   </pre>
+</content>
+</entry>
 <entry>
    <title>tables-to-shell-scripts-ideas</title>
    <link href="http://eschulte.github.com/org-scraps/scraps/2010-02-06-tables-to-shell-scripts-ideas.html"/>
@@ -1774,7 +1884,9 @@ ah, it works!
 </span>
    would return reasonable results
 
-   </pre>\n   </content>\n</entry>
+   </pre>
+</content>
+</entry>
 <entry>
    <title>short-shell-test</title>
    <link href="http://eschulte.github.com/org-scraps/scraps/2010-02-07-short-shell-test.html"/>
@@ -1828,7 +1940,9 @@ ah, it works!
 <span class="org-meta-line">#+name:
 </span><span class="org-code">: 1--1
 </span>
-   </pre>\n   </content>\n</entry>
+   </pre>
+</content>
+</entry>
 <entry>
    <title>looking-at-source-name-exports</title>
    <link href="http://eschulte.github.com/org-scraps/scraps/2010-02-09-looking-at-source-name-exports.html"/>
@@ -1857,7 +1971,9 @@ now applying our Fibonacci function
 
 <span class="org-meta-line">#+call: fibonacci(input=5)
 </span>
-   </pre>\n   </content>\n</entry>
+   </pre>
+</content>
+</entry>
 <entry>
    <title>list-index-with-function-style-name</title>
    <link href="http://eschulte.github.com/org-scraps/scraps/2010-02-14-list-index-with-function-style-name.html"/>
@@ -1890,7 +2006,9 @@ now applying our Fibonacci function
 <span class="org-meta-line">#+name: function-style-indexing
 </span><span class="org-code">: ((1) (2) (3) (4))
 </span>
-   </pre>\n   </content>\n</entry>
+   </pre>
+</content>
+</entry>
 <entry>
    <title>haskell-variables</title>
    <link href="http://eschulte.github.com/org-scraps/scraps/2010-02-15-haskell-variables.html"/>
@@ -1919,7 +2037,9 @@ playing with Haskell
 <span class="org-meta-line">#+name:
 </span><span class="org-code">: 10
 </span>
-   </pre>\n   </content>\n</entry>
+   </pre>
+</content>
+</entry>
 <entry>
    <title>results-lines-for-function-calls</title>
    <link href="http://eschulte.github.com/org-scraps/scraps/2010-02-15-results-lines-for-function-calls.html"/>
@@ -1944,7 +2064,9 @@ playing with Haskell
 <span class="org-meta-line">#+name:
 </span><span class="org-code">: fib(5)=8
 </span>
-   </pre>\n   </content>\n</entry>
+   </pre>
+</content>
+</entry>
 <entry>
    <title>variables-into-shell-scripts</title>
    <link href="http://eschulte.github.com/org-scraps/scraps/2010-02-23-variables-into-shell-scripts.html"/>
@@ -1987,7 +2109,9 @@ playing with Haskell
 <span class="org-table">| 8 |</span>
 <span class="org-table">| 9 |</span>
 
-   </pre>\n   </content>\n</entry>
+   </pre>
+</content>
+</entry>
 <entry>
    <title>access-to-variables-set-in-property-drawers</title>
    <link href="http://eschulte.github.com/org-scraps/scraps/2010-03-22-access-to-variables-set-in-property-drawers.html"/>
@@ -2018,7 +2142,9 @@ playing with Haskell
 <span class="org-meta-line">#+name:
 </span><span class="org-code">: schulte
 </span>
-   </pre>\n   </content>\n</entry>
+   </pre>
+</content>
+</entry>
 <entry>
    <title>latex-attributes</title>
    <link href="http://eschulte.github.com/org-scraps/scraps/2010-03-23-latex-attributes.html"/>
@@ -2046,7 +2172,9 @@ playing with Haskell
   +---------------------------+
 <span class="org-block-end-line">#+end_src
 </span>
-   </pre>\n   </content>\n</entry>
+   </pre>
+</content>
+</entry>
 <entry>
    <title>tangling-and-variable-resolution</title>
    <link href="http://eschulte.github.com/org-scraps/scraps/2010-03-31-tangling-and-variable-resolution.html"/>
@@ -2069,7 +2197,9 @@ playing with Haskell
 <span class="org-meta-line">#+name: A
 </span><span class="org-code">: This is the entry ID: 18b4f1be-bb1d-49bc-a651-c97406a35bdd
 </span>
-   </pre>\n   </content>\n</entry>
+   </pre>
+</content>
+</entry>
 <entry>
    <title>evaluate-references</title>
    <link href="http://eschulte.github.com/org-scraps/scraps/2010-04-09-evaluate-references.html"/>
@@ -2100,7 +2230,9 @@ playing with Haskell
 <span class="org-meta-line">#+name:
 </span><span class="org-code">: nil
 </span>
-   </pre>\n   </content>\n</entry>
+   </pre>
+</content>
+</entry>
 <entry>
    <title>hline-processing</title>
    <link href="http://eschulte.github.com/org-scraps/scraps/2010-04-12-hline-processing.html"/>
@@ -2224,7 +2356,9 @@ functions
       table<span class="starter-kit-paren">))
 </span><span class="org-block-end-line">#+end_src
 </span>
-   </pre>\n   </content>\n</entry>
+   </pre>
+</content>
+</entry>
 <entry>
    <title>test-gnuplot</title>
    <link href="http://eschulte.github.com/org-scraps/scraps/2010-04-17-test-gnuplot.html"/>
@@ -2241,7 +2375,9 @@ functions
 </span>  <span class="keyword">plot</span> <span class="function-name">sin(</span>x), x+5
 <span class="org-block-end-line">#+end_src
 </span>
-   </pre>\n   </content>\n</entry>
+   </pre>
+</content>
+</entry>
 <entry>
    <title>colnames-mismatched-sizes</title>
    <link href="http://eschulte.github.com/org-scraps/scraps/2010-04-23-colnames-mismatched-sizes.html"/>
@@ -2284,7 +2420,9 @@ functions
 <span class="org-meta-line">#+name:
 </span><span class="org-table">| 1 | 2 |</span>
 
-   </pre>\n   </content>\n</entry>
+   </pre>
+</content>
+</entry>
 <entry>
    <title>variable-indexing</title>
    <link href="http://eschulte.github.com/org-scraps/scraps/2010-04-23-variable-indexing.html"/>
@@ -2330,7 +2468,9 @@ functions
   <span class="keyword">plot</span> <span class="variable-name">data</span> <span class="type">with</span> <span class="function-name">linespoints
 </span><span class="org-block-end-line">#+end_src
 </span>
-   </pre>\n   </content>\n</entry>
+   </pre>
+</content>
+</entry>
 <entry>
    <title>tangling-org</title>
    <link href="http://eschulte.github.com/org-scraps/scraps/2010-04-27-tangling-org.html"/>
@@ -2360,7 +2500,9 @@ functions
  </span> eric.map{|l| puts l}
 <span class="org-block-end-line">#+end_src
 </span>
-   </pre>\n   </content>\n</entry>
+   </pre>
+</content>
+</entry>
 <entry>
    <title>lisps-not-fully-evald</title>
    <link href="http://eschulte.github.com/org-scraps/scraps/2010-04-30-lisps-not-fully-evald.html"/>
@@ -2390,7 +2532,9 @@ functions
 <span class="org-meta-line">#+name:
 </span><span class="org-code">: 3
 </span>
-   </pre>\n   </content>\n</entry>
+   </pre>
+</content>
+</entry>
 <entry>
    <title>colnames</title>
    <link href="http://eschulte.github.com/org-scraps/scraps/2010-05-04-colnames.html"/>
@@ -2434,7 +2578,9 @@ functions
 <span class="org-table">| d* | e* | f* |</span>
 <span class="org-table">| g* | h* | i* |</span>
 
-   </pre>\n   </content>\n</entry>
+   </pre>
+</content>
+</entry>
 <entry>
    <title>empty-code-blocks----and-latex-vs.-latex</title>
    <link href="http://eschulte.github.com/org-scraps/scraps/2010-05-26-empty-code-blocks----and-latex-vs.-latex.html"/>
@@ -2461,7 +2607,9 @@ schulte
 </span>  <span class="starter-kit-paren">(</span>message <span class="string">"error"</span><span class="starter-kit-paren">)
 </span><span class="org-block-end-line">#+end_src
 </span>
-   </pre>\n   </content>\n</entry>
+   </pre>
+</content>
+</entry>
 <entry>
    <title>visibility-affecting-execution</title>
    <link href="http://eschulte.github.com/org-scraps/scraps/2010-05-27-visibility-affecting-execution.html"/>
@@ -2514,7 +2662,9 @@ lets test folding
 <span class="org-meta-line">#+name:
 </span><span class="org-code">: unfolded2
 </span>
-   </pre>\n   </content>\n</entry>
+   </pre>
+</content>
+</entry>
 <entry>
    <title>appending-tangle</title>
    <link href="http://eschulte.github.com/org-scraps/scraps/2010-05-28-appending-tangle.html"/>
@@ -2541,7 +2691,9 @@ append all these block
 </span>  <span class="starter-kit-paren">(</span>message <span class="string">"block %d"</span> 3<span class="starter-kit-paren">)
 </span><span class="org-block-end-line">#+end_src
 </span>
-   </pre>\n   </content>\n</entry>
+   </pre>
+</content>
+</entry>
 <entry>
    <title>adding-file-names-to-literal-values-on-export</title>
    <link href="http://eschulte.github.com/org-scraps/scraps/2010-06-01-adding-file-names-to-literal-values-on-export.html"/>
@@ -2565,7 +2717,9 @@ append all these block
 </span>runif(n=num, min=0, max=1)
 <span class="org-block-end-line">#+end_src
 </span>
-   </pre>\n   </content>\n</entry>
+   </pre>
+</content>
+</entry>
 <entry>
    <title>inline-expressions</title>
    <link href="http://eschulte.github.com/org-scraps/scraps/2010-06-06-inline-expressions.html"/>
@@ -2587,7 +2741,9 @@ the sum of 1 and x is equal to src_R{x+1}, now I'll sneakily reset
 this value in a hidden inline block src_R[:exports none]{x&lt;-2}, so
 it's value is now src_R{x}.
 
-   </pre>\n   </content>\n</entry>
+   </pre>
+</content>
+</entry>
 <entry>
    <title>simple-table</title>
    <link href="http://eschulte.github.com/org-scraps/scraps/2010-06-06-simple-table.html"/>
@@ -2608,7 +2764,9 @@ it's value is now src_R{x}.
 <span class="org-table">| 4 | 5 |   6 |</span>
 <span class="org-table">| 7 | 8 | 900 |</span>
 
-   </pre>\n   </content>\n</entry>
+   </pre>
+</content>
+</entry>
 <entry>
    <title>commas-on-tangling-test</title>
    <link href="http://eschulte.github.com/org-scraps/scraps/2010-06-07-commas-on-tangling-test.html"/>
@@ -2645,7 +2803,9 @@ test comma protection on tangling
   and maybe not this...
 </span><span class="org-block-end-line">#+end_example
 </span>
-   </pre>\n   </content>\n</entry>
+   </pre>
+</content>
+</entry>
 <entry>
    <title>executing-emacs-lisp-on-export</title>
    <link href="http://eschulte.github.com/org-scraps/scraps/2010-06-07-executing-emacs-lisp-on-export.html"/>
@@ -2662,7 +2822,9 @@ test comma protection on tangling
 </span>  <span class="starter-kit-paren">(</span><span class="warning">error</span> <span class="string">"eric"</span><span class="starter-kit-paren">)
 </span><span class="org-block-end-line">#+end_src
 </span>
-   </pre>\n   </content>\n</entry>
+   </pre>
+</content>
+</entry>
 <entry>
    <title>export-with-existing-results</title>
    <link href="http://eschulte.github.com/org-scraps/scraps/2010-06-07-export-with-existing-results.html"/>
@@ -2698,7 +2860,9 @@ test comma protection on tangling
 <span class="org-meta-line">#+name:
 </span><span class="org-link">[[file:/tmp/eric.png]]</span>
 
-   </pre>\n   </content>\n</entry>
+   </pre>
+</content>
+</entry>
 <entry>
    <title>indented-source-names</title>
    <link href="http://eschulte.github.com/org-scraps/scraps/2010-06-07-indented-source-names.html"/>
@@ -2729,7 +2893,9 @@ test comma protection on tangling
   #+name:
   <span class="org-code">: eric
 </span>
-   </pre>\n   </content>\n</entry>
+   </pre>
+</content>
+</entry>
 <entry>
    <title>inhibiting-evaluation-on-export</title>
    <link href="http://eschulte.github.com/org-scraps/scraps/2010-06-07-inhibiting-evaluation-on-export.html"/>
@@ -2748,7 +2914,9 @@ test comma protection on tangling
   <span class="starter-kit-paren">(</span>error<span class="starter-kit-paren">)
 </span><span class="org-block-end-line">#+end_src
 </span>
-   </pre>\n   </content>\n</entry>
+   </pre>
+</content>
+</entry>
 <entry>
    <title>non-empty-comint-prompt</title>
    <link href="http://eschulte.github.com/org-scraps/scraps/2010-06-07-non-empty-comint-prompt.html"/>
@@ -2765,7 +2933,9 @@ test comma protection on tangling
 </span>  8 + 9
 <span class="org-block-end-line">#+end_src
 </span>
-   </pre>\n   </content>\n</entry>
+   </pre>
+</content>
+</entry>
 <entry>
    <title>stripping-existing-results</title>
    <link href="http://eschulte.github.com/org-scraps/scraps/2010-06-07-stripping-existing-results.html"/>
@@ -2796,7 +2966,9 @@ included...
 </span>  <span class="starter-kit-paren">(</span>message <span class="string">"I shouldn't be exported"</span><span class="starter-kit-paren">)
 </span><span class="org-block-end-line">#+end_src
 </span>
-   </pre>\n   </content>\n</entry>
+   </pre>
+</content>
+</entry>
 <entry>
    <title>unwind-protect-with-narrowing</title>
    <link href="http://eschulte.github.com/org-scraps/scraps/2010-06-07-unwind-protect-with-narrowing.html"/>
@@ -2819,7 +2991,9 @@ I'm not in the subtree
 </span>  <span class="starter-kit-paren">(</span>+ 6 <span class="string">"I'm not a number!!"</span><span class="starter-kit-paren">)
 </span><span class="org-block-end-line">#+end_src
 </span>
-   </pre>\n   </content>\n</entry>
+   </pre>
+</content>
+</entry>
 <entry>
    <title>updating-results-in-situ</title>
    <link href="http://eschulte.github.com/org-scraps/scraps/2010-06-07-updating-results-in-situ.html"/>
@@ -2856,7 +3030,9 @@ the results should be <span class="bold">*above*</span> the block
           <span class="starter-kit-paren">(</span>current-time-string<span class="starter-kit-paren">))
 </span><span class="org-block-end-line">#+end_src
 </span>
-   </pre>\n   </content>\n</entry>
+   </pre>
+</content>
+</entry>
 <entry>
    <title>not-expand-inlines-in-examples</title>
    <link href="http://eschulte.github.com/org-scraps/scraps/2010-06-08-not-expand-inlines-in-examples.html"/>
@@ -2881,7 +3057,9 @@ src_emacs-lisp{(+ 1 2 3)}
 </span><span class="org-block">  src_emacs-lisp{(+ 1 2 3)}
 </span><span class="org-block-end-line">#+end_example
 </span>
-   </pre>\n   </content>\n</entry>
+   </pre>
+</content>
+</entry>
 <entry>
    <title>indented-source-code-blocks-and-indented-results</title>
    <link href="http://eschulte.github.com/org-scraps/scraps/2010-06-10-indented-source-code-blocks-and-indented-results.html"/>
@@ -2925,7 +3103,9 @@ src_emacs-lisp{(+ 1 2 3)}
 </span>        <span class="org-code">: Thu Jun 10 14:05:57 2010
 </span>        <span class="org-code">: Thu Jun 10 14:06:00 2010
 </span>
-   </pre>\n   </content>\n</entry>
+   </pre>
+</content>
+</entry>
 <entry>
    <title>cant-open-indented-results</title>
    <link href="http://eschulte.github.com/org-scraps/scraps/2010-06-11-cant-open-indented-results.html"/>
@@ -2965,7 +3145,9 @@ src_emacs-lisp{(+ 1 2 3)}
    #+name:
    <span class="org-link">[[file:recursion.pdf]]</span>
 
-   </pre>\n   </content>\n</entry>
+   </pre>
+</content>
+</entry>
 <entry>
    <title>exporting-with-call-lines</title>
    <link href="http://eschulte.github.com/org-scraps/scraps/2010-06-11-exporting-with-call-lines.html"/>
@@ -3004,7 +3186,9 @@ src_emacs-lisp{(+ 1 2 3)}
 </span>
 <span class="org-meta-line">#+call: rpn-to-alg(alg=distributed-best)
 </span> 
-   </pre>\n   </content>\n</entry>
+   </pre>
+</content>
+</entry>
 <entry>
    <title>simple-reference</title>
    <link href="http://eschulte.github.com/org-scraps/scraps/2010-06-13-simple-reference.html"/>
@@ -3028,7 +3212,9 @@ src_emacs-lisp{(+ 1 2 3)}
 <span class="comment">#+name:</span>
 <span class="org-code">: 5
 </span>
-   </pre>\n   </content>\n</entry>
+   </pre>
+</content>
+</entry>
 <entry>
    <title>dont-eat-me!</title>
    <link href="http://eschulte.github.com/org-scraps/scraps/2010-06-15-dont-eat-me!.html"/>
@@ -3060,7 +3246,9 @@ src_emacs-lisp{(+ 1 2 3)}
 
 2) source blocks should be able to be on adjacent lines
 
-   </pre>\n   </content>\n</entry>
+   </pre>
+</content>
+</entry>
 <entry>
    <title>comments-not-commented</title>
    <link href="http://eschulte.github.com/org-scraps/scraps/2010-06-16-comments-not-commented.html"/>
@@ -3089,7 +3277,9 @@ src_emacs-lisp{(+ 1 2 3)}
    can cause problems
 
 2) how about this one...
-   </pre>\n   </content>\n</entry>
+   </pre>
+</content>
+</entry>
 <entry>
    <title>foo-org</title>
    <link href="http://eschulte.github.com/org-scraps/scraps/2010-06-16-foo-org.html"/>
@@ -3116,7 +3306,9 @@ and more stuff here and then the results
 #+caption: Scatter Plot with Regression Line
 </span><span class="org-link">[[file:fig1.pdf]]</span>
 
-   </pre>\n   </content>\n</entry>
+   </pre>
+</content>
+</entry>
 <entry>
    <title>cache-on-export</title>
    <link href="http://eschulte.github.com/org-scraps/scraps/2010-06-17-cache-on-export.html"/>
@@ -3137,7 +3329,9 @@ do we export cached blocks
 <span class="org-meta-line">#+name[06ed73c6d8d022cf9c323d92af885952865add17]:
 </span><span class="org-code">: Thu Jun 17 07:35:19 PDT 2010
 </span>
-   </pre>\n   </content>\n</entry>
+   </pre>
+</content>
+</entry>
 <entry>
    <title>tangling</title>
    <link href="http://eschulte.github.com/org-scraps/scraps/2010-06-17-tangling.html"/>
@@ -3166,7 +3360,9 @@ do we export cached blocks
 </span><span class="constant">  1+</span>8
 <span class="org-block-end-line">#+end_src
 </span>
-   </pre>\n   </content>\n</entry>
+   </pre>
+</content>
+</entry>
 <entry>
    <title>multiple-evals-for-refs</title>
    <link href="http://eschulte.github.com/org-scraps/scraps/2010-06-25-multiple-evals-for-refs.html"/>
@@ -3198,7 +3394,9 @@ do we export cached blocks
 <span class="org-meta-line">#+name:
 </span><span class="org-code">: 3
 </span>
-   </pre>\n   </content>\n</entry>
+   </pre>
+</content>
+</entry>
 <entry>
    <title>protecting-block-bodies</title>
    <link href="http://eschulte.github.com/org-scraps/scraps/2010-06-25-protecting-block-bodies.html"/>
@@ -3252,7 +3450,9 @@ neither of these work as expected
 </span><span class="org-block-end-line">#+end_html
 </span>final
 
-   </pre>\n   </content>\n</entry>
+   </pre>
+</content>
+</entry>
 <entry>
    <title>hlines-in-python</title>
    <link href="http://eschulte.github.com/org-scraps/scraps/2010-06-26-hlines-in-python.html"/>
@@ -3291,7 +3491,9 @@ neither of these work as expected
 </span>  <span class="starter-kit-paren">(</span>message <span class="string">"Exist"</span><span class="starter-kit-paren">)
 </span><span class="org-block-end-line">#+end_src
 </span>
-   </pre>\n   </content>\n</entry>
+   </pre>
+</content>
+</entry>
 <entry>
    <title>possible-prefixes</title>
    <link href="http://eschulte.github.com/org-scraps/scraps/2010-06-26-possible-prefixes.html"/>
@@ -3323,7 +3525,9 @@ neither of these work as expected
 </span>   <span class="starter-kit-paren">(</span>length prefix<span class="starter-kit-paren">))
 </span><span class="org-block-end-line">#+end_src
 </span>
-   </pre>\n   </content>\n</entry>
+   </pre>
+</content>
+</entry>
 <entry>
    <title>complex</title>
    <link href="http://eschulte.github.com/org-scraps/scraps/2010-06-28-complex.html"/>
@@ -3362,7 +3566,9 @@ neither of these work as expected
 <span class="org-meta-line">#+name:
 </span><span class="org-link">[[file:parks.png]]</span>
 
-   </pre>\n   </content>\n</entry>
+   </pre>
+</content>
+</entry>
 <entry>
    <title>haskell-issues</title>
    <link href="http://eschulte.github.com/org-scraps/scraps/2010-06-28-haskell-issues.html"/>
@@ -3398,7 +3604,9 @@ neither of these work as expected
 <span class="org-meta-line">#+name:
 </span><span class="org-code">: 7
 </span>
-   </pre>\n   </content>\n</entry>
+   </pre>
+</content>
+</entry>
 <entry>
    <title>table-label</title>
    <link href="http://eschulte.github.com/org-scraps/scraps/2010-06-28-table-label.html"/>
@@ -3415,7 +3623,9 @@ neither of these work as expected
 <span class="org-table">| 2 |</span>
 <span class="org-table">| 3 |</span>
 
-   </pre>\n   </content>\n</entry>
+   </pre>
+</content>
+</entry>
 <entry>
    <title>booktabs</title>
    <link href="http://eschulte.github.com/org-scraps/scraps/2010-06-29-booktabs.html"/>
@@ -3436,7 +3646,9 @@ neither of these work as expected
 
 <span class="org-meta-line">#+call: booktabs(table=months, align="r|l") :results latex :exports results
 </span>
-   </pre>\n   </content>\n</entry>
+   </pre>
+</content>
+</entry>
 <entry>
    <title>captions</title>
    <link href="http://eschulte.github.com/org-scraps/scraps/2010-06-29-captions.html"/>
@@ -3454,7 +3666,9 @@ neither of these work as expected
 </span><span class="org-table">| A | B |</span>
 <span class="org-table">| 1 | 2 |</span>
 
-   </pre>\n   </content>\n</entry>
+   </pre>
+</content>
+</entry>
 <entry>
    <title>latex-literals-in-export</title>
    <link href="http://eschulte.github.com/org-scraps/scraps/2010-06-30-latex-literals-in-export.html"/>
@@ -3470,7 +3684,9 @@ neither of these work as expected
 <span class="org-meta-line">  #+ATTR_LaTeX: width=\textwidth</span>
   <span class="org-link">[[./composite-pattern.png]]</span>
 
-   </pre>\n   </content>\n</entry>
+   </pre>
+</content>
+</entry>
 <entry>
    <title>table-comment-issue</title>
    <link href="http://eschulte.github.com/org-scraps/scraps/2010-06-30-table-comment-issue.html"/>
@@ -3521,7 +3737,9 @@ save me!
 | 1 | 2 |
 </span><span class="org-block-end-line">#+end_example
 </span>
-   </pre>\n   </content>\n</entry>
+   </pre>
+</content>
+</entry>
 <entry>
    <title>python-errors</title>
    <link href="http://eschulte.github.com/org-scraps/scraps/2010-07-04-python-errors.html"/>
@@ -3624,7 +3842,9 @@ save me!
 <span class="org-meta-line">#+name:
 </span><span class="org-code">: 78
 </span>
-   </pre>\n   </content>\n</entry>
+   </pre>
+</content>
+</entry>
 <entry>
    <title>dot</title>
    <link href="http://eschulte.github.com/org-scraps/scraps/2010-07-06-dot.html"/>
@@ -3647,7 +3867,9 @@ save me!
 <span class="org-meta-line">#+name:
 </span><span class="org-link">[[file:models.png]]</span>
 
-   </pre>\n   </content>\n</entry>
+   </pre>
+</content>
+</entry>
 <entry>
    <title>tom-found-a-bug</title>
    <link href="http://eschulte.github.com/org-scraps/scraps/2010-07-06-tom-found-a-bug.html"/>
@@ -3667,7 +3889,9 @@ save me!
 <span class="org-meta-line">#+name:
 </span><span class="org-table">| 1 | 5 |</span>
 
-   </pre>\n   </content>\n</entry>
+   </pre>
+</content>
+</entry>
 <entry>
    <title>scratch</title>
    <link href="http://eschulte.github.com/org-scraps/scraps/2010-07-08-scratch.html"/>
@@ -3692,7 +3916,9 @@ looking at paths
 </span>  <span class="starter-kit-paren">(</span>buffer-file-name<span class="starter-kit-paren">)
 </span><span class="org-block-end-line">#+end_src
 </span>
-   </pre>\n   </content>\n</entry>
+   </pre>
+</content>
+</entry>
 <entry>
    <title>export-blocks-without-languages</title>
    <link href="http://eschulte.github.com/org-scraps/scraps/2010-07-09-export-blocks-without-languages.html"/>
@@ -3727,7 +3953,9 @@ example
  </span> [1, 2, 3, 4, 5].map{|r| r+1}
 <span class="org-block-end-line">#+end_src
 </span>
-   </pre>\n   </content>\n</entry>
+   </pre>
+</content>
+</entry>
 <entry>
    <title>tangle-r-and-load</title>
    <link href="http://eschulte.github.com/org-scraps/scraps/2010-07-09-tangle-r-and-load.html"/>
@@ -3759,7 +3987,9 @@ example
 </span>  x+y+z
 <span class="org-block-end-line">#+end_src
 </span>
-   </pre>\n   </content>\n</entry>
+   </pre>
+</content>
+</entry>
 <entry>
    <title>example-without-source-name</title>
    <link href="http://eschulte.github.com/org-scraps/scraps/2010-07-12-example-without-source-name.html"/>
@@ -3777,7 +4007,9 @@ delete emacs-lisp below for errors
 </span>  <span class="starter-kit-paren">(</span>* <span class="starter-kit-paren">(</span>+ 1 1 1<span class="starter-kit-paren">)</span> <span class="starter-kit-paren">(</span>+ 1 1 1<span class="starter-kit-paren">)</span> <span class="starter-kit-paren">(</span>+ 1 1 1<span class="starter-kit-paren">)</span> <span class="starter-kit-paren">(</span>+ 1 1 1<span class="starter-kit-paren">)</span> <span class="starter-kit-paren">(</span>+ 1 1 1<span class="starter-kit-paren">)</span> <span class="starter-kit-paren">(</span>+ 1 1 1<span class="starter-kit-paren">)</span> <span class="starter-kit-paren">(</span>+ 1 1 1<span class="starter-kit-paren">))
 </span><span class="org-block-end-line">#+end_src
 </span>
-   </pre>\n   </content>\n</entry>
+   </pre>
+</content>
+</entry>
 <entry>
    <title>fixing-result-insertion</title>
    <link href="http://eschulte.github.com/org-scraps/scraps/2010-07-12-fixing-result-insertion.html"/>
@@ -3854,7 +4086,9 @@ culpa qui officia deserunt mollit anim id est laborum.
 </span><span class="org-table">| 1 | 2 | 3 |</span>
 <span class="org-table">| 4 | 5 | 8 |</span>
 
-   </pre>\n   </content>\n</entry>
+   </pre>
+</content>
+</entry>
 <entry>
    <title>limited-precision</title>
    <link href="http://eschulte.github.com/org-scraps/scraps/2010-07-12-limited-precision.html"/>
@@ -3886,7 +4120,9 @@ culpa qui officia deserunt mollit anim id est laborum.
 <span class="org-table">|--------+--------+----------+-------------+-------------+---------+----------------------+-------+--------|</span>
 <span class="org-table">| Days   | 9.0000 | 153.0000 | 166235.1225 | 151101.0386 | 18.7027 | 8.99534541600196e-21 | *     | 0.5238 |</span>
 
-   </pre>\n   </content>\n</entry>
+   </pre>
+</content>
+</entry>
 <entry>
    <title>input-from-an-example-block</title>
    <link href="http://eschulte.github.com/org-scraps/scraps/2010-07-13-input-from-an-example-block.html"/>
@@ -3929,7 +4165,9 @@ culpa qui officia deserunt mollit anim id est laborum.
 <span class="org-meta-line">#+name:
 </span><span class="org-code">: 1
 </span>
-   </pre>\n   </content>\n</entry>
+   </pre>
+</content>
+</entry>
 <entry>
    <title>palendromic-primes</title>
    <link href="http://eschulte.github.com/org-scraps/scraps/2010-07-20-palendromic-primes.html"/>
@@ -3979,7 +4217,9 @@ The <span class="org-code">=convert=</span> command is part of the <span class="
   <span class="builtin">echo</span> <span class="string">"pps.png"
 </span><span class="org-block-end-line">#+end_src
 </span>
-   </pre>\n   </content>\n</entry>
+   </pre>
+</content>
+</entry>
 <entry>
    <title>caption-on-code-block</title>
    <link href="http://eschulte.github.com/org-scraps/scraps/2010-07-22-caption-on-code-block.html"/>
@@ -3998,7 +4238,9 @@ The <span class="org-code">=convert=</span> command is part of the <span class="
 </span>SELECT 6*9;
 <span class="org-block-end-line">#+end_src
 </span>
-   </pre>\n   </content>\n</entry>
+   </pre>
+</content>
+</entry>
 <entry>
    <title>colnames-to-specific-variables</title>
    <link href="http://eschulte.github.com/org-scraps/scraps/2010-07-22-colnames-to-specific-variables.html"/>
@@ -4031,7 +4273,9 @@ The <span class="org-code">=convert=</span> command is part of the <span class="
 <span class="org-table">| three | two | one  |</span>
 <span class="org-table">| 3     | 2   | 1    |</span>
 
-   </pre>\n   </content>\n</entry>
+   </pre>
+</content>
+</entry>
 <entry>
    <title>comments-in-r-blocks</title>
    <link href="http://eschulte.github.com/org-scraps/scraps/2010-08-12-comments-in-r-blocks.html"/>
@@ -4055,7 +4299,9 @@ The <span class="org-code">=convert=</span> command is part of the <span class="
 </span><span class="org-code">: 
 : [1] 1.320853
 </span>
-   </pre>\n   </content>\n</entry>
+   </pre>
+</content>
+</entry>
 <entry>
    <title>importing-the-output-of-ledger</title>
    <link href="http://eschulte.github.com/org-scraps/scraps/2010-08-12-importing-the-output-of-ledger.html"/>
@@ -4087,7 +4333,9 @@ The <span class="org-code">=convert=</span> command is part of the <span class="
 <span class="org-table">| 09-Sep-17 CHEQUE : 7691785                | Expenses:Unknown | 100.00 EUR  | 266.70 EUR  |</span>
 <span class="org-table">| 09-Oct-16 REMISE CHEQUE N 8686318 001 105 | Expenses:Unknown | -525.00 EUR | -258.30 EUR |</span>
 
-   </pre>\n   </content>\n</entry>
+   </pre>
+</content>
+</entry>
 <entry>
    <title>lisp</title>
    <link href="http://eschulte.github.com/org-scraps/scraps/2010-08-12-lisp.html"/>
@@ -4119,7 +4367,9 @@ The <span class="org-code">=convert=</span> command is part of the <span class="
 <span class="org-meta-line">#+name:
 </span><span class="org-code">: 4
 </span>
-   </pre>\n   </content>\n</entry>
+   </pre>
+</content>
+</entry>
 <entry>
    <title>lob----writing-results-out-to-files</title>
    <link href="http://eschulte.github.com/org-scraps/scraps/2010-08-12-lob----writing-results-out-to-files.html"/>
@@ -4147,7 +4397,9 @@ writes the results out as tab separated file
 write the results out as a normal org-mode file
 <span class="org-meta-line">#+call: write(data=table, file="~/Desktop/example.org") :results silent
 </span>
-   </pre>\n   </content>\n</entry>
+   </pre>
+</content>
+</entry>
 <entry>
    <title>tangle-r-and-load</title>
    <link href="http://eschulte.github.com/org-scraps/scraps/2010-08-12-tangle-r-and-load.html"/>
@@ -4182,7 +4434,9 @@ then tangle
 </span> y <span class="constant">&lt;- </span>9
 <span class="org-block-end-line">#+end_src
 </span>
-   </pre>\n   </content>\n</entry>
+   </pre>
+</content>
+</entry>
 <entry>
    <title>ledger-example-output-text</title>
    <link href="http://eschulte.github.com/org-scraps/scraps/2010-08-13-ledger-example-output-text.html"/>
@@ -4205,7 +4459,9 @@ then tangle
 </span>  <span class="builtin">echo</span> <span class="string">"$stuff"
 </span><span class="org-block-end-line">#+end_src
 </span>
-   </pre>\n   </content>\n</entry>
+   </pre>
+</content>
+</entry>
 <entry>
    <title>org-results-and-replace</title>
    <link href="http://eschulte.github.com/org-scraps/scraps/2010-08-18-org-results-and-replace.html"/>
@@ -4253,7 +4509,9 @@ then tangle
 <span class="org-table">| 92 | 28 | 21 |</span>
 <span class="org-table">| 68 | 22 |  9 |</span>
 
-   </pre>\n   </content>\n</entry>
+   </pre>
+</content>
+</entry>
 <entry>
    <title>issues-with-shell-evaluation</title>
    <link href="http://eschulte.github.com/org-scraps/scraps/2010-08-25-issues-with-shell-evaluation.html"/>
@@ -4270,7 +4528,9 @@ then tangle
   make
 <span class="org-block-end-line">#+end_src
 </span>
-   </pre>\n   </content>\n</entry>
+   </pre>
+</content>
+</entry>
 <entry>
    <title>not-caching</title>
    <link href="http://eschulte.github.com/org-scraps/scraps/2010-08-25-not-caching.html"/>
@@ -4344,7 +4604,9 @@ do we export cached blocks
 <span class="org-meta-line">#+name[0427db66afdc95462d1c8514b662829987d71ff5]:
 </span><span class="org-code">: 0427db66afdc95462d1c8514b662829987d71ff5
 </span>
-   </pre>\n   </content>\n</entry>
+   </pre>
+</content>
+</entry>
 <entry>
    <title>duplicate-results-on-execute-subtree</title>
    <link href="http://eschulte.github.com/org-scraps/scraps/2010-08-26-duplicate-results-on-execute-subtree.html"/>
@@ -4370,7 +4632,9 @@ do we export cached blocks
 - third
 <span class="org-block-end-line">#+END_SRC
 </span>
-   </pre>\n   </content>\n</entry>
+   </pre>
+</content>
+</entry>
 <entry>
    <title>eval-and-noeval</title>
    <link href="http://eschulte.github.com/org-scraps/scraps/2010-08-26-eval-and-noeval.html"/>
@@ -4404,7 +4668,9 @@ should export results, and should trigger query above
 </span>  ls
 <span class="org-block-end-line">#+end_src
 </span>
-   </pre>\n   </content>\n</entry>
+   </pre>
+</content>
+</entry>
 <entry>
    <title>eval-for-side-effect-on-export</title>
    <link href="http://eschulte.github.com/org-scraps/scraps/2010-08-26-eval-for-side-effect-on-export.html"/>
@@ -4426,7 +4692,9 @@ should export results, and should trigger query above
     (+ 1 two)
   #+end_src
 
-   </pre>\n   </content>\n</entry>
+   </pre>
+</content>
+</entry>
 <entry>
    <title>trying-out-plantuml</title>
    <link href="http://eschulte.github.com/org-scraps/scraps/2010-08-26-trying-out-plantuml.html"/>
@@ -4453,7 +4721,9 @@ usage -- sequence diagram
 <span class="org-meta-line">#+name:
 </span><span class="org-link">[[file:tryout.png]]</span>
 
-   </pre>\n   </content>\n</entry>
+   </pre>
+</content>
+</entry>
 <entry>
    <title>wrapping-up-rawithoutrg-results</title>
    <link href="http://eschulte.github.com/org-scraps/scraps/2010-08-26-wrapping-up-rawithoutrg-results.html"/>
@@ -4479,7 +4749,9 @@ usage -- sequence diagram
 - third
 <span class="org-block-end-line">#+END_SRC
 </span>
-   </pre>\n   </content>\n</entry>
+   </pre>
+</content>
+</entry>
 <entry>
    <title>initial-javascript-support</title>
    <link href="http://eschulte.github.com/org-scraps/scraps/2010-08-27-initial-javascript-support.html"/>
@@ -4525,7 +4797,9 @@ using node.js
 <span class="org-meta-line">#+name:
 </span><span class="org-code">: 3
 </span>
-   </pre>\n   </content>\n</entry>
+   </pre>
+</content>
+</entry>
 <entry>
    <title>initial-scheme-support</title>
    <link href="http://eschulte.github.com/org-scraps/scraps/2010-08-27-initial-scheme-support.html"/>
@@ -4552,7 +4826,9 @@ using node.js
 <span class="org-meta-line">#+name:
 </span><span class="org-table">| 1 | 2 | 3 |</span>
 
-   </pre>\n   </content>\n</entry>
+   </pre>
+</content>
+</entry>
 <entry>
    <title>pulling-information-from-tags</title>
    <link href="http://eschulte.github.com/org-scraps/scraps/2010-08-30-pulling-information-from-tags.html"/>
@@ -4572,7 +4848,9 @@ using node.js
 <span class="org-meta-line">#+name:
 </span><span class="org-code">: blue
 </span>
-   </pre>\n   </content>\n</entry>
+   </pre>
+</content>
+</entry>
 <entry>
    <title>conditional-tangling</title>
    <link href="http://eschulte.github.com/org-scraps/scraps/2010-08-31-conditional-tangling.html"/>
@@ -4604,7 +4882,9 @@ using node.js
 </span>  <span class="string">"second"
 </span><span class="org-block-end-line">#+end_src
 </span>
-   </pre>\n   </content>\n</entry>
+   </pre>
+</content>
+</entry>
 <entry>
    <title>scheme-sessions</title>
    <link href="http://eschulte.github.com/org-scraps/scraps/2010-08-31-scheme-sessions.html"/>
@@ -4630,7 +4910,9 @@ using node.js
 <span class="org-meta-line">#+name:
 </span><span class="org-code">: 10
 </span>
-   </pre>\n   </content>\n</entry>
+   </pre>
+</content>
+</entry>
 <entry>
    <title>ditaa-with-tilda-in-path</title>
    <link href="http://eschulte.github.com/org-scraps/scraps/2010-09-01-ditaa-with-tilda-in-path.html"/>
@@ -4652,7 +4934,9 @@ using node.js
     +--------------+
 <span class="org-block-end-line">#+end_src
 </span>
-   </pre>\n   </content>\n</entry>
+   </pre>
+</content>
+</entry>
 <entry>
    <title>:session-evaluation-on-export</title>
    <link href="http://eschulte.github.com/org-scraps/scraps/2010-09-01-:session-evaluation-on-export.html"/>
@@ -4677,7 +4961,9 @@ This second block <span class="italic">/does/</span> appear in export.
 </span>  x
 <span class="org-block-end-line">#+end_src
 </span>
-   </pre>\n   </content>\n</entry>
+   </pre>
+</content>
+</entry>
 <entry>
    <title>quoting-header-args-(e.g.-:cmdline)</title>
    <link href="http://eschulte.github.com/org-scraps/scraps/2010-09-03-quoting-header-args-(e.g.-:cmdline).html"/>
@@ -4699,7 +4985,9 @@ This second block <span class="italic">/does/</span> appear in export.
 <span class="org-meta-line">#+name:
 </span><span class="org-code">: argv[1] 1
 </span>
-   </pre>\n   </content>\n</entry>
+   </pre>
+</content>
+</entry>
 <entry>
    <title>:var-(buffer-file-name)</title>
    <link href="http://eschulte.github.com/org-scraps/scraps/2010-09-03-:var-(buffer-file-name).html"/>
@@ -4724,7 +5012,9 @@ export buffer is not visiting any file.
 </span>  <span class="builtin">echo</span> $<span class="variable-name">file </span>Revision
 <span class="org-block-end-line">#+end_src
 </span>
-   </pre>\n   </content>\n</entry>
+   </pre>
+</content>
+</entry>
 <entry>
    <title>tangling-with-full-comments</title>
    <link href="http://eschulte.github.com/org-scraps/scraps/2010-09-04-tangling-with-full-comments.html"/>
@@ -4762,7 +5052,9 @@ and finally a block with a <span class="org-code">=:noweb=</span> header argumen
     &lt;&lt;tangle-el-the-second&gt;&gt;<span class="starter-kit-paren">)
 </span><span class="org-block-end-line">#+end_src
 </span>
-   </pre>\n   </content>\n</entry>
+   </pre>
+</content>
+</entry>
 <entry>
    <title>customizable-comment-formats</title>
    <link href="http://eschulte.github.com/org-scraps/scraps/2010-09-05-customizable-comment-formats.html"/>
@@ -4794,7 +5086,9 @@ I would like the following output in the tangled file Main.hs:
 : test = length
 : main = print $ test [1,2,3]
 </span>
-   </pre>\n   </content>\n</entry>
+   </pre>
+</content>
+</entry>
 <entry>
    <title>comparative-speed-of-python-evaluation</title>
    <link href="http://eschulte.github.com/org-scraps/scraps/2010-09-07-comparative-speed-of-python-evaluation.html"/>
@@ -4831,7 +5125,9 @@ add(sub(10,1),sub(10,2))
 <span class="org-meta-line">#+name:
 </span><span class="org-code">: org_babel_python_eoe
 </span>
-   </pre>\n   </content>\n</entry>
+   </pre>
+</content>
+</entry>
 <entry>
    <title>remove-results-when-nil-is-returned</title>
    <link href="http://eschulte.github.com/org-scraps/scraps/2010-09-07-remove-results-when-nil-is-returned.html"/>
@@ -4849,7 +5145,9 @@ add(sub(10,1),sub(10,2))
 </span>
 <span class="org-meta-line">#+name:
 </span>
-   </pre>\n   </content>\n</entry>
+   </pre>
+</content>
+</entry>
 <entry>
    <title>tangle-org-mode-block</title>
    <link href="http://eschulte.github.com/org-scraps/scraps/2010-09-07-tangle-org-mode-block.html"/>
@@ -4874,7 +5172,9 @@ add(sub(10,1),sub(10,2))
   "
 </span><span class="org-block-end-line">#+end_src
 </span>
-   </pre>\n   </content>\n</entry>
+   </pre>
+</content>
+</entry>
 <entry>
    <title>empty-string-results</title>
    <link href="http://eschulte.github.com/org-scraps/scraps/2010-09-08-empty-string-results.html"/>
@@ -4912,7 +5212,9 @@ More test
 <span class="org-table">| :shebang  |         |</span>
 <span class="org-table">| :tangle   | no      |</span>
 
-   </pre>\n   </content>\n</entry>
+   </pre>
+</content>
+</entry>
 <entry>
    <title>header-arguments-on-call-line</title>
    <link href="http://eschulte.github.com/org-scraps/scraps/2010-09-09-header-arguments-on-call-line.html"/>
@@ -4938,7 +5240,9 @@ maybe the following with the new proposed header arguments
 
 <span class="org-meta-line">#+call: eight[:session *R*]() :results vector
 </span>
-   </pre>\n   </content>\n</entry>
+   </pre>
+</content>
+</entry>
 <entry>
    <title>splitting-code-blocks</title>
    <link href="http://eschulte.github.com/org-scraps/scraps/2010-09-19-splitting-code-blocks.html"/>
@@ -4984,7 +5288,9 @@ maybe the following with the new proposed header arguments
     <span class="comment-delimiter">;; </span><span class="comment">other stuff
 </span><span class="org-block-end-line">  #+end_src
 </span>
-   </pre>\n   </content>\n</entry>
+   </pre>
+</content>
+</entry>
 <entry>
    <title>letter</title>
    <link href="http://eschulte.github.com/org-scraps/scraps/2010-09-21-letter.html"/>
@@ -5031,7 +5337,9 @@ maybe the following with the new proposed header arguments
 <span class="font-latex-sedate"><span class="keyword">\end</span></span>{<span class="function-name">document}</span>
 <span class="org-block-end-line">#+end_src
 </span>
-   </pre>\n   </content>\n</entry>
+   </pre>
+</content>
+</entry>
 <entry>
    <title>cycle----the-input-is-the-output</title>
    <link href="http://eschulte.github.com/org-scraps/scraps/2010-09-29-cycle----the-input-is-the-output.html"/>
@@ -5059,7 +5367,9 @@ and the rhythm is the base and the base is the treble
 </span>  <span class="starter-kit-paren">(</span>+ 1 1 1<span class="starter-kit-paren">)
 </span><span class="org-block-end-line">#+end_src
 </span>
-   </pre>\n   </content>\n</entry>
+   </pre>
+</content>
+</entry>
 <entry>
    <title>index-into-a-scalar</title>
    <link href="http://eschulte.github.com/org-scraps/scraps/2010-10-13-index-into-a-scalar.html"/>
@@ -5082,7 +5392,9 @@ and the rhythm is the base and the base is the treble
 <span class="org-meta-line">#+name:
 </span><span class="org-code">: a
 </span>
-   </pre>\n   </content>\n</entry>
+   </pre>
+</content>
+</entry>
 <entry>
    <title>preceding-blank-lines-on-tangle</title>
    <link href="http://eschulte.github.com/org-scraps/scraps/2010-10-13-preceding-blank-lines-on-tangle.html"/>
@@ -5103,7 +5415,9 @@ and the rhythm is the base and the base is the treble
 </span>  <span class="builtin">echo</span> <span class="string">"else"
 </span><span class="org-block-end-line">#+end_src
 </span>
-   </pre>\n   </content>\n</entry>
+   </pre>
+</content>
+</entry>
 <entry>
    <title>very-very-large-numbers</title>
    <link href="http://eschulte.github.com/org-scraps/scraps/2010-10-13-very-very-large-numbers.html"/>
@@ -5141,7 +5455,9 @@ and the rhythm is the base and the base is the treble
 <span class="org-table">|               12567890 | integer |</span>
 <span class="org-table">| 2.3123128237198328e+26 | float   |</span>
 
-   </pre>\n   </content>\n</entry>
+   </pre>
+</content>
+</entry>
 <entry>
    <title>weaving-with-noweb-links</title>
    <link href="http://eschulte.github.com/org-scraps/scraps/2010-10-13-weaving-with-noweb-links.html"/>
@@ -5165,7 +5481,9 @@ and the rhythm is the base and the base is the treble
  </span> &lt;&lt;name&gt;&gt;
 <span class="org-block-end-line">#+end_src
 </span>
-   </pre>\n   </content>\n</entry>
+   </pre>
+</content>
+</entry>
 <entry>
    <title>security-problem-with-elisp-in-header-arguments</title>
    <link href="http://eschulte.github.com/org-scraps/scraps/2010-10-14-security-problem-with-elisp-in-header-arguments.html"/>
@@ -5181,7 +5499,9 @@ and the rhythm is the base and the base is the treble
 </span>  <span class="starter-kit-paren">(</span>+ 1 1<span class="starter-kit-paren">)
 </span><span class="org-block-end-line">#+end_src
 </span>
-   </pre>\n   </content>\n</entry>
+   </pre>
+</content>
+</entry>
 <entry>
    <title>export-specific-header-arguments</title>
    <link href="http://eschulte.github.com/org-scraps/scraps/2010-10-26-export-specific-header-arguments.html"/>
@@ -5202,7 +5522,9 @@ and the rhythm is the base and the base is the treble
 <span class="org-meta-line">#+name:
 </span><span class="org-code">: not latex
 </span>
-   </pre>\n   </content>\n</entry>
+   </pre>
+</content>
+</entry>
 <entry>
    <title>latex-headers-in-latex-code-blocks</title>
    <link href="http://eschulte.github.com/org-scraps/scraps/2010-10-26-latex-headers-in-latex-code-blocks.html"/>
@@ -5229,7 +5551,9 @@ and the rhythm is the base and the base is the treble
 <span class="org-meta-line">#+name:
 </span><span class="org-link">[[file:name2.pdf]]</span>
 
-   </pre>\n   </content>\n</entry>
+   </pre>
+</content>
+</entry>
 <entry>
    <title>simple-gnuplot-tests</title>
    <link href="http://eschulte.github.com/org-scraps/scraps/2010-10-26-simple-gnuplot-tests.html"/>
@@ -5291,7 +5615,9 @@ Plotting data points from a table could look like this:
 <span class="org-meta-line">#+name:
 </span><span class="org-link">[[file:basic-plot.png]]</span>
 
-   </pre>\n   </content>\n</entry>
+   </pre>
+</content>
+</entry>
 <entry>
    <title>passing-arguments-through-call-lines</title>
    <link href="http://eschulte.github.com/org-scraps/scraps/2010-10-29-passing-arguments-through-call-lines.html"/>
@@ -5317,7 +5643,9 @@ Plotting data points from a table could look like this:
 <span class="org-meta-line">#+name: test(myarg="hiho")
 </span><span class="org-code">: test.pdf
 </span>
-   </pre>\n   </content>\n</entry>
+   </pre>
+</content>
+</entry>
 <entry>
    <title>playing-with-calc-support</title>
    <link href="http://eschulte.github.com/org-scraps/scraps/2010-11-03-playing-with-calc-support.html"/>
@@ -5365,7 +5693,9 @@ Plotting data points from a table could look like this:
 <span class="org-meta-line">#+name:
 </span><span class="org-code">: 18
 </span>
-   </pre>\n   </content>\n</entry>
+   </pre>
+</content>
+</entry>
 <entry>
    <title>shell-blocks-returning-a-file-name</title>
    <link href="http://eschulte.github.com/org-scraps/scraps/2010-11-03-shell-blocks-returning-a-file-name.html"/>
@@ -5384,7 +5714,9 @@ Plotting data points from a table could look like this:
 <span class="org-meta-line">#+name:
 </span><span class="org-link">[[file:quick.txt]]</span>
 
-   </pre>\n   </content>\n</entry>
+   </pre>
+</content>
+</entry>
 <entry>
    <title>clojure-code-blocks-and-the-lazies</title>
    <link href="http://eschulte.github.com/org-scraps/scraps/2010-11-06-clojure-code-blocks-and-the-lazies.html"/>
@@ -5422,7 +5754,9 @@ Plotting data points from a table could look like this:
 <span class="org-table">| 8 | 64 |</span>
 <span class="org-table">| 9 | 81 |</span>
 
-   </pre>\n   </content>\n</entry>
+   </pre>
+</content>
+</entry>
 <entry>
    <title>lob-calls-with-header-argument-pass-through</title>
    <link href="http://eschulte.github.com/org-scraps/scraps/2010-11-08-lob-calls-with-header-argument-pass-through.html"/>
@@ -5465,7 +5799,9 @@ need ob-ref.el to pass through the header arguments in "[]"s
 <span class="org-meta-line">#+name:
 </span><span class="org-code">: 8
 </span>
-   </pre>\n   </content>\n</entry>
+   </pre>
+</content>
+</entry>
 <entry>
    <title>sqlite</title>
    <link href="http://eschulte.github.com/org-scraps/scraps/2010-11-10-sqlite.html"/>
@@ -5484,7 +5820,9 @@ need ob-ref.el to pass through the header arguments in "[]"s
 <span class="org-meta-line">#+name:
 </span><span class="org-code">: 422689
 </span>
-   </pre>\n   </content>\n</entry>
+   </pre>
+</content>
+</entry>
 <entry>
    <title>introducing-wrap-header-argument</title>
    <link href="http://eschulte.github.com/org-scraps/scraps/2010-11-19-introducing-wrap-header-argument.html"/>
@@ -5527,7 +5865,9 @@ now indented
   <span class="org-code">: something else
 </span>  #+END_RESULT
 
-   </pre>\n   </content>\n</entry>
+   </pre>
+</content>
+</entry>
 <entry>
    <title>lists-as-data-types</title>
    <link href="http://eschulte.github.com/org-scraps/scraps/2010-11-19-lists-as-data-types.html"/>
@@ -5562,7 +5902,9 @@ also for a block inside of a list
 </span>
 3. third element
 
-   </pre>\n   </content>\n</entry>
+   </pre>
+</content>
+</entry>
 <entry>
    <title>add-column-to-table-with-awk</title>
    <link href="http://eschulte.github.com/org-scraps/scraps/2010-11-23-add-column-to-table-with-awk.html"/>
@@ -5616,7 +5958,9 @@ equal to <span class="org-code">=New col=</span>).
 <span class="org-table">| New col | This is line 2 of the message.        |</span>
 <span class="org-table">| New col | This is the last line of the message. |</span>
 
-   </pre>\n   </content>\n</entry>
+   </pre>
+</content>
+</entry>
 <entry>
    <title>reading-from-single-quote-delim-languages</title>
    <link href="http://eschulte.github.com/org-scraps/scraps/2010-11-23-reading-from-single-quote-delim-languages.html"/>
@@ -5654,7 +5998,9 @@ equal to <span class="org-code">=New col=</span>).
 </span><span class="org-table">| 'single quotes' | b |</span>
 <span class="org-table">| "double quotes" | d |</span>
 
-   </pre>\n   </content>\n</entry>
+   </pre>
+</content>
+</entry>
 <entry>
    <title>safe-lists-for-haskell</title>
    <link href="http://eschulte.github.com/org-scraps/scraps/2010-11-23-safe-lists-for-haskell.html"/>
@@ -5687,7 +6033,9 @@ equal to <span class="org-code">=New col=</span>).
 <span class="org-meta-line">#+name:
 </span><span class="org-table">| 1 | 2 | 3 | 4 |</span>
 
-   </pre>\n   </content>\n</entry>
+   </pre>
+</content>
+</entry>
 <entry>
    <title>un-named-r-code-blocks</title>
    <link href="http://eschulte.github.com/org-scraps/scraps/2010-11-23-un-named-r-code-blocks.html"/>
@@ -5724,7 +6072,9 @@ equal to <span class="org-code">=New col=</span>).
 <span class="org-meta-line">#+name:
 </span><span class="org-code">: [1] 9
 </span>
-   </pre>\n   </content>\n</entry>
+   </pre>
+</content>
+</entry>
 <entry>
    <title>python-with-return-header-argument</title>
    <link href="http://eschulte.github.com/org-scraps/scraps/2010-11-27-python-with-return-header-argument.html"/>
@@ -5746,7 +6096,9 @@ equal to <span class="org-code">=New col=</span>).
 <span class="org-meta-line">#+name:
 </span><span class="org-code">: 98
 </span>
-   </pre>\n   </content>\n</entry>
+   </pre>
+</content>
+</entry>
 <entry>
    <title>:eval-query-shows-the-name</title>
    <link href="http://eschulte.github.com/org-scraps/scraps/2010-11-30-:eval-query-shows-the-name.html"/>
@@ -5766,7 +6118,9 @@ equal to <span class="org-code">=New col=</span>).
 <span class="org-meta-line">#+name: i-have-a-name
 </span><span class="org-code">: Tue Nov 30 22:03:25 MST 2010
 </span>
-   </pre>\n   </content>\n</entry>
+   </pre>
+</content>
+</entry>
 <entry>
    <title>sql-variables</title>
    <link href="http://eschulte.github.com/org-scraps/scraps/2010-11-30-sql-variables.html"/>
@@ -5799,7 +6153,9 @@ BEGIN
 END
 <span class="org-block-end-line">#+end_src
 </span>
-   </pre>\n   </content>\n</entry>
+   </pre>
+</content>
+</entry>
 <entry>
    <title>empty-lines-in-r-session-output</title>
    <link href="http://eschulte.github.com/org-scraps/scraps/2010-12-01-empty-lines-in-r-session-output.html"/>
@@ -5823,7 +6179,9 @@ END
 : [1] 2
 : [1] 5
 </span>
-   </pre>\n   </content>\n</entry>
+   </pre>
+</content>
+</entry>
 <entry>
    <title>python-requires-a-utf-8-coding-prefix</title>
    <link href="http://eschulte.github.com/org-scraps/scraps/2010-12-02-python-requires-a-utf-8-coding-prefix.html"/>
@@ -5850,7 +6208,9 @@ END
 <span class="org-meta-line">#+name:
 </span><span class="org-code">: &#233;
 </span>
-   </pre>\n   </content>\n</entry>
+   </pre>
+</content>
+</entry>
 <entry>
    <title>missing-lines-on-tangle</title>
    <link href="http://eschulte.github.com/org-scraps/scraps/2010-12-13-missing-lines-on-tangle.html"/>
@@ -5882,7 +6242,9 @@ END
 \end{itemize}
 </span><span class="org-block-end-line">#+END_LaTeX
 </span>
-   </pre>\n   </content>\n</entry>
+   </pre>
+</content>
+</entry>
 <entry>
    <title>tangle-templates</title>
    <link href="http://eschulte.github.com/org-scraps/scraps/2010-12-13-tangle-templates.html"/>
@@ -5926,7 +6288,9 @@ EOF
 : something new
 : some other stuff here
 </span>
-   </pre>\n   </content>\n</entry>
+   </pre>
+</content>
+</entry>
 <entry>
    <title>utf8-and-latin-1-encodings</title>
    <link href="http://eschulte.github.com/org-scraps/scraps/2010-12-13-utf8-and-latin-1-encodings.html"/>
@@ -5949,7 +6313,9 @@ EOF
 <span class="org-meta-line">#+name:
 </span><span class="org-table">| 2 | 2 |</span>
 
-   </pre>\n   </content>\n</entry>
+   </pre>
+</content>
+</entry>
 <entry>
    <title>new-file-handling</title>
    <link href="http://eschulte.github.com/org-scraps/scraps/2010-12-20-new-file-handling.html"/>
@@ -6014,7 +6380,9 @@ from <span class="org-link">http://www.graphviz.org/Gallery/directed/fsm.gv.txt<
 </span>
 <span class="org-meta-line">#+name:
 </span><span class="org-link">[[file:fsa.png]]</span>
-   </pre>\n   </content>\n</entry>
+   </pre>
+</content>
+</entry>
 <entry>
    <title>eval-query</title>
    <link href="http://eschulte.github.com/org-scraps/scraps/2010-12-21-eval-query.html"/>
@@ -6045,7 +6413,9 @@ from <span class="org-link">http://www.graphviz.org/Gallery/directed/fsm.gv.txt<
 </span>  ---
 <span class="org-block-end-line">#+end_src
 </span>
-   </pre>\n   </content>\n</entry>
+   </pre>
+</content>
+</entry>
 <entry>
    <title>language-name-abbreviations</title>
    <link href="http://eschulte.github.com/org-scraps/scraps/2011-01-07-language-name-abbreviations.html"/>
@@ -6066,7 +6436,9 @@ from <span class="org-link">http://www.graphviz.org/Gallery/directed/fsm.gv.txt<
 </span>  (map (partial + 1) (range 20))<span class="org-meta-line">
 </span><span class="org-block-end-line">#+end_src
 </span>
-   </pre>\n   </content>\n</entry>
+   </pre>
+</content>
+</entry>
 <entry>
    <title>call-lines</title>
    <link href="http://eschulte.github.com/org-scraps/scraps/2011-01-11-call-lines.html"/>
@@ -6093,7 +6465,9 @@ from <span class="org-link">http://www.graphviz.org/Gallery/directed/fsm.gv.txt<
 <span class="org-meta-line">#+name: doubler[:var n=3]()
 </span><span class="org-code">: 6
 </span>
-   </pre>\n   </content>\n</entry>
+   </pre>
+</content>
+</entry>
 <entry>
    <title>empty-strings-as-arguments</title>
    <link href="http://eschulte.github.com/org-scraps/scraps/2011-01-11-empty-strings-as-arguments.html"/>
@@ -6113,7 +6487,9 @@ from <span class="org-link">http://www.graphviz.org/Gallery/directed/fsm.gv.txt<
 <span class="org-meta-line">#+name:
 </span><span class="org-code">: bar
 </span>
-   </pre>\n   </content>\n</entry>
+   </pre>
+</content>
+</entry>
 <entry>
    <title>noweb-then-variables</title>
    <link href="http://eschulte.github.com/org-scraps/scraps/2011-01-13-noweb-then-variables.html"/>
@@ -6140,7 +6516,9 @@ from <span class="org-link">http://www.graphviz.org/Gallery/directed/fsm.gv.txt<
   <span class="font-latex-string">&lt;&lt;replaced-first&gt;&gt;
 </span><span class="org-block-end-line">#+end_src
 </span>
-   </pre>\n   </content>\n</entry>
+   </pre>
+</content>
+</entry>
 <entry>
    <title>replace-inline-code-block</title>
    <link href="http://eschulte.github.com/org-scraps/scraps/2011-01-13-replace-inline-code-block.html"/>
@@ -6165,7 +6543,9 @@ This is src_emacs-lisp{(+ 1 2 3)} an inline block.
       <span class="starter-kit-paren">(</span><span class="warning">error</span> <span class="string">"not inside of an inline source block."</span><span class="starter-kit-paren">)))
 </span><span class="org-block-end-line">#+end_src
 </span>
-   </pre>\n   </content>\n</entry>
+   </pre>
+</content>
+</entry>
 <entry>
    <title>wrap-noweb-references-in-comments</title>
    <link href="http://eschulte.github.com/org-scraps/scraps/2011-01-16-wrap-noweb-references-in-comments.html"/>
@@ -6189,7 +6569,9 @@ This is src_emacs-lisp{(+ 1 2 3)} an inline block.
     <span class="starter-kit-paren">(</span>message <span class="string">"x=%s"</span> x<span class="starter-kit-paren">))
 </span><span class="org-block-end-line">#+end_src
 </span>
-   </pre>\n   </content>\n</entry>
+   </pre>
+</content>
+</entry>
 <entry>
    <title>passing-arguments-to-the-shell</title>
    <link href="http://eschulte.github.com/org-scraps/scraps/2011-01-18-passing-arguments-to-the-shell.html"/>
@@ -6223,7 +6605,9 @@ This is src_emacs-lisp{(+ 1 2 3)} an inline block.
 </span>  <span class="starter-kit-paren">(</span>setq org-babel-sh-var-quote-fmt <span class="string">"`cat &lt;&lt;'BABEL_TABLE'\n%s\nBABEL_TABLE\n`"</span><span class="starter-kit-paren">)
 </span><span class="org-block-end-line">#+end_src
 </span>
-   </pre>\n   </content>\n</entry>
+   </pre>
+</content>
+</entry>
 <entry>
    <title>creating-a-directory-when-needed-for-tangling</title>
    <link href="http://eschulte.github.com/org-scraps/scraps/2011-01-19-creating-a-directory-when-needed-for-tangling.html"/>
@@ -6256,7 +6640,9 @@ There is now a new header argument controlling this behavior
 </span>  <span class="starter-kit-paren">(</span>message <span class="string">"contents"</span><span class="starter-kit-paren">)
 </span><span class="org-block-end-line">#+end_src
 </span>
-   </pre>\n   </content>\n</entry>
+   </pre>
+</content>
+</entry>
 <entry>
    <title>inserting-wrappers-eats-following-characters</title>
    <link href="http://eschulte.github.com/org-scraps/scraps/2011-01-20-inserting-wrappers-eats-following-characters.html"/>
@@ -6288,7 +6674,9 @@ There is now a new header argument controlling this behavior
     <span class="org-special-keyword">:DATE:</span>     <span class="org-property-value">2011-01-20</span>
 <span class="org-special-keyword">    :END:</span>
 
-   </pre>\n   </content>\n</entry>
+   </pre>
+</content>
+</entry>
 <entry>
    <title>results-replace-not-always-working</title>
    <link href="http://eschulte.github.com/org-scraps/scraps/2011-01-25-results-replace-not-always-working.html"/>
@@ -6316,7 +6704,9 @@ There is now a new header argument controlling this behavior
 </span>
 inline block src_emacs-lisp[:exports code :results replace]{(+ 1 1 1)} here is was
 
-   </pre>\n   </content>\n</entry>
+   </pre>
+</content>
+</entry>
 <entry>
    <title>simple-calc-example</title>
    <link href="http://eschulte.github.com/org-scraps/scraps/2011-01-25-simple-calc-example.html"/>
@@ -6335,7 +6725,9 @@ inline block src_emacs-lisp[:exports code :results replace]{(+ 1 1 1)} here is w
 <span class="org-meta-line">#+name:
 </span><span class="org-code">: 6
 </span>
-   </pre>\n   </content>\n</entry>
+   </pre>
+</content>
+</entry>
 <entry>
    <title>non-inlined-inline-code-block</title>
    <link href="http://eschulte.github.com/org-scraps/scraps/2011-01-27-non-inlined-inline-code-block.html"/>
@@ -6351,7 +6743,9 @@ The Date is src_sh[:results replace]{date} at the time of <span class="org-code"
 
 src_sh[:results replace]{ls}
 
-   </pre>\n   </content>\n</entry>
+   </pre>
+</content>
+</entry>
 <entry>
    <title>how-to-set-no-expand-in-properties</title>
    <link href="http://eschulte.github.com/org-scraps/scraps/2011-02-10-how-to-set-no-expand-in-properties.html"/>
@@ -6371,7 +6765,9 @@ src_sh[:results replace]{ls}
 </span>
 tangles to
 
-   </pre>\n   </content>\n</entry>
+   </pre>
+</content>
+</entry>
 <entry>
    <title>two-vars-in-a-properties-block----not-possible</title>
    <link href="http://eschulte.github.com/org-scraps/scraps/2011-02-10-two-vars-in-a-properties-block----not-possible.html"/>
@@ -6425,7 +6821,9 @@ results in Error
   <span class="keyword">print </span>vars[1][1]
 <span class="org-block-end-line">#+end_src
 </span>
-   </pre>\n   </content>\n</entry>
+   </pre>
+</content>
+</entry>
 <entry>
    <title>passing-keywords-inside-header-arguments</title>
    <link href="http://eschulte.github.com/org-scraps/scraps/2011-02-15-passing-keywords-inside-header-arguments.html"/>
@@ -6445,7 +6843,9 @@ results in Error
 <span class="org-meta-line">#+name:
 </span><span class="org-table">| :no-expand | other |</span>
 
-   </pre>\n   </content>\n</entry>
+   </pre>
+</content>
+</entry>
 <entry>
    <title>recutils</title>
    <link href="http://eschulte.github.com/org-scraps/scraps/2011-02-15-recutils.html"/>
@@ -6514,7 +6914,9 @@ results in Error
 <span class="org-table">| chapters.gnu.org administration guide | Nacho Gonzalez      | Jose E. Marchesi |</span>
 <span class="org-table">| Yeelong User Manual                   |                     |                  |</span>
 
-   </pre>\n   </content>\n</entry>
+   </pre>
+</content>
+</entry>
 <entry>
    <title>sql-----example-reading-org-mode-table-into-sql</title>
    <link href="http://eschulte.github.com/org-scraps/scraps/2011-02-15-sql-----example-reading-org-mode-table-into-sql.html"/>
@@ -6541,7 +6943,9 @@ results in Error
 </span>load data infile "$table" into mytable;
 <span class="org-block-end-line">#+end_src
 </span>
-   </pre>\n   </content>\n</entry>
+   </pre>
+</content>
+</entry>
 <entry>
    <title>inline-code-block</title>
    <link href="http://eschulte.github.com/org-scraps/scraps/2011-02-18-inline-code-block.html"/>
@@ -6556,7 +6960,9 @@ results in Error
 
 here is an inline block src_R{1+1}
 
-   </pre>\n   </content>\n</entry>
+   </pre>
+</content>
+</entry>
 <entry>
    <title>export-of-inline-code-blocks-which-are-silent</title>
    <link href="http://eschulte.github.com/org-scraps/scraps/2011-02-20-export-of-inline-code-blocks-which-are-silent.html"/>
@@ -6577,7 +6983,9 @@ here is an inline block src_R{1+1}
 </span>
 Here is an inline code block src_sh{echo 8} &lt;- there
 
-   </pre>\n   </content>\n</entry>
+   </pre>
+</content>
+</entry>
 <entry>
    <title>mentions-of-file-names-in-file-contents</title>
    <link href="http://eschulte.github.com/org-scraps/scraps/2011-02-20-mentions-of-file-names-in-file-contents.html"/>
@@ -6644,7 +7052,9 @@ graphing with dot
 <span class="org-meta-line">#+name:
 </span><span class="org-link">[[file:files.png]]</span>
 
-   </pre>\n   </content>\n</entry>
+   </pre>
+</content>
+</entry>
 <entry>
    <title>catch-the-file-name-during-export</title>
    <link href="http://eschulte.github.com/org-scraps/scraps/2011-02-21-catch-the-file-name-during-export.html"/>
@@ -6661,7 +7071,9 @@ graphing with dot
 </span>  file-name
 <span class="org-block-end-line">#+end_src
 </span>
-   </pre>\n   </content>\n</entry>
+   </pre>
+</content>
+</entry>
 <entry>
    <title>new-lists</title>
    <link href="http://eschulte.github.com/org-scraps/scraps/2011-02-21-new-lists.html"/>
@@ -6704,7 +7116,9 @@ graphing with dot
   (reverse lst)
 <span class="comment">#+end_src</span>
 
-   </pre>\n   </content>\n</entry>
+   </pre>
+</content>
+</entry>
 <entry>
    <title>calc-variables-inside-of-parenthesis</title>
    <link href="http://eschulte.github.com/org-scraps/scraps/2011-02-22-calc-variables-inside-of-parenthesis.html"/>
@@ -6730,7 +7144,9 @@ graphing with dot
 <span class="org-meta-line">#+name:
 </span><span class="org-code">: 7040000
 </span>
-   </pre>\n   </content>\n</entry>
+   </pre>
+</content>
+</entry>
 <entry>
    <title>sh-return-a-list-of-elements-with-spaces</title>
    <link href="http://eschulte.github.com/org-scraps/scraps/2011-02-26-sh-return-a-list-of-elements-with-spaces.html"/>
@@ -6764,7 +7180,9 @@ graphing with dot
 : dan davison
 : seb vauban
 </span>
-   </pre>\n   </content>\n</entry>
+   </pre>
+</content>
+</entry>
 <entry>
    <title>simple-python-block</title>
    <link href="http://eschulte.github.com/org-scraps/scraps/2011-02-26-simple-python-block.html"/>
@@ -6784,7 +7202,9 @@ graphing with dot
 <span class="org-meta-line">#+name:
 </span><span class="org-code">: 9
 </span>
-   </pre>\n   </content>\n</entry>
+   </pre>
+</content>
+</entry>
 <entry>
    <title>source-block-names-in-current-buffer</title>
    <link href="http://eschulte.github.com/org-scraps/scraps/2011-02-26-source-block-names-in-current-buffer.html"/>
@@ -6800,7 +7220,9 @@ graphing with dot
 </span> <span class="starter-kit-paren">(</span>org-babel-src-block-names<span class="starter-kit-paren">)
 </span><span class="org-block-end-line">#+end_src
 </span>
-   </pre>\n   </content>\n</entry>
+   </pre>
+</content>
+</entry>
 <entry>
    <title>dont-interpret-tuples-as-elisp-code</title>
    <link href="http://eschulte.github.com/org-scraps/scraps/2011-02-27-dont-interpret-tuples-as-elisp-code.html"/>
@@ -6819,7 +7241,9 @@ graphing with dot
 <span class="org-meta-line">#+name:
 </span><span class="org-code">: (1, 2)
 </span>
-   </pre>\n   </content>\n</entry>
+   </pre>
+</content>
+</entry>
 <entry>
    <title>exporting-cache-and-noweb</title>
    <link href="http://eschulte.github.com/org-scraps/scraps/2011-02-27-exporting-cache-and-noweb.html"/>
@@ -6854,7 +7278,9 @@ graphing with dot
 <span class="org-table">|  9 |</span>
 <span class="org-table">| 10 |</span>
 
-   </pre>\n   </content>\n</entry>
+   </pre>
+</content>
+</entry>
 <entry>
    <title>new-block-regexp-tests</title>
    <link href="http://eschulte.github.com/org-scraps/scraps/2011-02-27-new-block-regexp-tests.html"/>
@@ -6920,7 +7346,9 @@ graphing with dot
 </span>Block 6
 <span class="org-block-end-line">#+END_SRC
 </span>
-   </pre>\n   </content>\n</entry>
+   </pre>
+</content>
+</entry>
 <entry>
    <title>pass-a-vector-to-calc</title>
    <link href="http://eschulte.github.com/org-scraps/scraps/2011-02-27-pass-a-vector-to-calc.html"/>
@@ -6961,7 +7389,9 @@ graphing with dot
 <span class="org-meta-line">#+name:
 </span><span class="org-code">: 8
 </span>
-   </pre>\n   </content>\n</entry>
+   </pre>
+</content>
+</entry>
 <entry>
    <title>passing-elisp-looking-variables-to-code-blocks</title>
    <link href="http://eschulte.github.com/org-scraps/scraps/2011-02-27-passing-elisp-looking-variables-to-code-blocks.html"/>
@@ -6999,7 +7429,9 @@ graphing with dot
 <span class="org-meta-line">#+name:
 </span><span class="org-code">: (a b c)
 </span>
-   </pre>\n   </content>\n</entry>
+   </pre>
+</content>
+</entry>
 <entry>
    <title>strip-hline-before-processing-a-variables-indices</title>
    <link href="http://eschulte.github.com/org-scraps/scraps/2011-02-27-strip-hline-before-processing-a-variables-indices.html"/>
@@ -7037,7 +7469,9 @@ graphing with dot
 </span>  $<span class="variable-name">a</span>; $<span class="variable-name">b;</span>
 <span class="org-block-end-line">#+end_src 
 </span>
-   </pre>\n   </content>\n</entry>
+   </pre>
+</content>
+</entry>
 <entry>
    <title>literal-reference-in-a-table-with-sbe</title>
    <link href="http://eschulte.github.com/org-scraps/scraps/2011-02-28-literal-reference-in-a-table-with-sbe.html"/>
@@ -7058,7 +7492,9 @@ graphing with dot
 </span>  <span class="starter-kit-paren">(</span>length in<span class="starter-kit-paren">)
 </span><span class="org-block-end-line">#+end_src
 </span>
-   </pre>\n   </content>\n</entry>
+   </pre>
+</content>
+</entry>
 <entry>
    <title>reference-to-a-commented-out-subtree</title>
    <link href="http://eschulte.github.com/org-scraps/scraps/2011-02-28-reference-to-a-commented-out-subtree.html"/>
@@ -7088,7 +7524,9 @@ graphing with dot
 </span>  params
 <span class="org-block-end-line">#+end_src
 </span>
-   </pre>\n   </content>\n</entry>
+   </pre>
+</content>
+</entry>
 <entry>
    <title>leading-trailing-spaces</title>
    <link href="http://eschulte.github.com/org-scraps/scraps/2011-03-02-leading-trailing-spaces.html"/>
@@ -7111,7 +7549,9 @@ graphing with dot
 <span class="org-meta-line">#+name:
 </span><span class="org-code">:  pass through with space 
 </span>
-   </pre>\n   </content>\n</entry>
+   </pre>
+</content>
+</entry>
 <entry>
    <title>results-org-raw-wrap</title>
    <link href="http://eschulte.github.com/org-scraps/scraps/2011-03-02-results-org-raw-wrap.html"/>
@@ -7176,7 +7616,9 @@ Finally this version does only export the R code
 </span>      )
 <span class="org-block-end-line">#+end_src
 </span>
-   </pre>\n   </content>\n</entry>
+   </pre>
+</content>
+</entry>
 <entry>
    <title>export-of-inline-r-code</title>
    <link href="http://eschulte.github.com/org-scraps/scraps/2011-03-03-export-of-inline-r-code.html"/>
@@ -7202,7 +7644,9 @@ src_R[:session *R*]{x} .
 
 Did the number 100 show up at the end of the previous sentence on export?
 
-   </pre>\n   </content>\n</entry>
+   </pre>
+</content>
+</entry>
 <entry>
    <title>simple-mysql</title>
    <link href="http://eschulte.github.com/org-scraps/scraps/2011-03-03-simple-mysql.html"/>
@@ -7218,7 +7662,9 @@ Did the number 100 show up at the end of the previous sentence on export?
 </span>  show tables;
 <span class="org-block-end-line">#+end_src
 </span>
-   </pre>\n   </content>\n</entry>
+   </pre>
+</content>
+</entry>
 <entry>
    <title>eval-results-as-a-list</title>
    <link href="http://eschulte.github.com/org-scraps/scraps/2011-03-06-eval-results-as-a-list.html"/>
@@ -7258,7 +7704,9 @@ Did the number 100 show up at the end of the previous sentence on export?
 <span class="org-meta-line">#+name:
 </span><span class="org-code">: [1 2]
 </span>
-   </pre>\n   </content>\n</entry>
+   </pre>
+</content>
+</entry>
 <entry>
    <title>looks-like-a-pipe-in-a-table</title>
    <link href="http://eschulte.github.com/org-scraps/scraps/2011-03-07-looks-like-a-pipe-in-a-table.html"/>
@@ -7292,7 +7740,9 @@ Did the number 100 show up at the end of the previous sentence on export?
 <span class="org-meta-line">#+name:
 </span><span class="org-code">: (1|2)
 </span>
-   </pre>\n   </content>\n</entry>
+   </pre>
+</content>
+</entry>
 <entry>
    <title>conflicting-header-arguments</title>
    <link href="http://eschulte.github.com/org-scraps/scraps/2011-03-14-conflicting-header-arguments.html"/>
@@ -7317,7 +7767,9 @@ call line
 <span class="org-meta-line">#+name: conflict-block()
 </span><span class="org-code">: eric
 </span>
-   </pre>\n   </content>\n</entry>
+   </pre>
+</content>
+</entry>
 <entry>
    <title>macros-during-tangling</title>
    <link href="http://eschulte.github.com/org-scraps/scraps/2011-03-14-macros-during-tangling.html"/>
@@ -7351,7 +7803,9 @@ will be replaced.
 </span>  <span class="builtin">echo </span>org-mode set CONFIG_PARAMETER to: {{{CONFIG_PARAM01}}}
 <span class="org-block-end-line">#+end_src
 </span>
-   </pre>\n   </content>\n</entry>
+   </pre>
+</content>
+</entry>
 <entry>
    <title>caching-on-export</title>
    <link href="http://eschulte.github.com/org-scraps/scraps/2011-03-23-caching-on-export.html"/>
@@ -7374,7 +7828,9 @@ will be replaced.
 <span class="org-table">| 0.483292032498866 | 0.427640072302893 | 0.974636133294553 | 0.995571716455743 |</span>
 <span class="org-table">|  0.60190233332105 | 0.122638279106468 | 0.437959408387542 | 0.015639441087842 |</span>
 
-   </pre>\n   </content>\n</entry>
+   </pre>
+</content>
+</entry>
 <entry>
    <title>colnames-with-call-lines</title>
    <link href="http://eschulte.github.com/org-scraps/scraps/2011-03-29-colnames-with-call-lines.html"/>
@@ -7413,7 +7869,9 @@ will be replaced.
 <span class="org-table">| parameter |</span>
 <span class="org-table">| value     |</span>
 
-   </pre>\n   </content>\n</entry>
+   </pre>
+</content>
+</entry>
 <entry>
    <title>cl-example</title>
    <link href="http://eschulte.github.com/org-scraps/scraps/2011-04-01-cl-example.html"/>
@@ -7445,7 +7903,9 @@ will be replaced.
 <span class="org-table">|  9 |</span>
 <span class="org-table">| 10 |</span>
 
-   </pre>\n   </content>\n</entry>
+   </pre>
+</content>
+</entry>
 <entry>
    <title>detangling-example</title>
    <link href="http://eschulte.github.com/org-scraps/scraps/2011-04-01-detangling-example.html"/>
@@ -7473,7 +7933,9 @@ will be replaced.
 </span>  <span class="builtin">echo</span> <span class="string">"this is an unnamed code block"
 </span><span class="org-block-end-line">#+end_src
 </span>
-   </pre>\n   </content>\n</entry>
+   </pre>
+</content>
+</entry>
 <entry>
    <title>grabbing-the-current-buffer-during-export</title>
    <link href="http://eschulte.github.com/org-scraps/scraps/2011-04-01-grabbing-the-current-buffer-during-export.html"/>
@@ -7495,7 +7957,9 @@ Eric
 </span>  git log -1
 <span class="org-block-end-line">#+end_src
 </span>
-   </pre>\n   </content>\n</entry>
+   </pre>
+</content>
+</entry>
 <entry>
    <title>tangling-out-vc-information</title>
    <link href="http://eschulte.github.com/org-scraps/scraps/2011-04-01-tangling-out-vc-information.html"/>
@@ -7523,7 +7987,9 @@ Eric
   <span class="keyword">done
 </span><span class="org-block-end-line">#+end_src
 </span>
-   </pre>\n   </content>\n</entry>
+   </pre>
+</content>
+</entry>
 <entry>
    <title>vc-log</title>
    <link href="http://eschulte.github.com/org-scraps/scraps/2011-04-01-vc-log.html"/>
@@ -7540,7 +8006,9 @@ A version control log of this file.  The <span class="org-code">=vc-log=</span> 
 the library of babel.
 <span class="org-meta-line">#+call: vc-log() :exports results
 </span>
-   </pre>\n   </content>\n</entry>
+   </pre>
+</content>
+</entry>
 <entry>
    <title>session-associated-with-r-block</title>
    <link href="http://eschulte.github.com/org-scraps/scraps/2011-04-02-session-associated-with-r-block.html"/>
@@ -7561,7 +8029,9 @@ the library of babel.
 <span class="org-meta-line">#+name:
 </span><span class="org-code">: 1
 </span>
-   </pre>\n   </content>\n</entry>
+   </pre>
+</content>
+</entry>
 <entry>
    <title>headers-in-r-tables-during-export</title>
    <link href="http://eschulte.github.com/org-scraps/scraps/2011-04-04-headers-in-r-tables-during-export.html"/>
@@ -7596,7 +8066,9 @@ the library of babel.
 :  $ condition : chr  "1.MMM" "2.MMU" "3.MUM" "4.UMU" ... 
 :  $ Mean.offer: num  48.5 42.6 44.9 46.4 44.1 ... eric
 </span>
-   </pre>\n   </content>\n</entry>
+   </pre>
+</content>
+</entry>
 <entry>
    <title>emacs-lisp-printing-with-output-to-string</title>
    <link href="http://eschulte.github.com/org-scraps/scraps/2011-04-10-emacs-lisp-printing-with-output-to-string.html"/>
@@ -7638,7 +8110,9 @@ the library of babel.
 <span class="org-table">| cat  |                  7 |</span>
 <span class="org-table">| fish |                    |</span>
 
-   </pre>\n   </content>\n</entry>
+   </pre>
+</content>
+</entry>
 <entry>
    <title>complex-numbers-in-tables-and-python,-reference-in-table-formula</title>
    <link href="http://eschulte.github.com/org-scraps/scraps/2011-04-13-complex-numbers-in-tables-and-python,-reference-in-table-formula.html"/>
@@ -7731,7 +8205,9 @@ the library of babel.
 <span class="org-table">| (0.0356575682336,0.000574851263615) |</span>
 <span class="org-table">| (0.0357806926897,0.000575051685084) |</span>
 
-   </pre>\n   </content>\n</entry>
+   </pre>
+</content>
+</entry>
 <entry>
    <title>ocaml-appending-blocks</title>
    <link href="http://eschulte.github.com/org-scraps/scraps/2011-04-19-ocaml-appending-blocks.html"/>
@@ -7752,7 +8228,9 @@ block
 <span class="org-meta-line">#+name:
 </span><span class="org-table">| 1 | 2 | 3 |</span>
 
-   </pre>\n   </content>\n</entry>
+   </pre>
+</content>
+</entry>
 <entry>
    <title>simple-oz-example</title>
    <link href="http://eschulte.github.com/org-scraps/scraps/2011-04-19-simple-oz-example.html"/>
@@ -7768,7 +8246,9 @@ block
 </span>  {Browse 'Hello'}<span class="org-meta-line">
 </span><span class="org-block-end-line">#+end_src
 </span>
-   </pre>\n   </content>\n</entry>
+   </pre>
+</content>
+</entry>
 <entry>
    <title>units-in-r-plot</title>
    <link href="http://eschulte.github.com/org-scraps/scraps/2011-04-21-units-in-r-plot.html"/>
@@ -7789,7 +8269,9 @@ block
 <span class="org-meta-line">#+name:
 </span><span class="org-link">[[file:test.png]]</span>
 
-   </pre>\n   </content>\n</entry>
+   </pre>
+</content>
+</entry>
 <entry>
    <title>automatic-org-mode-formatting</title>
    <link href="http://eschulte.github.com/org-scraps/scraps/2011-04-27-automatic-org-mode-formatting.html"/>
@@ -7815,7 +8297,9 @@ block
 <span class="org-meta-line">#+name:
 </span><span class="org-code">: t
 </span>
-   </pre>\n   </content>\n</entry>
+   </pre>
+</content>
+</entry>
 <entry>
    <title>inserting-complicated-results</title>
    <link href="http://eschulte.github.com/org-scraps/scraps/2011-05-05-inserting-complicated-results.html"/>
@@ -7837,7 +8321,9 @@ block
 <span class="org-meta-line">#+name:
 </span><span class="org-table">| :return | (:ok {:model #&lt;MINLP f(x,y)={(x</span><span class="org-footnote">[0]</span><span class="org-table">-5)^2+(x</span><span class="org-footnote">[1]</span><span class="org-table">-3)^2-y*sqrt($x),2}&gt;, :v #&lt;Variables x={ 4.0, 4.0 } y={ 0 }&gt;, :z nil}) | 13 |</span>
 
-   </pre>\n   </content>\n</entry>
+   </pre>
+</content>
+</entry>
 <entry>
    <title>simple-latex-verbatim-wrap-example</title>
    <link href="http://eschulte.github.com/org-scraps/scraps/2011-05-05-simple-latex-verbatim-wrap-example.html"/>
@@ -7859,7 +8345,9 @@ block
   <span class="builtin">echo </span>another
 <span class="org-block-end-line">#+end_src
 </span>
-   </pre>\n   </content>\n</entry>
+   </pre>
+</content>
+</entry>
 <entry>
    <title>new-names-for-results</title>
    <link href="http://eschulte.github.com/org-scraps/scraps/2011-05-06-new-names-for-results.html"/>
@@ -7898,7 +8386,9 @@ changing the variable used to label data
 <span class="org-meta-line">#+name:
 </span><span class="org-code">: 2
 </span>
-   </pre>\n   </content>\n</entry>
+   </pre>
+</content>
+</entry>
 <entry>
    <title>ocaml</title>
    <link href="http://eschulte.github.com/org-scraps/scraps/2011-05-06-ocaml.html"/>
@@ -7918,7 +8408,9 @@ changing the variable used to label data
 <span class="org-meta-line">#+name:
 </span><span class="org-table">| 3 | 2 | 3 | 3 | 2 | 3 | 4 | 5 |</span>
 
-   </pre>\n   </content>\n</entry>
+   </pre>
+</content>
+</entry>
 <entry>
    <title>append-tables</title>
    <link href="http://eschulte.github.com/org-scraps/scraps/2011-05-14-append-tables.html"/>
@@ -7956,7 +8448,9 @@ changing the variable used to label data
 <span class="org-table">| (c 3) | (d 4) |</span>
 <span class="org-table">| (e 5) | (f 6) |</span>
 
-   </pre>\n   </content>\n</entry>
+   </pre>
+</content>
+</entry>
 <entry>
    <title>dont-match-end_src-inside-of-a-block</title>
    <link href="http://eschulte.github.com/org-scraps/scraps/2011-05-14-dont-match-end_src-inside-of-a-block.html"/>
@@ -7977,7 +8471,9 @@ changing the variable used to label data
 <span class="org-meta-line">#+name: the_issue
 </span><span class="org-code">: #+end_src block
 </span>
-   </pre>\n   </content>\n</entry>
+   </pre>
+</content>
+</entry>
 <entry>
    <title>awk-example</title>
    <link href="http://eschulte.github.com/org-scraps/scraps/2011-05-26-awk-example.html"/>
@@ -8004,7 +8500,9 @@ changing the variable used to label data
 <span class="org-table">| 4 |</span>
 <span class="org-table">| 7 |</span>
 
-   </pre>\n   </content>\n</entry>
+   </pre>
+</content>
+</entry>
 <entry>
    <title>passing-values-through-to-stdin-of-shell-code-blocks</title>
    <link href="http://eschulte.github.com/org-scraps/scraps/2011-05-26-passing-values-through-to-stdin-of-shell-code-blocks.html"/>
@@ -8035,7 +8533,9 @@ changing the variable used to label data
 <span class="org-table">| middle |</span>
 <span class="org-table">|      7 |</span>
 
-   </pre>\n   </content>\n</entry>
+   </pre>
+</content>
+</entry>
 <entry>
    <title>example-#+call-line-expansion</title>
    <link href="http://eschulte.github.com/org-scraps/scraps/2011-05-27-example-#+call-line-expansion.html"/>
@@ -8074,7 +8574,9 @@ this code block evaluates to the following,
 </span>nothing<span class="org-meta-line">
 </span><span class="org-block-end-line">#+END_ORG
 </span>
-   </pre>\n   </content>\n</entry>
+   </pre>
+</content>
+</entry>
 <entry>
    <title>lisp-body-with-multiple-forms</title>
    <link href="http://eschulte.github.com/org-scraps/scraps/2011-05-31-lisp-body-with-multiple-forms.html"/>
@@ -8095,7 +8597,9 @@ this code block evaluates to the following,
 <span class="org-meta-line">#+name:
 </span><span class="org-code">: 3
 </span>
-   </pre>\n   </content>\n</entry>
+   </pre>
+</content>
+</entry>
 <entry>
    <title>default-directory-examples-in-lisp</title>
    <link href="http://eschulte.github.com/org-scraps/scraps/2011-06-01-default-directory-examples-in-lisp.html"/>
@@ -8123,7 +8627,9 @@ this code block evaluates to the following,
 <span class="org-meta-line">#+name:
 </span><span class="org-code">: #P""
 </span>
-   </pre>\n   </content>\n</entry>
+   </pre>
+</content>
+</entry>
 <entry>
    <title>testing-new-data-names</title>
    <link href="http://eschulte.github.com/org-scraps/scraps/2011-06-02-testing-new-data-names.html"/>
@@ -8152,7 +8658,9 @@ my data is results
 <span class="org-meta-line">#+name:
 </span><span class="org-code">: 246
 </span>
-   </pre>\n   </content>\n</entry>
+   </pre>
+</content>
+</entry>
 <entry>
    <title>:file-and-python</title>
    <link href="http://eschulte.github.com/org-scraps/scraps/2011-06-06-:file-and-python.html"/>
@@ -8171,7 +8679,9 @@ my data is results
 <span class="org-meta-line">#+name:
 </span><span class="org-link">[[file:/tmp/test.png]]</span>
 
-   </pre>\n   </content>\n</entry>
+   </pre>
+</content>
+</entry>
 <entry>
    <title>quick-testing-new-session-code</title>
    <link href="http://eschulte.github.com/org-scraps/scraps/2011-06-06-quick-testing-new-session-code.html"/>
@@ -8197,7 +8707,9 @@ my data is results
 <span class="org-meta-line">#+name:
 </span><span class="org-code">: foo
 </span>
-   </pre>\n   </content>\n</entry>
+   </pre>
+</content>
+</entry>
 <entry>
    <title>simple-shell</title>
    <link href="http://eschulte.github.com/org-scraps/scraps/2011-06-06-simple-shell.html"/>
@@ -8233,7 +8745,9 @@ my data is results
 <span class="org-meta-line">#+name:
 </span><span class="org-code">: nil
 </span>
-   </pre>\n   </content>\n</entry>
+   </pre>
+</content>
+</entry>
 <entry>
    <title>continued-code-blocks</title>
    <link href="http://eschulte.github.com/org-scraps/scraps/2011-06-10-continued-code-blocks.html"/>
@@ -8277,7 +8791,9 @@ my data is results
     <span class="starter-kit-paren">(</span>eval-buffer<span class="starter-kit-paren">))
 </span><span class="org-block-end-line">#+end_src
 </span>
-   </pre>\n   </content>\n</entry>
+   </pre>
+</content>
+</entry>
 <entry>
    <title>ruby-with-xmpfilter</title>
    <link href="http://eschulte.github.com/org-scraps/scraps/2011-06-10-ruby-with-xmpfilter.html"/>
@@ -8303,7 +8819,9 @@ my data is results
 </span><span class="comment-delimiter"># </span><span class="comment">&gt;&gt; hello
 </span><span class="org-block-end-line">#+END_SRC
 </span>
-   </pre>\n   </content>\n</entry>
+   </pre>
+</content>
+</entry>
 <entry>
    <title>tangle-test</title>
    <link href="http://eschulte.github.com/org-scraps/scraps/2011-06-10-tangle-test.html"/>
@@ -8320,7 +8838,9 @@ my data is results
 a test
 <span class="org-block-end-line">#+end_src
 </span>
-   </pre>\n   </content>\n</entry>
+   </pre>
+</content>
+</entry>
 <entry>
    <title>named-code-block-export</title>
    <link href="http://eschulte.github.com/org-scraps/scraps/2011-06-13-named-code-block-export.html"/>
@@ -8338,10 +8858,10 @@ This has a name which is not exported.
 </span><span class="org-block-begin-line">#+begin_src R
 </span>  runif(n)
 <span class="org-block-end-line">#+end_src
-</span></pre>
-  </body>
-</html>
-   </pre>\n   </content>\n</entry>
+</span>
+   </pre>
+</content>
+</entry>
 <entry>
    <title>python-session</title>
    <link href="http://eschulte.github.com/org-scraps/scraps/2011-06-19-python-session.html"/>
@@ -8379,7 +8899,9 @@ This has a name which is not exported.
 :   File "&lt;stdin&gt;", line 1, in &lt;module&gt;
 : NameError: name 'y' is not defined
 </span>
-   </pre>\n   </content>\n</entry>
+   </pre>
+</content>
+</entry>
 <entry>
    <title>scalar-emacs-lisp-results</title>
    <link href="http://eschulte.github.com/org-scraps/scraps/2011-06-19-scalar-emacs-lisp-results.html"/>
@@ -8398,7 +8920,9 @@ This has a name which is not exported.
 <span class="org-meta-line">#+name:
 </span><span class="org-code">: (1 2 3)
 </span>
-   </pre>\n   </content>\n</entry>
+   </pre>
+</content>
+</entry>
 <entry>
    <title>expand-variable-during-tangling</title>
    <link href="http://eschulte.github.com/org-scraps/scraps/2011-06-20-expand-variable-during-tangling.html"/>
@@ -8416,7 +8940,9 @@ This has a name which is not exported.
 </span>  <span class="builtin">echo</span> $<span class="variable-name">VER
 </span><span class="org-block-end-line">#+end_src
 </span>
-   </pre>\n   </content>\n</entry>
+   </pre>
+</content>
+</entry>
 <entry>
    <title>clojure-:results-scalar</title>
    <link href="http://eschulte.github.com/org-scraps/scraps/2011-06-21-clojure-:results-scalar.html"/>
@@ -8432,7 +8958,9 @@ This has a name which is not exported.
 </span>  '<span class="starter-kit-paren">(</span>1 2 3<span class="starter-kit-paren">)
 </span><span class="org-block-end-line">#+end_src
 </span>
-   </pre>\n   </content>\n</entry>
+   </pre>
+</content>
+</entry>
 <entry>
    <title>large-code-in-inline-blocks</title>
    <link href="http://eschulte.github.com/org-scraps/scraps/2011-06-22-large-code-in-inline-blocks.html"/>
@@ -8452,7 +8980,9 @@ This has a name which is not exported.
 </span>
 Here is some text with src_emacs-lisp[:var it=big-block]{it} in the middle.
 
-   </pre>\n   </content>\n</entry>
+   </pre>
+</content>
+</entry>
 <entry>
    <title>text-and-graphics-from-r</title>
    <link href="http://eschulte.github.com/org-scraps/scraps/2011-06-24-text-and-graphics-from-r.html"/>
@@ -8476,7 +9006,9 @@ Here is some text with src_emacs-lisp[:var it=big-block]{it} in the middle.
 <span class="org-meta-line">#+name:
 </span><span class="org-link">[[file:example.png]]</span>
 
-   </pre>\n   </content>\n</entry>
+   </pre>
+</content>
+</entry>
 <entry>
    <title>inline-call-line</title>
    <link href="http://eschulte.github.com/org-scraps/scraps/2011-06-27-inline-call-line.html"/>
@@ -8512,7 +9044,9 @@ paragraph.
 And, a call with raw results call_double(4)[:results raw] should not
 have quoted results.
 
-   </pre>\n   </content>\n</entry>
+   </pre>
+</content>
+</entry>
 <entry>
    <title>multiple-variables</title>
    <link href="http://eschulte.github.com/org-scraps/scraps/2011-06-27-multiple-variables.html"/>
@@ -8534,7 +9068,9 @@ Should work call_concat(1, 2, 3) <span class="org-code">=123=</span> in order.
 </span>
 Should be positive call_lob-minus(4, 3) <span class="org-code">=1=</span> by order.
 
-   </pre>\n   </content>\n</entry>
+   </pre>
+</content>
+</entry>
 <entry>
    <title>un-named-variables</title>
    <link href="http://eschulte.github.com/org-scraps/scraps/2011-06-27-un-named-variables.html"/>
@@ -8566,7 +9102,9 @@ then we can pass the argument unnamed with call_square(4) <span class="org-code"
 To ensure that these arguments are passed in the correct order we can
 use the following call_minus(8, 4) <span class="org-code">=-4=</span>
 
-   </pre>\n   </content>\n</entry>
+   </pre>
+</content>
+</entry>
 <entry>
    <title>another-test</title>
    <link href="http://eschulte.github.com/org-scraps/scraps/2011-06-29-another-test.html"/>
@@ -8587,7 +9125,9 @@ Here is a call_square(it=4), stuck in the middle of some prose.
 
 Here is another 25^2=call_square(it=25).
 
-   </pre>\n   </content>\n</entry>
+   </pre>
+</content>
+</entry>
 <entry>
    <title>longtable-label-and-attr-lines-on-code-block-results</title>
    <link href="http://eschulte.github.com/org-scraps/scraps/2011-06-29-longtable-label-and-attr-lines-on-code-block-results.html"/>
@@ -8611,7 +9151,9 @@ Here is another 25^2=call_square(it=25).
 </span><span class="org-table">| foo | foo |</span>
 <span class="org-table">| bar | baz |</span>
 
-   </pre>\n   </content>\n</entry>
+   </pre>
+</content>
+</entry>
 <entry>
    <title>define-a-block-with-a-name-for-noweb-expansion</title>
    <link href="http://eschulte.github.com/org-scraps/scraps/2011-07-01-define-a-block-with-a-name-for-noweb-expansion.html"/>
@@ -8636,7 +9178,9 @@ another block including the first block
 </span>  &lt;&lt;simple<span class="starter-kit-paren">(</span>something=<span class="string">"something else"</span><span class="starter-kit-paren">)&gt;</span>&gt;
 <span class="org-block-end-line">#+end_src
 </span>
-   </pre>\n   </content>\n</entry>
+   </pre>
+</content>
+</entry>
 <entry>
    <title>find-a-resource-by-global-id</title>
    <link href="http://eschulte.github.com/org-scraps/scraps/2011-07-01-find-a-resource-by-global-id.html"/>
@@ -8665,7 +9209,9 @@ another block including the first block
 
 here it is
 
-   </pre>\n   </content>\n</entry>
+   </pre>
+</content>
+</entry>
 <entry>
    <title>data-alias-for-resname</title>
    <link href="http://eschulte.github.com/org-scraps/scraps/2011-07-05-data-alias-for-resname.html"/>
@@ -8687,7 +9233,9 @@ here it is
 <span class="org-meta-line">#+name:
 </span><span class="org-code">: blahcontent
 </span>
-   </pre>\n   </content>\n</entry>
+   </pre>
+</content>
+</entry>
 <entry>
    <title>indexing-into-a-list-variable</title>
    <link href="http://eschulte.github.com/org-scraps/scraps/2011-07-06-indexing-into-a-list-variable.html"/>
@@ -8721,7 +9269,9 @@ or as a noweb reference
 <span class="org-meta-line">#+name:
 </span><span class="org-code">: 0
 </span>
-   </pre>\n   </content>\n</entry>
+   </pre>
+</content>
+</entry>
 <entry>
    <title>eval-never</title>
    <link href="http://eschulte.github.com/org-scraps/scraps/2011-07-10-eval-never.html"/>
@@ -8741,7 +9291,9 @@ or as a noweb reference
 <span class="org-meta-line">#+name:
 </span><span class="org-code">: launch missles
 </span>
-   </pre>\n   </content>\n</entry>
+   </pre>
+</content>
+</entry>
 <entry>
    <title>simple-sbe-example</title>
    <link href="http://eschulte.github.com/org-scraps/scraps/2011-07-10-simple-sbe-example.html"/>
@@ -8769,7 +9321,9 @@ or as a noweb reference
     <span class="starter-kit-paren">(</span>/ <span class="starter-kit-paren">(</span>float <span class="starter-kit-paren">(</span>+ num <span class="starter-kit-paren">(</span>apply #'+ nums<span class="starter-kit-paren">)))</span> <span class="starter-kit-paren">(</span>1+ <span class="starter-kit-paren">(</span>length nums<span class="starter-kit-paren">))))
 </span><span class="org-block-end-line">#+end_src
 </span>
-   </pre>\n   </content>\n</entry>
+   </pre>
+</content>
+</entry>
 <entry>
    <title>exporting-a-ditaa-example</title>
    <link href="http://eschulte.github.com/org-scraps/scraps/2011-07-19-exporting-a-ditaa-example.html"/>
@@ -8792,7 +9346,9 @@ or as a noweb reference
 <span class="org-meta-line">#+name:
 </span><span class="org-link">[[file:blue.png]]</span>
 
-   </pre>\n   </content>\n</entry>
+   </pre>
+</content>
+</entry>
 <entry>
    <title>including-noweb-refs-without-last-newline</title>
    <link href="http://eschulte.github.com/org-scraps/scraps/2011-07-19-including-noweb-refs-without-last-newline.html"/>
@@ -8819,7 +9375,9 @@ or as a noweb reference
 </span>  sed <span class="string">'s/^e/E/;s/ s/ S/'
 </span><span class="org-block-end-line">#+end_src
 </span>
-   </pre>\n   </content>\n</entry>
+   </pre>
+</content>
+</entry>
 <entry>
    <title>java-code-block</title>
    <link href="http://eschulte.github.com/org-scraps/scraps/2011-07-19-java-code-block.html"/>
@@ -8844,7 +9402,9 @@ or as a noweb reference
 <span class="org-meta-line">#+name:
 </span><span class="org-code">: Hello World!
 </span>
-   </pre>\n   </content>\n</entry>
+   </pre>
+</content>
+</entry>
 <entry>
    <title>returning-file-names----interpreted-as-lists</title>
    <link href="http://eschulte.github.com/org-scraps/scraps/2011-07-21-returning-file-names----interpreted-as-lists.html"/>
@@ -8870,7 +9430,9 @@ or as a noweb reference
 <span class="org-meta-line">#+name:
 </span><span class="org-link">[[file:./cv.cls]]</span>
 
-   </pre>\n   </content>\n</entry>
+   </pre>
+</content>
+</entry>
 <entry>
    <title>expand-noweb-refs</title>
    <link href="http://eschulte.github.com/org-scraps/scraps/2011-07-25-expand-noweb-refs.html"/>
@@ -8892,7 +9454,9 @@ or as a noweb reference
   <span class="builtin">echo</span> $<span class="variable-name">SOMETHING
 </span><span class="org-block-end-line">#+end_src
 </span>
-   </pre>\n   </content>\n</entry>
+   </pre>
+</content>
+</entry>
 <entry>
    <title>non-defined-code-blocks-can-still-tangle</title>
    <link href="http://eschulte.github.com/org-scraps/scraps/2011-07-28-non-defined-code-blocks-can-still-tangle.html"/>
@@ -8910,7 +9474,9 @@ or as a noweb reference
   may be nice.  
 <span class="org-block-end-line">#+end_src
 </span>
-   </pre>\n   </content>\n</entry>
+   </pre>
+</content>
+</entry>
 <entry>
    <title>premature-truncation-of-emacs-lisp-results</title>
    <link href="http://eschulte.github.com/org-scraps/scraps/2011-07-28-premature-truncation-of-emacs-lisp-results.html"/>
@@ -8930,7 +9496,9 @@ or as a noweb reference
 <span class="org-meta-line">#+name:
 </span><span class="org-code">: (nil nil nil nil)
 </span>
-   </pre>\n   </content>\n</entry>
+   </pre>
+</content>
+</entry>
 <entry>
    <title>plot-results-with-org-plot</title>
    <link href="http://eschulte.github.com/org-scraps/scraps/2011-08-02-plot-results-with-org-plot.html"/>
@@ -8957,7 +9525,9 @@ or as a noweb reference
 <span class="org-table">| none       |   3006056 |        0 |   3006056 |   0% | /var/lock |    |</span>
 <span class="org-table">| /dev/sda7  | 144176824 | 72225604 |  64627420 |  53% | /home     |    |</span>
 
-   </pre>\n   </content>\n</entry>
+   </pre>
+</content>
+</entry>
 <entry>
    <title>bug-with-undefined-function-copy-seq</title>
    <link href="http://eschulte.github.com/org-scraps/scraps/2011-08-05-bug-with-undefined-function-copy-seq.html"/>
@@ -8973,7 +9543,9 @@ or as a noweb reference
 </span>  1:10
 <span class="org-block-end-line">#+end_src
 </span>
-   </pre>\n   </content>\n</entry>
+   </pre>
+</content>
+</entry>
 <entry>
    <title>tangle-before-evaluating-a-code-block</title>
    <link href="http://eschulte.github.com/org-scraps/scraps/2011-08-05-tangle-before-evaluating-a-code-block.html"/>
@@ -8997,7 +9569,9 @@ or as a noweb reference
 </span>  <span class="builtin">echo </span>TEST
 <span class="org-block-end-line">#+end_src
 </span>
-   </pre>\n   </content>\n</entry>
+   </pre>
+</content>
+</entry>
 <entry>
    <title>replacing-a-table</title>
    <link href="http://eschulte.github.com/org-scraps/scraps/2011-08-19-replacing-a-table.html"/>
@@ -9019,7 +9593,9 @@ or as a noweb reference
 </span>  <span class="starter-kit-paren">(</span>mapcar <span class="starter-kit-paren">(</span><span class="keyword">lambda</span> <span class="starter-kit-paren">(</span>row<span class="starter-kit-paren">)</span> <span class="starter-kit-paren">(</span>mapcar <span class="starter-kit-paren">(</span><span class="keyword">lambda</span> <span class="starter-kit-paren">(</span>cell<span class="starter-kit-paren">)</span> <span class="starter-kit-paren">(</span>* cell 2<span class="starter-kit-paren">))</span> row<span class="starter-kit-paren">))</span> table<span class="starter-kit-paren">)
 </span><span class="org-block-end-line">#+end_src
 </span>
-   </pre>\n   </content>\n</entry>
+   </pre>
+</content>
+</entry>
 <entry>
    <title>ruby-code-block</title>
    <link href="http://eschulte.github.com/org-scraps/scraps/2011-08-19-ruby-code-block.html"/>
@@ -9038,7 +9614,9 @@ or as a noweb reference
 <span class="org-meta-line">#+name:
 </span><span class="org-code">: 3
 </span>
-   </pre>\n   </content>\n</entry>
+   </pre>
+</content>
+</entry>
 <entry>
    <title>simple-ditaa-block</title>
    <link href="http://eschulte.github.com/org-scraps/scraps/2011-08-19-simple-ditaa-block.html"/>
@@ -9061,7 +9639,9 @@ or as a noweb reference
 <span class="org-meta-line">#+name:
 </span><span class="org-link">[[file:work-flow.png]]</span>
 
-   </pre>\n   </content>\n</entry>
+   </pre>
+</content>
+</entry>
 <entry>
    <title>space-around-exported-code-blocks</title>
    <link href="http://eschulte.github.com/org-scraps/scraps/2011-08-19-space-around-exported-code-blocks.html"/>
@@ -9089,7 +9669,9 @@ Verbiage to begin the paragraph
 </span>
 and verbiage to end the same paragraph.
 
-   </pre>\n   </content>\n</entry>
+   </pre>
+</content>
+</entry>
 <entry>
    <title>updating-a-table</title>
    <link href="http://eschulte.github.com/org-scraps/scraps/2011-08-19-updating-a-table.html"/>
@@ -9112,7 +9694,9 @@ and verbiage to end the same paragraph.
 </span>  table
 <span class="org-block-end-line">#+end_src
 </span>
-   </pre>\n   </content>\n</entry>
+   </pre>
+</content>
+</entry>
 <entry>
    <title>inline-code-block-and-downstream-src-blocks</title>
    <link href="http://eschulte.github.com/org-scraps/scraps/2011-08-21-inline-code-block-and-downstream-src-blocks.html"/>
@@ -9146,7 +9730,9 @@ CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
 <span class="org-block-end-line">#+end_src
 </span>DDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDD
 
-   </pre>\n   </content>\n</entry>
+   </pre>
+</content>
+</entry>
 <entry>
    <title>shell-script-output-not-in-table</title>
    <link href="http://eschulte.github.com/org-scraps/scraps/2011-08-21-shell-script-output-not-in-table.html"/>
@@ -9169,7 +9755,9 @@ CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
 : 2
 : 3
 </span>
-   </pre>\n   </content>\n</entry>
+   </pre>
+</content>
+</entry>
 <entry>
    <title>a-table-with-tags</title>
    <link href="http://eschulte.github.com/org-scraps/scraps/2011-08-23-a-table-with-tags.html"/>
@@ -9193,7 +9781,9 @@ CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
 <span class="org-meta-line">#+name:
 </span><span class="org-code">: ((1 2 3) (4 "org-babel" 6))
 </span>
-   </pre>\n   </content>\n</entry>
+   </pre>
+</content>
+</entry>
 <entry>
    <title>inheriting-the-file-property</title>
    <link href="http://eschulte.github.com/org-scraps/scraps/2011-08-23-inheriting-the-file-property.html"/>
@@ -9224,7 +9814,9 @@ CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
 <span class="org-meta-line">#+name:
 </span><span class="org-link">[[file:something.png]]</span>
 
-   </pre>\n   </content>\n</entry>
+   </pre>
+</content>
+</entry>
 <entry>
    <title>two-blocks-and-a-table</title>
    <link href="http://eschulte.github.com/org-scraps/scraps/2011-08-28-two-blocks-and-a-table.html"/>
@@ -9254,7 +9846,9 @@ CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
 <span class="org-table">| 3   |</span>
 <span class="org-meta-line">#+TBLFM: @3$1='(sbe last-of-stuff)
 </span>
-   </pre>\n   </content>\n</entry>
+   </pre>
+</content>
+</entry>
 <entry>
    <title>convert-results-to-all-string</title>
    <link href="http://eschulte.github.com/org-scraps/scraps/2011-08-29-convert-results-to-all-string.html"/>
@@ -9299,7 +9893,9 @@ CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
 </span><span class="org-table">| t | t | t | t |</span>
 <span class="org-table">| t | t | t | t |</span>
 
-   </pre>\n   </content>\n</entry>
+   </pre>
+</content>
+</entry>
 <entry>
    <title>simple-short-r-block</title>
    <link href="http://eschulte.github.com/org-scraps/scraps/2011-08-29-simple-short-r-block.html"/>
@@ -9321,7 +9917,9 @@ CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
 <span class="org-table">| 54 |</span>
 <span class="org-table">|  5 |</span>
 
-   </pre>\n   </content>\n</entry>
+   </pre>
+</content>
+</entry>
 <entry>
    <title>simple-gnuplot-plotting-of-org-mode-tables</title>
    <link href="http://eschulte.github.com/org-scraps/scraps/2011-09-01-simple-gnuplot-plotting-of-org-mode-tables.html"/>
@@ -9355,7 +9953,9 @@ CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
 <span class="keyword">plot</span> <span class="variable-name">data</span> <span class="type">using </span>2:xtic(1)
 <span class="org-block-end-line">#+end_src
 </span>
-   </pre>\n   </content>\n</entry>
+   </pre>
+</content>
+</entry>
 <entry>
    <title>simple-indexing</title>
    <link href="http://eschulte.github.com/org-scraps/scraps/2011-09-01-simple-indexing.html"/>
@@ -9379,7 +9979,9 @@ CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
 <span class="org-meta-line">#+name:
 </span><span class="org-code">: 1 4 7
 </span>
-   </pre>\n   </content>\n</entry>
+   </pre>
+</content>
+</entry>
 <entry>
    <title>demarcation-of-indented-blocks</title>
    <link href="http://eschulte.github.com/org-scraps/scraps/2011-09-04-demarcation-of-indented-blocks.html"/>
@@ -9413,7 +10015,9 @@ becomes
       <span class="builtin">echo </span>4
 <span class="org-block-end-line">    #+end_src
 </span>
-   </pre>\n   </content>\n</entry>
+   </pre>
+</content>
+</entry>
 <entry>
    <title>returning-file-type-to-inline-call-line</title>
    <link href="http://eschulte.github.com/org-scraps/scraps/2011-09-04-returning-file-type-to-inline-call-line.html"/>
@@ -9438,7 +10042,9 @@ accumsan nulla. Nullam rutrum. Nam vestibulum accumsan nisl.
 </span>  <span class="builtin">echo </span>nothing
 <span class="org-block-end-line">#+end_src
 </span>
-   </pre>\n   </content>\n</entry>
+   </pre>
+</content>
+</entry>
 <entry>
    <title>leading-commas-in-code-blocks</title>
    <link href="http://eschulte.github.com/org-scraps/scraps/2011-09-06-leading-commas-in-code-blocks.html"/>
@@ -9465,7 +10071,9 @@ accumsan nulla. Nullam rutrum. Nam vestibulum accumsan nisl.
   ,#+end_src
 <span class="org-block-end-line">#+end_src
 </span>
-   </pre>\n   </content>\n</entry>
+   </pre>
+</content>
+</entry>
 <entry>
    <title>silent-results-in-org-but-not-in-export</title>
    <link href="http://eschulte.github.com/org-scraps/scraps/2011-09-06-silent-results-in-org-but-not-in-export.html"/>
@@ -9484,7 +10092,9 @@ interactive evaluation but will during export.
 </span>  <span class="builtin">echo</span>  <span class="string">"I want to see this in HTML/PDF, but not in Org"
 </span><span class="org-block-end-line">#+end_src
 </span>
-   </pre>\n   </content>\n</entry>
+   </pre>
+</content>
+</entry>
 <entry>
    <title>removing-result-with-a-silent-header-argument</title>
    <link href="http://eschulte.github.com/org-scraps/scraps/2011-09-07-removing-result-with-a-silent-header-argument.html"/>
@@ -9505,7 +10115,9 @@ evaluating the following code block will remove the related result.
 <span class="org-meta-line">#+name:
 </span><span class="org-code">: 2011-09-07
 </span>
-   </pre>\n   </content>\n</entry>
+   </pre>
+</content>
+</entry>
 <entry>
    <title>header-arguments-on-call-lines</title>
    <link href="http://eschulte.github.com/org-scraps/scraps/2011-09-11-header-arguments-on-call-lines.html"/>
@@ -9532,7 +10144,9 @@ evaluating the following code block will remove the related result.
 <span class="org-meta-line">#+name: simple-example()
 </span>the result
 
-   </pre>\n   </content>\n</entry>
+   </pre>
+</content>
+</entry>
 <entry>
    <title>should-this-throw-an-error-for-no-variable-definition</title>
    <link href="http://eschulte.github.com/org-scraps/scraps/2011-09-15-should-this-throw-an-error-for-no-variable-definition.html"/>
@@ -9560,7 +10174,9 @@ BEGIN
 END
 <span class="org-block-end-line">#+end_src
 </span>
-   </pre>\n   </content>\n</entry>
+   </pre>
+</content>
+</entry>
 <entry>
    <title>simple-r-session</title>
    <link href="http://eschulte.github.com/org-scraps/scraps/2011-09-21-simple-r-session.html"/>
@@ -9579,7 +10195,9 @@ END
 <span class="org-meta-line">#+name:
 </span><span class="org-code">: Yep!
 </span>
-   </pre>\n   </content>\n</entry>
+   </pre>
+</content>
+</entry>
 <entry>
    <title>code-block-export-template</title>
    <link href="http://eschulte.github.com/org-scraps/scraps/2012-01-14-code-block-export-template.html"/>
@@ -9621,5 +10239,7 @@ For example the following will include code block names in export.
         <span class="string">"=%name=\n#+BEGIN_SRC %lang%flags\nbody\n#+END_SRC"</span><span class="starter-kit-paren">)
 </span><span class="org-block-end-line">#+END_SRC
 </span>
-   </pre>\n   </content>\n</entry>
+   </pre>
+</content>
+</entry>
 </feed>
