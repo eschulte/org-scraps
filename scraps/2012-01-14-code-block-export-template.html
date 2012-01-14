@@ -1,0 +1,93 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<!-- Created by htmlize-1.36 in css mode. -->
+<html>
+  <head>
+    <title> *temp*</title>
+    <style type="text/css">
+    <!--
+      body {
+        color: #e6e1dc;
+        background-color: #232323;
+      }
+      .org-block-begin-line {
+        /* org-block-begin-line */
+        color: #bc9458;
+      }
+      .org-block-end-line {
+        /* org-block-end-line */
+        color: #bc9458;
+      }
+      .org-code {
+        /* org-code */
+        color: #b3b3b3;
+      }
+      .org-level-2 {
+        /* org-level-2 */
+        color: #b0c4de;
+      }
+      .org-property-value {
+      }
+      .org-special-keyword {
+        /* org-special-keyword */
+        color: #cc7833;
+      }
+      .starter-kit-paren {
+        /* starter-kit-paren-face */
+        color: #7f7f7f;
+      }
+      .string {
+        /* font-lock-string-face */
+        color: #a5c261;
+      }
+
+      a {
+        color: inherit;
+        background-color: inherit;
+        font: inherit;
+        text-decoration: inherit;
+      }
+      a:hover {
+        text-decoration: underline;
+      }
+    -->
+    </style>
+  </head>
+  <body>
+    <pre>
+<span class="org-level-2">** code block export template</span>
+<span class="org-special-keyword">   :PROPERTIES:</span>
+   <span class="org-special-keyword">:DATE:</span>     <span class="org-property-value">2012-01-14</span>
+<span class="org-special-keyword">   :END:</span>
+
+The <span class="org-code">=org-babel-exp-code-template=</span> variable may be customized to
+control which information from code blocks is exported.
+<span class="org-code">: org-babel-exp-code-template is a variable defined in `ob-exp.el'.
+: Its value is "#+BEGIN_SRC %lang%flags\n%body\n#+END_SRC"
+:
+: Documentation:
+: Template used to export the body of code blocks.
+: This template may be customized to include additional information
+: such as the code block name, or the values of particular header
+: arguments.  The template is filled out using `org-fill-template',
+: and the following %keys may be used.
+:
+:  lang ------ the language of the code block
+:  name ------ the name of the code block
+:  body ------ the body of the code block
+:  flags ----- the flags passed to the code block
+:
+: In addition to the keys mentioned above, every header argument
+: defined for the code block may be used as a key and will be
+: replaced with its value.
+:
+: You can customize this variable.
+</span>
+For example the following will include code block names in export.
+<span class="org-block-begin-line">#+BEGIN_SRC emacs-lisp
+</span>  <span class="starter-kit-paren">(</span>setf org-babel-exp-code-template
+        <span class="string">"=%name=\n#+BEGIN_SRC %lang%flags\nbody\n#+END_SRC"</span><span class="starter-kit-paren">)
+</span><span class="org-block-end-line">#+END_SRC
+</span>
+</pre>
+  </body>
+</html>

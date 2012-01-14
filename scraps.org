@@ -7,6 +7,40 @@
   :ID:       96eaa17f-f1b6-4958-acb1-e271045fdfa2
   :DATE:     2011-09-03
   :END:
+** code block export template
+   :PROPERTIES:
+   :DATE:     2012-01-14
+   :END:
+
+The =org-babel-exp-code-template= variable may be customized to
+control which information from code blocks is exported.
+: org-babel-exp-code-template is a variable defined in `ob-exp.el'.
+: Its value is "#+BEGIN_SRC %lang%flags\n%body\n#+END_SRC"
+:
+: Documentation:
+: Template used to export the body of code blocks.
+: This template may be customized to include additional information
+: such as the code block name, or the values of particular header
+: arguments.  The template is filled out using `org-fill-template',
+: and the following %keys may be used.
+:
+:  lang ------ the language of the code block
+:  name ------ the name of the code block
+:  body ------ the body of the code block
+:  flags ----- the flags passed to the code block
+:
+: In addition to the keys mentioned above, every header argument
+: defined for the code block may be used as a key and will be
+: replaced with its value.
+:
+: You can customize this variable.
+
+For example the following will include code block names in export.
+#+BEGIN_SRC emacs-lisp
+  (setf org-babel-exp-code-template
+        "=%name=\n#+BEGIN_SRC %lang%flags\nbody\n#+END_SRC")
+#+END_SRC
+
 ** simple R session
    :PROPERTIES:
    :DATE:     2011-09-21
@@ -7074,12 +7108,10 @@ plot cosx
       
 
 * tools
-Map over all scraps and export each to a separate file. Note that this
-relies on the fontification in the original Org-mode buffer, so before
-exporting expand the entire buffer, and scroll through from top to
-bottom so that everything will be fontified.
+Export the current subtree to a file in =scraps/=.
 #+begin_src emacs-lisp :results silent
   (defun dump-subtree-to-file ()
+    (interactive)
     (let* ((replacements '((" "   . "-")
                            ("w/o" . "without")
                            ("w/"  . "with-")
@@ -7105,7 +7137,13 @@ bottom so that everything will be fontified.
         (goto-char (point-min))
         (write-file path)
         (kill-buffer))))
-  
+#+end_src
+
+Map over all scraps and export each to a separate file. Note that this
+relies on the fontification in the original Org-mode buffer, so before
+exporting expand the entire buffer, and scroll through from top to
+bottom so that everything will be fontified.
+#+begin_src emacs-lisp :results silent
   (org-id-goto "96eaa17f-f1b6-4958-acb1-e271045fdfa2")
   (org-map-entries #'dump-subtree-to-file "+LEVEL=2")
 #+end_src
