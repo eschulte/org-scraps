@@ -9,6 +9,14 @@
         color: #e6e1dc;
         background-color: #232323;
       }
+      .builtin {
+        /* font-lock-builtin-face */
+        color: #d0d0ff;
+      }
+      .keyword {
+        /* font-lock-keyword-face */
+        color: #cc7833;
+      }
       .org-block-begin-line {
         /* org-block-begin-line */
         color: #bc9458;
@@ -24,6 +32,10 @@
       .org-level-2 {
         /* org-level-2 */
         color: #b0c4de;
+      }
+      .org-meta-line {
+        /* org-meta-line */
+        color: #bc9458;
       }
       .org-property-value {
       }
@@ -59,34 +71,58 @@
    <span class="org-special-keyword">:DATE:</span>     <span class="org-property-value">2012-01-14</span>
 <span class="org-special-keyword">   :END:</span>
 
-The <span class="org-code">=org-babel-exp-code-template=</span> variable may be customized to
-control which information from code blocks is exported.
-<span class="org-code">: org-babel-exp-code-template is a variable defined in `ob-exp.el'.
-: Its value is "#+BEGIN_SRC %lang%flags\n%body\n#+END_SRC"
-:
-: Documentation:
-: Template used to export the body of code blocks.
-: This template may be customized to include additional information
-: such as the code block name, or the values of particular header
-: arguments.  The template is filled out using `org-fill-template',
-: and the following %keys may be used.
-:
-:  lang ------ the language of the code block
-:  name ------ the name of the code block
-:  body ------ the body of the code block
-:  flags ----- the flags passed to the code block
-:
-: In addition to the keys mentioned above, every header argument
-: defined for the code block may be used as a key and will be
-: replaced with its value.
-:
-: You can customize this variable.
+The <span class="org-code">=org-babel-exp-code-template=</span> (see below for its documentation)
+variable may be customized to control which information from code
+blocks is exported.
+
+- Example code block
+<span class="org-meta-line">  #+Name: foo</span>
+<span class="org-block-begin-line">  #+BEGIN_SRC sh :bar baz
+</span>    <span class="builtin">echo </span>qux
+<span class="org-block-end-line">  #+END_SRC
 </span>
-For example the following will include code block names in export.
-<span class="org-block-begin-line">#+BEGIN_SRC emacs-lisp
-</span>  <span class="starter-kit-paren">(</span>setf org-babel-exp-code-template
-        <span class="string">"=%name=\n#+BEGIN_SRC %lang%flags\nbody\n#+END_SRC"</span><span class="starter-kit-paren">)
-</span><span class="org-block-end-line">#+END_SRC
+- Evaluate this block to export (shows the export of the name).
+<span class="org-meta-line">  #+Name: do-export-name</span>
+<span class="org-block-begin-line">  #+BEGIN_SRC emacs-lisp :results silent
+</span>    <span class="starter-kit-paren">(</span><span class="keyword">let</span> <span class="starter-kit-paren">((</span>org-babel-exp-code-template
+           <span class="string">"\n=%name=:\n#+BEGIN_SRC %lang%flags\n%body\n#+END_SRC"</span><span class="starter-kit-paren">))</span>
+      <span class="starter-kit-paren">(</span>org-export-as-html nil<span class="starter-kit-paren">))
+</span><span class="org-block-end-line">  #+END_SRC
+</span>
+- Evaluate this block to export (shows the export of header arguments).
+<span class="org-meta-line">  #+Name: do-export-header-arguments</span>
+<span class="org-block-begin-line">  #+BEGIN_SRC emacs-lisp :results silent
+</span>    <span class="starter-kit-paren">(</span><span class="keyword">let</span> <span class="starter-kit-paren">((</span>org-babel-exp-code-template
+           <span class="string">"Header arguments for =%name=.
+    | header  | value    |
+    |---------+----------|
+    | bar     | %bar     |
+    | results | %results |\n#+BEGIN_SRC %lang%flags\n%body\n#+END_SRC"</span><span class="starter-kit-paren">))</span>
+      <span class="starter-kit-paren">(</span>org-export-as-html nil<span class="starter-kit-paren">))
+</span><span class="org-block-end-line">  #+END_SRC
+</span>
+<span class="org-code">: ,----[org-babel-exp-code-template]
+: | org-babel-exp-code-template is a variable defined in `ob-exp.el'.
+: | Its value is "#+BEGIN_SRC %lang%flags\n%body\n#+END_SRC"
+: | 
+: | Documentation:
+: | Template used to export the body of code blocks.
+: | This template may be customized to include additional information
+: | such as the code block name, or the values of particular header
+: | arguments.  The template is filled out using `org-fill-template',
+: | and the following %keys may be used.
+: | 
+: |  lang ------ the language of the code block
+: |  name ------ the name of the code block
+: |  body ------ the body of the code block
+: |  flags ----- the flags passed to the code block
+: | 
+: | In addition to the keys mentioned above, every header argument
+: | defined for the code block may be used as a key and will be
+: | replaced with its value.
+: | 
+: | You can customize this variable.
+: `----
 </span>
 </pre>
   </body>
