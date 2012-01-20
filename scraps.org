@@ -7192,10 +7192,7 @@ Export the current subtree to a file in =scraps/=.
       (unless (file-exists-p path)
         (call-interactively #'org-copy-subtree)
         (with-temp-buffer
-          (call-interactively #'yank)
-          ;; remove the DATE property
-          (org-delete-property "DATE")
-          (setq buf (htmlize-buffer)))
+          (call-interactively #'yank) (setq buf (htmlize-buffer)))
         (set-buffer buf)
         (goto-char (point-min))
         (write-file path)
