@@ -3,7 +3,7 @@
  <title>Org-mode scraps</title>
  <link href="http://eschulte.github.com/org-scraps/atom.xml" rel="self"/>
  <link href="http://eschulte.github.com/org-scraps/"/>
- <updated>2012-01-14:12:52:43-07:00</updated>
+ <updated>2012-01-20:15:40:13-07:00</updated>
  <id>http://eschulte.github.com/org-scraps/</id>
  <author>
    <name>Eric Schulte</name>
@@ -10210,33 +10210,113 @@ END
    <span class="org-special-keyword">:DATE:</span>     <span class="org-property-value">2012-01-14</span>
 <span class="org-special-keyword">   :END:</span>
 
-The <span class="org-code">=org-babel-exp-code-template=</span> variable may be customized to
-control which information from code blocks is exported.
-<span class="org-code">: org-babel-exp-code-template is a variable defined in `ob-exp.el'.
-: Its value is "#+BEGIN_SRC %lang%flags\n%body\n#+END_SRC"
-:
-: Documentation:
-: Template used to export the body of code blocks.
-: This template may be customized to include additional information
-: such as the code block name, or the values of particular header
-: arguments.  The template is filled out using `org-fill-template',
-: and the following %keys may be used.
-:
-:  lang ------ the language of the code block
-:  name ------ the name of the code block
-:  body ------ the body of the code block
-:  flags ----- the flags passed to the code block
-:
-: In addition to the keys mentioned above, every header argument
-: defined for the code block may be used as a key and will be
-: replaced with its value.
-:
-: You can customize this variable.
+The <span class="org-code">=org-babel-exp-code-template=</span> (see below for its documentation)
+variable may be customized to control which information from code
+blocks is exported.
+
+- Example code block
+<span class="org-meta-line">  #+Name: foo</span>
+<span class="org-block-begin-line">  #+BEGIN_SRC sh :bar baz
+</span>    <span class="builtin">echo </span>qux
+<span class="org-block-end-line">  #+END_SRC
 </span>
-For example the following will include code block names in export.
-<span class="org-block-begin-line">#+BEGIN_SRC emacs-lisp
-</span>  <span class="starter-kit-paren">(</span>setf org-babel-exp-code-template
-        <span class="string">"=%name=\n#+BEGIN_SRC %lang%flags\nbody\n#+END_SRC"</span><span class="starter-kit-paren">)
+- Evaluate this block to export (shows the export of the name).
+<span class="org-meta-line">  #+Name: do-export-name</span>
+<span class="org-block-begin-line">  #+BEGIN_SRC emacs-lisp :results silent
+</span>    <span class="starter-kit-paren">(</span><span class="keyword">let</span> <span class="starter-kit-paren">((</span>org-babel-exp-code-template
+           <span class="string">"\n=%name=:\n#+BEGIN_SRC %lang%flags\n%body\n#+END_SRC"</span><span class="starter-kit-paren">))</span>
+      <span class="starter-kit-paren">(</span>org-export-as-html nil<span class="starter-kit-paren">))
+</span><span class="org-block-end-line">  #+END_SRC
+</span>
+- Evaluate this block to export (shows the export of header arguments).
+<span class="org-meta-line">  #+Name: do-export-header-arguments</span>
+<span class="org-block-begin-line">  #+BEGIN_SRC emacs-lisp :results silent
+</span>    <span class="starter-kit-paren">(</span><span class="keyword">let</span> <span class="starter-kit-paren">((</span>org-babel-exp-code-template
+           <span class="string">"Header arguments for =%name=.
+    | header  | value    |
+    |---------+----------|
+    | bar     | %bar     |
+    | results | %results |\n#+BEGIN_SRC %lang%flags\n%body\n#+END_SRC"</span><span class="starter-kit-paren">))</span>
+      <span class="starter-kit-paren">(</span>org-export-as-html nil<span class="starter-kit-paren">))
+</span><span class="org-block-end-line">  #+END_SRC
+</span>
+<span class="org-code">: ,----[org-babel-exp-code-template]
+: | org-babel-exp-code-template is a variable defined in `ob-exp.el'.
+: | Its value is "#+BEGIN_SRC %lang%flags\n%body\n#+END_SRC"
+: | 
+: | Documentation:
+: | Template used to export the body of code blocks.
+: | This template may be customized to include additional information
+: | such as the code block name, or the values of particular header
+: | arguments.  The template is filled out using `org-fill-template',
+: | and the following %keys may be used.
+: | 
+: |  lang ------ the language of the code block
+: |  name ------ the name of the code block
+: |  body ------ the body of the code block
+: |  flags ----- the flags passed to the code block
+: | 
+: | In addition to the keys mentioned above, every header argument
+: | defined for the code block may be used as a key and will be
+: | replaced with its value.
+: | 
+: | You can customize this variable.
+: `----
+</span>
+   </pre>
+</content>
+</entry>
+<entry>
+   <title>inhibit-some-call-line-evaluation-on-export</title>
+   <link href="http://eschulte.github.com/org-scraps/scraps/2012-01-20-inhibit-some-call-line-evaluation-on-export.html"/>
+   <updated>2012-01-20:00:00:00-07:00</updated>
+   <id>http://eschulte.github.com/org-scraps/scraps/2012-01-20-inhibit-some-call-line-evaluation-on-export.html</id>
+   <content type="html">
+   <pre>
+<span class="org-level-2">** inhibit some call line evaluation on export</span>
+<span class="org-special-keyword">   :PROPERTIES:</span>
+   <span class="org-special-keyword">:DATE:</span>     <span class="org-property-value">2012-01-20</span>
+<span class="org-special-keyword">   :END:</span>
+A buffer in which we want <span class="org-code">=foo=</span> to be run when called interactively
+from <span class="italic">/any/</span> call line, but to only be run by a single call line on
+export.  Ensure this works by executing this buffer to html while
+tracking <span class="org-code">=foo-called.times=</span> with <span class="org-code">=tail -f /tmp/foo-called.times=</span>.
+
+<span class="org-meta-line">#+NAME: foo
+</span><span class="org-block-begin-line">#+BEGIN_SRC sh :var id="foo"
+</span>  <span class="builtin">echo</span> <span class="string">"called by $id at $(date +%s.%N)" </span>|tee -a /tmp/foo-called.times
+<span class="org-block-end-line">#+END_SRC
+</span>
+This will <span class="bold">*not*</span> be run on export.
+<span class="org-meta-line">#+call: foo[:eval no-export]("bar")
+</span>
+This <span class="bold">*will*</span> be run on export.
+<span class="org-meta-line">#+call: foo("baz")
+</span>
+   </pre>
+</content>
+</entry>
+<entry>
+   <title>name-src_emacs-lisp{org-current-export-file}</title>
+   <link href="http://eschulte.github.com/org-scraps/scraps/2012-01-20-name-src_emacs-lisp{org-current-export-file}.html"/>
+   <updated>2012-01-20:00:00:00-07:00</updated>
+   <id>http://eschulte.github.com/org-scraps/scraps/2012-01-20-name-src_emacs-lisp{org-current-export-file}.html</id>
+   <content type="html">
+   <pre>
+<span class="org-level-2">** name src_emacs-lisp{org-current-export-file}</span>
+<span class="org-special-keyword">   :PROPERTIES:</span>
+   <span class="org-special-keyword">:DATE:</span>     <span class="org-property-value">2012-01-20</span>
+<span class="org-special-keyword">   :END:</span>
+Fanciness with running code in header arguments.
+
+One block to tangle.
+<span class="org-block-begin-line">#+BEGIN_SRC emacs-lisp :tangle yes
+</span>  <span class="starter-kit-paren">(</span>message <span class="string">"I am tangled"</span><span class="starter-kit-paren">)
+</span><span class="org-block-end-line">#+END_SRC
+</span>
+One block to export.
+<span class="org-block-begin-line">#+BEGIN_SRC emacs-lisp :exports results :var foo=(org-babel-tangle)
+</span>  <span class="starter-kit-paren">(</span>message <span class="string">"I just tangled %S during export"</span> foo<span class="starter-kit-paren">)
 </span><span class="org-block-end-line">#+END_SRC
 </span>
    </pre>

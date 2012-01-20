@@ -7,6 +7,42 @@
   :ID:       96eaa17f-f1b6-4958-acb1-e271045fdfa2
   :DATE:     2011-09-03
   :END:
+** inhibit some call line evaluation on export
+   :PROPERTIES:
+   :DATE:     2012-01-20
+   :END:
+A buffer in which we want =foo= to be run when called interactively
+from /any/ call line, but to only be run by a single call line on
+export.  Ensure this works by executing this buffer to html while
+tracking =foo-called.times= with =tail -f /tmp/foo-called.times=.
+
+#+NAME: foo
+#+BEGIN_SRC sh :var id="foo"
+  echo "called by $id at $(date +%s.%N)" |tee -a /tmp/foo-called.times
+#+END_SRC
+
+This will *not* be run on export.
+#+call: foo[:eval no-export]("bar")
+
+This *will* be run on export.
+#+call: foo("baz")
+
+** name src_emacs-lisp{org-current-export-file}
+   :PROPERTIES:
+   :DATE:     2012-01-20
+   :END:
+Fanciness with running code in header arguments.
+
+One block to tangle.
+#+BEGIN_SRC emacs-lisp :tangle yes
+  (message "I am tangled")
+#+END_SRC
+
+One block to export.
+#+BEGIN_SRC emacs-lisp :exports results :var foo=(org-babel-tangle)
+  (message "I just tangled %S during export" foo)
+#+END_SRC
+
 ** code block export template
    :PROPERTIES:
    :DATE:     2012-01-14

@@ -1,0 +1,91 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<!-- Created by htmlize-1.36 in css mode. -->
+<html>
+  <head>
+    <title> *temp*</title>
+    <style type="text/css">
+    <!--
+      body {
+        color: #e6e1dc;
+        background-color: #232323;
+      }
+      .bold {
+        /* bold */
+        font-weight: bold;
+      }
+      .builtin {
+        /* font-lock-builtin-face */
+        color: #d0d0ff;
+      }
+      .italic {
+        /* italic */
+        font-style: italic;
+      }
+      .org-block-begin-line {
+        /* org-block-begin-line */
+        color: #bc9458;
+      }
+      .org-block-end-line {
+        /* org-block-end-line */
+        color: #bc9458;
+      }
+      .org-code {
+        /* org-code */
+        color: #b3b3b3;
+      }
+      .org-level-2 {
+        /* org-level-2 */
+        color: #b0c4de;
+      }
+      .org-meta-line {
+        /* org-meta-line */
+        color: #bc9458;
+      }
+      .org-property-value {
+      }
+      .org-special-keyword {
+        /* org-special-keyword */
+        color: #cc7833;
+      }
+      .string {
+        /* font-lock-string-face */
+        color: #a5c261;
+      }
+
+      a {
+        color: inherit;
+        background-color: inherit;
+        font: inherit;
+        text-decoration: inherit;
+      }
+      a:hover {
+        text-decoration: underline;
+      }
+    -->
+    </style>
+  </head>
+  <body>
+    <pre>
+<span class="org-level-2">** inhibit some call line evaluation on export</span>
+<span class="org-special-keyword">   :PROPERTIES:</span>
+   <span class="org-special-keyword">:DATE:</span>     <span class="org-property-value">2012-01-20</span>
+<span class="org-special-keyword">   :END:</span>
+A buffer in which we want <span class="org-code">=foo=</span> to be run when called interactively
+from <span class="italic">/any/</span> call line, but to only be run by a single call line on
+export.  Ensure this works by executing this buffer to html while
+tracking <span class="org-code">=foo-called.times=</span> with <span class="org-code">=tail -f /tmp/foo-called.times=</span>.
+
+<span class="org-meta-line">#+NAME: foo
+</span><span class="org-block-begin-line">#+BEGIN_SRC sh :var id="foo"
+</span>  <span class="builtin">echo</span> <span class="string">"called by $id at $(date +%s.%N)" </span>|tee -a /tmp/foo-called.times
+<span class="org-block-end-line">#+END_SRC
+</span>
+This will <span class="bold">*not*</span> be run on export.
+<span class="org-meta-line">#+call: foo[:eval no-export]("bar")
+</span>
+This <span class="bold">*will*</span> be run on export.
+<span class="org-meta-line">#+call: foo("baz")
+</span>
+</pre>
+  </body>
+</html>

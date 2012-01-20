@@ -1,0 +1,71 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<!-- Created by htmlize-1.36 in css mode. -->
+<html>
+  <head>
+    <title> *temp*</title>
+    <style type="text/css">
+    <!--
+      body {
+        color: #e6e1dc;
+        background-color: #232323;
+      }
+      .org-block-begin-line {
+        /* org-block-begin-line */
+        color: #bc9458;
+      }
+      .org-block-end-line {
+        /* org-block-end-line */
+        color: #bc9458;
+      }
+      .org-level-2 {
+        /* org-level-2 */
+        color: #b0c4de;
+      }
+      .org-property-value {
+      }
+      .org-special-keyword {
+        /* org-special-keyword */
+        color: #cc7833;
+      }
+      .starter-kit-paren {
+        /* starter-kit-paren-face */
+        color: #7f7f7f;
+      }
+      .string {
+        /* font-lock-string-face */
+        color: #a5c261;
+      }
+
+      a {
+        color: inherit;
+        background-color: inherit;
+        font: inherit;
+        text-decoration: inherit;
+      }
+      a:hover {
+        text-decoration: underline;
+      }
+    -->
+    </style>
+  </head>
+  <body>
+    <pre>
+<span class="org-level-2">** name src_emacs-lisp{org-current-export-file}</span>
+<span class="org-special-keyword">   :PROPERTIES:</span>
+   <span class="org-special-keyword">:DATE:</span>     <span class="org-property-value">2012-01-20</span>
+<span class="org-special-keyword">   :END:</span>
+Fanciness with running code in header arguments.
+
+One block to tangle.
+<span class="org-block-begin-line">#+BEGIN_SRC emacs-lisp :tangle yes
+</span>  <span class="starter-kit-paren">(</span>message <span class="string">"I am tangled"</span><span class="starter-kit-paren">)
+</span><span class="org-block-end-line">#+END_SRC
+</span>
+One block to export.
+<span class="org-block-begin-line">#+BEGIN_SRC emacs-lisp :exports results :var foo=(org-babel-tangle)
+</span>  <span class="starter-kit-paren">(</span>message <span class="string">"I just tangled %S during export"</span> foo<span class="starter-kit-paren">)
+</span><span class="org-block-end-line">#+END_SRC
+</span>
+</pre>
+  </body>
+</html>
