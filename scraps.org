@@ -7,6 +7,81 @@
   :ID:       96eaa17f-f1b6-4958-acb1-e271045fdfa2
   :DATE:     2011-09-03
   :END:
+** issues with call lines result insertion
+   :PROPERTIES:
+   :session:  *R-babel*
+   :DATE:     2012-01-24
+   :END:
+#+NAME: foo-for-R
+#+HEADER: :var a="a1.png"
+#+BEGIN_SRC R :results output silent
+  cat("in foo-for-R block\n")
+  cat.a <- function() { cat(a,"\n",sep="") }
+  cat.a()
+#+END_SRC
+
+#+NAME: bar-for-R
+#+begin_src R :results output raw replace :exports none
+ cat.a()
+#+end_src
+
+Because there are three instances of the =bar-for-R()= call line, all
+of their results are inserted into the same place in the file,
+specifically the location of the =#+Results: bar-for-R()= line.  This
+can be very confusing if you are expected each =bar-for-R()= line to
+generate it's own results.
+
+Should have all a1 stuff
+#+call: foo-for-R(a="a1.png")
+#+call: bar-for-R()
+
+Should have all a2 stuff
+#+call: foo-for-R(a="a2.png")
+#+call: bar-for-R()
+
+Should have all a3 stuff
+#+call: foo-for-R(a="a3.png")
+#+call: bar-for-R()
+
+The solution demonstrated below is to add a nothing header argument to
+each bar-for-R to make it unique.  Notice that the three =foo= lines
+below don't include results, as their results are inserted at the
+identical foo lines above.
+
+Should have all a1 stuff
+#+call: foo-for-R(a="a1.png")
+#+call: bar-for-R[id=1]()
+
+Should have all a2 stuff
+#+call: foo-for-R(a="a2.png")
+#+call: bar-for-R[id=2]()
+
+Should have all a3 stuff
+#+call: foo-for-R(a="a3.png")
+#+call: bar-for-R[id=3]()
+
+** noweb insertion edge cases
+   :PROPERTIES:
+   :DATE:     2012-01-24
+   :END:
+The =cat= line below is dangerously close to a noweb reference.  The
+space after test.org keeps it from being interpreted as a noweb
+reference.
+
+#+begin_src sh :tangle test.out :noweb yes
+  <<task1>>
+  <<b>>
+  cat <<test.org >> test.out2
+#+end_src
+
+#+begin_src sh :noweb-ref task1
+ echo "hello world"
+#+end_src
+
+#+BEGIN_SRC sh :noweb-ref b
+ echo "b"
+#+END_SRC
+
 ** inhibit some call line evaluation on export
    :PROPERTIES:
    :DATE:     2012-01-20

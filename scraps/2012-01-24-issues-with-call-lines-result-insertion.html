@@ -1,0 +1,128 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<!-- Created by htmlize-1.36 in css mode. -->
+<html>
+  <head>
+    <title> *temp*</title>
+    <style type="text/css">
+    <!--
+      body {
+        color: #e6e1dc;
+        background-color: #232323;
+      }
+      .bold {
+        /* bold */
+        font-weight: bold;
+      }
+      .constant {
+        /* font-lock-constant-face */
+        color: #6d9cbe;
+      }
+      .function-name {
+        /* font-lock-function-name-face */
+        color: #ffc66d;
+      }
+      .keyword {
+        /* font-lock-keyword-face */
+        color: #cc7833;
+      }
+      .org-block-begin-line {
+        /* org-block-begin-line */
+        color: #bc9458;
+      }
+      .org-block-end-line {
+        /* org-block-end-line */
+        color: #bc9458;
+      }
+      .org-code {
+        /* org-code */
+        color: #b3b3b3;
+      }
+      .org-level-2 {
+        /* org-level-2 */
+        color: #b0c4de;
+      }
+      .org-meta-line {
+        /* org-meta-line */
+        color: #bc9458;
+      }
+      .org-property-value {
+      }
+      .org-special-keyword {
+        /* org-special-keyword */
+        color: #cc7833;
+      }
+      .string {
+        /* font-lock-string-face */
+        color: #a5c261;
+      }
+
+      a {
+        color: inherit;
+        background-color: inherit;
+        font: inherit;
+        text-decoration: inherit;
+      }
+      a:hover {
+        text-decoration: underline;
+      }
+    -->
+    </style>
+  </head>
+  <body>
+    <pre>
+<span class="org-level-2">** issues with call lines result insertion</span>
+<span class="org-special-keyword">   :PROPERTIES:</span>
+   <span class="org-special-keyword">:session:</span>  <span class="org-property-value"><span class="bold">*R-babel*</span></span>
+   <span class="org-special-keyword">:DATE:</span>     <span class="org-property-value">2012-01-24</span>
+<span class="org-special-keyword">   :END:</span>
+<span class="org-meta-line">#+NAME: foo-for-R
+#+HEADER: :var a="a1.png"
+</span><span class="org-block-begin-line">#+BEGIN_SRC R :results output silent
+</span>  cat(<span class="string">"in foo-for-R block\n"</span>)
+  <span class="function-name">cat.a</span> <span class="constant">&lt;-</span> <span class="keyword">function</span>() { cat(a,<span class="string">"\n"</span>,sep=<span class="string">"")</span> }
+  cat.a()
+<span class="org-block-end-line">#+END_SRC
+</span>
+<span class="org-meta-line">#+NAME: bar-for-R
+</span><span class="org-block-begin-line">#+begin_src R :results output raw replace :exports none
+</span> cat.a()
+<span class="org-block-end-line">#+end_src
+</span>
+Because there are three instances of the <span class="org-code">=bar-for-R()=</span> call line, all
+of their results are inserted into the same place in the file,
+specifically the location of the <span class="org-code">=#+Results: bar-for-R()=</span> line.  This
+can be very confusing if you are expected each <span class="org-code">=bar-for-R()=</span> line to
+generate it's own results.
+
+Should have all a1 stuff
+<span class="org-meta-line">#+call: foo-for-R(a="a1.png")
+#+call: bar-for-R()
+</span>
+Should have all a2 stuff
+<span class="org-meta-line">#+call: foo-for-R(a="a2.png")
+#+call: bar-for-R()
+</span>
+Should have all a3 stuff
+<span class="org-meta-line">#+call: foo-for-R(a="a3.png")
+#+call: bar-for-R()
+</span>
+The solution demonstrated below is to add a nothing header argument to
+each bar-for-R to make it unique.  Notice that the three <span class="org-code">=foo=</span> lines
+below don't include results, as their results are inserted at the
+identical foo lines above.
+
+Should have all a1 stuff
+<span class="org-meta-line">#+call: foo-for-R(a="a1.png")
+#+call: bar-for-R[id=1]()
+</span>
+Should have all a2 stuff
+<span class="org-meta-line">#+call: foo-for-R(a="a2.png")
+#+call: bar-for-R[id=2]()
+</span>
+Should have all a3 stuff
+<span class="org-meta-line">#+call: foo-for-R(a="a3.png")
+#+call: bar-for-R[id=3]()
+</span>
+</pre>
+  </body>
+</html>

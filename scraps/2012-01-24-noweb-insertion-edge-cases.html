@@ -1,0 +1,81 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<!-- Created by htmlize-1.36 in css mode. -->
+<html>
+  <head>
+    <title> *temp*</title>
+    <style type="text/css">
+    <!--
+      body {
+        color: #e6e1dc;
+        background-color: #232323;
+      }
+      .builtin {
+        /* font-lock-builtin-face */
+        color: #d0d0ff;
+      }
+      .org-block-begin-line {
+        /* org-block-begin-line */
+        color: #bc9458;
+      }
+      .org-block-end-line {
+        /* org-block-end-line */
+        color: #bc9458;
+      }
+      .org-code {
+        /* org-code */
+        color: #b3b3b3;
+      }
+      .org-level-2 {
+        /* org-level-2 */
+        color: #b0c4de;
+      }
+      .org-property-value {
+      }
+      .org-special-keyword {
+        /* org-special-keyword */
+        color: #cc7833;
+      }
+      .string {
+        /* font-lock-string-face */
+        color: #a5c261;
+      }
+
+      a {
+        color: inherit;
+        background-color: inherit;
+        font: inherit;
+        text-decoration: inherit;
+      }
+      a:hover {
+        text-decoration: underline;
+      }
+    -->
+    </style>
+  </head>
+  <body>
+    <pre>
+<span class="org-level-2">** noweb insertion edge cases</span>
+<span class="org-special-keyword">   :PROPERTIES:</span>
+   <span class="org-special-keyword">:DATE:</span>     <span class="org-property-value">2012-01-24</span>
+<span class="org-special-keyword">   :END:</span>
+The <span class="org-code">=cat=</span> line below is dangerously close to a noweb reference.  The
+space after test.org keeps it from being interpreted as a noweb
+reference.
+
+<span class="org-block-begin-line">#+begin_src sh :tangle test.out :noweb yes
+</span>  &lt;&lt;task1&gt;&gt;
+  &lt;&lt;b&gt;&gt;
+  cat &lt;&lt;test.org &gt;&gt; test.out2
+<span class="org-block-end-line">#+end_src
+</span>
+<span class="org-block-begin-line">#+begin_src sh :noweb-ref task1
+</span> <span class="builtin">echo</span> <span class="string">"hello world"
+</span><span class="org-block-end-line">#+end_src
+</span>
+<span class="org-block-begin-line">#+BEGIN_SRC sh :noweb-ref b
+</span> <span class="builtin">echo</span> <span class="string">"b"
+</span><span class="org-block-end-line">#+END_SRC
+</span>
+</pre>
+  </body>
+</html>

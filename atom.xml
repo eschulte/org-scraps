@@ -3,7 +3,7 @@
  <title>Org-mode scraps</title>
  <link href="http://eschulte.github.com/org-scraps/atom.xml" rel="self"/>
  <link href="http://eschulte.github.com/org-scraps/"/>
- <updated>2012-01-20:15:40:13-07:00</updated>
+ <updated>2012-01-24:07:47:55-07:00</updated>
  <id>http://eschulte.github.com/org-scraps/</id>
  <author>
    <name>Eric Schulte</name>
@@ -10317,6 +10317,101 @@ One block to tangle.
 One block to export.
 <span class="org-block-begin-line">#+BEGIN_SRC emacs-lisp :exports results :var foo=(org-babel-tangle)
 </span>  <span class="starter-kit-paren">(</span>message <span class="string">"I just tangled %S during export"</span> foo<span class="starter-kit-paren">)
+</span><span class="org-block-end-line">#+END_SRC
+</span>
+   </pre>
+</content>
+</entry>
+<entry>
+   <title>issues-with-call-lines-result-insertion</title>
+   <link href="http://eschulte.github.com/org-scraps/scraps/2012-01-24-issues-with-call-lines-result-insertion.html"/>
+   <updated>2012-01-24:00:00:00-07:00</updated>
+   <id>http://eschulte.github.com/org-scraps/scraps/2012-01-24-issues-with-call-lines-result-insertion.html</id>
+   <content type="html">
+   <pre>
+<span class="org-level-2">** issues with call lines result insertion</span>
+<span class="org-special-keyword">   :PROPERTIES:</span>
+   <span class="org-special-keyword">:session:</span>  <span class="org-property-value"><span class="bold">*R-babel*</span></span>
+   <span class="org-special-keyword">:DATE:</span>     <span class="org-property-value">2012-01-24</span>
+<span class="org-special-keyword">   :END:</span>
+<span class="org-meta-line">#+NAME: foo-for-R
+#+HEADER: :var a="a1.png"
+</span><span class="org-block-begin-line">#+BEGIN_SRC R :results output silent
+</span>  cat(<span class="string">"in foo-for-R block\n"</span>)
+  <span class="function-name">cat.a</span> <span class="constant">&lt;-</span> <span class="keyword">function</span>() { cat(a,<span class="string">"\n"</span>,sep=<span class="string">"")</span> }
+  cat.a()
+<span class="org-block-end-line">#+END_SRC
+</span>
+<span class="org-meta-line">#+NAME: bar-for-R
+</span><span class="org-block-begin-line">#+begin_src R :results output raw replace :exports none
+</span> cat.a()
+<span class="org-block-end-line">#+end_src
+</span>
+Because there are three instances of the <span class="org-code">=bar-for-R()=</span> call line, all
+of their results are inserted into the same place in the file,
+specifically the location of the <span class="org-code">=#+Results: bar-for-R()=</span> line.  This
+can be very confusing if you are expected each <span class="org-code">=bar-for-R()=</span> line to
+generate it's own results.
+
+Should have all a1 stuff
+<span class="org-meta-line">#+call: foo-for-R(a="a1.png")
+#+call: bar-for-R()
+</span>
+Should have all a2 stuff
+<span class="org-meta-line">#+call: foo-for-R(a="a2.png")
+#+call: bar-for-R()
+</span>
+Should have all a3 stuff
+<span class="org-meta-line">#+call: foo-for-R(a="a3.png")
+#+call: bar-for-R()
+</span>
+The solution demonstrated below is to add a nothing header argument to
+each bar-for-R to make it unique.  Notice that the three <span class="org-code">=foo=</span> lines
+below don't include results, as their results are inserted at the
+identical foo lines above.
+
+Should have all a1 stuff
+<span class="org-meta-line">#+call: foo-for-R(a="a1.png")
+#+call: bar-for-R[id=1]()
+</span>
+Should have all a2 stuff
+<span class="org-meta-line">#+call: foo-for-R(a="a2.png")
+#+call: bar-for-R[id=2]()
+</span>
+Should have all a3 stuff
+<span class="org-meta-line">#+call: foo-for-R(a="a3.png")
+#+call: bar-for-R[id=3]()
+</span>
+   </pre>
+</content>
+</entry>
+<entry>
+   <title>noweb-insertion-edge-cases</title>
+   <link href="http://eschulte.github.com/org-scraps/scraps/2012-01-24-noweb-insertion-edge-cases.html"/>
+   <updated>2012-01-24:00:00:00-07:00</updated>
+   <id>http://eschulte.github.com/org-scraps/scraps/2012-01-24-noweb-insertion-edge-cases.html</id>
+   <content type="html">
+   <pre>
+<span class="org-level-2">** noweb insertion edge cases</span>
+<span class="org-special-keyword">   :PROPERTIES:</span>
+   <span class="org-special-keyword">:DATE:</span>     <span class="org-property-value">2012-01-24</span>
+<span class="org-special-keyword">   :END:</span>
+The <span class="org-code">=cat=</span> line below is dangerously close to a noweb reference.  The
+space after test.org keeps it from being interpreted as a noweb
+reference.
+
+<span class="org-block-begin-line">#+begin_src sh :tangle test.out :noweb yes
+</span>  &lt;&lt;task1&gt;&gt;
+  &lt;&lt;b&gt;&gt;
+  cat &lt;&lt;test.org &gt;&gt; test.out2
+<span class="org-block-end-line">#+end_src
+</span>
+<span class="org-block-begin-line">#+begin_src sh :noweb-ref task1
+</span> <span class="builtin">echo</span> <span class="string">"hello world"
+</span><span class="org-block-end-line">#+end_src
+</span>
+<span class="org-block-begin-line">#+BEGIN_SRC sh :noweb-ref b
+</span> <span class="builtin">echo</span> <span class="string">"b"
 </span><span class="org-block-end-line">#+END_SRC
 </span>
    </pre>
