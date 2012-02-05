@@ -7,6 +7,66 @@
   :ID:       96eaa17f-f1b6-4958-acb1-e271045fdfa2
   :DATE:     2011-09-03
   :END:
+** call line which dumps out its own header argument info
+   :PROPERTIES:
+   :DATE:     2012-02-05
+   :END:
+This call line passes its in-buffer location to a code block.  Notice
+that the call to =(point)= in the call line is saved into a header
+argument named =:my-point= and is then retrieved by the variable
+initialization.  This indirection is required because of /when/ and
+/where/ the elisp forms in header arguments are evaluated, a simpler
+call line like =#+call: show:((point))= would not work because the
+form =(point)= would not be evaluated in the correct place.
+
+#+call: show[:my-point (point)]((cdr (assoc :my-point (nth 2 info)))) :special-header "foo"
+
+The special header argument =:special-header= may be seen in the
+output below.  The =results= variable is due to the way that call
+lines are evaluated.  During evaluation a call line is converted into
+a trivial elisp code block of the form
+: #+begin_src emacs-lisp :var results=called-function()
+:   results
+: #+end_src
+which is evaluated in place.
+
+#+RESULTS: show[:my-point (point)]((cdr (assoc :my-point (nth 2 info))))
+| (:var results ((:var nil)) ((:colname-names)) ((:rowname-names)) ((:result-params replace)) ((:result-type . value)) ((:comments . )) ((:shebang . )) ((:cache . no)) ((:padline . )) ((:noweb . yes)) ((:tangle . no)) ((:exports . code)) ((:results . replace)) ((:padnewline . yes)) ((:hlines . no)) ((:session . none))) |
+| (:colname-names)                                                                                                                                                                                                                                                                                                               |
+| (:rowname-names)                                                                                                                                                                                                                                                                                                               |
+| (:result-params replace)                                                                                                                                                                                                                                                                                                       |
+| (:result-type . value)                                                                                                                                                                                                                                                                                                         |
+| (:comments . )                                                                                                                                                                                                                                                                                                                 |
+| (:shebang . )                                                                                                                                                                                                                                                                                                                  |
+| (:cache . no)                                                                                                                                                                                                                                                                                                                  |
+| (:padline . )                                                                                                                                                                                                                                                                                                                  |
+| (:noweb . yes)                                                                                                                                                                                                                                                                                                                 |
+| (:tangle . no)                                                                                                                                                                                                                                                                                                                 |
+| (:exports . code)                                                                                                                                                                                                                                                                                                              |
+| (:results . replace)                                                                                                                                                                                                                                                                                                           |
+| (:special-header . foo)                                                                                                                                                                                                                                                                                                        |
+| (:padnewline . yes)                                                                                                                                                                                                                                                                                                            |
+| (:hlines . no)                                                                                                                                                                                                                                                                                                                 |
+| (:session . none)                                                                                                                                                                                                                                                                                                              |
+
+This code block visits the location of the call line, and calculates
+the info using the same mechanisms used by =org-babel-lob-execute=.
+#+name: show
+#+begin_src emacs-lisp :var call-line-location=0
+  (let ((call-info (save-excursion
+                     (goto-char call-line-location)
+                     (org-babel-lob-get-info))))
+    (mapcar #'list
+            (org-babel-process-params
+             (org-babel-merge-params
+              org-babel-default-header-args
+              (org-babel-params-from-properties)
+              (org-babel-parse-header-arguments
+               (org-babel-clean-text-properties
+                (concat ":var results="
+                        (mapconcat #'identity (butlast call-info) " "))))))))
+#+end_src
+
 ** issues with call lines result insertion
    :PROPERTIES:
    :session:  *R-babel*

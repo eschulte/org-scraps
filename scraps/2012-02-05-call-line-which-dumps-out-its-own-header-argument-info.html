@@ -1,0 +1,135 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<!-- Created by htmlize-1.36 in css mode. -->
+<html>
+  <head>
+    <title> *temp*</title>
+    <style type="text/css">
+    <!--
+      body {
+        color: #e6e1dc;
+        background-color: #232323;
+      }
+      .italic {
+        /* italic */
+        font-style: italic;
+      }
+      .keyword {
+        /* font-lock-keyword-face */
+        color: #cc7833;
+      }
+      .org-block-begin-line {
+        /* org-block-begin-line */
+        color: #bc9458;
+      }
+      .org-block-end-line {
+        /* org-block-end-line */
+        color: #bc9458;
+      }
+      .org-code {
+        /* org-code */
+        color: #b3b3b3;
+      }
+      .org-level-2 {
+        /* org-level-2 */
+        color: #b0c4de;
+      }
+      .org-meta-line {
+        /* org-meta-line */
+        color: #bc9458;
+      }
+      .org-property-value {
+      }
+      .org-special-keyword {
+        /* org-special-keyword */
+        color: #cc7833;
+      }
+      .org-table {
+        /* org-table */
+        color: #87cefa;
+      }
+      .starter-kit-paren {
+        /* starter-kit-paren-face */
+        color: #7f7f7f;
+      }
+      .string {
+        /* font-lock-string-face */
+        color: #a5c261;
+      }
+
+      a {
+        color: inherit;
+        background-color: inherit;
+        font: inherit;
+        text-decoration: inherit;
+      }
+      a:hover {
+        text-decoration: underline;
+      }
+    -->
+    </style>
+  </head>
+  <body>
+    <pre>
+<span class="org-level-2">** call line which dumps out its own header argument info</span>
+<span class="org-special-keyword">   :PROPERTIES:</span>
+   <span class="org-special-keyword">:DATE:</span>     <span class="org-property-value">2012-02-05</span>
+<span class="org-special-keyword">   :END:</span>
+This call line passes its in-buffer location to a code block.  Notice
+that the call to <span class="org-code">=(point)=</span> in the call line is saved into a header
+argument named <span class="org-code">=:my-point=</span> and is then retrieved by the variable
+initialization.  This indirection is required because of <span class="italic">/when/</span> and
+<span class="italic">/where/</span> the elisp forms in header arguments are evaluated, a simpler
+call line like <span class="org-code">=#+call: show:((point))=</span> would not work because the
+form <span class="org-code">=(point)=</span> would not be evaluated in the correct place.
+
+<span class="org-meta-line">#+call: show[:my-point (point)]((cdr (assoc :my-point (nth 2 info)))) :special-header "foo"
+</span>
+The special header argument <span class="org-code">=:special-header=</span> may be seen in the
+output below.  The <span class="org-code">=results=</span> variable is due to the way that call
+lines are evaluated.  During evaluation a call line is converted into
+a trivial elisp code block of the form
+<span class="org-code">: #+begin_src emacs-lisp :var results=called-function()
+:   results
+: #+end_src
+</span>which is evaluated in place.
+
+<span class="org-meta-line">#+RESULTS: show[:my-point (point)]((cdr (assoc :my-point (nth 2 info))))
+</span><span class="org-table">| (:var results ((:var nil)) ((:colname-names)) ((:rowname-names)) ((:result-params replace)) ((:result-type . value)) ((:comments . )) ((:shebang . )) ((:cache . no)) ((:padline . )) ((:noweb . yes)) ((:tangle . no)) ((:exports . code)) ((:results . replace)) ((:padnewline . yes)) ((:hlines . no)) ((:session . none))) |</span>
+<span class="org-table">| (:colname-names)                                                                                                                                                                                                                                                                                                               |</span>
+<span class="org-table">| (:rowname-names)                                                                                                                                                                                                                                                                                                               |</span>
+<span class="org-table">| (:result-params replace)                                                                                                                                                                                                                                                                                                       |</span>
+<span class="org-table">| (:result-type . value)                                                                                                                                                                                                                                                                                                         |</span>
+<span class="org-table">| (:comments . )                                                                                                                                                                                                                                                                                                                 |</span>
+<span class="org-table">| (:shebang . )                                                                                                                                                                                                                                                                                                                  |</span>
+<span class="org-table">| (:cache . no)                                                                                                                                                                                                                                                                                                                  |</span>
+<span class="org-table">| (:padline . )                                                                                                                                                                                                                                                                                                                  |</span>
+<span class="org-table">| (:noweb . yes)                                                                                                                                                                                                                                                                                                                 |</span>
+<span class="org-table">| (:tangle . no)                                                                                                                                                                                                                                                                                                                 |</span>
+<span class="org-table">| (:exports . code)                                                                                                                                                                                                                                                                                                              |</span>
+<span class="org-table">| (:results . replace)                                                                                                                                                                                                                                                                                                           |</span>
+<span class="org-table">| (:special-header . foo)                                                                                                                                                                                                                                                                                                        |</span>
+<span class="org-table">| (:padnewline . yes)                                                                                                                                                                                                                                                                                                            |</span>
+<span class="org-table">| (:hlines . no)                                                                                                                                                                                                                                                                                                                 |</span>
+<span class="org-table">| (:session . none)                                                                                                                                                                                                                                                                                                              |</span>
+
+This code block visits the location of the call line, and calculates
+the info using the same mechanisms used by <span class="org-code">=org-babel-lob-execute=</span>.
+<span class="org-meta-line">#+name: show
+</span><span class="org-block-begin-line">#+begin_src emacs-lisp :var call-line-location=0
+</span>  <span class="starter-kit-paren">(</span><span class="keyword">let</span> <span class="starter-kit-paren">((</span>call-info <span class="starter-kit-paren">(</span><span class="keyword">save-excursion</span>
+                     <span class="starter-kit-paren">(</span>goto-char call-line-location<span class="starter-kit-paren">)</span>
+                     <span class="starter-kit-paren">(</span>org-babel-lob-get-info<span class="starter-kit-paren">))))</span>
+    <span class="starter-kit-paren">(</span>mapcar #'list
+            <span class="starter-kit-paren">(</span>org-babel-process-params
+             <span class="starter-kit-paren">(</span>org-babel-merge-params
+              org-babel-default-header-args
+              <span class="starter-kit-paren">(</span>org-babel-params-from-properties<span class="starter-kit-paren">)</span>
+              <span class="starter-kit-paren">(</span>org-babel-parse-header-arguments
+               <span class="starter-kit-paren">(</span>org-babel-clean-text-properties
+                <span class="starter-kit-paren">(</span>concat <span class="string">":var results="</span>
+                        <span class="starter-kit-paren">(</span>mapconcat #'identity <span class="starter-kit-paren">(</span>butlast call-info<span class="starter-kit-paren">)</span> <span class="string">" "</span><span class="starter-kit-paren">))))))))
+</span><span class="org-block-end-line">#+end_src
+</span>
+</pre>
+  </body>
+</html>
