@@ -3,7 +3,7 @@
  <title>Org-mode scraps</title>
  <link href="http://eschulte.github.com/org-scraps/atom.xml" rel="self"/>
  <link href="http://eschulte.github.com/org-scraps/"/>
- <updated>2012-02-05:09:19:56-07:00</updated>
+ <updated>2012-02-08:09:48:22-07:00</updated>
  <id>http://eschulte.github.com/org-scraps/</id>
  <author>
    <name>Eric Schulte</name>
@@ -10482,6 +10482,24 @@ the info using the same mechanisms used by <span class="org-code">=org-babel-lob
                <span class="starter-kit-paren">(</span>org-babel-clean-text-properties
                 <span class="starter-kit-paren">(</span>concat <span class="string">":var results="</span>
                         <span class="starter-kit-paren">(</span>mapconcat #'identity <span class="starter-kit-paren">(</span>butlast call-info<span class="starter-kit-paren">)</span> <span class="string">" "</span><span class="starter-kit-paren">))))))))
+</span><span class="org-block-end-line">#+end_src
+</span>
+   </pre>
+</content>
+</entry>
+<entry>
+   <title>custom-query-of-user-before-evaluating-code-block</title>
+   <link href="http://eschulte.github.com/org-scraps/scraps/2012-02-08-custom-query-of-user-before-evaluating-code-block.html"/>
+   <updated>2012-02-08:00:00:00-07:00</updated>
+   <id>http://eschulte.github.com/org-scraps/scraps/2012-02-08-custom-query-of-user-before-evaluating-code-block.html</id>
+   <content type="html">
+   <pre>
+<span class="org-level-2">** custom query of user before evaluating code block</span>
+<span class="org-special-keyword">   :PROPERTIES:</span>
+   <span class="org-special-keyword">:DATE:</span>     <span class="org-property-value">2012-02-08</span>
+<span class="org-special-keyword">   :END:</span>
+<span class="org-block-begin-line">#+begin_src sh :eval (if (y-or-n-p "Run operation X?") "yes" "no")
+</span>  <span class="builtin">echo</span> <span class="string">"Going ahead with operation X!"
 </span><span class="org-block-end-line">#+end_src
 </span>
    </pre>

@@ -7,6 +7,14 @@
   :ID:       96eaa17f-f1b6-4958-acb1-e271045fdfa2
   :DATE:     2011-09-03
   :END:
+** custom query of user before evaluating code block
+   :PROPERTIES:
+   :DATE:     2012-02-08
+   :END:
+#+begin_src sh :eval (if (y-or-n-p "Run operation X?") "yes" "no")
+  echo "Going ahead with operation X"
+#+end_src
+
 ** call line which dumps out its own header argument info
    :PROPERTIES:
    :DATE:     2012-02-05
