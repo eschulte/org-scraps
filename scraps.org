@@ -7,6 +7,43 @@
   :ID:       96eaa17f-f1b6-4958-acb1-e271045fdfa2
   :DATE:     2011-09-03
   :END:
+** C undefined behavior
+#+begin_src C
+int i=0;
+printf("%d %d %d %d\n", ++i, ++i, ++i, ++i);
+#+end_src
+
+#+RESULTS:
+: 4 4 4 4
+
+#+begin_src C
+int i=0;
+printf("%d %d %d %d\n", i++, i++, i++, i++);
+#+end_src
+
+#+RESULTS:
+: 3 2 1 0
+
+#+begin_src C
+  void p(int a, int b, int c, int d){
+    printf("%d %d %d %d\n", a, b, c, d);
+  }
+  
+  int i=0;
+  p(i++, i++, ++i, ++i);
+#+end_src
+
+#+RESULTS:
+: 3 2 4 4
+
+#+begin_src C++ :includes '("<iostream>")
+  int i=0;
+  std::cout << i++ << " " << i++ << " " << ++i << " " << ++i;
+#+end_src
+
+#+RESULTS:
+: 3 2 4 4
+
 ** header arguments on call lines
    :PROPERTIES:
    :DATE:     2011-09-11
