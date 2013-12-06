@@ -7,6 +7,40 @@
   :ID:       96eaa17f-f1b6-4958-acb1-e271045fdfa2
   :DATE:     2011-09-03
   :END:
+** shell history, alias and environment variables
+#+BEGIN_SRC sh :session :results output
+  echo $SHELL
+  echo $HOME
+  source ~/.bashrc
+  alias | wc
+  env | wc
+  history | wc
+#+END_SRC
+
+#+RESULTS:
+: /bin/zsh
+: /home/eschulte
+:       0       0       0
+:      28      28     715
+:       0       0       0
+
+#+BEGIN_SRC sh :session :results output
+  echo $SHELL
+  echo $HOME
+  source ~/.alia
+  source ~/.bashrc
+  alias | wc
+  env | wc
+  history | wc
+#+END_SRC
+
+#+RESULTS:
+: /bin/zsh
+: /home/eschulte
+:      19      99     814
+:      28      28     715
+:       0       0       0
+
 ** C undefined behavior
 #+begin_src C
 int i=0;
