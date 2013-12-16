@@ -7,6 +7,15 @@
   :ID:       96eaa17f-f1b6-4958-acb1-e271045fdfa2
   :DATE:     2011-09-03
   :END:
+** quoted lines between block and result
+#+begin_src sh :cache yes
+  date
+#+end_src
+
+#+label: foo
+#+RESULTS[767d8ce04ce746568cd0f3f1f8f621a3583b93c5]:
+: Fri Dec 13 15:05:38 MST 2013
+
 ** literal example
 #+NAME: literal-example
 #+BEGIN_EXAMPLE
