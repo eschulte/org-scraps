@@ -7,6 +7,29 @@
   :ID:       96eaa17f-f1b6-4958-acb1-e271045fdfa2
   :DATE:     2011-09-03
   :END:
+** call line caching
+#+name: call-line-caching-example
+#+begin_src emacs-lisp :var bar="baz"
+  (sit-for 1)
+  (message "bar=%S" bar)
+#+end_src
+
+#+RESULTS: call-line-caching-example
+: bar="baz"
+
+This does not return immediately, because the block must execute.
+#+call: call-line-caching-example("quxxx")
+
+#+RESULTS:
+: bar="quxxx"
+
+This returns immediately thanks to the cached result.
+#+name: call-line-caching-called
+#+call: call-line-caching-example("qux") :cache yes
+
+#+RESULTS[1df20b5a51c3c710b11d7d9cac7272a66a85990f]: call-line-caching-called
+: bar="qux"
+
 ** valid inline function names
 #+name: w/o-spaces
 #+begin_src sh
