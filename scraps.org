@@ -7,6 +7,13 @@
   :ID:       96eaa17f-f1b6-4958-acb1-e271045fdfa2
   :DATE:     2011-09-03
   :END:
+** prologue and epilogue in R code blocks
+#+headers: :epilogue "})"
+#+headers: :prologue "local({"
+#+begin_src R  :results output :session
+  cat("Test")
+#+end_src
+
 ** export header argument dependent on backend
 #+name: export-hdr-arg-backend-dep
 #+begin_src emacs-lisp
