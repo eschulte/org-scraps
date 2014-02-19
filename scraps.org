@@ -7,6 +7,22 @@
   :ID:       96eaa17f-f1b6-4958-acb1-e271045fdfa2
   :DATE:     2011-09-03
   :END:
+** pretty printed source code block result
+set the value
+#+begin_src lisp :results silent
+(defvar foo '(defun square (x)  (* x x)))
+#+end_src
+
+#+begin_src lisp :results output pp code
+foo
+#+end_src
+
+#+RESULTS:
+#+BEGIN_SRC lisp
+
+(DEFUN SQUARE (X) (* X X))
+#+END_SRC
+
 ** prologue and epilogue in R code blocks
 #+headers: :epilogue "})"
 #+headers: :prologue "local({"
